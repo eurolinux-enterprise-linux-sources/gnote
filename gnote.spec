@@ -1,6 +1,6 @@
 Name:           gnote
 Version:        3.8.1
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        Note-taking application
 Group:          User Interface/Desktops
 License:        GPLv3+
@@ -73,6 +73,12 @@ fi
 %{_datadir}/glib-2.0/schemas/org.gnome.gnote.gschema.xml
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 3.8.1-3
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 3.8.1-2
+- Mass rebuild 2013-12-27
+
 * Mon May 13 2013 Kalev Lember <kalevlember@gmail.com> 3.8.1-1
 - Update to 3.8.1
 
