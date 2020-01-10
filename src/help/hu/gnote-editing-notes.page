@@ -23,7 +23,7 @@
   <title xml:lang="en_GB">Editing Notes</title>
 
     <p xml:lang="en_GB">When you open a note, <app>Gnote</app> will replace the note overview with the note's contents.</p>
-    <p xml:lang="en_GB">Toolbar at the top of the window will now contain note specific items in it. Bellow toolbar is the note's content area.</p>
+    <p xml:lang="en_GB">Toolbar at the top of the window will now contain note specific items in it. Below toolbar is the note's content area.</p>
     <figure>
       <title xml:lang="en_GB"><app>Gnote</app> window displaying note</title>
       <desc xml:lang="en_GB"><app>Gnote</app> Note</desc>

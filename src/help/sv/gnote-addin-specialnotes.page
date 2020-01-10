@@ -3,15 +3,27 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>See special notes</desc>
+    <desc>Se speciella anteckningar</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
   
-  <title>Special Notes</title>
-    <p>When the <app>SpecialNotes</app> plugin is installed, the new special notebook <gui>Special Notes</gui> is present in the list of notebooks. This notebook contains notes that are otherwise not visible, such as template notes. This might be convenient way to go through all your templates.</p>
+  <title>Specialanteckningar</title>
+    <p>När insticksmodulen <app>Specialanteckningar</app> är installerad visas det nya speciella anteckningsblocket <gui>Specialanteckningar</gui> i listan över anteckningsblock. Detta anteckningsblock innehåller anteckningar som annars inte är synliga, som anteckningsmallar. Det kan vara ett behändigt sätt att gå igenom alla dina mallar.</p>
 
 </page>

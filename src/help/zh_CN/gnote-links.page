@@ -37,7 +37,7 @@
 <note style="advanced">
     <p>更改便笺的标题也将更新在其他便笺中的链接。这能避免便笺重命名时造成链接损坏。</p></note>
 
-  <section><title>反向链接附加组件</title>
+  <section id="backlinks"><title>反向链接附加组件</title>
     <p>When the <app>Backlinks</app> plugin is installed, the <gui>Actions</gui> menu will contain an item <gui>What links here?</gui>, which provides a sub-menu listing all notes containing a link to the current note.</p>
   </section>
 

@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
-    <desc>Use a fixed-width font</desc>
+    <desc>Använd ett typsnitt med fast bredd</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -18,9 +18,21 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Fixed Width Add-in</title>
-    <p>The <app>Fixed Width</app> plugin allows text to use a fixed width font. To change existing text, first select the text you want to modify. Then select <gui>Fixed Width</gui> from the <gui>Text</gui> menu. You can also select <gui>Fixed Width</gui> from the menu before you start typing.</p>
+  <title>Fast bredd-tillägg</title>
+    <p>Insticksmodulen <app>Fast bredd</app> tillåter att texten använder ett typsnitt med fast bredd. För att ändra befintlig text, markera först texten som du vill ändra. Välj sedan <gui>Fast bredd</gui> från menyn <gui>Text</gui>. Du kan även välja alternativet <gui>Fast bredd</gui> från menyn innan du börjar att skriva.</p>
 
 </page>

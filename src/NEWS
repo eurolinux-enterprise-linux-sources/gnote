@@ -1,14 +1,113 @@
-3.22.1 - "Money may buy friendship but money cannot buy love." - 2016/11/27
+3.28.0 - 2018/03/18
+
+New Features:
+  * Client side decoration by default supported on Ubuntu and Pop! sessions
+  * Install appdata metadata to new non-deprecated location (#792795)
 
 Fixes:
-  * Fix possible loss of bullet when using formatting (#773630)
+  * Manual validation fixes
+  * Fix gettext-domain in GSettings schema
+  * Do not show empty actions menu (#789750)
+  * Fix some shortcuts, that are added by context menu (#792859)
 
 Translations:
-  * More translator comments for the boost formats (#774262)
   * Updated translations:
     - Brazilian Portuguese (pt_BR)
-    - French (fr)
+    - Czech (cs)
+    - Danish (da)
+    - German (de)
+    - Hungarian (hu)
+    - Indonesian (id)
+    - Lithuanian (lt)
+    - Polish (pl)
+    - Serbian (sr, sr@latin)
+    - Spanish (es)
+    - Swedish (sv)
+  * Updated Slovenian manual (sl)
+  * Updated Spanish manual (es)
+
+3.26.0 - 2017/09/18
+
+Translations:
+  * Updated translations:
+    - Brazilian Portuguese (pt_BR)
+    - Hungarian (hu)
     - Italian (it)
+    - Lithuanian (lt)
+  * Updated Czech manual (cs)
+  * Updated Lithuanian manual (lt)
+
+3.25.0 - 2017/08/30
+
+New Features:
+  * Removed Shadow from SearchView (#783610)
+  * Formatting and actions menus redesigned
+
+Fixes:
+  * Fix possible crash when deleting a notebook (#701846)
+
+Translations:
+  * Updated translations:
+    - Czech (cs)
+    - Esperanto (eo)
+    - German (de)
+    - Indonesian (id)
+    - Polish (pl)
+    - Serbian (sr, sr@latin)
+    - Spanish (es)
+  * Updated Swedish manual (sv)
+
+3.24.0 - "If at first you do succeed, try to hide your astonishment" - 2017/03/27
+
+Fixes:
+  * Left align items in popovers and increase vertical spacing (#778823)
+  * Fix --background option
+  * Make D-Bus APIs for opening notes respect new window setting (#778871)
+  * Change default for window to not autosize (#778822)
+  * Fix no icon for Gnote windows in some WMs (#762001)
+  * Use icon for Create Note button (#704116)
+  * Fix crash in search
+
+Translations:
+  * Updated translations:
+    - Brazilian Portuguese (pt_BR)
+    - Czech (cs)
+    - Danish (da)
+    - German (de)
+    - Hungarian (hu)
+    - Indonesian (id)
+    - Italian (it)
+    - Lithuanian (lt)
+    - Polish (pl)
+    - Swedish (sv)
+    - Turkish (tr)
+
+3.23.0 - 2017/02/26
+
+New Features:
+  * New optional dependency: UnitTest++ (required only for running gnote tests)
+  * Removed dependency: boost (all of it)
+  * Gnote now internally uses Unicode strings for all data
+
+Fixes:
+  * Fix indentation sometimes getting is lost after restart (#773630)
+  * Use %1 style placeholders instead of %1% in translatable strings (#774262)
+  * Make app menu item ordering consistent with GNOME (#772009)
+  * Use open-menu-symbolic icon for menu (#775320)
+
+Translations:
+  * Updated translations:
+    - Brazilian Portuguese (pt_BR)
+    - Czech (cs)
+    - Danish (da)
+    - French (fr)
+    - Indonesian (id)
+    - Italian (it)
+    - Polish (pl)
+    - Serbian (sr, sr@latin)
+    - Spanish (es)
+    - Swedish (sv)
+  * Updated Swedish manual (sv)
 
 3.22.0 - "Good artists copy, great artists steal. -- Pablo Picasso" - 2016/09/25
 

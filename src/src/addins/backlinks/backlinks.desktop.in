@@ -4,11 +4,11 @@ _Name=Backlinks
 _Description=See which notes link to the one you're currently viewing.
 _Authors=Hubert Figuiere and Tomboy Project
 Category=Tools
-Version=0.4
+Version=0.5
 DefaultEnabled=true
 Module=libbacklinks
-LibgnoteRelease=3.22
-LibgnoteVersionInfo=1:0:1
+LibgnoteRelease=3.28
+LibgnoteVersionInfo=0:0:0
 [Actions]
 actions_string=backlinks-open-note
 non_modifying_actions=backlinks-open-note

@@ -4,7 +4,7 @@
   <info>
     <link type="guide" xref="notes-preferences#sync-addins"/>
     <link type="guide" xref="synchronization#configuration"/>
-    <desc>Synchronize to a local folder</desc>
+    <desc>Synkronisera till en lokal mapp</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
@@ -15,15 +15,27 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Local Folder Synchronization</title>
-  <p>This type of synchronization lets you use a local folder as synchronization storage.</p>
-  <p>To configure this type of synchronization, select <gui>Local Folder</gui> in the <gui>Service</gui> drop-down and then select the desired folder as the <gui>Folder Path</gui>.</p>
+  <title>Lokal mappsynkronisering</title>
+  <p>Denna synkroniseringstyp låter dig använda en lokal mapp som synkroniseringslagring.</p>
+  <p>För att konfigurera denna synkroniseringstyp, välj <gui>Lokal mapp</gui> i rullgardinsmenyn <gui>Tjänst</gui> och välj önskad mapp som <gui>Mappsökväg</gui>.</p>
   <figure>
-    <title>Local Folder Synchronization configuration</title>
+    <title>Konfiguration för lokal mappsynkronisering</title>
     <media type="image" src="figures/gnote-syncprefs-local.png" mime="image/png"/>
   </figure>
-  <p>After selecting the desired folder, click the <gui>Save</gui> button. Use the <gui>Clear</gui> button to turn synchronization off.</p>
+  <p>Efter att valt önskad mapp, klicka på knappen <gui>Spara</gui>. Använd knappen <gui>Töm</gui> för att stänga av synkronisering.</p>
 
 </page>

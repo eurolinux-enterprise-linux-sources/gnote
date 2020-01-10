@@ -4,7 +4,7 @@
   <info>
     <link type="guide" xref="index#managing-notes"/>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
-    <desc>Deleting notes</desc>
+    <desc>Ta bort anteckningar</desc>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
@@ -18,14 +18,26 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Deleting Notes</title>
-  <p>You can delete a note in either of two ways:</p>
+  <title>Ta bort anteckningar</title>
+  <p>Du kan ta bort en anteckning på två sätt:</p>
   <list>
-    <item><p>Right click in the list of notes and select <gui>Delete</gui>. This will delete all selected notes.</p></item>
-    <item><p>When a note is open, press the <gui>Delete</gui> button on the toolbar.</p></item>
+    <item><p>Högerklicka i listan över anteckningar och välj <gui>Ta bort</gui>. Det kommer att ta bort alla markerade anteckningar.</p></item>
+    <item><p>När en anteckning är öppen, tryck ned knappen <gui>Ta bort</gui> i verktygsfältet.</p></item>
   </list>
-  <p>In both cases a dialog box will pop up asking if you want to permanently delete the note and its contents. Click the <gui>Delete</gui> button to discard the note permanently, or <gui>Cancel</gui> to abort. Links to the deleted note from other notes will still exist, but will re-create the note upon activation.</p>
+  <p>I båda fallen kommer det att visas en dialogruta som frågar dig om du vill permanent ta bort anteckningen och dess innehåll. Klicka på knappen <gui>Ta bort</gui> för att förkasta anteckningen permanent eller <gui>Avbryt</gui> för att avbryta processen. Länkar till den här anteckningen från andra anteckningar kommer att finnas kvar men kommer att återskapa anteckningen vid aktivering.</p>
 
 </page>

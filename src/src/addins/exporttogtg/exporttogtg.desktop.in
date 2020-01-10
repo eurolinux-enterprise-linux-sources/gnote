@@ -7,8 +7,8 @@ Category=Tools
 Version=0.2
 DefaultEnabled=false
 Module=libexporttogtg
-LibgnoteRelease=3.22
-LibgnoteVersionInfo=1:0:1
+LibgnoteRelease=3.28
+LibgnoteVersionInfo=0:0:0
 [Actions]
 actions_void=exporttogtg-export
 non_modifying_actions=exporttogtg-export

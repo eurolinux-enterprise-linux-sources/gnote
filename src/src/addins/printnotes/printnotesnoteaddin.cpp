@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2013,2015-2016 Aurimas Cernius
+ * Copyright (C) 2010-2013,2015-2017 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,8 +19,6 @@
  */
 
 
-
-#include <boost/format.hpp>
 
 #include <glibmm/i18n.h>
 #include <glibmm/miscutils.h>
@@ -62,7 +60,7 @@ namespace printnotes {
   std::map<int, Gtk::Widget*> PrintNotesNoteAddin::get_actions_popover_widgets() const
   {
     auto widgets = NoteAddin::get_actions_popover_widgets();
-    auto button = gnote::utils::create_popover_button("win.printnotes-print", _("Print"));
+    auto button = gnote::utils::create_popover_button("win.printnotes-print", _("Print…"));
     gnote::utils::add_item_to_ordered_map(widgets, gnote::PRINT_ORDER, button);
     return widgets;
   }
@@ -276,9 +274,9 @@ namespace printnotes {
     layout->set_font_description(font_desc);
     layout->set_width(pango_units_from_double((int)context->get_width()));
 
-    // %1% is the page number, %2% is the total number of pages
-    std::string footer_left = str(boost::format(_("Page %1% of %2%"))
-                                  % page_number % total_pages);
+    // %1 is the page number, %2 is the total number of pages
+    Glib::ustring footer_left = Glib::ustring::compose(_("Page %1 of %2"),
+                                  page_number, total_pages);
     layout->set_alignment(Pango::ALIGN_LEFT);
     layout->set_text (footer_left);
 
@@ -289,7 +287,7 @@ namespace printnotes {
   Glib::RefPtr<Pango::Layout> 
   PrintNotesNoteAddin::create_layout_for_timestamp(const Glib::RefPtr<Gtk::PrintContext> & context)
   {
-    std::string timestamp = sharp::DateTime::now().to_string ("%c");
+    Glib::ustring timestamp = sharp::DateTime::now().to_string("%c");
 
     Glib::RefPtr<Pango::Layout> layout = context->create_pango_layout ();
     Pango::FontDescription font_desc = get_window()->editor()->get_pango_context()->get_font_description();

@@ -4,7 +4,7 @@
 
   <info>
     <link type="guide" xref="notes-preferences#advanced"/>
-    <desc>Using template notes</desc>
+    <desc>Använda anteckningsmallar</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
@@ -15,35 +15,47 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Template Notes</title>
+  <title>Anteckningsmallar</title>
   <section id="usage">
-    <title>Template Note Usage</title>
-    <p>Template notes are used to define the content for newly created notes. Templates are just like regular notes with some additional features.</p>
-    <p>You can define a single main template note and one for each notebook you have. These templates define the content of every new note you create:</p>
+    <title>Användning av anteckningsmall</title>
+    <p>Anteckningsmallar används för att definiera innehållet för nyligen skapade anteckningar. Mallar är precis som vanliga anteckningar med några ytterligare egenskaper.</p>
+    <p>Du kan definiera en enstaka huvudanteckningsmall och en för varje anteckningsblock du har. Dessa mallar definierar innehållet för varje ny anteckning du skapar:</p>
     <list>
-      <item><p>Every new note you create in <app>Gnote</app>, but not in any notebook, will have the content of the main template. If you have not created a main template, the default content will be used.</p></item>
-      <item><p>Every new note created in a notebook will have the content of that notebook's template note, if any. If no template note for a notebook is defined, the default note content will be used.</p></item>
+      <item><p>Varje ny anteckning du skapar i <app>Gnote</app> men inte i ett anteckningsblock kommer att ha innehållet från huvudmallen. Om du inte har skapat en huvudmall kommer standardinnehållet att användas.</p></item>
+      <item><p>Varje ny anteckning skapad i ett anteckningsblock kommer att ha innehållet från det anteckningsblockets anteckningsmall, om någon. Om ingen anteckningsmall för ett anteckningsblock är definierad kommer standardinnehållet för en anteckning att användas.</p></item>
     </list>
-    <p>To create or modify a template note:</p>
+    <p>För att skapa eller modifiera en anteckningsmall:</p>
     <list>
-      <item><title>Main template note</title><p>Open <app>Gnote</app>'s preferences and in the <gui>General</gui> tab press the <gui>Open Template Note</gui> button.</p></item>
-      <item><title>Notebook template note</title><p>Right click on a notebook in the main window and select <gui>Open Template Note</gui>.</p></item>
+      <item><title>Huvudanteckningsmall</title><p>Öppna <app>Gnote</app>s inställningar och i fliken <gui>Allmänt</gui>, tryck ned knappen <gui>Öppna anteckningsmall</gui>.</p></item>
+      <item><title>Mallar för anteckningsblock</title><p>Högerklicka på en anteckningsmall i huvudfönstret och markera <gui>Öppna anteckningsmall</gui>.</p></item>
     </list>
   </section>
   <section id="features">
-    <title>Template Note Features</title>
-    <p>A template note is like an ordinary note except that it is not shown in note lists and has a template bar at the top.</p>
-    <figure><title>Template note</title>
-      <media type="image" src="figures/gnote-template-note.png" mime="image/png" style="right"/><desc>Template note window</desc>
+    <title>Egenskaper för anteckningsmallar</title>
+    <p>En anteckningsmall är som en vanlig anteckning förutom att den inte visas i anteckningslistor och har en mallrad överst.</p>
+    <figure><title>Anteckningsmall</title>
+      <media type="image" src="figures/gnote-template-note.png" mime="image/png" style="right"/><desc>Fönster för anteckningsmallar</desc>
     </figure>
-    <p>The template bar has the following features:</p>
+    <p>Anteckningsmallraden har följande egenskaper:</p>
     <list>
-      <item><title>Convert to regular note</title><p>Press this button to turn the template into a regular note, visible in the list of notes. This action is similar to deleting a template note.</p></item>
-      <item><title>Save Size</title><p>If you check this box, the size of a newly created note will be identical to that of the template note. When this checkbox is not checked, new notes' windows will have the default size.</p></item>
-      <item><title>Save Selection</title><p>If this box is checked, new notes will have not only the content of the template note, but also its selection. Use this option if you want a certain part of the content in the new note to be initially selected.</p></item>
-      <item><title>Save Title</title><p>This checkbox lets you base the title of new notes on a template note's title. With this box checked, a new note will have the template note's title with a unique number appended. Otherwise the default title will be used.</p></item>
+      <item><title>Konvertera till vanlig anteckning</title><p>Tryck ned denna knapp för att göra om mallen till en standardanteckning, synlig i anteckningslistan. Denna åtgärd liknar att ta bort en anteckningsmall.</p></item>
+      <item><title>Storlek vid sparning</title><p>Om du kryssar i denna ruta kommer storleken på en nyligen skapad anteckning att vara identisk med den för anteckningsmallen. När denna kryssruta inte är ikryssad kommer nya anteckningsfönster att ha standardstorleken.</p></item>
+      <item><title>Markering vid sparande</title><p>Om denna ruta är ikryssad kommer nya anteckningar inte bara ha innehållet från mallen, utan också dess markering. Använd detta alternativ om du vill att en speciell del av innehållet i den nya anteckningen ska markeras initialt.</p></item>
+      <item><title>Spara titel</title><p>Denna kryssruta låter dig basera titeln på nya anteckningar på en anteckningsmalls titel. Med denna box ikryssad kommer en ny anteckning att ha anteckningsmallens titel med en unik siffra tillagt. Annars kommer standardtiteln att användas.</p></item>
     </list>
   </section>
 

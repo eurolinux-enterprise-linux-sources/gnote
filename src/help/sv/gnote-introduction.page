@@ -4,7 +4,7 @@
 
   <info>
     <link type="guide" xref="index#introduction"/>
-    <desc>Introduction to <app>Gnote</app></desc>
+    <desc>Introduktion till <app>Gnote</app></desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -19,23 +19,35 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Gnote Introduction</title>
-    <p><app>Gnote</app> is a desktop note-taking application for GNOME. It is simple and easy to use, and lets you organize the ideas and information you deal with every day. Gnote has useful editing features to help you customize your notes, including</p>
+  <title>Gnote-introduktion</title>
+    <p><app>Gnote</app> är ett anteckningsprogram för GNOME. Det är enkelt och lätt att använda och låter dig organisera dina idéer och tankar dagligen. Gnote har några användbara redigeringsfunktioner för att hjälpa dig att anpassa dina anteckningar, som</p>
     <list>
-      <item><p>highlighting search text</p></item>
-      <item><p>inline spell checking</p></item>
-      <item><p>auto-linking web and email addresses</p></item>
-      <item><p>undo/redo</p></item>
-      <item><p>font styling and sizing</p></item>
-      <item><p>bulleted lists</p></item>
+      <item><p>färgmarkera söktext</p></item>
+      <item><p>stavningskontroll</p></item>
+      <item><p>automatisk länkning av webb- och e-postadresser</p></item>
+      <item><p>ångra/gör om</p></item>
+      <item><p>olika stilar och storlekar för typsnitt</p></item>
+      <item><p>punktlistor</p></item>
     </list>
     <figure>
-      <title>The <app>Gnote</app> main window</title>
-        <desc>The <app>Gnote</app> main window</desc>
+      <title><app>Gnote</app>s huvudfönster</title>
+        <desc><app>Gnote</app>s huvudfönster</desc>
         <media type="image" src="figures/gnote-search-all-notes.png" mime="image/png" style="right">
-        <p>The <app>Gnote</app> main window.</p>
+        <p><app>Gnote</app>s huvudfönster.</p>
         </media>
     </figure>
 

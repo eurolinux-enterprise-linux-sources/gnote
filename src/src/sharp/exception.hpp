@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2013 Aurimas Cernius
+ * Copyright (C) 2013,2017 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a
@@ -30,7 +30,8 @@
 #define __SHARP_EXCEPTION_HPP_
 
 #include <exception>
-#include <string>
+
+#include <glibmm/ustring.h>
 
 #include "base/macros.hpp"
 
@@ -41,16 +42,16 @@ class Exception
   : public std::exception
 {
 public:
-  Exception(const std::string & m) throw()
+  Exception(const Glib::ustring & m) noexcept
     : m_what(m)
     {
     }
-  virtual ~Exception() throw();
+  virtual ~Exception() noexcept;
 
-  virtual const char *what() const throw() override;
+  virtual const char *what() const noexcept override;
 
 private:
-  std::string m_what;
+  Glib::ustring m_what;
 };
 
 }

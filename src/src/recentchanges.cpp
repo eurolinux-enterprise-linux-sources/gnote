@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2016 Aurimas Cernius
+ * Copyright (C) 2010-2017 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -23,16 +23,17 @@
 #include <config.h>
 #endif
 
-#include <boost/bind.hpp>
 #include <glibmm/i18n.h>
 #include <gtkmm/alignment.h>
 #include <gtkmm/headerbar.h>
 #include <gtkmm/image.h>
+#include <gtkmm/separator.h>
 #include <gtkmm/separatormenuitem.h>
 #include <gtkmm/stock.h>
 
 #include "debug.hpp"
 #include "iactionmanager.hpp"
+#include "iconmanager.hpp"
 #include "ignote.hpp"
 #include "note.hpp"
 #include "notemanager.hpp"
@@ -64,6 +65,7 @@ namespace gnote {
     settings->signal_changed().connect(sigc::mem_fun(*this, &NoteRecentChanges::on_settings_changed));
 
     set_has_resize_grip(true);
+    set_icon_name(IconManager::GNOTE);
 
     m_search_notes_widget.signal_open_note
       .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_open_note));
@@ -155,7 +157,11 @@ namespace gnote {
     left_box->attach(*m_all_notes_button, 0, 0, 1, 1);
 
     m_new_note_button = manage(new Gtk::Button);
-    m_new_note_button->set_label(_("New"));
+    image = manage(new Gtk::Image);
+    image->property_icon_name() = "list-add-symbolic";
+    image->property_icon_size() = GTK_ICON_SIZE_MENU;
+    m_new_note_button->set_image(*image);
+    m_new_note_button->set_tooltip_text(_("Create New Note"));
     m_new_note_button->add_accelerator("activate", get_accel_group(), GDK_KEY_N, Gdk::CONTROL_MASK, (Gtk::AccelFlags) 0);
     m_new_note_button->signal_clicked().connect(sigc::mem_fun(m_search_notes_widget, &SearchNotesWidget::new_note));
     m_new_note_button->show_all();
@@ -182,7 +188,7 @@ namespace gnote {
 
     m_window_actions_button = manage(new Gtk::Button);
     image = manage(new Gtk::Image);
-    image->property_icon_name() = "emblem-system-symbolic";
+    image->property_icon_name() = "open-menu-symbolic";
     image->property_icon_size() = GTK_ICON_SIZE_MENU;
     m_window_actions_button->set_image(*image);
     m_window_actions_button->signal_clicked().connect(
@@ -426,7 +432,7 @@ namespace gnote {
       }
       break;
     case GDK_KEY_F1:
-      utils::show_help("gnote", "", get_screen()->gobj(), this);
+      utils::show_help("gnote", "", *this);
       break;
     default:
       break;
@@ -457,7 +463,7 @@ namespace gnote {
     }
   }
 
-  void NoteRecentChanges::set_search_text(const std::string & value)
+  void NoteRecentChanges::set_search_text(const Glib::ustring & value)
   {
     m_search_entry.set_text(value);
   }
@@ -659,7 +665,7 @@ namespace gnote {
         .connect(sigc::mem_fun(*this, &NoteRecentChanges::entry_changed_timeout));
     }
 
-    std::string search_text = get_search_text();
+    Glib::ustring search_text = get_search_text();
     if(search_text.empty()) {
       SearchableItem *searchable_widget = dynamic_cast<SearchableItem*>(currently_embedded());
       if(searchable_widget) {
@@ -685,7 +691,7 @@ namespace gnote {
     if(!m_search_box.get_visible()) {
       return;
     }
-    std::string search_text = get_search_text();
+    Glib::ustring search_text = get_search_text();
     if(search_text.empty()) {
       return;
     }
@@ -696,9 +702,9 @@ namespace gnote {
     }
   }
 
-  std::string NoteRecentChanges::get_search_text()
+  Glib::ustring NoteRecentChanges::get_search_text()
   {
-    std::string text = m_search_entry.get_text();
+    Glib::ustring text = m_search_entry.get_text();
     text = sharp::string_trim(text);
     return text;
   }
@@ -763,38 +769,29 @@ namespace gnote {
   {
     std::map<Glib::ustring, Gtk::Widget*> submenus;
     Gtk::PopoverMenu *menu = manage(new Gtk::PopoverMenu);
-    Gtk::Grid *main_grid = manage(new Gtk::Grid);
-    int main_top = 0;
-    int top = 0;
-    Gtk::Grid *grid = manage(utils::create_popover_inner_grid(&top));
-    FOREACH(Gtk::Widget *item, items) {
-      if(item) {
-        utils::PopoverSubmenu *submenu = dynamic_cast<utils::PopoverSubmenu*>(item);
-        if(submenu) {
-          submenus[submenu->name()] = item;
+    Gtk::Box *menu_box = manage(new Gtk::Box(Gtk::ORIENTATION_VERTICAL));
+    utils::set_common_popover_widget_props(*menu_box);
+    if(items.size() > 0) {
+      FOREACH(Gtk::Widget *item, items) {
+        if(item) {
+          utils::PopoverSubmenu *submenu = dynamic_cast<utils::PopoverSubmenu*>(item);
+          if(submenu) {
+            submenus[submenu->name()] = item;
+          }
+          else {
+            menu_box->add(*manage(item));
+          }
         }
         else {
-          grid->attach(*manage(item), 0, top++, 1, 1);
+          menu_box->add(*manage(new Gtk::Separator));
         }
       }
-      else {
-        main_grid->attach(*grid, 0, main_top++, 1, 1);
-        grid = manage(utils::create_popover_inner_grid(&top));
-      }
+    }
+    else {
+      menu_box->add(*manage(new Gtk::Label(_("No configured actions"))));
     }
 
-    if(top > 0) {
-      main_grid->attach(*grid, 0, main_top++, 1, 1);
-      grid = manage(utils::create_popover_inner_grid(&top));
-    }
-
-    Gtk::Widget *close_item = manage(utils::create_popover_button("win.close-window", _("_Close")));
-    close_item->add_accelerator("activate", get_accel_group(), GDK_KEY_W, Gdk::CONTROL_MASK, Gtk::ACCEL_VISIBLE);
-    close_item->add_accelerator("activate", get_accel_group(), GDK_KEY_Q, Gdk::CONTROL_MASK, Gtk::ACCEL_VISIBLE);
-    grid->attach(*close_item, 0, top++, 1, 1);
-
-    main_grid->attach(*grid, 0, main_top++, 1, 1);
-    menu->add(*main_grid);
+    menu->add(*menu_box);
     for(auto & submenu : submenus) {
       menu->add(*submenu.second);
       menu->child_property_submenu(*submenu.second) = submenu.first;
@@ -805,7 +802,7 @@ namespace gnote {
     return menu;
   }
 
-  void NoteRecentChanges::on_embedded_name_changed(const std::string & name)
+  void NoteRecentChanges::on_embedded_name_changed(const Glib::ustring & name)
   {
     set_title(name);
   }

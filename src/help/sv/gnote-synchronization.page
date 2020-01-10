@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Synchronize notes</desc>
+    <desc>Synkronisera anteckningar</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
@@ -14,24 +14,36 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
   <title>Synkronisering</title>
   <section id="description">
-    <title>About synchronization</title>
-    <p><app>Gnote</app> lets you synchronize notes across multiple machines, so that you can use it on multiple devices and work with the same notes on all of them.</p>
-    <p>In order to use synchronization, you have to configure it first in the <app>Gnote</app> configuration dialog.</p>
-    <p>Notes are synchronized to one location, common to all <app>Gnote</app> installations. This location stores the history of your notes. When synchronizing, each <app>Gnote</app> instance uploads new and updated notes to this location, and downloads new and updated notes from other installations. The synchronization location also contains information on deleted notes: when synchronizing, <app>Gnote</app> publishes all deleted notes and deletes the ones that have been published as such. This way multiple <app>Gnote</app> installations can keep the same set of notes.</p>
+    <title>Om synkronisering</title>
+    <p><app>Gnote</app> låter dig synkronisera anteckningar mellan flera maskiner så att du kan använda dem på flera enheter och arbeta med samma anteckningar på dem alla.</p>
+    <p>För att använda synkronisering måste du först konfigurera det i <app>Gnote</app>s konfigurationsdialog.</p>
+    <p>Anteckningar synkroniseras till en plats, gemensam för alla <app>Gnote</app>-installationer. Denna plats lagrar historiken över dina anteckningar. Vid synkronisering skickar varje instans av <app>Gnote</app> upp nya och uppdaterade anteckningar till denna plats, och hämtar nya och uppdaterade anteckningar från andra installationer. Synkroniseringsplatsen innehåller också information om borttagna anteckningar: under synkronisering publicerar <app>Gnote</app> alla borttagna anteckningar och tar bort de som har publicerats som sådana. På detta sätt kan flera <app>Gnote</app>-installationer hantera samma mängd av anteckningar.</p>
   </section>
   <section id="configuration" style="2column">
-    <title>Configure synchronization</title>
+    <title>Konfigurera synkronisering</title>
   </section>
   <section id="usage">
-    <title>Synchronize</title>
-    <p>To synchronize, select <gui>Synchronize Notes</gui> from the application menu. This item is only available if synchronization has been configured.</p>
-    <p>After you select the <gui>Synchronize Notes</gui> menu item, a progress dialog will be displayed, which will let you know when synchronization is complete. Also, all notes will be disabled for editing while synchronization is in progress.</p>
+    <title>Synkronisera</title>
+    <p>För att synkronisera, välj <gui>Synkronisera anteckningar</gui> från programmenyn. Detta objekt är endast tillgängligt om synkronisering har konfigurerats.</p>
+    <p>Efter att du har valt menyobjektet <gui>Synkronisera anteckningar</gui> kommer en förloppsdialog som berättar när synkroniseringen är färdig att visas. Alla anteckningar kommer också att inaktiveras för redigering medan synkronisering pågår.</p>
     <figure>
-      <title>Synchronization progress</title>
+      <title>Synkroniseringsförlopp</title>
       <media type="image" src="figures/gnote-sync-progress.png" mime="image/png"/>
     </figure>
   </section>

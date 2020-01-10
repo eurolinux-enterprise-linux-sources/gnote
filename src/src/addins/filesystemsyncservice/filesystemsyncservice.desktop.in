@@ -7,5 +7,5 @@ Category=Synchronization
 Version=0.2
 DefaultEnabled=true
 Module=libfilesystemsyncservice
-LibgnoteRelease=3.22
-LibgnoteVersionInfo=1:0:1
+LibgnoteRelease=3.28
+LibgnoteVersionInfo=0:0:0

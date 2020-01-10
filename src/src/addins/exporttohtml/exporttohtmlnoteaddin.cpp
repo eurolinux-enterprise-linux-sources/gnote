@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2013,2016 Aurimas Cernius
+ * Copyright (C) 2010-2013,2016-2017 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,8 +18,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-
-#include <boost/format.hpp>
 
 #include <libxml/xmlmemory.h>
 #include <libxml/xpathInternals.h>
@@ -80,7 +78,7 @@ void ExportToHtmlNoteAddin::on_note_opened()
 std::map<int, Gtk::Widget*> ExportToHtmlNoteAddin::get_actions_popover_widgets() const
 {
   auto widgets = NoteAddin::get_actions_popover_widgets();
-  auto button = gnote::utils::create_popover_button("win.exporttohtml-export", _("Export to HTML"));
+  auto button = gnote::utils::create_popover_button("win.exporttohtml-export", _("Export to HTML…"));
   gnote::utils::add_item_to_ordered_map(widgets, gnote::EXPORT_TO_HTML_ORDER, button);
   return widgets;
 }
@@ -90,7 +88,7 @@ void ExportToHtmlNoteAddin::export_button_clicked(const Glib::VariantBase&)
 {
   ExportToHtmlDialog dialog(get_note()->get_title() + ".html");
   int response = dialog.run();
-  std::string output_path = dialog.get_filename();
+  Glib::ustring output_path = dialog.get_filename();
 
   if (response != Gtk::RESPONSE_OK) {
     return;
@@ -100,7 +98,7 @@ void ExportToHtmlNoteAddin::export_button_clicked(const Glib::VariantBase&)
           output_path.c_str());
 
   sharp::StreamWriter writer;
-  std::string error_message;
+  Glib::ustring error_message;
 
   try {
     // FIXME: Warn about file existing.  Allow overwrite.
@@ -116,16 +114,16 @@ void ExportToHtmlNoteAddin::export_button_clicked(const Glib::VariantBase&)
 
     try {
       sharp::Uri output_uri(output_path);
-      gnote::utils::open_url("file://" + output_uri.get_absolute_uri());
+      gnote::utils::open_url(*get_host_window(), "file://" + output_uri.get_absolute_uri());
     } 
     catch (const Glib::Exception & ex) {
       ERR_OUT(_("Could not open exported note in a web browser: %s"),
                ex.what().c_str());
 
-      // TRANSLATORS: %1%: boost format placeholder for the path
-      std::string detail = str(boost::format(
-                                 _("Your note was exported to \"%1%\"."))
-                               % output_path);
+      Glib::ustring detail = Glib::ustring::compose(
+                                 // TRANSLATORS: %1%: boost format placeholder for the path
+                                 _("Your note was exported to \"%1\"."),
+                                 output_path);
 
       // Let the user know the note was saved successfully
       // even though showing the note in a web browser failed.
@@ -157,9 +155,9 @@ void ExportToHtmlNoteAddin::export_button_clicked(const Glib::VariantBase&)
   {
     ERR_OUT(_("Could not export: %s"), error_message.c_str());
 
-    std::string msg = str(boost::format(
-                            _("Could not save the file \"%s\"")) 
-                          % output_path.c_str());
+    Glib::ustring msg = Glib::ustring::compose(
+                            _("Could not save the file \"%1\""),
+                            output_path.c_str());
 
     gnote::utils::HIGMessageDialog msg_dialog(&dialog, 
                                               GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -194,7 +192,7 @@ sharp::XslTransform & ExportToHtmlNoteAddin::get_note_xsl()
     }
 
     s_xsl = new sharp::XslTransform;
-    std::string stylesheet_file = DATADIR "/gnote/" STYLESHEET_NAME;
+    Glib::ustring stylesheet_file = DATADIR "/gnote/" STYLESHEET_NAME;
 
     if (sharp::file_exists (stylesheet_file)) {
       DBG_OUT("ExportToHTML: Using user-custom %s file.", STYLESHEET_NAME);
@@ -226,9 +224,9 @@ void ExportToHtmlNoteAddin::write_html_for_note (sharp::StreamWriter & writer,
                                                  bool export_linked, 
                                                  bool export_linked_all)
 {
-  std::string s_writer;
+  Glib::ustring s_writer;
   s_writer = gnote::NoteArchiver::write_string(note->data());
-  xmlDocPtr doc = xmlParseMemory(s_writer.c_str(), s_writer.size());
+  xmlDocPtr doc = xmlParseMemory(s_writer.c_str(), s_writer.bytes());
 
   sharp::XsltArgumentList args;
   args.add_param ("export-linked", "", export_linked);
@@ -237,10 +235,9 @@ void ExportToHtmlNoteAddin::write_html_for_note (sharp::StreamWriter & writer,
 
   Glib::RefPtr<Gio::Settings> settings = Preferences::obj().get_schema_settings(Preferences::SCHEMA_GNOTE);
   if (settings->get_boolean(Preferences::ENABLE_CUSTOM_FONT)) {
-    std::string font_face = settings->get_string(Preferences::CUSTOM_FONT_FACE);
+    Glib::ustring font_face = settings->get_string(Preferences::CUSTOM_FONT_FACE);
     Pango::FontDescription font_desc (font_face);
-    std::string font = str(boost::format("font-family:'%1%';")
-                           % font_desc.get_family());
+    Glib::ustring font = Glib::ustring::compose("font-family:'%1';", font_desc.get_family());
 
     args.add_param ("font", "", font);
   }

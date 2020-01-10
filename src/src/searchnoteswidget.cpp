@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2015 Aurimas Cernius
+ * Copyright (C) 2010-2015,2017 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -20,7 +20,6 @@
  */
 
 
-#include <boost/format.hpp>
 #include <glibmm/i18n.h>
 #include <gtkmm/alignment.h>
 #include <gtkmm/linkbutton.h>
@@ -83,8 +82,6 @@ SearchNotesWidget::SearchNotesWidget(NoteManager & m)
 
   update_results();
 
-  m_matches_window.set_shadow_type(Gtk::SHADOW_IN);
-
   m_matches_window.property_hscrollbar_policy() = Gtk::POLICY_AUTOMATIC;
   m_matches_window.property_vscrollbar_policy() = Gtk::POLICY_AUTOMATIC;
   m_matches_window.add(*m_tree);
@@ -123,7 +120,7 @@ SearchNotesWidget::~SearchNotesWidget()
   }
 }
 
-std::string SearchNotesWidget::get_name() const
+Glib::ustring SearchNotesWidget::get_name() const
 {
   notebooks::Notebook::Ptr selected_notebook = get_selected_notebook();
   if(!selected_notebook
@@ -152,7 +149,7 @@ void SearchNotesWidget::make_actions()
   m_rename_notebook_action->signal_activate().connect(sigc::mem_fun(*this, &SearchNotesWidget::on_rename_notebook));
 }
 
-void SearchNotesWidget::perform_search(const std::string & search_text)
+void SearchNotesWidget::perform_search(const Glib::ustring & search_text)
 {
   restore_matches_window();
   m_search_text = search_text;
@@ -258,7 +255,6 @@ Gtk::Widget *SearchNotesWidget::make_notebooks_pane()
   Gtk::ScrolledWindow *sw = new Gtk::ScrolledWindow();
   sw->property_hscrollbar_policy() = Gtk::POLICY_AUTOMATIC;
   sw->property_vscrollbar_policy() = Gtk::POLICY_AUTOMATIC;
-  sw->set_shadow_type(Gtk::SHADOW_IN);
   sw->add(*m_notebooksTree);
   sw->show();
 
@@ -325,8 +321,8 @@ void SearchNotesWidget::notebook_text_cell_data_func(Gtk::CellRenderer * rendere
 
   if(dynamic_pointer_cast<notebooks::SpecialNotebook>(notebook)) {
     // Bold the "Special" Notebooks
-    crt->property_markup() = str(boost::format("<span weight=\"bold\">%1%</span>")
-                                 % notebook->get_name());
+    crt->property_markup() = Glib::ustring::compose("<span weight=\"bold\">%1</span>",
+                                 notebook->get_name());
   }
   else {
     crt->property_text() = notebook->get_name();
@@ -519,7 +515,7 @@ void SearchNotesWidget::update_results()
 
   FOREACH(const NoteBase::Ptr & note_iter, m_manager.get_notes()) {
     Note::Ptr note(static_pointer_cast<Note>(note_iter));
-    std::string nice_date = utils::get_pretty_print_date(note->change_date(), true);
+    Glib::ustring nice_date = utils::get_pretty_print_date(note->change_date(), true);
 
     Gtk::TreeIter iter = m_store->append();
     iter->set_value(0, get_note_icon());  /* icon */
@@ -604,8 +600,8 @@ bool SearchNotesWidget::filter_notes(const Gtk::TreeIter & iter)
 
 int SearchNotesWidget::compare_titles(const Gtk::TreeIter & a, const Gtk::TreeIter & b)
 {
-  Glib::ustring title_a = std::string((*a)[m_column_types.title]);
-  Glib::ustring title_b = std::string((*b)[m_column_types.title]);
+  Glib::ustring title_a = (*a)[m_column_types.title];
+  Glib::ustring title_b = (*b)[m_column_types.title];
 
   if(title_a.empty() || title_b.empty()) {
     return -1;
@@ -950,6 +946,9 @@ bool SearchNotesWidget::on_treeview_button_released(GdkEventButton *ev)
 
 bool SearchNotesWidget::on_treeview_key_pressed(GdkEventKey * ev)
 {
+  // create context menu here, so that we have shortcuts and they work
+  Gtk::Menu *menu = get_note_list_context_menu();
+
   switch(ev->keyval) {
   case GDK_KEY_Delete:
     delete_selected_notes();
@@ -959,7 +958,6 @@ bool SearchNotesWidget::on_treeview_key_pressed(GdkEventKey * ev)
     // Pop up the context menu if a note is selected
     Note::List selected_notes = get_selected_notes();
     if(!selected_notes.empty()) {
-      Gtk::Menu *menu = get_note_list_context_menu();
       popup_context_menu_at_location(menu, 0, 0);
     }
     break;
@@ -1083,13 +1081,12 @@ void SearchNotesWidget::matches_column_data_func(Gtk::CellRenderer * cell,
     return;
   }
 
-  std::string match_str = "";
+  Glib::ustring match_str = "";
 
   Note::Ptr note = (*iter)[m_column_types.note];
   if(note) {
     int match_count;
-    std::map<std::string, int>::const_iterator miter
-      = m_current_matches.find(note->uri());
+    auto miter = m_current_matches.find(note->uri());
     if(miter != m_current_matches.end()) {
       match_count = miter->second;
       if(match_count == INT_MAX) {
@@ -1098,8 +1095,8 @@ void SearchNotesWidget::matches_column_data_func(Gtk::CellRenderer * cell,
       }
       else if(match_count > 0) {
         const char * fmt;
-        fmt = ngettext("%1% match", "%1% matches", match_count);
-        match_str = str(boost::format(fmt) % match_count);
+        fmt = ngettext("%1 match", "%1 matches", match_count);
+        match_str = Glib::ustring::compose(fmt, match_count);
       }
     }
   }
@@ -1118,8 +1115,8 @@ int SearchNotesWidget::compare_search_hits(const Gtk::TreeIter & a, const Gtk::T
 
   int matches_a;
   int matches_b;
-  std::map<std::string, int>::iterator iter_a = m_current_matches.find(note_a->uri());
-  std::map<std::string, int>::iterator iter_b = m_current_matches.find(note_b->uri());
+  auto iter_a = m_current_matches.find(note_a->uri());
+  auto iter_b = m_current_matches.find(note_b->uri());
   bool has_matches_a = (iter_a != m_current_matches.end());
   bool has_matches_b = (iter_b != m_current_matches.end());
 
@@ -1168,7 +1165,7 @@ void SearchNotesWidget::on_note_added(const NoteBase::Ptr & note)
 }
 
 void SearchNotesWidget::on_note_renamed(const NoteBase::Ptr & note,
-                                        const std::string &)
+                                        const Glib::ustring &)
 {
   restore_matches_window();
   rename_note(static_pointer_cast<Note>(note));
@@ -1195,11 +1192,11 @@ void SearchNotesWidget::delete_note(const Note::Ptr & note)
 
 void SearchNotesWidget::add_note(const Note::Ptr & note)
 {
-  std::string nice_date =
+  Glib::ustring nice_date =
     utils::get_pretty_print_date(note->change_date(), true);
   Gtk::TreeIter iter = m_store->append();
   iter->set_value(m_column_types.icon, get_note_icon());
-  iter->set_value(m_column_types.title, std::string(note->get_title()));
+  iter->set_value(m_column_types.title, note->get_title());
   iter->set_value(m_column_types.change_date, nice_date);
   iter->set_value(m_column_types.note, note);
 }
@@ -1211,7 +1208,7 @@ void SearchNotesWidget::rename_note(const Note::Ptr & note)
   for(Gtk::TreeModel::iterator iter = rows.begin();
       rows.end() != iter; iter++) {
     if(note == iter->get_value(m_column_types.note)) {
-      iter->set_value(m_column_types.title, std::string(note->get_title()));
+      iter->set_value(m_column_types.title, note->get_title());
       break;
     }
   }
@@ -1497,7 +1494,7 @@ void SearchNotesWidget::on_sorting_changed()
 
 void SearchNotesWidget::parse_sorting_setting(const Glib::ustring & sorting)
 {
-  std::vector<std::string> tokens;
+  std::vector<Glib::ustring> tokens;
   sharp::string_split(tokens, sorting.lowercase(), ":");
   if(tokens.size() != 2) {
     ERR_OUT(_("Failed to parse setting %s (Value: %s):"), Preferences::SEARCH_SORTING, sorting.c_str());

@@ -4,10 +4,10 @@ _Name=Statistics
 _Description=Show various statistics about notes.
 _Authors=Aurimas Černius
 Category=Tools
-Version=0.3
+Version=0.4
 DefaultEnabled=false
 Module=libstatistics
-LibgnoteRelease=3.22
-LibgnoteVersionInfo=1:0:1
+LibgnoteRelease=3.28
+LibgnoteVersionInfo=0:0:0
 [Actions]
 actions_void=statistics-show

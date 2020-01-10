@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Export notes to HTML</desc>
+    <desc>Exportera anteckningar till HTML</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -18,11 +18,23 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
   <title>Exportera till HTML</title>
-    <p>When the <app>Export to HTML</app> plugin is installed, the command <gui>Export to HTML</gui> is present in the <gui>Actions</gui> menu.</p>
-    <p>To create an HTML document from one or more notes, select this command. You will see a dialog that lets you choose where to save the HTML file. Enter the destination filename and click <gui>Save</gui> to save the file, or <gui>Cancel</gui> to abort.</p>
-    <p>To export any notes linked to by the current note, select the <gui>Export Linked Notes</gui> check box.</p>
+    <p>När insticksmodulen <app>Exportera till HTML</app> är installerad visas kommandot <gui>Exportera till HTML</gui> i menyn <gui>Åtgärder</gui>.</p>
+    <p>Välj detta kommando för att skapa ett HTML-dokument från en eller flera anteckningar. Du kommer att se en dialog som låter dig välja var HTML-filen ska sparas. Ange filnamnsdestinationen och klicka på <gui>Spara</gui> för att spara filen eller <gui>Avbryt</gui> för avbryta.</p>
+    <p>För att exportera anteckningar till vilken en länk finns i den aktuella anteckningen, välj kryssrutan <gui>Exportera länkade anteckningar</gui>.</p>
 
 </page>

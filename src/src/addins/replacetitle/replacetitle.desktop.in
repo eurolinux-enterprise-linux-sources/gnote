@@ -7,7 +7,7 @@ Category=Tools
 Version=0.3
 DefaultEnabled=true
 Module=libreplacetitle
-LibgnoteRelease=3.22
-LibgnoteVersionInfo=1:0:1
+LibgnoteRelease=3.28
+LibgnoteVersionInfo=0:0:0
 [Actions]
 actions_void=replacetitle-replace

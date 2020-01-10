@@ -7,8 +7,8 @@ Category=Tools
 Version=0.2
 DefaultEnabled=false
 Module=libreadonly
-LibgnoteRelease=3.22
-LibgnoteVersionInfo=1:0:1
+LibgnoteRelease=3.28
+LibgnoteVersionInfo=0:0:0
 [Actions]
 actions_bool=readonly-toggle
 non_modifying_actions=readonly-toggle

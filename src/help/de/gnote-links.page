@@ -55,7 +55,7 @@
 <note style="advanced">
     <p>Beim Ändern des Titels einer Notiz werden auch die entsprechenden Verknüpfungen in anderen Notizen aktualisiert. Dies verhindert, das ungültige Verknüpfungen entstehen, wenn eine Notiz umbenannt wird.</p></note>
 
-  <section><title>Backlinks-Erweiterung</title>
+  <section id="backlinks"><title>Backlinks-Erweiterung</title>
     <p>Wenn die Erweiterung <app>Backlinks</app> installiert ist, wird der Eintrag <gui>Was verweist hierauf?</gui> im <gui>Aktionen</gui>-Menü angezeigt. Ein Untermenü zeigt alle Notizen, die einen Verweis auf die aktuelle Notiz enthalten.</p>
   </section>
 

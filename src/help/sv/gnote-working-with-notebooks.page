@@ -4,7 +4,7 @@
 
   <info>
     <link type="guide" xref="index#organizing-notes"/>
-    <desc>Organizing your notes</desc>
+    <desc>Organisera dina anteckningar</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -19,93 +19,105 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Working With Notebooks</title>
-    <p>Notebooks let you group related notes together. You can add a note to a notebook in the main window or in the note editing view.</p>
+  <title>Arbeta med anteckningsblock</title>
+    <p>Anteckningsblock låter dig gruppera relaterade anteckningar. Du kan lägga till en anteckning till ett anteckningsblock i huvudfönstret eller i redigeringsvyn för anteckningar.</p>
 
-    <section id="creating-notebooks"><title>Skapa anteckningsböcker</title>
-      <p>To create a new notebook:</p>
+    <section id="creating-notebooks"><title>Skapa anteckningsblock</title>
+      <p>För att skapa en nytt anteckningsblock:</p>
       <steps>
         <item>
-          <p>Click on the application menu and select <gui>New Notebook</gui>.</p>
+          <p>Klicka på programmenyn välj sedan <gui>Nytt anteckningsblock</gui>.</p>
         </item>
         <item>
           <p>Ange ett namn för det nya anteckningsblocket.</p>
         </item>
       </steps>
-      <p>Alternatively:</p>
+      <p>Alternativ:</p>
       <steps>
         <item>
-          <p>In the note overview, right click in the left hand pane and choose <gui>New...</gui>.</p>
+          <p>I översikten för anteckningar, högerklicka i vänstra panelen och välj <gui>Nytt...</gui>.</p>
         </item>
         <item>
           <p>Ange ett namn för det nya anteckningsblocket.</p>
         </item>
       </steps>
       <figure>
-        <title>New Notebook from context menu</title>
+        <title>Nytt anteckningsblock från sammanhangsmeny</title>
         <media type="image" src="figures/add-notebook-search.png" mime="image/png" style="right">
-        <p>New Notebook</p>
+        <p>Nytt anteckningsblock</p>
       </media>
       </figure>  
     </section>
 
     <section id="adding-notes-to-a-notebook"><title>Lägg till anteckningar till ett anteckningsblock</title>
-      <p>You can add a note to a notebook from the main window or directly within a note.</p>
-      <p>To add a note to a notebook from the main window, do one of the following:</p>
+      <p>Du kan lägga till en anteckning till ett anteckningsblock från huvudfönstret eller direkt från en anteckning.</p>
+      <p>För att öppna en anteckning från huvudfönstret, gör ett av följande:</p>
       <list>
-        <item><p>Drag the note(s) onto a notebook on the left using the mouse.</p></item>
-        <item><p>Click on a notebook, right-click in notes list and select <gui>New</gui> from the context menu. A new note will be created and added to the notebook.</p></item>
+        <item><p>Dra anteckningen (eller flera) till ett anteckningsblock på vänster sida med hjälp av musen.</p></item>
+        <item><p>Klicka på ett anteckningsblock, högerklicka i anteckningslistan och välj <gui>Ny</gui> från sammanhangsmenyn. En ny anteckning kommer att skapas och läggas till i anteckningsblocket.</p></item>
       </list>
-      <p>As you type a note, you can add the note directly to an existing notebook using the <guiseq><gui>Actions</gui><gui>Notebook</gui></guiseq> menu.</p>
+      <p>När du skriver en anteckning kan du lägga till anteckningen direkt till ett befintligt anteckningsblock med menyn <guiseq><gui>Åtgärder</gui><gui>Anteckningsblock</gui></guiseq>.</p>
       <figure>
         <title>Lägg till anteckningar till ett anteckningsblock</title>
-        <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>Add to Notebook.</p></media>
+        <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>Lägg till i anteckningsblock.</p></media>
       </figure>
-      <p>To remove a note from a notebook, use one of the following:</p>
+      <p>För att ta bort ett anteckningsblock, använd en av följande:</p>
       <list>
-        <item><p>Move the note to <gui>Unfiled Notes</gui> in the main window.</p></item>
-        <item><p>Select the <gui>No Notebook</gui> option from the menu which appears when you press the <guiseq><gui>Actions</gui><gui>Notebook</gui></guiseq> in an open note.</p></item>
+        <item><p>Flytta anteckningen till <gui>Ej arkiverade anteckningar</gui> i huvudfönstret.</p></item>
+        <item><p>Markera alternativet <gui>Inget anteckningsblock</gui> från menyn som visas när du trycker ned <guiseq><gui>Åtgärder</gui><gui>Anteckningsblock</gui></guiseq> i en öppen anteckning.</p></item>
       </list>
     </section>
 
-    <section id="creating-notebook-templates"><title>Creating a Template</title>
-      <p>After you create a notebook, you can create a template for new notes that you create in that notebook.</p>
+    <section id="creating-notebook-templates"><title>Skapa en mall</title>
+      <p>Efter att du skapat ett anteckningsblock kan du skapa en mall för varje ny anteckning som du skapar i det anteckningsblocket.</p>
       <steps>
-        <item><p>In the main window, right click on a notebook and choose <gui>Open Template Note</gui>.</p>
+        <item><p>I huvudfönstret, högerklicka på ett anteckningsblock som du har skapat och välj <gui>Öppna anteckningsmall</gui>.</p>
         </item>
-        <item><p>This will open a new template note. Any text typed in this note will appear in all notes created in this notebook.</p></item>
+        <item><p>Detta kommer att öppna en ny anteckningsmall. Text skriven i denna anteckning kommer att visas i alla anteckningar skapade i detta anteckningsblock.</p></item>
       </steps>
       <figure>
-        <title>Creating a Template</title>
-        <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Note Template.</p></media>
+        <title>Skapa en mall</title>
+        <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Anteckningsmall.</p></media>
       </figure>
-      <p>For more, see <link xref="gnote-template-notes"/>.</p>
+      <p>För mer, se <link xref="gnote-template-notes"/>.</p>
     </section>
 
   <section id="deleting-a-notebook"><title>Ta bort ett anteckningsblock</title>
-    <p>Deleting a notebook will not delete any of the notes which are currently inside the notebook. After you delete a notebook, its notes will not be associated with any notebook and will appear in <gui>Unfiled Notes</gui> in the main window.</p>
-    <p>To delete a notebook, go to the main window and do one of the following:</p>
+    <p>Borttagning av ett anteckningsblock kommer inte att ta bort några av de anteckningar som anteckningsblocket innehåller. Efter borttagning av ett anteckningsblock kommer inte anteckningarna att associeras med något anteckningsblock och kan ses genom att markera <gui>Ej arkiverade anteckningar</gui>.</p>
+    <p>För att ta bort ett anteckningsblock, gå till huvudfönstret och utför en av följande:</p>
     <list>
-      <item><p>Right click on a notebook and choose <gui>Delete Notebook</gui>.</p></item>
-      <item><p>Remove all notes from a notebook. The notebook will be automatically removed the next time <app>Gnote</app> restarts.</p></item>
+      <item><p>Högerklicka på ett anteckningsblock och välj <gui>Ta bort anteckningsblock</gui>.</p></item>
+      <item><p>Ta bort alla anteckningar från ett anteckningsblock. Anteckningsblocket kommer automatiskt att tas bort nästa gång <app>Gnote</app> startar om.</p></item>
     </list>
     <figure>
-      <title>Deleting notes from main window</title>
+      <title>Ta bort anteckningar från huvudfönstret</title>
         <media type="image" src="figures/delete-notebook.png" mime="image/png" style="right">
-          <p>Delete Notebook.</p>
+          <p>Ta bort anteckningsblock.</p>
         </media>
     </figure>
   </section>
 
-  <section id="special-notebooks"><title>Special Notebooks</title>
-    <p><app>Gnote</app> has several special notebooks:</p>
+  <section id="special-notebooks"><title>Speciella anteckningsblock</title>
+    <p><app>Gnote</app> har flera speciella anteckningsblock:</p>
     <list>
-      <item><p><gui>Active</gui>: notes that have been opened in the current <app>Gnote</app> session</p></item>
-      <item><p><gui>All</gui>: all notes except templates</p></item>
-      <item><p><gui>Important</gui>: notes marked as important</p></item>
-      <item><p><gui>Unfiled</gui>: all notes that are not in a user-created notebook</p></item>
+      <item><p><gui>Aktiva</gui>: anteckningar som har öppnats i nuvarande <app>Gnote</app>-session</p></item>
+      <item><p><gui>Alla</gui>: alla anteckningar förutom mallar</p></item>
+      <item><p><gui>Viktiga</gui>: anteckningar markerade som viktiga</p></item>
+      <item><p><gui>Ej arkiverade</gui>: alla anteckningar som inte finns i ett användarskapat anteckningsblock</p></item>
     </list>
   </section>
 

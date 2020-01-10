@@ -34,12 +34,7 @@
       docversion=""     enclosing document
       date="2011-03-08" revision date
     -->
-    <license href="http://www.gnu.org/licenses/fdl-1.1.html"><p>
-      This <em>help topic</em> is licensed under the
-      <link href="http://www.gnu.org/licenses/fdl-1.1.html">
-        GNU Free Documentation License, Version 1.1</link> (GFDL).
-      It means that you are free to copy, distribute and/or modify this document, under some conditions.
-    </p>
+    <license href="http://www.gnu.org/licenses/fdl-1.1.html"><p>Denna <em>hjälp</em> är licensierad under <link href="http://www.gnu.org/licenses/fdl-1.1.html"> GNU Free Documentation License, Version 1.1</link> (GFDL). Det innebär att du är fri att kopiera, distribuera och/eller modifiera detta dokument under vissa villkor.</p>
     </license>
 
     <credit type="author copyright">
@@ -71,129 +66,109 @@
     <link type="guide" xref="editing-notes#note-content"/>
     <link type="topic" xref="addins-preferences"/>
     <link type="topic" xref="searching-notes"/>
-    <desc>Navigate long structured notes</desc>
+    <desc>Navigera i långa strukturerade anteckningar</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
 
-<title>Adding a Table of Contents</title>
+<title>Lägga till en innehållsförteckning</title>
 
-<desc><em>Navigate long structured notes</em></desc>
+<desc><em>Navigera långa strukturerade anteckningar</em></desc>
 
-<note><p>
-  This is a plugin to <app>Gnotes</app>.
-  When this plugin is installed,
-  there is a <gui>Table of Contents</gui> entry in the <gui>actions</gui> menu.
-  See  <link xref="addins-preferences"/> to learn how to activate a plugin.
-</p></note>
+<note><p>Detta är en insticksmodul för <app>Gnotes</app>. När detta instick är installerat hittas en post <gui>Innehållsförteckning</gui> i menyn <gui>åtgärder</gui>. Se <link xref="addins-preferences"/> för att lära dig hur man aktiverar en insticksmodul.</p></note>
 
 
-<section id="nutshell"><title>In a nutshell</title>
+<section id="nutshell"><title>Sammanfattningsvis</title>
 
 <list type="numbered">
   <item>
-    <p>A heading is a full line of text, formatted with <gui>Bold+Huge</gui> or <gui>Bold+Large</gui>.</p>
+    <p>En rubrik är en helrad med text, formaterad med <gui>Fet+enorm</gui> eller <gui>Fet+stor</gui>.</p>
   </item>
   <item>
-    <p>Set headings with
-       <keyseq><key>Ctrl</key><key>1</key></keyseq> or <keyseq><key>Ctrl</key><key>2</key></keyseq>.
-    </p>
+    <p>Ange rubriker med <keyseq><key>Ctrl</key><key>1</key></keyseq> eller <keyseq><key>Ctrl</key><key>2</key></keyseq>.</p>
   </item>
   <item>
-    <p>Open the table of contents with <keyseq><key>Ctrl</key><key>Alt</key><key>1</key></keyseq>, and jump to any heading.</p>
+    <p>Öppna innehållsförteckningen med <keyseq><key>Ctrl</key><key>Alt</key><key>1</key></keyseq>, och hoppa till valfri rubrik.</p>
   </item>
 </list>
 
 </section>
 
-<section id="screenshot"><title>Screenshot</title>
+<section id="screenshot"><title>Skärmdump</title>
     <figure>
-      <title>A structured note with its table of contents</title>
+      <title>En strukturerad anteckning med dess innehållsförteckning</title>
         <media type="image" src="figures/gnote-addin-table-of-contents.png" mime="image/png">
         </media>
     </figure>
 </section>
 
 
-<section id="navigating"><title>Navigating through long notes</title>
+<section id="navigating"><title>Navigera genom långa anteckningar</title>
 
-<p>
-A long note may become difficult to navigate.
-It is then natural to structure the note by
-marking sections and subsections with headings.
-</p>
+<p>En lång anteckning kan vara svår att navigera. Det är då naturligt att strukturera anteckningen genom att markera sektioner och undersektioner med rubriker.</p>
 
-<p>
-This plugin makes it easy to navigate through long structured notes.
-Once you have set headings in your note,
-the table of contents of the note will show in actions menu.
-Then you can jump directly from the menu to any heading.
-</p>
+<p>Denna insticksmodul gör det enkelt att navigera genom långa strukturerade anteckningar. När du väl har angett rubriker i din anteckning kommer innehållsförteckningen för den att visas i menyn för åtgärder. Då kan du sedan hoppa direkt från menyn till valfri rubrik.</p>
 
 </section>
 
 
-<section id="setheadings"><title>Structuring your notes with headings</title>
+<section id="setheadings"><title>Strukturera dina anteckningar med rubriker</title>
 
-<p>
-A heading is simply a complete line with specific text formatting:
-</p>
+<p>En rubrik är helt enkelt en helrad med specifik textformatering:</p>
 <list>
-  <item><p>Level 1 headings, for sections, are lines formatted with a <gui>Bold+Huge</gui> font.</p></item>
-  <item><p>Level 2 headings, for subsections, are lines formatted with a <gui>Bold+Large</gui> font.</p></item>
+  <item><p>Nivå 1-rubriker för sektioner, är rader formaterade med typsnittet <gui>Fet+enorm</gui>.</p></item>
+  <item><p>Nivå 2-rubriker för undersektioner, är rader formaterade med typsnittet <gui>Fet+stor</gui>.</p></item>
 </list>
 
 
-<p>To format a heading line, either:</p>
+<p>För att formatera en rubrikrad, antingen:</p>
 
 <list>
   <item>
-    <p>Use the commands <gui>Heading 1</gui> and <gui>Heading 2</gui>
-       in the <guiseq><gui>Actions</gui><gui>Table of Contents</gui></guiseq> menu.</p>
+    <p>Använd kommandona <gui>Rubrik 1</gui> och <gui>Rubrik 2</gui> i menyn <guiseq><gui>Åtgärder</gui><gui>Innehållsförteckning</gui></guiseq>.</p>
   </item>
 
   <item>
-    <p>Use the keyboard shortcuts <keyseq><key>Ctrl</key><key>1</key></keyseq>
-    and <keyseq><key>Ctrl</key><key>2</key></keyseq> for headings of level 1 and 2.</p>
+    <p>Använd tangentbordsgenvägarna <keyseq><key>Ctrl</key><key>1</key></keyseq> och <keyseq><key>Ctrl</key><key>2</key></keyseq> för rubriker på nivå 1 och 2.</p>
  </item>
 </list>
 
-<note><p>
-  These commands apply the formatting to the complete line.
-  You don't need to select it first.
-  It is enough if the cursor is on the line.
-</p><p>
-  Alternatively, with the cursor on a new line, activate the heading command and then enter the heading title.
-</p></note>
+<note><p>Dessa kommandon tillämpar formateringen på hela raden. Du behöver inte markera den först. Det räcker med om markören är på raden.</p><p>Alternativt, med markören på en ny rad, aktivera rubrikkommandot och ange sedan rubriktiteln.</p></note>
 
-<p>You can even use the normal formatting commands from the <gui>Text</gui> menu:
-    <gui>Bold</gui>, <gui>Large</gui> and <gui>Huge</gui>, and their respective keyboard shortcuts.
-    If, for example, your line is already formatted as <gui>Huge</gui>, then you just need to make it also <gui>Bold</gui> to turn it into a heading 1.
-    See <link xref="editing-notes"/> to learn how to set text styles.
-</p>
+<p>Du kan även använda de vanliga formateringskommandona från menyn <gui>Text</gui>: <gui>Fet</gui>, <gui>Stor</gui> och <gui>Enorm</gui> samt deras respektive tangentbordsgenvägar. Om, till exempel, din rad redan är formaterad som <gui>Enorm</gui> behöver du bara göra den <gui>Fet</gui> också för att göra den till en nivå 1-rubrik. Se <link xref="editing-notes"/> för att lära dig hur man anger textstilar.</p>
 
 </section>
 
 
-<section id="showtable"><title>Showing the table of contents</title>
+<section id="showtable"><title>Visa innehållsförteckningen</title>
 
-<p>You can access the table of contents either:</p>
+<p>Du kan komma åt innehållsförteckningen antingen:</p>
 <list>
-<item><p>In the menu <guiseq><gui>Actions</gui><gui>Table of Contents</gui></guiseq>.</p></item>
-<item><p>In <guiseq><gui>context menu</gui><gui>Table of Contents</gui></guiseq> (right-click on the note window).</p></item>
-<item><p>In a <gui>popup menu</gui>, with the keyboard shortcut <keyseq><key>Ctrl</key><key>Alt</key><key>1</key></keyseq>.</p></item>
-<p>Then you can navigate up and down with the arrow keys and jump to the selected heading with <key>enter</key>. Or just click with your mouse on the heading to jump to.</p>
+<item><p>I menyn <guiseq><gui>Åtgärder</gui><gui>Innehållsförteckning</gui></guiseq>.</p></item>
+<item><p>I <guiseq><gui>sammanhangsmenyn</gui><gui>Innehållsförteckning</gui></guiseq> (högerklicka på anteckningsfönstret).</p></item>
+<item><p>I en <gui>poppuppmeny</gui> med tangentbordsgenvägen <keyseq><key>Ctrl</key><key>Alt</key><key>1</key></keyseq>.</p></item>
+<p>Sedan kan du navigera upp och ned med piltangenterna och hoppa till markerad rubrik med <key>retur</key>. Eller, bara klicka med din mus på rubrik att hoppa till.</p>
 </list>
 
 </section>
 
 
-<section id="troubleshooting"><title>Troubleshooting</title>
+<section id="troubleshooting"><title>Felsökning</title>
 <terms>
-  <item><title><em style="strong">One heading does not show in the table of contents</em></title><p>
-    There might be some characters in the heading line, such as whitespace characters, which are not formatted as a heading. Make sure that <em>the whole line</em> is formatted as a heading. See <link xref="#setheadings"/>.</p>
+  <item><title><em style="strong">En rubrik visas inte i innehållsförteckningen</em></title><p>Det kan finnas en del tecken på rubrikraden, såsom blanktecken vilka inte formateras som en rubrik. Försäkra dig om att <em>hela raden</em> är formaterad som en rubrik. Se <link xref="#setheadings"/>.</p>
   </item>
-  <item><title><em style="strong">There is an empty line in the table of contents</em></title><p>
-    An empty line, possibly including whitespaces, is formatted as a heading. Jump to this line and delete the area.</p>
+  <item><title><em style="strong">Det finns en tom rad i innehållsförteckningen</em></title><p>En tom rad, möjligen med blanktecken, är formaterad som en rubrik. Hoppa till denna rad och ta bort området.</p>
   </item>
 
   <item><title/><p>

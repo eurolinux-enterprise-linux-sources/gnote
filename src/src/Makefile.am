@@ -23,51 +23,36 @@ GNOTE_LIBS = libgnote.la $(LIBGNOTE_LIBS)
 
 lib_LTLIBRARIES = libgnote.la
 bin_PROGRAMS = gnote
-check_PROGRAMS = trietest stringtest notetest dttest uritest filestest \
-	fileinfotest xmlreadertest notemanagertest gnotesyncclienttest
-TESTS = trietest stringtest notetest dttest uritest filestest \
-	fileinfotest xmlreadertest notemanagertest gnotesyncclienttest
 
+if HAVE_UNITTESTCPP
+check_PROGRAMS = gnoteunittests
+TESTS = gnoteunittests
 
-trietest_SOURCES = test/trietest.cpp
-trietest_LDADD = libgnote.la @LIBGLIBMM_LIBS@
-
-dttest_SOURCES = test/dttest.cpp
-dttest_LDADD = libgnote.la @LIBGLIBMM_LIBS@
-
-stringtest_SOURCES = test/stringtest.cpp
-stringtest_LDADD = libgnote.la @LIBGLIBMM_LIBS@
-
-filestest_SOURCES = test/filestest.cpp
-filestest_LDADD = libgnote.la @LIBGLIBMM_LIBS@ -lgiomm-2.4
-
-fileinfotest_SOURCES = test/fileinfotest.cpp
-fileinfotest_LDADD = libgnote.la @LIBGLIBMM_LIBS@ -lgiomm-2.4
-
-uritest_SOURCES = test/uritest.cpp
-uritest_LDADD = libgnote.la @LIBGLIBMM_LIBS@
-
-xmlreadertest_SOURCES = test/xmlreadertest.cpp
-xmlreadertest_LDADD = libgnote.la @LIBXML_LIBS@
-
-notetest_SOURCES = test/notetest.cpp
-notetest_LDADD =  $(GNOTE_LIBS) -lX11
-
-notemanagertest_SOURCES = test/notemanagertest.cpp \
+gnoteunittests_SOURCES = \
+	synchronization/gnotesyncclient.cpp synchronization/gnotesyncclient.hpp \
+	synchronization/silentui.cpp synchronization/silentui.hpp \
+	synchronization/syncmanager.cpp synchronization/syncmanager.hpp \
+	test/runner.cpp \
 	test/testnote.cpp test/testnote.hpp \
 	test/testnotemanager.cpp test/testnotemanager.hpp \
+	test/testsyncaddin.cpp test/testsyncaddin.hpp \
+	test/testsyncclient.cpp test/testsyncclient.hpp \
+	test/testsyncmanager.cpp test/testsyncmanager.hpp \
 	test/testtagmanager.cpp test/testtagmanager.hpp \
+	test/unit/datetimeutests.cpp \
+	test/unit/filesutests.cpp \
+	test/unit/fileinfoutests.cpp \
+	test/unit/gnotesyncclientutests.cpp \
+	test/unit/noteutests.cpp \
+	test/unit/notemanagerutests.cpp \
+	test/unit/stringutests.cpp \
+	test/unit/syncmanagerutests.cpp \
+	test/unit/trieutests.cpp \
+	test/unit/uriutests.cpp \
+	test/unit/xmlreaderutests.cpp \
 	$(NULL)
-notemanagertest_LDADD = $(GNOTE_LIBS)
-
-gnotesyncclienttest_SOURCES = test/gnotesyncclienttest.cpp \
-	test/testnote.cpp test/testnote.hpp \
-	test/testnotemanager.cpp test/testnotemanager.hpp \
-	test/testsyncclient.hpp test/testsyncclient.cpp \
-	test/testtagmanager.cpp test/testtagmanager.hpp \
-	synchronization/gnotesyncclient.hpp synchronization/gnotesyncclient.cpp \
-	$(NULL)
-gnotesyncclienttest_LDADD = $(GNOTE_LIBS)
+gnoteunittests_LDADD = libgnote.la @UNITTESTCPP_LIBS@
+endif
 
 
 SUBDIRS += dbus
@@ -127,6 +112,7 @@ libgnote_la_SOURCES = \
 	mainwindow.hpp mainwindow.cpp \
 	mainwindowaction.hpp mainwindowaction.cpp \
 	mainwindowembeds.hpp mainwindowembeds.cpp \
+	noncopyable.hpp \
 	noteaddin.hpp noteaddin.cpp \
 	notebase.hpp notebase.cpp \
 	notebuffer.hpp notebuffer.cpp \

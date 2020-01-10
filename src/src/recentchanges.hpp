@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2016 Aurimas Cernius
+ * Copyright (C) 2010-2017 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -24,8 +24,6 @@
 #ifndef __NOTE_RECENT_CHANGES_HPP_
 #define __NOTE_RECENT_CHANGES_HPP_
 
-#include <string>
-
 #include <gtkmm/alignment.h>
 #include <gtkmm/applicationwindow.h>
 #include <gtkmm/grid.h>
@@ -47,7 +45,7 @@ public:
   NoteRecentChanges(NoteManager& m);
   virtual ~NoteRecentChanges();
   virtual void show_search_bar(bool grab_focus = true) override;
-  virtual void set_search_text(const std::string & value) override;
+  virtual void set_search_text(const Glib::ustring & value) override;
   virtual void new_note() override;
   virtual void present_search() override;
   virtual void close_window() override;
@@ -82,7 +80,7 @@ private:
   void on_entry_changed();
   void on_entry_activated();
   void entry_changed_timeout();
-  std::string get_search_text();
+  Glib::ustring get_search_text();
   void update_toolbar(EmbeddableWidget & widget);
   void on_all_notes_button_clicked();
   void on_show_window_menu();
@@ -90,7 +88,7 @@ private:
   void on_find_next_button_clicked();
   void on_find_prev_button_clicked();
   Gtk::PopoverMenu *make_window_menu(Gtk::Button *button, const std::vector<Gtk::Widget*> & items);
-  void on_embedded_name_changed(const std::string & name);
+  void on_embedded_name_changed(const Glib::ustring & name);
   void on_settings_changed(const Glib::ustring & key);
   bool on_notes_widget_key_press(GdkEventKey*);
   void on_close_window(const Glib::VariantBase&);

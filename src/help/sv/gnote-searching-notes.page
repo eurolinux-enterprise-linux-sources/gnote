@@ -4,7 +4,7 @@
   <info>
     <link type="guide" xref="index#managing-notes"/>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
-    <desc>Searching notes</desc>
+    <desc>Söka i anteckningar</desc>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
@@ -18,19 +18,31 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Exploring Notes</title>
+  <title>Utforska anteckningar</title>
 
-  <p>The main <app>Gnote</app> window shows an overview of all your notes. By default the window will display notes in the order in which they were last modified. Click the <gui>Note</gui> or <gui>Last Changed</gui> column headings to change the sort order. Click a column heading a second time to toggle between ascending and descending order.</p>
-  <p>You can find specific notes by clicking search button and entering text in the search field that appears. The note list will automatically update to include only the notes which have matching text. If notes list has focus, you can simply type search text there, search will be automatically activated.</p>
-  <p>To open a note, do any of the following:</p>
+  <p>Huvudfönstret i <app>Gnote</app> visar en överblick av alla dina anteckningar. Som standard visar fönstret anteckningarna i den ordning som de blev ändrade. Klicka på <gui>Anteckning</gui> eller <gui>Senast ändrad</gui> för att ändra sorteringsordningen. Klicka på kolumnhuvudet en andra gång för att växla mellan stigande eller fallande ordning.</p>
+  <p>Du kan söka efter specifika anteckningar genom att klicka på sökknappen och skriva in text i sökfältet som visas. Listan över anteckningar kommer automatiskt att uppdateras för att lista endast de anteckningar som innehåller den matchande texten. Om anteckningslistan har fokus så kan du enkelt skriva in söktext här, sök kommer automatiskt att aktiveras.</p>
+  <p>Gör ett av följande för att öppna en anteckning:</p>
   <list>
     <item><p>Dubbelklicka på en anteckning.</p></item>
-    <item><p>Right-click in the list of notes and select <gui>Open</gui> from the context menu. This will open all selected notes, each in its own window.</p></item>
-    <item><p>Right-click in the list of notes and select <gui>Open in New Window</gui> from the context menu. This will open each selected note in a new window, leaving the original window as is.</p></item>
-    <item><p>Select one or more notes in a list and press <keyseq><key>Ctrl</key><key>O</key></keyseq>.</p></item>
-    <item><p>If the status icon is enabled, click it and select a note from the menu that appears. This menu is limited to a certain number of notes and includes pinned and recently updated notes.</p></item>
+    <item><p>Högerklicka i listan över anteckningar och markera <gui>Öppna</gui> från sammanhangsmenyn. Detta kommer att öppna alla markerade anteckningar, var och en i dess eget fönster.</p></item>
+    <item><p>Högerklicka i listan över anteckningar och markera <gui>Öppna i nytt fönster</gui> från sammanhangsmenyn. Detta kommer att öppna alla markerade anteckningar i ett nytt fönster och lämna ursprungsfönstret som det var.</p></item>
+    <item><p>Markera en eller flera anteckningar i en lista och tryck ned <keyseq><key>Ctrl</key><key>O</key></keyseq>.</p></item>
+    <item><p>Om statusikonen är aktiverad, klicka på den och välj en anteckning från menyn som visas. Denna meny är begränsad till ett speciellt antal anteckningar och inkluderar fästade och nyligen uppdaterade anteckningar.</p></item>
   </list>
 
 </page>

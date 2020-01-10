@@ -4,7 +4,7 @@
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
     <link type="topic" xref="addins-preferences"/>
-    <desc>Insert current time</desc>
+    <desc>Infoga aktuell tid</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -19,10 +19,22 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Insert Timestamp Add-in</title>
+  <title>Tillägget Infoga tidsstämpel</title>
     
-    <p>When the <gui>Insert Timestamp</gui> plugin is installed, the <gui>Actions</gui> menu will include a <gui>Insert Timestamp</gui> command. Select this command to insert the current date and time.</p>
+    <p>När insticket <gui>Infoga tidsstämpel</gui> är installerat kommer menyn <gui>Åtgärder</gui> att inkludera ett <gui>Infoga tidsstämpel</gui>-kommando. Välj detta kommando för att infoga aktuell tid och datum.</p>
 
 </page>

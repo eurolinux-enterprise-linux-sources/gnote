@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2015 Aurimas Cernius
+ * Copyright (C) 2011-2015,2017 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -21,10 +21,8 @@
 
 
 
-#include <boost/bind.hpp>
-
-#include <glibmm.h>
 #include <glibmm/i18n.h>
+#include <glibmm/stringutils.h>
 #include <gtkmm/stock.h>
 #include <gtkmm/separatormenuitem.h>
 #include <gtkmm/treeiter.h>
@@ -106,13 +104,13 @@ namespace gnote {
         return;
       }
 
-      std::string megaPrefix(Tag::SYSTEM_TAG_PREFIX);
+      Glib::ustring megaPrefix(Tag::SYSTEM_TAG_PREFIX);
       megaPrefix += Notebook::NOTEBOOK_TAG_PREFIX;
       if (!tag->is_system() || !Glib::str_has_prefix(tag->name(), megaPrefix)) {
         return;
       }
 
-      std::string notebookName =
+      Glib::ustring notebookName =
         sharp::string_substring(tag->name(), megaPrefix.size());
 
       Notebook::Ptr notebook =
@@ -123,17 +121,17 @@ namespace gnote {
 
 
 
-    void NotebookApplicationAddin::on_tag_removed(const NoteBase::Ptr& note,
-                                                  const std::string& normalizedTagName)
+    void NotebookApplicationAddin::on_tag_removed(const NoteBase::Ptr & note,
+                                                  const Glib::ustring & normalizedTagName)
     {
-      std::string megaPrefix(Tag::SYSTEM_TAG_PREFIX);
+      Glib::ustring megaPrefix(Tag::SYSTEM_TAG_PREFIX);
       megaPrefix += Notebook::NOTEBOOK_TAG_PREFIX;
 
       if (!Glib::str_has_prefix(normalizedTagName, megaPrefix)) {
         return;
       }
 
-      std::string normalizedNotebookName =
+      Glib::ustring normalizedNotebookName =
         sharp::string_substring(normalizedTagName, megaPrefix.size());
 
       Notebook::Ptr notebook =

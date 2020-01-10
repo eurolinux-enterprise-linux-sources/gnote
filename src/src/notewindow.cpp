@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2016 Aurimas Cernius
+ * Copyright (C) 2011-2017 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,14 +22,12 @@
 #include <config.h>
 #endif
 
-#include <boost/bind.hpp>
-#include <boost/format.hpp>
-
 #include <glibmm/i18n.h>
 #include <gtkmm/grid.h>
 #include <gtkmm/image.h>
 #include <gtkmm/imagemenuitem.h>
 #include <gtkmm/stock.h>
+#include <gtkmm/separator.h>
 #include <gtkmm/separatortoolitem.h>
 #include <gtkmm/separatormenuitem.h>
 
@@ -156,12 +154,12 @@ namespace gnote {
   }
 
 
-  std::string NoteWindow::get_name() const
+  Glib::ustring NoteWindow::get_name() const
   {
     return m_name;
   }
 
-  void NoteWindow::set_name(const std::string & name)
+  void NoteWindow::set_name(const Glib::ustring & name)
   {
     m_name = name;
     signal_name_changed(m_name);
@@ -281,7 +279,7 @@ namespace gnote {
     }
   }
 
-  void NoteWindow::perform_search(const std::string & text)
+  void NoteWindow::perform_search(const Glib::ustring & text)
   {
     get_find_handler().perform_search(text);
   }
@@ -308,22 +306,37 @@ namespace gnote {
 
   std::vector<Gtk::Widget*> NoteWindow::get_popover_widgets()
   {
+    std::vector<Gtk::Widget*> widgets;
     std::map<int, Gtk::Widget*> widget_map;
+
+    Gtk::Widget *undo = manage(utils::create_popover_button("win.undo", _("_Undo")));
+    widgets.push_back(undo);
+    Gtk::Widget *redo = manage(utils::create_popover_button("win.redo", _("_Redo")));
+    widgets.push_back(redo);
+    widgets.push_back(NULL);
+
+    Gtk::Widget *link = manage(utils::create_popover_button("win.link", _("_Link to New Note")));
+    widget_map[2000] = link; // place under "note actions", see iactionmanger.hpp
+
     NoteManager & manager = static_cast<NoteManager&>(m_note.manager());
     Note::Ptr note = std::dynamic_pointer_cast<Note>(m_note.shared_from_this());
     FOREACH(NoteAddin *addin, manager.get_addin_manager().get_note_addins(note)) {
       utils::merge_ordered_maps(widget_map, addin->get_actions_popover_widgets());
     }
 
-    std::vector<Gtk::Widget*> widgets;
+    int last_order = 0;
     for(std::map<int, Gtk::Widget*>::iterator iter = widget_map.begin();
         iter != widget_map.end(); ++iter) {
+      // put separator between groups
+      if(iter->first < 10000 && (iter->first / 1000) > last_order && widgets.size() > 0 && widgets.back() != NULL) {
+        widgets.push_back(NULL);
+      }
+      last_order = iter->first / 1000;
       widgets.push_back(iter->second);
     }
 
-    widgets.push_back(utils::create_popover_button("win.important-note", _("Is Important")));
-    widgets.push_back(NULL);
-    widgets.push_back(utils::create_popover_button("win.delete-note", _("_Delete")));
+    widgets.push_back(utils::create_popover_button("win.important-note", _("_Important")));
+    widgets.push_back(utils::create_popover_button("win.delete-note", _("_Delete…")));
 
     return widgets;
   }
@@ -507,7 +520,7 @@ namespace gnote {
   }
 
 
-  void NoteWindow::on_note_tag_removed(const NoteBase::Ptr&, const std::string & tag)
+  void NoteWindow::on_note_tag_removed(const NoteBase::Ptr&, const Glib::ustring & tag)
   {
     if(tag == m_template_tag->normalized_name()) {
       m_template_widget->hide();
@@ -558,8 +571,7 @@ namespace gnote {
 
   void NoteWindow::open_help_activate()
   {
-    utils::show_help("gnote", "editing-notes", get_screen()->gobj(),
-                     dynamic_cast<Gtk::Window*>(host()));
+    utils::show_help("gnote", "editing-notes", *dynamic_cast<Gtk::Window*>(host()));
   }
 
   void NoteWindow::change_depth_right_handler()
@@ -681,7 +693,7 @@ namespace gnote {
   }
 
 
-  void NoteFindHandler::perform_search(const std::string & txt)
+  void NoteFindHandler::perform_search(const Glib::ustring & txt)
   {
     cleanup_matches();
     if(txt.empty()) {
@@ -820,33 +832,20 @@ namespace gnote {
       m_widget.signal_backgrounded.connect(sigc::mem_fun(*this, &NoteTextMenu::on_widget_backgrounded));
 
       set_position(Gtk::POS_BOTTOM);
-      Gtk::Grid *main_grid = manage(new Gtk::Grid);
-      int main_top = 0;
-
-      Gtk::Grid *grid = manage(utils::create_popover_inner_grid());
-      int top = 0;
-
-      Gtk::Widget *undo = manage(utils::create_popover_button("win.undo", _("_Undo")));
-      grid->attach(*undo, 0, top++, 1, 1);
-
-      Gtk::Widget *redo = manage(utils::create_popover_button("win.redo", _("_Redo")));
-      grid->attach(*redo, 0, top++, 1, 1);
-      main_grid->attach(*grid, 0, main_top++, 1, 1);
+      Gtk::Box *menu_box = manage(new Gtk::Box(Gtk::ORIENTATION_VERTICAL));
 
       // Listen to events so we can sensitize and
       // enable keybinding
       undo_manager.signal_undo_changed().connect(sigc::mem_fun(*this, &NoteTextMenu::undo_changed));
 
       Glib::Quark tag_quark("Tag");
-      Gtk::Widget *link = manage(utils::create_popover_button("win.link", _("_Link")));
-
       Gtk::Widget *bold = create_font_item("win.change-font-bold", _("_Bold"), "b");
       Gtk::Widget *italic = create_font_item("win.change-font-italic", _("_Italic"), "i");
       Gtk::Widget *strikeout = create_font_item("win.change-font-strikeout", _("_Strikeout"), "s");
 
       Gtk::Widget *highlight = manage(utils::create_popover_button("win.change-font-highlight", ""));
       auto label = static_cast<Gtk::Label*>(static_cast<Gtk::Bin*>(highlight)->get_child());
-      Glib::ustring markup = str(boost::format("<span background=\"yellow\">%1%</span>") % _("_Highlight"));
+      Glib::ustring markup = Glib::ustring::compose("<span background=\"yellow\">%1</span>", _("_Highlight"));
       label->set_markup_with_mnemonic(markup);
 
       Gtk::Widget *normal = create_font_size_item(_("_Normal"), NULL, "");
@@ -854,36 +853,34 @@ namespace gnote {
       Gtk::Widget *large = create_font_size_item(_("_Large"), "large", "size:large");
       Gtk::Widget *huge = create_font_size_item(_("Hu_ge"), "x-large", "size:huge");
 
-      grid = manage(utils::create_popover_inner_grid(&top));
-      grid->attach(*link, 0, top++, 1, 1);
-      main_grid->attach(*grid, 0, main_top++, 1, 1);
+      auto box = manage(new Gtk::Box(Gtk::ORIENTATION_VERTICAL));
+      utils::set_common_popover_widget_props(*box);
+      box->set_name("formatting");
+      box->add(*bold);
+      box->add(*italic);
+      box->add(*strikeout);
+      box->add(*highlight);
+      menu_box->add(*box);
+      menu_box->add(*manage(new Gtk::Separator));
 
-      grid = manage(utils::create_popover_inner_grid(&top));
-      grid->set_name("formatting");
-      grid->attach(*bold, 0, top++, 1, 1);
-      grid->attach(*italic, 0, top++, 1, 1);
-      grid->attach(*strikeout, 0, top++, 1, 1);
-      grid->attach(*highlight, 0, top++, 1, 1);
-      main_grid->attach(*grid, 0, main_top++, 1, 1);
+      box = manage(new Gtk::Box(Gtk::ORIENTATION_VERTICAL));
+      utils::set_common_popover_widget_props(*box);
+      box->set_name("font-size");
+      box->add(*small);
+      box->add(*normal);
+      box->add(*large);
+      box->add(*huge);
+      menu_box->add(*box);
+      menu_box->add(*manage(new Gtk::Separator));
 
-      grid = manage(utils::create_popover_inner_grid(&top));
-      grid->set_name("font-size");
-      grid->attach(*small, 0, top++, 1, 1);
-      grid->attach(*normal, 0, top++, 1, 1);
-      grid->attach(*large, 0, top++, 1, 1);
-      grid->attach(*huge, 0, top++, 1, 1);
-      main_grid->attach(*grid, 0, main_top++, 1, 1);
-
-      grid = manage(utils::create_popover_inner_grid(&top));
       Gtk::Widget *bullets = manage(utils::create_popover_button("win.enable-bullets", _("⦁ Bullets")));
-      grid->attach(*bullets, 0, top++, 1, 1);
+      menu_box->add(*bullets);
       Gtk::Widget *increase_indent = manage(utils::create_popover_button("win.increase-indent", _("→ Increase indent")));
-      grid->attach(*increase_indent, 0, top++, 1, 1);
+      menu_box->add(*increase_indent);
       Gtk::Widget *decrease_indent = manage(utils::create_popover_button("win.decrease-indent", _("← Decrease indent")));
-      grid->attach(*decrease_indent, 0, top++, 1, 1);
-      main_grid->attach(*grid, 0, main_top++, 1, 1);
+      menu_box->add(*decrease_indent);
 
-      add(*main_grid);
+      add(*menu_box);
 
       refresh_state();
     }
@@ -892,7 +889,7 @@ namespace gnote {
   {
     Gtk::Widget *widget = manage(utils::create_popover_button(action, ""));
     auto lbl = static_cast<Gtk::Label*>(static_cast<Gtk::Bin*>(widget)->get_child());
-    Glib::ustring m = str(boost::format("<%1%>%2%</%1%>") % markup % label);
+    Glib::ustring m = Glib::ustring::compose("<%1>%2</%1>", markup, label);
     lbl->set_markup_with_mnemonic(m);
     return widget;
   }
@@ -903,7 +900,7 @@ namespace gnote {
     auto lbl = static_cast<Gtk::Label*>(static_cast<Gtk::Bin*>(item)->get_child());
     Glib::ustring mrkp;
     if(markup != NULL) {
-      mrkp = str(boost::format("<span size=\"%1%\">%2%</span>") % markup % label);
+      mrkp = Glib::ustring::compose("<span size=\"%1\">%2</span>", markup, label);
     }
     else {
       mrkp = label;

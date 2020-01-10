@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2015 Aurimas Cernius
+ * Copyright (C) 2010-2015,2017 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -48,12 +48,12 @@ class SearchNotesWidget
 public:
   SearchNotesWidget(NoteManager & m);
   virtual ~SearchNotesWidget();
-  virtual std::string get_name() const override;
+  virtual Glib::ustring get_name() const override;
   virtual void foreground() override;
   virtual void background() override;
   virtual void hint_size(int & width, int & height) override;
   virtual void size_internals() override;
-  virtual void perform_search(const std::string & search_text) override;
+  virtual void perform_search(const Glib::ustring & search_text) override;
   virtual std::vector<Gtk::Widget*> get_popover_widgets() override;
   virtual std::vector<MainWindowAction::Ptr> get_widget_actions() override;
 
@@ -109,7 +109,7 @@ private:
   int compare_search_hits(const Gtk::TreeIter & , const Gtk::TreeIter &);
   void on_note_deleted(const NoteBase::Ptr & note);
   void on_note_added(const NoteBase::Ptr & note);
-  void on_note_renamed(const NoteBase::Ptr&, const std::string&);
+  void on_note_renamed(const NoteBase::Ptr&, const Glib::ustring&);
   void on_note_saved(const NoteBase::Ptr&);
   void delete_note(const Note::Ptr & note);
   void add_note(const Note::Ptr & note);
@@ -153,8 +153,8 @@ private:
       }
 
     Gtk::TreeModelColumn<Glib::RefPtr<Gdk::Pixbuf> > icon;
-    Gtk::TreeModelColumn<std::string> title;
-    Gtk::TreeModelColumn<std::string> change_date;
+    Gtk::TreeModelColumn<Glib::ustring> title;
+    Gtk::TreeModelColumn<Glib::ustring> change_date;
     Gtk::TreeModelColumn<Note::Ptr> note;
   };
 
@@ -177,13 +177,13 @@ private:
   NoteManager & m_manager;
   Gtk::TreeView *m_tree;
   std::vector<Gtk::TargetEntry> m_targets;
-  std::map<std::string, int> m_current_matches;
+  std::map<Glib::ustring, int> m_current_matches;
   int m_clickX, m_clickY;
   Gtk::TreeViewColumn *m_matches_column;
   Gtk::Menu *m_note_list_context_menu;
   Gtk::Menu *m_notebook_list_context_menu;
   bool m_initial_position_restored;
-  std::string m_search_text;
+  Glib::ustring m_search_text;
   int m_sort_column_id;
   Gtk::SortType m_sort_column_order;
   std::vector<sigc::connection> m_action_cids;

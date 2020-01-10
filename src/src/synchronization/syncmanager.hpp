@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2014 Aurimas Cernius
+ * Copyright (C) 2012-2014,2017 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@ namespace sync {
     virtual void perform_synchronization(const SyncUI::Ptr & sync_ui) override;
     void synchronization_thread();
     virtual void resolve_conflict(SyncTitleConflictResolution resolution) override;
-    virtual bool synchronized_note_xml_matches(const std::string & noteXml1, const std::string & noteXml2) override;
+    virtual bool synchronized_note_xml_matches(const Glib::ustring & noteXml1, const Glib::ustring & noteXml2) override;
     virtual SyncState state() const override
       {
         return m_state;
@@ -54,8 +54,11 @@ namespace sync {
   protected:
     virtual void initialize_sync_service_addins(NoteManagerBase &);
     virtual void connect_system_signals();
-    virtual SyncServiceAddin *get_sync_service_addin(const std::string & sync_service_id);
+    virtual SyncServiceAddin *get_sync_service_addin(const Glib::ustring & sync_service_id);
     virtual SyncServiceAddin *get_configured_sync_service();
+    virtual void delete_notes_in_main_thread(const SyncServer::Ptr & server);
+    void delete_notes(const SyncServer::Ptr & server);
+    virtual void note_save(const Note::Ptr & note);
 
     SyncClient::Ptr m_client;
     SyncUI::Ptr m_sync_ui;
@@ -75,14 +78,12 @@ namespace sync {
     void update_note_in_main_thread(const Note::Ptr & existingNote, const NoteUpdate & noteUpdate);
     void delete_note_in_main_thread(const Note::Ptr & existingNote);
     void update_local_note(const NoteBase::Ptr & localNote, const NoteUpdate & serverNote, NoteSyncType syncType);
-    NoteBase::Ptr find_note_by_uuid(const std::string & uuid);
+    NoteBase::Ptr find_note_by_uuid(const Glib::ustring & uuid);
     NoteManagerBase & note_mgr();
-    void get_synchronized_xml_bits(const std::string & noteXml, std::string & title, std::string & tags, std::string & content);
-    void delete_notes(const SyncServer::Ptr & server);
+    void get_synchronized_xml_bits(const Glib::ustring & noteXml, Glib::ustring & title, Glib::ustring & tags, Glib::ustring & content);
     void create_note(const NoteUpdate & noteUpdate);
     void update_note(const Note::Ptr & existingNote, const NoteUpdate & noteUpdate);
     void delete_note(const Note::Ptr & existingNote);
-    static void note_save(const Note::Ptr & note);
 
     NoteManagerBase & m_note_manager;
     SyncState m_state;

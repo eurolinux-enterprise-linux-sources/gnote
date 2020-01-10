@@ -4,7 +4,7 @@
   <info>
     <link type="guide" xref="index#managing-notes"/>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
-    <desc>Creating notes</desc>
+    <desc>Skapa anteckningar</desc>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
@@ -18,17 +18,29 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
   <title>Skapa anteckningar</title>
 
-  <p>In <app>Gnote</app>, you can create new notes in any of these ways:</p>
+  <p>I <app>Gnote</app> kan du skapa anteckningar på följande sätt:</p>
   <list>
-    <item><p>Select <gui>New Note</gui> in the application menu.</p></item>
-    <item><p>In the <app>Gnote</app> window, click the toolbar item <gui>New</gui>.</p></item>
-    <item><p>In the main window, right click in the note list and select <gui>New</gui>. This will create a note in the currently selected notebook.</p></item>
-    <item><p>If the status icon is enabled, click on it and select <gui>New Note</gui>.</p></item>
-    <item><p>Use the keyboard shortcut <keyseq><key>Ctrl</key><key>N</key></keyseq>.</p></item>
+    <item><p>Välj <gui>Ny anteckning</gui> i programmenyn.</p></item>
+    <item><p>I fönstret för <app>Gnote</app>, klicka i verktygsfältet på <gui>Ny</gui>.</p></item>
+    <item><p>I huvudfönstret, högerklicka i anteckningslistan och välj <gui>Ny</gui>. Detta kommer att skapa en ny anteckning i det för tillfället aktuella anteckningsblocket.</p></item>
+    <item><p>Om statusikonen är aktiverad, klicka på den och välj <gui>Ny anteckning</gui>.</p></item>
+    <item><p>Använd tangentbordsgenvägen <keyseq><key>Ctrl</key><key>N</key></keyseq>.</p></item>
   </list>
 
 </page>

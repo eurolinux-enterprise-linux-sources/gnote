@@ -1,11 +1,11 @@
 Name:           gnote
-Version:        3.22.1
+Version:        3.28.0
 Release:        1%{?dist}
 Summary:        Note-taking application
 
 License:        GPLv3+
 URL:            https://wiki.gnome.org/Apps/Gnote
-Source0:        https://download.gnome.org/sources/gnote/3.22/%{name}-%{version}.tar.xz
+Source0:        https://download.gnome.org/sources/gnote/3.28/%{name}-%{version}.tar.xz
 
 BuildRequires:  boost-devel
 BuildRequires:  desktop-file-utils
@@ -19,6 +19,9 @@ BuildRequires:  libuuid-devel
 BuildRequires:  libxml2-devel
 BuildRequires:  libxslt-devel
 BuildRequires:  pcre-devel
+BuildRequires:  gcc-c++
+
+%global __provides_exclude_from ^%{_libdir}/%{name}/addins
 
 %description
 Gnote is a desktop note-taking application which is simple and easy to use.
@@ -31,7 +34,7 @@ and consumes fewer resources.
 
 %build
 %configure --disable-static --with-gnu-ld
-V=1 make %{?_smp_mflags}
+%make_build V=1
 
 %install
 %make_install
@@ -76,9 +79,13 @@ fi
 %dir %{_datadir}/gnome-shell/
 %dir %{_datadir}/gnome-shell/search-providers/
 %{_datadir}/gnome-shell/search-providers/gnote-search-provider.ini
-%{_datadir}/appdata/%{name}.appdata.xml
+%{_datadir}/metainfo/gnote.appdata.xml
 
 %changelog
+* Fri Jun 08 2018 Richard Hughes <rhughes@redhat.com> - 3.28.0-1
+- Update to 3.28.0
+- Resolves: #1569730
+
 * Tue Mar  7 2017 Matthias Clasen <mclasen@redhat.com> - 3.22.1-1
 - Rebase to 3.22.1
   Resolves: rhbz#1386971

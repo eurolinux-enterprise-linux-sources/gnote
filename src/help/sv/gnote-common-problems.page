@@ -4,7 +4,7 @@
   <info>
     <link type="guide" xref="index#common-problems"/>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
-    <desc>Frequently asked questions</desc>
+    <desc>Vanliga frågor</desc>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
@@ -18,16 +18,28 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Gnote Common Issues</title>
+  <title>Vanliga problem med Gnote</title>
     <list>
-      <item><title>Does <app>Gnote</app> work with <app>Tomboy</app>?</title><p>You can import <app>Tomboy</app> Notes. A plugin has to be activated.</p>
+      <item><title>Fungerar <app>Gnote</app> tillsammans med <app>Tomboy</app>?</title><p>Du kan importera anteckningar från <app>Tomboy</app>. En insticksmodul måste aktiveras.</p>
       </item>
-      <item><title>How to automatically start <app>Gnote</app> when I log in?</title>
-        <p>To start Gnote automatically when you log into GNOME, run <app>gnome-session-properties</app>.</p>
+      <item><title>Hur startar man automatiskt <app>Gnote</app> vid inloggning?</title>
+        <p>För att starta Gnote automatiskt när du loggar in till GNOME, kör <app>gnome-session-properties</app>.</p>
       </item>
-      <item><title>I'm not comfortable with new single-window interface</title><p>You can make <app>Gnote</app> behave the old way by selecting <gui>Always open notes in new window</gui> in Preferences dialog.</p></item>
+      <item><title>Jag känner mig inte bekväm med det nya enfönsters-gränssnittet</title><p>Du kan få <app>Gnote</app> att uppträda på det gamla sättet genom att välja <gui>Öppna alltid anteckningar i nytt fönster</gui> i dialogen Inställningar.</p></item>
     </list>
 
 </page>

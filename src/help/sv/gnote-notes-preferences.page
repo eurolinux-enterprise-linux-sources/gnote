@@ -4,7 +4,7 @@
 
   <info>
     <link type="guide" xref="index#customizing"/>
-    <desc>Gnote settings</desc>
+    <desc>Gnote-inställningar</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -19,47 +19,59 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Gnote Preferences</title>
+  <title>Gnote-inställningar</title>
   <section id="editing">
-    <title>General preferences</title>
-    <p>To set preferences for <app>Gnote</app>, select <gui>Preferences</gui> from the application menu.</p>
-    <p>There are three categories of preferences, <gui>General</gui>, <gui>Hotkeys</gui> and <gui>Add-Ins</gui>.</p>
-    <p>The <gui>General</gui> tab lets you set preferences related to application behaviour and editing notes. There are a few checkboxes on this tab:</p>
+    <title>Allmänna inställningar</title>
+    <p>För att ange inställningar för <app>Gnote</app>, välj <gui>Inställningar</gui> från programmenyn.</p>
+    <p>Det finns tre olika kategorier av inställningar, <gui>Allmänt</gui>, <gui>Kortkommandon</gui> och <gui>Tillägg</gui>.</p>
+    <p>Fliken <gui>Allmänt</gui> låter dig ställa in inställningar relaterade till programbeteende och redigering av anteckningar. Det finns några kryssrutor i den här fliken:</p>
     <list>
-      <item><title>Use status icon</title><p> Enable this checkbox to show the <app>Gnote</app> status icon when running. In this mode <app>Gnote</app> will remain present even after all its windows are closed. When you click the status icon, a menu appears that gives you quick access to recently used notes and other windows.</p></item>
-      <item><title>Always open notes in new window</title><p>When checked, instead of replacing current window content, note is opened in the new window.</p></item>
-      <item><title>Spellcheck while typing</title><p> Enable this checkbox to underline misspellings in red and provide suggestions in the right click context menu.</p><p>The spellcheck option is only available if you have the GtkSpell package for your distribution installed.</p></item>
-      <item><title>Färgmarkera WikiOrd</title><p> Enable this checkbox to create links for phrases ThatLookLikeThis. Clicking on a link will create a new note with a title corresponding to the link text.</p></item>
-      <item><title>Enable auto-bulleted lists</title><p>When this preference is enabled, you can create bulleted lists by starting lines with a dash character <key>-</key>. Read more about <link xref="bulleted-lists"/>.</p></item>
-      <item><title>Use custom font</title><p> Enable this checkbox to set a custom font to be used in your notes.</p></item>
+      <item><title>Använda statusikonen</title><p>Aktivera denna kryssruta för att visa <app>Gnote</app>s statusikon under körning. I detta läge kommer <app>Gnote</app> att fortsätta köra även efter att dess fönster är stängda. När du har klickat på statusikonen visas en meny som ger dig snabb åtkomst till nyligen använda anteckningar och andra fönster.</p></item>
+      <item><title>Öppna alltid anteckningar i ett nytt fönster</title><p>När ikryssat öppnas anteckningen i ett nytt fönster istället för att ersätta aktuellt fönsters innehåll.</p></item>
+      <item><title>Stavningskontroll när text skrivs in</title><p>Aktivera den här kryssrutan för att understryka felstavningar med röd färg, och ge förslag i sammanhangsmenyn som du visar med ett högerklick.</p><p>Alternativet för stavningskontroll finns endast tillgängligt om du har paketet GtkSpell installerat för din distribution.</p></item>
+      <item><title>Färgmarkera WikiOrd</title><p>Aktivera den här kryssrutan för att skapa länkar för fraser SomSerUtSomDetta. Att klicka på länken kommer att skapa en ny anteckning med titeln som motsvarar länktexten.</p></item>
+      <item><title>Aktivera autopunktlistor</title><p>När denna inställning är aktiverad kan du skapa punktlistor genom att starta rader med ett strecktecken <key>-</key>. Läs mer om <link xref="bulleted-lists"/>.</p></item>
+      <item><title>Använd anpassat typsnitt</title><p>Aktivera denna kryssruta för att ange ett anpassat typsnitt att använda i dina anteckningar.</p></item>
     </list>
-    <figure><title><gui>Preferences</gui> window</title>
-      <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Editing Gnote Preferences</desc>
+    <figure><title>Fönstret <gui>Inställningar</gui></title>
+      <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Redigera Gnote-inställningar</desc>
     </figure>
   </section>
 
   <section id="advanced" style="2column">
-    <title>Advanced Settings</title>
+    <title>Avancerade inställningar</title>
   </section>
   <section id="sync">
-    <title>Synchronization Settings</title>
+    <title>Synkroniseringsinställningar</title>
     <section id="sync-addins" style="2column">
-      <title>Synchronization services</title>
+      <title>Synkroniseringstjänster</title>
     </section>
     <section id="sync-advanced">
-      <title>Advanced</title>
-      <p>The <gui>Advanced</gui> button in the <gui>Synchronization</gui> tab of the <gui>Preferences</gui> dialog brings up another dialog for setting up conflict resolution.</p>
+      <title>Avancerat</title>
+      <p>Knappen <gui>Avancerat</gui> i fliken <gui>Synkronisering</gui> i dialogen <gui>Inställningar</gui> visar en annan dialog för att ställa in konfliktlösning.</p>
       <figure>
-        <title>Advanced Synchronization Settings</title>
+        <title>Avancerade synkroniseringsinställningar</title>
         <media type="image" src="figures/gnote-syncprefs-advanced.png" mime="image/png"/>
       </figure>
-      <p>This dialog lets you choose what to do when a conflict occurs. A conflict happens when a note has been modified both on the local machine and on another device. You can select one of these options:</p>
+      <p>Denna dialog låter dig välja vad som ska ske då en konflikt uppstår. En konflikt uppstår när en anteckning har ändrats både på den lokala maskinen och på en annan enhet. Du kan välja ett av dessa alternativ:</p>
       <list>
-        <item><p>Rename the existing note by appending "(old)" to its title and downloading the one from storage</p></item>
-        <item><p>Replace the existing note by the one from storage, losing all modifications</p></item>
-        <item><p>Ask about each conflicting note individually</p></item>
+        <item><p>Ersätt existerande anteckning genom att lägga till ”(gammal)” till dess titel och hämta hem från den som finns lagrad.</p></item>
+        <item><p>Ersätt den befintliga anteckningen med den från lagringen och förlora alla ändringar</p></item>
+        <item><p>Fråga individuellt om anteckningar i konflikt</p></item>
       </list>
     </section>
   </section>

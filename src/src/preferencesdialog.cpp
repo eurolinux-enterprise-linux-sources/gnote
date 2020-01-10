@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2015 Aurimas Cernius
+ * Copyright (C) 2010-2015,2017 Aurimas Cernius
  * Copyright (C) 2009 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -25,10 +25,8 @@
 #include <config.h>
 #endif
 
-#include <boost/bind.hpp>
-#include <boost/format.hpp>
-
 #include <glibmm/i18n.h>
+#include <glibmm/miscutils.h>
 #include <gtkmm/accelgroup.h>
 #include <gtkmm/alignment.h>
 #include <gtkmm/button.h>
@@ -74,14 +72,14 @@ namespace gnote {
   {
   public:
     AddinInfoDialog(const AddinInfo & module, Gtk::Dialog &parent);
-    void set_addin_id(const std::string & id)
+    void set_addin_id(const Glib::ustring & id)
       { m_id = id; }
-    const std::string & get_addin_id() const
+    const Glib::ustring & get_addin_id() const
       { return m_id; }
   private:
     void fill(Gtk::Label &);
     AddinInfo m_addin_info;
-    std::string m_id;
+    Glib::ustring m_id;
   };
 
 
@@ -135,7 +133,7 @@ namespace gnote {
       DBG_OUT("Adding preference tab addin: %s", 
               typeid(*tabAddin).name());
         try {
-          std::string tabName;
+          Glib::ustring tabName;
           Gtk::Widget *tabWidget = NULL;
           if (tabAddin->get_preference_tab_widget (this, tabName, tabWidget)) {
             notebook->append_page (*manage(tabWidget), tabName);
@@ -175,7 +173,7 @@ namespace gnote {
 
   void PreferencesDialog::enable_addin(bool enable)
   {
-    std::string id = get_selected_addin();
+    Glib::ustring id = get_selected_addin();
     sharp::DynamicModule * const module = m_addin_manager.get_module(id);
     if(!module) {
       return;
@@ -315,8 +313,8 @@ namespace gnote {
       options_list->attach(*rename_behavior_box, 0, options_list_row++, 1, 1);
 
       // New Note Template
-      // TRANSLATORS: This is 'New Note' Template, not New 'Note Template'
       Gtk::Grid *template_note_grid = manage(new Gtk::Grid);
+      // TRANSLATORS: This is 'New Note' Template, not New 'Note Template'
       label = manage(make_label (_("New Note Template")));
       set_widget_tooltip(*label, _("Use the new note template to specify the text "
                                    "that should be used when creating a new note."));
@@ -359,7 +357,7 @@ namespace gnote {
     button->add (*font_box);
     button->show ();
 
-    std::string font_desc = Preferences::obj().get_schema_settings(
+    Glib::ustring font_desc = Preferences::obj().get_schema_settings(
         Preferences::SCHEMA_GNOTE)->get_string(Preferences::CUSTOM_FONT_FACE);
     update_font_button (font_desc);
 
@@ -454,7 +452,7 @@ namespace gnote {
 
     // Read from Preferences which service is configured and select it
     // by default.  Otherwise, just select the first one in the list.
-    std::string addin_id = Preferences::obj()
+    Glib::ustring addin_id = Preferences::obj()
       .get_schema_settings(Preferences::SCHEMA_SYNC)->get_string(Preferences::SYNC_SELECTED_SERVICE_ADDIN);
 
     Gtk::TreeIter active_iter;
@@ -475,7 +473,7 @@ namespace gnote {
 
     // Get the preferences GUI for the Sync Addin
     if (active_iter.get_stamp() != 0) {
-      std::string addin_name;
+      Glib::ustring addin_name;
       active_iter->get_value(0, m_selected_sync_addin);
     }
     
@@ -543,8 +541,9 @@ namespace gnote {
     bbox->set_child_secondary(*advancedConfigButton, true);
 
     m_reset_sync_addin_button = manage(new Gtk::Button(Gtk::Stock::CLEAR));
-    m_reset_sync_addin_button->signal_clicked().connect(
-      boost::bind(sigc::mem_fun(*this, &PreferencesDialog::on_reset_sync_addin_button), true));
+    m_reset_sync_addin_button->signal_clicked().connect([this]() {
+      on_reset_sync_addin_button(true);
+    });
     m_reset_sync_addin_button->set_sensitive(m_selected_sync_addin &&
                                         addin_id == m_selected_sync_addin->id() &&
                                         m_selected_sync_addin->is_configured());
@@ -661,12 +660,12 @@ namespace gnote {
   }
 
 
-  std::string PreferencesDialog::get_selected_addin()
+  Glib::ustring PreferencesDialog::get_selected_addin()
   {
     /// TODO really set
     Glib::RefPtr<Gtk::TreeSelection> select = m_addin_tree->get_selection();
     Gtk::TreeIter iter = select->get_selected();
-    std::string module_id;
+    Glib::ustring module_id;
     if(iter) {
       module_id = m_addin_tree_model->get_module_id(iter);
     }
@@ -693,7 +692,7 @@ namespace gnote {
   /// Set the sensitivity of the buttons based on what is selected
   void PreferencesDialog::update_addin_buttons()
   {
-    std::string id = get_selected_addin();
+    Glib::ustring id = get_selected_addin();
     if(id != "") {
       bool loaded = m_addin_manager.is_module_loaded(id);
       bool enabled = false;
@@ -753,7 +752,7 @@ namespace gnote {
 
   void PreferencesDialog::on_addin_prefs_button()
   {
-    std::string id = get_selected_addin();
+    Glib::ustring id = get_selected_addin();
     AddinInfo addin_info = m_addin_manager.get_addin_info(id);
     const sharp::DynamicModule *module = m_addin_manager.get_module(id);
     Gtk::Dialog *dialog;
@@ -762,16 +761,15 @@ namespace gnote {
       return;
     }
 
-    std::map<std::string, Gtk::Dialog* >::iterator iter;
-    iter = addin_prefs_dialogs.find(id);
+    auto iter = addin_prefs_dialogs.find(id);
     if (iter == addin_prefs_dialogs.end()) {
       // A preference dialog isn't open already so create a new one
       Gtk::Image *icon =
         manage(new Gtk::Image (Gtk::Stock::PREFERENCES, Gtk::ICON_SIZE_DIALOG));
       Gtk::Label *caption = manage(new Gtk::Label());
       caption->set_markup(
-        str(boost::format("<span size='large' weight='bold'>%1% %2%</span>") 
-            % addin_info.name() % addin_info.version()));
+        Glib::ustring::compose("<span size='large' weight='bold'>%1 %2</span>", 
+            addin_info.name(), addin_info.version()));
       caption->property_xalign() = 0;
       caption->set_use_markup(true);
       caption->set_use_underline(false);
@@ -797,8 +795,8 @@ namespace gnote {
       vbox->show_all ();
 
       dialog = new Gtk::Dialog(
-        // TRANSLATORS: %1%: boost format placeholder for the addin name.
-        str(boost::format(_("%1% Preferences")) % addin_info.name()),
+        // TRANSLATORS: %1 is the placeholder for the addin name.
+        Glib::ustring::compose(_("%1 Preferences"), addin_info.name()),
         *this, false);
       dialog->property_destroy_with_parent() = true;
       dialog->add_button(Gtk::Stock::CLOSE, Gtk::RESPONSE_CLOSE);
@@ -846,12 +844,11 @@ namespace gnote {
 
   void PreferencesDialog::on_addin_info_button()
   {
-    std::string id = get_selected_addin();
+    Glib::ustring id = get_selected_addin();
     AddinInfo addin = m_addin_manager.get_addin_info(id);
 
     Gtk::Dialog* dialog;
-    std::map<std::string, Gtk::Dialog* >::iterator iter;
-    iter = addin_info_dialogs.find(addin.id());
+    auto iter = addin_info_dialogs.find(addin.id());
     if (iter == addin_info_dialogs.end()) {
       dialog = new AddinInfoDialog (addin, *this);
       dialog->signal_delete_event().connect(
@@ -898,7 +895,7 @@ namespace gnote {
 
 
 
-  Gtk::Label *PreferencesDialog::make_label (const std::string & label_text/*, params object[] args*/)
+  Gtk::Label *PreferencesDialog::make_label(const Glib::ustring & label_text/*, params object[] args*/)
   {
 //    if (args.Length > 0)
 //      label_text = String.Format (label_text, args);
@@ -913,7 +910,7 @@ namespace gnote {
     return label;
   }
 
-  Gtk::CheckButton *PreferencesDialog::make_check_button (const std::string & label_text)
+  Gtk::CheckButton *PreferencesDialog::make_check_button(const Glib::ustring & label_text)
   {
     Gtk::Label *label = manage(make_label(label_text));
     
@@ -925,9 +922,9 @@ namespace gnote {
   }
 
 
-  void PreferencesDialog::set_widget_tooltip(Gtk::Widget & widget, std::string label_text)
+  void PreferencesDialog::set_widget_tooltip(Gtk::Widget & widget, Glib::ustring label_text)
   {
-    widget.set_tooltip_markup(str(boost::format("<small>%1%</small>") % label_text));
+    widget.set_tooltip_markup(Glib::ustring::compose("<small>%1</small>", label_text));
   }
 
   void PreferencesDialog::on_font_button_clicked()
@@ -936,7 +933,7 @@ namespace gnote {
       new Gtk::FontSelectionDialog (_("Choose Note Font"));
 
     Glib::RefPtr<Gio::Settings> settings = Preferences::obj().get_schema_settings(Preferences::SCHEMA_GNOTE);
-    std::string font_name = settings->get_string(Preferences::CUSTOM_FONT_FACE);
+    Glib::ustring font_name = settings->get_string(Preferences::CUSTOM_FONT_FACE);
     font_dialog->set_font_name(font_name);
 
     if (Gtk::RESPONSE_OK == font_dialog->run()) {
@@ -950,7 +947,7 @@ namespace gnote {
     delete font_dialog;
   }
 
-  void PreferencesDialog::update_font_button (const std::string & font_desc)
+  void PreferencesDialog::update_font_button(const Glib::ustring & font_desc)
   {
     PangoFontDescription *desc = pango_font_description_from_string(font_desc.c_str());
 
@@ -961,8 +958,8 @@ namespace gnote {
 
     // Set the font name label
     char * descstr = pango_font_description_to_string(desc);
-    font_face->set_markup(str(boost::format("<span font_desc='%1%'>%2%</span>")
-                              % font_desc % std::string(descstr)));
+    font_face->set_markup(Glib::ustring::compose("<span font_desc='%1'>%2</span>",
+                              font_desc, Glib::ustring(descstr)));
     g_free(descstr);
     pango_font_description_free(desc);
   }
@@ -1195,7 +1192,7 @@ namespace gnote {
     }
 
     bool saved = false;
-    std::string errorMsg;
+    Glib::ustring errorMsg;
     try {
       get_window()->set_cursor(Gdk::Cursor::create(Gdk::WATCH));
       get_window()->get_display()->flush();
@@ -1251,10 +1248,10 @@ namespace gnote {
       // Give the user a visual letting them know that connecting
       // was successful.
       if(errorMsg == "") {
-        // TRANSLATORS: %1% boost format placeholder for the log file path.
-        errorMsg = _("Please check your information and try again.  The log file %1% may contain more information about the error.");
-        std::string logPath = Glib::build_filename(Glib::get_home_dir(), "gnote.log");
-        errorMsg = str(boost::format(errorMsg) % logPath);
+        // TRANSLATORS: %1 is the placeholder for the log file path.
+        errorMsg = _("Please check your information and try again.  The log file %1 may contain more information about the error.");
+        Glib::ustring logPath = Glib::build_filename(Glib::get_home_dir(), "gnote.log");
+        errorMsg = Glib::ustring::compose(errorMsg, logPath);
       }
       dialog = new utils::HIGMessageDialog(this, GTK_DIALOG_MODAL, Gtk::MESSAGE_WARNING, Gtk::BUTTONS_CLOSE,
         _("Error connecting"), errorMsg);
@@ -1316,19 +1313,18 @@ namespace gnote {
 
   void AddinInfoDialog::fill(Gtk::Label & info_label)
   {
-    std::string sb = "<b><big>" + m_addin_info.name() + "</big></b>\n\n";
+    Glib::ustring sb = "<b><big>" + m_addin_info.name() + "</big></b>\n\n";
     sb += m_addin_info.description() + "\n\n";
 
-    sb += str(boost::format("<small><b>%1%</b>\n%2%\n\n")
-              % _("Version:") % m_addin_info.version());
+    sb += Glib::ustring::compose("<small><b>%1</b>\n%2\n\n",
+              _("Version:"), m_addin_info.version());
 
-    sb += str(boost::format("<b>%1%</b>\n%2%\n\n")
-              % _("Author:") % m_addin_info.authors());
+    sb += Glib::ustring::compose("<b>%1</b>\n%2\n\n",
+              _("Author:"), m_addin_info.authors());
     
-    std::string s = m_addin_info.copyright();
+    Glib::ustring s = m_addin_info.copyright();
     if(s != "") {
-      sb += str(boost::format("<b>%1%</b>\n%2%\n\n") 
-                % _("Copyright:") % s);
+      sb += Glib::ustring::compose("<b>%1</b>\n%2\n\n", _("Copyright:"), s);
     }
 
 #if 0 // TODO handle module dependencies

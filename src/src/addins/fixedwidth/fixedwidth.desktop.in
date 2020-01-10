@@ -7,7 +7,7 @@ Category=Formatting
 Version=0.4
 DefaultEnabled=true
 Module=libfixedwidth
-LibgnoteRelease=3.22
-LibgnoteVersionInfo=1:0:1
+LibgnoteRelease=3.28
+LibgnoteVersionInfo=0:0:0
 [Actions]
 actions_bool=fixedwidth-enable

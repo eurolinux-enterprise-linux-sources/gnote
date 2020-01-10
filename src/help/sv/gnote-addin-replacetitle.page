@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Rename a note</desc>
+    <desc>Byt namn på anteckning</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -18,11 +18,23 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Replace title</title>
-    <p>When the <app>Replace title</app> plugin is installed, the command <gui>Replace title</gui> is present in the <gui>Actions</gui> menu.</p>
-    <p>The <gui>Replace title</gui> command replaces a note's title with the currently selected text (from any application).</p>
-    <p>Alternatively, you can use the <keyseq><key>Ctrl</key><key>R</key></keyseq> shortcut.</p>
+  <title>Ersätt titel</title>
+    <p>När insticksmodulen <app>Ersätt titel</app> är installerad visas kommandot <gui>Ersätt titel</gui> i menyn <gui>Åtgärder</gui>.</p>
+    <p>Kommandot <gui>Ersätt titel</gui> ersätter en antecknings titel med aktuell markerad text (från vilket program som helst).</p>
+    <p>Du kan också använda genvägen <keyseq><key>Ctrl</key><key>R</key></keyseq>.</p>
 
 </page>

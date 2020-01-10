@@ -3,7 +3,7 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <link type="topic" xref="addins-preferences"/>
-    <desc>A "Today" note</desc>
+    <desc>En "Idag"-anteckning</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -18,11 +18,23 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
   <title>Dagens anteckning</title>
-  <p>This plugin automatically creates a "Today" note for jotting daily thoughts down.  As an example, a "Today" note created on February 28, 2013 would be called "Today: Thursday, February 28 2013".</p>
-  <p>If you leave a "Today" note unmodified, the plugin will automatically delete the note.</p>
-  <p>To customize the content of the default "Today" note, create a new note and change the title of the note to "Today: Template". Change the content of the template note to whatever you like. New "Today" notes will then use the content of your "Today: Template" note.</p>
+  <p>Det här tillägget skapar automatiskt en "Idag"-anteckning för att skriva ner dagliga tankar. Till exempel skulle titeln för en "Idag"-anteckning den 28:e februari 2013 bli "Idag: torsdag, 28 februari 2013".</p>
+  <p>Om du lämnar en oförändrad "Idag"-anteckning kommer insticket automatiskt ta bort anteckningen.</p>
+  <p>För att anpassa innehållet för standardanteckningen "Idag", skapa en ny anteckning och ändra anteckningens titel till "Idag: Mall". Ändra innehållet för anteckningsmallen till vad du önskar. När nya "Idag"-anteckningar skapas kommer de att använda innehållet från din "Idag: Mall"-anteckning.</p>
 
 </page>

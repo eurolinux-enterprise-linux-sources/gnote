@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
-    <desc>Using Bulleted Lists</desc>
+    <desc>Använda punktlistor</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -18,49 +18,61 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
 <title>Punktlistor</title>
 
 <section id="begin-a-bulleted-list"><title>Påbörja en punktlista</title>
-<p>You may begin a bulleted list in any of the following ways:</p>
+<p>Du kan påbörja en punktlista genom en av följande metoder:</p>
 <list>
-<item><p>Select <gui>Bullets</gui> from the <gui>Text</gui> menu.</p></item>
-<item><p>Begin a line with a single dash character <key>-</key> followed by a space.  Then type some text and press <key>Enter</key>.</p></item>
-<item><p>Press the key combination <keyseq><key>Alt</key><key>Right</key></keyseq>.</p></item>
+<item><p>Välj <gui>Punkter</gui> från menyn <gui>Text</gui>.</p></item>
+<item><p>Börja en rad med ett minustecken <key>-</key> följt av ett blanksteg. Skriv sedan lite text och tryck på <key>Retur</key>.</p></item>
+<item><p>Tryck ned tangentkombinationen <keyseq><key>Alt</key><key>Högerpil</key></keyseq>.</p></item>
 </list>
 </section>
 
 <section id="end-a-bulleted-list"><title>Avsluta en punktlista</title>
-<p>You can end a bulleted list by doing one of the following:</p>
+<p>Du kan avsluta en punktlista genom att göra ett av följande:</p>
 <list>
-<item><p>Select <gui>Bullets</gui> from the <gui>Text</gui> menu.</p></item>
-<item><p>Press <key>Enter</key> on a blank bulleted line.</p></item>
-<item><p>Select <gui>Decrease Indent</gui> from the Text menu in succession until the current line is no longer part of the bulleted list.</p></item>
-<item><p>Press <keyseq><key>Shift</key><key>Tab</key></keyseq> repeatedly until the current line is no longer part of the bulleted list.</p></item>
-<item><p>Press <keyseq><key>Alt</key><key>Left</key></keyseq> repeatedly until the current line is no longer part of the bulleted list.</p></item>
+<item><p>Välj <gui>Punkter</gui> från menyn <gui>Text</gui>.</p></item>
+<item><p>Tryck ned <key>Retur</key> på en tom punktrad.</p></item>
+<item><p>Välj <gui>Minska indrag</gui> från textmenyn i följd tills den aktuella raden inte längre är en del av punktlistan.</p></item>
+<item><p>Tryck ned <keyseq><key>Skift</key><key>Tab</key></keyseq> upprepat tills den aktuella raden inte längre är en del av punktlistan.</p></item>
+<item><p>Tryck ned <keyseq><key>Alt</key><key>Vänsterpil</key></keyseq> upprepat tills den aktuella raden inte längre är en del av punktlistan.</p></item>
 </list>
 
 </section>
 <section id="increase-indentation">
-<title>Öka indragning</title>
-<p>För att öka radindragningen i en punktlista med musen:</p>
-<list><item><p>Select <gui>Increase Indent</gui> from the Text menu.</p></item></list>
-<p>För att öka radindragningen i en punktlista med tangentbordet:</p>
+<title>Öka indrag</title>
+<p>För att öka radindrag i en punktlista med musen:</p>
+<list><item><p>Välj <gui>Öka indrag</gui> från textmenyn.</p></item></list>
+<p>För att öka radindrag i en punktlista med tangentbordet:</p>
 <list>
-<item><p>Press the <key>Tab</key> key.</p></item>
-<item><p>Press the key combination <keyseq><key>Alt</key><key>Right</key></keyseq>.</p></item>
+<item><p>Tryck ned <key>Tab</key>tangenten.</p></item>
+<item><p>Tryck ned tangentkombinationen <keyseq><key>Alt</key><key>Högerpil</key></keyseq>.</p></item>
 </list>
 </section>
 
 <section id="decrease-indentation">
-<title>Minska indragning</title>
-<p>För att minska radindragningen i en punktlista med musen:</p>
-<list><item><p>Select <gui>Decrease Indent</gui> from the Text menu.</p></item></list>
-<p>För att minska radindragningen i en punktlista med tangentbordet:</p>
+<title>Minska indrag</title>
+<p>För att minska radindrag i en punktlista med musen:</p>
+<list><item><p>Välj <gui>Minska indrag</gui> från textmenyn.</p></item></list>
+<p>För att minska radindrag i en punktlista med tangentbordet:</p>
 <list>
-<item><p>Press the key combination <keyseq><key>Shift</key><key>Tab</key></keyseq>.</p></item>
-<item><p>Press the key combination <keyseq><key>Alt</key><key>Left</key></keyseq>.</p></item>
+<item><p>Tryck ned tangentkombinationen <keyseq><key>Skift</key><key>Tab</key></keyseq>.</p></item>
+<item><p>Tryck ned tangentkombinationen <keyseq><key>Alt</key><key>Vänsterpil</key></keyseq>.</p></item>
 </list>
 </section>
 

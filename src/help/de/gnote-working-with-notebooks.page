@@ -109,7 +109,7 @@
       </steps>
       <figure>
         <title>Notizbuch-Vorlagen anlegen</title>
-        <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Notizvorlagen</p></media>
+        <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Notizvorlage.</p></media>
       </figure>
       <p>Weitere Informationen finden Sie in <link xref="gnote-template-notes"/>.</p>
     </section>

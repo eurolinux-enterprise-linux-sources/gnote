@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2016 Aurimas Cernius
+ * Copyright (C) 2010-2018 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -27,11 +27,9 @@
 
 #include <iostream>
 
-#include <boost/bind.hpp>
-#include <boost/format.hpp>
-
 #include <glibmm/thread.h>
 #include <glibmm/i18n.h>
+#include <glibmm/stringutils.h>
 #include <glibmm/optionentry.h>
 #include <gtkmm/main.h>
 #include <gtkmm/aboutdialog.h>
@@ -118,6 +116,8 @@ namespace gnote {
     GnoteCommandLine passed_cmd_line;
     GnoteCommandLine &cmdline = m_manager ? passed_cmd_line : cmd_line;
     cmdline.parse(argc, argv);
+    m_is_background = cmdline.background();
+    m_is_shell_search = cmd_line.shell_search();
     if(!m_manager) {
       common_init();
       register_object();
@@ -125,7 +125,7 @@ namespace gnote {
     else if(cmdline.needs_execute()) {
       cmdline.execute();
     }
-    else if(!cmdline.background() && !cmdline.shell_search()) {
+    else if(!(cmdline.background() || cmdline.shell_search())) {
       new_main_window().present();
     }
 
@@ -136,7 +136,7 @@ namespace gnote {
 
   void Gnote::common_init()
   {
-    std::string note_path = get_note_path(cmd_line.note_path());
+    Glib::ustring note_path = get_note_path(cmd_line.note_path());
 
     //create singleton objects
     new TagManager;
@@ -152,7 +152,6 @@ namespace gnote {
 
   void Gnote::end_main(bool bus_acquired, bool name_acquired)
   {
-    m_is_shell_search = cmd_line.shell_search();
     if(cmd_line.needs_execute()) {
       cmd_line.execute();
     }
@@ -199,9 +198,9 @@ namespace gnote {
     }
   }
 
-  std::string Gnote::get_note_path(const std::string & override_path)
+  Glib::ustring Gnote::get_note_path(const Glib::ustring & override_path)
   {
-    std::string note_path;
+    Glib::ustring note_path;
     if(override_path.empty()) {
       const char * s = getenv("GNOTE_PATH");
       note_path = s?s:"";
@@ -261,8 +260,7 @@ namespace gnote {
 
   void Gnote::on_show_help_action(const Glib::VariantBase&)
   {
-    GdkScreen *cscreen = NULL;
-    utils::show_help("gnote", "", cscreen, NULL);
+    utils::show_help("gnote", "", get_main_window());
   }
 
   void Gnote::on_show_help_shortcust_action(const Glib::VariantBase&)
@@ -291,7 +289,7 @@ namespace gnote {
     documenters.push_back("Pierre-Yves Luyten <py@luyten.fr>");
     documenters.push_back("Aurimas Černius <aurisc4@gmail.com>");
 
-    std::string translators(_("translator-credits"));
+    Glib::ustring translators(_("translator-credits"));
     if (translators == "translator-credits")
       translators = "";
 
@@ -300,7 +298,7 @@ namespace gnote {
     about.set_program_name("Gnote");
     about.set_version(VERSION);
     about.set_logo(IconManager::obj().get_icon(IconManager::GNOTE, 48));
-    about.set_copyright(_("Copyright \xc2\xa9 2010-2016 Aurimas Cernius\n"
+    about.set_copyright(_("Copyright \xc2\xa9 2010-2018 Aurimas Cernius\n"
                           "Copyright \xc2\xa9 2009-2011 Debarshi Ray\n"
                           "Copyright \xc2\xa9 2009 Hubert Figuiere\n"
                           "Copyright \xc2\xa9 2004-2009 the Tomboy original authors."));
@@ -331,7 +329,7 @@ namespace gnote {
   MainWindow & Gnote::new_main_window()
   {
     NoteRecentChanges *win = new NoteRecentChanges(default_note_manager());
-    win->signal_hide().connect(boost::bind(sigc::mem_fun(*this, &Gnote::on_main_window_closed), win));
+    win->signal_hide().connect([this, win]() { on_main_window_closed(win); });
     add_window(*win);
     return *win;
   }
@@ -641,7 +639,7 @@ namespace gnote {
   void GnoteCommandLine::execute(T & remote)
   {
     if (m_do_new_note) {
-      std::string new_uri;
+      Glib::ustring new_uri;
 
       if (!m_new_note_name.empty()) {
         new_uri = remote->FindNote (m_new_note_name);
@@ -670,16 +668,16 @@ namespace gnote {
     }
 
     if (!m_open_external_note_path.empty()) {
-      std::string note_id = sharp::file_basename(m_open_external_note_path);
+      Glib::ustring note_id = sharp::file_basename(m_open_external_note_path);
       if (!note_id.empty()) {
         // Attempt to load the note, assuming it might already
         // be part of our notes list.
-        if (!display_note(remote, str(boost::format("note://gnote/%1%") % note_id))) {
+        if (!display_note(remote, "note://gnote/" + note_id)) {
           sharp::StreamReader sr;
           sr.init(m_open_external_note_path);
           if (sr.file()) {
-            std::string noteTitle;
-            std::string noteXml;
+            Glib::ustring noteTitle;
+            Glib::ustring noteXml;
             sr.read_to_end (noteXml);
 
             // Make sure noteXml is parseable
@@ -695,12 +693,12 @@ namespace gnote {
               noteTitle = NoteArchiver::obj().get_title_from_note_xml (noteXml);
               if (!noteTitle.empty()) {
                 // Check for conflicting titles
-                std::string baseTitle = noteTitle;
+                Glib::ustring baseTitle = noteTitle;
                 for (int i = 1; !remote->FindNote (noteTitle).empty(); i++) {
-                  noteTitle = str(boost::format("%1% (%2%)") % baseTitle % i);
+                  noteTitle = Glib::ustring::compose("%1 (%2)", baseTitle, i);
                 }
 
-                std::string note_uri = remote->CreateNamedNote (noteTitle);
+                Glib::ustring note_uri = remote->CreateNamedNote(noteTitle);
 
                 // Update title in the note XML
                 noteXml = NoteArchiver::obj().get_renamed_note_xml (noteXml, baseTitle, noteTitle);
@@ -731,15 +729,14 @@ namespace gnote {
 
   void GnoteCommandLine::print_version()
   {
-    // TRANSLATORS: %1%: boost format placeholder for the version string.
-    Glib::ustring version = str(boost::format(_("Version %1%"))
-                                % VERSION);
+    // TRANSLATORS: %1: format placeholder for the version string.
+    Glib::ustring version = Glib::ustring::compose(_("Version %1"), VERSION);
     std::cerr << version << std::endl;
   }
 
 
   template <typename T>
-  bool GnoteCommandLine::display_note(T & remote, std::string uri)
+  bool GnoteCommandLine::display_note(T & remote, Glib::ustring uri)
   {
     if (m_highlight_search) {
       return remote->DisplayNoteWithSearch(uri, m_highlight_search);

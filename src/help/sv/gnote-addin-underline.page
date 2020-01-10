@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
-    <desc>Underline text</desc>
+    <desc>Understryk text</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -18,19 +18,31 @@
       <email>adam@yorba.org</email>
       <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Underline Text Add-In</title>
-  <p>When the <gui>Underline</gui> plugin is installed, the <gui>Text</gui> menu will have a <gui>Underline</gui> option available.</p>
-  <p>To underline the selected text, use one of the following:</p>
+  <title>Tillägget Understryk text</title>
+  <p>När insticksmodulen <gui>Understryk</gui> är installerad kommer menyn <gui>Text</gui> att ha alternativet <gui>Understryk</gui> tillgängligt.</p>
+  <p>För att stryka under markerad text, använd en av följande:</p>
   <list>
-    <item><p>Click on <gui>Text</gui> and select <gui>Underline</gui>.</p></item>
-    <item><p>Press <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+    <item><p>Klicka på <gui>Text</gui> och välj <gui>Understryk</gui>.</p></item>
+    <item><p>Tryck ned <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
   </list>
-  <p>To remove underline, select the underlined text and use one of the following:</p>
+  <p>För att ta bort en understrykning, markera den understrukna texten och använd en av följande:</p>
   <list>
-    <item><p>Click on <gui>Text</gui> and select <gui>Underline</gui>.</p></item>
-    <item><p>Press <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+    <item><p>Klicka på <gui>Text</gui> och välj <gui>Understryk</gui>.</p></item>
+    <item><p>Tryck ned <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
   </list>
 
 </page>

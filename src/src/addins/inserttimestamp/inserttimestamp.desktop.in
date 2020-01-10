@@ -7,7 +7,7 @@ Category=Tools
 Version=0.3
 DefaultEnabled=false
 Module=libinserttimestamp
-LibgnoteRelease=3.22
-LibgnoteVersionInfo=1:0:1
+LibgnoteRelease=3.28
+LibgnoteVersionInfo=0:0:0
 [Actions]
 actions_void=inserttimestamp-insert

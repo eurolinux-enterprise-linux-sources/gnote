@@ -3,71 +3,82 @@
 
   <info>
     <link type="guide" xref="index#managing-notes"/>
-    <license><p xml:lang="en_GB">GNU Free Documentation License (GFDL), Version 1.1</p></license>
-    <desc xml:lang="en_GB">Editing note contents</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>Redigera anteckningsinnehåll</desc>
     <credit type="author">
-      <name xml:lang="en_GB">Pierre-Yves Luyten</name>
-      <years xml:lang="en_GB">2011</years>
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
     </credit>
     <credit type="editor">
-      <name xml:lang="en_GB">Aurimas Cernius</name>
-      <years xml:lang="en_GB">2011-2013</years>
+      <name>Aurimas Cernius</name>
+      <years>2011-2013</years>
     </credit>
     <credit type="editor">
-      <name xml:lang="en_GB">Adam Dingle</name>
+      <name>Adam Dingle</name>
       <email>adam@yorba.org</email>
-      <years xml:lang="en_GB">2013</years>
+      <years>2013</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
   <title>Redigera anteckningar</title>
 
-    <p xml:lang="en_GB">When you open a note, <app>Gnote</app> will replace the note overview with the note's contents.</p>
-    <p xml:lang="en_GB">Toolbar at the top of the window will now contain note specific items in it. Bellow toolbar is the note's content area.</p>
+    <p>När du öppnar en anteckning kommer <app>Gnote</app> att ersätta anteckningsöverblicken med anteckningens innehåll.</p>
+    <p>Verktygsfältet överst i fönstret kommer nu att innehålla anteckningsspecifika objekt. Under verktygsfältet finns anteckningens innehållsområde.</p>
     <figure>
-      <title xml:lang="en_GB"><app>Gnote</app> window displaying note</title>
-      <desc xml:lang="en_GB"><app>Gnote</app> Note</desc>
+      <title><app>Gnote</app>-fönster visar en anteckning</title>
+      <desc><app>Gnote</app>-anteckning</desc>
       <media type="image" src="figures/gnote-new-note.png" mime="image/png" style="right">
-        <p xml:lang="en_GB"><app>Gnote</app> note editing.</p>
+        <p>Redigering av <app>Gnote</app>-anteckning.</p>
       </media>
     </figure>
 
-    <p xml:lang="en_GB">To edit the note, click in the content area and type. The first line is considered the title of the note. By default this is populated with the text "New Note (number)". To change the title, click on the first line and use the keyboard to change the title.</p>
-    <p xml:lang="en_GB">Use the <gui>Text</gui> button to format text within your notes. This button displays a menu with several commands:</p>
+    <p>För att redigera anteckningen, klicka i innehållsområdet och skriv. Den första raden anses vara titeln på anteckningen. Som standard populeras den med texten ”Ny anteckning (nummer)”. För att ändra denna titel, klicka på första raden och använd tangentbordet för att ändra titeln.</p>
+    <p>Använd knappen <gui>Text</gui> för att formatera text i dina anteckningar. Denna knapp visar en meny med flera kommandon:</p>
 
     <list>
       <item><title>Ångra</title>
-        <p xml:lang="en_GB">The <gui>Undo</gui> command reverts changes made to your note during the current session. To undo using the keyboard, press <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
+        <p>Kommandot <gui>Ångra</gui> låter dig ångra tidigare ändringar som har gjorts till din anteckning under den aktuella sessionen. För att ångra med tangentbordet, tryck ned <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
       </item>
       <item><title>Gör om</title>
-        <p xml:lang="en_GB">The <gui>Redo</gui> command puts back changes that were removed using the <gui>Undo</gui> feature. To redo your last change using the keyboard, press <keyseq><key>Shift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
+        <p>Kommandot <gui>Gör om</gui> används för att lägga tillbaka ändringar som togs bort med egenskapen <gui>Ångra</gui>. För att göra om din senaste ändring med tangentbordet, tryck ned <keyseq><key>Skift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
       </item>
       <item><title>Fet</title>
-        <p xml:lang="en_GB">To make text bold, select it and then select the <gui>Bold</gui> command from the <gui>Text</gui> menu or press <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
+        <p>För att göra text fet, markera den och välj sedan kommandot <gui>Fet</gui> från menyn <gui>Text</gui> eller tryck ned <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
       </item>
       <item><title>Kursiv</title>
-        <p xml:lang="en_GB">To make text italic, select it and then select the <gui>Italic </gui> command from the <gui>Text</gui> menu, or press <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
+        <p>För att göra text kursiv, markera den och välj sedan kommandot <gui>Kursiv</gui> från menyn <gui>Text</gui> eller pressa <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
      </item>
      <item><title>Genomstruken</title>
-       <p xml:lang="en_GB">The strikeout style will put a line through the selected text. To add a strikeout, select text and then select the <gui>Strikeout</gui> command from the <gui>Text</gui> menu or press <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
+       <p>Stilen genomstruken kommer att lägga en linje genom den markerade texten. För att lägga till en genomstrykning, markera texten och välj sedan kommandot <gui>Genomstruken</gui> från menyn <gui>Text</gui> eller tryck ned <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
      </item>
      <item><title>Färgmarkera</title>
-       <p xml:lang="en_GB">The highlight style will put a different background around the selected text. To add a highlight, select text and then select the <gui>Highlight</gui> command from the <gui>Text</gui> menu or press <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
+       <p>Stilen färgmarkera kommer att lägga en gul bakgrund runt den markerade texten. För att lägga till en markering, markera texten och välj sedan alternativet <gui>Färgmarkera</gui> från menyn <gui>Text</gui> eller tryck ned <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
      </item>
      <item><title>Typsnittsstorlek</title>
-       <p xml:lang="en_GB">There are actually four options in this part of the menu: Small, Normal, Large, and Huge. Each option represents a font size to use for the selected text. To modify the font size, select text and then select <gui>Small</gui>, <gui>Normal</gui>, <gui>Large</gui>, or <gui>Huge</gui>.</p>
+       <p>Det finns faktiskt fyra alternativ i den här delen av menyn: Liten, normal, stor och enorm. Varje alternativ representerar en typsnittsstorlek som kan användas för den markerade texten. För att ändra typsnittsstorleken, markera texten och välj sedan <gui>Liten</gui>, <gui>Normal</gui>, <gui>Stor</gui>, eller <gui>Enorm</gui>.</p>
      </item>
      <item><title>Punkter</title>
-       <p xml:lang="en_GB">Select the <gui>Bullets</gui> command from the Text menu to begin or end a bulleted list. If the cursor is inside a bulleted list, the <gui>Increase Indent</gui> and <gui>Decrease Indent</gui> options will be enabled.</p>
-       <p xml:lang="en_GB">With the cursor on a bulleted list line, select the <gui>Increase Indent</gui> command to shift the current line to the right or the <gui>Decrease Indent</gui> command to shift to the left.</p>
-       <p xml:lang="en_GB">For more information on bullets, see <link xref="bulleted-lists"/>.</p>
+       <p>Välj kommandot <gui>Punkter</gui> från textmenyn för att påbörja eller avsluta en punktlista. Om markören är inne i en punktlista kommer alternativen <gui>Öka indrag</gui> och <gui>Minska indrag</gui> att aktiveras.</p>
+       <p>Med markören på en rad i punktlistan, välj kommandot <gui>Öka indrag</gui> för att dra den aktuella raden till höger eller kommandot <gui>Minska indrag</gui> för att växla till vänster.</p>
+       <p>För mer information om punktlistor, se <link xref="bulleted-lists"/>.</p>
      </item>
    </list>
-   <p xml:lang="en_GB">The toolbar at the top of note has search button. Use it to search for text within the current note. A small find bar will appear above the note. To open the find bar using the keyboard, press <keyseq><key>Ctrl</key><key>F</key></keyseq>. Enter the text to find and press <key>Enter</key>. Matches will be highlighted. Click <gui>Next</gui> to highlight the next match and place the cursor there. Click <gui>Previous</gui> to move to the previous match.
-To close the find bar, click the search button again or press the <key>Escape</key> key.</p>
+   <p>Verktygsfältet överst på anteckningen har en sökknapp. Använd den för att söka efter text inom aktuell anteckning. En mindre sökruta kommer att visas ovanför anteckningen. För att öppna sökrutan med tangentbordet, tryck ned <keyseq><key>Ctrl</key><key>F</key></keyseq>. Ange söktext och tryck ned <key>Retur</key>. Träffar kommer att färgmarkeras. Klicka <gui>Nästa</gui> för att markera nästa träff och placera markören där. Klicka <gui>Föregående</gui> för att gå till tidigare träff. För att stänga sökrutan, klicka på sökknappen igen eller tryck ned tangenten <key>Escape</key>.</p>
 
    <section id="note-content" style="2column">
-     <title xml:lang="en_GB">Rich Note Content</title>
+     <title>Formaterat anteckningsinnehåll</title>
    </section>
 
 </page>

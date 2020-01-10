@@ -3,42 +3,54 @@
 
   <info>
     <license>
-	<p xml:lang="en_GB">GNU Free Documentation License (GFDL), Version 1.1</p>
+	<p>GNU Free Documentation License (GFDL), Version 1.1</p>
     </license>
     <credit type="author">
-      <name xml:lang="en_GB">Pierre-Yves Luyten</name>
-      <years xml:lang="en_GB">2011</years>
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
     </credit>
     <credit type="editor">
-      <name xml:lang="en_GB">Aurimas Cernius</name>
-      <years xml:lang="en_GB">2011</years>
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Nylander</mal:name>
+      <mal:email>po@danielnylander.se</mal:email>
+      <mal:years>2006, 2007, 2008, 2009</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Josef Andersson</mal:name>
+      <mal:email>josef.andersson@fripost.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
   </info>
 
-  <title xml:lang="en_GB"><media type="image" src="figures/logo32.png"/> Gnote Help</title>
+  <title><media type="image" src="figures/logo32.png"/> Gnote hjälp</title>
 
     <section id="introduction">
     <title>Introduktion</title>
     </section>
 
     <section id="managing-notes" style="2column">
-    <title xml:lang="en_GB">Managing Notes</title>
+    <title>Hantera anteckningar</title>
     </section>
 
     <section id="organizing-notes" style="2column">
-    <title xml:lang="en_GB">Organizing Notes</title>
+    <title>Organisera anteckningar</title>
     </section>
 
     <section id="advanced" style="2column">
-    <title xml:lang="en_GB">Advanced</title>
+    <title>Avancerat</title>
     </section>
 
     <section id="customizing" style="2column">
-    <title xml:lang="en_GB">Customizing</title>
+    <title>Anpassning</title>
     </section>
 
     <section id="common-problems" style="2column">
-    <title xml:lang="en_GB">Common Problems</title>
+    <title>Vanliga problem</title>
     </section>
 
 </page>

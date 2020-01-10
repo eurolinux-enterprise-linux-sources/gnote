@@ -43,7 +43,7 @@
 <note style="advanced">
     <p>Al cambiar el título de una nota se actualizarán los enlaces presentes en otras notas. Esto previene que se produzcan enlaces rotos cuando se renombre una nota.</p></note>
 
-  <section><title>Complemento «Retroenlaces»</title>
+  <section id="backlinks"><title>Complemento «Retroenlaces»</title>
     <p>Cuando el complemento <app>Retroenlaces</app> está instalado, el menú <gui>Acciones</gui> contendrá un elemento llamado <gui>¿Qué enlaza aquí?</gui>, que proporciona un submenú con todas las notas que contienen un enlace a la nota actual.</p>
   </section>
 

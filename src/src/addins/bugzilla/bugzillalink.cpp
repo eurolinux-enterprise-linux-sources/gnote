@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012 Aurimas Cernius
+ * Copyright (C) 2012,2017 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,6 +22,7 @@
 #include "sharp/uri.hpp"
 #include "debug.hpp"
 #include "iconmanager.hpp"
+#include "ignote.hpp"
 #include "utils.hpp"
 #include "bugzillalink.hpp"
 #include "bugzillanoteaddin.hpp"
@@ -35,7 +36,7 @@ namespace bugzilla {
   }
 
 
-  void BugzillaLink::initialize(const std::string & element_name)
+  void BugzillaLink::initialize(const Glib::ustring & element_name)
   {
     gnote::DynamicNoteTag::initialize(element_name);
 
@@ -48,9 +49,9 @@ namespace bugzilla {
   }
 
 
-  std::string BugzillaLink::get_bug_url() const
+  Glib::ustring BugzillaLink::get_bug_url() const
   {
-    std::string url;
+    Glib::ustring url;
     AttributeMap::const_iterator iter = get_attributes().find(URI_ATTRIBUTE_NAME);
     if(iter != get_attributes().end()) {
       url = iter->second;
@@ -59,7 +60,7 @@ namespace bugzilla {
   }
 
 
-  void BugzillaLink::set_bug_url(const std::string & value)
+  void BugzillaLink::set_bug_url(const Glib::ustring & value)
   {
     get_attributes()[URI_ATTRIBUTE_NAME] = value;
     make_image();
@@ -70,10 +71,10 @@ namespace bugzilla {
   {
     sharp::Uri uri(get_bug_url());
 
-    std::string host = uri.get_host();
+    Glib::ustring host = uri.get_host();
 
-    std::string imageDir = BugzillaNoteAddin::images_dir();
-    std::string imagePath = imageDir + host + ".png";
+    Glib::ustring imageDir = BugzillaNoteAddin::images_dir();
+    Glib::ustring imagePath = imageDir + host + ".png";
     Glib::RefPtr<Gdk::Pixbuf> image;
     try {
       image = Gdk::Pixbuf::create_from_file(imagePath);
@@ -93,7 +94,7 @@ namespace bugzilla {
       DBG_OUT("Opening url '%s'...", get_bug_url().c_str());
 				
       try {
-        gnote::utils::open_url(get_bug_url());
+        gnote::utils::open_url(gnote::IGnote::obj().get_main_window(), get_bug_url());
       } 
       catch (const Glib::Error & e) {
         gnote::utils::show_opening_location_error(NULL, 
@@ -104,7 +105,7 @@ namespace bugzilla {
   }
 
 
-  void BugzillaLink::on_attribute_read(const std::string & attributeName)
+  void BugzillaLink::on_attribute_read(const Glib::ustring & attributeName)
   {
     gnote::DynamicNoteTag::on_attribute_read(attributeName);
     if (attributeName == URI_ATTRIBUTE_NAME) {

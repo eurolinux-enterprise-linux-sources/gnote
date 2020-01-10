@@ -41,7 +41,7 @@
   <title>Editar las notas</title>
 
     <p>Cuando abra una nota, <app>Gnote</app> reemplazará la vista previa de la nota con los contenidos de la nota.</p>
-    <p>La barra de herramientas en la parte superior de la ventana, ahora contiene información específica sobre la nota. Debajo de la barra de herramientas, está el área de contenidos de la nota.</p>
+    <p xml:lang="en_GB">Toolbar at the top of the window will now contain note specific items in it. Below toolbar is the note's content area.</p>
     <figure>
       <title>Ventana de <app>Gnote</app> que muestra las notas</title>
       <desc>Nota de <app>Gnote</app></desc>

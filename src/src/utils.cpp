@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2015 Aurimas Cernius
+ * Copyright (C) 2010-2017 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -24,11 +24,7 @@
 #include <config.h>
 #endif
 
-#include <iostream>
 #include <algorithm>
-
-#include <boost/format.hpp>
-#include <boost/bind.hpp>
 
 #include <gtk/gtk.h>
 
@@ -115,24 +111,39 @@ namespace gnote {
       }
 
 
-      class PopoverSubmenuGrid
-        : public Gtk::Grid
+      class PopoverSubmenuBox
+        : public Gtk::Box
         , public PopoverSubmenu
       {
       public:
-        PopoverSubmenuGrid(const Glib::ustring & submenu)
-          : PopoverSubmenu(submenu)
+        PopoverSubmenuBox(const Glib::ustring & submenu)
+          : Gtk::Box(Gtk::ORIENTATION_VERTICAL)
+          , PopoverSubmenu(submenu)
         {
-          set_common_popover_widget_props(*this);
+          utils::set_common_popover_widget_props(*this);
         }
       };
+
+      void set_common_popover_widget_props(Gtk::ModelButton & button)
+      {
+        button.set_use_underline(true);
+        button.property_margin_top() = 3;
+        button.property_margin_bottom() = 3;
+        auto lbl = dynamic_cast<Gtk::Label*>(button.get_child());
+        if(lbl) {
+          lbl->set_xalign(0.0f);
+        }
+        utils::set_common_popover_widget_props(button);
+      }
     }
 
 
     void popup_menu(Gtk::Menu &menu, const GdkEventButton * ev)
     {
       menu.signal_deactivate().connect(sigc::bind(&deactivate_menu, &menu));
-      menu.popup(boost::bind(&get_menu_position, &menu, _1, _2, _3), 
+      menu.popup([&menu](int & x, int & y, bool & push_in) {
+                   get_menu_position(&menu, x, y, push_in);
+                  },
                  (ev ? ev->button : 0), 
                  (ev ? ev->time : gtk_get_current_event_time()));
       if(menu.get_attach_widget()) {
@@ -141,25 +152,24 @@ namespace gnote {
     }
 
 
-    void show_help(const std::string & filename, const std::string & link_id,
-                   GdkScreen *screen, Gtk::Window *parent)
+    void show_help(const Glib::ustring & filename, const Glib::ustring & link_id, Gtk::Window & parent)
     {
       // "help:" URIs are "help:document[/page][?query][#frag]"
       // See resolve_help_uri () at,
       // https://git.gnome.org/browse/yelp/tree/libyelp/yelp-uri.c#n811
-      std::string uri = "help:" + filename;
+      Glib::ustring uri = "help:" + filename;
       if(!link_id.empty()) {
         uri += "/" + link_id;
       }
       GError *error = NULL;
 
-      if(!gtk_show_uri (screen, uri.c_str(), gtk_get_current_event_time (), &error)) {
+      if(!gtk_show_uri_on_window(parent.gobj(), uri.c_str(), gtk_get_current_event_time (), &error)) {
         
-        std::string message = _("The \"Gnote Manual\" could "
-                                "not be found.  Please verify "
-                                "that your installation has been "
-                                "completed successfully.");
-        HIGMessageDialog dialog(parent,
+        Glib::ustring message = _("The \"Gnote Manual\" could "
+                                  "not be found.  Please verify "
+                                  "that your installation has been "
+                                  "completed successfully.");
+        HIGMessageDialog dialog(&parent,
                                 GTK_DIALOG_DESTROY_WITH_PARENT,
                                 Gtk::MESSAGE_ERROR,
                                 Gtk::BUTTONS_OK,
@@ -173,13 +183,12 @@ namespace gnote {
     }
 
 
-    void open_url(const std::string & url)
-      throw (Glib::Error)
+    void open_url(Gtk::Window & parent, const Glib::ustring & url)
     {
       if(!url.empty()) {
         GError *err = NULL;
         DBG_OUT("Opening url '%s'...", url.c_str());
-        gtk_show_uri (NULL, url.c_str(), GDK_CURRENT_TIME, &err);
+        gtk_show_uri_on_window(parent.gobj(), url.c_str(), GDK_CURRENT_TIME, &err);
         if(err) {
           throw Glib::Error(err, true);
         }
@@ -187,11 +196,11 @@ namespace gnote {
     }
 
 
-    void show_opening_location_error(Gtk::Window * parent, 
-                                     const std::string & url, 
-                                     const std::string & error)
+    void show_opening_location_error(Gtk::Window * parent,
+                                     const Glib::ustring & url,
+                                     const Glib::ustring & error)
     {
-      std::string message = str(boost::format ("%1%: %2%") % url % error);
+      Glib::ustring message = Glib::ustring::compose("%1: %2", url, error);
 
       HIGMessageDialog dialog(parent, GTK_DIALOG_DESTROY_WITH_PARENT,
                               Gtk::MESSAGE_INFO,
@@ -201,7 +210,7 @@ namespace gnote {
       dialog.run ();
     }
 
-    std::string get_pretty_print_date(const sharp::DateTime & date, bool show_time)
+    Glib::ustring get_pretty_print_date(const sharp::DateTime & date, bool show_time)
     {
       bool use_12h = false;
       if(show_time) {
@@ -212,11 +221,11 @@ namespace gnote {
       return get_pretty_print_date(date, show_time, use_12h);
     }
 
-    std::string get_pretty_print_date(const sharp::DateTime & date, bool show_time, bool use_12h)
+    Glib::ustring get_pretty_print_date(const sharp::DateTime & date, bool show_time, bool use_12h)
     {
-      std::string pretty_str;
+      Glib::ustring pretty_str;
       sharp::DateTime now = sharp::DateTime::now();
-      std::string short_time = use_12h
+      Glib::ustring short_time = use_12h
         /* TRANSLATORS: time in 12h format. */
         ? date.to_string("%l:%M %P")
         /* TRANSLATORS: time in 24h format. */
@@ -225,30 +234,30 @@ namespace gnote {
       if (date.year() == now.year()) {
         if (date.day_of_year() == now.day_of_year()) {
           pretty_str = show_time ?
-            /* TRANSLATORS: argument %1% is time. */
-            str(boost::format(_("Today, %1%")) % short_time) :
+            /* TRANSLATORS: argument %1 is time. */
+            Glib::ustring::compose(_("Today, %1"), short_time) :
             _("Today");
         }
         else if ((date.day_of_year() < now.day_of_year())
                  && (date.day_of_year() == now.day_of_year() - 1)) {
           pretty_str = show_time ?
-            /* TRANSLATORS: argument %1% is time. */
-            str(boost::format(_("Yesterday, %1%")) % short_time) :
+            /* TRANSLATORS: argument %1 is time. */
+            Glib::ustring::compose(_("Yesterday, %1"), short_time) :
             _("Yesterday");
         }
         else if (date.day_of_year() > now.day_of_year()
                  && date.day_of_year() == now.day_of_year() + 1) {
           pretty_str = show_time ?
-            /* TRANSLATORS: argument %1% is time. */
-            str(boost::format(_("Tomorrow, %1%")) % short_time) :
+            /* TRANSLATORS: argument %1 is time. */
+            Glib::ustring::compose(_("Tomorrow, %1"), short_time) :
             _("Tomorrow");
         }
         else {
           /* TRANSLATORS: date in current year. */
           pretty_str = date.to_string(_("%b %d")); // "MMMM d"
           if(show_time) {
-            /* TRANSLATORS: argument %1% is date, %2% is time. */
-            pretty_str = str(boost::format(_("%1%, %2%")) % pretty_str % short_time);
+            /* TRANSLATORS: argument %1 is date, %2 is time. */
+            pretty_str = Glib::ustring::compose(_("%1, %2"), pretty_str, short_time);
           }
         }
       } 
@@ -259,8 +268,8 @@ namespace gnote {
         /* TRANSLATORS: date in other than current year. */
         pretty_str = date.to_string(_("%b %d %Y")); // "MMMM d yyyy"
         if(show_time) {
-          /* TRANSLATORS: argument %1% is date, %2% is time. */
-          pretty_str = str(boost::format(_("%1%, %2%")) % pretty_str % short_time);
+          /* TRANSLATORS: argument %1 is date, %2 is time. */
+          pretty_str = Glib::ustring::compose(_("%1, %2"), pretty_str, short_time);
         }
       }
 
@@ -280,8 +289,9 @@ namespace gnote {
       Glib::Threads::Cond cond;
 
       mutex.lock();
-      main_context_invoke(boost::bind(
-        sigc::ptr_fun(main_context_call_func), slot, &cond, &mutex));
+      main_context_invoke([slot, &cond, &mutex]() {
+        main_context_call_func(slot, &cond, &mutex);
+      });
       cond.wait(mutex);
       mutex.unlock();
     }
@@ -292,7 +302,6 @@ namespace gnote {
       Gtk::ModelButton *item = new Gtk::ModelButton;
       gtk_actionable_set_action_name(GTK_ACTIONABLE(item->gobj()), action.c_str());
       item->set_label(label);
-      item->set_use_underline(true);
       set_common_popover_widget_props(*item);
       return item;
     }
@@ -303,33 +312,29 @@ namespace gnote {
       Gtk::ModelButton *button = new Gtk::ModelButton;
       button->property_menu_name() = submenu;
       button->set_label(label);
-      button->set_use_underline(true);
       set_common_popover_widget_props(*button);
       return button;
     }
 
 
-    Gtk::Grid * create_popover_submenu(const Glib::ustring & name)
+    Gtk::Box * create_popover_submenu(const Glib::ustring & name)
     {
-      return new PopoverSubmenuGrid(name);
+      return new PopoverSubmenuBox(name);
     }
 
 
     void set_common_popover_widget_props(Gtk::Widget & widget)
     {
-      widget.property_margin_top() = 5;
-      widget.property_margin_bottom() = 5;
       widget.property_hexpand() = true;
     }
 
-    Gtk::Grid *create_popover_inner_grid(int *top)
+    void set_common_popover_widget_props(Gtk::Box & widget)
     {
-      Gtk::Grid *grid = new Gtk::Grid;
-      set_common_popover_widget_props(*grid);
-      if(top) {
-        *top = 0;
-      }
-      return grid;
+      widget.property_margin_top() = 9;
+      widget.property_margin_bottom() = 9;
+      widget.property_margin_left() = 12;
+      widget.property_margin_right() = 12;
+      set_common_popover_widget_props(static_cast<Gtk::Widget&>(widget));
     }
 
 
@@ -433,8 +438,7 @@ namespace gnote {
       hbox->attach(*label_vbox, hbox_col++, 0, 1, 1);
 
       if(header != "") {
-        std::string title = str(boost::format("<span weight='bold' size='larger'>%1%"
-                                              "</span>\n") % header.c_str());
+        Glib::ustring title = Glib::ustring::compose("<span weight='bold' size='larger'>%1</span>\n", header);
         Gtk::Label *label = manage(new Gtk::Label (title));
         label->set_use_markup(true);
         label->set_justify(Gtk::JUSTIFY_LEFT);
@@ -558,32 +562,23 @@ namespace gnote {
     }
 #endif
 
-    void UriList::load_from_string(const std::string & data)
+    void UriList::load_from_string(const Glib::ustring & data)
     {
-      std::vector<std::string> items;
+      std::vector<Glib::ustring> items;
       sharp::string_split(items, data, "\n");
-      std::vector<Glib::ustring> uitems;
-      for(std::vector<std::string>::iterator iter = items.begin();
-          iter != items.end(); ++iter) {
-        uitems.push_back(*iter);
-      }
-      load_from_string_list(uitems);
+      load_from_string_list(items);
     }
 
     void UriList::load_from_string_list(const std::vector<Glib::ustring> & items)
     {
-      for(std::vector<Glib::ustring>::const_iterator iter = items.begin();
-          iter != items.end(); ++iter) {
-
-        const std::string & i(*iter);
-
+      for(const Glib::ustring & i : items) {
         if(Glib::str_has_prefix(i, "#")) {
           continue;
         }
 
-        std::string s = i;
+        Glib::ustring s = i;
         if(Glib::str_has_suffix(i, "\r")) {
-          s.erase(s.end() - 1, s.end());
+          s.resize(s.size() - 1);
         }
 
         // Handle evo's broken file urls
@@ -595,7 +590,7 @@ namespace gnote {
       }
     }
 
-    UriList::UriList(const std::string & data)
+    UriList::UriList(const Glib::ustring & data)
     {
       load_from_string(data);
     }
@@ -609,9 +604,9 @@ namespace gnote {
     }
 
 
-    std::string UriList::to_string() const
+    Glib::ustring UriList::to_string() const
     {
-      std::string s;
+      Glib::ustring s;
       for(const_iterator iter = begin(); iter != end(); ++iter) {
         s += iter->to_string() + "\r\n";
       }
@@ -619,7 +614,7 @@ namespace gnote {
     }
 
 
-    void UriList::get_local_paths(std::list<std::string> & paths) const
+    void UriList::get_local_paths(std::list<Glib::ustring> & paths) const
     {
       for(const_iterator iter = begin(); iter != end(); ++iter) {
 
@@ -632,7 +627,7 @@ namespace gnote {
     }
 
 
-    std::string XmlEncoder::encode(const std::string & source)
+    Glib::ustring XmlEncoder::encode(const Glib::ustring & source)
     {
       sharp::XmlWriter xml;
       //need element so that source is properly escaped
@@ -641,8 +636,8 @@ namespace gnote {
       xml.write_end_element();
 
       xml.close();
-      std::string result = xml.to_string();
-      std::string::size_type end_pos = result.find("</x>");
+      Glib::ustring result = xml.to_string();
+      Glib::ustring::size_type end_pos = result.find("</x>");
       if(end_pos == result.npos) {
         return "";
       }
@@ -651,11 +646,9 @@ namespace gnote {
     }
 
 
-    std::string XmlDecoder::decode(const std::string & source)
+    Glib::ustring XmlDecoder::decode(const Glib::ustring & source)
     {
-      // TODO there is probably better than a std::string for that.
-      // this will do for now.
-      std::string builder;
+      Glib::ustring builder;
 
       sharp::XmlReader xml;
       xml.load_buffer(source);
@@ -682,8 +675,7 @@ namespace gnote {
     }
 
 
-    TextRange::TextRange(const Gtk::TextIter & _start,
-                         const Gtk::TextIter & _end) throw(sharp::Exception)
+    TextRange::TextRange(const Gtk::TextIter & _start, const Gtk::TextIter & _end)
     {
       if(_start.get_buffer() != _end.get_buffer()) {
         throw(sharp::Exception("Start buffer and end buffer do not match"));

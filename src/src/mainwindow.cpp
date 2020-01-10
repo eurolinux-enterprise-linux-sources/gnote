@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2013,2015-2016 Aurimas Cernius
+ * Copyright (C) 2013,2015-2017 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -93,6 +93,9 @@ MainWindow *MainWindow::present_default(const Note::Ptr & note)
     if (note->has_window()) {
       win = dynamic_cast<MainWindow*>(note->get_window()->host());
     }
+    else {
+      win = &IGnote::obj().get_window_for_note();
+    }
   }
   if(!win) {
     win = &IGnote::obj().new_main_window();
@@ -116,12 +119,12 @@ bool MainWindow::use_client_side_decorations()
     }
     else {
       s_use_client_side_decorations = 0;
-      std::vector<std::string> desktops;
+      std::vector<Glib::ustring> desktops;
       sharp::string_split(desktops, setting, ",");
       const char *current_desktop = std::getenv("DESKTOP_SESSION");
       if (current_desktop) {
         Glib::ustring current_de = Glib::ustring(current_desktop).lowercase();
-        FOREACH(std::string de, desktops) {
+        FOREACH(Glib::ustring de, desktops) {
           Glib::ustring denv = Glib::ustring(de).lowercase();
           if(current_de.find(denv) != Glib::ustring::npos) {
             s_use_client_side_decorations = 1;
@@ -135,7 +138,7 @@ bool MainWindow::use_client_side_decorations()
 }
 
 
-MainWindow::MainWindow(const std::string & title)
+MainWindow::MainWindow(const Glib::ustring & title)
   : m_close_on_esc(false)
 {
   set_title(title);

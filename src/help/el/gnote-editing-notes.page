@@ -59,7 +59,7 @@
   <title>Επεξεργασία σημειώσεων</title>
 
     <p>Όταν ανοίγετε μια σημείωση, το <app>Gnote</app> αντικαθιστά την επισκόπηση σημείωσης με τα περιεχόμενα της σημείωσης.</p>
-    <p>Η εργαλειοθήκη στην κορυφή του παραθύρου θα περιέχει τώρα τα συγκεκριμένα στοιχεία της σημείωσης σε αυτή. Κάτω από την εργαλειοθήκη είναι η περιοχή περιεχομένου της σημείωσης.</p>
+    <p xml:lang="en_GB">Toolbar at the top of the window will now contain note specific items in it. Below toolbar is the note's content area.</p>
     <figure>
       <title>Το παράθυρο του <app>Gnote</app> εμφανίζει τη σημείωση</title>
       <desc>Σημειώσεις του <app>Gnote</app></desc>

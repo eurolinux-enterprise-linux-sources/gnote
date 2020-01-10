@@ -25,7 +25,7 @@
 <note style="advanced">
     <p>Raštelio pavadinimo pakeitimas atnaujins saitus kituose rašteliuose. Taip išvengiama nutrūkusių saitų, kai raštelis pervadinamas.</p></note>
 
-  <section><title>Priedas „atgalinės nuorodos“</title>
+  <section id="backlinks"><title>Priedas „atgalinės nuorodos“</title>
     <p>Kai <app>atgalinių nuorodų</app> įskiepis yra įdiegtas, <gui>veiksmų</gui> meniu turės elementą <gui>Kur yra nuorodos į čia?</gui>, kuris pateikia po-meniu su visais rašteliais, turinčiais saitą į esamą raštelį.</p>
   </section>
 

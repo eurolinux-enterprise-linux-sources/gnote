@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2013-2016 Aurimas Cernius
+ * Copyright (C) 2013-2017 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,8 +19,6 @@
 
 #include <stdexcept>
 
-#include <boost/lexical_cast.hpp>
-
 #include <glibmm/i18n.h>
 
 #include "base/macros.hpp"
@@ -37,7 +35,7 @@ namespace gnote {
     const char * ADDIN_ATTS = "AddinAttributes";
     const char * ADDIN_ACTIONS = "Actions";
 
-    AddinCategory resolve_addin_category(const std::string & cat)
+    AddinCategory resolve_addin_category(const Glib::ustring & cat)
     {
       if(cat == "Tools") {
         return ADDIN_CATEGORY_TOOLS;
@@ -59,14 +57,14 @@ namespace gnote {
 
 
 
-AddinInfo::AddinInfo(const std::string & info_file)
+AddinInfo::AddinInfo(const Glib::ustring & info_file)
   : m_category(ADDIN_CATEGORY_UNKNOWN)
   , m_default_enabled(false)
 {
   load_from_file(info_file);
 }
 
-void AddinInfo::load_from_file(const std::string & info_file)
+void AddinInfo::load_from_file(const Glib::ustring & info_file)
 {
   try {
     Glib::KeyFile addin_info;
@@ -106,7 +104,7 @@ void AddinInfo::load_from_file(const std::string & info_file)
       load_actions(addin_info, "actions_int", &Glib::Variant<gint32>::variant_type());
       load_actions(addin_info, "actions_string", &Glib::Variant<Glib::ustring>::variant_type());
       if(addin_info.has_key(ADDIN_ACTIONS, "non_modifying_actions")) {
-        std::vector<std::string> actions;
+        std::vector<Glib::ustring> actions;
         sharp::string_split(actions, addin_info.get_string(ADDIN_ACTIONS, "non_modifying_actions"), ",");
         for(auto action : actions) {
           m_non_modifying_actions.push_back(action);
@@ -122,7 +120,7 @@ void AddinInfo::load_from_file(const std::string & info_file)
 void AddinInfo::load_actions(Glib::KeyFile & addin_info, const Glib::ustring & key, const Glib::VariantType *type)
 {
   if(addin_info.has_key(ADDIN_ACTIONS, key)) {
-    std::vector<std::string> actions;
+    std::vector<Glib::ustring> actions;
     sharp::string_split(actions, addin_info.get_string(ADDIN_ACTIONS, key), ",");
     for(auto action : actions) {
       m_actions[action] = type;
@@ -161,17 +159,17 @@ bool AddinInfo::validate_compatibility(const Glib::ustring & release, const Glib
   }
   else {
     try {
-      std::vector<std::string> parts;
+      std::vector<Glib::ustring> parts;
       sharp::string_split(parts, m_libgnote_version_info, ":");
       if(parts.size() != 3) {
         return false;
       }
 
-      int this_ver = boost::lexical_cast<int>(parts[0]);
+      int this_ver = STRING_TO_INT(parts[0]);
       parts.clear();
       sharp::string_split(parts, version_info, ":");
-      int ver = boost::lexical_cast<int>(parts[0]);
-      int compat = boost::lexical_cast<int>(parts[2]);
+      int ver = STRING_TO_INT(parts[0]);
+      int compat = STRING_TO_INT(parts[2]);
 
       if(this_ver > ver) {
         // too new
