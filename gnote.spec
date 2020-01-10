@@ -1,11 +1,12 @@
 Name:           gnote
 Version:        3.8.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Note-taking application
 Group:          User Interface/Desktops
 License:        GPLv3+
 URL:            http://live.gnome.org/Gnote
 Source0:        http://ftp.gnome.org/pub/GNOME/sources/gnote/3.8/%{name}-%{version}.tar.xz
+Patch0:         gnote-3.8.1-EL7.3_translations.patch
 
 BuildRequires:  boost-devel
 BuildRequires:  desktop-file-utils
@@ -29,6 +30,7 @@ and consumes fewer resources.
 
 %prep
 %setup -q
+%patch0 -p1 -b .translations
 
 %build
 %configure --disable-static --with-gnu-ld
@@ -73,6 +75,10 @@ fi
 %{_datadir}/glib-2.0/schemas/org.gnome.gnote.gschema.xml
 
 %changelog
+* Fri Jul 01 2016 Kalev Lember <klember@redhat.com> - 3.8.1-4
+- Update translations
+- Resolves: #1030355
+
 * Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 3.8.1-3
 - Mass rebuild 2014-01-24
 
