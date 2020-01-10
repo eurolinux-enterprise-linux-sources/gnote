@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="links" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#organizing-notes"/>
+    <license><p>Licencia libre de documentación de GNU (GFDL), Versión 1.1</p></license>
+    <desc>Enlazar con otras notas</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nicolás Satragno</mal:name>
+      <mal:email>nsatragno@gnome.org</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Enlaces</title>
+    <p>El botón <guibutton>Enlazar</guibutton> le permite crear un enlace a una nota nueva desde el interior de la nota actual. Por ejemplo, si su nota contiene la frase <quote>Examen final</quote>, puede seleccionar este texto con el ratón y pulsar el botón <guibutton>Enlazar</guibutton> para crear una nota nueva con el título «Examen final». Se creará además un enlace en la nota actual sobre el cual se puede pulsar para abrir la nota nueva «Examen final».</p>
+<note style="advanced">
+    <p>Al cambiar el título de una nota se actualizarán los enlaces presentes en otras notas. Esto previene que se produzcan enlaces rotos cuando se renombre una nota.</p></note>
+
+  <section><title>Complemento «Retroenlaces»</title>
+    <p>El botón «Herramientas» se representa con el icono <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"> </media>. Cuando el complemento «retroenlaces» está instalado, el menú<gui>Herramientas</gui> contendrá un elemento llamado <gui>¿Qué enlaza aquí?</gui>, que proporciona un submenú con todas las notas que contienen un enlace a la nota actual.</p>
+  </section>
+
+</page>

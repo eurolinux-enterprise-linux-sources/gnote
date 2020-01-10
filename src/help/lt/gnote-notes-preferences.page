@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="notes-preferences" xml:lang="lt">
+
+
+  <info>
+    <link type="guide" xref="index#customizing"/>
+    <desc>Gnote nustatymai</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Gnote parinktys</title>
+  <section id="editing">
+    <title>Gnote nustatymai</title>
+    <p><app>Gnote</app> nustatymams pakeisti, programos meniu pasirinkite punktą <gui>Nustatymai</gui>.</p>
+    <p>Yra trys nustatymų kategorijos: <gui>Esmė</gui>, <gui>Spartieji klavišai</gui> ir <gui>Priedai</gui>. Žemiau aprašyti kiekvienos kortelės nustatymai.</p>
+    <p>Esmės kortelė leis keisti nustatymus, susijusius su programos elgsena ir raštelių redagavimu. Šioje kortelėje yra keli žymimieji langeliai, kurie gali būti įjungti arba išjungti.</p>
+    <list>
+      <item><title>Naudoti būsenos piktogramą</title><p>Pažymėkite šį langelį, kad <app>Gnote</app> būsenos piktograma būtų rodoma vykdymo metu. Šioje veiksenoje <app>Gnote</app> tęs darbą net po visų langų uždarymo. Neseniai naudoti rašteliai ir kiti langai gali būti atverti naudojant meniu, pasirodantį paspaudus kairį arba dešinį klavišą virš būsenos piktogramos.</p></item>
+      <item><title>Rašybos tikrinimas rašant</title><p>Pažymėkite šį langelį, kad klaidingai parašyti žodžiai būtų pabraukti raudonai ir kontekstiniame meniu būtų pateikti pasiūlymai.</p><p>Rašybos tikrinimas prieinamas tik jei jūsų distribucijoje yra įdiegtas GtkSpell paketas.</p></item>
+      <item><title>Paryškinti VikiŽodžius</title><p>Pažymėkite šį langelį, kad ŠitaipAtrodančiomsFrazėms būtų sukurti saitai. Paspaudus ant saito bus sukurtas naujas raštelis su atitinkamu pavadinimu.</p></item>
+      <item><title>Įjungti automatinį sąrašų formatą</title><p>Pažymėkite šį langelį, jei norite sukurti punktų sąrašą pradėdami eilutes brūkšneliu <key>-</key>. Daugiau rasite <link xref="bulleted-lists"/>.</p></item>
+      <item><title>Naudoti pasirinktinį šriftą</title><p>Pažymėkite šį langelį, jei norite rašteliams nustatyti pasirinktinį šriftą. Jei ši parinktis išjungta, bus naudojamas numatytasis sistemos šriftas.</p></item>
+    </list>
+    <figure><title>Langas <gui>Nustatymai</gui></title>
+      <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Gnote nustatymų keitimas</desc>
+    </figure>
+  </section>
+
+  <section id="advanced" style="2column">
+    <title>Sudėtingesni nustatymai</title>
+  </section>
+  <section id="sync">
+    <title>Sinchronizacijos nustatymai</title>
+    <section id="sync-addins" style="2column">
+      <title>Sinchronizacijos tarnybos</title>
+    </section>
+    <section id="sync-advanced">
+      <title>Sudėtingesni</title>
+      <p>Dialoge <gui>Nustatymai</gui> kortelėje <gui>Sinchronizacija</gui> paspaudus mygtuką <gui>Sudėtingesni</gui> pateikiamas dar vienas dialogas su konfliktų sprendimu.</p>
+      <figure>
+        <title>Sudėtingesni sinchronizacijos nustatymai</title>
+        <media type="image" src="figures/gnote-syncprefs-advanced.png" mime="image/png"/>
+      </figure>
+      <p>Šis dialogas leidžia pasirinkti, ką daryti, kai kyla konfliktas. Taip atsitinka, kai raštelis yra pakeičiamas prieš sinchronizuojant ir jis taip pat buvo pakeistas kitame įrenginyje (ir sinchronizuotas į sinchronizacijos saugyklą). Galite pasirinkti vieną iš šių parinkčių:</p>
+      <list>
+        <item><title>Pervadinti esamą raštelį pridedant „(Senas)“ prie jo pavadinimo ir parsiųsti tą patį raštelį iš saugyklos</title></item>
+        <item><title>Pakeisti esamą raštelį raštelių iš saugyklos, prarandant visus pakeitimus</title></item>
+        <item><title>Gauti pasirinkimą atskirai kiekvienam konfliktuojančiam rašteliui</title></item>
+      </list>
+    </section>
+  </section>
+
+</page>

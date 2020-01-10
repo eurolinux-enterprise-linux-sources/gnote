@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="bulleted-lists" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Punktų sąrašų naudojimas</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+<title>Punktų sąrašai</title>
+
+<section id="begin-a-bulleted-list"><title>Pradėti punktų sąrašą</title>
+<p>Punktų sąrašą galite pradėti šiais būdais</p>
+<list>
+<item><p>Pasirinkite <gui>Punktai</gui> iš meniu <gui>Tekstas</gui>.</p></item>
+<item><p>Pradėkite eilutę vienu brūkšneliu <key>-</key> ir tarpu, parašykite tekstą ir paspauskite <key>Enter</key>.</p></item>
+<item><p>Paspauskite klavišų kombinaciją <keyseq><key>Alt</key><key>Dešinėn</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="end-a-bulleted-list"><title>Baigti punktų sąrašą</title>
+<p>Užbaikite punktų sąrašą šiais būdais</p>
+<list>
+<item><p>Pasirinkite <gui>Punktai</gui> iš meniu <gui>Tekstas</gui>.</p></item>
+<item><p>Paspauskite <key>Enter</key> tuščioje punkto eilutėje.</p></item>
+<item><p>Spauskite <gui>Sumažinti įtrauką</gui> iš teksto meniu tol, kol esama eilutė nebebus punktų sąrašo dalimi.</p></item>
+<item><p>Naudodami klavišų kombinaciją <keyseq><key>Lyg2</key><key>Tab</key></keyseq> tol, kol esama eilutė nebebus punktų sąrašo dalimi.</p></item>
+<item><p>Naudodami klavišų kombinaciją <keyseq><key>Alt</key><key>Kairėn</key></keyseq> tol, kol esama eilutė nebebus punktų sąrašo dalimi.</p></item>
+</list>
+
+</section>
+<section id="increase-indentation">
+<title>Padidinti įtrauką</title>
+<p>Įtraukai punktų sąraše padidinti pele</p>
+<list><item><p>Pasirinkite <gui>Padidinti įtrauką</gui> iš teksto meniu.</p></item></list>
+<p>Įtraukai punktų sąraše padidinti klaviatūra</p>
+<list>
+<item><p>Spauskite <key>Tab</key> klavišą.</p></item>
+<item><p>Paspauskite klavišų kombinaciją <keyseq><key>Alt</key><key>Dešinėn</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="decrease-indentation">
+<title>Sumažinti įtrauką</title>
+<p>Įtraukai punktų sąraše sumažinti pele</p>
+<list><item><p>Pasirinkite <gui>Sumažinti įtrauką</gui> iš teksto meniu.</p></item></list>
+<p>Įtraukai punktų sąraše sumažinti klaviatūra:</p>
+<list>
+<item><p>Spauskite klavišų kombinaciją <keyseq><key>Lyg2</key><key>Tab</key></keyseq>.</p></item>
+<item><p>Spauskite klavišų kombinaciją <keyseq><key>Alt</key><key>Kairėn</key></keyseq>.</p></item>
+</list>
+</section>
+
+</page>

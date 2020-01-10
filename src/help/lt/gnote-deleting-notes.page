@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="deleting-notes" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <desc>Raštelių trynimas</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Raštelių trynimas</title>
+  <p>Raštelį ištrinti galite keliais būdais:</p>
+  <list>
+    <item><p>Spauskite dešinį klavišą raštelių sąraše ir pasirinkite <gui>Trinti</gui>. Šis būdas ištrins visus pažymėtus raštelius.</p></item>
+    <item><p>Atvertame ratelyje spauskite mygtuką <gui>Ištrinti</gui> įrankių juostoje.</p></item>
+  </list>
+  <p>Visais atvejais iššoks dialogas, klausiantis ar tikrai norite negrįžtamai ištrinti raštelius ir jų turinį. Spauskite <gui>Ištrinti</gui> rašteliui negrįžtamai pašalinti arba <gui>Atsisakyti</gui> procesui nutraukti. Saitai į raštelių išliks kituose rašteliuose, bet atkurs raštelį juos aktyvavus.</p>
+
+</page>

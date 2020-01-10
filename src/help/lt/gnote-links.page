@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="links" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#organizing-notes"/>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <desc>Susiejimas su kitais rašteliais</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Saitai</title>
+    <p>Mygtukas <gui>Susieti</gui> leidžia esamame raštelyje sukurti saitą į naują raštelį. Pavyzdžiui, jei jūsų raštelis turi frazę „baigiamasis egzaminas“, galite pažymėti šį tekstą pele ir paspausti mygtuką <gui>Susieti</gui> naujam rašteliui pavadinimu „baigiamasis egzaminas“ sukurti. Taip pat esamame raštelyje bus sukurtas saitas, kurį paspaudus bus atvertas raštelis „baigiamasis egzaminas“.</p>
+<note style="advanced">
+    <p>Raštelio pavadinimo pakeitimas atnaujins saitus kituose rašteliuose. Taip išvengiama nutrūkusių saitų, kai raštelis pervadinamas.</p></note>
+
+  <section><title>Priedas „atgalinės nuorodos“</title>
+    <p>Įrankių mygtuką vaizduoja piktograma <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Kai atgalinių nuorodų priedas yra įdiegtas, meniu <gui>Įrankiai</gui> turės elementą <gui>Kur yra nuorodos į čia?</gui>, kuris pateikia po-meniu su visais rašteliais, turinčiais saitą į esamą raštelį.</p>
+  </section>
+
+</page>

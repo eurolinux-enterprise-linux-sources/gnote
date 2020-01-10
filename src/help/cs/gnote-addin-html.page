@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-html" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Export poznámek do formátu HTML</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Export do HTML</title>
+    <p>Tlačítko <gui>Nástroje</gui> je prezentováno ikonou <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Když je tento doplněk nainstalován, nachází se v nabídce <gui>Nástroje</gui> volba <gui>Exportovat do HTML</gui>.</p>
+    <p>Pomocí této volby můžete z jedné nebo více poznámek vytvořit dokument HTML (Hypertext Markup Language).</p>
+    <p>Po vybrání této funkce se vám ukáže dialogové okno, ve kterém si můžete vybrat, kam chcete soubor HTML uložit. Zadejte název výsledného souboru a klikněte na tlačítko <gui>Uložit</gui> pro uložení nebo na <gui>Zrušit</gui> pro přerušení operace.</p>
+    <p>Jestliže chcete exportovat poznámky, na které z aktuální poznámky vedou odkazy, zvolte <gui>Exportovat související poznámky</gui>.</p>
+
+</page>

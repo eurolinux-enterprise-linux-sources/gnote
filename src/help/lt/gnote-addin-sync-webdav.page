@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-sync-webdav" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="notes-preferences#sync-addins"/>
+    <link type="guide" xref="synchronization#configuration"/>
+    <desc>Sinchronizuoti į WebDAV viešinį</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2012</years>
+    </credit>
+  </info>
+
+  <title>WebDAV sinchronizacija</title>
+  <p>Šio tipo sinchronizacija leidžia nustatyti WebDAV kaip sinchronizacijos saugyklą.</p>
+  <p>Šio tipo sinchronizacijai nustatyti:</p>
+  <list>
+    <item><title>iškrentančiame sąraše <gui>Tarnyba</gui> pasirinkite „WebDAV“</title></item>
+    <item><title>įveskite URL iki jūsų viešinio</title></item>
+    <item><title>įveskite naudotojo vardą ir slaptažodį</title></item>
+  </list>
+  <figure>
+    <title>Vietinio aplanko sinchronizacijos nustatymas</title>
+    <media type="image" src="figures/gnote-syncprefs-webdav.png" mime="image/png"/>
+  </figure>
+  <p>Pasirinkę pageidaujamą aplanką spauskite mygtuką <gui>Išsaugoti</gui>. Naudokite mygtuką <gui>Išvalyti</gui> sinchronizacijai išjungti.</p>
+
+</page>

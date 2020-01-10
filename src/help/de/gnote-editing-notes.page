@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="editing-notes" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>Inhalt von Notizen bearbeiten</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Notizen bearbeiten</title>
+
+    <p xml:lang="en_GB">Notes are opened in the same window by replacing search with note content.</p>
+    <p xml:lang="en_GB">At the top of the note there are two toolbars. The above one has items for going back to search mode and for creating new note. The lower one contains several buttons and text. Directly below this toolbar is the content area of the note.</p>
+    <figure>
+      <title xml:lang="en_GB"><app>Gnote</app> window displaying note</title>
+      <desc xml:lang="en_GB"><app>Gnote</app> Note</desc>
+      <media type="image" src="figures/gnote-new-note.png" mime="image/png" style="right">
+        <p xml:lang="en_GB"><app>Gnote</app> note editing.</p>
+      </media>
+    </figure>
+
+    <p>Die Notiz kann bearbeitet werden, indem Sie in das Eingabefeld klicken und über die Tastatur Inhalte hinzufügen oder entfernen. Die erste Zeile stellt den Titel der Notiz dar. Standardmäßig wird dieser mit »Neue Notiz N« gefüllt. Der Titel wird geändert, indem Sie in das Eingabefeld klicken und den Titel in der ersten Zeile über die Tastatur ändern. Standardmäßig erhält das Eingabefeld nach dem Anlegen einer neuen Notiz den Fokus, sodass Sie sofort mit dem Bearbeiten der Notiz beginnen können, ohne mit der Maus in das Eingabefeld zu klicken.</p>
+    <p>Das Formatieren von Texten innerhalb einer Notiz ist über den Knopf <gui>Text</gui> möglich. Der Knopf <gui>Text</gui> zeigt ein Menü mit verschiedenen Einträgen an, aus denen Sie wählen können. Jeder Menüpunkt wird im Folgenden erläutert.</p>
+
+    <list>
+      <item><title>Rückgängig</title>
+        <p>Die Unterstützung für »Rückgängig« ist in Gnote über diesen Menüpunkt verfügbar. Die Rückgängig-Funktion erlaubt es, vorangegangene, in den aktuellen Sitzung durchgeführte Änderungen rückgängig machen zu können. Um Ihre letzte Änderung mit der Tastatur rückgängig zu machen, verwenden Sie die standardmäßige Tastenkombination <keyseq><key>Strg</key><key>Z</key></keyseq>.</p>
+      </item>
+      <item><title>Wiederholen</title>
+        <p>Die Funktion »Wiederholen« wird verwendet, um Änderungen wiederherzustellen, die durch die Funktion »Rückgängig« entfernt worden sind. Um Ihre letzten Änderungen mit der Tastatur zu wiederholen, verwenden Sie die standardmäßige Tastenkombination <keyseq><key>Umschalttaste</key><key>Strg</key><key>Z</key></keyseq>.</p>
+      </item>
+      <item><title>Fett</title>
+        <p>Um einen Text innerhalb Ihrer Notiz fett darzustellen, markieren Sie zuerst den Text, den Sie ändern möchten. Danach wählen Sie die Option <gui>Fett</gui> aus dem Menü <gui>Text</gui>. Sie können auch die Tastenkombination <keyseq><key>Strg</key><key>B</key></keyseq> nach dem Markieren des Textes benutzen.</p>
+      </item>
+      <item><title>Kursiv</title>
+        <p>Um einen Text innerhalb Ihrer Notiz kursiv darzustellen, markieren Sie zuerst den Text, den Sie ändern möchten. Danach wählen Sie die Option <gui>Kursiv</gui> aus dem Menü <gui>Text</gui>. Sie können auch die Tastenkombination <keyseq><key>Strg</key><key>I</key></keyseq> nach dem Markieren des Textes benutzen.</p>
+     </item>
+     <item><title>Durchgestrichen</title>
+       <p>Der Stil »Durchgestrichen« fügt eine Linie durch den ausgewählten Text hinzu. Um einen Text innerhalb Ihrer Notiz durchgestrichen darzustellen, markieren Sie zuerst den Text, den Sie ändern möchten. Danach wählen Sie die Option <gui>Durchgestrichen</gui> aus dem Menü <gui>Text</gui>. Sie können auch die Tastenkombination <keyseq><key>Strg</key><key>s</key></keyseq> nach dem Markieren des Textes benutzen.</p>
+     </item>
+     <item><title>Hervorgehoben</title>
+       <p>Der Stil »Hervorgehoben« fügt einen andersfarbigen Hintergrund zum ausgewählten Text hinzu. Um einen Text innerhalb Ihrer Notiz hervorgehoben darzustellen, markieren Sie zuerst den Text, den Sie ändern möchten. Danach wählen Sie die Option <gui>Hervorgehoben</gui> aus dem Menü <gui>Text</gui>. Sie können auch die Tastenkombination <keyseq><key>Strg</key><key>H</key></keyseq> nach dem Markieren des Textes benutzen.</p>
+     </item>
+     <item><title>Schriftgröße</title>
+       <p>Es gibt vier Menüpunkte in diesem Abschnitt des Menüs: Klein, Normal, Groß und Sehr groß. Jede dieser Optionen repräsentiert eine Schriftgröße, die für den markierten Text in der Notiz verwendet werden kann. Um die Schriftgröße zu ändern, markieren Sie erst den Text und wählen Sie dann eine der Optionen <gui>Klein</gui>, <gui>Normal</gui>, <gui>Groß</gui> oder <gui>Sehr groß</gui> aus dem Menü <guibutton>Text</guibutton>.</p>
+     </item>
+     <item><title>Aufzählungspunkte</title>
+       <p>Wählen Sie die Option <gui>Aufzählungspunkte</gui> aus dem Menü <gui>Text</gui>, um eine Aufzählungsliste zu beginnen oder zu beenden. Falls sich der Eingabezeiger innerhalb einer Aufzählungsliste befindet, sind die Optionen <gui>Einzug erhöhen</gui> und <gui>Einzug vermindern</gui> verfügbar.</p>
+       <p>Befindet sich der Eingabezeiger in der Zeile einer Aufzählungsliste, wählen Sie die Option <gui>Einzug erhöhen</gui>, um die aktuelle Zeile nach rechts zu verschieben, oder <gui>Einzug vermindern</gui>, um die aktuelle Zeile nach links zu schieben.</p>
+       <p>Weitere Informationen über Aufzählungslisten finden Sie in <link xref="bulleted-lists"/>.</p>
+     </item>
+     <item><title>In dieser Notiz suchen</title>
+       <p>Mit dieser Option können Sie nach Text in der aktuellen Notiz suchen. Ein Eingabefeld wird am unteren Rand der Notiz geöffnet. Um das Eingabefeld mit der Tastatur zu öffnen, verwenden Sie die Standard-Tastenkombination <keyseq><key>Strg</key><key>F</key></keyseq>. Geben Sie den zu suchenden Text ein. Nach der Texteingabe werden die Treffer hervorgehoben. Klicken Sie auf <gui>Nächster Treffer</gui>, um das nächste Vorkommen des Suchbegriffs hervorzuheben, oder auf <gui>Vorheriger Treffer</gui>, um zum vorherigen Vorkommen zu springen. Um das Suchfeld zu schließen, klicken Sie auf das X (den Schließen-Knopf), oder drücken Sie die <key>Esc</key>-Taste.</p>
+     </item>
+   </list>
+
+   <section id="note-content" style="2column">
+     <title>Erweiterte Formatierungen</title>
+   </section>
+
+</page>

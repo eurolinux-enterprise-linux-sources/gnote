@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="working-with-notebooks" xml:lang="de">
+
+
+  <info>
+    <link type="guide" xref="index#organizing-notes"/>
+    <desc>Ihre Notizen organisieren</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Mit Notizbüchern arbeiten</title>
+    <p>Notebooks allow you to group related notes together. You can add a note to a notebook in the main window or directly inside of a Note.</p>
+
+    <section id="creating-notebooks"><title>Notizbücher anlegen</title>
+      <p>Sie können neue Notizbücher auf folgende Arten anlegen:</p>
+      <steps>
+        <item>
+          <p>Click on application menu and select <gui>New Notebook</gui>.</p>
+        </item>
+        <item>
+          <p>Geben Sie einen Namen für das neue Notizbuch ein.</p>
+        </item>
+      </steps>
+      <p>So erstellen Sie ein neues Notizbuch aus dem Kontextmenü:</p>
+      <steps>
+        <item>
+          <p>In search mode, right click in the left hand box and choose <gui>New Notebook</gui>.</p>
+        </item>
+        <item>
+          <p>Geben Sie einen Namen für das neue Notizbuch ein.</p>
+        </item>
+      </steps>
+      <figure>
+        <title>Neues Notizbuch aus dem Kontextmenü</title>
+        <media type="image" src="figures/add-notebook-search.png" mime="image/png" style="right">
+        <p>Neues Notizbuch</p>
+      </media>
+      </figure>  
+    </section>
+
+    <section id="adding-notes-to-a-notebook"><title>Notizen zu einem Notizbuch hinzufügen</title>
+      <p>To add notes to a notebook, you can add a note from the main window or directly within a note.</p>
+      <p>To move an existing note from the main window use one of the following:</p>
+      <list>
+        <item><p>Verwenden Sie Ihre Maus, um die Notiz(en) auf ein Notizbuch auf der linken Seite zu ziehen.</p></item>
+        <item><p>Klicken Sie mit der rechten Maustaste auf ein Notizbuch und wählen Sie <gui>Neue Notiz</gui> aus dem Kontextmenü. Eine neue Notiz wird angelegt und zum Notizbuch hinzugefügt.</p></item>
+      </list>
+      <p>Beim Bearbeiten einer Notiz können Sie diese Notiz direkt in ein bestehendes Notizbuch ablegen, indem Sie den Knopf <gui>Notizbuch</gui> verwenden. Der Knopf <gui>Notizbuch</gui> wird durch das Symbol <media type="image" src="figures/notebook-icon.png" mime="image/png" style="right"/> dargestellt.</p>
+      <figure>
+        <title>Notizen zu einem Notizbuch hinzufügen</title>
+        <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>Notizen zu einem Notizbuch hinzufügen.</p></media>
+      </figure>
+      <p>Um eine Notiz aus einem Notizbuch zu entfernen, führen Sie eine der folgenden Aktionen aus:</p>
+      <list>
+        <item><p>Move note to <gui>Unfiled notes</gui> notebook in main window.</p></item>
+        <item><p>Wählen Sie die Option <gui>Kein Notizbuch</gui> aus dem Menü, welche angezeigt wird, wenn Sie auf den <gui>Notizbuch</gui>-Knopf in einer geöffneten Notiz klicken.</p></item>
+      </list>
+    </section>
+
+    <section id="creating-notebook-templates"><title>Notizbuch-Vorlagen anlegen</title>
+      <p>Nachdem Sie ein Notizbuch angelegt haben, können Sie eine Vorlage für jede Notiz festlegen, die Sie in diesem speziellen Notizbuch anlegen.</p>
+      <steps>
+        <item><p>In main window right click on a Notebook that you have created and choose <gui>Open Template Note</gui>.</p>
+        </item>
+        <item><p>Dadurch wird eine neue Notiz geöffnet, die als Vorlage verwendet wird. Jeder in dieser Notiz eingegebene Text wird in allen Notizen erscheinen, die in diesem Notizbuch angelegt werden.</p></item>
+      </steps>
+      <figure>
+        <title>Notizbuch-Vorlagen anlegen</title>
+        <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Notizvorlagen</p></media>
+      </figure>
+      <p>Weitere Informationen finden Sie in <link xref="gnote-template-notes"/>.</p>
+    </section>
+
+  <section id="deleting-a-notebook"><title>Notizbuch löschen</title>
+    <p>Deleting a notebook will not delete any of the notes which are currently inside the notebook. After deleting a notebook, the notes will not be associated with any notebook and can be seen by highlighting <gui>Unfiled Notes</gui> in the main window.</p>
+    <p>Sie können ein Notizbuch, das Sie angelegt haben, auf zwei Arten löschen:</p>
+    <p>To delete a notebook, go to search mode in main window and do one of the following:</p>
+    <list>
+      <item><p>Klicken Sie mit der rechten Maustaste auf ein Notizbuch und wählen Sie <gui>Notizbuch löschen</gui>.</p></item>
+      <item><p>Remove all notes from notebook. Notebook will be automatically removed on <app>Gnote</app> restart.</p></item>
+    </list>
+    <figure>
+      <title>Deleting notes from main window</title>
+        <media type="image" src="figures/delete-notebook.png" mime="image/png" style="right">
+          <p>Notizbuch löschen.</p>
+        </media>
+    </figure>
+  </section>
+
+  <section id="special-notebooks"><title>Special Notebooks</title>
+    <p><app>Gnote</app> has several special notebooks:</p>
+    <list>
+      <item><p><gui>Active Notes</gui> - contains notes, that were opened in current <app>Gnote</app> session.</p></item>
+      <item><p><gui>All Notes</gui> - contains all notes, except templates.</p></item>
+      <item><p><gui>Pinned Notes</gui> - used to mark notes as important.</p></item>
+      <item><p><gui>Unfilled Notes</gui> - contains all notes that are not placed in a user created notebook.</p></item>
+    </list>
+  </section>
+
+</page>

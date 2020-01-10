@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-noteoftheday" xml:lang="da">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Template Note</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Dagens note</title>
+  <p>This add-in automatically creates a "Today" note for jotting daily thoughts down. The current date is used as a basis for the title of the note. As an example, the title of a "Today" note created on February 28, 2007, would be, "Today: Wednesday, February 28 2007".</p>
+  <p>Hvis du efterlader en "I dag-note" uændret, vil udvidelsesmodulet Dagens note (Note of the day) automatisk slette noten.</p>
+  <p>For at tilpasse indholdet af standardnoten "I dag" oprettes en ny note og titlen ændres til "I dag: Skabelon". Ændr indholdet af skabelonnoten til det ønskede indhold. Når en ny "I dag-note" bliver oprettet vil den bruge indholdet af din note "I dag: Skabelon".</p>
+
+</page>

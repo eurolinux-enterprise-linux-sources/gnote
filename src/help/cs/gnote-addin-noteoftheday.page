@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-noteoftheday" xml:lang="cs">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Šablonová poznámka</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Poznámka dne</title>
+  <p>Toto rozšíření automaticky vytváří poznámku „Dnes“ pro každodenní poznámky. Jako základ názvu poznámky je použito aktuální datum. Například název poznámky „Dnes“ vytvořené 28. února 2011 by byl „Dnes: pondělí, 28. únor 2011“.</p>
+  <p>Pokud do poznámky „Dnes“ nic nezapíšete, rozšíření Poznámka dne ji zase automaticky odstraní.</p>
+  <p>Pokud si chcete přizpůsobit výchozí obsah poznámky „Dnes“, tak vytvořte novou poznámku a změňte její název na „Dnes: Šablona“. Obsah poznámky si upravte podle svojí libosti. Až se napříště vytvoří nová poznámka „Dnes“, použije obsah z vaší poznámky „Dnes: Šablona“.</p>
+
+</page>

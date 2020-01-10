@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="index" xml:lang="ru">
+
+  <info>
+    <license>
+	<p>GNU Free Documentation License (GFDL), версия 1.1</p>
+    </license>
+    <credit type="author">
+      <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ауримас Церниус (Aurimas Cernius)</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Справка по Gnote</title>
+
+    <section id="introduction">
+    <title>Введение</title>
+    </section>
+
+    <section id="managing-notes" style="2column">
+    <title>Управление заметками</title>
+    </section>
+
+    <section id="organizing-notes" style="2column">
+    <title>Организация заметок</title>
+    </section>
+
+    <section id="advanced" style="2column">
+    <title>Дополнительные возможности</title>
+    </section>
+
+    <section id="customizing" style="2column">
+    <title>Настройка</title>
+    </section>
+
+    <section id="common-problems" style="2column">
+    <title>Распространённые проблемы</title>
+    </section>
+
+</page>

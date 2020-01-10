@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="links" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#organizing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>Créer des liens entre les notes</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Liens</title>
+    <p>Le bouton <gui>Lier</gui> sert à lier une nouvelle note à la note actuelle. Par exemple, si celle-ci contient le terme « Examen Final », en sélectionnant ce texte et en cliquant sur <gui>Lier</gui> une nouvelle note intitulée « Examen Final » est créée. Un lien sera introduit dans la note actuelle : en cliquant dessus, vous ouvrez la nouvelle note « Examen Final ».</p>
+<note style="advanced">
+    <p>Le fait de modifier le titre d'une note met à jour les liens présents dans d'autres notes, ce qui évite la présence de liens morts lors du renommage d'une note.</p></note>
+
+  <section><title>Greffons rétroliens</title>
+    <p>The Tools button is represented by the <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"> </media> icon. When backlinks add-in is installed, the <gui>Tools</gui> menu will contain an item <gui>What links here?</gui>, which provides a sub-menu with all notes, containing link to current note.</p>
+  </section>
+
+</page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="synchronization" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Sinchronizuokite raštelius</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2012</years>
+    </credit>
+  </info>
+
+  <title>Sinchronizacija</title>
+  <section id="description">
+    <title>Apie sinchronizaciją</title>
+    <p><app>Gnote</app> leidžia sinchronizuoti raštelius tarp kelių kompiuterių, kad galėtumėte ją naudoti keliuose įrenginiuose ir dirbti juose visuose su tais pačiais rašteliais.</p>
+    <p>Norint naudoti sinchronizaciją, pirma turite ją sukonfigūruoti <app>Gnote</app> nustatymų dialoge.</p>
+    <p>Rašteliai yra sinchronizuojami į vieną vietą, bendrą visoms <app>Gnote</app> įdiegtims. Ši vieta saugo raštelių istoriją. Sinchronizuojant kiekviena paleista <app>Gnote</app> nusiunčia naujus ir atnaujintus raštelius į šią vieta, parsiunčia naujus bei kitose įdiegtyse atnaujintus raštelius. Sinchronizacijos vieta taip pat turi informaciją apie ištrintus raštelius: sinchronizuojant <app>Gnote</app> paviešina visus ištrintus raštelius bei ištrina tuos, kurie yra paviešinti kaip tokie. Šitaip kelios <app>Gnote</app> įdiegtys gali turėti tuos pačius raštelius.</p>
+  </section>
+  <section id="configuration" style="2column">
+    <title>Konfigūruoti sinchronizaciją</title>
+  </section>
+  <section id="usage">
+    <title>Sinchronizuokite</title>
+    <p>To synchronize, select <gui>Synchronize Notes</gui> from application menu. This item is only available, if synchronization is configured.</p>
+    <p>Pasirinkus meniu punktą <gui>Sinchronizuoti raštelius</gui> bus parodytas eigos dialogas, kuris jums praneš, kada sinchronizacija bus baigta. Taip pat negalėsite redaguoti raštelių, kol vyksta sinchronizacija.</p>
+    <figure>
+      <title>Sinchronizacijos eiga</title>
+      <media type="image" src="figures/gnote-sync-progress.png" mime="image/png"/>
+    </figure>
+  </section>
+
+</page>

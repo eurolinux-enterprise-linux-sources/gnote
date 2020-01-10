@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-underline" xml:lang="sl">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Podčrtano besedilo</desc>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Vstavek podčrtanja besedila</title>
+  <p>Ko je ta vstavek <gui>Podčrtanje</gui> nameščen, bo imel meni <gui>Orodja</gui> na voljo možnost <gui>Podčrtaj</gui>.</p>
+  <p>Za podčrtanje izbranega besedila uporabite eno od naslednjega:</p>
+  <list>
+    <item><p>Kliknite na <gui>Besedilo</gui> in izberite <gui>Podčrtaj</gui>.</p></item>
+    <item><p>Pritisnite <keyseq><key>Ctrl</key><key>U</key></keyseq></p></item>
+  </list>
+  <p>Za odstranitev podčrtanja izberite podčrtano besedilo in uporabite eno od naslednjega:</p>
+  <list>
+    <item><p>Kliknite na <gui>Besedilo</gui> in izberite <gui>Podčrtaj</gui>.</p></item>
+    <item><p>Pritisnite <keyseq><key>Ctrl</key><key>U</key></keyseq></p></item>
+  </list>
+
+</page>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-print" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Spausdinti raštelius</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+  
+  <title>Spausdinti</title>
+    <p>Įrankių mygtuką vaizduoja piktograma <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Kai šis priedas yra įdiegtas, meniu <gui>Įrankiai</gui> turės punktą <gui>Spausdinti</gui>.</p>
+    <p>Pasirinkus punktą <gui>Spausdinti</gui> bus atvertas standartinis spausdinimo dialogas ir raštelis galės būti atspausdintas.</p>
+
+</page>

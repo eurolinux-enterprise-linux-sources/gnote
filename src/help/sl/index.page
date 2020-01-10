@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="index" xml:lang="sl">
+
+  <info>
+    <license>
+	<p>GNU Free Documentation License (GFDL), različica 1.1</p>
+    </license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Pomoč Gnote</title>
+
+    <section id="introduction">
+    <title>Uvod</title>
+    </section>
+
+    <section id="managing-notes" style="2column">
+    <title>Upravljanje sporočilc</title>
+    </section>
+
+    <section id="organizing-notes" style="2column">
+    <title>Organizacija sporočilc</title>
+    </section>
+
+    <section id="advanced" style="2column">
+    <title>Napredno</title>
+    </section>
+
+    <section id="customizing" style="2column">
+    <title>Prilagajanje</title>
+    </section>
+
+    <section id="common-problems" style="2column">
+    <title>Pogoste težave</title>
+    </section>
+
+</page>

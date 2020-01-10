@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="gnote-template-notes" xml:lang="lt">
+
+
+  <info>
+    <link type="guide" xref="notes-preferences#advanced"/>
+    <desc>Raštelių šablonų naudojimas</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Raštelių šablonai</title>
+  <section id="usage">
+    <title>Šablono naudojimas</title>
+    <p>Raštelių šablonai naudojami naujai sukuriamų raštelių turiniui apibrėžti. Šablonai yra paprasti rašteliai su papildomomis galimybėmis.</p>
+    <p>Galite apibrėžti vieną raštelio šabloną visai <app>Gnote</app> programai ir po vieną kiekvienai užrašinei. Šie šablonai apibrėžia kiekvieną sukuriamą naują raštelį:</p>
+    <list>
+      <item><p>Kiekviena naujas <app>Gnote</app> sukuriamas raštelis, kuris nėra užrašinėje, turės pagrindinio programos šablono turinį. Jei šablonas nesukururtas, bus naudojamas numatytasis turinys.</p></item>
+      <item><p>Kiekvienas naujas užrašinėje sukurtas raštelis turės šablono raštelio turinį, jei užrašinei yra sukurtas šablonas. Jei šablonas užrašinei neapibrėžtas, bus naudojamas numatytasis turinys.</p></item>
+    </list>
+    <p>Šablonui sukurti ar pakeisti:</p>
+    <list>
+      <item><title>Pagrindinis raštelio šablonas</title><p>Atverkite <app>Gnote</app> nustatymus ir kortelėje <gui>Esmė</gui> paspauskite mygtuką <gui>Atverti naujo raštelio šabloną</gui>.</p></item>
+      <item><title>Užrašinės raštelio šablonas</title><p>Spauskite dešinį klavišą virš užrašinės pagrindiniame lange ir iš meniu pasirinkite <gui>Atverti šablono raštelį</gui>.</p></item>
+    </list>
+  </section>
+  <section id="features">
+    <title>Raštelio šablono galimybės</title>
+    <p>Raštelio šablonas yra panašus į įprastinį raštelį, tik jis nerodomas raštelių sąraše ir turi šablono juostą viršuje.</p>
+    <figure><title>Raštelio šablonas</title>
+      <media type="image" src="figures/gnote-template-note.png" mime="image/png" style="right"/><desc>Raštelio šablono langas</desc>
+    </figure>
+    <p>Šablono juosta suteikia šias galimybes:</p>
+    <list>
+      <item><title>Paversti įprastiniu rašteliu</title><p>Paspauskite šį mygtuką, jei norite paversti šabloną įprastiniu raštenius. Šis veiksmas yra panašus į šablono ištrynimą.</p></item>
+      <item><title>Įrašyti dydį</title><p>Jei pažymėsite šį langelį, naujai sukurto raštelio dydis bus toks pat kaip šablono. Kai šis langelis nepažymėtas, naujo raštelio langas bus numatyto dydžio.</p></item>
+      <item><title>Įrašyti pažymėjimą</title><p>Jei šis langelis pažymėjimas, nauji rašteliai ne tik turės šablono turinį, bet ir pradinį žymėjimą. Naudokite šį nustatymą, jei norite, kad tam tikra naujo raštelio turinio dalis būtų pažymėta jį sukūrus.</p></item>
+      <item><title>Įrašyti pavadinimą</title><p>Šis langelis leidžia naujo raštelio pavadinimą padaryti panašų į šablono. Kai šis langelis pažymėtas, nauji rašteliai turės šablono pavadinimą su unikaliu numeriu pabaigoje. Jei langelis nepažymėtas, bus naudojamas numatytasis pavadinimas.</p></item>
+    </list>
+  </section>
+
+</page>

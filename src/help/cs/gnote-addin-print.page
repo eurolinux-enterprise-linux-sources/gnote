@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-print" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Tisk poznámek</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+  
+  <title>Tisk</title>
+    <p>Tlačítko <gui>Nástroje</gui> je prezentováno ikonou <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Když je tento doplněk nainstalován, nachází se v nabídce <gui>Nástroje</gui> volba <gui>Tisk</gui>.</p>
+    <p>Pokud volbu <gui>Tisk</gui> vyberete, objeví se standardní dialogové okno <gui>Tisk</gui> a poznámku můžete vytisknout.</p>
+
+</page>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="working-with-notebooks" xml:lang="sl">
+
+
+  <info>
+    <link type="guide" xref="index#organizing-notes"/>
+    <desc>Organizacija vaših sporočilc</desc>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Delo z beležkami</title>
+    <p>Notebooks allow you to group related notes together. You can add a note to a notebook in the main window or directly inside of a Note.</p>
+
+    <section id="creating-notebooks"><title>Ustvarjanje beležk</title>
+      <p>Nove beležke lahko ustvarite na enega od naslednjih načinov</p>
+      <steps>
+        <item>
+          <p>Click on application menu and select <gui>New Notebook</gui>.</p>
+        </item>
+        <item>
+          <p>Vnesite ime za novo beležko.</p>
+        </item>
+      </steps>
+      <p>Za ustvarjanje novega vsebinskega menija beležke</p>
+      <steps>
+        <item>
+          <p>In search mode, right click in the left hand box and choose <gui>New Notebook</gui>.</p>
+        </item>
+        <item>
+          <p>Vnesite ime za novo beležko.</p>
+        </item>
+      </steps>
+      <figure>
+        <title>Nova beležka iz vsebinskega menija</title>
+        <media type="image" src="figures/add-notebook-search.png" mime="image/png" style="right">
+        <p>Nova beležka</p>
+      </media>
+      </figure>  
+    </section>
+
+    <section id="adding-notes-to-a-notebook"><title>Dodajanje sporočilc beležnici</title>
+      <p>To add notes to a notebook, you can add a note from the main window or directly within a note.</p>
+      <p>To move an existing note from the main window use one of the following:</p>
+      <list>
+        <item><p>Z miško povlecite in spustite sporočilc-e/a na beležko na levi.</p></item>
+        <item><p>Desno kliknite na beležko in izberite <gui>Novo sporočilce</gui> iz vsebinskega menija. Ustvarjeno bo novo sporočilce in dodano v beležko.</p></item>
+      </list>
+      <p>Medtem ko vnašate sporočilce ga lahko dodate neposredno obstoječi beležki z uporabo gumba <gui>Beležka</gui>. Gumb Beležka predstavlja ikona  <media type="image" src="figures/notebook-icon.png" mime="image/png" style="right"/>.</p>
+      <figure>
+        <title>Dodajanje sporočilc beležnici</title>
+        <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>Dodaj v beležnico.</p></media>
+      </figure>
+      <p>Za odstranitev sporočilca iz beležke lahko ustvarite eno od naslednjega:</p>
+      <list>
+        <item><p>Move note to <gui>Unfiled notes</gui> notebook in main window.</p></item>
+        <item><p>V meniju, ki se pojavi ob pritisku na gumb <gui>Beležka</gui> v odprtem sporočilcu, izberite možnost <gui>Brez beležke</gui> .</p></item>
+      </list>
+    </section>
+
+    <section id="creating-notebook-templates"><title>Ustvarjanje predlog sporočilc</title>
+      <p>Po ustvarjanju beležke lahko ustvarite predlogo za vsako novo sporočilce, ki ga ustvarite v določeni beležki.</p>
+      <steps>
+        <item><p>In main window right click on a Notebook that you have created and choose <gui>Open Template Note</gui>.</p>
+        </item>
+        <item><p>To bo odprlo novo sporočilce, ki bo uporabljeno kot predloga. Katerokoli besedilo vneseno v to sporočilce, se bo pojavilo v vseh sporočilcih, ki so bila ustvarjena v tej beležki.</p></item>
+      </steps>
+      <figure>
+        <title>Ustvarjanje predloge beležnice</title>
+        <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Predloga sporočilca.</p></media>
+      </figure>
+      <p>Za več si oglejte <link xref="gnote-template-notes"/>.</p>
+    </section>
+
+  <section id="deleting-a-notebook"><title>Brisanje beležnice</title>
+    <p>Deleting a notebook will not delete any of the notes which are currently inside the notebook. After deleting a notebook, the notes will not be associated with any notebook and can be seen by highlighting <gui>Unfiled Notes</gui> in the main window.</p>
+    <p>Beležko lahko izbrišete na enega od dveh načinov:</p>
+    <p>To delete a notebook, go to search mode in main window and do one of the following:</p>
+    <list>
+      <item><p>Desno kliknite na stik in izberite <gui>Izbriši beležnico</gui>.</p></item>
+      <item><p>Remove all notes from notebook. Notebook will be automatically removed on <app>Gnote</app> restart.</p></item>
+    </list>
+    <figure>
+      <title>Deleting notes from main window</title>
+        <media type="image" src="figures/delete-notebook.png" mime="image/png" style="right">
+          <p>Izbriši beležnico.</p>
+        </media>
+    </figure>
+  </section>
+
+  <section id="special-notebooks"><title>Special Notebooks</title>
+    <p><app>Gnote</app> has several special notebooks:</p>
+    <list>
+      <item><p><gui>Active Notes</gui> - contains notes, that were opened in current <app>Gnote</app> session.</p></item>
+      <item><p><gui>All Notes</gui> - contains all notes, except templates.</p></item>
+      <item><p><gui>Pinned Notes</gui> - used to mark notes as important.</p></item>
+      <item><p><gui>Unfilled Notes</gui> - contains all notes that are not placed in a user created notebook.</p></item>
+    </list>
+  </section>
+
+</page>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addins-preferences" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="notes-preferences#advanced"/>
+    <desc>Nastavení pro doplňky Gnote</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Předvolby doplňků</title>
+    <p>Na této kartě můžete aktivovat a deaktivovat doplňky. Uděláte to tak, že doplněk vyberete a kliknete na tlačítko <gui>Povolit</gui>. Toto tlačítko se pak stane neaktivním a naopak se aktivuje tlačítko <gui>Zakázat</gui>, kterým můžete doplněk opět deaktivovat.</p>
+    <p>Některé z doplňků mají předvolby. K těm se můžete dostat tak, že doplněk vyberete a zmáčknete tlačítko <gui>Předvolby</gui>.</p>
+    <figure><title>Předvolby doplňků v <app>Gnote</app></title>
+    <desc>Okno doplňků <app>Gnote</app></desc>
+    <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">
+      <p>Okno <gui>Doplňky</gui></p>
+    </media>
+    </figure>
+
+</page>

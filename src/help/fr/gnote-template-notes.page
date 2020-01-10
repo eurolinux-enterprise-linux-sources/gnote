@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="gnote-template-notes" xml:lang="fr">
+
+
+  <info>
+    <link type="guide" xref="notes-preferences#advanced"/>
+    <desc>Utiliser des notes modèles</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Notes modèles</title>
+  <section id="usage">
+    <title>Utilisation d'une note modèle</title>
+    <p>Les notes modèles servent à définir le contenu des notes nouvellement créées. Les modèles ressemblent aux notes normales avec quelques fonctions supplémentaires.</p>
+    <p>Vous pouvez définir une note modèle unique pour <app>Gnote</app> et une autre pour chacun de vos blocs-notes. Ces modèles définissent le contenu de chaque note nouvellement créée :</p>
+    <list>
+      <item><p>Chaque nouvelle note créée dans <app>Gnote</app>, mais ne se trouvant pas dans un bloc-notes, contiendra le contenu du modèle principal de l'application. Si vous ne créez pas de modèle, le contenu par défaut est utilisé.</p></item>
+      <item><p>Chaque nouvelle note créée dans un bloc-notes contiendra le contenu de la note modèle, si celle-ci existe pour ce bloc-notes. Si vous ne définissez pas de note modèle pour ce bloc-notes, le contenu par défaut est utilisé.</p></item>
+    </list>
+    <p>Pour créer ou modifier une note modèle :</p>
+    <list>
+      <item><title>Note modèle principale</title><p>Ouvrez les préférences de <app>Gnote</app> et dans l'onglet <gui>Édition</gui> cliquez sur <gui>Ouvrir un modèle de note</gui>.</p></item>
+      <item><title>Note modèle de bloc-notes</title><p>Right click on notebook in main window and select <gui>Open Template Note</gui>.</p></item>
+    </list>
+  </section>
+  <section id="features">
+    <title>Fonctions d'une note modèle</title>
+    <p>Une note modèle est identique à une note ordinaire, sauf qu'elle ne s'affiche pas dans une liste de notes et possède une barre de modèle en haut.</p>
+    <figure><title>Note modèle</title>
+      <media type="image" src="figures/gnote-template-note.png" mime="image/png" style="right"/><desc>La fenêtre d'une note modèle</desc>
+    </figure>
+    <p>La barre de modèle inclut les fonctions suivantes :</p>
+    <list>
+      <item><title>Convertir en note normale</title><p>Cliquez sur ce bouton pour convertir la note modèle en une note standard qui s'affichera dans la liste des notes. Cette action est équivalente à la suppression de la note modèle.</p></item>
+      <item><title>Enregistrer la taille</title><p>Cochez cette case pour que la taille de toute nouvelle note créée soit identique à celle du modèle. Si vous ne cochez pas cette case, la taille de la fenêtre d'une nouvelle note sera celle par défaut.</p></item>
+      <item><title>Enregistrer la sélection</title><p>Cochez cette case pour que toute nouvelle note contienne aussi la sélection initiale en plus du contenu du modèle. Utilisez cette option si vous souhaitez que certaines parties du contenu de la nouvelle note soient sélectionnées dès la création.</p></item>
+      <item><title>Enregistrer le titre</title><p>Cochez cette case pour que le titre d'une nouvelle note se base sur celui du modèle. Le titre de la nouvelle note est alors celui de la note modèle, complété par un numéro unique. Si vous ne cochez pas cette case, le titre par défaut sera utilisé.</p></item>
+    </list>
+  </section>
+
+</page>

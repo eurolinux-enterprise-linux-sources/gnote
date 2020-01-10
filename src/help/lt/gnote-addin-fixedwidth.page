@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-fixedwidth" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Naudoti fiksuoto pločio šriftą</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Fiksuoto pločio priedas</title>
+    <p>Fiksuoto pločio stilius leidžia tekstui naudoti fiksuoto pločio šriftą. Esamam tekstui pakeisti, pirmiausia pažymėkite tekstą, kurį norite pakeisti. Tuomet iš meniu <gui>Tekstas</gui> pasirinkite punktą <gui>Fiksuoto pločio</gui>. Taip pat galite pasirinkti šį punktą prieš pradėdami rašyti tekstą, kuris turi būti fiksuoto pločio.</p>
+    <p>Fiksuoto pločio punktas yra fiksuoto pločio priedo suteikiama funkcija.</p>
+
+</page>

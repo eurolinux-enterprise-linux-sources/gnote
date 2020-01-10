@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addins-preferences" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="notes-preferences#advanced"/>
+    <desc>Paramétrer les greffons Gnote</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Préférences des greffons</title>
+    <p>Vous pouvez activer ou désactiver les greffons dans cet onglet. Pour cela sélectionnez un greffon et cliquez sur le bouton <gui>Activer</gui>. Le bouton est alors grisé et le bouton <gui>Désactiver</gui> devient actif. Il peut maintenant être utilisé pour désactiver le greffon.</p>
+    <p>Certains greffons possèdent des paramétrages. Il est possible d'y accéder en sélectionnant le greffon et en appuyant sur le bouton <gui>Préférences</gui>.</p>
+    <figure><title>Préférences des greffons de <app>Gnote</app></title>
+    <desc>Fenêtre des greffons de <gui>Gnote</gui></desc>
+    <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">
+      <p>Fenêtre des <gui>Greffons</gui>.</p>
+    </media>
+    </figure>
+
+</page>

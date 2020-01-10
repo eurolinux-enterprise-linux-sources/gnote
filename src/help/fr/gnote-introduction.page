@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="fr">
+
+
+  <info>
+    <link type="guide" xref="index#introduction"/>
+    <desc>Introduction à <app>Gnote</app></desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Introduction à Gnote</title>
+    <p><app>Gnote</app> est un utilitaire de prise de notes du bureau GNOME. Il est simple et facile d'utilisation ; il vous permet d'organiser quotidiennement idées et informations. Gnote dispose de fonctionnalités d'édition des plus utiles pour personnaliser vos notes, comme :</p>
+    <list>
+      <item><p>Le surlignage du texte recherché</p></item>
+      <item><p>Le correcteur orthographique intégré</p></item>
+      <item><p>Les liens automatiques vers le Web et les adresses électroniques</p></item>
+      <item><p>La possibilité d'annuler/rétablir</p></item>
+      <item><p>Divers styles et tailles de police</p></item>
+      <item><p>Les listes à puces</p></item>
+    </list>
+    <figure>
+      <title>Fenêtre principale de <app>Gnote</app></title>
+        <desc>Fenêtre principale de <app>Gnote</app></desc>
+        <media type="image" src="figures/gnote-search-all-notes.png" mime="image/png" style="right">
+        <p><app>Gnote</app> main window.</p>
+        </media>
+    </figure>
+
+</page>

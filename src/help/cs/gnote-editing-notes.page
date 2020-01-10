@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="editing-notes" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <desc>Úprava obsahu poznámek</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011 – 2012</years>
+    </credit>
+  </info>
+
+  <title>Psaní poznámek</title>
+
+    <p>Poznámky se otevírají ve stejném okně, přičemž se hledání nahradí obsahem poznámky.</p>
+    <p>V horní části poznámky jsou dvě lišty nástrojů. Horní obsahuje položky pro návrat zpět do režimu hledání a pro vytvoření nové poznámky. Dolní obsahuje několik tlačítek a text. Přímo pod touto lištou je oblast s poznámkou.</p>
+    <figure>
+      <title>Okno <app>Gnote</app> zobrazující poznámku</title>
+      <desc>Poznámka <app>Gnote</app></desc>
+      <media type="image" src="figures/gnote-new-note.png" mime="image/png" style="right">
+        <p>Úprava poznámky <app>Gnote</app>.</p>
+      </media>
+    </figure>
+
+    <p>Poznámku začnete upravovat tak, že kliknete do prostoru s obsahem a na klávesnicí píšete, případně mažete, její obsah. První řádek je považován za název poznámky. Na začátku se automaticky dosadí text „Nová poznámka N“. Změnit jej můžete kliknutím na první řádek v prostoru s obsahem poznámky a jeho úpravou pomocí klávesnice. Hned po vytvoření nové poznámky se nastaví zaměření do prostoru s obsahem poznámky, takže můžete začít rovnou psát a nemusíte do prostoru s obsahem klikat myší.</p>
+    <p>Text ve svých poznámkách můžete formátovat s použitím tlačítka <gui>Text</gui>. Tlačítko <gui>Text</gui> zobrazí nabídku s několika volbami na výběr. Zde je popis jednotlivých položek.</p>
+
+    <list>
+      <item><title>Zpět</title>
+        <p>Funkce „Zpět“ je v aplikaci Gnote dostupná přes tuto nabídku. Umožňuje vám vrátit předchozí změny provedené ve vaší poznámce v aktuálním sezení. Pokud chcete vrátit zpět poslední změny pomocí klávesnice, použijte standardní klávesovou zkratku <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
+      </item>
+      <item><title>Znovu</title>
+        <p>Funkce „Znovu“ se používá k vrácení změn, které jste zrušili pomocí funkce „Zpět“. Pokud chcete znovu vrátit změny pomocí klávesnice, použijte standardní klávesovou zkratku <keyseq><key>Shift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
+      </item>
+      <item><title>Tučné</title>
+        <p>Pokud chcete mít některou část textu vaší poznámky tučně, tak ji nejprve vyberte. Potom v nabídce <gui>Text</gui> zvolte možnost <gui>Tučné</gui>. A nebo můžete po výběru textu použít klávesovou zkratku <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
+      </item>
+      <item><title>Kurzíva</title>
+        <p>Pokud chcete mít některou část textu vaší poznámky v kurzívě, tak ji nejprve vyberte. Potom v nabídce <gui>Text</gui> zvolte možnost <gui>Kurzíva</gui>. A nebo můžete po výběru textu použít klávesovou zkratku <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
+     </item>
+     <item><title>Přeškrtnuté</title>
+       <p>Přeškrtnutí umístí vodorovnou čáru přes vybraný text. Pokud chcete přeškrtnutí použít, tak vyberte text a v nabídce <gui>Text</gui> zvolte možnost <gui>Přeškrtnuté</gui>. A nebo můžete po výběru textu použít klávesovou zkratku <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
+     </item>
+     <item><title>Zvýraznění</title>
+       <p>Zvýraznění umístí pod vybraný text žluté pozadí. Pokud chcete zvýraznění použít, tak vyberte text a v nabídce <gui>Text</gui> zvolte možnost <gui>Zvýraznění</gui>. A nebo můžete po výběru textu použít klávesovou zkratku <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
+     </item>
+     <item><title>Velikost písma</title>
+       <p>V současnosti jsou v této části nabídky k dispozici čtyři volby: Malé, Normální, Velké, Obrovské. Každá z těchto voleb představuje velikost písma použitou na vybraný text poznámky. Pokud chcete velikost písma změnit, vyberte text a zvolte jednu z možností <gui>Malé</gui>, <gui>Normální</gui>, <gui>Velké</gui>, <gui>Obrovské</gui> v nabídce <gui>Text</gui>.</p>
+     </item>
+     <item><title>Odrážky</title>
+       <p>Volbu <gui>Odrážky</gui> v nabídce <gui>Text</gui> vyberte pokud chcete začít nebo ukončit seznam s odrážkami. Pokud se kurzor nachází uvnitř seznamu s odrážkami, jsou dostupné volby <gui>Zvětšit odsazení</gui> a <gui>Zmenšit odsazení</gui>.</p>
+       <p>S kurzorem umístěným na řádku s odrážkou zvolte <gui>Zvětšit odsazení</gui>, a aktuální řádek se odsune doprava, nebo <gui>Zmenšit odsazení</gui>, a aktuální řádek se přisune doleva.</p>
+       <p>Více informací o odrážkách podává kapitola <link xref="bulleted-lists"/>.</p>
+     </item>
+     <item><title>Najít v této poznámce</title>
+       <p>Použijte k hledání textu v rámci aktuální poznámky. V dolní části poznámky se otevře malá vyhledávací lišta. K otevření této lišty z klávesnice použijte standardní klávesovou zkratku <keyseq><key>Ctrl</key><key>F</key></keyseq>. Zadejte text, který chcete najít. Po jeho zadání se nalezené shody zvýrazní. Kliknutím na <gui>Následující</gui> se kurzor přesune na následující zvýrazněnou shodu. Kliknutím na <gui>Předchozí</gui> se přesune na předchozí zvýrazněnou shodu. Vyhledávací lištu zavřete kliknutím na křížek (tlačítko Zavřít) vlevo nebo zmáčknutím klávesy <key>Esc</key>.</p>
+     </item>
+   </list>
+
+   <section id="note-content" style="2column">
+     <title>Vylepšení obsahu poznámek</title>
+   </section>
+
+</page>

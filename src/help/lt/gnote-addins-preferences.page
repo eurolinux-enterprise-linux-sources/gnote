@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addins-preferences" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="notes-preferences#advanced"/>
+    <desc>Gnote priedų nustatymai</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Priedų nustatymai</title>
+    <p>Šioje kortelėje galite įjungti ir išjungti priedus. Tam atlikti pasirinkite priedą ir paspauskite mygtuką <gui>Įjungti</gui>. Mygtukas taps neaktyvus, o mygtukas „Išjungti“ taps aktyvus ir jį galite naudoti priedui išjungti.</p>
+    <p>Kai kurie priedai turi nustatymus. Juos galite pasiekti pažymėdami priedą ir paspausdami mygtuką <gui>Nustatymai</gui>.</p>
+    <figure><title><app>Gnote</app> priedų nustatymai</title>
+    <desc><app>Gnote</app> priedų langas</desc>
+    <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">
+      <p>Langas <gui>Priedai</gui>.</p>
+    </media>
+    </figure>
+
+</page>

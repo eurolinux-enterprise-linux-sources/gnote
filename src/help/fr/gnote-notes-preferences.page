@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="notes-preferences" xml:lang="fr">
+
+
+  <info>
+    <link type="guide" xref="index#customizing"/>
+    <desc>Paramétrer Gnote</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Préférences de Gnote</title>
+  <section id="editing">
+    <title>Préférences générales</title>
+    <p>To set preferences for <app>Gnote</app>, select <gui>Preferences</gui> from the application menu.</p>
+    <p>Il y a trois catégories de préférences, <gui>Général</gui> , <gui>Raccourcis clavier</gui> et <gui>Greffons</gui>. Les préférences de chaque onglet sont décrites ci-dessous.</p>
+    <p>L'onglet Général permet de définir les préférences pour le comportement de l'application et l'édition des notes. Il y a quelques cases à cocher ou décocher dans cet onglet.</p>
+    <list>
+      <item><title>Utiliser l'icône de statut</title><p>Cochez cette case si vous voulez que l'icône de statut de <app>Gnote</app> soit visible quand il est actif. Dans ce mode, l'icône <app>Gnote</app> reste visible même quand toutes ses fenêtres sont fermées. Pour ouvrir les dernières notes et autres fenêtres utilisées, faites un clic droit sur l'icône de statut et choisissez-les dans le menu.</p></item>
+      <item><title>Vérification orthographique lors de la frappe</title><p>Cochez cette case pour souligner les fautes d'orthographe en rouge et obtenir une suggestion de correction par un clic-droit de souris.</p><p>La vérification orthographique automatique nécessite l'installation du paquet GtkSpell dans votre distribution.</p></item>
+      <item><title>Surligner les mots Wiki</title><p>Cochez cette case pour créer des liens vers des mots CommeCeluiCi. Un clic sur ce lien crée une nouvelle note dont le titre correspond au texte du lien.</p></item>
+      <item><title>Activer les listes à puces automatiques</title><p>Cochez cette case si vous voulez créer une liste à puces en commençant les lignes avec un tiret <key>-</key>. Consultez la section sur <link xref="bulleted-lists"/>.</p></item>
+      <item><title>Utiliser une police personnalisée</title><p>Cochez cette option pour définir une police de caractères personnalisée. Si cette case n'est pas cochée, la police système par défaut sera utilisée.</p></item>
+    </list>
+    <figure><title>Fenêtre des <gui>Préférences</gui></title>
+      <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Préférences d'édition de Gnote</desc>
+    </figure>
+  </section>
+
+  <section id="advanced" style="2column">
+    <title>Réglages avancés</title>
+  </section>
+  <section id="sync">
+    <title>Synchronization Settings</title>
+    <section id="sync-addins" style="2column">
+      <title>Synchronization services</title>
+    </section>
+    <section id="sync-advanced">
+      <title>Avancé</title>
+      <p>Clicking <gui>Advanced</gui> button in <gui>Synchronization</gui> tab of <gui>Preferences</gui> dialog brings another dialog for setting up conflict resolution.</p>
+      <figure>
+        <title>Advanced Synchronization Settings</title>
+        <media type="image" src="figures/gnote-syncprefs-advanced.png" mime="image/png"/>
+      </figure>
+      <p>This dialog lets you choose what to do, when a conflict occurrs. A conflict happends, when the note is modified before synchronizing and it has been also modified on other device (and synchronized to synchronization storage). You can select one of these options:</p>
+      <list>
+        <item><title>Rename existing note by appending "(old)" to it's title and download the one from storage</title></item>
+        <item><title>Replace existing note by the one from storage, losing all modifications</title></item>
+        <item><title>Get the choice for each conflicting note individually</title></item>
+      </list>
+    </section>
+  </section>
+
+</page>

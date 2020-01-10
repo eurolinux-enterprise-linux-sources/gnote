@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="working-with-notebooks" xml:lang="ru">
+
+
+  <info>
+    <link type="guide" xref="index#organizing-notes"/>
+    <desc>Организация заметок</desc>
+    <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
+    <credit type="author">
+      <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ауримас Церниус (Aurimas Cernius)</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Работа с блокнотами</title>
+    <p>Notebooks allow you to group related notes together. You can add a note to a notebook in the main window or directly inside of a Note.</p>
+
+    <section id="creating-notebooks"><title>Создание блокнотов</title>
+      <p>Новые блокноты создаются одним из следующих способов</p>
+      <steps>
+        <item>
+          <p>Click on application menu and select <gui>New Notebook</gui>.</p>
+        </item>
+        <item>
+          <p>Введите название нового блокнота.</p>
+        </item>
+      </steps>
+      <p>Чтобы создать новое контекстное меню для блокнота</p>
+      <steps>
+        <item>
+          <p>In search mode, right click in the left hand box and choose <gui>New Notebook</gui>.</p>
+        </item>
+        <item>
+          <p>Введите название нового блокнота.</p>
+        </item>
+      </steps>
+      <figure>
+        <title>Создание блокнота из контекстного меню</title>
+        <media type="image" src="figures/add-notebook-search.png" mime="image/png" style="right">
+        <p>Новый блокнот</p>
+      </media>
+      </figure>  
+    </section>
+
+    <section id="adding-notes-to-a-notebook"><title>Добавление заметок в блокнот</title>
+      <p>To add notes to a notebook, you can add a note from the main window or directly within a note.</p>
+      <p>To move an existing note from the main window use one of the following:</p>
+      <list>
+        <item><p>Перетащите одну или несколько заметок в блокнот слева с помощью мыши.</p></item>
+        <item><p>Щёлкните по блокноту правой кнопкой мыши и выберите в контекстном меню <gui>Создать заметку</gui>. Созданная заметка будет добавлена в блокнот.</p></item>
+      </list>
+      <p>После того, как заметка написана, её можно добавить в существующий блокнот, нажав кнопку <gui>Блокнот</gui>. Эта кнопка изображена в виде значка <media type="image" src="figures/notebook-icon.png" mime="image/png" style="right"/>.</p>
+      <figure>
+        <title>Добавление заметок в блокнот</title>
+        <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>Добавление в блокнот.</p></media>
+      </figure>
+      <p>Заметку можно удалить из блокнота одним из следующих способов:</p>
+      <list>
+        <item><p>Move note to <gui>Unfiled notes</gui> notebook in main window.</p></item>
+        <item><p>Выберите в меню параметр <gui>Нет блокнотов</gui>, который появляется при нажатии кнопки <gui>Блокнот</gui>.</p></item>
+      </list>
+    </section>
+
+    <section id="creating-notebook-templates"><title>Создание шаблонов</title>
+      <p>После создания блокнота можно приступить к созданию шаблона, который будет использоваться для каждой новой создаваемой заметки в блокноте.</p>
+      <steps>
+        <item><p>In main window right click on a Notebook that you have created and choose <gui>Open Template Note</gui>.</p>
+        </item>
+        <item><p>Откроется новая заметка, которая будет использоваться в качестве шаблона. Любой текст, введённый в этой заметке, появится во всех заметках этого блокнота.</p></item>
+      </steps>
+      <figure>
+        <title>Создание шаблона</title>
+        <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Шаблон.</p></media>
+      </figure>
+      <p>Подробнее см. <link xref="gnote-template-notes"/>.</p>
+    </section>
+
+  <section id="deleting-a-notebook"><title>Удаление блокнота</title>
+    <p>Deleting a notebook will not delete any of the notes which are currently inside the notebook. After deleting a notebook, the notes will not be associated with any notebook and can be seen by highlighting <gui>Unfiled Notes</gui> in the main window.</p>
+    <p>Созданный блокнот можно удалить двумя способами:</p>
+    <p>To delete a notebook, go to search mode in main window and do one of the following:</p>
+    <list>
+      <item><p>Щёлкните по блокноту правой кнопкой мыши и выберите <gui>Удалить блокнот</gui>.</p></item>
+      <item><p>Remove all notes from notebook. Notebook will be automatically removed on <app>Gnote</app> restart.</p></item>
+    </list>
+    <figure>
+      <title>Deleting notes from main window</title>
+        <media type="image" src="figures/delete-notebook.png" mime="image/png" style="right">
+          <p>Удаление блокнота.</p>
+        </media>
+    </figure>
+  </section>
+
+  <section id="special-notebooks"><title>Special Notebooks</title>
+    <p><app>Gnote</app> has several special notebooks:</p>
+    <list>
+      <item><p><gui>Active Notes</gui> - contains notes, that were opened in current <app>Gnote</app> session.</p></item>
+      <item><p><gui>All Notes</gui> - contains all notes, except templates.</p></item>
+      <item><p><gui>Pinned Notes</gui> - used to mark notes as important.</p></item>
+      <item><p><gui>Unfilled Notes</gui> - contains all notes that are not placed in a user created notebook.</p></item>
+    </list>
+  </section>
+
+</page>

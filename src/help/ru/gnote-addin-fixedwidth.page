@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-fixedwidth" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Использование моноширного шрифта</desc>
+    <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
+    <credit type="author">
+      <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ауримас Церниус (Aurimas Cernius)</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Модуль моноширного шрифта</title>
+    <p>Этот модуль позволяет использовать моноширные шрифты. Чтобы изменить существующий текст, выделите текст, который необходимо изменить. Затем выберите в меню <gui>Текст</gui> пункт <gui>Фиксированная ширина</gui>. Этот параметр можно выбрать до того, как вы начнёте набирать текст, тогда набираемый текст уже будет использовать моноширный шрифт.</p>
+    <p>Этот параметр предоставляется соответствующим модулем.</p>
+
+</page>

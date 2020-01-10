@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-replacetitle" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Renommer le titre d'une note</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Remplacement du titre</title>
+    <p>Le bouton <gui>Outils</gui> est matérialisé par l'icône <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Lorsque ce greffon est activé, l'option <gui>Remplacer le titre</gui> est présente dans le menu <gui>Outils</gui>.</p>
+    <p>Lorsque l'option <gui>Remplacer le titre</gui> est sélectionnée, le titre de la note est remplacé par le texte actuellement sélectionné dans toute application.</p>
+    <p>Autrement, utilisez le raccourci clavier <keyseq><key>Ctrl</key><key>R</key></keyseq>.</p>
+
+</page>

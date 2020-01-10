@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="sl">
+
+
+  <info>
+    <link type="guide" xref="index#introduction"/>
+    <desc>Introduction to the <app>Gnote</app></desc>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Uvod v Gnote</title>
+    <p><app>Gnote</app> je namizni program pisanja sporočilc za GNOME. Je enostaven za uporabo in vam omogoča organizacijo idej in podatkov s katerimi se ukvarjate vsak dan. Gnote ima nekaj močno uporabnih zmožnosti urejanja za pomoč pri prilagajanju vaših sporočilc, vključno z</p>
+    <list>
+      <item><p>Poudari iskano besedilo</p></item>
+      <item><p>Preverjanje črkovanja znotraj vrstice</p></item>
+      <item><p>Samodejno povezovanje spletnih in e-poštnih naslovov</p></item>
+      <item><p>Podpora razveljavi/uveljavi</p></item>
+      <item><p>Slog in velikost pisave</p></item>
+      <item><p>Seznami vrstičnih oznak</p></item>
+    </list>
+    <figure>
+      <title>Glavno okno <app>Gnote</app></title>
+        <desc>Glavno okno <app>Gnote</app></desc>
+        <media type="image" src="figures/gnote-search-all-notes.png" mime="image/png" style="right">
+        <p><app>Gnote</app> main window.</p>
+        </media>
+    </figure>
+
+</page>

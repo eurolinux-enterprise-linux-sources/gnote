@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-fixedwidth" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Utiliser une police à chasse fixe</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Greffon Chasse fixe</title>
+    <p>L'option chasse fixe utilise une police dans laquelle tous les caractères ont le même espacement. Pour écrire du texte avec une police à chasse fixe, sélectionnez-le et faites <gui>Chasse fixe</gui> dans le menu <gui>Texte</gui>. L'option <gui>Chasse fixe</gui> peut aussi être définie avant la saisie du texte ; elle sera alors appliquée à tout texte saisi par la suite.</p>
+    <p>L'option Chasse fixe est une fonctionnalité apportée par le greffon Chasse fixe.</p>
+
+</page>

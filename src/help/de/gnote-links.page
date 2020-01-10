@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="links" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#organizing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>Verknüpfungen zu anderen Notizen</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Verknüpfungen</title>
+    <p>Der Knopf <gui>Verknüpfung</gui> erlaubt es Ihnen, aus der aktuellen Notiz heraus eine neue Notiz mit einer Verknüpfung anzulegen. Wenn etwa Ihre Notiz den Ausdruck »Abschlussprüfung« enthält, können Sie diesen Text mit der Maus auswählen und auf den Knopf <gui>Verknüpfung</gui> klicken, um eine neue Notiz mit dem Titel »Abschlussprüfung« anzulegen. In der aktuellen Notiz wird dann auch eine Verknüpfung angelegt, mit der über einen Klick darauf neue Notiz mit dem Titel »Abschlussprüfung« geöffnet werden kann.</p>
+<note style="advanced">
+    <p>Beim Ändern des Titels einer Notiz werden auch die entsprechenden Verknüpfungen in anderen Notizen aktualisiert. Dies verhindert, das ungültige Verknüpfungen entstehen, wenn eine Notiz umbenannt wird.</p></note>
+
+  <section><title>Backlinks-Add-In</title>
+    <p>The Tools button is represented by the <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"> </media> icon. When backlinks add-in is installed, the <gui>Tools</gui> menu will contain an item <gui>What links here?</gui>, which provides a sub-menu with all notes, containing link to current note.</p>
+  </section>
+
+</page>

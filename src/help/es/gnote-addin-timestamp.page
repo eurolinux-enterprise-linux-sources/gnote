@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-timestamp" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Insertar hora actual</desc>
+    <license><p>Licencia libre de documentación de GNU (GFDL), Versión 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nicolás Satragno</mal:name>
+      <mal:email>nsatragno@gnome.org</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Complemento «Insertar marca de tiempo»</title>
+    <p>El botón <guibutton>Herramientas</guibutton> se representa con el icono <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"> </media>. Cuando pulse en el icono <guiicon>Herramientas</guiicon> de la barra de herramientas presente en su nota, aparecerá un menú.</p>
+    <p>Cuando el complemento «Insertar marca de tiempo» está instalado, el menú «Herramientas» tendrá disponible la opción <gui>Insertar marca de tiempo</gui>.</p>
+    <p>Pulse en esta opción para insertar la fecha y la hora actuales.</p>
+
+</page>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-replacetitle" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Pakeisti raštelio pavadinimą</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Pakeisti pavadinimą</title>
+    <p>Įrankių mygtuką žymi piktograma <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Kai šis priedas yra įdiegtas, meniu <gui>Įrankiai</gui> turės punktą <gui>Pakeisti pavadinimą</gui>.</p>
+    <p>Pasirinkus punktą <gui>Pakeisti pavadinimą</gui> raštelio pavadinimas bus pakeistas šiuo metu bet kurioje programoje pažymėtu tekstu.</p>
+    <p>Taip pat galite naudoti klavišų kombinaciją <keyseq><key>Vald</key><key>R</key></keyseq>.</p>
+
+</page>

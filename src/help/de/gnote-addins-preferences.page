@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addins-preferences" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="notes-preferences#advanced"/>
+    <desc>Einstellungen für Gnote-Add-Ins</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Add-In-Einstellungen</title>
+    <p>Sie können in diesem Reiter Add-Ins aktivieren oder deaktivieren. Wählen Sie hierzu ein Add-In aus und klicken Sie auf den Knopf <gui>Aktivieren</gui>. Die Knopfbeschriftung ändert sich in <gui>Deaktivieren</gui>, so dass Sie den Knopf nun zum Deaktivieren eines Add-Ins verwenden können.</p>
+    <p>Einige Add-Ins haben Einstellmöglichkeiten. Wählen Sie das Add-In aus und klicken Sie auf den <gui>Einstellungen</gui>-Knopf.</p>
+    <figure><title>Add-in-Einstellungen für <app>Gnote</app></title>
+    <desc>Add-In-Fenster von <app>Gnote</app></desc>
+    <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">
+      <p>Add-in-Fenster von <app>Gnote</app></p>
+    </media>
+    </figure>
+
+</page>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-fixedwidth" xml:lang="sl">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Uporabi pisavo sistema s stalno širino</desc>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Vstavek Stalna širina</title>
+    <p>Slog stalne širine omogoča uporabo pisave s stalno širino. Za spremembo obstoječega besedila najprej izberite besedilo, ki ga želite spremeniti. Nato izberite možnost <gui>Stalna širina</gui> iz menija <gui>Besedilo</gui>. Možnost <gui>Stalna širina</gui> lahko iz menija <gui>Besedilo</gui> izberete tudi pred začetkom vnašanja besedila.</p>
+    <p>Možnost Stalna širina zagotavlja vstavek Stalna širina.</p>
+
+</page>

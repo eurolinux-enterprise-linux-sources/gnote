@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addins-preferences" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="notes-preferences#advanced"/>
+    <desc>Configuración de los complementos de Gnote</desc>
+    <license><p>Licencia libre de documentación de GNU (GFDL), Versión 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nicolás Satragno</mal:name>
+      <mal:email>nsatragno@gnome.org</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Preferencias de los complementos</title>
+    <p>En esta pestaña puede activar o desactivar complementos. Para hacer esto, seleccione un complemento y pulse el botón <gui>Activar</gui>. Este botón se desactivará y se activará el botón <gui>Desactivar</gui>, que se puede usar ahora para desactivar el complemento.</p>
+    <p>Algunos complementos tienen preferencias. Se puede acceder a ellas seleccionando el complemento y pulsando el botón <gui>Preferencias</gui>.</p>
+    <figure><title>Preferencias de los complementos de <app>Gnote</app></title>
+    <desc>Ventana de complementos de <gui>Gnote</gui></desc>
+    <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">
+      <p>Ventana <app>Complementos</app>.</p>
+    </media>
+    </figure>
+
+</page>

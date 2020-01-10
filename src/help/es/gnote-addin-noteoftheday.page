@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-noteoftheday" xml:lang="es">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Plantilla de nota</desc>
+    <license><p>Licencia libre de documentación de GNU (GFDL), Versión 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nicolás Satragno</mal:name>
+      <mal:email>nsatragno@gnome.org</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Nota del día</title>
+  <p>Este complemento crea automáticamente una nota «Hoy» para que pueda anotar sus pensamientos diarios. La fecha actual se utiliza como base para el título de la nota. Por ejemplo, el título de una nota «Hoy» creada el 28 de febrero de 2007, sería: «Hoy: miércoles 28 de febrero de 2007».</p>
+  <p>Si no modifica una nota «Hoy», el complemento de Nota del día la eliminará automáticamente.</p>
+  <p>Para personalizar el contenido de la nota «Hoy» predeterminada, cree una nueva nota y escriba en el título de la nota «Hoy: Plantilla». Modifique el contenido de la nota plantilla a lo que desee. Cuando se creen nuevas notas «Hoy», se usarán los contenidos de su nota «Hoy: Plantilla».</p>
+
+</page>

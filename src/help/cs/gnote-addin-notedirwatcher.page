@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-notedirwatcher" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Sledování změn v poznámkách na úrovni souborového systému</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2012</years>
+    </credit>
+  </info>
+  
+  <title>Sledování složky s poznámkami</title>
+    <p>Tento doplněk umožňuje pracovat s poznámkami přes souborový systém, i když je aplikace <app>Gnote</app> spuštěná. Když je doplněk zapnutý, sleduje změny v souborech a když nějakou změnu zjistí, soubor znovu načte. Díky tomu se externí změny v poznámkách automaticky promítnou i v aplikaci <app>Gnote</app>.</p>
+    <p><app>Gnote</app> uchovává poznámky ve složce <file>~/.local/share/gnote</file>. S tímto zapnutým doplňkem můžete provádět akce na úrovni souborového systému v této složce. Například synchronizovat obsah s jiným umístěním, i když aplikace <app>Gnote</app> zrovna běží.</p>
+
+</page>

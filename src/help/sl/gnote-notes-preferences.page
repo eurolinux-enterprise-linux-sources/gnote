@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="notes-preferences" xml:lang="sl">
+
+
+  <info>
+    <link type="guide" xref="index#customizing"/>
+    <desc>Nastavitve Gnote</desc>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Možnosti Gnote</title>
+  <section id="editing">
+    <title>Splošne možnosti</title>
+    <p>To set preferences for <app>Gnote</app>, select <gui>Preferences</gui> from the application menu.</p>
+    <p>Obstajajo tri kategorije možnosti, <gui>Splošno</gui>, <gui>Tipkovne bližnjice</gui> in <gui>Vstavki</gui>. Možnosti za vsak zavihek bodo opisane spodaj.</p>
+    <p>Zavitek splošno vam omogoča nastavitev možnosti, ki so povezane z obnašanjem programa in urejanjem sporočilc. V tem zavihku so tri izbira polja, ki jih lahko vklopite ali izklopite.</p>
+    <list>
+      <item><title>Uporabi ikono stanja</title><p> Enable this checkbox to show <app>Gnote</app> status icon when running. In this mode <app>Gnote</app> will remain present even after all it's windows are closed. Recently used notes and other windows can be opened from menu, that appears after clicking or right-clicking status icon.</p></item>
+      <item><title>Preverjanje črkovanja med tipkanjem</title><p>To izbiro polje omogočite za podčrtanje napačnih črkovanj v rdečem in zagotavljanje predlogov v vsebinskem meniju desnega klika.</p><p>Možnost preverjanja črkovanja je na voljo le, če imate nameščen paket GtkSpell za svojo distribucijo.</p></item>
+      <item><title>Poudarjanje WikiWords</title><p>To izbirno polje omogočite za ustvarjanje povezav za fraze KiSoVidtiTako. Klik na povezavo bo ustvaril novo sporočilce z naslovom, ki bo enak besedilu povezave.</p></item>
+      <item><title>Omogoči samodejne vrstično označene sezname</title><p>Omogočite to izbirno polje, če želite ustvariti vrstični seznam z ustvajanjem vrstic z znakom pomišljaja <key>-</key>. Preberite več o <link xref="bulleted-lists"/>.</p></item>
+      <item><title>Uporabi pisavo po meri</title><p>To izbirno polje omogočite za nastavitev pisave po meri, ki bo uporabljena v vaših sporočilcih. V primeru da je ta možnost onemogočena, bo uporabljena privzeta sistemska pisava.</p></item>
+    </list>
+    <figure><title>Okno <gui>Možnosti</gui></title>
+      <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Možnosti urejanja Gnote</desc>
+    </figure>
+  </section>
+
+  <section id="advanced" style="2column">
+    <title>Napredne nastavitve</title>
+  </section>
+  <section id="sync">
+    <title>Synchronization Settings</title>
+    <section id="sync-addins" style="2column">
+      <title>Synchronization services</title>
+    </section>
+    <section id="sync-advanced">
+      <title>Napredno</title>
+      <p>Clicking <gui>Advanced</gui> button in <gui>Synchronization</gui> tab of <gui>Preferences</gui> dialog brings another dialog for setting up conflict resolution.</p>
+      <figure>
+        <title>Advanced Synchronization Settings</title>
+        <media type="image" src="figures/gnote-syncprefs-advanced.png" mime="image/png"/>
+      </figure>
+      <p>This dialog lets you choose what to do, when a conflict occurrs. A conflict happends, when the note is modified before synchronizing and it has been also modified on other device (and synchronized to synchronization storage). You can select one of these options:</p>
+      <list>
+        <item><title>Rename existing note by appending "(old)" to it's title and download the one from storage</title></item>
+        <item><title>Replace existing note by the one from storage, losing all modifications</title></item>
+        <item><title>Get the choice for each conflicting note individually</title></item>
+      </list>
+    </section>
+  </section>
+
+</page>

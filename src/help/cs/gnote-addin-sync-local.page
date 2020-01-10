@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-sync-local" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="notes-preferences#sync-addins"/>
+    <link type="guide" xref="synchronization#configuration"/>
+    <desc>Synchronizace místní složky</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2012</years>
+    </credit>
+  </info>
+
+  <title>Synchronizace s místní složkou</title>
+  <p>Tento typ synchronizace umožňuje nastavit místní složku jako synchronizační úložiště.</p>
+  <p>Pro nastavení tohoto typu synchronizace vyberte „Místní složka“ v rozbalovacím seznamu <gui>Služba</gui> a vyberte požadovanou složku v <gui>Umístění složky</gui>.</p>
+  <figure>
+    <title>Nastavení synchronizace místní složky</title>
+    <media type="image" src="figures/gnote-syncprefs-local.png" mime="image/png"/>
+  </figure>
+  <p>Po vybrání požadované složky klikněte na tlačítko <gui>Uložit</gui>. Tlačítko <gui>Smazat</gui> použijte k vypnutí synchronizace.</p>
+
+</page>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="links" xml:lang="sl">
+
+  <info>
+    <link type="guide" xref="index#organizing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <desc>Povezave z drugimi sporočilci</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Povezave</title>
+    <p>Gumb <gui>Poveži</gui> vam omogoča ustvarjanje povezave do novega sporočilca iz trenutnega sporočilca. Če vaše sporočilce na primer vsebuje frazo “KončniIzpit“, lahko to besedilo izberete z miško in kliknete na gumb <gui>Poveži</gui> za ustvaritev novega sporočilca z naslovom “KončniIzpit“. V trenutnem sporočilcu bo ustvarjena povezava, ki bo ob kliku odprla novo sporočilce “KončniIzpit“.</p>
+<note style="advanced">
+    <p>Spreminjanje naslova sporočilca bo posodobilo povezave, ki so prisotne v drugih sporočilcih. To prepreči pojavljanje zlomljenih povezav ob preimenovanju sporočilca.</p></note>
+
+  <section><title>Vstavek povratnih povezav</title>
+    <p>The Tools button is represented by the <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"> </media> icon. When backlinks add-in is installed, the <gui>Tools</gui> menu will contain an item <gui>What links here?</gui>, which provides a sub-menu with all notes, containing link to current note.</p>
+  </section>
+
+</page>

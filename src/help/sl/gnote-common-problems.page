@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="common-problems" xml:lang="sl">
+
+  <info>
+    <link type="guide" xref="index#common-problems"/>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <desc>Pogosto zastavljena vprašanja</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Pogoste težave Gnote</title>
+    <list>
+      <item><title>Ali <app>Gnote</app> deluje s progamom <app>Tomboy</app>?</title><p>Uvozite lahko sporočilca <app>Tomboy</app>. Vstavek mora biti omogočen.</p>
+      </item>
+      <item><title>Ne morem najti ikone stanja Gnote</title>
+        <p>Ikono stanja <app>Gnote</app> lahko omogočite z uporabo ukaza iz <app>terminala</app>: <cmd>gsettings set org.gnome.gnote use-status-icon true</cmd>.</p></item>
+      <item><title>Kako naj nastavim, da se <app>Gnote</app> samodejno zažene ob prijavi?</title>
+        <p>Za samodejen zagon Gnote, ko se prijavite v GNOME, poženite <app>gnome-session-properties</app></p>
+      </item>
+    </list>
+
+</page>

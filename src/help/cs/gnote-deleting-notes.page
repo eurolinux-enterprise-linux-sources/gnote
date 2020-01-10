@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="deleting-notes" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <desc>Mazání poznámek</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011 – 2012</years>
+    </credit>
+  </info>
+
+  <title>Mazání poznámek</title>
+  <p>Poznámku můžete smazat několika způsoby:</p>
+  <list>
+    <item><p>Klikněte pravým tlačítkem v seznamu poznámek a zvolte <gui>Smazat</gui>. Tím se vybraná poznámka smaže.</p></item>
+    <item><p>Když je poznámka otevřená, zmáčkněte na liště nástrojů tlačítko <gui>Odstranit</gui>.</p></item>
+  </list>
+  <p>Ve všech případech se objeví dialogové okno s dotazem, jestli chcete poznámku včetně jejího obsahu trvale odstranit. Klikněte buď na tlačítko <gui>Odstranit</gui>, a tím poznámku trvale odstraňte, nebo na <gui>Zrušit</gui>, a tím operaci zrušte. Odkazy na smazanou poznámku budou existovat i nadále a jejich použitím znovu vytvoříte poznámku stejného názvu.</p>
+
+</page>

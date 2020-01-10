@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-underline" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Pabrauktas tekstas</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Priedas „Pabrauktas“</title>
+  <p>Kai priedas <gui>Pabrauktas</gui> yra įdiegtas, meniu <gui>Tekstas</gui> turi punktą <gui>Pabrauktas</gui>.</p>
+  <p>Pažymėtam tekstui pabraukti, atlikite vieną iš šių veiksmų:</p>
+  <list>
+    <item><p>Spauskite <gui>Tekstas</gui> ir pasirinkite <gui>Pabrauktas</gui>.</p></item>
+    <item><p>Paspauskite klavišų kombinaciją <keyseq><key>Vald</key><key>U</key></keyseq>.</p></item>
+  </list>
+  <p>Pabraukimui pašalinti atlikite vieną iš šių veiksmų:</p>
+  <list>
+    <item><p>Spauskite <gui>Tekstas</gui> ir pasirinkite <gui>Pabrauktas</gui>.</p></item>
+    <item><p>Paspauskite klavišų kombinaciją <keyseq><key>Vald</key><key>U</key></keyseq>.</p></item>
+  </list>
+
+</page>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="notes-preferences" xml:lang="cs">
+
+
+  <info>
+    <link type="guide" xref="index#customizing"/>
+    <desc>Nastavení Gnote</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011 – 2012</years>
+    </credit>
+  </info>
+
+  <title>Předvolby Gnote</title>
+  <section id="editing">
+    <title>Obecné předvolby</title>
+    <p>Když chcete nastavit předvolby pro <app>Gnote</app>, vyberte <gui>Předvolby</gui> v nabídce aplikace.</p>
+    <p>V předvolbách jsou tři kategorie: <gui>Obecné</gui>, <gui>Klávesové zkratky</gui> a <gui>Doplňky</gui>. Předvolby, které se nachází na každé z karet, jsou popsány níže.</p>
+    <p>Karta Obecné slouží k nastavení předvoleb vztahujících se k chování a k úpravám poznámek. Na této kartě najdete několik zaškrtávacích políček, která mohou být zapnutá nebo vypnutá.</p>
+    <list>
+      <item><title>Používat stavovou ikonu</title><p>Zaškrtněte toto políčko, aby aplikace <app>Gnote</app>, když poběží, zobrazovala stavovou ikonu. V tomto režimu poznámky <app>Gnote</app> zůstanou prezentovány ikonou, i když zavřete všechna jeho okna. Poznámky, které jste měli před tím otevřeny, a stejně tak ostatní okna, se po kliknutí levým nebo pravým tlačítkem na stavovou ikonu znovu zobrazí.</p></item>
+      <item><title>Kontrola překlepů během psaní</title><p>Zaškrtněte toto políčko, aby se pravopisně nesprávná slova podtrhávala červeně. Po kliknutí pravým tlačítkem se vám budou v kontextové nabídce navrhovat správné tvary.</p><p>Volba kontroly překlepů je dostupná jen v případě, že máte ve své distribuci nainstalován balíček GtkSpell.</p></item>
+      <item><title>Zvýrazňovat WikiSlova</title><p>Zaškrtněte toto políčko, aby se vytvářely odkazy na výrazy KteréVypadajíTakto. Kliknutím na odkaz se vytvoří nová poznámka s názvem odpovídajícím odkazovanému textu.</p></item>
+      <item><title>Povolit automatické seznamy s odrážkami</title><p>Zaškrtněte toto políčko, pokud chcete vytvářet seznamy s odrážkami, tak že řádky začnete pomlčkou <key>-</key>. Více se dočtete v kapitole <link xref="bulleted-lists"/>.</p></item>
+      <item><title>Používat vlastní písmo</title><p>Zaškrtněte toto políčko, abyste si mohli nastavit vlastní písmo pro své poznámky. Pokud políčko není zaškrtnuté, používá se výchozí systémové písmo.</p></item>
+    </list>
+    <figure><title>Okno <gui>Předvolby</gui></title>
+      <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Úprava předvoleb Gnote</desc>
+    </figure>
+  </section>
+
+  <section id="advanced" style="2column">
+    <title>Pokročilá nastavení</title>
+  </section>
+  <section id="sync">
+    <title>Nastavení synchronizace</title>
+    <section id="sync-addins" style="2column">
+      <title>Synchronizační služby</title>
+    </section>
+    <section id="sync-advanced">
+      <title>Pokročilé</title>
+      <p>Klikněte na tlačítko <gui>Pokročilé…</gui> na kartě <gui>Synchronizace</gui> v dialogovém okně <gui>Předvolby Gnote</gui> a zobrazí se další dialogové okno s nastavením řešení konfliktů.</p>
+      <figure>
+        <title>Pokročilá nastavení synchronizace</title>
+        <media type="image" src="figures/gnote-syncprefs-advanced.png" mime="image/png"/>
+      </figure>
+      <p>V tomto dialogovém okně si můžete zvolit, co se má udělat, když se vyskytne konflikt. Ty vznikají, když je poznámka před synchronizací upravena a zároveň byla upravena na jiném zařízení (a synchronizována do synchronizačního úložiště). Můžete si vybrat jednu z následujících voleb:</p>
+      <list>
+        <item><title>Stávající poznámku přejmenovat přidáním „(stará)“ k názvu a stáhnout verzi z úložiště</title></item>
+        <item><title>Nahradit stávající poznámku tou z úložiště, přijít o všechny změny</title></item>
+        <item><title>U každého konfliktu zvlášť dostat možnost volby</title></item>
+      </list>
+    </section>
+  </section>
+
+</page>

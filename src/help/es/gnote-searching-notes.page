@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="searching-notes" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>Licencia libre de documentación de GNU (GFDL), Versión 1.1</p></license>
+    <desc>Buscar notas</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nicolás Satragno</mal:name>
+      <mal:email>nsatragno@gnome.org</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Explorar las notas</title>
+
+  <p>La ventana principal de <app>Gnote</app> muestra una vista general de todas las notas. De manera predeterminada, la ventana en modo búsqueda mostrará las notas ordenadas por la fecha de modificación. Pulse sobre las cabeceras de las columnas <gui>Nota</gui> o <gui>Último cambio</gui> para cambiar la ordenación. Pulsa la cabecera de una columna por segunda vez para cambiar entre orden ascendente o descendente.</p>
+  <p>Puede encontrar notas específicas introduciendo un texto en el campo de búsqueda en la parte superior de la ventana. La lista de notas se actualizará automáticamente para mostrar sólo las notas que contengan el texto introducido.</p>
+  <p>Para abrir una nota use uno de los siguientes métodos:</p>
+  <list>
+    <item><p>Pulse dos veces sobre una nota.</p></item>
+    <item><p>Pulse el botón derecho del ratón en la lista de notas y seleccione <gui>Abrir</gui> del menú contextual que aparecerá. Abrirá todas las notas seleccionadas cada una en una ventana independiente.</p></item>
+    <item><p>Pulse el botón derecho del ratón en la lista de notas y seleccione <gui>Abrir en una ventana nueva</gui> del menú contextual. Se abrirán todas las notas seleccionadas, cada una en una ventana nueva, dejando así la ventana original intacta.</p></item>
+    <item><p>Seleccione una o más notas de una lista y después pulse la combinación de teclas <keyseq><key>Ctrl</key><key>O</key></keyseq>.</p></item>
+    <item><p>Si el <gui>Icono de estado</gui> está activado, pulse sobre él y seleccione la nota desde el menú. Este menú se limita a cierto tipo de notas y se rellena con notas ancladas y recientemente actualizadas.</p></item>
+  </list>
+
+</page>

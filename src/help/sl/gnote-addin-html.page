@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-html" xml:lang="sl">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Izvoz sporočilc v HTML.</desc>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Izvozi v HTML</title>
+    <p>Gumb možnosti predstavlja ikona <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Ko je ta vstavek nameščen, bo možnost <gui>Izvoz v HTML</gui> prisotna v meniju <gui>Orodja</gui>.</p>
+    <p>Z izbiro te možnosti lahko ustvarite dokument <acronym>HTML</acronym> iz enega ali več sporočilc.</p>
+    <p>After selecting this option, you will be presented with a dialog that allows you to choose where to save the HTML file. Enter the destination filename and click <gui>Save</gui> to save the file, or <gui>Cancel</gui> to abort the operation.</p>
+    <p>Za izvoz sporočilc za katera obstaja povezava v trenutnem sporočilcu izberite gumb <gui>Izvozi povezana sporočilca</gui>.</p>
+
+</page>

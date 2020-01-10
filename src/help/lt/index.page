@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="index" xml:lang="lt">
+
+  <info>
+    <license>
+	<p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p>
+    </license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Gnote Žinynas</title>
+
+    <section id="introduction">
+    <title>Įvadas</title>
+    </section>
+
+    <section id="managing-notes" style="2column">
+    <title>Raštelių valdymas</title>
+    </section>
+
+    <section id="organizing-notes" style="2column">
+    <title>Raštelių tvarkymas</title>
+    </section>
+
+    <section id="advanced" style="2column">
+    <title>Sudėtingesni</title>
+    </section>
+
+    <section id="customizing" style="2column">
+    <title>Pritaikymas sau</title>
+    </section>
+
+    <section id="common-problems" style="2column">
+    <title>Dažnos problemos</title>
+    </section>
+
+</page>

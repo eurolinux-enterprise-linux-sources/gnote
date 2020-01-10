@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-replacetitle" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Notiztitel umbenennen</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Titel ersetzen</title>
+    <p>Der Werkzeugknopf wird durch das Symbol <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/> dargestellt. Wenn dieses Add-In installiert ist, dann enthält das <gui>Werkzeuge</gui>-Menü den Eintrag <gui>Titel ersetzen</gui>.</p>
+    <p>Wenn die Option <gui>Titel ersetzen</gui> aktiviert ist, dann wird der Notiztitel in jeder Anwendung durch den aktuell ausgewählten Text ersetzt.</p>
+    <p>Alternatively, you can use <keyseq><key>Ctrl</key><key>R</key></keyseq> shortcut.</p>
+
+</page>

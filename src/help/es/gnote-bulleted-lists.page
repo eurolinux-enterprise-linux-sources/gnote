@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="bulleted-lists" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Usar listas de topos</desc>
+    <license><p>Licencia libre de documentación de GNU (GFDL), Versión 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nicolás Satragno</mal:name>
+      <mal:email>nsatragno@gnome.org</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Lista de topos</title>
+
+<section id="begin-a-bulleted-list"><title>Comenzar una lista de topos</title>
+<p>Puede comenzar una lista de topos mediante uno de los métodos siguientes:</p>
+<list>
+<item><p>Seleccione <gui>Topos</gui> del menú <gui>Texto</gui>.</p></item>
+<item><p>Comience una línea con un carácter guión <key>-</key> seguido por un espacio, escriba algún texto y pulse <key>Intro</key>.</p></item>
+<item><p>Presione la combinación de teclas <keyseq><key>Alt</key><key>Derecha</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="end-a-bulleted-list"><title>Finalizar una lista de topos</title>
+<p>Finalice una lista de topos haciendo una de las siguientes acciones:</p>
+<list>
+<item><p>Seleccione <gui>Topos</gui> del menú <gui>Texto</gui>.</p></item>
+<item><p>Pulse <key>Intro</key> en una línea de topos vacía.</p></item>
+<item><p>Seleccione <gui>Disminuir sangría</gui>, desde el menú «Texto», sucesivamente hasta que la línea actual no siga formando parte de la lista de topos.</p></item>
+<item><p>Utilizando la combinación de teclas <keyseq><key>Mayús</key><key>Tab</key></keyseq> sucesivamente hasta que la línea actual no siga formando parte de la lista de topos.</p></item>
+<item><p>Utilizando la combinación de teclas <keyseq><key>Alt</key><key>Izquierda</key></keyseq> sucesivamente hasta que la línea actual no siga formando parte de la lista de topos.</p></item>
+</list>
+
+</section>
+<section id="increase-indentation">
+<title>Aumentar sangría</title>
+<p>Aumentar la sangría en una lista de topos con el ratón</p>
+<list><item><p>Seleccione <gui>Aumentar sangría</gui> del menú «Texto».</p></item></list>
+<p>Aumentar la sangría en una lista de topos usando el teclado</p>
+<list>
+<item><p>Pulse la tecla <key>Tab</key>.</p></item>
+<item><p>Presione la combinación de teclas <keyseq><key>Alt</key><key>Derecha</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="decrease-indentation">
+<title>Disminuir sangría</title>
+<p>Disminuir la sangría en una lista de topos usando el ratón</p>
+<list><item><p>Seleccione <gui>Disminuir sangría</gui> del menú «Texto».</p></item></list>
+<p>Disminuir la sangría en una lista de topos usando el ratón</p>
+<list>
+<item><p>Presione la combinación de teclas <keyseq><key>Mayús</key><key>Tab</key></keyseq>.</p></item>
+<item><p>Presione la combinación de teclas <keyseq><key>Alt</key><key>Izquierda</key></keyseq>.</p></item>
+</list>
+</section>
+
+</page>

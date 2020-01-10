@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="bulleted-lists" xml:lang="sl">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Uporaba vrstičnih seznamov</desc>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+<title>Seznami vrstičnih oznak</title>
+
+<section id="begin-a-bulleted-list"><title>Začni seznam z vrstičnimi oznakami</title>
+<p>Vrstični seznam lahko začnete na enega od naslednjih načinov</p>
+<list>
+<item><p>V meniju <gui>Besedilo</gui> izberite <gui>Vrstični seznami</gui>.</p></item>
+<item><p>Vrstico začnite z znakom majhnega pomišljaja <key>-</key>, ki mu sledi presledek, vnesite besedilo in pritisnite <key>Enter</key>.</p></item>
+<item><p>Pritisnite <keyseq><key>Alt</key><key>Desno</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="end-a-bulleted-list"><title>Končanj seznam z vrstičnimi oznakami</title>
+<p>Vrstični seznam lahko končate z enim od naslednjega</p>
+<list>
+<item><p>V meniju <gui>Besedilo</gui> izberite <gui>Vrstični seznami</gui>.</p></item>
+<item><p>Pritisnite <key>Enter</key> v prazni vrstici vrstičnega seznama.</p></item>
+<item><p>Izberite <gui>Zmanjšaj zamik</gui> v meniju Besedilo tolikokrat, dokler trenutna vrstica ni več del vrstičnega seznama.</p></item>
+<item><p>S kombinacijo tipk <keyseq><key>Shift</key><key>Tab</key></keyseq> dokler trenutna vrstica ni več del vrstičnega seznama.</p></item>
+<item><p>S kombinacijo tipk <keyseq><key>Alt</key><key>Levo</key></keyseq> zaporedoma dokler trenutna vrstica ni več del vrstičnega seznama.</p></item>
+</list>
+
+</section>
+<section id="increase-indentation">
+<title>Povečaj zamik</title>
+<p>Za zmanjšanja zamika vrstice na vrstičnem seznamu z miško</p>
+<list><item><p>Izberite <gui>Povečaj zamik</gui> v meniju Besedilo.</p></item></list>
+<p>Za zmanjšanja zamika vrstice na vrstičnem seznamu s tipkovnico</p>
+<list>
+<item><p>Pritisnite tipko <key>Tab</key></p></item>
+<item><p>Pritisnite <keyseq><key>Alt</key><key>Desno</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="decrease-indentation">
+<title>Zmanjšaj zamik</title>
+<p>Za zmanjšanja zamika vrstice na vrstičnem seznamu z miško</p>
+<list><item><p>Izberite <gui>Zmanjšaj zamik</gui> iz menija Besedilo.</p></item></list>
+<p>Za zmanjšanja zamika vrstice na vrstičnem seznamu s tipkovnico:</p>
+<list>
+<item><p>Pritisnite kombinacijo tipk <keyseq><key>Shift</key><key>Tab</key></keyseq>.</p></item>
+<item><p>Pritisnite kombinacijo tipk <keyseq><key>Alt</key><key>Levo</key></keyseq></p></item>
+</list>
+</section>
+
+</page>

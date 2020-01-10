@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="searching-notes" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <desc>Raštelių paieška</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Raštelių naršymas</title>
+
+  <p>Pagrindinis <app>Gnote</app> langas rodo visų raštelių apžvalgą. Numatytai langas paieškos langas rodys visus raštelius paskutinio pakeitimo eilės tvarką. Spauskite stulpelių <gui>Raštelis</gui> arba <gui>Paskutinis pakeitimas</gui> antraštes rikiavimo tvarkai pakeisti. Spauskite stulpelio antraštę dar kartą didėjimo ir mažėjimo tvarkai pakeisti.</p>
+  <p>Konkrečius raštelius galite rasti įvesdami tekstą į paieškos lauką lango viršuje. Raštelių sąrašas bus automatiškai atnaujintas ir rodys tik raštelius, turinčius įvestą tekstą.</p>
+  <p>Rašteliui atverti atlikite šiuos veiksmus:</p>
+  <list>
+    <item><p>Dukart paspauskite ant raštelio.</p></item>
+    <item><p>Spauskite dešinį klavišą raštelių sąraše ir pasirinkite <gui>Atverti</gui> iš atsiversiančio kontekstinio meniu. Tai atvers visus pažymėtus raštelius, kiekvieną atskirame lange.</p></item>
+    <item><p>Spauskite dešinį klavišą raštelių sąraše ir pasirinkite <gui>Atverti naujame lange</gui>. Kiekvienas pažymėtas raštelis bus atvertas atskirame lange, paliekant pradinį langą nepakitusį.</p></item>
+    <item><p>Pažymėkite vieną ar daugiau raštelių sqraše ir paspauskite klavišų kombinaciją <keyseq><key>Vald</key><key>O</key></keyseq>.</p></item>
+    <item><p>Jei <gui>Būsenos piktograma</gui> yra įjungta, paspauskite ant jos ir pasirinkite raštelį ir meniu. Šis meniu riboja rodomų raštelių skaičių ir yra užpildytas prisegtais ir neseniai keistais rašteliais.</p></item>
+  </list>
+
+</page>

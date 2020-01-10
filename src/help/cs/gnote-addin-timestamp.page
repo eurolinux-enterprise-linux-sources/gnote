@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-timestamp" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Vkládání aktuálního času</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Doplněk Vložit časové razítko</title>
+    <p>Tlačítko <gui>Nástroje</gui> je prezentováno ikonou <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Když na ikonu <gui>Nástroje</gui> na liště nástrojů kliknete, objeví se nabídka.</p>
+    <p>Pokud je nainstalován doplněk <gui>Vložit časové razítko</gui>, bude nabídka <gui>Nástroje</gui> obsahovat volbu <gui>Vložit časové razítko</gui>.</p>
+    <p>Kliknutím na tuto volbu vložíte aktuální datum a čas.</p>
+
+</page>

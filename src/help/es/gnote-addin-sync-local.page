@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-sync-local" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="notes-preferences#sync-addins"/>
+    <link type="guide" xref="synchronization#configuration"/>
+    <desc>Sincronizar con la carpeta local</desc>
+    <license><p>Licencia libre de documentación de GNU (GFDL), Versión 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2012</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nicolás Satragno</mal:name>
+      <mal:email>nsatragno@gnome.org</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Carpeta local de la sincronización</title>
+  <p>Éste tipo de sincronización permite configurar la carpeta local como almacenamiento de la sincronización.</p>
+  <p>Para configurar este tipo de sincronización, seleccione «Carpeta local» en el desplegable <gui>Servicio</gui> y seleccione la carpeta que quiere como <gui>Ruta de la carpeta</gui>.</p>
+  <figure>
+    <title>Configuración de la carpeta local de la sincronización</title>
+    <media type="image" src="figures/gnote-syncprefs-local.png" mime="image/png"/>
+  </figure>
+  <p>Después de seleccionar la carpeta que quiere, pulse el botón <gui>Guardar</gui>. Use el botón <gui>Limpiar</gui> para desconectar la sincronización.</p>
+
+</page>

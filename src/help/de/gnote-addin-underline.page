@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-underline" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Text unterstreichen</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Text-unterstreichen-Add-In</title>
+  <p>Wenn das <gui>Unterstreichen</gui>-Add-In installiert ist, stellt das Menü <gui>Text</gui> einen Menüpunkt <gui>Unterstreichen</gui> zur Verfügung.</p>
+  <p>Unterstreichen Sie ausgewählten Text durch eine der folgenden Aktionen:</p>
+  <list>
+    <item><p>Klicken Sie auf <gui>Text</gui> und wählen Sie <gui>Unterstreichen</gui>.</p></item>
+    <item><p>Drücken Sie die Tastenkombination <keyseq><key>Umschalttaste</key><key>Tabulatortaste</key></keyseq>.</p></item>
+  </list>
+  <p>Um die Unterstreichung zu entfernen, wählen Sie den unterstrichenen Text aus und führen Sie eine der folgenden Aktionen aus:</p>
+  <list>
+    <item><p>Klicken Sie auf <gui>Text</gui> und wählen Sie <gui>Unterstreichen</gui>.</p></item>
+    <item><p>Drücken Sie die Tastenkombination <keyseq><key>Umschalttaste</key><key>Tabulatortaste</key></keyseq>.</p></item>
+  </list>
+
+</page>

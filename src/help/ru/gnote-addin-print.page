@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-print" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Печать заметок</desc>
+    <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
+    <credit type="author">
+      <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ауримас Церниус (Aurimas Cernius)</name>
+      <years>2011</years>
+    </credit>
+  </info>
+  
+  <title>Печать</title>
+    <p>Кнопка инструментов изображена в виде значка <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. При наличии дополнения для печати в меню <gui>Инструменты</gui> появится пункт <gui>Печать</gui>.</p>
+    <p>После выбора пункта <gui>Печать</gui> откроется диалоговое окно печати и заметка, которая будет напечатана.</p>
+
+</page>

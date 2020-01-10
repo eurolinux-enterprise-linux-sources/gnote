@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="notes-preferences" xml:lang="de">
+
+
+  <info>
+    <link type="guide" xref="index#customizing"/>
+    <desc>Gnote-Einstellungen</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Gnote-Einstellungen</title>
+  <section id="editing">
+    <title>Allgemeine Einstellungen</title>
+    <p>To set preferences for <app>Gnote</app>, select <gui>Preferences</gui> from the application menu.</p>
+    <p>Es gibt drei Kategorien für Einstellungen, <gui>Allgemein</gui>, <gui>Tastenkombinationen</gui> und <gui>Add-Ins</gui>. Die Einstellungsmöglichkeiten in jedem der Reiter werden nachfolgend beschrieben.</p>
+    <p>Der Allgemein-Reiter erlaubt es Ihnen, die Einstellungen in Bezug auf das Bearbeiten von Notizen festzulegen. Es gibt auf diesem Reiter mehrere Ankreuzfelder, die entweder aktiviert oder deaktiviert werden können.</p>
+    <list>
+      <item><title>Statussymbol aktivieren</title><p>Aktivieren Sie dieses Ankreuzfeld, um ein Statussymbol anzuzeigen, während <app>Gnote</app> läuft. In diesem Modus bleibt die Anwendung <app>Gnote</app> weiterhin geöffnet, wenn alle Fenster geschlossen werden. Kürzlich verwendete Notizen und andere Fenster können geöffnet werden, wenn Sie mit der linken oder rechten Maustaste auf das Statussymbol klicken.</p></item>
+      <item><title>Rechtschreibprüfung während der Eingabe</title><p>Durch Aktivieren dieses Ankreuzfeldes werden Rechtschreibfehler rot unterstrichen und im durch einen Klick mit der rechten Maustaste erreichbaren Kontextmenü Verbesserungsvorschläge angeboten.</p><p>Die Rechtschreibprüfungsoption ist nur verfügbar, wenn das Paket GtkSpell für Ihre Distribution installiert ist.</p></item>
+      <item><title>Wikiwords hervorheben</title><p>Aktivieren Sie dieses Ankreuzfeld, um Verknüpfungen für Ausdrücke DieAussehenWieDieser zu erzeugen. Ein Mausklick auf eine solche Verknüpfung erstellt eine neue Notiz mit dem entsprechenden Verknüpfungstext als Titel.</p></item>
+      <item><title>Automatische Aufzählungslisten aktivieren</title><p>Aktivieren Sie dieses Ankreuzfeld, wenn Sie eine Aufzählungsliste immer dann erstellen wollen, wenn Sie eine Zeile mit einem einfachen Bindestrich <key>-</key> beginnen. Mehr Informationen hierzu finden Sie in <link xref="bulleted-lists"/>.</p></item>
+      <item><title>Eigene Schriftart verwenden</title><p>Aktivieren Sie dieses Ankreuzfeld, um festzulegen, dass eine eigene Schriftart in Ihren Notizen verwendet wird. Wenn diese Option deaktiviert ist, wird die Systemschriftart verwendet.</p></item>
+    </list>
+    <figure><title><gui>Einstellungsfenster</gui></title>
+      <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Einstellungen von Gnote bearbeiten</desc>
+    </figure>
+  </section>
+
+  <section id="advanced" style="2column">
+    <title>Erweiterte Einstellungen</title>
+  </section>
+  <section id="sync">
+    <title>Synchronization Settings</title>
+    <section id="sync-addins" style="2column">
+      <title>Synchronization services</title>
+    </section>
+    <section id="sync-advanced">
+      <title>Erweitert</title>
+      <p>Clicking <gui>Advanced</gui> button in <gui>Synchronization</gui> tab of <gui>Preferences</gui> dialog brings another dialog for setting up conflict resolution.</p>
+      <figure>
+        <title>Advanced Synchronization Settings</title>
+        <media type="image" src="figures/gnote-syncprefs-advanced.png" mime="image/png"/>
+      </figure>
+      <p>This dialog lets you choose what to do, when a conflict occurrs. A conflict happends, when the note is modified before synchronizing and it has been also modified on other device (and synchronized to synchronization storage). You can select one of these options:</p>
+      <list>
+        <item><title>Rename existing note by appending "(old)" to it's title and download the one from storage</title></item>
+        <item><title>Replace existing note by the one from storage, losing all modifications</title></item>
+        <item><title>Get the choice for each conflicting note individually</title></item>
+      </list>
+    </section>
+  </section>
+
+</page>

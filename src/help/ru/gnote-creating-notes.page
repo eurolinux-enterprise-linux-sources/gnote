@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="creating-notes" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
+    <desc>Создание заметок</desc>
+    <credit type="author">
+      <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ауримас Церниус (Aurimas Cernius)</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Создание заметок</title>
+
+  <p>In <app>Gnote</app>, you can create new notes using one of the following methods:</p>
+  <list>
+    <item><p>Click on application menu and select <gui>New Note</gui>.</p></item>
+    <item><p>In <app>Gnote</app> window click the toolbar item <gui>New</gui>.</p></item>
+    <item><p>When in search mode, right click in notes list and select <gui>New Note</gui>. This one will create note in currently selected notebook.</p></item>
+    <item><p>If <gui>Status Icon</gui> is enabled, click on it and select <gui>New Note</gui>.</p></item>
+    <item><p>Use keyboard shortcut <keyseq><key>Ctrl</key><key>N</key></keyseq>.</p></item>
+  </list>
+
+</page>

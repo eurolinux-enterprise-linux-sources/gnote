@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="creating-notes" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>Licencia libre de documentación de GNU (GFDL), Versión 1.1</p></license>
+    <desc>Crear notas</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nicolás Satragno</mal:name>
+      <mal:email>nsatragno@gnome.org</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Crear notas</title>
+
+  <p>En <app>Gnote</app>, puede crear nuevos cuadernos de notas usando uno de los siguientes métodos:</p>
+  <list>
+    <item><p>Pulse sobre la aplicación del menú y luego seleccione <gui>Nota nueva</gui>.</p></item>
+    <item><p>En la ventana de <app>Gnote</app> pulsar en el icono de la barra de herramientas <gui>Nuevo</gui>.</p></item>
+    <item><p>En el modo de búsqueda, pulse con el botón derecho del ratón en la lista de notas y seleccione <gui>Nota nueva</gui>. Esto creará una nota nueva en el cuaderno de notas seleccionado.</p></item>
+    <item><p>Si el <gui>Icono de estado</gui> está activado, pulse en él y seleccione <gui>Nota nueva</gui>.</p></item>
+    <item><p>Use la combinación de teclas <keyseq><key>Ctrl</key><key>N</key></keyseq>.</p></item>
+  </list>
+
+</page>

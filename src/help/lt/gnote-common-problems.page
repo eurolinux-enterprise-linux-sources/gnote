@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="common-problems" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#common-problems"/>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <desc>Dažnai užduodami klausimai</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Dažnos Gnote problemos</title>
+    <list>
+      <item><title>Ar <app>Gnote</app> veikia su <app>Tomboy</app>?</title><p>Jūs galite importuoti <app>Tomboy</app> raštelius. Tam reikia įjungti priedą.</p>
+      </item>
+      <item><title>Negaliu rasti Gnote būsenos piktogramos</title>
+        <p><app>Gnote</app> būsenos piktogramą galite įjungti įvykdę komandą <app>terminale</app>: <cmd>gsettings set org.gnome.gnote use-status-icon true</cmd>.</p></item>
+      <item><title>Kaip prisijungus automatiškai paleisti <app>Gnote</app>?</title>
+        <p>Automatiniam Gnote paleidimui prisijungus prie GNOME, paleiskite <app>gnome-session-properties</app></p>
+      </item>
+    </list>
+
+</page>

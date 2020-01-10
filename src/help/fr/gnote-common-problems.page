@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="common-problems" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#common-problems"/>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>Foire aux questions</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Problèmes courants de Gnote</title>
+    <list>
+      <item><title>Est-ce que <app>Gnote</app> fonctionne avec <app>Tomboy</app> ?</title><p>Vous pouvez importer les notes de <app>Tomboy</app>. Un greffon doit-être activé.</p>
+      </item>
+      <item><title>Je ne peux pas trouver l'icône de statut de Gnote.</title>
+        <p>Vous pouvez activer l'icône de statut de <app>Gnote</app> en utilisant une commande dans un <app>terminal</app> : <cmd>gsettings set org.gnome.gnote use-status-icon true</cmd>.</p></item>
+      <item><title>Comment lancer automatiquement <app>Gnote</app> lorsque je me connecte ?</title>
+        <p>Pour démarrer Gnote automatiquement lorsque vous vous connectez, lancez <app>gnome-session-properties</app></p>
+      </item>
+    </list>
+
+</page>

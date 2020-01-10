@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-print" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Notizen drucken</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+  
+  <title>Drucken</title>
+    <p>Der Werkzeugknopf wir durch das Symbol <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/> dargestellt. Wenn dieses Add-In installiert ist, dann enthält das <gui>Werkzeuge</gui>-Menü den Eintrag <gui>Drucken</gui>.</p>
+    <p>Wenn die Option <gui>Drucken</gui> aktiviert ist, dann wird ein Standard-<gui>Druckdialog</gui> geöffnet, une eine Notiz kann gedruckt werden.</p>
+
+</page>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-underline" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Souligner du texte</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Greffon soulignement de texte</title>
+  <p>Lorsque le greffon <gui>Souligner</gui> est activé, le menu <gui>Texte</gui> vous propose l'option <gui>Souligner</gui>.</p>
+  <p>Les méthodes suivantes permettent de souligner le texte sélectionné :</p>
+  <list>
+    <item><p>Cliquez sur <gui>Texte</gui> et sélectionnez <gui>Souligner</gui>.</p></item>
+    <item><p>Utilisez la combinaison de touches <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+  </list>
+  <p>Pour supprimer le soulignement, sélectionnez le texte souligné et utilisez une des méthodes suivantes :</p>
+  <list>
+    <item><p>Cliquez sur <gui>Texte</gui> et sélectionnez <gui>Souligner</gui>.</p></item>
+    <item><p>Utilisez la combinaison de touches <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+  </list>
+
+</page>

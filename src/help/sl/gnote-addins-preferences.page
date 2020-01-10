@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addins-preferences" xml:lang="sl">
+
+  <info>
+    <link type="guide" xref="notes-preferences#advanced"/>
+    <desc>Nastavitve za vstavke Gnote</desc>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Možnosti vstavkov</title>
+    <p>Vstavke lahko omogočite ali onemogočite v temu zavihku. Za to izberite vstavke in kliknite na gumb <gui>Omogoči</gui>. Gumb bo bil onemogočen in omogočen bo bil gumb <gui>Onemogoči</gui>, ki ga lahko sedaj uporabite za onemogočitev vstavka.</p>
+    <p>Nekateri vstavki imajo možnosti do katerih lahko dostopate z izbiro vstavka in pritiskom na gumb <gui>Možnosti</gui>.</p>
+    <figure><title>Možnosti vstavka <app>Gnote</app></title>
+    <desc>Okno vstavkov <app>Gnote</app></desc>
+    <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">
+      <p>Okno<gui>Vstavki</gui>.</p>
+    </media>
+    </figure>
+
+</page>

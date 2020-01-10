@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-html" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Exporter vos notes au format HTML</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Exportation en HTML</title>
+    <p>Le bouton <gui>Outils</gui> est matérialisé par l'icône <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Lorsque ce greffon est activé, l'option <gui>Exporter en HTML</gui> est présente dans le menu <gui>Outils</gui>.</p>
+    <p>Vous pouvez créer un document HTML (HyperText Markup Language) à partir d'une ou plusieurs de vos notes en sélectionnant cette option.</p>
+    <p>Après avoir choisi cette option, un message s'affiche vous demandant où enregistrer le fichier HTML. Saisissez le nom du fichier de destination, puis cliquez sur <gui>Enregistrer</gui> pour enregistrer le fichier ou bien sur <gui>Annuler</gui> pour arrêter l'opération.</p>
+    <p>Pour exporter n'importe quelle note comportant un lien vers la note actuelle, cochez la case <gui>Exporter les notes liées</gui>.</p>
+
+</page>

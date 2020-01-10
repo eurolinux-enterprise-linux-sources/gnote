@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="bulleted-lists" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Utilisation des listes à puces</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+<title>Les listes à puces</title>
+
+<section id="begin-a-bulleted-list"><title>Initialisation d'une liste à puces</title>
+<p>Les méthodes suivantes permettent d'initialiser une liste à puces</p>
+<list>
+<item><p>Sélectionnez <gui>Puces</gui> dans le menu <gui>Texte</gui>.</p></item>
+<item><p>Commencez une ligne par un tiret unique <key>-</key> suivi d'un espace, saisissez du texte immédiatement à la suite puis appuyez sur <key>Entrée</key>.</p></item>
+<item><p>Utilisez la combinaison de touches <keyseq><key>Alt</key><key>Flèche droite</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="end-a-bulleted-list"><title>Arrêt d'une liste à puces</title>
+<p>Les méthodes suivantes permettent de terminer une liste à puces</p>
+<list>
+<item><p>Sélectionnez <gui>Puces</gui> dans le menu <gui>Texte</gui>.</p></item>
+<item><p>Appuyez sur <key>Entrée</key> dans une ligne indentée vide.</p></item>
+<item><p>Cliquez plusieurs fois sur <gui>Diminuer l'indentation</gui> dans le menu <gui>Texte</gui> jusqu'à ce que la ligne actuelle ne fasse plus partie de la liste à puces.</p></item>
+<item><p>Utilisez plusieurs fois le raccourci clavier <keyseq><key>Maj</key><key>Tab</key></keyseq> jusqu'à ce que la ligne actuelle ne fasse plus partie de la liste à puces.</p></item>
+<item><p>Utilisez plusieurs fois le raccourci clavier <keyseq><key>Alt</key><key>Flèche gauche</key></keyseq> jusqu'à ce que la ligne actuelle ne fasse plus partie de la liste à puces.</p></item>
+</list>
+
+</section>
+<section id="increase-indentation">
+<title>Augmentation de l'indentation</title>
+<p>Pour augmenter l'indentation d'une ligne dans une liste à puces avec la souris</p>
+<list><item><p>Choisissez <gui>Augmenter l'indentation</gui> dans le menu <gui>Texte</gui>.</p></item></list>
+<p>Pour augmenter l'indentation d'une ligne dans une liste à puces en utilisant le clavier</p>
+<list>
+<item><p>Appuyez sur la touche <key>Tab</key>.</p></item>
+<item><p>Utilisez la combinaison de touches <keyseq><key>Alt</key><key>Flèche droite</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="decrease-indentation">
+<title>Diminution de l'indentation</title>
+<p>Pour diminuer l'indentation d'une ligne dans une liste à puces en utilisant la souris</p>
+<list><item><p>Choisissez <gui>Diminuer l'indentation</gui> dans le menu <gui>Texte</gui>.</p></item></list>
+<p>Pour diminuer l'indentation d'une ligne dans une liste à puces en utilisant le clavier :</p>
+<list>
+<item><p>Utilisez la combinaison de touches <keyseq><key>Maj</key><key>Tab</key></keyseq>.</p></item>
+<item><p>Utilisez la combinaison de touches <keyseq><key>Alt</key><key>Flèche gauche</key></keyseq>.</p></item>
+</list>
+</section>
+
+</page>

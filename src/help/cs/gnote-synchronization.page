@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="synchronization" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Synchronizace poznámek</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2012</years>
+    </credit>
+  </info>
+
+  <title>Synchronizace</title>
+  <section id="description">
+    <title>O synchronizaci</title>
+    <p>V aplikaci <app>Gnote</app> máte možnost synchronizovat poznámky přes různé stroje, takže je můžete používat na více zařízeních a se stejnou poznámkou pracovat na každém z nich.</p>
+    <p>Pokud chcete synchronizaci používat, musíte ji nejprve nastavit v dialogovém okně nastavení <app>Gnote</app>.</p>
+    <p>Poznámky jsou synchronizovány do jediného místa, společného pro všechny instalace <app>Gnote</app>. V tomto místě se uchovává historie vašich poznámek. Při synchronizaci každá z instancí <app>Gnote</app> nahraje nové a upravené poznámky na toto místo a stáhne nové a upravené poznámky z ostatních instancí. Synchronizační místo také obsahuje informace o smazaných poznámkách: při synchronizaci <app>Gnote</app> zveřejní, které poznámky byly smazány, a smaže ty, o kterých byla tato informace zveřejněna. Díky tomu dokáže více instalací aplikace <app>Gnote</app> udržovat stejnou sadu poznámek.</p>
+  </section>
+  <section id="configuration" style="2column">
+    <title>Nastavení synchronizace</title>
+  </section>
+  <section id="usage">
+    <title>Synchronizace</title>
+    <p>Když chcete synchronizovat, vyberte <gui>Synchronizovat poznámky</gui> v nabídce aplikace. Tato položka je dostupná jen v případě, že je synchronizace nastavena.</p>
+    <p>Po vybrání položky <gui>Synchronizovat poznámky</gui> se objeví dialogové okno s ukazatelem průběhu, díky kterému poznáte, kdy bude synchronizace dokončena. Během synchronizace jsou zakázány úpravy u všech poznámek.</p>
+    <figure>
+      <title>Postup synchronizace</title>
+      <media type="image" src="figures/gnote-sync-progress.png" mime="image/png"/>
+    </figure>
+  </section>
+
+</page>

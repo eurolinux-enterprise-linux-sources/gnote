@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="editing-notes" xml:lang="sl">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <desc>Urejanje vsebine sporočilc</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Urejanje sporočilc</title>
+
+    <p xml:lang="en_GB">Notes are opened in the same window by replacing search with note content.</p>
+    <p xml:lang="en_GB">At the top of the note there are two toolbars. The above one has items for going back to search mode and for creating new note. The lower one contains several buttons and text. Directly below this toolbar is the content area of the note.</p>
+    <figure>
+      <title xml:lang="en_GB"><app>Gnote</app> window displaying note</title>
+      <desc xml:lang="en_GB"><app>Gnote</app> Note</desc>
+      <media type="image" src="figures/gnote-new-note.png" mime="image/png" style="right">
+        <p xml:lang="en_GB"><app>Gnote</app> note editing.</p>
+      </media>
+    </figure>
+
+    <p>Sporočilce lahko uredite s klikom na področje vsebino in uporabite tipkovnico za dodajanje in odstranjevanje vsebine. Prva vrstica je naslov sporočilca. Privzeto je v njem besedilo "Novo sporočilce N". Naslov lahko spremenite s klikom na področje vsebine v prvi vrstici in z uporabo tipkovnice za spremembo naslova. Privzeto je žarišče ob ustvarjanju novega sporočilca na področju vsebine, zato lahko nemudoma začnete z urejanjem sporočilca.</p>
+    <p>Oblikovanje besedila v sporočilcih lahko izvedete z gumbom <gui>Besedilo</gui>. Gumb <gui>Besedilo</gui> bo prikazal meni z več možnostmi med katerimi lahko izberete. Sledi razlaga vsake od možnosti.</p>
+
+    <list>
+      <item><title>Razveljavi</title>
+        <p>Podporo za “Razveljavi“ v Gnote dobite skozi ta predmet menija. Zmožnost razveljavi vam omogoča povrnitev predhodnih sprememb sporočilc, ki ste jih naredili med trenutno sejo. Za razveljavitev vaše zadnje spremembe s tipkovnico uporabite tipkovno bližnjico <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
+      </item>
+      <item><title>Uveljavi</title>
+        <p>Zmožnost “Uveljavi“ se uporablja za povrnitev sprememb, ki so bile odstranjene z zmožnostjo “Razveljavi“. Za uveljavitev vaše zadnje spremembe s tipkovnico uporabite tipkovno bližnjico <keyseq><key>Shift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
+      </item>
+      <item><title>Krepko</title>
+        <p>Za krepko besedilo v sporočilcu najprej izberite besedilo, ki ga želite spremeniti. Nato izberite možnost Krepko iz menija <gui>Besedilo</gui>. Po izbiri besedila lahko uporabite tudi tipkovno bližnjico <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
+      </item>
+      <item><title>Ležeče</title>
+        <p>Za ležeče besedilo v sporočilcu najprej izberite besedilo, ki ga želite spremeniti. Nato izberite možnost Ležeče iz menija Besedilo. Po izbiri besedila lahko uporabite tudi tipkovno bližnjico <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
+     </item>
+     <item><title>Prečrtano</title>
+       <p>Slog prečrtaj bo skozi izbrano besedilo postavil črto. Za dodajanje prečrtanja izberite besedilo in nato izberite možnost <gui>Prečrtaj</gui> iz menija <gui>Besedilo</gui>. Po izbiri besedila lahko uporabite tudi tipkovno bližnjico <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
+     </item>
+     <item><title>Poudarjeno</title>
+       <p>Slog poudarjanje bo okoli izbranega besedila nastavil rumeno ozadje. Za dodajanje poudarjanja izberite besedilo in izberite možnost <gui>Poudari</gui> iz menija <gui>Besedilo</gui> Za poudarjanje lahko tudi izberete besedilo in uporabite tipkovno bližnjico <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
+     </item>
+     <item><title>Velikost pisave</title>
+       <p>V tem delu menija so štiri možnosti: majhna, običajna, velika in ogromna. Vsaka od teh možnosti predstavlja velikost pisave za uporabo za izbrano besedilo v sporočilcu. Za spremembo velikosti pisave izberite besedilo in nato izberite eno od možnosti  <gui>Majhna</gui>, <gui>Običajna</gui>, <gui>Velika</gui>, <gui>Ogromna</gui> iz menija Besedilo.</p>
+     </item>
+     <item><title>Vrstične oznake</title>
+       <p>Izberite možnost Vrstični seznami iz menija Besedilo za začetek ali končanje vrstičnega seznama. V primeru da je kazalec na vrstičnem seznamu, bosta omogočeni možnosti <gui>Povečaj zamik</gui> ali <gui>Zmanjšaj zamik</gui>.</p>
+       <p>Ko je kazalec v vrstici vrstičnega seznama, izberite možnost <gui>Povečaj zamik</gui> za zamik trenutne vrstice desno ali <gui>Zmanjšaj zamik</gui> za zamik trenutne vrstice levo.</p>
+       <p>Za več podrobnosti o vrstičnih oznakah si oglejte <link xref="bulleted-lists"/>.</p>
+     </item>
+     <item><title>Najdi v tem sporočilcu</title>
+       <p>Uporabite to za iskanje besedila v trenutnem sporočilcu. Majhna vrstica iskanja se bo pojavila na dnu sporočilca. Za odprtje vrstice iskanja s tipkovnico uporabite običajno tipkovno bližnjico <keyseq><key>Ctrl</key><key>F</key></keyseq>. Vnesite besedilo za iskanje. Po vnosu besedila, bodo zadetki poudarjeni. Kliknite <gui>Naslednji</gui> za poudarjanje naslednjega in <gui>Predhodni</gui> za poudarjanje predhodnega zadetka. Za zaprtje vrstice iskanja kliknite X (gumb Zapri) daleč levo ali pritisnite tipko <key>Esc</key>.</p>
+     </item>
+   </list>
+
+   <section id="note-content" style="2column">
+     <title>Vsebina bogatega sporočilca</title>
+   </section>
+
+</page>

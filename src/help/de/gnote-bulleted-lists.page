@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="bulleted-lists" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Aufzählungslisten verwenden</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+<title>Aufzählungslisten</title>
+
+<section id="begin-a-bulleted-list"><title>Eine Aufzählungsliste beginnen</title>
+<p>Sie können eine Aufzählungsliste auf folgende Arten beginnen:</p>
+<list>
+<item><p>Wählen Sie <gui>Aufzählungspunkte</gui> aus dem Menü <gui>Text</gui>.</p></item>
+<item><p>Beginnen Sie eine Zeile mit einem einfachen Bindestrich (-), geben Sie einen Text direkt nach dem Bindestrich ein und drücken Sie die <key>Eingabetaste</key>.</p></item>
+<item><p>Drücken Sie die Tastenkombination <keyseq><key>Alt</key><key>Pfeiltaste rechts</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="end-a-bulleted-list"><title>Eine Aufzählungsliste beenden</title>
+<p>Beenden Sie eine Aufzählungsliste durch eine der folgenden Aktionen:</p>
+<list>
+<item><p>Wählen Sie <gui>Aufzählungspunkte</gui> aus dem Menü <gui>Text</gui>.</p></item>
+<item><p>Drücken Sie die <key>Eingabetaste</key> in einer leeren Aufzählungszeile.</p></item>
+<item><p>Wählen Sie den Menüpunkt <gui>Einzug verringern</gui> aus dem Menü <gui>Text</gui> aufeinander folgend, bis die aktuelle Zeile nicht mehr Teil der Aufzählungsliste ist.</p></item>
+<item><p>Using the key combination <keyseq><key>Shift</key><key>Tab</key></keyseq> in succession until the current line is no longer part of the bulleted list.</p></item>
+<item><p>Verwenden Sie die Tastenkombination <keyseq><key>Umschalttaste</key><key>Tabulator</key></keyseq> aufeinander folgend, bis die aktuelle Zeile nicht mehr Teil der Aufzählungsliste ist.</p></item>
+</list>
+
+</section>
+<section id="increase-indentation">
+<title>Einzug erhöhen</title>
+<p>Um den Zeileneinzug in einer Aufzählungsliste mit der Maus zu erhöhen,</p>
+<list><item><p>Wählen Sie <gui>Einzug erhöhen</gui> im <gui>Textmenü</gui> aus.</p></item></list>
+<p>Um den Zeileneinzug in einer Aufzählungsliste mit der Tastatur zu erhöhen,</p>
+<list>
+<item><p>Drücken Sie die Taste <key>Tabulator</key>.</p></item>
+<item><p>Drücken Sie die Tastenkombination <keyseq><key>Alt</key><key>Pfeiltaste rechts</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="decrease-indentation">
+<title>Einzug verringern</title>
+<p>Um den Zeileneinzug in einer Aufzählungsliste mit der Maus zu verringern,</p>
+<list><item><p>wählen Sie den Menüpunkt <gui>Einzug verringern</gui> aus dem Menü <gui>Text</gui>.</p></item></list>
+<p>Um den Zeileneinzug in einer Aufzählungsliste mit der Tastatur zu verringern,</p>
+<list>
+<item><p>drücken Sie die Tastenkombination <keyseq><key>Umschalttaste</key><key>Tabulatortaste</key></keyseq>.</p></item>
+<item><p>drücken Sie die Tastenkombination <keyseq><key>Umschalttaste</key><key>Tabulatortaste</key></keyseq>.</p></item>
+</list>
+</section>
+
+</page>

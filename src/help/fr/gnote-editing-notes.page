@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="editing-notes" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>Modifier le contenu des notes</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years xml:lang="en_GB">2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Modification des notes</title>
+
+    <p xml:lang="en_GB">Notes are opened in the same window by replacing search with note content.</p>
+    <p xml:lang="en_GB">At the top of the note there are two toolbars. The above one has items for going back to search mode and for creating new note. The lower one contains several buttons and text. Directly below this toolbar is the content area of the note.</p>
+    <figure>
+      <title xml:lang="en_GB"><app>Gnote</app> window displaying note</title>
+      <desc xml:lang="en_GB"><app>Gnote</app> Note</desc>
+      <media type="image" src="figures/gnote-new-note.png" mime="image/png" style="right">
+        <p xml:lang="en_GB"><app>Gnote</app> note editing.</p>
+      </media>
+    </figure>
+
+    <p>En cliquant dans la zone du contenu de la note, il est possible de la modifier en ajoutant ou retirant du texte avec le clavier. La première ligne constitue le titre qui est par défaut « Nouvelle note N ». En cliquant sur la première ligne, vous pourrez changer le titre à l'aide du clavier. Par défaut, à l'ouverture d'une nouvelle note, le focus est mis dans la zone de contenu textuel ; ainsi vous pouvez immédiatement commencer la rédaction de la note sans avoir à cliquer dans la zone du contenu.</p>
+    <p>Le bouton <gui>Texte</gui> permet de formater le texte d'une note. Le bouton <gui>Texte</gui> affiche un menu déroulant qui offre plusieurs choix d'options détaillées ci-après.</p>
+
+    <list>
+      <item><title>Annuler</title>
+        <p>La fonction « Annuler » de <app>Gnote</app> est disponible dans ce menu. Elle vous permet de revenir à une rédaction antérieure de la note dans le cours d'une session. Le raccourci clavier standard <keyseq><key>Ctrl</key><key>Z</key></keyseq> vous permet d'annuler la dernière modification.</p>
+      </item>
+      <item><title>Rétablir</title>
+        <p>De même, la fonction « Rétablir » restaure les modifications annulées précédemment. Pour rétablir la dernière annulation à l'aide du clavier, utilisez le raccourci classique <keyseq><key>Maj</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
+      </item>
+      <item><title>Gras</title>
+        <p>Pour mettre du texte en gras, sélectionnez-le et choisissez <gui>Gras</gui> dans le menu <gui>Texte</gui>. La même action est obtenue en pressant le raccourci <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
+      </item>
+      <item><title>Italique</title>
+        <p>Pour mettre du texte en italique, sélectionnez-le et choisissez <gui>Italique</gui> dans le menu <gui>Texte</gui>. La même action est obtenue en pressant le raccourci <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
+     </item>
+     <item><title>Barré</title>
+       <p>Le style barré, comme son nom l'indique, consiste à barrer d'un trait le texte sélectionné. Pour mettre du texte en barré, sélectionnez-le et choisissez <gui>Barré</gui> dans le menu <gui>Texte</gui>. La même action est obtenue en pressant le raccourci <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
+     </item>
+     <item><title>Surligné</title>
+       <p>Le surlignage fait apparaître le texte sélectionné sur un fond de couleur différente. Pour surligner du texte, sélectionnez-le et choisissez <gui>Surligné</gui> dans le menu <gui>Texte</gui>. La même action est obtenue en pressant le raccourci <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
+     </item>
+     <item><title>Taille de la police</title>
+       <p>Il y a maintenant quatre options dans cette partie de menu : Petite, Normale, Grande, Énorme. Chacune représente une taille de police applicable au texte sélectionné dans la note. Pour modifier la taille de la police, choisissez l'une des options du menu Texte.</p>
+     </item>
+     <item><title>Puces</title>
+       <p>Dans le menu Texte, choisissez l'option Puces pour commencer ou terminer une liste à puces. Si le curseur d'insertion de caractères se trouve à l'intérieur d'une liste à puces, les options <gui>Augmenter l'indentation</gui>, <gui>Diminuer l'indentation</gui> seront activées.</p>
+       <p>Lorsque le curseur est sur une ligne contenant une puce, choisissez l'option <gui>Augmenter l'indentation</gui> pour déplacer la ligne vers la droite ou <gui>Diminuer l'indentation</gui> pour la déplacer vers la gauche.</p>
+       <p>Pour de plus amples informations sur les puces, consultez la section sur <link xref="bulleted-lists"/>.</p>
+     </item>
+     <item><title>Chercher dans cette note</title>
+       <p>Utilisez cette fonction pour rechercher du texte dans la note actuelle. Une petite barre de recherche apparaît en bas de la fenêtre. Avec le clavier, le même résultat est obtenu en utilisant le raccourci standard <keyseq><key>Ctrl</key><key>F</key></keyseq> . Saisissez le texte à rechercher. Après la saisie, les correspondances seront surlignées. Pour aller à la correspondance suivante et y déplacer le curseur, cliquez sur <gui>Suivant</gui>, pour revenir en arrière, cliquez sur <gui>Précédent</gui>. Pour fermer la barre de recherche, cliquez sur le bouton X (bouton de fermeture) situé tout en bas à gauche ou appuyez sur la touche <key>Échap</key>.</p>
+     </item>
+   </list>
+
+   <section id="note-content" style="2column">
+     <title>Contenu de note enrichi</title>
+   </section>
+
+</page>

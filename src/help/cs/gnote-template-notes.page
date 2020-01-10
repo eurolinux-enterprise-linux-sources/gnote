@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="gnote-template-notes" xml:lang="cs">
+
+
+  <info>
+    <link type="guide" xref="notes-preferences#advanced"/>
+    <desc>Používání šablon pro poznámky</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2011 – 2012</years>
+    </credit>
+  </info>
+
+  <title>Šablonové poznámky</title>
+  <section id="usage">
+    <title>Používání šablonové poznámky</title>
+    <p>Šablonové poznámky se používají k definování obsahu pro nově vytvářené poznámky. Šablony jsou v podstatě stejné, jako běžné poznámky, pouze s pár vlastnostmi navíc.</p>
+    <p>Můžete si nadefinovat jednu šablonu pro celou aplikaci <app>Gnote</app> a po jedné pro každý sešit. Tyto šablony určují obsah každé nové poznámky, kterou vytvoříte:</p>
+    <list>
+      <item><p>Každá nová poznámka, kterou vytvoříte v rámci <app>Gnote</app>, ale ne v žádném ze sešitů, bude mít obsah hlavní šablony aplikace. Pokud taková šablona není vytvořena, použije se výchozí obsah.</p></item>
+      <item><p>Každá nová poznámky, kterou vytvoříte v některém ze sešitů, bude mít obsah šablony sešitu, pokud pro něj šablona existuje. Jestliže šablona neexistuje, použije se obsah výchozí poznámky.</p></item>
+    </list>
+    <p>Když chcete vytvořit nebo změnit šablonovou poznámku:</p>
+    <list>
+      <item><title>Hlavní šablonová poznámka</title><p>Otevřete předvolby <app>Gnote</app> a na kartě <gui>Obecné</gui> zmáčkněte tlačítko <gui>Otevřít šablonu</gui>.</p></item>
+      <item><title>Šablonová poznámka sešitu</title><p>V hlavním okně klikněte pravým tlačítkem na sešit a vyberte <gui>Otevřít šablonu</gui>.</p></item>
+    </list>
+  </section>
+  <section id="features">
+    <title>Vlastnosti šablonové poznámky</title>
+    <p>Šablonová poznámka je podobná jako běžná poznámka, vyjma toho, že se nezobrazuje v seznamu poznámek a v horní části má lištu šablony.</p>
+    <figure><title>Šablonová poznámka</title>
+      <media type="image" src="figures/gnote-template-note.png" mime="image/png" style="right"/><desc>Okno šablonové poznámky</desc>
+    </figure>
+    <p>Lišta šablony má následující funkce:</p>
+    <list>
+      <item><title>Převést na běžnou poznámku</title><p>Zmáčknutím tohoto tlačítka přeměníte šablonu na běžnou poznámku, která bude vidět v seznamu poznámek. Akce je podobná odstranění šablonové poznámky.</p></item>
+      <item><title>Uložit velikost</title><p>Pokud je zaškrtnuté toto políčko, bude velikost nově vytvářených poznámek stejná, jako velikost šablonové poznámky. Pokud zaškrtnuté není, má okno s novou poznámkou výchozí velikost.</p></item>
+      <item><title>Uložit výběr</title><p>Pokud je zaškrtnuté toto políčko, nebudou mít nové poznámky jen stejný obsah jako šablona, ale i stejný počáteční výběr. Použijte tuto volbu, když chcete, aby určitá část obsahu byla v nově vytvořené poznámce hned po vytvoření vybrána.</p></item>
+      <item><title>Uložit název</title><p>Toto zaškrtávací políčko umožňuje založit názvy nových poznámek na názvu šablony. Když je políčko zaškrtnuté, nová poznámka bude mít název jako šablonová poznámka a za ním bude připojeno jedinečné číslo. Jinak se použije výchozí název.</p></item>
+    </list>
+  </section>
+
+</page>

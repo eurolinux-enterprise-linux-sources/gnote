@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-bugzillalink" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Įterpti Bugzilla nuorodas</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Priedas „Bugzilla nuorodos“</title>
+  <p>Leidžia tempti Bugzilla URL tiesiai į <app>Gnote</app> raštelį. Klaidos numeris bus įterptas kaip nuoroda su nedidelia vabalo piktograma šalia.</p>
+  <p>Nustatymuose galite pridėti specialias piktogramas konkretiems serveriams.</p>
+
+</page>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-fixedwidth" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Eine Schrift fester Breite verwenden</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Feste-Breite-Add-In</title>
+    <p>Der Stil »Feste Breite« erlaubt es, einen Text in einer Schriftart mit fester Breite darzustellen. Um einen Text zu ändern, markieren Sie zuerst den Text, den Sie ändern möchten. Danach wählen Sie die Option <gui>Feste Breite</gui> aus dem Menü <gui>Text</gui>. Sie können auch die Option <gui>Feste Breite</gui> aus dem Menü <gui>Text</gui> auswählen, bevor Sie den Text eingeben, der mit einer festen Breite dargestellt werden soll.</p>
+    <p>Die Option <gui>Feste Breite</gui> wird durch das Feste-Breite-Add-In bereitgestellt.</p>
+
+</page>

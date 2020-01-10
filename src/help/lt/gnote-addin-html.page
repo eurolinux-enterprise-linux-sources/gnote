@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-html" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Eksportuoti raštelius į HTML formatą</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Eksportuoti į HTML</title>
+    <p>Įrankių mygtuką vaizduoja piktograma <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Kai šis priedas yra įdiegtas, meniu <gui>Įrankiai</gui> turi punktą <gui>Eksportuoti į HTML</gui>.</p>
+    <p>Galite sukurti HTML (Hypertext Markup Language - hiperteksto žymėjimo kalba) dokumentą iš vieno ar daugiau raštelių pasirinkdami šį punktą.</p>
+    <p>Pasirinkę šį punktą pamatysite dialogą, leidžiantį pasirinkti, kur išsaugosite HTML failą. Įveskite paskirties failo pavadinimą ir spauskite <gui>Išsaugoti</gui> failo išsaugojimui arba <gui>Atsisakyti</gui> veiksmo nutraukimui.</p>
+    <p>Jei norite eksportuoti raštelius, į kuriuos esamame raštelyje yra saitai, pažymėkite langelį <gui>Eksportuoti  susietus raštelius</gui>.</p>
+
+</page>

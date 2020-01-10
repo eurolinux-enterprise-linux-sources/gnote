@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="searching-notes" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <desc>Prohledávání poznámek</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011 – 2012</years>
+    </credit>
+  </info>
+
+  <title>Vyhledávání poznámek</title>
+
+  <p>Hlavní okno <app>Gnote</app> zobrazuje přehled všech vašich poznámek. Standardně v režimu hledání okno zobrazuje poznámky v pořadí, v jaké byly naposledy změněny. Kliknutím na záhlaví sloupce <gui>Poznámka</gui> nebo <gui>Naposledy změněna</gui> změníte řazení. Když na stejné záhlaví kliknete podruhé, přepnete ze vzestupného řazení na sestupné.</p>
+  <p>Konkrétní poznámku můžete najít zadáním textu do pole hledat v horní části okna. Seznam s poznámkami se bude automaticky přizpůsobovat, aby obsahoval jen poznámky odpovídající zadanému textu.</p>
+  <p>Poznámku můžete otevřít následovně:</p>
+  <list>
+    <item><p>Dvojitě klikněte na poznámku.</p></item>
+    <item><p>Klikněte na seznam poznámek pravým tlačítkem a v kontextové nabídce, která se objeví, zvolte <gui>Otevřít</gui>. Tím se otevřou všechny vybrané poznámky, každá ve svém vlastním okně.</p></item>
+    <item><p>Klikněte pravým tlačítkem na seznam poznámek a v kontextové nabídce zvolte <gui>Otevřít v novém okně</gui>. Tím se otevřou všechny vybrané poznámky, každá v novém okně a původní okno zůstane, jak je.</p></item>
+    <item><p>Vyberte jednu nebo více poznámek v seznamu a zmáčkněte kombinaci kláves <keyseq><key>Ctrl</key><key>O</key></keyseq>.</p></item>
+    <item><p>Když je zapnutá <gui>Stavová ikona</gui>, klikněte na ni a v nabídce vyberte poznámku. Tato nabídka je omezena jen na určitý počet poznámek a je vyplněna připíchnutými a naposledy upravenými poznámkami.</p></item>
+  </list>
+
+</page>

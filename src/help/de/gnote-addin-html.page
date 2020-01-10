@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-html" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Notizen in HTML exportieren</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>In HTML exportieren</title>
+    <p>Der Werkzeugknopf wir durch das Symbol <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/> dargestellt. Wenn dieses Add-In installiert ist, dann enthält das <gui>Werkzeuge</gui>-Menü den Eintrag <gui>HTML exportieren</gui>.</p>
+    <p>Sie können ein HTML-Dokument (Hypertext Markup Language) aus einer oder mehrerer Notizen mit diesem Eintrag erstellen.</p>
+    <p>Nach der Auswahl dieser Option wird ein Dialog angezeigt, in welchem Sie wählen können, wo die HTML-Datei gespeichert werden soll. Legen Sie die Zieldatei fest und klicken Sie <gui>Speichern</gui>, um die Datei zu speichern, oder auf <gui>Abbrechen</gui>, um den Vorgang abzubrechen.</p>
+    <p>Um alle Notizen zu exportieren, auf die in der aktuellen Notiz verwiesen wird, wählen Sie <gui>Verknüpfte Notizen exportieren</gui>.</p>
+
+</page>

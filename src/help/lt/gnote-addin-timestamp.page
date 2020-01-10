@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-timestamp" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Įterpti dabartinį laiką</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Priedas „Įterpti laiko žymę“</title>
+    <p>Įrankių mygtuką žymi piktograma <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Kai paspaudžiate įrankių piktogramą raštelio įrankių juostoje, pasirodys meniu.</p>
+    <p>Kai priedas <gui>Įterpti laiko žymę</gui> yra įdiegtas, įrankių meniu turės elementą <gui>Įterpti laiko žymę</gui>.</p>
+    <p>Paspauskite ant šio elemento dabartiniam laikui ir datai įterpti.</p>
+
+</page>

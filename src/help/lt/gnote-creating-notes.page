@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="creating-notes" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <desc>Raštelių kūrimas</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Raštelių kūrimas</title>
+
+  <p>Naudodami <app>Gnote</app>, naujus raštelius galite sukurti šiais būdais:</p>
+  <list>
+    <item><p>Spauskite programos meniu ir pasirinkite <gui>Naujas raštelis</gui>.</p></item>
+    <item><p><app>Gnote</app> lange spauskite įrankinės mygtuką <gui>Naujas</gui>.</p></item>
+    <item><p>Paieškos veiksenoje spauskite dešinį klavišą raštelių sąraše ir pasirinkite <gui>Naujas raštelis</gui>. Šis būdas sukurs naują raštelį pažymėtoje užrašinėje.</p></item>
+    <item><p>Jei <gui>Būsenos piktograma</gui> yra įjungta, spauskite ant jos ir pasirinkite punktą <gui>Naujas raštelis</gui>.</p></item>
+    <item><p>Naudokite klavišų kombinaciją <keyseq><key>Vald</key><key>N</key></keyseq>.</p></item>
+  </list>
+
+</page>

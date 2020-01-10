@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-print" xml:lang="fr">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Imprimer des notes</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+  
+  <title>Impression</title>
+    <p>Le bouton <gui>Outils</gui> est matérialisé par l'icône <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Lorsque ce greffon est activé, l'option <gui>Imprimer</gui> est présente dans le menu <gui>Outils</gui>.</p>
+    <p>Lorsque l'option <gui>Imprimer</gui> est sélectionnée, une boîte de dialogue standard <gui>Imprimer</gui> s'affiche et une note peut être imprimée.</p>
+
+</page>

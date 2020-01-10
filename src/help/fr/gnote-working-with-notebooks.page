@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="working-with-notebooks" xml:lang="fr">
+
+
+  <info>
+    <link type="guide" xref="index#organizing-notes"/>
+    <desc>Organiser vos notes</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Utilisation des bloc-notes</title>
+    <p>Notebooks allow you to group related notes together. You can add a note to a notebook in the main window or directly inside of a Note.</p>
+
+    <section id="creating-notebooks"><title>Création d'un bloc-notes</title>
+      <p>Les méthodes suivantes permettent de créer un nouveau bloc-notes</p>
+      <steps>
+        <item>
+          <p>Click on application menu and select <gui>New Notebook</gui>.</p>
+        </item>
+        <item>
+          <p>Donnez un nom au nouveau bloc-notes.</p>
+        </item>
+      </steps>
+      <p>Pour créer un nouveau bloc-notes à partir d'un menu contextuel</p>
+      <steps>
+        <item>
+          <p>In search mode, right click in the left hand box and choose <gui>New Notebook</gui>.</p>
+        </item>
+        <item>
+          <p>Donnez un nom au nouveau bloc-notes.</p>
+        </item>
+      </steps>
+      <figure>
+        <title>Nouveau bloc-notes à partir d'un menu contextuel</title>
+        <media type="image" src="figures/add-notebook-search.png" mime="image/png" style="right">
+        <p>Nouveau bloc-notes</p>
+      </media>
+      </figure>  
+    </section>
+
+    <section id="adding-notes-to-a-notebook"><title>Ajout de notes à un bloc-notes</title>
+      <p>To add notes to a notebook, you can add a note from the main window or directly within a note.</p>
+      <p>To move an existing note from the main window use one of the following:</p>
+      <list>
+        <item><p>faire glisser avec la souris une ou plusieurs notes sur un bloc-notes sur la gauche,</p></item>
+        <item><p>ou faire un clic-droit sur un bloc-notes et choisir <gui>Nouvelle note</gui> dans le menu contextuel. Une nouvelle note est créée et ajoutée au bloc-notes.</p></item>
+      </list>
+      <p>Lorsque vous écrivez une note, elle peut être directement ajoutée à un bloc-notes existant en utilisant le bouton <gui>Bloc-notes</gui>. Le bouton bloc-notes est matérialisé par cette icône : <media type="image" src="figures/notebook-icon.png" mime="image/png" style="right"/>.</p>
+      <figure>
+        <title>Ajout de notes à un bloc-notes</title>
+        <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>Ajout de notes à un bloc-notes.</p></media>
+      </figure>
+      <p>Les méthodes suivantes permettent de supprimer une note d'un bloc-notes :</p>
+      <list>
+        <item><p>Move note to <gui>Unfiled notes</gui> notebook in main window.</p></item>
+        <item><p>Choisissez l'option <gui>Aucun bloc-notes</gui> dans le menu qui apparaît lorsque vous cliquez sur le bouton <gui>Bloc-notes</gui> dans une note ouverte.</p></item>
+      </list>
+    </section>
+
+    <section id="creating-notebook-templates"><title>Création de modèles de bloc-notes</title>
+      <p>Après avoir créé un bloc-notes, vous pouvez composer un modèle pour chaque nouvelle note que vous créez dans ce bloc-notes.</p>
+      <steps>
+        <item><p>In main window right click on a Notebook that you have created and choose <gui>Open Template Note</gui>.</p>
+        </item>
+        <item><p>Cela ouvre une nouvelle note qui servira de modèle. Tout le texte saisi dans celle-ci apparaîtra dans toute nouvelle note créée dans ce bloc-notes.</p></item>
+      </steps>
+      <figure>
+        <title>Création d'un modèle de bloc-notes</title>
+        <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Modèle de note.</p></media>
+      </figure>
+      <p>Consultez <link xref="gnote-template-notes"/> pour davantage de détails.</p>
+    </section>
+
+  <section id="deleting-a-notebook"><title>Suppression d'un bloc-notes</title>
+    <p>Deleting a notebook will not delete any of the notes which are currently inside the notebook. After deleting a notebook, the notes will not be associated with any notebook and can be seen by highlighting <gui>Unfiled Notes</gui> in the main window.</p>
+    <p>Pour supprimer un bloc-notes, utilisez l'une des deux méthodes suivantes :</p>
+    <p>To delete a notebook, go to search mode in main window and do one of the following:</p>
+    <list>
+      <item><p>faites un clic-droit sur un bloc-notes et choisissez <gui>Supprimer le bloc-notes</gui>,</p></item>
+      <item><p>Remove all notes from notebook. Notebook will be automatically removed on <app>Gnote</app> restart.</p></item>
+    </list>
+    <figure>
+      <title>Deleting notes from main window</title>
+        <media type="image" src="figures/delete-notebook.png" mime="image/png" style="right">
+          <p>Suppression d'un bloc-notes.</p>
+        </media>
+    </figure>
+  </section>
+
+  <section id="special-notebooks"><title>Special Notebooks</title>
+    <p><app>Gnote</app> has several special notebooks:</p>
+    <list>
+      <item><p><gui>Active Notes</gui> - contains notes, that were opened in current <app>Gnote</app> session.</p></item>
+      <item><p><gui>All Notes</gui> - contains all notes, except templates.</p></item>
+      <item><p><gui>Pinned Notes</gui> - used to mark notes as important.</p></item>
+      <item><p><gui>Unfilled Notes</gui> - contains all notes that are not placed in a user created notebook.</p></item>
+    </list>
+  </section>
+
+</page>

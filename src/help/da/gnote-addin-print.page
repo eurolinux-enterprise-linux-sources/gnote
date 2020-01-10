@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-print" xml:lang="da">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Udskriv noter</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+  
+  <title>Udskriv</title>
+    <p>The Tools button is represented by the <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>  icon. When this add-in is installed, the option <gui>Print</gui> is present in <gui>Tools</gui> menu.</p>
+    <p>When the <gui>Print</gui> option is selected, a standard <gui>Print</gui> dialog will be presented and a note can be printed.</p>
+
+</page>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-underline" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Подчёркивание текста</desc>
+    <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
+    <credit type="author">
+      <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ауримас Церниус (Aurimas Cernius)</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Модуль для подчёркивания текста</title>
+  <p>При наличии модуля <gui>Подчёркивание</gui> в меню появится пункт <gui>Подчеркнуть</gui>.</p>
+  <p>Чтобы подчеркнуть выделенный текст, выполните одно из следующих действий:</p>
+  <list>
+    <item><p>В меню <gui>Текст</gui> выберите <gui>Подчеркнуть</gui>.</p></item>
+    <item><p>Используйте комбинацию клавиш <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+  </list>
+  <p>Чтобы убрать подчёркивание, выделите подчёркнутый текст и выполните одно из следующих действий:</p>
+  <list>
+    <item><p>В меню <gui>Текст</gui> выберите <gui>Подчеркнуть</gui>.</p></item>
+    <item><p>Используйте комбинацию клавиш <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+  </list>
+
+</page>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-replacetitle" xml:lang="sl">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Preimenovanje naslova sporočilca</desc>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Zamenjava naslova</title>
+    <p>Gumb orodja predstavlja ikona <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Ko je ta vstavek nameščen, bo možnost <gui>Zamenjaj naslov</gui> prisotna vmeniju <gui>Orodja</gui>.</p>
+    <p>Ko je možnost <gui>Zamenjaj naslov</gui> izbrana, bo bil naslov sporočilca zamenjan s trenutno izbranim besedilom v kateremukoli programu.</p>
+    <p>Namesto tega lahko uporabite bližnjico <keyseq><key>Ctrl</key><key>R</key></keyseq>.</p>
+
+</page>

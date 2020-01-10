@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-bugzillalink" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Bugzilla-Verweise einfügen</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Bugzilla-Links-Add-in</title>
+  <p>Erlaubt Ihnen, eine Bugzilla-Adresse aus Ihrem Browser direkt in eine <app>Gnote</app>-Notiz zu ziehen. Die Fehlernummer wird als Verknüpfung mit einem kleinen Bug-Symbol angezeigt.</p>
+  <p>In den Einstellungen können Sie spezielle Symbole für bestimmte Rechner festlegen.</p>
+
+</page>

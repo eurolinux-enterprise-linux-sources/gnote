@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="bulleted-lists" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Používání seznamů s odrážkami</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+<title>Vytváření seznamů s odrážkami</title>
+
+<section id="begin-a-bulleted-list"><title>Započetí seznamu s odrážkami</title>
+<p>Seznam s odrážkami můžete začít vytvářet následujícími způsoby:</p>
+<list>
+<item><p>Zvolte <gui>Odrážky</gui> v nabídce <gui>Text</gui>.</p></item>
+<item><p>Začněte řádek jednou pomlčkou <key>-</key>, bezprostředně za ní pokračujte vlastním textem a nakonec stiskněte <key>Enter</key>.</p></item>
+<item><p>Zmáčkněte kombinaci kláves <keyseq><key>Alt</key><key>Right</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="end-a-bulleted-list"><title>Ukončení seznamu s odrážkami</title>
+<p>Ukončit vytváření seznamu s odrážkami můžete následujícími způsoby:</p>
+<list>
+<item><p>Zvolte <gui>Odrážky</gui> v nabídce <gui>Text</gui>.</p></item>
+<item><p>Zmáčkněte <keycap>Enter</keycap> na prázdném řádku seznamu s odrážkami.</p></item>
+<item><p>Volte <gui>Zmenšit odsazení</gui> z nabídky <guibutton>Text</guibutton> tak dlouho, dokud aktuální řádek nepřestane být součástí seznamu s odrážkami.</p></item>
+<item><p>Použijte kombinaci kláves <keyseq><key>Shift</key><key>Tab</key></keyseq> tolikrát, až aktuální řádek přestane být součástí seznamu s odrážkami.</p></item>
+<item><p>Použijte kombinaci kláves <keyseq><key>Alt</key><key>Left</key></keyseq> tolikrát, až aktuální řádek přestane být součástí seznamu s odrážkami.</p></item>
+</list>
+
+</section>
+<section id="increase-indentation">
+<title>Zvětšení odsazení</title>
+<p>Pokud chcete zvětšit odsazení řádku s odrážkou v seznamu pomocí myši:</p>
+<list><item><p>Zvolte <gui>Zvětšit odsazení</gui> v nabídce <gui>Text</gui>.</p></item></list>
+<p>Pokud chcete zvětšit odsazení řádku s odrážkou v seznamu pomocí klávesnice:</p>
+<list>
+<item><p>Zmáčkněte klávesu <key>Tab</key>.</p></item>
+<item><p>Zmáčkněte kombinaci kláves <keyseq><key>Alt</key><key>Right</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="decrease-indentation">
+<title>Zmenšení odsazení</title>
+<p>Pokud chcete zmenšit odsazení řádku s odrážkou v seznamu pomocí myši:</p>
+<list><item><p>Zvolte <gui>Zmenšit odsazení</gui> v nabídce <gui>Text</gui>.</p></item></list>
+<p>Pokud chcete zmenšit odsazení řádku s odrážkou v seznamu pomocí klávesnice:</p>
+<list>
+<item><p>Zmáčkněte kombinaci kláves <keyseq><key>Shift</key><key>Tab</key></keyseq>.</p></item>
+<item><p>Zmáčkněte kombinaci kláves <keyseq><key>Alt</key><key>Left</key></keyseq>.</p></item>
+</list>
+</section>
+
+</page>

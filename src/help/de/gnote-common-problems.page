@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="common-problems" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#common-problems"/>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>Häufig gestellte Fragen</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Häufige Probleme in Gnote</title>
+    <list>
+      <item><title>Arbeitet <app>Gnote</app> mit <app>Tomboy</app> zusammen?</title><p>Sie können <app>Tomboy</app>-Notizen importieren. Hierfür muss ein Add-In aktiviert werden.</p>
+      </item>
+      <item><title>Ich kann das Statussymbol von Gnote nicht finden</title>
+        <p>Sie können das Statussymbol von <app>Gnote</app> folgendermaßen im <app>Terminal</app> aktivieren: <cmd>gsettings set org.gnome.gnote use-status-icon true</cmd> .</p></item>
+      <item><title>Wie lässt sich <app>Gnote</app> automatisch starten, sobald ich angemeldet bin?</title>
+        <p>Um Gnote bei der Anmeldung an GNOME automatisch zu starten, rufen Sie <app>gnome-session-properties</app> auf.</p>
+      </item>
+    </list>
+
+</page>

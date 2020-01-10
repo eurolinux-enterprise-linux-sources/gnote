@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="lt">
+
+
+  <info>
+    <link type="guide" xref="index#introduction"/>
+    <desc>Įvadas į <app>Gnote</app></desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Gnote įvadas</title>
+    <p><app>Gnote</app> yra darbalaukio užrašų programa GNOME aplinkai. Ji yra paprasta naudoti, leidžia dėstyti mintis bei informaciją, su kuria dirbate kiekvieną dieną. Gnote turi keletą labai naudingų redagavimo savybių, padedančių tvarkyti raštelius, pavyzdžiui</p>
+    <list>
+      <item><p>Ieškomo teksto paryškinimas</p></item>
+      <item><p>Integruotas rašybos tikrinimas</p></item>
+      <item><p>Automatinis susiejimas su interneto ir el. pašto adresais</p></item>
+      <item><p>Atšaukimo/pakartojimo palaikymas</p></item>
+      <item><p>Šriftų stilius ir dydis</p></item>
+      <item><p>Punktų sąrašai</p></item>
+    </list>
+    <figure>
+      <title><app>Gnote</app> pagrindinis langas</title>
+        <desc><app>Gnote</app> pagrindinis langas</desc>
+        <media type="image" src="figures/gnote-search-all-notes.png" mime="image/png" style="right">
+        <p><app>Gnote</app> pagrindinis langas.</p>
+        </media>
+    </figure>
+
+</page>

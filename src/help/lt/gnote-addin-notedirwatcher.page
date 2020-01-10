@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-notedirwatcher" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Stebėti raštelių pasikeitimus failų sistemoje</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2012</years>
+    </credit>
+  </info>
+  
+  <title>Raštelių katalogo stebyklė</title>
+    <p>Šis priedas leidžia dirbti su rašteliais failų sistemoje kol <app>Gnote</app> veikia. Kai įjungtas, šis priedas stebi raštelių failų pasikeitimus ir juos iš naujo įkelia, kai tik aptinkamas pasikeitimas. Tokiu būtų išoriniai raštelio failo pasikeitimai automatiškai atsispindi <app>Gnote</app>.</p>
+    <p><app>Gnote</app> saugo raštelius aplanke <file>~/.local/share/gnote</file>. Kai šis priedas yra įjungtas, jūs galite šiame kataloge atlikti veiksmus failų sistemos lygyje, pvz sinchronizuoti juos į kitą vietą, kol <app>Gnote</app> veikia.</p>
+
+</page>

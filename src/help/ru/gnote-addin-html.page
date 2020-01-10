@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-html" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Экспортирование заметок в формат HTML</desc>
+    <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
+    <credit type="author">
+      <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ауримас Церниус (Aurimas Cernius)</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Экспортирование в HTML</title>
+    <p>Кнопка инструментов изображена в виде значка <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. При наличии дополнения для экспортирования в HTML в меню <gui>Инструменты</gui> появится пункт <gui>Экспортировать в HTML</gui>.</p>
+    <p>Выбрав этот пункт, из одной или нескольких заметок можно создать документ HTML.</p>
+    <p>После выбора этого пункта откроется диалоговое окно, которое запросит место, куда сохранить файл HTML. Введите целевое имя файла и нажмите <gui>Сохранить</gui>; чтобы отменить экспортирование, нажмите <gui>Отменить</gui>.</p>
+    <p>Чтобы экспортировать заметки, на которые в текущей заметке есть ссылки, выберите <gui>Экспортировать связанные ссылки</gui></p>
+
+</page>

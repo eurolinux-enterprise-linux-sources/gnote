@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-noteoftheday" xml:lang="fr">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Note modèle</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Note du jour</title>
+  <p>Ce greffon génère automatiquement une note « Aujourd'hui » pour consigner quotidiennement des idées. La date du jour sert de base au titre de la note. Par exemple, le titre de la note « Aujourd'hui » créé le 28 février 2007 est : « Aujourd'hui : mercredi 28 février 2007 ».</p>
+  <p>Si vous ne modifiez pas une note « Aujourd'hui », le greffon Note du jour la supprime automatiquement.</p>
+  <p>Pour personnaliser le contenu par défaut de la note « Aujourd'hui », créez une nouvelle note, et renommez-la « Aujourd'hui : modèle ». Remplacez-en le contenu par ce que vous voulez. Lorsque de nouvelles notes « Aujourd'hui » sont créées, elles sont sur le modèle du contenu de la note « Aujourd'hui : modèle ».</p>
+
+</page>

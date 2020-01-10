@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-html" xml:lang="es">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Exportar notas al formato HTML</desc>
+    <license><p>Licencia libre de documentación de GNU (GFDL), Versión 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nicolás Satragno</mal:name>
+      <mal:email>nsatragno@gnome.org</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Exportar a HTML</title>
+    <p>El botón Herramientas se representa con el icono <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Cuando este complemento está instalado, la opción <gui>Exportar a HTML</gui> está presente en el menú <gui>Herramientas</gui>.</p>
+    <p>Puede crear un documento HTML (Lenguaje de marcado de hipertexto) de una o más notas seleccionando esta opción.</p>
+    <p>Después de seleccionar esta opción, se le presentará un diálogo que le permite seleccionar dónde guardar el archivo HTML. Introduzca el nombre del archivo destino y pulse <gui>Guardar</gui> para guardar el archivo, o <gui>Cancelar</gui> para abortar la operación.</p>
+    <p>Para exportar cualquier nota para la que exista un enlace en la nota actual, active la casilla de verificación <gui>Exportar las notas enlazadas</gui>.</p>
+
+</page>

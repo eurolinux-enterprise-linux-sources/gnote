@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-sync-webdav" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="notes-preferences#sync-addins"/>
+    <link type="guide" xref="synchronization#configuration"/>
+    <desc>Synchronizace do sdílení WebDAV</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2012</years>
+    </credit>
+  </info>
+
+  <title>Synchronizace WebDAV</title>
+  <p>Tento typ synchronizace umožňuje nastavit WebDAV jako synchronizační úložiště.</p>
+  <p>Pro nastavení tohoto typu synchronizace:</p>
+  <list>
+    <item><title>vyberte „WebDAV“ v rozbalovacím seznamu <gui>Služba</gui></title></item>
+    <item><title>zadejte adresu URL k vašemu sdílení</title></item>
+    <item><title>zadejte uživatelské jméno a heslo</title></item>
+  </list>
+  <figure>
+    <title>Nastavení synchronizace místní složky</title>
+    <media type="image" src="figures/gnote-syncprefs-webdav.png" mime="image/png"/>
+  </figure>
+  <p>Po vybrání požadované složky klikněte na tlačítko <gui>Uložit</gui>. Tlačítko <gui>Smazat</gui> použijte k vypnutí synchronizace.</p>
+
+</page>

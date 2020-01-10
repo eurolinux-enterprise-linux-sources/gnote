@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="deleting-notes" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>Notizen löschen</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Notizen löschen</title>
+  <p>Sie können eine Notiz auf folgende Arten löschen:</p>
+  <list>
+    <item><p>Right click in the list of notes and select <gui>Delete</gui>. This will delete all selected notes.</p></item>
+    <item><p>Wenn eine Notiz geöffnet ist, klicken Sie auf den <gui>Löschen</gui>-Knopf in der Werkzeugleiste.</p></item>
+  </list>
+  <p>In jedem Fall wird ein Dialog geöffnet, in welchem Sie gefragt werden, ob Sie die Notiz und deren Inhalt dauerhaft löschen möchten. Klicken Sie auf den Knopf <gui>Löschen</gui>, um die Notiz dauerhaft zu verwerfen, oder <gui>Abbrechen</gui>, um den Vorgang abzubrechen. Verknüpfungen auf diese Notiz bleiben weiterhin bestehen, aber ein Klicken darauf bewirkt, dass die Notiz dann neu angelegt wird.</p>
+
+</page>

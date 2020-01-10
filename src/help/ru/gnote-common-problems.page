@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="common-problems" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#common-problems"/>
+    <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
+    <desc>Часто задаваемые вопросы</desc>
+    <credit type="author">
+      <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ауримас Церниус (Aurimas Cernius)</name>
+      <years>2011-2012</years>
+    </credit>
+  </info>
+
+  <title>Распространённые ошибки Gnote</title>
+    <list>
+      <item><title>Умеет ли <app>Gnote</app> работать с <app>Tomboy</app>?</title><p>Вы можете импортировать заметки <app>Tomboy</app>.</p>
+      </item>
+      <item><title>Не могу найти значок состояния Gnote</title>
+        <p>Вы можете включить значок состояния <app>Gnote</app>, выполнив следующую команду в <app>терминале</app>: <cmd>gsettings set org.gnome.gnote use-status-icon true</cmd>.</p></item>
+      <item><title>Как сделать, чтобы <app>Gnote</app> автоматически запускался при входе в систему?</title>
+        <p>Чтобы Gnote автоматически запускался при входе в GNOME, запустите <app>gnome-session-properties</app></p>
+      </item>
+    </list>
+
+</page>

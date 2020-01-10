@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-replacetitle" xml:lang="ru">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Переименование заголовков</desc>
+    <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
+    <credit type="author">
+      <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Ауримас Церниус (Aurimas Cernius)</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Замена заголовка</title>
+    <p>Кнопка инструментов изображена в виде значка <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. При наличии дополнения для замены заголовков в меню <gui>Инструменты</gui> появится пункт <gui>Заменить заголовок</gui>.</p>
+    <p>При выборе пункта <gui>Заменить заголовок</gui>, заголовок заметки будет заменён текстом, выделенным в любом приложении.</p>
+    <p>Также можно использовать комбинацию клавиш <keyseq><key>Ctrl</key><key>R</key></keyseq>.</p>
+
+</page>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="common-problems" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#common-problems"/>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <desc>Časté dotazy a odpovědi</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011 – 2012</years>
+    </credit>
+  </info>
+
+  <title>Známé problémy s Gnote</title>
+    <list>
+      <item><title>Spolupracuje <app>Gnote</app> s poznámkami <app>Tomboy</app>?</title><p>Poznámky <app>Tomboy</app> můžete importovat. K tomu musí být aktivován příslušný doplněk.</p>
+      </item>
+      <item><title>Nemohu najít stavovou ikonu Gnote</title>
+        <p>Stavovou ikonu <app>Gnote</app> můžete aktivovat v <app>terminálu</app> pomocí příkazu: <cmd>gsettings set org.gnome.gnote use-status-icon true</cmd>.</p></item>
+      <item><title>Jak automaticky spouštět <app>Gnote</app> při přihlášení?</title>
+        <p>Pokud chcete poznámky Gnote spouštět automaticky při přihlášení do GNOME, použijte <app>gnome-session-properties</app>.</p>
+      </item>
+    </list>
+
+</page>

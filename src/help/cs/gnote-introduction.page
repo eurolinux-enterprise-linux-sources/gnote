@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="cs">
+
+
+  <info>
+    <link type="guide" xref="index#introduction"/>
+    <desc>Úvod do poznámek <app>Gnote</app></desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011 – 2012</years>
+    </credit>
+  </info>
+
+  <title>Úvod do Gnote</title>
+    <p>Gnote je aplikace k vytváření poznámek v pracovním prostředí GNOME. Je jednoduchá a snadno použitelná a umožňuje vám uspořádat si své nápady a informace, se kterými pracujete dennodenně. Gnote má pár velmi užitečných editačních funkcí, které vám pomohou si poznámky přizpůsobit, včetně:</p>
+    <list>
+      <item><p>Zvýrazňování hledaného textu</p></item>
+      <item><p>Zabudované kontroly pravopisu</p></item>
+      <item><p>Automatických odkazů na weby a e-mailové adresy</p></item>
+      <item><p>Podpory funkcí zpět/znovu</p></item>
+      <item><p>Nastavení stylu a velikosti písma</p></item>
+      <item><p>Vytváření seznamů s odrážkami</p></item>
+    </list>
+    <figure>
+      <title>Hlavní okno <app>Gnote</app></title>
+        <desc>Hlavní okno <app>Gnote</app></desc>
+        <media type="image" src="figures/gnote-search-all-notes.png" mime="image/png" style="right">
+        <p>Hlavní okno <app>Gnote</app>.</p>
+        </media>
+    </figure>
+
+</page>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-noteoftheday" xml:lang="sl">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Predloga sporočilca</desc>
+    <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title>Sporočilce dneva</title>
+  <p>Ta vstavek samodejno ustvari sporočilce "Danes" za pisanje vaših dnevnih mislil. Za osnovo naslova sporočilca je uporabljen trenutni datum. Naslov sporočilca "Danes" ustvarjenega 02. julija 2008 bi bil na primer "Danes, četrtek, 02. julij 2011". </p>
+  <p>V primeru da sporočilce "Danes" pustite nespremenjeno, bo vstavek Sporočilce dneva sporočilo samodejno izbrisal.</p>
+  <p>Za prilagoditev vsebine privzetega sporočilca "Danes" ustvarite novo sporočilce in spremenite naslov v "Today: Template". Vsebino sporočilca predloge spremenite v karkoli želite. Ko ustvarite nova sporočilca "Danes", bodo uporabila vsebino vašega sporočilca "Today: Template".</p>
+
+</page>
