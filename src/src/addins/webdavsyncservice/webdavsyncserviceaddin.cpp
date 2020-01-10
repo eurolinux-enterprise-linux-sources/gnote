@@ -42,36 +42,6 @@ WebDavSyncServiceModule::WebDavSyncServiceModule()
   ADD_INTERFACE_IMPL(WebDavSyncServiceAddin);
 }
 
-const char * WebDavSyncServiceModule::id() const
-{
-  return "WebDavSyncServiceAddin";
-}
-
-const char * WebDavSyncServiceModule::name() const
-{
-  return _("WebDav Sync Service Add-in");
-}
-
-const char * WebDavSyncServiceModule::description() const
-{
-  return _("Synchronize Gnote Notes to a WebDav URL");
-}
-
-const char * WebDavSyncServiceModule::authors() const
-{
-  return _("Aurimas Cernius and the Tomboy Project");
-}
-
-int WebDavSyncServiceModule::category() const
-{
-  return gnote::ADDIN_CATEGORY_SYNCHRONIZATION;
-}
-
-const char * WebDavSyncServiceModule::version() const
-{
-  return "0.1";
-}
-
 
 
 
@@ -110,6 +80,8 @@ Gtk::Widget *WebDavSyncServiceAddin::create_preferences_control(EventHandler req
   m_password_entry->signal_changed().connect(requiredPrefChanged);
   add_row(table, m_password_entry, _("_Password:"), 2);
 
+  table->set_hexpand(true);
+  table->set_vexpand(false);
   table->show_all();
   return table;
 }
@@ -287,6 +259,8 @@ void WebDavSyncServiceAddin::save_config_settings(const std::string & url, const
     // Save configuration into GConf
     //Preferences.Set ("/apps/tomboy/sync_wdfs_url", url ?? string.Empty);
     //Preferences.Set ("/apps/tomboy/sync_wdfs_username", username ?? string.Empty);
+
+    // TRANSLATORS: %1%: boost format placeholder for the error message.
     boost::format msg(_("Saving configuration to the GNOME keyring failed with the following message:\n\n%1%"));
     throw gnote::sync::GnoteSyncException(str(msg % ke.what()).c_str());
   }

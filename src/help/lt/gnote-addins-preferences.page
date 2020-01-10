@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="notes-preferences#advanced"/>
-    <desc>Gnote priedų nustatymai</desc>
+    <desc>Gnote įskiepių nustatymai</desc>
     <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,13 +11,18 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013,2014</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Priedų nustatymai</title>
-    <p>Šioje kortelėje galite įjungti ir išjungti priedus. Tam atlikti pasirinkite priedą ir paspauskite mygtuką <gui>Įjungti</gui>. Mygtukas taps neaktyvus, o mygtukas „Išjungti“ taps aktyvus ir jį galite naudoti priedui išjungti.</p>
-    <p>Kai kurie priedai turi nustatymus. Juos galite pasiekti pažymėdami priedą ir paspausdami mygtuką <gui>Nustatymai</gui>.</p>
+    <p>Šioje kortelėje galite įjungti ir išjungti įskiepius. Tam atlikti pasirinkite įskiepį ir paspauskite mygtuką <gui>Įjungti</gui>. Įskiepiui išjungti naudokite mygtuką <gui>Išjungti</gui>.</p>
+    <p>Kai kurie įskiepiai turi nustatymus, kuriuos galite pasiekti pažymėdami įskiepį ir paspausdami mygtuką <gui>Nustatymai</gui>.</p>
     <figure><title><app>Gnote</app> priedų nustatymai</title>
     <desc><app>Gnote</app> priedų langas</desc>
     <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">

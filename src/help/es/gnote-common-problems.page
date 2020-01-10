@@ -11,19 +11,24 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011-2012</years>
+      <years>2011-2014</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2013</mal:years>
+    </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Nicolás Satragno</mal:name>
       <mal:email>nsatragno@gnome.org</mal:email>
       <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Daniel Mustieles</mal:name>
-      <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -37,11 +42,10 @@
     <list>
       <item><title>¿<app>Gnote</app> trabaja con <app>Tomboy</app>?</title><p>Se pueden importar las notas de <app>Tomboy</app>. Se debe activar un complemento.</p>
       </item>
-      <item><title>No puedo encontrar el icono de estado de Gnote</title>
-        <p>Puede activar el icono de estado de <app>Gnote</app> utilizando un comando en la <app>terminal</app>: <cmd>gsettings set org.gnome.gnote use-status-icon true</cmd>.</p></item>
       <item><title>¿Cómo iniciar <app>Gnote</app> automáticamente en el inicio de sesión?</title>
-        <p>Para iniciar <app>Gnote</app> automáticamente cuando la se inicia la sesión en GNOME, ejecute <app>gnome-session-properties</app></p>
+        <p>Para iniciar Gnote automáticamente cuando se inicia la sesión en GNOME, ejecute <app>gnome-session-properties</app>.</p>
       </item>
+      <item><title>No estoy cómodo con la nueva interfaz de ventana simple.</title><p>Puede volver al estilo antiguo de <app>Gnote</app> seleccionando en el diálogo de preferencias,la opción <gui>Abrir siempre las notas en una nueva ventana</gui>.</p></item>
     </list>
 
 </page>

@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Změna názvu poznámky</desc>
+    <desc>Přejmenování poznámky</desc>
     <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,13 +11,18 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011, 2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Přejmenování</title>
-    <p>Tlačítko <gui>Nástroje</gui> je prezentováno ikonou <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Když je tento doplněk nainstalován, nachází se v nabídce <gui>Nástroje</gui> volba <gui>Nahradit název</gui>.</p>
-    <p>Pokud volbu <gui>Nahradit název</gui> vyberete, bude název poznámky nahrazen textem, který je právě vybrán v libovolné aplikaci.</p>
+    <p>Když je nainstalován zásuvný modul <app>Nahradit název</app>, objeví se v nabídce <gui>Činnosti</gui> příkaz <gui>Nahradit název</gui>.</p>
+    <p>Příkaz <gui>Nahradit název</gui> nahradí název poznámky textem, který je právě vybrán (v libovolné aplikaci).</p>
     <p>Případně můžete také použít klávesovou zkratku <keyseq><key>Ctrl</key><key>R</key></keyseq>.</p>
 
 </page>

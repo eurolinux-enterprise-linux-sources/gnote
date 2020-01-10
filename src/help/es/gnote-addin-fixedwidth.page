@@ -11,19 +11,24 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2013</mal:years>
+    </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Nicolás Satragno</mal:name>
       <mal:email>nsatragno@gnome.org</mal:email>
       <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Daniel Mustieles</mal:name>
-      <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -34,7 +39,6 @@
   </info>
 
   <title>Complemento «Anchura fija»</title>
-    <p>El estilo de anchura fija permite al texto utilizar una tipografía de anchura fija. Para cambiar el texto existente, Seleccione primero el texto que modificar. Luego seleccione la opción <gui>Anchura fija</gui> desde el menú <gui>Texto</gui>. También puede seleccionar la opción <gui>Anchura fija</gui> antes de comenzar a escribir el texto para que éste utilice una tipografía de anchura fija.</p>
-    <p>La opción «Anchura fija» es una característica proporcionada por el complemento «Anchura Fija».</p>
+    <p>El estilo de <app>anchura fija</app> permite al texto utilizar una tipografía de anchura fija. Para cambiar el texto existente, seleccione primero el texto que modificar. Luego seleccione la opción <gui>Anchura fija</gui> desde el menú <gui>Texto</gui>. También puede seleccionar la opción <gui>Anchura fija</gui> antes de comenzar a escribir.</p>
 
 </page>

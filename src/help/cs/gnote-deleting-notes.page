@@ -13,14 +13,19 @@
       <name>Aurimas Cernius</name>
       <years>2011 – 2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Mazání poznámek</title>
-  <p>Poznámku můžete smazat několika způsoby:</p>
+  <p>Poznámku můžete smazat těmito způsoby:</p>
   <list>
-    <item><p>Klikněte pravým tlačítkem v seznamu poznámek a zvolte <gui>Smazat</gui>. Tím se vybraná poznámka smaže.</p></item>
+    <item><p>Klikněte pravým tlačítkem v seznamu poznámek a zvolte <gui>Odstranit</gui>. Tím se vybraná poznámka smaže.</p></item>
     <item><p>Když je poznámka otevřená, zmáčkněte na liště nástrojů tlačítko <gui>Odstranit</gui>.</p></item>
   </list>
-  <p>Ve všech případech se objeví dialogové okno s dotazem, jestli chcete poznámku včetně jejího obsahu trvale odstranit. Klikněte buď na tlačítko <gui>Odstranit</gui>, a tím poznámku trvale odstraňte, nebo na <gui>Zrušit</gui>, a tím operaci zrušte. Odkazy na smazanou poznámku budou existovat i nadále a jejich použitím znovu vytvoříte poznámku stejného názvu.</p>
+  <p>V obou případech se objeví dialogové okno s dotazem, jestli chcete poznámku včetně jejího obsahu trvale odstranit. Klikněte buď na tlačítko <gui>Odstranit</gui>, a tím poznámku trvale odstraňte, nebo na <gui>Zrušit</gui>, a tím operaci zrušte. Odkazy na smazanou poznámku budou existovat i nadále a jejich použitím znovu vytvoříte poznámku stejného názvu.</p>
 
 </page>

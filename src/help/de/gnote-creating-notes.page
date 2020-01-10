@@ -13,17 +13,52 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Notizen anlegen</title>
 
-  <p>In <app>Gnote</app>, you can create new notes using one of the following methods:</p>
+  <p>Sie können in <app>Gnote</app> neue Notizen auf eine der folgenden Arten anlegen:</p>
   <list>
-    <item><p>Click on application menu and select <gui>New Note</gui>.</p></item>
-    <item><p>In <app>Gnote</app> window click the toolbar item <gui>New</gui>.</p></item>
-    <item><p>When in search mode, right click in notes list and select <gui>New Note</gui>. This one will create note in currently selected notebook.</p></item>
-    <item><p>If <gui>Status Icon</gui> is enabled, click on it and select <gui>New Note</gui>.</p></item>
-    <item><p>Use keyboard shortcut <keyseq><key>Ctrl</key><key>N</key></keyseq>.</p></item>
+    <item><p>Wählen Sie <gui>Neue Notiz</gui> im Anwendungsmenü.</p></item>
+    <item><p>Klicken Sie im Fenster <app>Gnote</app> auf das Werkzeug-Element <gui>Neu</gui>.</p></item>
+    <item><p>Klicken Sie im Hauptfenster mit der rechten Maustaste in die Notizliste und wählen Sie <gui>Neu</gui>. Dadurch wird eine neue Notiz im ausgewählten Notizbuch angelegt.</p></item>
+    <item><p>Wenn das Statussymbol aktiv ist, klicken Sie darauf und wählen Sie <gui>Neue Notiz</gui>.</p></item>
+    <item><p>Verwenden Sie die Tastenkombination <keyseq><key>Strg</key><key>N</key></keyseq>.</p></item>
   </list>
 
 </page>

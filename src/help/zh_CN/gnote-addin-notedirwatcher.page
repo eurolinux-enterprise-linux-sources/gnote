@@ -3,16 +3,33 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Watch for note changes on file system</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>监视文件系统中便笺的改动</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
-      <years>2012</years>
+      <years>2012-2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
   
-  <title>Note Directory Watcher</title>
-    <p>This addin allows you to work with notes on a file system while <app>Gnote</app> is running. When enabled, this addin monitors note files for changes and reloads them, once any change is detected. This way external change to a note file is automatically reflected in <app>Gnote</app>.</p>
-    <p><app>Gnote</app> stores notes into <file>~/.local/share/gnote</file> folder. With this addin enabled, you can perform actions at file system level on this directory, such as synchronizing contents with some other location, while <app>Gnote</app> is running.</p>
+  <title>便笺目录监视器</title>
+    <p>This plugin lets you work with notes on the file system while <app>Gnote</app> is running. When enabled, this plugin monitors note files for changes and reloads them when any change is detected. This way any external change to a note file will automatically be reflected in <app>Gnote</app>.</p>
+    <p><app>Gnote</app> stores notes in the <file>~/.local/share/gnote</file> folder. With this plugin is enabled, you can perform actions at the file system level on this directory, such as synchronizing note files with some other location, while <app>Gnote</app> is running.</p>
 
 </page>

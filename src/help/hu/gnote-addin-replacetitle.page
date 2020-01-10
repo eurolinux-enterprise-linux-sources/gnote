@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-replacetitle" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Jegyzet átnevezése</desc>
+    <license><p>GNU Free Documentation License (GFDL), 1.1 verzió</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  </info>
+
+  <title>Cím cseréje</title>
+    <p>Ha a <app>Cím cseréje</app> bővítmény telepítve van, akkor a <gui>Műveletek</gui> menüben megjelenik a <gui>Cím cseréje</gui> menüpont.</p>
+    <p>The <gui>Replace title</gui> command replaces a note's title with the currently selected text (from any application).</p>
+    <p>Alternatively, you can use the <keyseq><key>Ctrl</key><key>R</key></keyseq> shortcut.</p>
+
+</page>

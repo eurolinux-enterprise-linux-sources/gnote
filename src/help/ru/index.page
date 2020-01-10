@@ -15,7 +15,7 @@
     </credit>
   </info>
 
-  <title>Справка по Gnote</title>
+  <title xml:lang="en_GB"><media type="image" src="figures/logo32.png"/> Gnote Help</title>
 
     <section id="introduction">
     <title>Введение</title>

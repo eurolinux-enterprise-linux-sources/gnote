@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2013 Aurimas Cernius
+ * Copyright (C) 2012-2015 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -75,9 +75,10 @@ public:
   Notebook::Ptr get_notebook(const std::string & notebookName) const;
   bool notebook_exists(const std::string & notebookName) const;
   Notebook::Ptr get_or_create_notebook(const std::string &);
+  bool add_notebook(const Notebook::Ptr &);
   void delete_notebook(const Notebook::Ptr &);
   bool get_notebook_iter(const Notebook::Ptr &, Gtk::TreeIter & );
-  Notebook::Ptr get_notebook_from_note(const Note::Ptr &);
+  Notebook::Ptr get_notebook_from_note(const NoteBase::Ptr &);
   Notebook::Ptr get_notebook_from_tag(const Tag::Ptr &);
   static bool is_notebook_tag(const Tag::Ptr &);
   static Notebook::Ptr prompt_create_new_notebook(Gtk::Window *);
@@ -97,6 +98,7 @@ public:
       return m_active_notes;
     }
 
+  sigc::signal<void> signal_notebook_list_changed;
   sigc::signal<void, const Note &, bool> signal_note_pin_status_changed;
 private:
   static int compare_notebooks_sort_func(const Gtk::TreeIter &, const Gtk::TreeIter &);

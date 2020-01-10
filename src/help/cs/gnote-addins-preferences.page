@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="notes-preferences#advanced"/>
-    <desc>Nastavení pro doplňky Gnote</desc>
+    <desc>Nastavení pro zásuvné moduly Gnote</desc>
     <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,13 +11,18 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011, 2013, 2014</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Předvolby doplňků</title>
-    <p>Na této kartě můžete aktivovat a deaktivovat doplňky. Uděláte to tak, že doplněk vyberete a kliknete na tlačítko <gui>Povolit</gui>. Toto tlačítko se pak stane neaktivním a naopak se aktivuje tlačítko <gui>Zakázat</gui>, kterým můžete doplněk opět deaktivovat.</p>
-    <p>Některé z doplňků mají předvolby. K těm se můžete dostat tak, že doplněk vyberete a zmáčknete tlačítko <gui>Předvolby</gui>.</p>
+    <p>Na této kartě můžete aktivovat a deaktivovat zásuvné moduly. Uděláte to tak, že zásuvný modul vyberete a kliknete na tlačítko <gui>Povolit</gui>. Pro zakázání zásuvného modulu použijte tlačítko <gui>Zakázat</gui>.</p>
+    <p>Některé ze zásuvných modulů mají předvolby. K těm se můžete dostat tak, že zásuvný modul vyberete a zmáčknete tlačítko <gui>Předvolby</gui>.</p>
     <figure><title>Předvolby doplňků v <app>Gnote</app></title>
     <desc>Okno doplňků <app>Gnote</app></desc>
     <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">

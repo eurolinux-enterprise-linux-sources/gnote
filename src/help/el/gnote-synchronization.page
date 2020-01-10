@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="guide" id="synchronization" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Συγχρονισμός σημειώσεων</desc>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Συγχρονισμός</title>
+  <section id="description">
+    <title>Για τον συγχρονισμό</title>
+    <p>Το <app>Gnote</app> σας επιτρέπει να συγχρονίσετε σημειώσεις μεταξύ πολλών μηχανών, έτσι ώστε να μπορείτε να το χρησιμοποιήσετε σε πολλές συσκευές και να δουλέψετε με τις ίδιες σημειώσεις σε όλες τις μηχανές.</p>
+    <p>Για να χρησιμοποιήσετε τον συγχρονισμό, πρέπει να τον ρυθμίσετε πρώτα στον διάλογο ρύθμισης του <app>Gnote</app>.</p>
+    <p>Οι σημειώσεις συγχρονίζονται σε μια θέση, κοινή για όλες τις εγκαταστάσεις του <app>Gnote</app>. Αυτή η θέση αποθηκεύει το ιστορικό των σημειώσεων σας. Όταν συγχρονίζετε, κάθε στιγμιότυπο του <app>Gnote</app> ανεβάζει νέες και ενημερωμένες σημειώσεις σε αυτήν τη θέση και κατεβάζει νέες και ενημερωμένες σημειώσεις από άλλες εγκαταστάσεις. Η θέση συγχρονισμού περιέχει επίσης πληροφορίες για διαγραμμένες σημειώσεις: κατά τον συγχρονισμό, το <app>Gnote</app> δημοσιεύει όλες τις διαγραμμένες σημειώσεις και διαγράφει αυτές που έχουν δημοσιευτεί ως τέτοιες. Έτσι, πολλές εγκαταστάσεις του <app>Gnote</app> μπορούν να κρατούν το ίδιο σύνολο σημειώσεων.</p>
+  </section>
+  <section id="configuration" style="2column">
+    <title>Ρύθμιση συγχρονισμού</title>
+  </section>
+  <section id="usage">
+    <title>Συγχρονισμός</title>
+    <p>Για να συγχρονίσετε, επιλέξτε <gui>Συγχρονισμός σημειώσεων</gui> από το μενού εφαρμογών. Αυτό το στοιχείο είναι διαθέσιμο μόνο αν ο συγχρονισμός έχει ρυθμιστεί.</p>
+    <p>Αφού επιλέξετε το στοιχείο μενού <gui>συγχρονισμός σημειώσεων</gui>, ένας διάλογος προόδου θα εμφανιστεί, που θα σας επιτρέψει να μάθετε πότε ο συγχρονισμός θα είναι πλήρης. Επίσης, όλες οι σημειώσεις θα απενεργοποιηθούν για επεξεργασία κατά τη διάρκεια του συγχρονισμού.</p>
+    <figure>
+      <title>Πρόοδος συγχρονισμού</title>
+      <media type="image" src="figures/gnote-sync-progress.png" mime="image/png"/>
+    </figure>
+  </section>
+
+</page>

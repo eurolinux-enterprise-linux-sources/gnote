@@ -10,21 +10,56 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Notizvorlagen</title>
   <section id="usage">
     <title>Notizvorlagen verwenden</title>
     <p>Notzivorlagen definieren den Inhalt neu zu erstellender Notizen. Vorlagen sind gewöhnliche Notizen mit einigen zusätzlichen Funktionsmerkmalen.</p>
-    <p>Sie können eine allgemeine Notizvorlage für <app>Gnote</app> definieren sowie eine weitere für jedes Ihrer Notizbücher. Diese Vorlagen geben den Inhalt jeder neu zu erstellenden Notiz vor:</p>
+    <p>Sie können eine allgemeine Notizvorlage definieren sowie eine weitere für jedes Ihrer Notizbücher. Diese Vorlagen geben den Inhalt jeder neu zu erstellenden Notiz vor:</p>
     <list>
       <item><p>Jede neue Notiz, die Sie in <app>Gnote</app> erstellen, aber nicht in einem Ihrer Notizbücher, erhält den Inhalt der Haupt-Notizvorlage. Falls keine Vorlage erstellt wurde, wird ein Standardinhalt verwendet.</p></item>
       <item><p>Jede in einem Notizbuch erstellte neue Notiz erhält den Inhalt der Notizvorlage, falls es eine solche für das jeweilige Notizbuch gibt. Falls keine Vorlage erstellt wurde, wird ein Standardinhalt verwendet.</p></item>
     </list>
-    <p>Sso erstellen oder bearbeiten Sie eine Notizvorlage:</p>
+    <p>So erstellen oder bearbeiten Sie eine Notizvorlage:</p>
     <list>
       <item><title>Haupt-Notizvorlage</title><p>Öffnen Sie die <app>Gnote</app>-Einstellungen. Klicken Sie im Reiter <gui>Allgemein</gui> auf den Knopf <gui>Notizvorlage öffnen</gui>.</p></item>
-      <item><title>Notizvorlage eines Notizbuchs</title><p>Right click on notebook in main window and select <gui>Open Template Note</gui>.</p></item>
+      <item><title>Notizvorlage eines Notizbuchs</title><p>Klicken Sie mit der rechten Maustaste auf ein Notizbuch im Hauptfenster und wählen Sie <gui>Notizvorlage öffnen</gui>.</p></item>
     </list>
   </section>
   <section id="features">
@@ -36,8 +71,8 @@
     <p>Die Vorlagenleiste bietet die folgenden Funktionen:</p>
     <list>
       <item><title>In reguläre Notiz umwandeln</title><p>Klicken Sie auf diesen Knopf, um die Notizvorlage in eine reguläre Notiz umzuwandeln, die in der Notizliste angezeigt wird. Diese Aktion entspricht dem Löschen einer Notizvorlage.</p></item>
-      <item><title>Größe speichern</title><p>Wenn Sie dieses Ankreuzfeld aktivieren, entspricht die Größe der neu zu erstellenden Notiz der Größe der Notizvorlage. Falls Sie es nicht aktivieren, erhält das Fenster die Standardgröße.</p></item>
-      <item><title>Auswahl speichern</title><p>Falls dieses Ankreuzfeld aktiviert ist, erhalten neue Notizen nicht nicht nur den Inhalt der Notizvorlage, sondern der Inhalt wird außerdem markiert. Verwenden Sie diese Option, wenn Sie wollen, dass ein bestimmter Teil des Inhalts einer neuen Notiz anfänglich markiert ist.</p></item>
+      <item><title>Größe speichern</title><p>Wenn Sie dieses Ankreuzfeld aktivieren, entspricht die Größe der neu zu erstellenden Notiz der Größe der Notizvorlage. Falls Sie es nicht aktivieren, hat das Fenster die Standardgröße.</p></item>
+      <item><title>Auswahl speichern</title><p>Falls dieses Ankreuzfeld aktiviert ist, erhalten neue Notizen nicht nur den Inhalt der Notizvorlage, sondern auch deren Auswahl. Verwenden Sie diese Option, wenn Sie wollen, dass ein bestimmter Teil des Inhalts einer neuen Notiz anfänglich markiert ist.</p></item>
       <item><title>Titel speichern</title><p>Mit diesem Ankreuzfeld aktivieren Sie eine Option, die den Titel der neuen Notiz aus dem Titel der Notizvorlage ableitet. Dem Notiztitel wird eine eindeutige Nummer angehängt. Anderenfalls wird der Standardtitel verwendet.</p></item>
     </list>
   </section>

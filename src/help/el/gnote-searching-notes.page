@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="searching-notes" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <desc>Αναζήτηση σημειώσεων</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Εξερεύνηση σημειώσεων</title>
+
+  <p>Το κυρίως παράθυρο του <app>Gnote</app> εμφανίζει μια επισκόπηση όλων των σημειώσεων σας. Από προεπιλογή, το παράθυρο θα εμφανίσει σημειώσεις με τη σειρά με την οποία τροποποιήθηκαν τελευταία. Πατήστε τις επικεφαλίδες στήλης <gui>Σημείωση</gui> ή <gui>Τελευταία αλλαγμένο</gui> για να αλλάξετε τη σειρά ταξινόμησης. Πατήστε μια επικεφαλίδα στήλης δεύτερη φορά για να εναλλάξετε μεταξύ αύξουσας και φθίνουσας σειράς.</p>
+  <p>Μπορείτε να βρείτε συγκεκριμένες σημειώσεις πατώντας το κουμπί αναζήτησης και εισάγοντας κείμενο στο πεδίο αναζήτησης που εμφανίζεται. Ο κατάλογος σημειώσεων θα ενημερωθεί αυτόματα έτσι ώστε να συμπεριλάβει μόνο εκείνες τις σημειώσεις που ταιριάζουν με το κείμενο αναζήτησης. Αν ο κατάλογος σημειώσεων έχει εστίαση, μπορείτε να πληκτρολογήσετε απλά το κείμενο εκεί, η αναζήτηση θα ενεργοποιηθεί αυτόματα.</p>
+  <p>Για να ανοίξετε μια σημείωση, κάντε οποιοδήποτε από τα ακόλουθα:</p>
+  <list>
+    <item><p>Διπλό κλικ σε μία σημείωση.</p></item>
+    <item><p>Δεξιοπατήστε στον κατάλογο σημειώσεων και επιλέξτε <gui>Άνοιγμα</gui> από το μενού περιεχομένων. Αυτό θα ανοίξει όλες τις επιλεγμένες σημειώσεις, καθεμιά τους στο δικό της παράθυρο.</p></item>
+    <item><p>Δεξιοπατήστε στον κατάλογο σημειώσεων και επιλέξτε <gui>Άνοιγμα σε νέο παράθυρο</gui> από το μενού περιεχομένων. Αυτό θα ανοίξει κάθε επιλεγμένη σημείωση σε ένα νέο παράθυρο, αφήνοντας το αρχικό παράθυρο όπως είναι.</p></item>
+    <item><p>Επιλέξτε μία ή περισσότερες σημειώσεις σε έναν κατάλογο και πατήστε <keyseq><key>Ctrl</key><key>0</key></keyseq>.</p></item>
+    <item><p>Αν το εικονίδιο κατάστασης είναι ενεργό, πατήστε το και επιλέξτε μια σημείωση από το μενού που εμφανίζεται. Αυτό το μενού περιορίζεται σε έναν συγκεκριμένο αριθμό σημειώσεων και περιλαμβάνει συνδεμένες και πρόσφατες ενημερωμένες σημειώσεις.</p></item>
+  </list>
+
+</page>

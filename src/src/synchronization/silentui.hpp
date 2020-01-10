@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2013 Aurimas Cernius
+ * Copyright (C) 2012-2014 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@
 #define _SYNCHRONIZATION_SILENTUI_HPP_
 
 
+#include "base/macros.hpp"
 #include "notemanager.hpp"
 #include "syncui.hpp"
 
@@ -34,20 +35,18 @@ namespace sync {
     : public SyncUI
   {
   public:
-    static SyncUI::Ptr create(NoteManager &);
+    static SyncUI::Ptr create(NoteManagerBase &);
   private:
-    explicit SilentUI(NoteManager &);
-    virtual void sync_state_changed(SyncState state);
-    virtual void note_synchronized(const std::string & noteTitle, NoteSyncType type);
-    virtual void note_conflict_detected(NoteManager & manager,
-                                        const Note::Ptr & localConflictNote,
+    explicit SilentUI(NoteManagerBase &);
+    virtual void sync_state_changed(SyncState state) override;
+    virtual void note_synchronized(const std::string & noteTitle, NoteSyncType type) override;
+    virtual void note_conflict_detected(const Note::Ptr & localConflictNote,
                                         NoteUpdate remoteNote,
-                                        const std::list<std::string> & noteUpdateTitles);
-    virtual void present_ui();
+                                        const std::list<std::string> & noteUpdateTitles) override;
+    virtual void present_ui() override;
     void on_connecting();
     void on_idle();
 
-    NoteManager & m_manager;
     bool m_ui_disabled;
   };
 

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="working-with-notebooks" xml:lang="el">
+
+
+  <info>
+    <link type="guide" xref="index#organizing-notes"/>
+    <desc>Οργάνωση των σημειώσεων σας</desc>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Εργασία με σημειωματάρια</title>
+    <p>Τα σημειωματάρια σας επιτρέπουν να ομαδοποιείτε σχετιζόμενες σημειώσεις μαζί. Μπορείτε να προσθέσετε μία σημείωση σε ένα σημειωματάριο στο κυρίως παράθυρο ή στην προβολή επεξεργασίας σημείωσης.</p>
+
+    <section id="creating-notebooks"><title>Δημιουργία σημειωματάριων</title>
+      <p>Για να δημιουργήσετε ένα νέο σημειωματάριο:</p>
+      <steps>
+        <item>
+          <p>Πατήστε στο μενού εφαρμογών και επιλέξτε <gui>Νέο σημειωματάριο</gui>.</p>
+        </item>
+        <item>
+          <p>Εισάγετε όνομα για το νέο σημειωματάριο.</p>
+        </item>
+      </steps>
+      <p>Εναλλακτικά:</p>
+      <steps>
+        <item>
+          <p>Στην επισκόπηση σημείωσης, κάντε δεξί κλικ στο αριστερό παράθυρο και επιλέξτε <gui>Νέο...</gui>.</p>
+        </item>
+        <item>
+          <p>Εισάγετε όνομα για το νέο σημειωματάριο.</p>
+        </item>
+      </steps>
+      <figure>
+        <title>Το νέο σημειωματάριο από το μενού περιεχομένων</title>
+        <media type="image" src="figures/add-notebook-search.png" mime="image/png" style="right">
+        <p>Νέο σημειωματάριο</p>
+      </media>
+      </figure>  
+    </section>
+
+    <section id="adding-notes-to-a-notebook"><title>Προσθήκη σημειώσεων σε σημειωματάριο</title>
+      <p>Μπορείτε να προσθέσετε μια σημείωση σε ένα σημειωματάριο από το κυρίως παράθυρο ή άμεσα μέσα σε μια σημείωση.</p>
+      <p>Για να προσθέσετε μια σημείωση σε ένα σημειωματάριο από το κυρίως παράθυρο, κάντε ένα από τα ακόλουθα:</p>
+      <list>
+        <item><p>Μεταφέρτε τις σημειώσεις σε ένα σημειωματάριο στα αριστερά χρησιμοποιώντας το ποντίκι.</p></item>
+        <item><p>Πατήστε σε ένα σημειωματάριο, δεξιοπατήστε στον κατάλογο σημειώσεων και επιλέξτε <gui>Νέο</gui> από το μενού περιεχομένων. Θα δημιουργηθεί μια νέα σημείωση και θα προστεθεί στο σημειωματάριο.</p></item>
+      </list>
+      <p>Καθώς πληκτρολογείτε μια σημείωση, μπορείτε να την προσθέσετε απευθείας σε ένα υπάρχον σημειωματάριο χρησιμοποιώντας το μενού <guiseq><gui>Ενέργειες</gui><gui>Σημειωματάριο</gui></guiseq>.</p>
+      <figure>
+        <title>Προσθήκη σημειώσεων σε σημειωματάριο</title>
+        <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>Προσθήκες στο σημειωματάριο.</p></media>
+      </figure>
+      <p>Για να αφαιρέσετε μια σημείωση από ένα σημειωματάριο, χρησιμοποιήστε ένα από τα ακόλουθα:</p>
+      <list>
+        <item><p>Μετακινήστε τη σημείωση στο <gui>Αταξινόμητες σημειώσεις</gui> στο κυρίως παράθυρο.</p></item>
+        <item><p>Επιλέξτε <gui>Χωρίς σημειωματάριο</gui> από το μενού που εμφανίζεται όταν πατάτε <guiseq><gui>Ενέργειες</gui><gui>Σημειωματάριο</gui></guiseq> σε μια ανοικτή σημείωση.</p></item>
+      </list>
+    </section>
+
+    <section id="creating-notebook-templates"><title>Δημιουργία προτύπου</title>
+      <p>Μετά τη δημιουργία ενός σημειωματάριου, μπορείτε να δημιουργήσετε ένα πρότυπο για κάθε νέα σημείωση που δημιουργείτε σε αυτό το σημειωματάριο.</p>
+      <steps>
+        <item><p>Στο κυρίως παράθυρο, κάντε δεξί κλικ σε ένα σημειωματάριο και επιλέξτε <gui>Άνοιγμα προτύπου σημείωσης</gui>.</p>
+        </item>
+        <item><p>Αυτό θα ανοίξει ένα νέο πρότυπο σημείωσης. Οποιοδήποτε κείμενο πληκτρολογημένο σε αυτήν τη σημείωση θα εμφανιστεί σε όλες τις σημειώσεις που δημιουργήθηκαν σε αυτό το σημειωματάριο.</p></item>
+      </steps>
+      <figure>
+        <title>Δημιουργία προτύπου</title>
+        <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Πρότυπο σημειωματαρίου.</p></media>
+      </figure>
+      <p>Για περισσότερα, δείτε <link xref="gnote-template-notes"/>.</p>
+    </section>
+
+  <section id="deleting-a-notebook"><title>Διαγραφή σημειωματάριου</title>
+    <p>Με τη διαγραφή ενός σημειωματάριου οι σημειώσεις που βρίσκονται μέσα σε αυτό δε θα διαγραφούν. Μετά τη διαγραφή ενός σημειωματάριου, οι σημειώσεις του δε θα συσχετιστούν με κανένα σημειωματάριο και θα εμφανιστούν στο <gui>Αταξινόμητες σημειώσεις</gui> στο κυρίως παράθυρο.</p>
+    <p>Για να διαγράψετε ένα σημειωματάριο, πηγαίνετε στο κυρίως παράθυρο και κάντε ένα από τα ακόλουθα:</p>
+    <list>
+      <item><p>Κάντε δεξί κλικ σε ένα σημειωματάριο και επιλέξτε <gui>Διαγραφή σημειωματαρίου</gui>.</p></item>
+      <item><p>Αφαιρέστε όλες τις σημειώσεις από ένα σημειωματάριο. Το σημειωματάριο θα αφαιρεθεί αυτόματα την επόμενη φορά που θα επανεκκινήσει το <app>Gnote</app>.</p></item>
+    </list>
+    <figure>
+      <title>Διαγραφή σημειώσεων από το κυρίως παράθυρο</title>
+        <media type="image" src="figures/delete-notebook.png" mime="image/png" style="right">
+          <p>Διαγραφή σημειωματάριου.</p>
+        </media>
+    </figure>
+  </section>
+
+  <section id="special-notebooks"><title>Ειδικά σημειωματάρια</title>
+    <p>Το <app>Gnote</app> έχει πολλά ειδικά σημειωματάρια:</p>
+    <list>
+      <item><p><gui>Ενεργό</gui>: σημειώσεις που έχουν ανοιχθεί στην τρέχουσα συνεδρία του <app>Gnote</app></p></item>
+      <item><p><gui>Όλα</gui>: όλες οι σημειώσεις εκτός από τα πρότυπα</p></item>
+      <item><p><gui>Σημαντικά</gui>: οι σημειώσεις που σημειώθηκαν ως σημαντικές</p></item>
+      <item><p><gui>Αταξινόμητα</gui>: όλες οι σημειώσεις που δεν είναι σε ένα σημειωματάριο που δημιουργήθηκε από τον χρήστη</p></item>
+    </list>
+  </section>
+
+</page>

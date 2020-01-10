@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2013 Aurimas Cernius
+ * Copyright (C) 2012-2013,2015-2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -29,9 +29,8 @@
 #include <giomm/menu.h>
 #include <giomm/simpleaction.h>
 #include <gtkmm/action.h>
-#include <gtkmm/uimanager.h>
-#include <gdkmm/pixbuf.h>
 
+#include "base/macros.hpp"
 #include "iactionmanager.hpp"
 
 namespace gnote {
@@ -42,48 +41,28 @@ class ActionManager
 public:
   ActionManager();
 
-  virtual Glib::RefPtr<Gtk::Action> operator[](const std::string & n) const
-    {
-      return find_action_by_name(n);
-    }
-  virtual Gtk::Widget * get_widget(const std::string &n) const
-    {
-      return m_ui->get_widget(n);
-    }
-  void load_interface();
-  void get_placeholder_children(const std::string & p, std::list<Gtk::Widget*> & placeholders) const;
-  void populate_action_groups();
-  Glib::RefPtr<Gtk::Action> find_action_by_name(const std::string & n) const;
-  virtual const Glib::RefPtr<Gtk::UIManager> & get_ui()
-    {
-      return m_ui;
-    }
-  virtual Glib::RefPtr<Gio::SimpleAction> get_app_action(const std::string & name) const;
+  virtual Glib::RefPtr<Gio::SimpleAction> get_app_action(const std::string & name) const override;
   const std::vector<Glib::RefPtr<Gio::SimpleAction> > & get_app_actions() const
     {
       return m_app_actions;
     }
-  virtual Glib::RefPtr<Gio::SimpleAction> add_app_action(const std::string & name);
+  virtual Glib::RefPtr<Gio::SimpleAction> add_app_action(const std::string & name) override;
   virtual void add_app_menu_item(int section, int order, const std::string & label,
-                                 const std::string & action_def);
+                                 const std::string & action_def) override;
   Glib::RefPtr<Gio::Menu> get_app_menu() const;
-  virtual void add_main_window_search_action(const Glib::RefPtr<Gtk::Action> & action, int order);
-  virtual void remove_main_window_search_action(const std::string & name);
-  virtual std::vector<Glib::RefPtr<Gtk::Action> > get_main_window_search_actions();
-  virtual void add_main_window_note_action(const Glib::RefPtr<Gtk::Action> & action, int order);
-  virtual void remove_main_window_note_action(const std::string & name);
-  virtual std::vector<Glib::RefPtr<Gtk::Action> > get_main_window_note_actions();
+  virtual void register_main_window_action(const Glib::ustring & action, const Glib::VariantType *state_type,
+    bool modifying = true) override;
+  virtual std::map<Glib::ustring, const Glib::VariantType*> get_main_window_actions() const override;
+  virtual bool is_modifying_main_window_action(const Glib::ustring & action) const override;
+
+  virtual void register_main_window_search_callback(const std::string & id, const Glib::ustring & action,
+                                                    sigc::slot<void, const Glib::VariantBase&> callback) override;
+  virtual void unregister_main_window_search_callback(const std::string & id) override;
+  virtual std::map<Glib::ustring, sigc::slot<void, const Glib::VariantBase&>> get_main_window_search_callbacks() override;
 private:
   void make_app_actions();
   void make_app_menu_items();
   Glib::RefPtr<Gio::Menu> make_app_menu_section(int section) const;
-  void add_main_window_action(std::map<int, Glib::RefPtr<Gtk::Action> > & actions,
-                              const Glib::RefPtr<Gtk::Action> & action, int order);
-  void remove_main_window_action(std::map<int, Glib::RefPtr<Gtk::Action> > & actions, const std::string & name);
-  std::vector<Glib::RefPtr<Gtk::Action> > get_main_window_actions(std::map<int, Glib::RefPtr<Gtk::Action> > & actions);
-
-  Glib::RefPtr<Gtk::UIManager> m_ui;
-  Glib::RefPtr<Gtk::ActionGroup> m_main_window_actions;
 
   std::vector<Glib::RefPtr<Gio::SimpleAction> > m_app_actions;
 
@@ -109,8 +88,9 @@ private:
   };
   typedef std::multimap<int, AppMenuItem> AppMenuItemMultiMap;
   AppMenuItemMultiMap m_app_menu_items;
-  std::map<int, Glib::RefPtr<Gtk::Action> > m_main_window_search_actions;
-  std::map<int, Glib::RefPtr<Gtk::Action> > m_main_window_note_actions;
+  std::map<Glib::ustring, const Glib::VariantType*> m_main_window_actions;
+  std::vector<Glib::ustring> m_non_modifying_actions;
+  std::map<std::string, std::pair<Glib::ustring, sigc::slot<void, const Glib::VariantBase&>>> m_main_window_search_actions;
 };
 
 

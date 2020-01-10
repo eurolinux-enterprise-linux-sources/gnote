@@ -4,21 +4,26 @@
   <info>
     <link type="guide" xref="index#managing-notes"/>
     <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
-    <desc>Urejanje vsebine sporočilc</desc>
+    <desc xml:lang="en_GB">Editing note contents</desc>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011-2012</years>
+      <years xml:lang="en_GB">2011-2013</years>
+    </credit>
+    <credit type="editor">
+      <name xml:lang="en_GB">Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years xml:lang="en_GB">2013</years>
     </credit>
   </info>
 
   <title>Urejanje sporočilc</title>
 
-    <p xml:lang="en_GB">Notes are opened in the same window by replacing search with note content.</p>
-    <p xml:lang="en_GB">At the top of the note there are two toolbars. The above one has items for going back to search mode and for creating new note. The lower one contains several buttons and text. Directly below this toolbar is the content area of the note.</p>
+    <p xml:lang="en_GB">When you open a note, <app>Gnote</app> will replace the note overview with the note's contents.</p>
+    <p xml:lang="en_GB">Toolbar at the top of the window will now contain note specific items in it. Bellow toolbar is the note's content area.</p>
     <figure>
       <title xml:lang="en_GB"><app>Gnote</app> window displaying note</title>
       <desc xml:lang="en_GB"><app>Gnote</app> Note</desc>
@@ -27,40 +32,39 @@
       </media>
     </figure>
 
-    <p>Sporočilce lahko uredite s klikom na področje vsebino in uporabite tipkovnico za dodajanje in odstranjevanje vsebine. Prva vrstica je naslov sporočilca. Privzeto je v njem besedilo "Novo sporočilce N". Naslov lahko spremenite s klikom na področje vsebine v prvi vrstici in z uporabo tipkovnice za spremembo naslova. Privzeto je žarišče ob ustvarjanju novega sporočilca na področju vsebine, zato lahko nemudoma začnete z urejanjem sporočilca.</p>
-    <p>Oblikovanje besedila v sporočilcih lahko izvedete z gumbom <gui>Besedilo</gui>. Gumb <gui>Besedilo</gui> bo prikazal meni z več možnostmi med katerimi lahko izberete. Sledi razlaga vsake od možnosti.</p>
+    <p xml:lang="en_GB">To edit the note, click in the content area and type. The first line is considered the title of the note. By default this is populated with the text "New Note (number)". To change the title, click on the first line and use the keyboard to change the title.</p>
+    <p xml:lang="en_GB">Use the <gui>Text</gui> button to format text within your notes. This button displays a menu with several commands:</p>
 
     <list>
       <item><title>Razveljavi</title>
-        <p>Podporo za “Razveljavi“ v Gnote dobite skozi ta predmet menija. Zmožnost razveljavi vam omogoča povrnitev predhodnih sprememb sporočilc, ki ste jih naredili med trenutno sejo. Za razveljavitev vaše zadnje spremembe s tipkovnico uporabite tipkovno bližnjico <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
+        <p xml:lang="en_GB">The <gui>Undo</gui> command reverts changes made to your note during the current session. To undo using the keyboard, press <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
       </item>
       <item><title>Uveljavi</title>
-        <p>Zmožnost “Uveljavi“ se uporablja za povrnitev sprememb, ki so bile odstranjene z zmožnostjo “Razveljavi“. Za uveljavitev vaše zadnje spremembe s tipkovnico uporabite tipkovno bližnjico <keyseq><key>Shift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
+        <p xml:lang="en_GB">The <gui>Redo</gui> command puts back changes that were removed using the <gui>Undo</gui> feature. To redo your last change using the keyboard, press <keyseq><key>Shift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
       </item>
       <item><title>Krepko</title>
-        <p>Za krepko besedilo v sporočilcu najprej izberite besedilo, ki ga želite spremeniti. Nato izberite možnost Krepko iz menija <gui>Besedilo</gui>. Po izbiri besedila lahko uporabite tudi tipkovno bližnjico <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
+        <p xml:lang="en_GB">To make text bold, select it and then select the <gui>Bold</gui> command from the <gui>Text</gui> menu or press <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
       </item>
       <item><title>Ležeče</title>
-        <p>Za ležeče besedilo v sporočilcu najprej izberite besedilo, ki ga želite spremeniti. Nato izberite možnost Ležeče iz menija Besedilo. Po izbiri besedila lahko uporabite tudi tipkovno bližnjico <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
+        <p xml:lang="en_GB">To make text italic, select it and then select the <gui>Italic </gui> command from the <gui>Text</gui> menu, or press <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
      </item>
      <item><title>Prečrtano</title>
-       <p>Slog prečrtaj bo skozi izbrano besedilo postavil črto. Za dodajanje prečrtanja izberite besedilo in nato izberite možnost <gui>Prečrtaj</gui> iz menija <gui>Besedilo</gui>. Po izbiri besedila lahko uporabite tudi tipkovno bližnjico <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
+       <p xml:lang="en_GB">The strikeout style will put a line through the selected text. To add a strikeout, select text and then select the <gui>Strikeout</gui> command from the <gui>Text</gui> menu or press <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
      </item>
      <item><title>Poudarjeno</title>
-       <p>Slog poudarjanje bo okoli izbranega besedila nastavil rumeno ozadje. Za dodajanje poudarjanja izberite besedilo in izberite možnost <gui>Poudari</gui> iz menija <gui>Besedilo</gui> Za poudarjanje lahko tudi izberete besedilo in uporabite tipkovno bližnjico <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
+       <p xml:lang="en_GB">The highlight style will put a different background around the selected text. To add a highlight, select text and then select the <gui>Highlight</gui> command from the <gui>Text</gui> menu or press <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
      </item>
      <item><title>Velikost pisave</title>
-       <p>V tem delu menija so štiri možnosti: majhna, običajna, velika in ogromna. Vsaka od teh možnosti predstavlja velikost pisave za uporabo za izbrano besedilo v sporočilcu. Za spremembo velikosti pisave izberite besedilo in nato izberite eno od možnosti  <gui>Majhna</gui>, <gui>Običajna</gui>, <gui>Velika</gui>, <gui>Ogromna</gui> iz menija Besedilo.</p>
+       <p xml:lang="en_GB">There are actually four options in this part of the menu: Small, Normal, Large, and Huge. Each option represents a font size to use for the selected text. To modify the font size, select text and then select <gui>Small</gui>, <gui>Normal</gui>, <gui>Large</gui>, or <gui>Huge</gui>.</p>
      </item>
      <item><title>Vrstične oznake</title>
-       <p>Izberite možnost Vrstični seznami iz menija Besedilo za začetek ali končanje vrstičnega seznama. V primeru da je kazalec na vrstičnem seznamu, bosta omogočeni možnosti <gui>Povečaj zamik</gui> ali <gui>Zmanjšaj zamik</gui>.</p>
-       <p>Ko je kazalec v vrstici vrstičnega seznama, izberite možnost <gui>Povečaj zamik</gui> za zamik trenutne vrstice desno ali <gui>Zmanjšaj zamik</gui> za zamik trenutne vrstice levo.</p>
-       <p>Za več podrobnosti o vrstičnih oznakah si oglejte <link xref="bulleted-lists"/>.</p>
-     </item>
-     <item><title>Najdi v tem sporočilcu</title>
-       <p>Uporabite to za iskanje besedila v trenutnem sporočilcu. Majhna vrstica iskanja se bo pojavila na dnu sporočilca. Za odprtje vrstice iskanja s tipkovnico uporabite običajno tipkovno bližnjico <keyseq><key>Ctrl</key><key>F</key></keyseq>. Vnesite besedilo za iskanje. Po vnosu besedila, bodo zadetki poudarjeni. Kliknite <gui>Naslednji</gui> za poudarjanje naslednjega in <gui>Predhodni</gui> za poudarjanje predhodnega zadetka. Za zaprtje vrstice iskanja kliknite X (gumb Zapri) daleč levo ali pritisnite tipko <key>Esc</key>.</p>
+       <p xml:lang="en_GB">Select the <gui>Bullets</gui> command from the Text menu to begin or end a bulleted list. If the cursor is inside a bulleted list, the <gui>Increase Indent</gui> and <gui>Decrease Indent</gui> options will be enabled.</p>
+       <p xml:lang="en_GB">With the cursor on a bulleted list line, select the <gui>Increase Indent</gui> command to shift the current line to the right or the <gui>Decrease Indent</gui> command to shift to the left.</p>
+       <p xml:lang="en_GB">For more information on bullets, see <link xref="bulleted-lists"/>.</p>
      </item>
    </list>
+   <p xml:lang="en_GB">The toolbar at the top of note has search button. Use it to search for text within the current note. A small find bar will appear above the note. To open the find bar using the keyboard, press <keyseq><key>Ctrl</key><key>F</key></keyseq>. Enter the text to find and press <key>Enter</key>. Matches will be highlighted. Click <gui>Next</gui> to highlight the next match and place the cursor there. Click <gui>Previous</gui> to move to the previous match.
+To close the find bar, click the search button again or press the <key>Escape</key> key.</p>
 
    <section id="note-content" style="2column">
      <title>Vsebina bogatega sporočilca</title>

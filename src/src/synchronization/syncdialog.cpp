@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2013 Aurimas Cernius
+ * Copyright (C) 2012-2014,2016 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,8 +22,8 @@
 
 #include <boost/bind.hpp>
 #include <boost/format.hpp>
-#include <boost/lexical_cast.hpp>
 #include <glibmm/i18n.h>
+#include <gtkmm/radiobutton.h>
 #include <gtkmm/scrolledwindow.h>
 #include <gtkmm/stock.h>
 #include <gtkmm/treeview.h>
@@ -71,27 +71,29 @@ public:
       std::string suggestedRenameBase = existingNote->get_title() + old;
       std::string suggestedRename = suggestedRenameBase;
       for(int i = 1; !is_note_title_available(suggestedRename); i++) {
-        suggestedRename = suggestedRenameBase + " " + boost::lexical_cast<std::string>(i);
+        suggestedRename = suggestedRenameBase + " " + TO_STRING(i);
       }
 
-      Gtk::VBox *outerVBox = manage(new Gtk::VBox(false, 12));
+      Gtk::Grid *outerVBox = manage(new Gtk::Grid);
+      outerVBox->set_row_spacing(8);
       outerVBox->set_border_width(12);
-      outerVBox->set_spacing(8);
 
-      Gtk::HBox *hbox = manage(new Gtk::HBox(false, 8));
+      Gtk::Grid *hbox = manage(new Gtk::Grid);
+      hbox->set_column_spacing(8);
       Gtk::Image *image = manage(new Gtk::Image);
       image->set(Gtk::Stock::DIALOG_WARNING, Gtk::IconSize(Gtk::ICON_SIZE_DIALOG));
       image->show();
-      hbox->pack_start(*image, false, false, 0);
+      hbox->attach(*image, 0, 0, 1, 1);
 
-      Gtk::VBox *vbox = manage(new Gtk::VBox(false, 8));
+      Gtk::Grid *vbox = manage(new Gtk::Grid);
+      vbox->set_row_spacing(8);
 
       m_header_label = manage(new Gtk::Label);
       m_header_label->set_use_markup(true);
       m_header_label->property_xalign() = 0;
       m_header_label->set_use_underline(false);
       m_header_label->show();
-      vbox->pack_start(*m_header_label, false, false, 0);
+      vbox->attach(*m_header_label, 0, 0, 1, 1);
 
       m_message_label = manage(new Gtk::Label);
       m_message_label->property_xalign() = 0;
@@ -99,28 +101,28 @@ public:
       m_message_label->set_line_wrap(true);
       m_message_label->property_wrap() = true;
       m_message_label->show();
-      vbox->pack_start(*m_message_label, false, false, 0);
+      vbox->attach(*m_message_label, 0, 1, 1, 1);
 
       vbox->show();
-      hbox->pack_start(*vbox, true, true, 0);
+      vbox->set_hexpand(true);
+      hbox->attach(*vbox, 1, 0, 1, 1);
 
       hbox->show();
-      outerVBox->pack_start(*hbox);
+      outerVBox->attach(*hbox, 0, 0, 1, 1);
       get_vbox()->pack_start(*outerVBox);
 
-      Gtk::HBox *renameHBox = manage(new Gtk::HBox);
+      Gtk::Grid *renameHBox = manage(new Gtk::Grid);
       renameRadio = manage(new Gtk::RadioButton(m_radio_group, _("Rename local note:")));
       renameRadio->signal_toggled().connect(sigc::mem_fun(*this, &SyncTitleConflictDialog::radio_toggled));
-      Gtk::VBox *renameOptionsVBox = manage(new Gtk::VBox);
+      Gtk::Grid *renameOptionsVBox = manage(new Gtk::Grid);
 
       renameEntry = manage(new Gtk::Entry);
       renameEntry->set_text(suggestedRename);
       renameEntry->signal_changed().connect(sigc::mem_fun(*this, &SyncTitleConflictDialog::rename_entry_changed));
       renameUpdateCheck = manage(new Gtk::CheckButton(_("Update links in referencing notes")));
-      renameOptionsVBox->pack_start(*renameEntry);
-      //renameOptionsVBox->pack_start(*renameUpdateCheck); // This seems like a superfluous option
-      renameHBox->pack_start(*renameRadio);
-      renameHBox->pack_start(*renameOptionsVBox);
+      renameOptionsVBox->attach(*renameEntry, 0, 0, 1, 1);
+      renameHBox->attach(*renameRadio, 0, 0, 1, 1);
+      renameHBox->attach(*renameOptionsVBox, 1, 0, 1, 1);
       get_vbox()->pack_start(*renameHBox);
 
       deleteExistingRadio = manage(new Gtk::RadioButton(m_radio_group, _("Overwrite local note")));
@@ -217,39 +219,44 @@ private:
 
 
 
-SyncDialog::Ptr SyncDialog::create(NoteManager & m)
+SyncDialog::Ptr SyncDialog::create(NoteManagerBase & m)
 {
   return SyncDialog::Ptr(new SyncDialog(m));
 }
 
 
-SyncDialog::SyncDialog(NoteManager & manager)
-  : m_manager(manager)
+SyncDialog::SyncDialog(NoteManagerBase & manager)
+  : SyncUI(manager)
 {
   m_progress_bar_timeout_id = 0;
 
   set_size_request(400, -1);
 
   // Outer box. Surrounds all of our content.
-  Gtk::VBox *outerVBox = manage(new Gtk::VBox(false, 12));
+  Gtk::Grid *outerVBox = manage(new Gtk::Grid);
+  outerVBox->set_row_spacing(12);
   outerVBox->set_border_width(6);
   outerVBox->show();
+  int outerVBoxRow = 0;
   get_vbox()->pack_start(*outerVBox, true, true, 0);
 
   // Top image and label
-  Gtk::HBox *hbox = manage(new Gtk::HBox(false, 12));
+  Gtk::Grid *hbox = manage(new Gtk::Grid);
+  hbox->set_column_spacing(12);
   hbox->show();
-  outerVBox->pack_start(*hbox, false, false, 0);
+  outerVBox->attach(*hbox, 0, outerVBoxRow++, 1, 1);
 
   m_image = manage(new Gtk::Image(IconManager::obj().get_icon(IconManager::GNOTE, 48)));
   m_image->set_alignment(0, 0);
   m_image->show();
-  hbox->pack_start(*m_image, false, false, 0);
+  hbox->attach(*m_image, 0, 0, 1, 1);
 
   // Label header and message
-  Gtk::VBox *vbox = manage(new Gtk::VBox(false, 6));
+  Gtk::Grid *vbox = manage(new Gtk::Grid);
+  vbox->set_row_spacing(6);
   vbox->show();
-  hbox->pack_start(*vbox, true, true, 0);
+  vbox->set_hexpand(true);
+  hbox->attach(*vbox, 1, 0, 1, 1);
 
   m_header_label = manage(new Gtk::Label);
   m_header_label->set_use_markup(true);
@@ -259,7 +266,7 @@ SyncDialog::SyncDialog(NoteManager & manager)
   m_header_label->set_use_underline(false);
   m_header_label->set_line_wrap(true);
   m_header_label->show();
-  vbox->pack_start(*m_header_label, false, false, 0);
+  vbox->attach(*m_header_label, 0, 0, 1, 1);
 
   m_message_label = manage(new Gtk::Label);
   m_message_label->get_alignment(xalign, yalign);
@@ -268,13 +275,13 @@ SyncDialog::SyncDialog(NoteManager & manager)
   m_message_label->set_line_wrap(true);
   m_message_label->set_size_request(250, -1);
   m_message_label->show();
-  vbox->pack_start(*m_message_label, false, false, 0);
+  vbox->attach(*m_message_label, 0, 1, 1, 1);
 
   m_progress_bar = manage(new Gtk::ProgressBar);
   m_progress_bar->set_orientation(Gtk::ORIENTATION_HORIZONTAL);
   m_progress_bar->set_pulse_step(0.3);
   m_progress_bar->show();
-  outerVBox->pack_start(*m_progress_bar, false, false, 0);
+  outerVBox->attach(*m_progress_bar, 0, outerVBoxRow++, 1, 1);
 
   m_progress_label = manage(new Gtk::Label);
   m_progress_label->set_use_markup(true);
@@ -284,17 +291,18 @@ SyncDialog::SyncDialog(NoteManager & manager)
   m_progress_label->set_line_wrap(true);
   m_progress_label->property_wrap() = true;
   m_progress_label->show();
-  outerVBox->pack_start(*m_progress_label, false, false, 0);
+  outerVBox->attach(*m_progress_label, 0, outerVBoxRow++, 1, 1);
 
   // Expander containing TreeView
   m_expander = manage(new Gtk::Expander(_("Details")));
   m_expander->set_spacing(6);
   g_signal_connect(m_expander->gobj(), "activate", G_CALLBACK(SyncDialog::on_expander_activated), this);
   m_expander->show();
-  outerVBox->pack_start(*m_expander, true, true, 0);
+  m_expander->set_vexpand(true);
+  outerVBox->attach(*m_expander, 0, outerVBoxRow++, 1, 1);
 
   // Contents of expander
-  Gtk::VBox *expandVBox = manage(new Gtk::VBox);
+  Gtk::Grid *expandVBox = manage(new Gtk::Grid);
   expandVBox->show();
   m_expander->add(*expandVBox);
 
@@ -303,7 +311,9 @@ SyncDialog::SyncDialog(NoteManager & manager)
   scrolledWindow->set_shadow_type(Gtk::SHADOW_IN);
   scrolledWindow->set_size_request(-1, 200);
   scrolledWindow->show();
-  expandVBox->pack_start(*scrolledWindow, true, true, 0);
+  scrolledWindow->set_hexpand(true);
+  scrolledWindow->set_vexpand(true);
+  expandVBox->attach(*scrolledWindow, 0, 0, 1, 1);
 
   // Create model for TreeView
   // Work-around for GCC versions < 4.3 (http://gcc.gnu.org/bugs/#cxx_rvalbind)
@@ -412,9 +422,9 @@ void SyncDialog::on_row_activated(const Gtk::TreeModel::Path & path, Gtk::TreeVi
   std::string noteTitle;
   iter->get_value(0, noteTitle);
 
-  Note::Ptr note = m_manager.find(noteTitle);
+  NoteBase::Ptr note = m_manager.find(noteTitle);
   if(note != 0) {
-    present_note(note);
+    present_note(static_pointer_cast<Note>(note));
   }
 }
 
@@ -584,8 +594,7 @@ void SyncDialog::note_synchronized(const std::string & noteTitle, NoteSyncType t
 }
 
 
-void SyncDialog::note_conflict_detected(NoteManager & manager,
-                                        const Note::Ptr & localConflictNote,
+void SyncDialog::note_conflict_detected(const Note::Ptr & localConflictNote,
                                         NoteUpdate remoteNote,
                                         const std::list<std::string> & noteUpdateTitles)
 {
@@ -599,7 +608,6 @@ void SyncDialog::note_conflict_detected(NoteManager & manager,
   // and then rethrown in the synchronization thread.
   utils::main_context_call(boost::bind(
     sigc::mem_fun(*this, &SyncDialog::note_conflict_detected_),
-    manager,
     localConflictNote,
     remoteNote,
     noteUpdateTitles,
@@ -616,7 +624,7 @@ void SyncDialog::note_conflict_detected(NoteManager & manager,
 }
 
 
-void SyncDialog::note_conflict_detected_(NoteManager & manager,
+void SyncDialog::note_conflict_detected_(
   const Note::Ptr & localConflictNote,
   NoteUpdate remoteNote,
   const std::list<std::string> & noteUpdateTitles,
@@ -659,7 +667,7 @@ void SyncDialog::note_conflict_detected_(NoteManager & manager,
         }
         // No need to delete if sync will overwrite
         if(localConflictNote->id() != remoteNote.m_uuid) {
-          manager.delete_note(localConflictNote);
+          m_manager.delete_note(localConflictNote);
         }
         break;
       case RENAME_EXISTING_AND_UPDATE:
@@ -719,7 +727,7 @@ void SyncDialog::rename_note(const Note::Ptr & note, const std::string & newTitl
 
   // Create note with old XmlContent just in case GetCompleteNoteXml failed
   DBG_OUT("RenameNote: about to create %s", newTitle.c_str());
-  Note::Ptr renamedNote = m_manager.create(newTitle, newContent);
+  Note::Ptr renamedNote = static_pointer_cast<Note>(m_manager.create(newTitle, newContent));
   if(newCompleteContent != "") {// TODO: Anything to do if it is null?
     try {
       renamedNote->load_foreign_note_xml(newCompleteContent, OTHER_DATA_CHANGED);
@@ -733,9 +741,7 @@ void SyncDialog::rename_note(const Note::Ptr & note, const std::string & newTitl
 
 void SyncDialog::present_note(const Note::Ptr & note)
 {
-  MainWindow & window = IGnote::obj().get_window_for_note();
-  window.present_note(note);
-  window.present();
+  MainWindow::present_in(IGnote::obj().get_window_for_note(), note);
 }
 
 }

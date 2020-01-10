@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011,2013 Aurimas Cernius
+ * Copyright (C) 2011,2013-2014 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -39,13 +39,13 @@ namespace gnote {
   Search::ResultsPtr Search::search_notes(const std::string & query, bool case_sensitive, 
                                   const notebooks::Notebook::Ptr & selected_notebook)
   {
-    std::string search_text = query;
+    Glib::ustring search_text = query;
     if(!case_sensitive) {
-      search_text = sharp::string_to_lower(search_text);
+      search_text = search_text.lowercase();
     }
 
     std::vector<std::string> words;
-    Search::split_watching_quotes(words, search_text);
+    Search::split_watching_quotes(words, std::string(search_text));
 
     // Used for matching in the raw note XML
     std::vector<std::string> encoded_words; 
@@ -55,9 +55,8 @@ namespace gnote {
       // Skip over notes that are template notes
     Tag::Ptr template_tag = ITagManager::obj().get_or_create_system_tag(ITagManager::TEMPLATE_NOTE_SYSTEM_TAG);
 
-    for(Note::List::const_iterator iter = m_manager.get_notes().begin();
-        iter != m_manager.get_notes().end(); ++iter) {
-      const Note::Ptr & note(*iter);
+    FOREACH(const NoteBase::Ptr & iter, m_manager.get_notes()) {
+      Note::Ptr note(static_pointer_cast<Note>(iter));
 
       // Skip template notes
       if (note->contains_tag (template_tag)) {
@@ -66,7 +65,7 @@ namespace gnote {
         
       // Skip notes that are not in the
       // selected notebook
-      if (selected_notebook && !selected_notebook->contains_note (note))
+      if (selected_notebook && !selected_notebook->contains_note(note))
         continue;
         
       // First check the note's title for a match,
@@ -96,14 +95,14 @@ namespace gnote {
                                     const std::vector<std::string> & encoded_words,
                                     bool match_case)
   {
-    std::string note_text = note->xml_content();
+    Glib::ustring note_text = note->xml_content();
     if (!match_case) {
-      note_text = sharp::string_to_lower(note_text);
+      note_text = note_text.lowercase();
     }
 
     for(std::vector<std::string>::const_iterator iter = encoded_words.begin();
         iter != encoded_words.end(); ++iter) {
-      if (sharp::string_contains(note_text, *iter) ) {
+      if(note_text.find(*iter) != std::string::npos) {
         continue;
       }
       else {
@@ -114,14 +113,14 @@ namespace gnote {
     return true;
   }
 
-  int Search::find_match_count_in_note(std::string note_text, 
+  int Search::find_match_count_in_note(Glib::ustring note_text,
                                        const std::vector<std::string> & words,
                                        bool match_case)
   {
     int matches = 0;
 
     if (!match_case) {
-      note_text = sharp::string_to_lower(note_text);
+      note_text = note_text.lowercase();
     }
     
     for(std::vector<std::string>::const_iterator iter = words.begin();

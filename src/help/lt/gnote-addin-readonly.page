@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-read-only" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Pažymėti raštelius tik-skaitymui</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2013</years>
+    </credit>
+  </info>
+  
+  <title>Tik skaityti</title>
+    <p>Kai yra įdiegtas įskiepis <app>Tik skaityti</app>, <gui>veiksmų</gui> meniu atvertam rašteliui turės elementą <gui>Tik skaityti</gui>. Pažymėjus šį elementą raštelis bus paženklintas tik-skaitymui. Tai neleis pakeisti raštelio iki meniu elementas bus atžymėtas. Naudokite šią funkciją raštelių apsaugojimui nuo atsitiktinio pakeitimo.</p>
+
+</page>

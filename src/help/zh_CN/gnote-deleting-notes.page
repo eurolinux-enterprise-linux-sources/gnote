@@ -3,8 +3,8 @@
 
   <info>
     <link type="guide" xref="index#managing-notes"/>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
-    <desc>Deleting Notes</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
+    <desc>删除便笺</desc>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
@@ -13,14 +13,31 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Deleting Notes</title>
-  <p>You can delete note in few ways:</p>
+  <title>删除便笺</title>
+  <p>您可以使用下面方法删除便笺：</p>
   <list>
-    <item><p>Right click in the list of notes and select <gui>Delete</gui>. This will delete all selected notes.</p></item>
-    <item><p>When note is opened, press the <gui>Delete</gui> button on toolbar.</p></item>
+    <item><p>右键点击便笺列表，选择 <gui>删除</gui>。即可删除所有选择的便笺。</p></item>
+    <item><p>打开便笺时，点击工具栏上的<gui>删除</gui>按钮。</p></item>
   </list>
-  <p>In all cases a dialog box will pop up asking if you want to permanently delete the note and its contents. Click the <gui>Delete</gui> button to discard the note permanently, or <gui>Cancel</gui> to abort the process. Links to this note from other notes will still exist, but will re-create the note upon activation.</p>
+  <p>两种情况下程序都将弹出一个对话框询问您是否想要永久删除此便笺和它的内容。点击 <gui>Delete</gui> 按钮以以永久忽略便笺，或 <gui>Cancel</gui> 中止。从其它便笺链接到此便笺的链接仍然存在，但是将根据行为重新创建此便笺。</p>
 
 </page>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-read-only" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Κάντε τις σημειώσεις μόνο για ανάγνωση</desc>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+  
+  <title>Μόνο για ανάγνωση</title>
+    <p>Αν το πρόσθετο <app>Μόνο για ανάγνωση</app> είναι εγκατεστημένο, το στοιχείο <gui>Μόνο για ανάγνωση</gui> είναι παρόν στο μενού <gui>Ενέργειες</gui> για άνοιγμα σημείωσης. Αν αυτό το στοιχείο είναι σημειωμένο, η σημείωση είναι σημειωμένη ως μόνο για ανάγνωση. Αυτό δεν επιτρέπει αλλαγή της σημείωσης μέχρι να αποεπιλεγεί το στοιχείο μενού. Χρησιμοποιήστε το για να αποτρέψετε τις σημειώσεις από τυχαία τροποποίηση.</p>
+
+</page>

@@ -3,7 +3,7 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <link type="topic" xref="addins-preferences"/>
-    <desc>Plantilla de nota</desc>
+    <desc>Una nota «Hoy»</desc>
     <license><p>Licencia libre de documentación de GNU (GFDL), Versión 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,19 +11,24 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2013</mal:years>
+    </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Nicolás Satragno</mal:name>
       <mal:email>nsatragno@gnome.org</mal:email>
       <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Daniel Mustieles</mal:name>
-      <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -34,8 +39,8 @@
   </info>
 
   <title>Nota del día</title>
-  <p>Este complemento crea automáticamente una nota «Hoy» para que pueda anotar sus pensamientos diarios. La fecha actual se utiliza como base para el título de la nota. Por ejemplo, el título de una nota «Hoy» creada el 28 de febrero de 2007, sería: «Hoy: miércoles 28 de febrero de 2007».</p>
-  <p>Si no modifica una nota «Hoy», el complemento de Nota del día la eliminará automáticamente.</p>
-  <p>Para personalizar el contenido de la nota «Hoy» predeterminada, cree una nueva nota y escriba en el título de la nota «Hoy: Plantilla». Modifique el contenido de la nota plantilla a lo que desee. Cuando se creen nuevas notas «Hoy», se usarán los contenidos de su nota «Hoy: Plantilla».</p>
+  <p>Este complemento crea automáticamente una nota «Hoy» para que pueda anotar sus pensamientos diarios. Por ejemplo, el título de una nota «Hoy» creada el 28 de febrero de 2013, sería: «Hoy: jueves 28 de febrero de 2013».</p>
+  <p>Si no modifica una nota «Hoy», el complemento la eliminará automáticamente.</p>
+  <p>Para personalizar el contenido de la nota «Hoy» predeterminada, cree una nueva nota y cambie en el título de la nota a «Hoy: Plantilla». Modifique el contenido de la nota plantilla a lo que desee. Cuando se creen nuevas notas «Hoy», se usarán los contenidos de su nota «Hoy: Plantilla».</p>
 
 </page>

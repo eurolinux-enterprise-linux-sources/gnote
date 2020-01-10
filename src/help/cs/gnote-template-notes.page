@@ -10,15 +10,20 @@
       <name>Aurimas Cernius</name>
       <years>2011 – 2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Šablonové poznámky</title>
   <section id="usage">
     <title>Používání šablonové poznámky</title>
     <p>Šablonové poznámky se používají k definování obsahu pro nově vytvářené poznámky. Šablony jsou v podstatě stejné, jako běžné poznámky, pouze s pár vlastnostmi navíc.</p>
-    <p>Můžete si nadefinovat jednu šablonu pro celou aplikaci <app>Gnote</app> a po jedné pro každý sešit. Tyto šablony určují obsah každé nové poznámky, kterou vytvoříte:</p>
+    <p>Můžete si nadefinovat jednu hlavní šablonu a po jedné šabloně pro každý sešit. Tyto šablony určují obsah každé nové poznámky, kterou vytvoříte:</p>
     <list>
-      <item><p>Každá nová poznámka, kterou vytvoříte v rámci <app>Gnote</app>, ale ne v žádném ze sešitů, bude mít obsah hlavní šablony aplikace. Pokud taková šablona není vytvořena, použije se výchozí obsah.</p></item>
+      <item><p>Každá nová poznámka, kterou vytvoříte v rámci <app>Gnote</app>, ale ne v žádném ze sešitů, bude mít obsah hlavní šablony. Pokud hlavní šablona není vytvořena, použije se výchozí obsah.</p></item>
       <item><p>Každá nová poznámky, kterou vytvoříte v některém ze sešitů, bude mít obsah šablony sešitu, pokud pro něj šablona existuje. Jestliže šablona neexistuje, použije se obsah výchozí poznámky.</p></item>
     </list>
     <p>Když chcete vytvořit nebo změnit šablonovou poznámku:</p>

@@ -3,21 +3,38 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <link type="topic" xref="addins-preferences"/>
-    <desc>Template Note</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>一个“今日”便笺</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
   <title>今日便笺</title>
-  <p>This add-in automatically creates a "Today" note for jotting daily thoughts down. The current date is used as a basis for the title of the note. As an example, the title of a "Today" note created on February 28, 2007, would be, "Today: Wednesday, February 28 2007".</p>
-  <p>如果保持今日便笺未修改，今日便笺附加组件将自动删除此便笺。</p>
-  <p>要自定义“今日”便笺的默认内容，创建一个新便笺</p>
+  <p>This plugin automatically creates a "Today" note for jotting daily thoughts down.  As an example, a "Today" note created on February 28, 2013 would be called "Today: Thursday, February 28 2013".</p>
+  <p>If you leave a "Today" note unmodified, the plugin will automatically delete the note.</p>
+  <p>To customize the content of the default "Today" note, create a new note and change the title of the note to "Today: Template". Change the content of the template note to whatever you like. New "Today" notes will then use the content of your "Today: Template" note.</p>
 
 </page>

@@ -21,17 +21,14 @@
 /* Define to 1 if you have <boost/bind.hpp> */
 #undef HAVE_BOOST_BIND_HPP
 
-/* Define to 1 if you have <boost/cast.hpp> */
-#undef HAVE_BOOST_CAST_HPP
-
 /* Define to 1 if you have <boost/format.hpp> */
 #undef HAVE_BOOST_FORMAT_HPP
 
-/* Define to 1 if you have <boost/lexical_cast.hpp> */
-#undef HAVE_BOOST_LEXICAL_CAST_HPP
-
 /* Define to 1 if you have <boost/test/unit_test.hpp> */
 #undef HAVE_BOOST_TEST_UNIT_TEST_HPP
+
+/* define if the compiler supports basic C++11 syntax */
+#undef HAVE_CXX11
 
 /* Define to 1 if you have the `dcgettext' function. */
 #undef HAVE_DCGETTEXT
@@ -41,9 +38,6 @@
 
 /* Define if the GNU gettext() function is already present or preinstalled. */
 #undef HAVE_GETTEXT
-
-/* Define to 1 if glib version is at least 2.32 */
-#undef HAVE_GLIB_2_32
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
@@ -78,8 +72,13 @@
 /* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H
 
-/* Define to the sub-directory in which libtool stores uninstalled libraries.
-   */
+/* libgnote release. */
+#undef LIBGNOTE_RELEASE
+
+/* libgnote release. */
+#undef LIBGNOTE_VERSION_INFO
+
+/* Define to the sub-directory where libtool stores uninstalled libraries. */
 #undef LT_OBJDIR
 
 /* Name of package */

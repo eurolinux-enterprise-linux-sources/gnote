@@ -11,17 +11,22 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Saitai</title>
-    <p>Mygtukas <gui>Susieti</gui> leidžia esamame raštelyje sukurti saitą į naują raštelį. Pavyzdžiui, jei jūsų raštelis turi frazę „baigiamasis egzaminas“, galite pažymėti šį tekstą pele ir paspausti mygtuką <gui>Susieti</gui> naujam rašteliui pavadinimu „baigiamasis egzaminas“ sukurti. Taip pat esamame raštelyje bus sukurtas saitas, kurį paspaudus bus atvertas raštelis „baigiamasis egzaminas“.</p>
+    <p>Mygtukas <gui>Susieti</gui> leidžia esamame raštelyje sukurti saitą į naują raštelį. Pavyzdžiui, jei jūsų raštelis turi frazę „baigiamasis egzaminas“, galite pažymėti šį tekstą pele ir paspausti mygtuką <gui>Susieti</gui> naujam rašteliui pavadinimu „baigiamasis egzaminas“ sukurti. Pažymėtas tekstas taps paspaudžiamu saitu į šį naują raštelį.</p>
 <note style="advanced">
     <p>Raštelio pavadinimo pakeitimas atnaujins saitus kituose rašteliuose. Taip išvengiama nutrūkusių saitų, kai raštelis pervadinamas.</p></note>
 
   <section><title>Priedas „atgalinės nuorodos“</title>
-    <p>Įrankių mygtuką vaizduoja piktograma <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Kai atgalinių nuorodų priedas yra įdiegtas, meniu <gui>Įrankiai</gui> turės elementą <gui>Kur yra nuorodos į čia?</gui>, kuris pateikia po-meniu su visais rašteliais, turinčiais saitą į esamą raštelį.</p>
+    <p>Kai <app>atgalinių nuorodų</app> įskiepis yra įdiegtas, <gui>veiksmų</gui> meniu turės elementą <gui>Kur yra nuorodos į čia?</gui>, kuris pateikia po-meniu su visais rašteliais, turinčiais saitą į esamą raštelį.</p>
   </section>
 
 </page>

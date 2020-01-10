@@ -12,7 +12,12 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011 – 2012</years>
+      <years>2011 – 2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
@@ -20,14 +25,15 @@
   <section id="editing">
     <title>Obecné předvolby</title>
     <p>Když chcete nastavit předvolby pro <app>Gnote</app>, vyberte <gui>Předvolby</gui> v nabídce aplikace.</p>
-    <p>V předvolbách jsou tři kategorie: <gui>Obecné</gui>, <gui>Klávesové zkratky</gui> a <gui>Doplňky</gui>. Předvolby, které se nachází na každé z karet, jsou popsány níže.</p>
-    <p>Karta Obecné slouží k nastavení předvoleb vztahujících se k chování a k úpravám poznámek. Na této kartě najdete několik zaškrtávacích políček, která mohou být zapnutá nebo vypnutá.</p>
+    <p>V předvolbách jsou tři kategorie: <gui>Obecné</gui>, <gui>Klávesové zkratky</gui> a <gui>Doplňky</gui>.</p>
+    <p>Karta <gui>Obecné</gui> slouží k nastavení předvoleb vztahujících se k chování a k úpravám poznámek. Na této kartě najdete několik zaškrtávacích políček:</p>
     <list>
-      <item><title>Používat stavovou ikonu</title><p>Zaškrtněte toto políčko, aby aplikace <app>Gnote</app>, když poběží, zobrazovala stavovou ikonu. V tomto režimu poznámky <app>Gnote</app> zůstanou prezentovány ikonou, i když zavřete všechna jeho okna. Poznámky, které jste měli před tím otevřeny, a stejně tak ostatní okna, se po kliknutí levým nebo pravým tlačítkem na stavovou ikonu znovu zobrazí.</p></item>
+      <item><title>Používat stavovou ikonu</title><p>Zaškrtněte toto políčko, aby aplikace <app>Gnote</app>, když běží, zobrazovala stavovou ikonu. V tomto režimu poznámky <app>Gnote</app> zůstanou prezentovány ikonou, i když zavřete všechna jeho okna. Po kliknutí na stavovou ikonu se zobrazí nabídka poskytující rychlý přístup k nedávno použitým poznámkám a dalším oknům.</p></item>
+      <item><title>Poznámku vždy otevřít v novém okně</title><p>Když je zaškrtnuto, otevírají se poznámky v novém okně, místo aby nahradily obsah aktuálního okna.</p></item>
       <item><title>Kontrola překlepů během psaní</title><p>Zaškrtněte toto políčko, aby se pravopisně nesprávná slova podtrhávala červeně. Po kliknutí pravým tlačítkem se vám budou v kontextové nabídce navrhovat správné tvary.</p><p>Volba kontroly překlepů je dostupná jen v případě, že máte ve své distribuci nainstalován balíček GtkSpell.</p></item>
       <item><title>Zvýrazňovat WikiSlova</title><p>Zaškrtněte toto políčko, aby se vytvářely odkazy na výrazy KteréVypadajíTakto. Kliknutím na odkaz se vytvoří nová poznámka s názvem odpovídajícím odkazovanému textu.</p></item>
-      <item><title>Povolit automatické seznamy s odrážkami</title><p>Zaškrtněte toto políčko, pokud chcete vytvářet seznamy s odrážkami, tak že řádky začnete pomlčkou <key>-</key>. Více se dočtete v kapitole <link xref="bulleted-lists"/>.</p></item>
-      <item><title>Používat vlastní písmo</title><p>Zaškrtněte toto políčko, abyste si mohli nastavit vlastní písmo pro své poznámky. Pokud políčko není zaškrtnuté, používá se výchozí systémové písmo.</p></item>
+      <item><title>Povolit automatické seznamy s odrážkami</title><p>Když je tato volba zapnutá, můžete vytvářet seznamy s odrážkami tak, že řádky začnete pomlčkou <key>-</key>. Více se dočtete v kapitole <link xref="bulleted-lists"/>.</p></item>
+      <item><title>Používat vlastní písmo</title><p>Zaškrtněte toto políčko, abyste si mohli nastavit vlastní písmo pro své poznámky.</p></item>
     </list>
     <figure><title>Okno <gui>Předvolby</gui></title>
       <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Úprava předvoleb Gnote</desc>
@@ -44,16 +50,16 @@
     </section>
     <section id="sync-advanced">
       <title>Pokročilé</title>
-      <p>Klikněte na tlačítko <gui>Pokročilé…</gui> na kartě <gui>Synchronizace</gui> v dialogovém okně <gui>Předvolby Gnote</gui> a zobrazí se další dialogové okno s nastavením řešení konfliktů.</p>
+      <p>Tlačítko <gui>Pokročilé…</gui> na kartě <gui>Synchronizace</gui> v dialogovém okně <gui>Předvolby</gui> zobrazí další dialogové okno s nastavením řešení konfliktů.</p>
       <figure>
         <title>Pokročilá nastavení synchronizace</title>
         <media type="image" src="figures/gnote-syncprefs-advanced.png" mime="image/png"/>
       </figure>
-      <p>V tomto dialogovém okně si můžete zvolit, co se má udělat, když se vyskytne konflikt. Ty vznikají, když je poznámka před synchronizací upravena a zároveň byla upravena na jiném zařízení (a synchronizována do synchronizačního úložiště). Můžete si vybrat jednu z následujících voleb:</p>
+      <p>V tomto dialogovém okně si můžete zvolit, co se má udělat, když se vyskytne konflikt. Ty vznikají, když je poznámka změněna jak na místním počítači, tak na jiném zařízení (a synchronizována do synchronizačního úložiště). Můžete si vybrat jednu z následujících voleb:</p>
       <list>
-        <item><title>Stávající poznámku přejmenovat přidáním „(stará)“ k názvu a stáhnout verzi z úložiště</title></item>
-        <item><title>Nahradit stávající poznámku tou z úložiště, přijít o všechny změny</title></item>
-        <item><title>U každého konfliktu zvlášť dostat možnost volby</title></item>
+        <item><p>Stávající poznámku přejmenovat přidáním „(stará)“ k názvu a stáhnout verzi z úložiště</p></item>
+        <item><p>Nahradit stávající poznámku tou z úložiště, přijít o všechny změny</p></item>
+        <item><p>U každého konfliktu se zvlášť ptát</p></item>
       </list>
     </section>
   </section>

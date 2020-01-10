@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gnote-addin-bugzillalink" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Bugzilla hivatkozások beszúrása</desc>
+    <license><p>GNU Free Documentation License (GFDL), 1.1 verzió</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  </info>
+
+  <title>Bugzilla hivatkozások kiegészítő</title>
+  <p>Ez a bővítmény lehetővé teszi Bugzilla URL behúzását közvetlenül egy <app>Gnote</app> jegyzetbe. A hibaszám hivatkozásként kerül beszúrásra, mellette egy kis hiba ikonnal.</p>
+  <p>A beállításokban speciális ikonokat adhat bizonyos kiszolgálókhoz.</p>
+
+</page>

@@ -3,7 +3,7 @@
 _Name=Gnote
 _Comment=Take notes, link ideas, and stay organized
 _GenericName=Note-taker
-_Keywords=note;idea;link;organize;
+_Keywords=notes;idea;link;organize;
 Exec=gnote %u
 Icon=gnote
 MimeType=x-scheme-handler/note;
@@ -14,4 +14,4 @@ Categories=GNOME;GTK;Utility;
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=gnote
 X-GNOME-Bugzilla-Component=main
-X-GNOME-Bugzilla-Version=3.8.1
+X-GNOME-Bugzilla-Version=3.22.1

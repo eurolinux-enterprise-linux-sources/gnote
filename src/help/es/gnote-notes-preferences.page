@@ -12,19 +12,24 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011-2012</years>
+      <years>2011-2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2013</mal:years>
+    </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Nicolás Satragno</mal:name>
       <mal:email>nsatragno@gnome.org</mal:email>
       <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Daniel Mustieles</mal:name>
-      <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -38,14 +43,15 @@
   <section id="editing">
     <title>Preferencias generales</title>
     <p>Para establecer las preferencias de <app>Gnote</app>,  seleccione <gui>Preferencias</gui> del menú de aplicación.</p>
-    <p>Hay tres categorías de preferencias: <gui>General</gui>, <gui>Teclas rápidas</gui> y <gui>Complementos</gui>. Las preferencias de cada pestaña se describirán abajo.</p>
-    <p>La pestaña «General» le permite establecer preferencias relacionadas con el comportamiento de la aplicación y la edición de notas. Hay unas pocas casillas en esta pestaña, que se pueden activar o desactivar.</p>
+    <p>Hay tres categorías de preferencias: <gui>General</gui>, <gui>Teclas rápidas</gui> y <gui>Complementos</gui>.</p>
+    <p>La pestaña <gui>General</gui> le permite establecer preferencias relacionadas con el comportamiento de la aplicación y la edición de notas. Hay unas pocas casillas en esta pestaña:</p>
     <list>
-      <item><title>Usar icono de estado</title><p>Active esta casilla para mostrar el icono de estado de <app>Gnote</app> cuando esté en ejecución. En este modo, <app>Gnote</app> estará presente incluso después de cerrar sus ventanas. Las notas usadas recientemente y otras ventanas se pueden abrir desde el menú, que aparece al pulsar con el botón derecho sobre el icono de estado.</p></item>
-      <item><title>Corregir ortografía al escribir</title><p>Active esta casilla para que los errores ortográficos se subrayen en rojo y se proporcionen sugerencias en el menú contextual al pulsar el botón derecho del ratón.</p><p>La opción de corrección ortográfica sólo está disponible si tiene instalado el paquete «GtkSpell» para su distribución.</p></item>
+      <item><title>Usar icono de estado</title><p>Active esta casilla para mostrar el icono de estado de <app>Gnote</app> cuando esté en ejecución. En este modo, <app>Gnote</app> estará presente incluso después de cerrar sus ventanas. Cuando pulse el icono de estado, aparecerá un menú que le dará un acceso rápido a las notas usadas recientemente entre otras ventanas.</p></item>
+      <item><title>Abrir notas siempre en una nueva ventana</title><p>Cuando está activado, en lugar de reemplazar el contenido actual de la ventana, las notas se abrirán en una nueva ventana.</p></item>
+      <item><title>Corregir ortografía al escribir</title><p>Active esta casilla para que los errores ortográficos se subrayen en rojo y se proporcionen sugerencias en el menú contextual.</p><p>La opción de corrección ortográfica sólo está disponible si tiene instalado el paquete «GtkSpell» para su distribución.</p></item>
       <item><title>Resaltado de WikiPalabras</title><p>Active esta casilla para crear enlaces para frases QueSeVenAsí. Al pulsar en el enlace se creará una nota nueva con el título correspondiente al texto del enlace.</p></item>
       <item><title>Activar listas de topos automáticos</title><p>Active esta casilla de verificación si quiere crear una lista con topos a partir de las líneas que comienzan con el carácter guión <key>-</key>. Lea más sobre esto en la <link xref="bulleted-lists"/>.</p></item>
-      <item><title>Usar tipografía personalizada</title><p>Active esta casilla para definir una tipografía personalizada que usar en sus notas. Si esta opción está desactivada, se utilizará la tipografía predeterminada del sistema.</p></item>
+      <item><title>Usar tipografía personalizada</title><p>Active esta casilla para definir una tipografía personalizada que usar en sus notas.</p></item>
     </list>
     <figure><title>Ventana <gui>Preferencias</gui></title>
       <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Preferencias de edición de Gnote</desc>
@@ -67,11 +73,11 @@
         <title>Configuración avanzada de la sincronización</title>
         <media type="image" src="figures/gnote-syncprefs-advanced.png" mime="image/png"/>
       </figure>
-      <p>Ésta ventana permite escoger una opción cuando ocurre un conflicto. Un conflicto ocurre cuando una nota se modifica antes de la sincronización y ésta se ha modificado en otro equipo (y sincronizada con el almacenamiento de sincronización). Puede seleccionar una de estas opciones:</p>
+      <p>Ésta ventana permite escoger una opción cuando ocurre un conflicto. Un conflicto ocurre cuando una nota se modifica en la máquina actual y en otro equipo. Puede seleccionar una de estas opciones:</p>
       <list>
-        <item><title>Renombrar la nota al salir, añadiendo «(Antigua)» en su título y descargar otra desde el almacén</title></item>
-        <item><title>Reemplazar la nota al salir por otra desde el almacén, perdiéndose todas las modificaciones.</title></item>
-        <item><title>Obtener la elección para cada conflicto de una nota individualmente</title></item>
+        <item><p>Renombrar la nota al salir, añadiendo «(Antigua)» en su título y descargar otra desde el almacén</p></item>
+        <item><p>Reemplazar la nota al salir por otra desde el almacén, perdiéndose todas las modificaciones.</p></item>
+        <item><p>Obtener la elección para cada conflicto de una nota individualmente</p></item>
       </list>
     </section>
   </section>

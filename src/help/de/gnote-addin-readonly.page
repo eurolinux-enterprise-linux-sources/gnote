@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-read-only" xml:lang="de">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Notizen als nur-lesen markieren</desc>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  </info>
+  
+  <title>Nur lesen</title>
+    <p>Wenn die <app>Nur lesen</app>-Erweiterung installiert ist, wird der Befehl <gui>Nur lesen</gui> im <gui>Aktionen</gui>-Menü der geöffneten Notiz angezeigt. Wenn dieses Element angewählt ist, wird die Notiz als »nur lesen« markiert. Dadurch wird ein Verändern der Notiz unterbunden, bis die Option wieder abgewählt wird. Verwenden Sie diese Funktion, um unbeabsichtigte Modifikationen zu verhindern.</p>
+
+</page>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="gnote-template-notes" xml:lang="el">
+
+
+  <info>
+    <link type="guide" xref="notes-preferences#advanced"/>
+    <desc>Χρήση προτύπων σημειώσεων</desc>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Πρότυπα σημειώσεων</title>
+  <section id="usage">
+    <title>Χρήση προτύπων σημειώσεων</title>
+    <p>Τα πρότυπα σημειώσεων χρησιμοποιούνται για να ορίσουν το περιεχόμενο νεοδημιουργούμενων σημειώσεων. Τα πρότυπα είναι ακριβώς όπως οι κανονικές σημειώσεις με κάποια πρόσθετα χαρακτηριστικά.</p>
+    <p>Μπορείτε να ορίσετε ένα μοναδικό κύριο πρότυπο σημείωσης και ένα για κάθε σημειωματάριο που έχετε. Αυτά τα πρότυπα ορίζουν το περιεχόμενο κάθε νέας σημείωσης που δημιουργείτε:</p>
+    <list>
+      <item><p>Κάθε νέα σημείωση που δημιουργείτε στο <app>Gnote</app>, αλλά όχι σε οποιοδήποτε σημειωματάριο, θα έχει το περιεχόμενο του κυρίως προτύπου. Αν δεν έχετε δημιουργήσει ένα κυρίως πρότυπο, το προεπιλεγμένο κανάλι θα χρησιμοποιηθεί.</p></item>
+      <item><p>Κάθε νέα δημιουργούμενη σημείωση σε ένα σημειωματάριο θα έχει το περιεχόμενο του προτύπου σημείωσης αυτού του σημειωματαρίου, αν υπάρχει. Αν δεν έχει οριστεί κανένα πρότυπο σημείωσης για ένα σημειωματάριο, θα χρησιμοποιηθεί το προεπιλεγμένο περιεχόμενο του σημειωματαρίου.</p></item>
+    </list>
+    <p>Για να δημιουργήσετε ή να τροποποιήσετε ένα πρότυπο σημείωσης:</p>
+    <list>
+      <item><title>Κύριο πρότυπο σημείωσης</title><p>Ανοίξτε τις προτιμήσεις του <app>Gnote</app> και στην καρτέλα <gui>Γενικά</gui> πατήστε το κουμπί <gui>Άνοιγμα προτύπου σημείωσης</gui>.</p></item>
+      <item><title>Πρότυπο σημείωσης σημειωματαρίου</title><p>Κάντε δεξί κλικ σε ένα σημειωματάριο στο κυρίως παράθυρο και επιλέξτε <gui>Άνοιγμα προτύπου σημείωσης</gui>.</p></item>
+    </list>
+  </section>
+  <section id="features">
+    <title>Χαρακτηριστικά προτύπου σημείωσης</title>
+    <p>Ένα πρότυπο σημείωσης είναι όπως μια συνηθισμένη σημείωση εκτός από το ότι δεν εμφανίζεται στους καταλόγους σημειώσεων και έχει μια γραμμή προτύπου στην κορυφή.</p>
+    <figure><title>Πρότυπο σημείωσης</title>
+      <media type="image" src="figures/gnote-template-note.png" mime="image/png" style="right"/><desc>Παράθυρο προτύπου σημείωσης</desc>
+    </figure>
+    <p>Η γραμμή προτύπου έχει τα ακόλουθα γνωρίσματα:</p>
+    <list>
+      <item><title>Μετατροπή σε κανονική σημείωση</title><p>Πατήστε αυτό το κουμπί για να μετατρέψετε το πρότυπο σε κανονική σημείωση, ορατή στον κατάλογο των σημειώσεων. Αυτή η ενέργεια είναι παρόμοια με τη διαγραφή ενός προτύπου σημείωσης.</p></item>
+      <item><title>Αποθήκευση μεγέθους</title><p>Αν σημειώσετε αυτό το πλαίσιο, το μέγεθος μιας νεοδημιουργούμενης σημείωσης θα είναι ταυτόσημο με το μέγεθος ενός προτύπου σημείωσης. Όταν το πλαίσιο ελέγχου δεν σημειωθεί, τα παράθυρα των νέων σημειώσεων θα έχουν το προεπιλεγμένο μέγεθος.</p></item>
+      <item><title>Αποθήκευση επιλογής</title><p>Αν αυτό το πλαίσιο είναι σημειωμένο, οι νέες σημειώσεις δεν θα έχουν μόνο το περιεχόμενο του νέου προτύπου σημείωσης, αλλά επίσης την επιλογή της. Χρησιμοποιήστε αυτήν την επιλογή αν θέλετε ένα συγκεκριμένο τμήμα του περιεχομένου στη νέα σημείωση να είναι αρχικά επιλεγμένο.</p></item>
+      <item><title>Αποθήκευση τίτλου</title><p>Αυτό το πλαίσιο ελέγχου σας επιτρέπει να βασίσετε τον τίτλο των νέων σημειώσεων σε έναν τίτλο του προτύπου σημείωσης. Με αυτό το πλαίσιο σημειωμένο, μια νέα σημείωση θα έχει τον τίτλο του προτύπου σημείωσης με έναν μοναδικό αριθμό προσαρτημένο. Αλλιώς θα χρησιμοποιηθεί ο προεπιλεγμένος τίτλος.</p></item>
+    </list>
+  </section>
+
+</page>

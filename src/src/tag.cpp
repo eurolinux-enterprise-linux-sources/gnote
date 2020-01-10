@@ -1,6 +1,7 @@
 /*
  * gnote
  *
+ * Copyright (C) 2014 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -33,37 +34,26 @@ namespace gnote {
 
   const char * Tag::SYSTEM_TAG_PREFIX = "system:";
 
-  class Tag::NoteMap
-    : public std::map<std::string, Note *>
-  {
-  };
-
   Tag::Tag(const std::string & _name)
     : m_issystem(false)
     , m_isproperty(false)
-    , m_notes(new NoteMap)
   {
     set_name(_name);
   }
 
-  Tag::~Tag()
+  void Tag::add_note(NoteBase & note)
   {
-    delete m_notes;
-  }
-
-  void Tag::add_note(Note & note)
-  {
-    if(m_notes->find(note.uri()) == m_notes->end()) {
-      (*m_notes)[note.uri()] = &note;
+    if(m_notes.find(note.uri()) == m_notes.end()) {
+      m_notes[note.uri()] = &note;
     }
   }
 
 
-  void Tag::remove_note(const Note & note)
+  void Tag::remove_note(const NoteBase & note)
   {
-    NoteMap::iterator iter = m_notes->find(note.uri());
-    if(iter != m_notes->end()) {
-      m_notes->erase(iter);
+    NoteMap::iterator iter = m_notes.find(note.uri());
+    if(iter != m_notes.end()) {
+      m_notes.erase(iter);
     }
   }
 
@@ -71,10 +61,10 @@ namespace gnote {
   void Tag::set_name(const std::string & value)
   {
     if (!value.empty()) {
-      std::string trimmed_name = sharp::string_trim(value);
+      Glib::ustring trimmed_name = sharp::string_trim(value);
       if (!trimmed_name.empty()) {
         m_name = trimmed_name;
-        m_normalized_name = sharp::string_to_lower(trimmed_name);
+        m_normalized_name = trimmed_name.lowercase();
         if(Glib::str_has_prefix(m_normalized_name, SYSTEM_TAG_PREFIX)) {
           m_issystem = true;
         }
@@ -86,15 +76,15 @@ namespace gnote {
   }
 
 
-  void Tag::get_notes(std::list<Note *> & l) const
+  void Tag::get_notes(std::list<NoteBase*> & l) const
   {
-    sharp::map_get_values(*m_notes, l);
+    sharp::map_get_values(m_notes, l);
   }
 
 
   int Tag::popularity() const
   {
-    return m_notes->size();
+    return m_notes.size();
   }
 
 }

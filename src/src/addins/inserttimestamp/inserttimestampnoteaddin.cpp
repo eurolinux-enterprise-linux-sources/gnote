@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2012 Aurimas Cernius
+ * Copyright (C) 2010-2013,2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,6 +23,7 @@
 #include <glibmm/i18n.h>
 
 #include "sharp/datetime.hpp"
+#include "iactionmanager.hpp"
 #include "inserttimestamppreferences.hpp"
 #include "inserttimestamppreferencesfactory.hpp"
 #include "inserttimestampnoteaddin.hpp"
@@ -35,30 +36,6 @@ namespace inserttimestamp {
     ADD_INTERFACE_IMPL(InsertTimestampNoteAddin);
     ADD_INTERFACE_IMPL(InsertTimestampPreferencesFactory);
     enabled(false);
-  }
-  const char * InsertTimeStampModule::id() const
-  {
-    return "InsertTimestampAddin";
-  }
-  const char * InsertTimeStampModule::name() const
-  {
-    return _("Insert Timestamp");
-  }
-  const char * InsertTimeStampModule::description() const
-  {
-    return _("Inserts current date and time at the cursor position.");
-  }
-  const char * InsertTimeStampModule::authors() const
-  {
-    return _("Hubert Figuiere and Tomboy Project");
-  }
-  int InsertTimeStampModule::category() const
-  {
-    return gnote::ADDIN_CATEGORY_TOOLS;
-  }
-  const char * InsertTimeStampModule::version() const
-  {
-    return "0.1.1";
   }
 
 
@@ -74,15 +51,8 @@ namespace inserttimestamp {
 
   void InsertTimestampNoteAddin::on_note_opened()
   {
-    // Add the menu item when the window is created
-    m_item = manage(new Gtk::MenuItem(_("Insert Timestamp")));
-    m_item->signal_activate().connect(
+    register_main_window_action_callback("inserttimestamp-insert",
       sigc::mem_fun(*this, &InsertTimestampNoteAddin::on_menu_item_activated));
-    m_item->add_accelerator ("activate", get_window()->get_accel_group(),
-                             GDK_KEY_d, Gdk::CONTROL_MASK,
-                             Gtk::ACCEL_VISIBLE);
-    m_item->show ();
-    add_plugin_menu_item (m_item);
 
     Glib::RefPtr<Gio::Settings> settings = gnote::Preferences::obj().get_schema_settings(SCHEMA_INSERT_TIMESTAMP);
     m_date_format = settings->get_string(INSERT_TIMESTAMP_FORMAT);
@@ -91,7 +61,16 @@ namespace inserttimestamp {
   }
 
 
-  void InsertTimestampNoteAddin::on_menu_item_activated()
+  std::map<int, Gtk::Widget*> InsertTimestampNoteAddin::get_actions_popover_widgets() const
+  {
+    auto widgets = NoteAddin::get_actions_popover_widgets();
+    auto button = gnote::utils::create_popover_button("win.inserttimestamp-insert", _("Insert Timestamp"));
+    gnote::utils::add_item_to_ordered_map(widgets, gnote::INSERT_TIMESTAMP_ORDER, button);
+    return widgets;
+  }
+
+
+  void InsertTimestampNoteAddin::on_menu_item_activated(const Glib::VariantBase&)
   {
     std::string text = sharp::DateTime::now().to_string(m_date_format);
     Gtk::TextIter cursor = get_buffer()->get_iter_at_mark (get_buffer()->get_insert());

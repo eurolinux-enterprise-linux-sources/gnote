@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-noteoftheday" xml:lang="el">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Μια "σημερινή" σημείωση</desc>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Σημείωση της ημέρας</title>
+  <p>Αυτό το πρόσθετο δημιουργεί αυτόματα μία «σημερινή» σημείωση για την καταγραφή καθημερινών σκέψεων. Για παράδειγμα, μια «σημερινή» σημείωση που δημιουργήθηκε στις 28 Φεβρουαρίου του 2013 θα λέγεται «Σήμερα: Πέμπτη, 28 Φεβρουαρίου 2013».</p>
+  <p>Αν αφήσετε μια «σημερινή» σημείωση ατροποποίητη, το πρόσθετο θα διαγράψει αυτόματα τη σημείωση.</p>
+  <p>Για να προσαρμόσετε τα περιεχόμενα της προκαθορισμένης σημείωσης «Σήμερα», δημιουργήστε μία νέα σημείωση και αλλάξτε τον τίτλο της σε «Σήμερα: Πρότυπο». Αλλάξτε τα περιεχόμενα της πρότυπης σημείωσης όπως επιθυμείτε. Τότε, οι νέες σημειώσεις «Σήμερα» θα χρησιμοποιούν τα περιεχόμενα της σημείωσης «Σήμερα: Πρότυπο» που δημιουργήσατε.</p>
+
+</page>

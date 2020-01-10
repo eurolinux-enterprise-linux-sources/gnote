@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2013 Aurimas Cernius
+ * Copyright (C) 2011-2014 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  *
  * This program is free software: you can redistribute it and/or modify
@@ -27,8 +27,9 @@
 #include <utility>
 
 #include <glibmm/i18n.h>
+#include <gtkmm/expander.h>
 
-#include "ignote.hpp"
+#include "mainwindow.hpp"
 #include "notewindow.hpp"
 #include "noterenamedialog.hpp"
 
@@ -71,7 +72,7 @@ gint ModelColumnRecord::get_column_title_num() const
     return COLUMN_TITLE;
 }
 
-const Gtk::TreeModelColumn<Note::Ptr> & ModelColumnRecord::get_column_note()
+const Gtk::TreeModelColumn<NoteBase::Ptr> & ModelColumnRecord::get_column_note()
                                           const
 {
     return m_column_note;
@@ -83,12 +84,12 @@ gint ModelColumnRecord::get_column_note_num() const
 }
 
 class ModelFiller
-  : public std::unary_function<const Note::Ptr &, void>
+  : public std::unary_function<const NoteBase::Ptr &, void>
 {
 public:
 
   ModelFiller(const Glib::RefPtr<Gtk::ListStore> & list_store);
-  void operator()(const Note::Ptr & note);
+  void operator()(const NoteBase::Ptr & note);
 
 private:
 
@@ -97,12 +98,12 @@ private:
 
 ModelFiller::ModelFiller(
                const Glib::RefPtr<Gtk::ListStore> & list_store)
-  : std::unary_function<const Note::Ptr &, void>()
+  : std::unary_function<const NoteBase::Ptr &, void>()
   , m_list_store(list_store)
 {
 }
 
-void ModelFiller::operator()(const Note::Ptr & note)
+void ModelFiller::operator()(const NoteBase::Ptr & note)
 {
   if (!note)
     return;
@@ -116,11 +117,11 @@ void ModelFiller::operator()(const Note::Ptr & note)
   row[model_column_record.get_column_note()] = note;
 }
 
-NoteRenameDialog::NoteRenameDialog(const Note::List & notes,
+NoteRenameDialog::NoteRenameDialog(const NoteBase::List & notes,
                                    const std::string & old_title,
-                                   const Note::Ptr & renamed_note)
+                                   const NoteBase::Ptr & renamed_note)
   : Gtk::Dialog(_("Rename Note Links?"),
-                *dynamic_cast<Gtk::Window*>(renamed_note->get_window()->host()),
+                *dynamic_cast<Gtk::Window*>(static_pointer_cast<Note>(renamed_note)->get_window()->host()),
                 false)
   , m_notes_model(Gtk::ListStore::create(m_model_column_record))
   , m_dont_rename_button(_("_Don't Rename Links"), true)
@@ -132,7 +133,6 @@ NoteRenameDialog::NoteRenameDialog(const Note::List & notes,
                           true)
   , m_never_rename_radio(_("Never rename _links"),
                          true)
-  , m_notes_box(false, 5)
 {
   set_default_response(Gtk::RESPONSE_CANCEL);
   set_border_width(10);
@@ -150,7 +150,7 @@ NoteRenameDialog::NoteRenameDialog(const Note::List & notes,
   label->set_markup(
     Glib::ustring::compose(
       _("Rename links in other notes from "
-        "\"<span underline=\"single\">%1</span>\" to"
+        "\"<span underline=\"single\">%1</span>\" to "
         "\"<span underline=\"single\">%2</span>\"?\n\n"
         "If you do not rename the links, they will no longer link to "
         "anything."),
@@ -216,26 +216,27 @@ NoteRenameDialog::NoteRenameDialog(const Note::List & notes,
                     &NoteRenameDialog::on_select_all_button_clicked),
       false));
 
-  Gtk::HButtonBox * const notes_button_box
-                            = Gtk::manage(new Gtk::HButtonBox(
-                                                Gtk::BUTTONBOX_END,
-                                                5));
-  notes_button_box->add(m_select_none_button);
-  notes_button_box->add(m_select_all_button);
+  Gtk::Grid * const notes_button_box = manage(new Gtk::Grid);
+  notes_button_box->set_column_spacing(5);
+  notes_button_box->attach(m_select_none_button, 0, 0, 1, 1);
+  notes_button_box->attach(m_select_all_button, 1, 0, 1, 1);
+  notes_button_box->set_hexpand(true);
 
   Gtk::ScrolledWindow * const notes_scroll
                                 = Gtk::manage(
                                          new Gtk::ScrolledWindow());
   notes_scroll->add(*notes_view);
+  notes_scroll->set_hexpand(true);
+  notes_scroll->set_vexpand(true);
 
-  m_notes_box.pack_start(*notes_scroll, Gtk::PACK_EXPAND_WIDGET, 0);
-  m_notes_box.pack_start(*notes_button_box, false, true, 0);
+  m_notes_box.attach(*notes_scroll, 0, 0, 1, 1);
+  m_notes_box.attach(*notes_button_box, 0, 1, 1, 1);
 
   Gtk::Expander * const advanced_expander
                           = Gtk::manage(new Gtk::Expander(
                                               _("Ad_vanced"), true));
-  Gtk::VBox * const expand_box = Gtk::manage(new Gtk::VBox(false, 0));
-  expand_box->pack_start(m_notes_box, Gtk::PACK_EXPAND_WIDGET, 0);
+  Gtk::Grid * const expand_box = Gtk::manage(new Gtk::Grid);
+  expand_box->attach(m_notes_box, 0, 0, 1, 1);
 
   m_always_show_dlg_radio.signal_clicked().connect(
     sigc::mem_fun(*this,
@@ -253,9 +254,9 @@ NoteRenameDialog::NoteRenameDialog(const Note::List & notes,
     sigc::mem_fun(*this,
                   &NoteRenameDialog::on_always_rename_clicked));
 
-  expand_box->pack_start(m_always_show_dlg_radio, false, true, 0);
-  expand_box->pack_start(m_never_rename_radio, false, true, 0);
-  expand_box->pack_start(m_always_rename_radio, false, true, 0);
+  expand_box->attach(m_always_show_dlg_radio, 0, 1, 1, 1);
+  expand_box->attach(m_never_rename_radio, 0, 2, 1, 1);
+  expand_box->attach(m_always_rename_radio, 0, 3, 1, 1);
   advanced_expander->add(*expand_box);
   vbox->pack_start(*advanced_expander, true, true, 5);
 
@@ -271,7 +272,7 @@ NoteRenameDialog::NoteRenameDialog(const Note::List & notes,
 
 NoteRenameDialog::MapPtr NoteRenameDialog::get_notes() const
 {
-  const MapPtr notes(new std::map<Note::Ptr, bool>);
+  const MapPtr notes(new std::map<NoteBase::Ptr, bool>);
 
   m_notes_model->foreach_iter(
     sigc::bind(
@@ -356,26 +357,15 @@ void NoteRenameDialog::on_notes_view_row_activated(
 
   ModelColumnRecord model_column_record;
   Gtk::TreeModel::Row row = *iter;
-  const Note::Ptr note = row[model_column_record.get_column_note()];
+  const NoteBase::Ptr note = row[model_column_record.get_column_note()];
   if (!note)
     return;
 
-  Gtk::Widget *parent = get_parent();
-  MainWindow *window = NULL;
-  if(parent) {
-    window = MainWindow::get_owning(*parent);
+  MainWindow *window = MainWindow::present_default(static_pointer_cast<Note>(note));
+  if(window) {
+    window->set_search_text(Glib::ustring::compose("\"%1\"", old_title));
+    window->show_search_bar();
   }
-  if(!window) {
-    window = &IGnote::obj().new_main_window();
-  }
-
-  window->present_note(note);
-  window->present();
-
-  NoteFindBar & find = note->get_window()->get_find_bar();
-  find.show_all();
-  find.property_visible() = true;
-  find.set_search_text(Glib::ustring::compose("\"%1\"", old_title));
 }
 
 void NoteRenameDialog::on_select_all_button_clicked(bool select)

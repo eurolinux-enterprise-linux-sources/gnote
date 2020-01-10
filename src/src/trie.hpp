@@ -1,6 +1,7 @@
 /*
  * gnote
  *
+ * Copyright (C) 2013-2014,2016 Aurimas Cernius
  * Copyright (C) 2011 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -23,10 +24,10 @@
 
 #include <list>
 #include <queue>
-#include <tr1/memory>
 
 #include <glibmm.h>
 
+#include "base/macros.hpp"
 #include "triehit.hpp"
 
 namespace gnote {
@@ -38,7 +39,7 @@ class TrieTree
 private:
 
   class TrieState;
-  typedef std::tr1::shared_ptr<TrieState> TrieStatePtr;
+  typedef TrieState* TrieStatePtr;
   typedef std::list<TrieStatePtr> TrieStateList;
   typedef std::queue<TrieStatePtr> TrieStateQueue;
 
@@ -111,6 +112,7 @@ private:
     bool m_payload_present;
   };
 
+  std::vector<TrieState*> m_states;
   const bool m_case_sensitive;
   const TrieStatePtr m_root;
   size_t m_max_length;
@@ -122,6 +124,14 @@ public:
     , m_root(new TrieState('\0', -1, TrieStatePtr()))
     , m_max_length(0)
   {
+    m_states.push_back(m_root);
+  }
+
+  ~TrieTree()
+  {
+    for(auto state : m_states) {
+      delete state;
+    }
   }
 
   void add_keyword(const Glib::ustring & keyword, const value_t & pattern_id)
@@ -135,7 +145,8 @@ public:
 
       TrieStatePtr target_state = find_state_transition(current_state, c);
       if (0 == target_state) {
-        target_state = TrieStatePtr(new TrieState(c, i, m_root));
+        target_state = new TrieState(c, i, m_root);
+        m_states.push_back(target_state);
         current_state->transitions().push_front(target_state);
       }
 
@@ -212,8 +223,9 @@ public:
       new typename TrieHit<value_t>::List());
     int start_index = 0;
 
-    for (Glib::ustring::size_type i = 0; i < haystack.size(); i++) {
-      gunichar c = haystack[i];
+    Glib::ustring::const_iterator haystack_iter = haystack.begin();
+    for (Glib::ustring::size_type i = 0; haystack_iter != haystack.end(); ++i, ++haystack_iter ) {
+      gunichar c = *haystack_iter;
       if (!m_case_sensitive)
         c = Glib::Unicode::tolower(c);
 

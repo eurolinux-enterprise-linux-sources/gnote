@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Export poznámek do formátu HTML</desc>
+    <desc>Export poznámek do HTML</desc>
     <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,14 +11,18 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011, 2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Export do HTML</title>
-    <p>Tlačítko <gui>Nástroje</gui> je prezentováno ikonou <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Když je tento doplněk nainstalován, nachází se v nabídce <gui>Nástroje</gui> volba <gui>Exportovat do HTML</gui>.</p>
-    <p>Pomocí této volby můžete z jedné nebo více poznámek vytvořit dokument HTML (Hypertext Markup Language).</p>
-    <p>Po vybrání této funkce se vám ukáže dialogové okno, ve kterém si můžete vybrat, kam chcete soubor HTML uložit. Zadejte název výsledného souboru a klikněte na tlačítko <gui>Uložit</gui> pro uložení nebo na <gui>Zrušit</gui> pro přerušení operace.</p>
+    <p>Když je nainstalován zásuvný modul <app>Export do HTML</app>, objeví se v nabídce <gui>Činnosti</gui> příkaz <gui>Exportovat do HTML</gui>.</p>
+    <p>Tento příkaz zvolte pro vytvoření dokumentu ve formátu HTML z jedné či více poznámek. Ukáže dialogové okno, ve kterém si můžete vybrat, kam chcete soubor HTML uložit. Zadejte název výsledného souboru a klikněte na tlačítko <gui>Uložit</gui> pro uložení nebo na <gui>Zrušit</gui> pro přerušení operace.</p>
     <p>Jestliže chcete exportovat poznámky, na které z aktuální poznámky vedou odkazy, zvolte <gui>Exportovat související poznámky</gui>.</p>
 
 </page>

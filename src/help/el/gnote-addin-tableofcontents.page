@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      "Table of Contents" is a Note add-in for Gnote.
+      It lists a note's table of contents in a menu.
+
+      Copyright (c)  2013  Luc Pionchon <pionchon.luc@gmail.com>
+
+      Permission is granted to copy, distribute and/or modify this document
+      under the terms of the GNU Free Documentation License, Version 1.1
+      or any later version published by the Free Software Foundation;
+      with no Invariant Sections, with no Front-Cover Texts, and with no
+      Back-Cover Texts.
+      FIXME: does the statement have to show in the rendered document?
+
+      A copy of the license is included in the section entitled "GNU
+      Free Documentation License".
+      FIXME: is this true? Is there a (GNOME? Yelp?) common GFDL topic?
+-->
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-tableofcontents" xml:lang="el">
+
+  <info>
+    <revision status="candidate" pkgversion="gnote-addin-tableofcontents-version-1.0.0"/>
+    <!-- Status:
+      stub        contains little to no real content
+      incomplete  outline of all information, but lacking content
+      draft       all content available, but unpolished
+      review      ready to be reviewed by editors
+      candidate   reviewed and awaiting a final approval
+      final       approved and ready for publication or distribution
+      outdated    was once complete or nearly complete, but needs to be revised to reflect changes
+
+      Other possible attributes:
+      version=""        revision version
+      docversion=""     enclosing document
+      date="2011-03-08" revision date
+    -->
+    <license href="http://www.gnu.org/licenses/fdl-1.1.html"><p>Αυτό το <em>θέμα βοήθειας</em> αδειοδοτείται κάτω από την <link href="http://www.gnu.org/licenses/fdl-1.1.html">άδεια ελεύθερης τεκμηρίωσης GNU, έκδοση 1.1</link> (GFDL). Σημαίνει, ότι είσαστε ελεύθεροι να αντιγράψετε, να διανείμετε και/ή να τροποποιήσετε αυτό το έγγραφο, κάτω από κάποιους όρους.</p>
+    </license>
+
+    <credit type="author copyright">
+      <name>Luc Pionchon</name><email>pionchon.luc@gmail.com</email><years>2013</years></credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <email>aurisc4@gmail.com</email>
+      <years>2013,2014</years>
+    </credit>
+    <!-- Credit type: (can have several types)
+      author        somebody responsible for writing content
+      editor        somebody who has provided reviews or editorial corrections
+      copyright     a person or entity which holds copyright on the work
+      maintainer    the person or entity currently responsible for the work
+      collaborator  somebody who has provided extensive rough information
+      translator    somebody who has translated the work into another language
+      publisher     a person or entity who distributes formatted copies
+
+      <credit> can have a URL, for example for a publisher, using FOAF namespace:
+        <page xmlns="http://xmlns.com/foaf/0.1/">http://flossmanuals.net/</page>
+    -->
+
+    <link type="guide" xref="index#advanced"/>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <link type="topic" xref="addins-preferences"/>
+    <link type="topic" xref="searching-notes"/>
+    <desc>Περιήγηση σε μεγάλες δομημένες σημειώσεις</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Πίνακας πίνακα περιεχομένων</title>
+
+<desc><em>Περιήγηση σε μεγάλες δομημένες σημειώσεις</em></desc>
+
+<note><p>Αυτό είναι ένα πρόσθετο στο <app>Gnote</app>. Αν αυτό το πρόσθετο είναι εγκατεστημένο υπάρχει μια καταχώριση <gui>Πίνακα περιεχομένων</gui> στο μενού <gui>Ενέργειες</gui>. Δείτε <link xref="addins-preferences"/> για να μάθετε πώς να ενεργοποιήσετε ένα πρόσθετο.</p></note>
+
+
+<section id="nutshell"><title>Σε ένα κέλυφος</title>
+
+<list type="numbered">
+  <item>
+    <p>Μια επικεφαλίδα είναι μια πλήρης γραμμή κειμένου, μορφοποιημένη με <gui>έντονα+τεράστια</gui> ή <gui>έντονα+μεγάλα</gui>.</p>
+  </item>
+  <item>
+    <p>Ορίστε τις επικεφαλίδες με <keyseq><key>Ctrl</key><key>1</key></keyseq> ή <keyseq><key>Ctrl</key><key>2</key></keyseq>.</p>
+  </item>
+  <item>
+    <p>Ανοίξτε τον πίνακα των περιεχομένων με <keyseq><key>Ctrl</key><key>Alt</key><key>1</key></keyseq> και μεταβείτε σε οποιαδήποτε επικεφαλίδα.</p>
+  </item>
+</list>
+
+</section>
+
+<section id="screenshot"><title>Στιγμιότυπο</title>
+    <figure>
+      <title>Μια δομημένη σημείωση με τον πίνακα περιεχομένων της</title>
+        <media type="image" src="figures/gnote-addin-table-of-contents.png" mime="image/png">
+        </media>
+    </figure>
+</section>
+
+
+<section id="navigating"><title>Η περιήγηση μέσα από μεγάλες σημειώσεις</title>
+
+<p>Μια μεγάλη σημείωση μπορεί να γίνει δύσκολη στην περιήγηση. Είναι τότε φυσικό να δομήσετε τη σημείωση σημειώνοντας τις ενότητες και τις υποενότητες με επικεφαλίδες.</p>
+
+<p>Αυτό το πρόσθετο διευκολύνει την περιήγηση μέσα από μεγάλες δομημένες σημειώσεις. Αφού έχετε ορίσει τις επικεφαλίδες στη σημείωσή σας, ο πίνακας των περιεχομένων της σημείωσης θα εμφανίσει το μενού σε ενέργειες. Τότε μπορείτε να μεταβείτε άμεσα από το μενού σε οποιαδήποτε επικεφαλίδα.</p>
+
+</section>
+
+
+<section id="setheadings"><title>Δομώντας τις σημειώσεις σας με επικεφαλίδες</title>
+
+<p>Μια επικεφαλίδα είναι απλά μια πλήρης γραμμή με συγκεκριμένη μορφοποίηση κειμένου:</p>
+<list>
+  <item><p>Οι επικεφαλίδες επιπέδου 1, για ενότητες, είναι γραμμές μορφοποιημένες με μια γραμματοσειρά <gui>έντονα+τεράστια</gui>.</p></item>
+  <item><p>Οι επικεφαλίδες επιπέδου 2, για υποενότητες, είναι γραμμές μορφοποιημένες με μια γραμματοσειρά <gui>έντονα+μεγάλα</gui>.</p></item>
+</list>
+
+
+<p>Για να μορφοποιήσετε μια γραμμή επικεφαλίδας, είτε:</p>
+
+<list>
+  <item>
+    <p>Χρησιμοποιήστε τις εντολές <gui>Επικεφαλίδα 1</gui> και <gui>Επικεφαλίδα 2</gui> στο μενού <guiseq><gui>Ενέργειες</gui><gui>Πίνακας περιεχομένων</gui></guiseq>.</p>
+  </item>
+
+  <item>
+    <p>Ή χρησιμοποιήστε τις συντομεύσεις πληκτρολογίου <keyseq><key>Ctrl</key><key>1</key></keyseq> και <keyseq><key>Ctrl</key><key>2</key></keyseq> για επικεφαλίδες επιπέδου 1 και 2.</p>
+ </item>
+</list>
+
+<note><p>Αυτές οι εντολές εφαρμόζουν τη μορφοποίηση σε ολόκληρη τη γραμμή. Δεν χρειάζεται να την επιλέξετε πρώτα. Είναι αρκετό αν ο δρομέας είναι στη γραμμή.</p><p>Εναλλακτικά, με τον δρομέα σε μια νέα γραμμή, ενεργοποιήστε την εντολή επικεφαλίδας και έπειτα εισάγετε τον τίτλο επικεφαλίδας.</p></note>
+
+<p>Μπορείτε ακόμα να χρησιμοποιήσετε τις κανονικές εντολές μορφοποίησης από το μενού <gui>Κείμενο</gui>: <gui>έντονα</gui>, <gui>μεγάλα</gui> και <gui>τεράστια</gui> καθώς και τις αντίστοιχες συντομεύσεις πληκτρολογίου τους. Αν, για παράδειγμα, η γραμμή σας είναι ήδη μορφοποιημένη ως <gui>τεράστια</gui>, τότε χρειάζεται μόνο να την κάνετε επίσης <gui>έντονη</gui> για να την μετατρέψετε σε επικεφαλίδα 1. Δείτε το <link xref="editing-notes"/> για να μάθετε πώς να ορίσετε τις τεχνοτροπίες κειμένου.</p>
+
+</section>
+
+
+<section id="showtable"><title>Εμφάνιση του πίνακα των περιεχομένων</title>
+
+<p>Μπορείτε να προσπελάσετε τον πίνακα περιεχομένων είτε:</p>
+<list>
+<item><p>Στο μενού <guiseq><gui>Ενέργειες</gui><gui>Πίνακας περιεχομένων</gui></guiseq>.</p></item>
+<item><p>Ή στο <guiseq><gui>μενού περιεχομένων</gui><gui>Πίνακας περιεχομένων</gui></guiseq> (δεξιοπατώντας το παράθυρο σημειώσεων).</p></item>
+<item><p>Ή σε ένα <gui>αναδυόμενο μενού</gui>, με τη συντόμευση πληκτρολογίου <keyseq><key>Ctrl</key><key>Alt</key><key>1</key></keyseq>.</p></item>
+<p>Έπειτα μπορείτε να περιηγηθείτε πάνω και κάτω με τα πλήκτρα βελών και να μεταβείτε στην επιλεγμένη επικεφαλίδα με το πλήκτρο <key>εισαγωγής</key>. Ή απλά να πατήσετε με το ποντίκι σας στην επικεφαλίδα για να μεταβείτε.</p>
+</list>
+
+</section>
+
+
+<section id="troubleshooting"><title>Επίλυση προβλημάτων</title>
+<terms>
+  <item><title><em style="strong">Μια επικεφαλίδα δεν εμφανίζεται στον πίνακα περιεχομένων</em></title><p>Μπορεί να υπάρχουν κάποιοι χαρακτήρες στη γραμμή επικεφαλίδας, όπως κενού διαστήματος, που δεν είναι μορφοποιημένοι ως κεφαλίδες. Βεβαιωθείτε ότι η <em>ολόκληρη η γραμμή</em> είναι μορφοποιημένη ως επικεφαλίδα. Δείτε <link xref="#setheadings"/>.</p>
+  </item>
+  <item><title><em style="strong">Υπάρχει μια κενή γραμμή στον πίνακα των περιεχομένων</em></title><p>Μια κενή γραμμή, που συμπεριλαμβάνει πιθανόν κενά διαστήματα, είναι μορφοποιημένη ως επικεφαλίδα. Μεταβείτε σε αυτήν τη γραμμή και διαγράψτε την περιοχή.</p>
+  </item>
+
+  <item><title/><p>
+  </p>
+  </item>
+
+</terms>
+
+</section>
+
+</page>

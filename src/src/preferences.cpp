@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2012 Aurimas Cernius
+ * Copyright (C) 2011-2015 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -34,6 +34,8 @@ namespace gnote {
   const char * Preferences::SCHEMA_DESKTOP_GNOME_INTERFACE = "org.gnome.desktop.interface";
 
   const char * Preferences::ENABLE_SPELLCHECKING = "enable-spellchecking";
+  const char * Preferences::ENABLE_AUTO_LINKS = "enable-auto-links";
+  const char * Preferences::ENABLE_URL_LINKS = "enable-url-links";
   const char * Preferences::ENABLE_WIKIWORDS = "enable-wikiwords";
   const char * Preferences::ENABLE_CUSTOM_FONT = "enable-custom-font";
   const char * Preferences::ENABLE_KEYBINDINGS = "enable-keybindings";
@@ -60,19 +62,22 @@ namespace gnote {
 
   const char * Preferences::NOTE_RENAME_BEHAVIOR = "note-rename-behavior";
   const char * Preferences::USE_STATUS_ICON = "use-status-icon";
+  const char * Preferences::OPEN_NOTES_IN_NEW_WINDOW = "open-notes-in-new-window";
+  const char * Preferences::AUTOSIZE_NOTE_WINDOW = "autosize-note-window";
+  const char * Preferences::USE_CLIENT_SIDE_DECORATIONS = "use-client-side-decorations";
 
   const char * Preferences::MAIN_WINDOW_MAXIMIZED = "main-window-maximized";
-  const char * Preferences::SEARCH_WINDOW_X_POS = "search-window-x-pos";
-  const char * Preferences::SEARCH_WINDOW_Y_POS = "search-window-y-pos";
   const char * Preferences::SEARCH_WINDOW_WIDTH = "search-window-width";
   const char * Preferences::SEARCH_WINDOW_HEIGHT = "search-window-height";
   const char * Preferences::SEARCH_WINDOW_SPLITTER_POS = "search-window-splitter-pos";
+  const char * Preferences::SEARCH_SORTING = "search-sorting";
 
   const char * Preferences::SYNC_FUSE_MOUNT_TIMEOUT = "sync-fuse-mount-timeout-ms";
   const char * Preferences::SYNC_FUSE_WDFS_ACCEPT_SSLCERT = "accept-sslcert";
   const char * Preferences::SYNC_FUSE_WDFS_URL = "url";
   const char * Preferences::SYNC_FUSE_WDFS_USERNAME = "username";
 
+  const char * Preferences::DESKTOP_GNOME_CLOCK_FORMAT = "clock-format";
   const char * Preferences::DESKTOP_GNOME_FONT = "document-font-name";
   const char * Preferences::DESKTOP_GNOME_KEY_THEME = "gtk-key-theme";
 

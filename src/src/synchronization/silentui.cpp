@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2013 Aurimas Cernius
+ * Copyright (C) 2012-2014 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,14 +26,14 @@
 namespace gnote {
 namespace sync {
 
-  SyncUI::Ptr SilentUI::create(NoteManager & nm)
+  SyncUI::Ptr SilentUI::create(NoteManagerBase & nm)
   {
     return SyncUI::Ptr(new SilentUI(nm));
   }
 
 
-  SilentUI::SilentUI(NoteManager & manager)
-    : m_manager(manager)
+  SilentUI::SilentUI(NoteManagerBase & manager)
+    : SyncUI(manager)
     , m_ui_disabled(false)
   {
     signal_connecting_connect(sigc::mem_fun(*this, &SilentUI::on_connecting));
@@ -67,14 +67,13 @@ namespace sync {
   }
 
 
-  void SilentUI::note_synchronized(const std::string & noteTitle, NoteSyncType type)
+  void SilentUI::note_synchronized(const std::string & DBG(noteTitle), NoteSyncType DBG(type))
   {
     DBG_OUT("note synchronized, Title: %s, Type: %d", noteTitle.c_str(), int(type));
   }
 
 
-  void SilentUI::note_conflict_detected(NoteManager & manager,
-                                        const Note::Ptr & localConflictNote,
+  void SilentUI::note_conflict_detected(const Note::Ptr & localConflictNote,
                                         NoteUpdate remoteNote,
                                         const std::list<std::string> &)
   {
@@ -82,7 +81,7 @@ namespace sync {
     // TODO: At least respect conflict prefs
     // TODO: Implement more useful conflict handling
     if(localConflictNote->id() != remoteNote.m_uuid) {
-      manager.delete_note(localConflictNote);
+      m_manager.delete_note(localConflictNote);
     }
     ISyncManager::obj().resolve_conflict(OVERWRITE_EXISTING);
   }
@@ -96,9 +95,8 @@ namespace sync {
   void SilentUI::on_connecting()
   {
     m_manager.read_only(true);
-    std::list<Note::Ptr> notes = m_manager.get_notes();
-    for(std::list<Note::Ptr>::iterator iter = notes.begin(); iter != notes.end(); ++iter) {
-      (*iter)->enabled(false);
+    FOREACH(const NoteBase::Ptr & iter, m_manager.get_notes()) {
+      iter->enabled(false);
     }
   }
 
@@ -106,9 +104,8 @@ namespace sync {
   void SilentUI::on_idle()
   {
     m_manager.read_only(false);
-    std::list<Note::Ptr> notes = m_manager.get_notes();
-    for(std::list<Note::Ptr>::iterator iter = notes.begin(); iter != notes.end(); ++iter) {
-      (*iter)->enabled(true);
+    FOREACH(const NoteBase::Ptr & iter, m_manager.get_notes()) {
+      iter->enabled(true);
     }
     m_ui_disabled = false;
   }

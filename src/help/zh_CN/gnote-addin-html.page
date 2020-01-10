@@ -3,22 +3,38 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Export Notes to HTML format</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>将便笺导出为 HTML</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>导出到 HTML</title>
-    <p>The Tools button is represented by the <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>  icon. When this add-in is installed, the option <gui>Export to HTML</gui> is present in <gui>Tools</gui> menu.</p>
-    <p>You can create an HTML (Hypertext Markup Language) document from one or more notes by selecting this option.</p>
-    <p>After selecting this option, you will be presented with a dialog that allows you to choose where to save the HTML file. Enter the destination filename and click <gui>Save</gui> to save the file, or <gui>Cancel</gui> to abort the operation.</p>
-    <p>To export any notes for which a link exists in the current note, select the <gui>Export Linked Notes</gui> check box.</p>
+  <title>导出为 HTML</title>
+    <p>When the <app>Export to HTML</app> plugin is installed, the command <gui>Export to HTML</gui> is present in the <gui>Actions</gui> menu.</p>
+    <p>要从一个或多个便笺创建 HTML 文档，请选择此命令。程序将弹出一个对话框让您选择将 HTML 文件保存在何处。输入目的文件名后点击 <gui>保存</gui> 以保存文件，或 <gui>取消</gui> 中止操作。</p>
+    <p>要导出当前便笺链接到的便笺，选择 <gui>导出链接的便笺</gui> 按钮。</p>
 
 </page>

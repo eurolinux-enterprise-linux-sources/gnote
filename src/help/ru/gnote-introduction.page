@@ -4,7 +4,7 @@
 
   <info>
     <link type="guide" xref="index#introduction"/>
-    <desc>Введение в <app>Gnote</app></desc>
+    <desc>Introduction to <app>Gnote</app></desc>
     <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
     <credit type="author">
       <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
@@ -14,23 +14,28 @@
       <name>Ауримас Церниус (Aurimas Cernius)</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Введение в Gnote</title>
-    <p><app>Gnote</app> — приложение для ведения заметок в GNOME. С помощью этого простого приложения можно управлять идеями и повседневной информацией. В Gnote есть несколько очень полезных возможностей редактирования, которые включают в себя следующее:</p>
+    <p><app>Gnote</app> is a desktop note-taking application for GNOME. It is simple and easy to use, and lets you organize the ideas and information you deal with every day. Gnote has useful editing features to help you customize your notes, including</p>
     <list>
-      <item><p>Подсветка текста поиска</p></item>
-      <item><p>Встроенная проверка правописания</p></item>
-      <item><p>Автоматическое создание ссылок на веб-ресурсы и адреса эл. почты</p></item>
-      <item><p>Поддержка отмены изменений</p></item>
-      <item><p>Выбор шрифта и его размеров</p></item>
-      <item><p>Маркированные списки</p></item>
+      <item><p>highlighting search text</p></item>
+      <item><p>inline spell checking</p></item>
+      <item><p>auto-linking web and email addresses</p></item>
+      <item><p>undo/redo</p></item>
+      <item><p>font styling and sizing</p></item>
+      <item><p>bulleted lists</p></item>
     </list>
     <figure>
-      <title>Главное окно <app>Gnote</app></title>
-        <desc>Главное окно <app>Gnote</app></desc>
+      <title>The <app>Gnote</app> main window</title>
+        <desc>The <app>Gnote</app> main window</desc>
         <media type="image" src="figures/gnote-search-all-notes.png" mime="image/png" style="right">
-        <p><app>Gnote</app> main window.</p>
+        <p>The <app>Gnote</app> main window.</p>
         </media>
     </figure>
 

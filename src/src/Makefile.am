@@ -2,8 +2,7 @@
 
 SUBDIRS = addins
 
-INCLUDES = -I$(top_srcdir)
-AM_CPPFLAGS=@LIBGTKMM_CFLAGS@ @LIBGLIBMM_CFLAGS@ \
+AM_CPPFLAGS= -I$(top_srcdir) @LIBGTKMM_CFLAGS@ @LIBGLIBMM_CFLAGS@ \
 	@GTK_CFLAGS@ \
 	@GTKSPELL_CFLAGS@ @LIBXML_CFLAGS@ \
 	@LIBXSLT_CFLAGS@ \
@@ -14,7 +13,7 @@ AM_CPPFLAGS=@LIBGTKMM_CFLAGS@ @LIBGLIBMM_CFLAGS@ \
 
 AM_LDFLAGS=-export-dynamic
 
-LIBGNOTE_LIBS = $(top_builddir)/libtomboy/libtomboy.la \
+LIBGNOTE_LIBS = \
 	@LIBGLIBMM_LIBS@ @LIBGTKMM_LIBS@ \
 	@LIBXSLT_LIBS@ \
 	@GTKSPELL_LIBS@ @GTK_LIBS@ \
@@ -25,9 +24,9 @@ GNOTE_LIBS = libgnote.la $(LIBGNOTE_LIBS)
 lib_LTLIBRARIES = libgnote.la
 bin_PROGRAMS = gnote
 check_PROGRAMS = trietest stringtest notetest dttest uritest filestest \
-	fileinfotest xmlreadertest
+	fileinfotest xmlreadertest notemanagertest gnotesyncclienttest
 TESTS = trietest stringtest notetest dttest uritest filestest \
-	fileinfotest xmlreadertest
+	fileinfotest xmlreadertest notemanagertest gnotesyncclienttest
 
 
 trietest_SOURCES = test/trietest.cpp
@@ -54,14 +53,31 @@ xmlreadertest_LDADD = libgnote.la @LIBXML_LIBS@
 notetest_SOURCES = test/notetest.cpp
 notetest_LDADD =  $(GNOTE_LIBS) -lX11
 
+notemanagertest_SOURCES = test/notemanagertest.cpp \
+	test/testnote.cpp test/testnote.hpp \
+	test/testnotemanager.cpp test/testnotemanager.hpp \
+	test/testtagmanager.cpp test/testtagmanager.hpp \
+	$(NULL)
+notemanagertest_LDADD = $(GNOTE_LIBS)
+
+gnotesyncclienttest_SOURCES = test/gnotesyncclienttest.cpp \
+	test/testnote.cpp test/testnote.hpp \
+	test/testnotemanager.cpp test/testnotemanager.hpp \
+	test/testsyncclient.hpp test/testsyncclient.cpp \
+	test/testtagmanager.cpp test/testtagmanager.hpp \
+	synchronization/gnotesyncclient.hpp synchronization/gnotesyncclient.cpp \
+	$(NULL)
+gnotesyncclienttest_LDADD = $(GNOTE_LIBS)
+
 
 SUBDIRS += dbus
 DBUS_SOURCES=remotecontrolproxy.hpp remotecontrolproxy.cpp \
 	dbus/remotecontrol.hpp dbus/remotecontrol.cpp \
 	dbus/remotecontrolclient.hpp dbus/remotecontrolclient.cpp \
 	dbus/iremotecontrol.hpp \
-	dbus/remotecontrol-client-glue.cpp \
-	dbus/remotecontrol-glue.cpp \
+	dbus/remotecontrol-client-glue.hpp dbus/remotecontrol-client-glue.cpp \
+	dbus/remotecontrol-glue.hpp dbus/remotecontrol-glue.cpp \
+	dbus/searchprovider.hpp dbus/searchprovider.cpp \
 	$(NULL)
 
 libgnote_la_LDFLAGS = -release @LIBGNOTE_RELEASE@ -version-info @LIBGNOTE_VERSION_INFO@
@@ -69,7 +85,6 @@ libgnote_la_LIBADD = $(LIBGNOTE_LIBS)
 libgnote_la_SOURCES = \
 	base/singleton.hpp \
 	base/macros.hpp \
-	base/inifile.hpp base/inifile.cpp \
 	gnome_keyring/keyringexception.hpp \
 	gnome_keyring/ring.hpp gnome_keyring/ring.cpp \
 	sharp/datetime.hpp sharp/datetime.cpp \
@@ -97,6 +112,7 @@ libgnote_la_SOURCES = \
 	sharp/xsltargumentlist.hpp sharp/xsltargumentlist.cpp \
 	sharp/xsltransform.hpp sharp/xsltransform.cpp \
 	abstractaddin.hpp abstractaddin.cpp \
+	addininfo.hpp addininfo.cpp \
 	addinmanager.hpp addinmanager.cpp \
 	addinpreferencefactory.hpp addinpreferencefactory.cpp \
 	applicationaddin.hpp \
@@ -109,10 +125,14 @@ libgnote_la_SOURCES = \
 	itagmanager.hpp itagmanager.cpp \
 	importaddin.hpp importaddin.cpp \
 	mainwindow.hpp mainwindow.cpp \
+	mainwindowaction.hpp mainwindowaction.cpp \
+	mainwindowembeds.hpp mainwindowembeds.cpp \
 	noteaddin.hpp noteaddin.cpp \
+	notebase.hpp notebase.cpp \
 	notebuffer.hpp notebuffer.cpp \
 	noteeditor.hpp noteeditor.cpp \
 	notemanager.hpp notemanager.cpp \
+	notemanagerbase.hpp notemanagerbase.cpp \
 	noterenamedialog.hpp noterenamedialog.cpp \
 	notetag.hpp notetag.cpp \
 	note.hpp note.cpp \
@@ -133,6 +153,7 @@ libgnote_la_SOURCES = \
 	notebooks/notebookmenuitem.hpp notebooks/notebookmenuitem.cpp \
 	notebooks/notebooknewnotemenuitem.hpp notebooks/notebooknewnotemenuitem.cpp \
 	notebooks/notebooknoteaddin.hpp notebooks/notebooknoteaddin.cpp \
+	notebooks/specialnotebooks.hpp notebooks/specialnotebooks.cpp \
 	synchronization/filesystemsyncserver.hpp synchronization/filesystemsyncserver.cpp \
 	synchronization/fusesyncserviceaddin.hpp synchronization/fusesyncserviceaddin.cpp \
 	synchronization/isyncmanager.hpp synchronization/isyncmanager.cpp \
@@ -146,20 +167,16 @@ gnote_SOURCES = \
 	sharp/addinstreemodel.hpp sharp/addinstreemodel.cpp \
 	actionmanager.hpp actionmanager.cpp \
 	gnote.cpp gnote.hpp \
-	keybinder.hpp \
 	preferencesdialog.hpp preferencesdialog.cpp \
-	prefskeybinder.hpp prefskeybinder.cpp \
 	recentchanges.hpp recentchanges.cpp \
 	searchnoteswidget.hpp searchnoteswidget.cpp \
 	tagmanager.hpp tagmanager.cpp \
-	tray.hpp tray.cpp \
-	xkeybinder.hpp xkeybinder.cpp \
 	notebooks/notebookstreeview.hpp notebooks/notebookstreeview.cpp \
 	synchronization/gnotesyncclient.hpp synchronization/gnotesyncclient.cpp \
 	synchronization/silentui.hpp synchronization/silentui.cpp \
 	synchronization/syncdialog.hpp synchronization/syncdialog.cpp \
 	synchronization/syncmanager.hpp synchronization/syncmanager.cpp \
-	$(DBUS_SOURCES)   \
+	$(DBUS_SOURCES) \
 	main.cpp \
 	$(NULL)
 

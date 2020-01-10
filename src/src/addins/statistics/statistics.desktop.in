@@ -1,0 +1,13 @@
+[AddinInfo]
+Id=Statistics
+_Name=Statistics
+_Description=Show various statistics about notes.
+_Authors=Aurimas Černius
+Category=Tools
+Version=0.3
+DefaultEnabled=false
+Module=libstatistics
+LibgnoteRelease=3.22
+LibgnoteVersionInfo=1:0:1
+[Actions]
+actions_void=statistics-show

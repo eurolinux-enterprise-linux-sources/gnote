@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-special-notes" xml:lang="lt">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Matykite specialiuosius raštelius</desc>
+    <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2013</years>
+    </credit>
+  </info>
+  
+  <title>Specialūs rašteliai</title>
+    <p>Įdiegus įskiepį <app>Specialūs rašteliai</app>, užrašinių sąraše pamatysite naują specialiąją užrašinę <gui>specialūs rašteliai</gui>. Ši užrašinė turi raštelius, kurie šiaip nėra matomi, pvz. šablonų raštelius. Tai gali būti patogu norint peržiūrėti visus šablonus.</p>
+
+</page>

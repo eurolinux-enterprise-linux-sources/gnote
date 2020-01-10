@@ -3,7 +3,7 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <link type="topic" xref="addins-preferences"/>
-    <desc>Šablonová poznámka</desc>
+    <desc>Poznámka „Dnes“</desc>
     <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,13 +11,18 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011, 2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Poznámka dne</title>
-  <p>Toto rozšíření automaticky vytváří poznámku „Dnes“ pro každodenní poznámky. Jako základ názvu poznámky je použito aktuální datum. Například název poznámky „Dnes“ vytvořené 28. února 2011 by byl „Dnes: pondělí, 28. únor 2011“.</p>
-  <p>Pokud do poznámky „Dnes“ nic nezapíšete, rozšíření Poznámka dne ji zase automaticky odstraní.</p>
+  <p>Tento zásuvný modul automaticky vytváří poznámku „Dnes“ pro každodenní poznámky. Například název poznámky „Dnes“ vytvořené 28. února 2013 by byl „Dnes: pondělí, 28. únor 2013“.</p>
+  <p>Pokud do poznámky „Dnes“ nic nezapíšete, zásuvný modul ji zase automaticky odstraní.</p>
   <p>Pokud si chcete přizpůsobit výchozí obsah poznámky „Dnes“, tak vytvořte novou poznámku a změňte její název na „Dnes: Šablona“. Obsah poznámky si upravte podle svojí libosti. Až se napříště vytvoří nová poznámka „Dnes“, použije obsah z vaší poznámky „Dnes: Šablona“.</p>
 
 </page>

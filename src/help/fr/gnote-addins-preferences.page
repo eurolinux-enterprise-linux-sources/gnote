@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="notes-preferences#advanced"/>
-    <desc>Paramétrer les greffons Gnote</desc>
+    <desc>Settings for Gnote plugins</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,13 +11,18 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013,2014</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Préférences des greffons</title>
-    <p>Vous pouvez activer ou désactiver les greffons dans cet onglet. Pour cela sélectionnez un greffon et cliquez sur le bouton <gui>Activer</gui>. Le bouton est alors grisé et le bouton <gui>Désactiver</gui> devient actif. Il peut maintenant être utilisé pour désactiver le greffon.</p>
-    <p>Certains greffons possèdent des paramétrages. Il est possible d'y accéder en sélectionnant le greffon et en appuyant sur le bouton <gui>Préférences</gui>.</p>
+    <p>You can activate or deactivate plugins in this tab. To do this, select a plugin and click the <gui>Enable</gui> button. Use the <gui>Disable</gui> button to disable a plugin.</p>
+    <p>Some plugins have preferences, which you can access by selecting a plugin and pressing the <gui>Preferences</gui> button.</p>
     <figure><title>Préférences des greffons de <app>Gnote</app></title>
     <desc>Fenêtre des greffons de <gui>Gnote</gui></desc>
     <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">

@@ -14,17 +14,22 @@
       <name>Aurimas Cernius</name>
       <years>2011 – 2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Úvod do Gnote</title>
-    <p>Gnote je aplikace k vytváření poznámek v pracovním prostředí GNOME. Je jednoduchá a snadno použitelná a umožňuje vám uspořádat si své nápady a informace, se kterými pracujete dennodenně. Gnote má pár velmi užitečných editačních funkcí, které vám pomohou si poznámky přizpůsobit, včetně:</p>
+    <p><app>Gnote</app> je aplikace k vytváření poznámek v pracovním prostředí GNOME. Je jednoduchá a snadno použitelná a umožní vám uspořádat si své nápady a informace, se kterými pracujete dennodenně. Gnote má pár velmi užitečných editačních funkcí, které vám pomohou si poznámky přizpůsobit, včetně</p>
     <list>
-      <item><p>Zvýrazňování hledaného textu</p></item>
-      <item><p>Zabudované kontroly pravopisu</p></item>
-      <item><p>Automatických odkazů na weby a e-mailové adresy</p></item>
-      <item><p>Podpory funkcí zpět/znovu</p></item>
-      <item><p>Nastavení stylu a velikosti písma</p></item>
-      <item><p>Vytváření seznamů s odrážkami</p></item>
+      <item><p>zvýrazňování hledaného textu</p></item>
+      <item><p>zabudované kontroly pravopisu</p></item>
+      <item><p>automatických odkazů na weby a e-mailové adresy</p></item>
+      <item><p>zpět/znovu</p></item>
+      <item><p>nastavení stylu a velikosti písma</p></item>
+      <item><p>seznamů s odrážkami</p></item>
     </list>
     <figure>
       <title>Hlavní okno <app>Gnote</app></title>

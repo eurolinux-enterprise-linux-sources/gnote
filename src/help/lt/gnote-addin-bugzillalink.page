@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-bugzillalink" xml:lang="lt">
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gnote-addin-bugzillalink" xml:lang="lt">
 
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
@@ -12,12 +12,17 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Priedas „Bugzilla nuorodos“</title>
-  <p>Leidžia tempti Bugzilla URL tiesiai į <app>Gnote</app> raštelį. Klaidos numeris bus įterptas kaip nuoroda su nedidelia vabalo piktograma šalia.</p>
+  <p>Šis įskiepis leidžia tempti Bugzilla URL tiesiai į <app>Gnote</app> raštelį. Klaidos numeris bus įterptas kaip saitas su nedidele vabalo piktograma šalia.</p>
   <p>Nustatymuose galite pridėti specialias piktogramas konkretiems serveriams.</p>
 
 </page>

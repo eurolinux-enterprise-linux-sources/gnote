@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2013 Aurimas Cernius
+ * Copyright (C) 2012-2014 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,6 +28,7 @@
 #include <gtkmm/treestore.h>
 #include <gtkmm/treeviewcolumn.h>
 
+#include "base/macros.hpp"
 #include "syncui.hpp"
 
 
@@ -39,35 +40,33 @@ namespace sync {
     , public SyncUI
   {
   public:
-    typedef std::tr1::shared_ptr<SyncDialog> Ptr;
+    typedef shared_ptr<SyncDialog> Ptr;
 
-    static Ptr create(NoteManager &);
+    static Ptr create(NoteManagerBase &);
 
-    virtual void sync_state_changed(SyncState state);
-    virtual void note_synchronized(const std::string & noteTitle, NoteSyncType type);
-    virtual void note_conflict_detected(NoteManager & manager,
-                                        const Note::Ptr & localConflictNote,
+    virtual void sync_state_changed(SyncState state) override;
+    virtual void note_synchronized(const std::string & noteTitle, NoteSyncType type) override;
+    virtual void note_conflict_detected(const Note::Ptr & localConflictNote,
                                         NoteUpdate remoteNote,
-                                        const std::list<std::string> & noteUpdateTitles);
-    virtual void present_ui();
+                                        const std::list<std::string> & noteUpdateTitles) override;
+    virtual void present_ui() override;
     void header_text(const std::string &);
     void message_text(const std::string &);
     std::string progress_text() const;
     void progress_text(const std::string &);
     void add_update_item(const std::string & title, std::string & status);
   protected:
-    virtual void on_realize();
+    virtual void on_realize() override;
   private:
     static void on_expander_activated(GtkExpander*, gpointer);
-    void note_conflict_detected_(NoteManager & manager,
-                                 const Note::Ptr & localConflictNote,
+    void note_conflict_detected_(const Note::Ptr & localConflictNote,
                                  NoteUpdate remoteNote,
                                  const std::list<std::string> & noteUpdateTitles,
                                  SyncTitleConflictResolution savedBehavior,
                                  SyncTitleConflictResolution resolution,
                                  std::exception **mainThreadException);
 
-    SyncDialog(NoteManager &);
+    explicit SyncDialog(NoteManagerBase &);
     bool on_pulse_progress_bar();
     void on_row_activated(const Gtk::TreeModel::Path & path, Gtk::TreeViewColumn *column);
     void treeview_col1_data_func(Gtk::CellRenderer *renderer, const Gtk::TreeIter & iter);
@@ -76,7 +75,6 @@ namespace sync {
     void rename_note(const Note::Ptr & note, const std::string & newTitle, bool updateReferencingNotes);
     void present_note(const Note::Ptr &);
 
-    NoteManager & m_manager;
     Gtk::Image *m_image;
     Gtk::Label *m_header_label;
     Gtk::Label *m_message_label;

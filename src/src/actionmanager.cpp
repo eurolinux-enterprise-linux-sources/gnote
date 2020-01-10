@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2013 Aurimas Cernius
+ * Copyright (C) 2011-2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -59,10 +59,7 @@
 #include <gtkmm/image.h>
 #include <gtkmm/stock.h>
 
-#include <libxml/tree.h>
-
 #include "sharp/string.hpp"
-#include "sharp/xml.hpp"
 #include "debug.hpp"
 #include "actionmanager.hpp"
 #include "iconmanager.hpp"
@@ -70,152 +67,29 @@
 namespace gnote {
 
   ActionManager::ActionManager()
-    : m_ui(Gtk::UIManager::create())
-    , m_main_window_actions(Gtk::ActionGroup::create("MainWindow"))
   {
-    populate_action_groups();
     make_app_actions();
     make_app_menu_items();
+
+    register_main_window_action("close-window", NULL, false);
+    register_main_window_action("delete-note", NULL, false);
+    register_main_window_action("important-note", &Glib::Variant<bool>::variant_type(), false);
+    register_main_window_action("enable-spell-check", &Glib::Variant<bool>::variant_type());
+    register_main_window_action("new-notebook", NULL, false);
+    register_main_window_action("move-to-notebook", &Glib::Variant<Glib::ustring>::variant_type(), false);
+    register_main_window_action("undo", NULL, true);
+    register_main_window_action("redo", NULL, true);
+    register_main_window_action("link", NULL, true);
+    register_main_window_action("change-font-bold", &Glib::Variant<bool>::variant_type(), true);
+    register_main_window_action("change-font-italic", &Glib::Variant<bool>::variant_type(), true);
+    register_main_window_action("change-font-strikeout", &Glib::Variant<bool>::variant_type(), true);
+    register_main_window_action("change-font-highlight", &Glib::Variant<bool>::variant_type(), true);
+    register_main_window_action("change-font-size", &Glib::Variant<Glib::ustring>::variant_type(), true);
+    register_main_window_action("enable-bullets", &Glib::Variant<bool>::variant_type(), true);
+    register_main_window_action("increase-indent", NULL, true);
+    register_main_window_action("decrease-indent", NULL, true);
   }
 
-
-  void ActionManager::load_interface()
-  {
-    Gtk::UIManager::ui_merge_id id = m_ui->add_ui_from_file(DATADIR"/gnote/UIManagerLayout.xml");
-    DBG_ASSERT(id, "merge failed");
-    Gtk::Window::set_default_icon_name("gnote");
-
-    Gtk::ImageMenuItem *imageitem = (Gtk::ImageMenuItem*)m_ui->get_widget (
-      "/TrayIconMenu/TrayNewNotePlaceholder/TrayNewNote");
-    DBG_ASSERT(imageitem, "Item not found");
-    if (imageitem) {
-      imageitem->set_image(*manage(new Gtk::Image(IconManager::obj().get_icon(IconManager::NOTE_NEW, 16))));
-    }
-  }
-
-
-  /// <summary>
-  /// Get all widgets represents by XML elements that are children
-  /// of the placeholder element specified by path.
-  /// </summary>
-  /// <param name="path">
-  /// A <see cref="System.String"/> representing the path to
-  /// the placeholder of interest.
-  /// </param>
-  /// <returns>
-  /// A <see cref="IList`1"/> of Gtk.Widget objects corresponding
-  /// to the XML child elements of the placeholder element.
-  /// </returns>
-  void ActionManager::get_placeholder_children(const std::string & path, 
-                                               std::list<Gtk::Widget*> & children) const
-  {
-    // Wrap the UIManager XML in a root element
-    // so that it's real parseable XML.
-    std::string xml = "<root>" + m_ui->get_ui() + "</root>";
-
-    xmlDocPtr doc = xmlParseDoc((const xmlChar*)xml.c_str());
-    if(doc == NULL) {
-      return;
-    }
-        
-    // Get the element name
-    std::string placeholderName = sharp::string_substring(path, sharp::string_last_index_of(
-                                                            path, "/") + 1);
-    DBG_OUT("path = %s placeholdername = %s", path.c_str(), placeholderName.c_str());
-
-    sharp::XmlNodeSet nodes = sharp::xml_node_xpath_find(xmlDocGetRootElement(doc), 
-                                                         "//placeholder");
-    // Find the placeholder specified in the path
-    for(sharp::XmlNodeSet::const_iterator iter = nodes.begin();
-        iter != nodes.end(); ++iter) {
-      xmlNodePtr placeholderNode = *iter;
-
-      if (placeholderNode->type == XML_ELEMENT_NODE) {
-
-        xmlChar * prop = xmlGetProp(placeholderNode, (const xmlChar*)"name");
-        if(!prop) {
-          continue;
-        }
-        if(xmlStrEqual(prop, (const xmlChar*)placeholderName.c_str())) {
-
-          // Return each child element's widget
-          for(xmlNodePtr widgetNode = placeholderNode->children;
-              widgetNode; widgetNode = widgetNode->next) {
-
-            if(widgetNode->type == XML_ELEMENT_NODE) {
-
-              xmlChar * widgetName = xmlGetProp(widgetNode, (const xmlChar*)"name");
-              if(widgetName) {
-                children.push_back(get_widget(path + "/"
-                                              + (const char*)widgetName));
-                xmlFree(widgetName);
-              }
-            }
-          }
-        }
-        xmlFree(prop);
-      }
-    }
-    xmlFreeDoc(doc);
-  }
-
-
-  void ActionManager::populate_action_groups()
-  {
-    Glib::RefPtr<Gtk::Action> action;
-
-    action = Gtk::Action::create(
-      "QuitGNoteAction", Gtk::Stock::QUIT,
-      _("_Quit"), _("Quit Gnote"));
-    m_main_window_actions->add(action, Gtk::AccelKey("<Control>Q"));
-
-    action = Gtk::Action::create(
-      "ShowPreferencesAction", Gtk::Stock::PREFERENCES,
-      _("_Preferences"), _("Gnote Preferences"));
-    m_main_window_actions->add(action);
-
-    action = Gtk::Action::create("ShowHelpAction", Gtk::Stock::HELP,
-      _("_Contents"), _("Gnote Help"));
-    m_main_window_actions->add(action, Gtk::AccelKey("F1"));
-
-    action = Gtk::Action::create(
-      "ShowAboutAction", Gtk::Stock::ABOUT,
-      _("_About"), _("About Gnote"));
-    m_main_window_actions->add(action);
-
-    action = Gtk::Action::create(
-      "TrayIconMenuAction",  _("TrayIcon"));
-    m_main_window_actions->add(action);
-
-    action = Gtk::Action::create(
-      "TrayNewNoteAction", Gtk::Stock::NEW,
-      _("Create _New Note"), _("Create a new note"));
-    m_main_window_actions->add(action);
-
-    action = Gtk::Action::create(
-      "ShowSearchAllNotesAction", Gtk::Stock::FIND,
-      _("_Search All Notes"),  _("Open the Search All Notes window"));
-    m_main_window_actions->add(action);
-
-    m_ui->insert_action_group(m_main_window_actions);
-  }
-
-  Glib::RefPtr<Gtk::Action> ActionManager::find_action_by_name(const std::string & n) const
-  {
-    Glib::ListHandle<Glib::RefPtr<Gtk::ActionGroup> > actiongroups = m_ui->get_action_groups();
-    for(Glib::ListHandle<Glib::RefPtr<Gtk::ActionGroup> >::const_iterator iter(actiongroups.begin()); 
-        iter != actiongroups.end(); ++iter) {
-      Glib::ListHandle<Glib::RefPtr<Gtk::Action> > actions = (*iter)->get_actions();
-      for(Glib::ListHandle<Glib::RefPtr<Gtk::Action> >::const_iterator iter2(actions.begin()); 
-          iter2 != actions.end(); ++iter2) {
-        if((*iter2)->get_name() == n) {
-          return *iter2;
-        }
-      }
-    }
-    DBG_OUT("%s not found", n.c_str());
-    return Glib::RefPtr<Gtk::Action>();      
-  }
 
   void ActionManager::make_app_actions()
   {
@@ -224,6 +98,7 @@ namespace gnote {
     add_app_action("show-preferences");
     add_app_action("about");
     add_app_action("help-contents");
+    add_app_action("help-shortcuts");
     add_app_action("quit");
   }
 
@@ -257,9 +132,10 @@ namespace gnote {
     add_app_menu_item(APP_ACTION_NEW, 100, _("_New Note"), "app.new-note");
     add_app_menu_item(APP_ACTION_NEW, 200, _("New _Window"), "app.new-window");
     add_app_menu_item(APP_ACTION_MANAGE, 100, _("_Preferences"), "app.show-preferences");
-    add_app_menu_item(APP_ACTION_HELP, 100, _("Help _Contents"), "app.help-contents");
-    add_app_menu_item(APP_ACTION_HELP, 200, _("_About"), "app.about");
-    add_app_menu_item(APP_ACTION_LAST, 100, _("_Quit"), "app.quit");
+    add_app_menu_item(APP_ACTION_LAST, 100, _("_Help"), "app.help-contents");
+    add_app_menu_item(APP_ACTION_LAST, 100, _("_Shortcuts"), "app.help-shortcuts");
+    add_app_menu_item(APP_ACTION_LAST, 200, _("_About"), "app.about");
+    add_app_menu_item(APP_ACTION_LAST, 300, _("_Quit"), "app.quit");
   }
 
   Glib::RefPtr<Gio::Menu> ActionManager::get_app_menu() const
@@ -268,23 +144,18 @@ namespace gnote {
 
     int pos = 0;
     Glib::RefPtr<Gio::Menu> section = make_app_menu_section(APP_ACTION_NEW);
-    if(section != 0) {
-      menu->insert_section(pos++, "", section);
+    if(section) {
+      menu->insert_section(pos++, section);
     }
 
     section = make_app_menu_section(APP_ACTION_MANAGE);
-    if(section != 0) {
-      menu->insert_section(pos++, "", section);
-    }
-
-    section = make_app_menu_section(APP_ACTION_HELP);
-    if(section != 0) {
-      menu->insert_section(pos++, "", section);
+    if(section) {
+      menu->insert_section(pos++, section);
     }
 
     section = make_app_menu_section(APP_ACTION_LAST);
-    if(section != 0) {
-      menu->insert_section(pos++, "", section);
+    if(section) {
+      menu->insert_section(pos++, section);
     }
 
     return menu;
@@ -312,71 +183,53 @@ namespace gnote {
     return section;
   }
 
-  void ActionManager::add_main_window_search_action(const Glib::RefPtr<Gtk::Action> & action, int order)
+  void ActionManager::register_main_window_action(const Glib::ustring & action, const Glib::VariantType *state_type, bool modifying)
   {
-    add_main_window_action(m_main_window_search_actions, action, order);
-    signal_main_window_search_actions_changed();
-  }
-
-  void ActionManager::remove_main_window_search_action(const std::string & name)
-  {
-    remove_main_window_action(m_main_window_search_actions, name);
-    signal_main_window_search_actions_changed();
-  }
-
-  std::vector<Glib::RefPtr<Gtk::Action> > ActionManager::get_main_window_search_actions()
-  {
-    return get_main_window_actions(m_main_window_search_actions);
-  }
-
-  void ActionManager::add_main_window_note_action(const Glib::RefPtr<Gtk::Action> & action, int order)
-  {
-    add_main_window_action(m_main_window_note_actions, action, order);
-    signal_main_window_note_actions_changed();
-  }
-
-  void ActionManager::remove_main_window_note_action(const std::string & name)
-  {
-    remove_main_window_action(m_main_window_note_actions, name);
-    signal_main_window_note_actions_changed();
-  }
-
-  std::vector<Glib::RefPtr<Gtk::Action> > ActionManager::get_main_window_note_actions()
-  {
-    return get_main_window_actions(m_main_window_note_actions);
-  }
-
-  void ActionManager::add_main_window_action(std::map<int, Glib::RefPtr<Gtk::Action> > & actions,
-                                             const Glib::RefPtr<Gtk::Action> & action, int order)
-  {
-    std::map<int, Glib::RefPtr<Gtk::Action> >::iterator iter = actions.find(order);
-    while(iter != actions.end()) {
-      iter = actions.find(++order);
+    if(m_main_window_actions.find(action) == m_main_window_actions.end()) {
+      m_main_window_actions[action] = state_type;
+      if(!modifying) {
+        m_non_modifying_actions.push_back(action);
+      }
     }
-    actions[order] = action;
-  }
-
-  void ActionManager::remove_main_window_action(std::map<int, Glib::RefPtr<Gtk::Action> > & actions,
-    const std::string & name)
-  {
-    for(std::map<int, Glib::RefPtr<Gtk::Action> >::iterator iter = actions.begin();
-        iter != actions.end(); ++iter) {
-      if(iter->second->get_name() == name) {
-        actions.erase(iter);
-        break;
+    else {
+      if(m_main_window_actions[action] != state_type) {
+        ERR_OUT("Action %s already registerred with different state type", action.c_str());
       }
     }
   }
 
-  std::vector<Glib::RefPtr<Gtk::Action> > ActionManager::get_main_window_actions(
-    std::map<int, Glib::RefPtr<Gtk::Action> > & actions)
+  std::map<Glib::ustring, const Glib::VariantType*> ActionManager::get_main_window_actions() const
   {
-    std::vector<Glib::RefPtr<Gtk::Action> > res;
-    for(std::map<int, Glib::RefPtr<Gtk::Action> >::iterator iter = actions.begin();
-        iter != actions.end(); ++iter) {
-      res.push_back(iter->second);
+    return m_main_window_actions;
+  }
+
+  bool ActionManager::is_modifying_main_window_action(const Glib::ustring & action) const
+  {
+    return std::find(m_non_modifying_actions.begin(), m_non_modifying_actions.end(), action) == m_non_modifying_actions.end();
+  }
+
+  void ActionManager::register_main_window_search_callback(const std::string & id, const Glib::ustring & action,
+                                                    sigc::slot<void, const Glib::VariantBase&> callback)
+  {
+    DBG_ASSERT(m_main_window_search_actions.find(id) == m_main_window_search_actions.end(), "Duplicate callback for main window search");
+
+    m_main_window_search_actions[id] = std::make_pair(action, callback);
+    signal_main_window_search_actions_changed();
+  }
+
+  void ActionManager::unregister_main_window_search_callback(const std::string & id)
+  {
+    m_main_window_search_actions.erase(id);
+    signal_main_window_search_actions_changed();
+  }
+
+  std::map<Glib::ustring, sigc::slot<void, const Glib::VariantBase&>> ActionManager::get_main_window_search_callbacks()
+  {
+    std::map<Glib::ustring, sigc::slot<void, const Glib::VariantBase&>> cbacks;
+    for(auto & iter : m_main_window_search_actions) {
+      cbacks.insert(iter.second);
     }
-    return res;
+    return cbacks;
   }
 
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="hu">
+
+
+  <info>
+    <link type="guide" xref="index#introduction"/>
+    <desc>A <app>Gnote</app> bemutatása</desc>
+    <license><p>GNU Free Documentation License (GFDL), 1.1 verzió</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  </info>
+
+  <title>Gnote ismertető</title>
+    <p><app>Gnote</app> is a desktop note-taking application for GNOME. It is simple and easy to use, and lets you organize the ideas and information you deal with every day. Gnote has useful editing features to help you customize your notes, including</p>
+    <list>
+      <item><p>keresett szöveg kiemelése</p></item>
+      <item><p>beágyazott helyesírás-ellenőrzés</p></item>
+      <item><p>web- és e-mail címek hivatkozássá alakítása automatikusan</p></item>
+      <item><p>visszavonás és ismételt végrehajtás</p></item>
+      <item><p>betűstílus és -méret megadása</p></item>
+      <item><p>felsorolásjelezett listák</p></item>
+    </list>
+    <figure>
+      <title>A <app>Gnote</app> főablaka</title>
+        <desc>A <app>Gnote</app> főablaka</desc>
+        <media type="image" src="figures/gnote-search-all-notes.png" mime="image/png" style="right">
+        <p>A <app>Gnote</app> főablaka.</p>
+        </media>
+    </figure>
+
+</page>

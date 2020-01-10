@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2013 Aurimas Cernius
+ * Copyright (C) 2010-2015 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -35,9 +35,11 @@
 #include <glibmm/i18n.h>
 #include <glibmm/stringutils.h>
 #include <glibmm/threads.h>
+#include <gtkmm/checkmenuitem.h>
 #include <gtkmm/icontheme.h>
 #include <gtkmm/image.h>
 #include <gtkmm/label.h>
+#include <gtkmm/modelbutton.h>
 #include <gtkmm/stock.h>
 #include <gtkmm/textbuffer.h>
 
@@ -46,6 +48,7 @@
 #include "sharp/string.hpp"
 #include "sharp/uri.hpp"
 #include "sharp/datetime.hpp"
+#include "preferences.hpp"
 #include "note.hpp"
 #include "utils.hpp"
 #include "debug.hpp"
@@ -68,7 +71,9 @@ namespace gnote {
         }
       
         menu->get_attach_widget()->get_window()->get_origin(x, y);
-        x += menu->get_attach_widget()->get_allocation().get_x();
+        Gdk::Rectangle rect = menu->get_attach_widget()->get_allocation();
+        x += rect.get_x();
+        y += rect.get_y();
         
         Gtk::Requisition menu_req, unused;
         menu->get_preferred_size(unused, menu_req);
@@ -76,7 +81,7 @@ namespace gnote {
           y -= menu_req.height;
         }
         else {
-          y += menu->get_attach_widget()->get_allocation().get_height();
+          y += rect.get_height();
         }
         
         push_in = true;
@@ -108,6 +113,19 @@ namespace gnote {
         cond->signal();
         mutex->unlock();
       }
+
+
+      class PopoverSubmenuGrid
+        : public Gtk::Grid
+        , public PopoverSubmenu
+      {
+      public:
+        PopoverSubmenuGrid(const Glib::ustring & submenu)
+          : PopoverSubmenu(submenu)
+        {
+          set_common_popover_widget_props(*this);
+        }
+      };
     }
 
 
@@ -185,78 +203,65 @@ namespace gnote {
 
     std::string get_pretty_print_date(const sharp::DateTime & date, bool show_time)
     {
+      bool use_12h = false;
+      if(show_time) {
+        use_12h = Preferences::obj().get_schema_settings(
+          Preferences::SCHEMA_DESKTOP_GNOME_INTERFACE)->get_string(
+            Preferences::DESKTOP_GNOME_CLOCK_FORMAT) == "12h";
+      }
+      return get_pretty_print_date(date, show_time, use_12h);
+    }
+
+    std::string get_pretty_print_date(const sharp::DateTime & date, bool show_time, bool use_12h)
+    {
       std::string pretty_str;
       sharp::DateTime now = sharp::DateTime::now();
-      std::string short_time = date.to_short_time_string ();
+      std::string short_time = use_12h
+        /* TRANSLATORS: time in 12h format. */
+        ? date.to_string("%l:%M %P")
+        /* TRANSLATORS: time in 24h format. */
+        : date.to_string("%H:%M");
 
       if (date.year() == now.year()) {
         if (date.day_of_year() == now.day_of_year()) {
           pretty_str = show_time ?
-            /* TRANSLATORS: argument is time. */
+            /* TRANSLATORS: argument %1% is time. */
             str(boost::format(_("Today, %1%")) % short_time) :
             _("Today");
         }
         else if ((date.day_of_year() < now.day_of_year())
                  && (date.day_of_year() == now.day_of_year() - 1)) {
           pretty_str = show_time ?
-            /* TRANSLATORS: argument is time. */
+            /* TRANSLATORS: argument %1% is time. */
             str(boost::format(_("Yesterday, %1%")) % short_time) :
             _("Yesterday");
-        }
-        else if ((date.day_of_year() < now.day_of_year())
-                  && (date.day_of_year() > now.day_of_year() - 6)) {
-          int num_days = now.day_of_year() - date.day_of_year();
-          const char * fmt;
-          if(show_time) {
-            /* TRANSLATORS: 2 or more days ago, up to one week.
-               First argument is number of days, second is time. */
-            fmt = ngettext("%1% day ago, %2%", "%1% days ago, %2%", num_days);
-            pretty_str = str(boost::format(fmt) % num_days % short_time);
-          }
-          else {
-            /* TRANSLATORS: 2 or more days ago, up to one week.
-               Argument is number of days. */
-            fmt = ngettext("%1% day ago", "%1% days ago", num_days);
-            pretty_str = str(boost::format(fmt) % num_days);
-          }
         }
         else if (date.day_of_year() > now.day_of_year()
                  && date.day_of_year() == now.day_of_year() + 1) {
           pretty_str = show_time ?
-            /* TRANSLATORS: argument is time. */
+            /* TRANSLATORS: argument %1% is time. */
             str(boost::format(_("Tomorrow, %1%")) % short_time) :
             _("Tomorrow");
         }
-        else if (date.day_of_year() > now.day_of_year()
-                 && date.day_of_year() < now.day_of_year() + 6) {
-          int num_days = date.day_of_year() - now.day_of_year();
-          const char * fmt;
-          if(show_time) {
-            /* TRANSLATORS: In 2 or more days, up to one week.
-               First argument is number of days, second is time. */
-            fmt = ngettext("In %1% day, %2%", "In %1% days, %2%", num_days);
-            pretty_str = str(boost::format(fmt) % num_days % short_time); 
-          }
-          else {
-            /* TRANSLATORS: In 2 or more days, up to one week.
-               Argument is number of days. */
-            fmt = ngettext("In %1% day", "In %1% days", num_days);
-            pretty_str = str(boost::format(fmt) % num_days);
-          }
-        }
         else {
-          pretty_str = show_time ?
-            date.to_string ("%B %d, %H:%M %p") : // "MMMM d, h:mm tt"
-            date.to_string ("%B %d");            // "MMMM d"
+          /* TRANSLATORS: date in current year. */
+          pretty_str = date.to_string(_("%b %d")); // "MMMM d"
+          if(show_time) {
+            /* TRANSLATORS: argument %1% is date, %2% is time. */
+            pretty_str = str(boost::format(_("%1%, %2%")) % pretty_str % short_time);
+          }
         }
       } 
       else if (!date.is_valid()) {
         pretty_str = _("No Date");
       }
       else {
-        pretty_str = show_time ?
-          date.to_string ("%B %d %Y, %H:%M %p") : // "MMMM d yyyy, h:mm tt"
-          date.to_string ("%B %d %Y");            // "MMMM d yyyy"
+        /* TRANSLATORS: date in other than current year. */
+        pretty_str = date.to_string(_("%b %d %Y")); // "MMMM d yyyy"
+        if(show_time) {
+          /* TRANSLATORS: argument %1% is date, %2% is time. */
+          pretty_str = str(boost::format(_("%1%, %2%")) % pretty_str % short_time);
+        }
       }
 
       return pretty_str;
@@ -282,6 +287,67 @@ namespace gnote {
     }
 
 
+    Gtk::Widget * create_popover_button(const Glib::ustring & action, const Glib::ustring & label)
+    {
+      Gtk::ModelButton *item = new Gtk::ModelButton;
+      gtk_actionable_set_action_name(GTK_ACTIONABLE(item->gobj()), action.c_str());
+      item->set_label(label);
+      item->set_use_underline(true);
+      set_common_popover_widget_props(*item);
+      return item;
+    }
+
+
+    Gtk::Widget * create_popover_submenu_button(const Glib::ustring & submenu, const Glib::ustring & label)
+    {
+      Gtk::ModelButton *button = new Gtk::ModelButton;
+      button->property_menu_name() = submenu;
+      button->set_label(label);
+      button->set_use_underline(true);
+      set_common_popover_widget_props(*button);
+      return button;
+    }
+
+
+    Gtk::Grid * create_popover_submenu(const Glib::ustring & name)
+    {
+      return new PopoverSubmenuGrid(name);
+    }
+
+
+    void set_common_popover_widget_props(Gtk::Widget & widget)
+    {
+      widget.property_margin_top() = 5;
+      widget.property_margin_bottom() = 5;
+      widget.property_hexpand() = true;
+    }
+
+    Gtk::Grid *create_popover_inner_grid(int *top)
+    {
+      Gtk::Grid *grid = new Gtk::Grid;
+      set_common_popover_widget_props(*grid);
+      if(top) {
+        *top = 0;
+      }
+      return grid;
+    }
+
+
+    void add_item_to_ordered_map(std::map<int, Gtk::Widget*> & dest, int order, Gtk::Widget *item)
+    {
+      for(; dest.find(order) != dest.end(); ++order);
+      dest[order] = item;
+    }
+
+
+    void merge_ordered_maps(std::map<int, Gtk::Widget*> & dest, const std::map<int, Gtk::Widget*> & adds)
+    {
+      for(std::map<int, Gtk::Widget*>::const_iterator iter = adds.begin(); iter != adds.end(); ++iter) {
+        add_item_to_ordered_map(dest, iter->first, iter->second);
+      }
+    }
+
+
     void GlobalKeybinder::add_accelerator(const sigc::slot<void> & handler, guint key, 
                                           Gdk::ModifierType modifiers, Gtk::AccelFlags flags)
     {
@@ -293,8 +359,17 @@ namespace gnote {
                           modifiers,
                           flags);
       foo->show ();
-
+      foo->set_sensitive(m_fake_menu.get_sensitive());
       m_fake_menu.append (*foo);
+    }
+
+    void GlobalKeybinder::enabled(bool enable)
+    {
+      m_fake_menu.set_sensitive(enable);
+      std::vector<Gtk::Widget*> items = m_fake_menu.get_children();
+      FOREACH(Gtk::Widget *item, items) {
+        item->set_sensitive(enable);
+      }
     }
 
 
@@ -304,6 +379,7 @@ namespace gnote {
                                        const Glib::ustring & msg)
       : Gtk::Dialog()
       , m_extra_widget(NULL)
+      , m_image(NULL)
     {
       set_border_width(5);
       set_resizable(false);
@@ -315,9 +391,11 @@ namespace gnote {
       m_accel_group = Glib::RefPtr<Gtk::AccelGroup>(Gtk::AccelGroup::create());
       add_accel_group(m_accel_group);
 
-      Gtk::HBox *hbox = manage(new Gtk::HBox (false, 12));
+      Gtk::Grid *hbox = manage(new Gtk::Grid);
+      hbox->set_column_spacing(12);
       hbox->set_border_width(5);
       hbox->show();
+      int hbox_col = 0;
       get_vbox()->pack_start(*hbox, false, false, 0);
 
       switch (msg_type) {
@@ -338,7 +416,6 @@ namespace gnote {
                                   Gtk::ICON_SIZE_DIALOG);
         break;
       default:
-        m_image = new Gtk::Image ();
         break;
       }
 
@@ -346,37 +423,41 @@ namespace gnote {
         Gtk::manage(m_image);
         m_image->show();
         m_image->property_yalign().set_value(0);
-        hbox->pack_start(*m_image, false, false, 0);
+        hbox->attach(*m_image, hbox_col++, 0, 1, 1);
       }
 
-      Gtk::VBox *label_vbox = manage(new Gtk::VBox (false, 0));
+      Gtk::Grid *label_vbox = manage(new Gtk::Grid);
       label_vbox->show();
-      hbox->pack_start(*label_vbox, true, true, 0);
+      int label_vbox_row = 0;
+      label_vbox->set_hexpand(true);
+      hbox->attach(*label_vbox, hbox_col++, 0, 1, 1);
 
-      std::string title = str(boost::format("<span weight='bold' size='larger'>%1%"
-                                            "</span>\n") % header.c_str());
+      if(header != "") {
+        std::string title = str(boost::format("<span weight='bold' size='larger'>%1%"
+                                              "</span>\n") % header.c_str());
+        Gtk::Label *label = manage(new Gtk::Label (title));
+        label->set_use_markup(true);
+        label->set_justify(Gtk::JUSTIFY_LEFT);
+        label->set_line_wrap(true);
+        label->set_alignment (0.0f, 0.5f);
+        label->show();
+        label_vbox->attach(*label, 0, label_vbox_row++, 1, 1);
+      }
 
-      Gtk::Label *label;
-
-      label = manage(new Gtk::Label (title));
-      label->set_use_markup(true);
-      label->set_justify(Gtk::JUSTIFY_LEFT);
-      label->set_line_wrap(true);
-      label->set_alignment (0.0f, 0.5f);
-      label->show();
-      label_vbox->pack_start(*label, false, false, 0);
-
-      label = manage(new Gtk::Label(msg));
-      label->set_use_markup(true);
-      label->set_justify(Gtk::JUSTIFY_LEFT);
-      label->set_line_wrap(true);
-      label->set_alignment (0.0f, 0.5f);
-      label->show();
-      label_vbox->pack_start(*label, false, false, 0);
+      if(msg != "") {
+        Gtk::Label *label = manage(new Gtk::Label(msg));
+        label->set_use_markup(true);
+        label->set_justify(Gtk::JUSTIFY_LEFT);
+        label->set_line_wrap(true);
+        label->set_alignment (0.0f, 0.5f);
+        label->show();
+        label_vbox->attach(*label, 0, label_vbox_row++, 1, 1);
+      }
       
-      m_extra_widget_vbox = manage(new Gtk::VBox (false, 0));
+      m_extra_widget_vbox = manage(new Gtk::Grid);
       m_extra_widget_vbox->show();
-      label_vbox->pack_start(*m_extra_widget_vbox, true, true, 12);
+      m_extra_widget_vbox->set_margin_left(12);
+      label_vbox->attach(*m_extra_widget_vbox, 0, label_vbox_row++, 1, 1);
 
       switch (btn_type) {
       case Gtk::BUTTONS_NONE:
@@ -464,7 +545,7 @@ namespace gnote {
         
       m_extra_widget = value;
       m_extra_widget->show_all ();
-      m_extra_widget_vbox->pack_start (*m_extra_widget, true, true, 0);
+      m_extra_widget_vbox->attach(*m_extra_widget, 0, 0, 1, 1);
     }
 
 
@@ -738,6 +819,13 @@ namespace gnote {
       return false;
     }
 
+    ToolMenuButton::ToolMenuButton(Gtk::Widget & widget, Gtk::Menu *menu)
+      : Gtk::ToggleToolButton(widget)
+      ,  m_menu(menu)
+    {
+      _common_init();
+    }
+
     ToolMenuButton::ToolMenuButton(Gtk::Toolbar& toolbar, const Gtk::BuiltinStockID& stock_image, 
                                    const Glib::ustring & label, 
                                    Gtk::Menu * menu)
@@ -758,16 +846,21 @@ namespace gnote {
     }
 
 
+    void ToolMenuButton::_common_init()
+    {
+      property_can_focus() = true;
+      gtk_menu_attach_to_widget(m_menu->gobj(), static_cast<Gtk::Widget*>(this)->gobj(),
+                                NULL);
+      m_menu->signal_deactivate().connect(sigc::mem_fun(*this, &ToolMenuButton::release_button));
+      show_all();
+    }
+
+
     void ToolMenuButton::_common_init(Gtk::Image& image, const Glib::ustring & label)
     {
       set_icon_widget(image);
       set_label_widget(*manage(new Gtk::Label(label, true)));
-      property_can_focus() = true;
-      gtk_menu_attach_to_widget(m_menu->gobj(), static_cast<Gtk::Widget*>(this)->gobj(),
-                                NULL);
-//      menu.attach_to_widget(*this);
-      m_menu->signal_deactivate().connect(sigc::mem_fun(*this, &ToolMenuButton::release_button));
-      show_all();
+      _common_init();
     }
 
 
@@ -803,8 +896,25 @@ namespace gnote {
     {
       set_active(false);
     }
-    
-    
+
+
+    CheckAction::CheckAction(const Glib::ustring & name)
+      : Gtk::Action(name)
+      , m_checked(false)
+    {}
+
+    Gtk::Widget *CheckAction::create_menu_item_vfunc()
+    {
+      Gtk::CheckMenuItem *item = new Gtk::CheckMenuItem;
+      item->set_active(m_checked);
+      return item;
+    }
+
+    void CheckAction::on_activate()
+    {
+      m_checked = !m_checked;
+      Gtk::Action::on_activate();
+    }
 
   }
 }

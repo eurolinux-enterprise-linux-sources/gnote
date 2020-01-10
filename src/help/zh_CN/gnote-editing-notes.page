@@ -3,68 +3,83 @@
 
   <info>
     <link type="guide" xref="index#managing-notes"/>
-    <license><p xml:lang="en_GB">GNU Free Documentation License (GFDL), Version 1.1</p></license>
-    <desc xml:lang="en_GB">Editing Notes Content</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
+    <desc>编辑便笺内容</desc>
     <credit type="author">
-      <name xml:lang="en_GB">Pierre-Yves Luyten</name>
-      <years xml:lang="en_GB">2011</years>
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
     </credit>
     <credit type="editor">
-      <name xml:lang="en_GB">Aurimas Cernius</name>
-      <years xml:lang="en_GB">2011-2012</years>
+      <name>Aurimas Cernius</name>
+      <years xml:lang="en_GB">2011-2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
   <title>编辑便笺</title>
 
-    <p xml:lang="en_GB">Notes are opened in the same window by replacing search with note content.</p>
-    <p xml:lang="en_GB">At the top of the note there are two toolbars. The above one has items for going back to search mode and for creating new note. The lower one contains several buttons and text. Directly below this toolbar is the content area of the note.</p>
+    <p xml:lang="en_GB">When you open a note, <app>Gnote</app> will replace the note overview with the note's contents.</p>
+    <p xml:lang="en_GB">Toolbar at the top of the window will now contain note specific items in it. Bellow toolbar is the note's content area.</p>
     <figure>
       <title xml:lang="en_GB"><app>Gnote</app> window displaying note</title>
-      <desc xml:lang="en_GB"><app>Gnote</app> Note</desc>
+      <desc><app>Gnote</app> 便笺</desc>
       <media type="image" src="figures/gnote-new-note.png" mime="image/png" style="right">
         <p xml:lang="en_GB"><app>Gnote</app> note editing.</p>
       </media>
     </figure>
 
-    <p xml:lang="en_GB">The note can be edited by clicking in the content area and using the keyboard to add and remove content. The first line is considered the title of the note. By default this is populated with the text "New Note N". The title is changed by clicking in the content area on the first line and using the keyboard to change the title. By default, focus is given to the content area upon creation of a new note, so you can immediately start editing the note without the need to click on the content area with the mouse.</p>
-    <p xml:lang="en_GB">Formatting text within your notes can be done using the <gui>Text</gui> button. The <gui>Text</gui> button will display a menu with several options from which you can choose. Each menu item is explained next.</p>
+    <p xml:lang="en_GB">To edit the note, click in the content area and type. The first line is considered the title of the note. By default this is populated with the text "New Note (number)". To change the title, click on the first line and use the keyboard to change the title.</p>
+    <p xml:lang="en_GB">Use the <gui>Text</gui> button to format text within your notes. This button displays a menu with several commands:</p>
 
     <list>
       <item><title>撤销</title>
-        <p xml:lang="en_GB">Support for “Undo” is available in <app>Gnote</app> through this menu item. The Undo function allows you to revert previous changes made to your note during the current session. To undo your last change using the keyboard, use the standard keybinding, <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
+        <p xml:lang="en_GB">The <gui>Undo</gui> command reverts changes made to your note during the current session. To undo using the keyboard, press <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
       </item>
       <item><title>重做</title>
-        <p xml:lang="en_GB">The “Redo” function is used to put back changes that were removed using the “Undo” feature. To redo your last change using the keyboard, use the standard keybinding, <keyseq><key>Shift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
+        <p xml:lang="en_GB">The <gui>Redo</gui> command puts back changes that were removed using the <gui>Undo</gui> feature. To redo your last change using the keyboard, press <keyseq><key>Shift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
       </item>
-      <item><title>宽体</title>
-        <p xml:lang="en_GB">To make text within your note bold, first select the text you want to modify. Then select the Bold option from the <gui>Text</gui> menu. You may also use the keybinding <keyseq><key>Ctrl</key><key>B</key></keyseq> after selecting the text.</p>
+      <item><title xml:lang="en_GB">Bold</title>
+        <p>要使您便笺中的文本为粗体，先选择文本，然后从 <gui>文本</gui> 菜单中选择 <gui>粗体</gui> 选项，或按 <keyseq><key>Ctrl</key><key>B</key></keyseq>。</p>
       </item>
       <item><title>斜体</title>
-        <p xml:lang="en_GB">To make text within your note italic, first select the text you want to modify. Then select the Italic option from the Text menu. You may also use the keybinding <keyseq><key>Ctrl</key><key>I</key></keyseq>  after selecting the text.</p>
+        <p>要使您便笺中的文本为斜体，先选择文本，然后从 <gui>文本</gui> 菜单中选择 <gui>斜体</gui> 选项。或按 <keyseq><key>Ctrl</key><key>I</key></keyseq>。</p>
      </item>
-     <item><title>剔除</title>
-       <p xml:lang="en_GB">The strikeout style will put a line through the selected text. To add a strikeout, select the text and then select the <gui>Strikeout</gui> option from the <gui>Text</gui> menu. You may also use the keybinding <keyseq><key>Ctrl</key><key>S</key></keyseq> after selecting the text.</p>
+     <item><title>删除线</title>
+       <p>删除线风格将放置一条穿过选中文本的线。要添加删除线，选择文本然后从 <gui>文本</gui> 菜单中选择 <gui>删除线</gui> 选项。或按<keyseq><key>Ctrl</key><key>S</key></keyseq>。</p>
      </item>
-     <item><title>高亮</title>
-       <p xml:lang="en_GB">The highlight style will put a different background around the selected text. To add a highlight, select the text and then select the <gui>Highlight</gui> option from the <gui>Text</gui> menu. You may also use the keybinding <keyseq><key>Ctrl</key><key>H</key></keyseq>  after selecting the text.</p>
+     <item><title xml:lang="en_GB">Highlight</title>
+       <p xml:lang="en_GB">The highlight style will put a different background around the selected text. To add a highlight, select text and then select the <gui>Highlight</gui> command from the <gui>Text</gui> menu or press <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
      </item>
      <item><title>字体大小</title>
-       <p xml:lang="en_GB">There are actually four options in this part of the menu: Small, Normal, Large, Huge. Each one of these options represents a font size to use for the selected text in the note. To modify the font size, select the text and then select one of <gui>Small</gui>, <gui>Normal</gui>, <gui>Large</gui>, <gui>Huge</gui> options from the Text menu.</p>
+       <p>菜单的此部分中实际上有四个选项：小、正常、大、巨大。每个选项都代表要用在选中文本的一种字号。要修改字体大小，选择文本然后从 <gui>小</gui>, <gui>正常</gui>, <gui>大</gui>, 或 <gui>巨大</gui> 中选一个。</p>
      </item>
      <item><title>项目符号</title>
-       <p xml:lang="en_GB">Select the Bullets option from the Text menu to begin or end a bulleted list. If the cursor is inside a bulleted list, the <gui>Increase Indent</gui>, <gui>Decrease Indent</gui> options will be enabled.</p>
-       <p xml:lang="en_GB">With the cursor on a bulleted list line, select the <gui>Increase Indent</gui> option to shift the current line to the right or the <gui>Decrease Indent</gui> option to shift the current line to the left.</p>
-       <p xml:lang="en_GB">For more information on bullets, <link xref="bulleted-lists"/>.</p>
-     </item>
-     <item><title>在此便笺中查找</title>
-       <p xml:lang="en_GB">Use this to search for text within the current note. A small find bar will open up at the bottom of the note. To open the find bar using the keyboard, use the standard keybinding, <keyseq><key>Ctrl</key><key>F</key></keyseq>. Enter text to find. After entering text, the matches will be highlighted. Click <gui>Next</gui> to highlight the next match and place the cursor there. Click <gui>Previous</gui> to move to the previous match.
-To close the find bar, click X (Close Button) on the far left or press the <key>Escape</key> key.</p>
+       <p xml:lang="en_GB">Select the <gui>Bullets</gui> command from the Text menu to begin or end a bulleted list. If the cursor is inside a bulleted list, the <gui>Increase Indent</gui> and <gui>Decrease Indent</gui> options will be enabled.</p>
+       <p xml:lang="en_GB">With the cursor on a bulleted list line, select the <gui>Increase Indent</gui> command to shift the current line to the right or the <gui>Decrease Indent</gui> command to shift to the left.</p>
+       <p>关于项目符号的更多信息，查看 <link xref="bulleted-lists"/>。</p>
      </item>
    </list>
+   <p xml:lang="en_GB">The toolbar at the top of note has search button. Use it to search for text within the current note. A small find bar will appear above the note. To open the find bar using the keyboard, press <keyseq><key>Ctrl</key><key>F</key></keyseq>. Enter the text to find and press <key>Enter</key>. Matches will be highlighted. Click <gui>Next</gui> to highlight the next match and place the cursor there. Click <gui>Previous</gui> to move to the previous match.
+To close the find bar, click the search button again or press the <key>Escape</key> key.</p>
 
    <section id="note-content" style="2column">
-     <title xml:lang="en_GB">Rich Note Content</title>
+     <title>富便笺内容</title>
    </section>
 
 </page>

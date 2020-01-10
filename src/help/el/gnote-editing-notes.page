@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="editing-notes" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <desc>Επεξεργασία περιεχομένων σημείωσης</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Επεξεργασία σημειώσεων</title>
+
+    <p>Όταν ανοίγετε μια σημείωση, το <app>Gnote</app> αντικαθιστά την επισκόπηση σημείωσης με τα περιεχόμενα της σημείωσης.</p>
+    <p>Η εργαλειοθήκη στην κορυφή του παραθύρου θα περιέχει τώρα τα συγκεκριμένα στοιχεία της σημείωσης σε αυτή. Κάτω από την εργαλειοθήκη είναι η περιοχή περιεχομένου της σημείωσης.</p>
+    <figure>
+      <title>Το παράθυρο του <app>Gnote</app> εμφανίζει τη σημείωση</title>
+      <desc>Σημειώσεις του <app>Gnote</app></desc>
+      <media type="image" src="figures/gnote-new-note.png" mime="image/png" style="right">
+        <p>Επεξεργασία σημειώσεων του <app>Gnote</app>.</p>
+      </media>
+    </figure>
+
+    <p>Για να επεξεργαστείτε τη σημείωση, πατήστε στην περιοχή περιεχομένου και πληκτρολογήστε. Η πρώτη γραμμή θεωρείται ως ο τίτλος της σημείωσης. Από προεπιλογή αυτή συμπληρώνεται με το κείμενο "Νέα σημείωση (αριθμός)". Για να αλλάξετε τον τίτλο, πατήστε στην πρώτη γραμμή και χρησιμοποιήστε το πληκτρολόγιο για να αλλάξετε τον τίτλο.</p>
+    <p>Χρησιμοποιήστε το κουμπί <gui>Κείμενο</gui> για να μορφοποιήσετε κείμενο στις σημειώσεις σας. Αυτό το πλήκτρο εμφανίζει ένα μενού με αρκετές εντολές:</p>
+
+    <list>
+      <item><title>Αναίρεση</title>
+        <p>Η εντολή <gui>Αναίρεση</gui> επαναφέρει τις αλλαγές που κάνατε στη σημείωσή σας κατά τη διάρκεια της τρέχουσας συνεδρίας. Για να αναιρέσετε χρησιμοποιώντας το πληκτρολόγιο, πατήστε <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
+      </item>
+      <item><title>Ακύρωση αναίρεσης</title>
+        <p>Η εντολή <gui>Ακύρωση αναίρεσης</gui> επαναφέρει τις αλλαγές που αφαιρέθηκαν χρησιμοποιώντας τη λειτουργία <gui>Αναίρεση</gui>. Για να ακυρώσετε την αναίρεση στην τελευταία αλλαγή χρησιμοποιώντας το πληκτρολόγιο, πατήστε <keyseq><key>Shift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
+      </item>
+      <item><title>Έντονα</title>
+        <p>Για να κάνετε το κείμενο έντονο, επιλέξτε το και έπειτα επιλέξτε την εντολή <gui>Έντονα</gui> από το μενού <gui>Κείμενο</gui> ή πατήστε <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
+      </item>
+      <item><title>Πλάγια</title>
+        <p>Για να κάνετε το κείμενο πλάγιο, επιλέξτε το και έπειτα επιλέξτε την εντολή <gui>Πλάγια</gui> από το μενού <gui>Κείμενο</gui> ή πατήστε <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
+     </item>
+     <item><title>Διαγραμμένα</title>
+       <p>Η τεχνοτροπία διαγραμμένα θα τοποθετήσει μια γραμμή μέσα από το επιλεγμένο κείμενο. Για να τα κάνετε διαγραμμένα, επιλέξτε το κείμενο και μετά επιλέξτε <gui>Διαγραμμένα</gui> από το μενού <gui>Κείμενο</gui> ή πατώντας το <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
+     </item>
+     <item><title>Επισήμανση</title>
+       <p>Η τεχνοτροπία επισήμανσης θα τοποθετήσει ένα διαφορετικό παρασκήνιο γύρω από το επιλεγμένο κείμενο. Για να προσθέσετε μια επισήμανση, επιλέξτε το κείμενο και μετά επιλέξτε την εντολή <gui>Επισήμανση</gui> από το μενού <gui>Κείμενο</gui> ή πατήστε <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
+     </item>
+     <item><title>Μέγεθος γραμματοσειράς</title>
+       <p>Υπάρχουν στην πραγματικότητα τέσσερις επιλογές σε αυτό το τμήμα του μενού: μικρό, κανονικό, μεγάλο και τεράστιο. Κάθε μία επιλογή εκπροσωπεί ένα μέγεθος γραμματοσειράς που μπορεί να χρησιμοποιηθεί για το επιλεγμένο κείμενο. Για να τροποποιήσετε το μέγεθος γραμματοσειράς, επιλέξτε το κείμενο και μετά επιλέξτε <gui>Μικρό</gui>, <gui>Κανονικό</gui>, <gui>Μεγάλο</gui>, ή <gui>Τεράστιο</gui>.</p>
+     </item>
+     <item><title>Κουκκίδες</title>
+       <p>Επιλέξτε την εντολή <gui>Κουκκίδες</gui> από το μενού κειμένου για να ξεκινήσετε ή να τελειώσετε μια λίστα με κουκκίδες. Αν ο δρομέας βρίσκεται μέσα σε μια λίστα με κουκκίδες, οι επιλογές <gui>Αύξηση εσοχής</gui> και <gui>Μείωση εσοχής</gui> θα ενεργοποιηθούν.</p>
+       <p>Με τον δρομέα σε μια γραμμή λίστας με κουκκίδες βρίσκεται πάνω στη γραμμή μιας λίστας με κουκκίδες, επιλέξτε την εντολή <gui>Αύξηση εσοχής</gui> για να μετακινήσετε τη συγκεκριμένη γραμμή προς τα δεξιά ή την εντολή <gui>Μείωση εσοχής</gui> για να τη μετακινήσετε προς τα αριστερά.</p>
+       <p>Για περισσότερες πληροφορίες σχετικά με τις κουκκίδες, δείτε <link xref="bulleted-lists"/>.</p>
+     </item>
+   </list>
+   <p>Η εργαλειοθήκη στην κορυφή της σημείωσης έχει ένα κουμπί αναζήτησης. Χρησιμοποιήστε το για να αναζητήσετε κείμενο μέσα στην τρέχουσα σημείωση. Μια μικρή γραμμή εύρεσης θα εμφανιστεί πάνω από τη σημείωση. Για να ανοίξετε τη γραμμή εύρεσης χρησιμοποιώντας το πληκτρολόγιο, πατήστε <keyseq><key>Ctrl</key><key>F</key></keyseq>. Εισάγετε το κείμενο προς εύρεση και πατήστε το πλήκτρο <key>Εισαγωγή</key>. Οι συμφωνίες θα επισημανθούν. Πατήστε <gui>Επόμενο</gui> για να επισημάνετε την επόμενη συμφωνία και τοποθετήστε τον δρομέα εκεί. Πατήστε <gui>Προηγούμενο</gui> για να μετακινηθείτε στην προηγούμενη συμφωνία. Για να κλείσετε τη γραμμή εύρεσης, πατήστε το πλήκτρο αναζήτησης ξανά ή πατήστε το πλήκτρο <key>Διαφυγή</key>.</p>
+
+   <section id="note-content" style="2column">
+     <title>Περιεχόμενο πλούσιας σημείωσης</title>
+   </section>
+
+</page>

@@ -14,23 +14,58 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Einführung in Gnote</title>
-    <p><app>Gnote</app> ist eine Anwendung für GNOME zum Erfassen von Notizzetteln. Sie ist einfach und leicht zu bedienen und erlaubt es Ihnen, Ideen und Informationen zu verwalten, mit denen Sie tagtäglich umgehen. Gnote hat einige sehr nützliche Bearbeitungsfunktionen, um Ihnen zu helfen, Ihre Notizzettel anzupassen. Diese umfassen:</p>
+    <p><app>Gnote</app> ist eine Anwendung für GNOME zum Erfassen von Notizzetteln. Sie ist einfach und leicht zu bedienen und ermöglicht es Ihnen, Ideen und Informationen zu verwalten, mit denen Sie tagtäglich umgehen. Gnote hat einige sehr nützliche Bearbeitungsfunktionen, um Ihnen zu helfen, Ihre Notizzettel anzupassen. Diese umfassen:</p>
     <list>
       <item><p>Hervorhebung von Suchbegriffen</p></item>
-      <item><p>Integrierte Rechtschreibkontrolle</p></item>
+      <item><p>Integrierte Rechtschreibprüfung</p></item>
       <item><p>Automatische Verknüpfung von Web- und E-Mail-Adressen</p></item>
-      <item><p>Rückgängigmachen und Wiederholen von Aktionen</p></item>
-      <item><p>Schriftart und -größe</p></item>
+      <item><p>Rückgängig/wiederholen</p></item>
+      <item><p>Schriftart und -größe ändern</p></item>
       <item><p>Aufzählungslisten</p></item>
     </list>
     <figure>
       <title><app>Gnote</app>-Hauptfenster</title>
         <desc><app>Gnote</app>-Hauptfenster</desc>
         <media type="image" src="figures/gnote-search-all-notes.png" mime="image/png" style="right">
-        <p><app>Gnote</app> main window.</p>
+        <p>Das <app>Gnote</app>-Hauptfenster.</p>
         </media>
     </figure>
 

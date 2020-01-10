@@ -11,12 +11,17 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Pakeisti pavadinimą</title>
-    <p>Įrankių mygtuką žymi piktograma <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Kai šis priedas yra įdiegtas, meniu <gui>Įrankiai</gui> turės punktą <gui>Pakeisti pavadinimą</gui>.</p>
+    <p>Kai įskiepis <gui>Pakeisti pavadinimą</gui> yra įdiegtas, <gui>veiksmų</gui> meniu turi punktą <gui>pakeisti pavadinimą</gui>.</p>
     <p>Pasirinkus punktą <gui>Pakeisti pavadinimą</gui> raštelio pavadinimas bus pakeistas šiuo metu bet kurioje programoje pažymėtu tekstu.</p>
     <p>Taip pat galite naudoti klavišų kombinaciją <keyseq><key>Vald</key><key>R</key></keyseq>.</p>
 

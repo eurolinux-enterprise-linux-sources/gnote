@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      "Table of Contents" is a Note add-in for Gnote.
+      It lists a note's table of contents in a menu.
+
+      Copyright (c)  2013  Luc Pionchon <pionchon.luc@gmail.com>
+
+      Permission is granted to copy, distribute and/or modify this document
+      under the terms of the GNU Free Documentation License, Version 1.1
+      or any later version published by the Free Software Foundation;
+      with no Invariant Sections, with no Front-Cover Texts, and with no
+      Back-Cover Texts.
+      FIXME: does the statement have to show in the rendered document?
+
+      A copy of the license is included in the section entitled "GNU
+      Free Documentation License".
+      FIXME: is this true? Is there a (GNOME? Yelp?) common GFDL topic?
+-->
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-tableofcontents" xml:lang="lt">
+
+  <info>
+    <revision status="candidate" pkgversion="gnote-addin-tableofcontents-version-1.0.0"/>
+    <!-- Status:
+      stub        contains little to no real content
+      incomplete  outline of all information, but lacking content
+      draft       all content available, but unpolished
+      review      ready to be reviewed by editors
+      candidate   reviewed and awaiting a final approval
+      final       approved and ready for publication or distribution
+      outdated    was once complete or nearly complete, but needs to be revised to reflect changes
+
+      Other possible attributes:
+      version=""        revision version
+      docversion=""     enclosing document
+      date="2011-03-08" revision date
+    -->
+    <license href="http://www.gnu.org/licenses/fdl-1.1.html"><p>Ši <em>žinyno tema</em> pateikiama pagal <link href="http://www.gnu.org/licenses/fdl-1.1.html">GNU laisvąją dokumentacijos licenciją, versija 1.1</link> (GFDL). Tai reiškia, kad galite laisvai kopijuoti, platinti ar kitaip keisti šį dokumentą pagal tam tikras sąlygas.</p>
+    </license>
+
+    <credit type="author copyright">
+      <name>Luc Pionchon</name><email>pionchon.luc@gmail.com</email><years>2013</years></credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <email>aurisc4@gmail.com</email>
+      <years>2013,2014</years>
+    </credit>
+    <!-- Credit type: (can have several types)
+      author        somebody responsible for writing content
+      editor        somebody who has provided reviews or editorial corrections
+      copyright     a person or entity which holds copyright on the work
+      maintainer    the person or entity currently responsible for the work
+      collaborator  somebody who has provided extensive rough information
+      translator    somebody who has translated the work into another language
+      publisher     a person or entity who distributes formatted copies
+
+      <credit> can have a URL, for example for a publisher, using FOAF namespace:
+        <page xmlns="http://xmlns.com/foaf/0.1/">http://flossmanuals.net/</page>
+    -->
+
+    <link type="guide" xref="index#advanced"/>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <link type="topic" xref="addins-preferences"/>
+    <link type="topic" xref="searching-notes"/>
+    <desc>Naršykite ilgus struktūrizuotus raštelius</desc>
+  </info>
+
+
+<title>Pridėti turinį</title>
+
+<desc><em>Naršykite ilgus struktūrizuotus raštelius</em></desc>
+
+<note><p>Tai yra <app>Gnote</app> įskiepis. Kai šis įskiepis yra įdiegtas, <gui>veiksmų</gui> meniu yra punktas <gui>Turinys</gui>. Daugiau apie šį įskiepį rasite <link xref="addins-preferences"/>.</p></note>
+
+
+<section id="nutshell"><title>Trumpai</title>
+
+<list type="numbered">
+  <item>
+    <p>Antraštė yra visa teksto eilutė, formatuota <gui>pusjuodis+milžiniškas</gui> arba <gui>pusjuodis+didelis</gui>.</p>
+  </item>
+  <item>
+    <p>Nustatykite antraštes kombinacijomis <keyseq><key>Vald</key><key>1</key></keyseq> arba <keyseq><key>Vald</key><key>2</key></keyseq>.</p>
+  </item>
+  <item>
+    <p>Atverkite turinį kombinacija <keyseq><key>Vald</key><key>Alt</key><key>1</key></keyseq> ir pereikite prie bet kurios antraštės.</p>
+  </item>
+</list>
+
+</section>
+
+<section id="screenshot"><title>Ekrano nuotrauka</title>
+    <figure>
+      <title>Struktūrizuotas raštelis su turiniu</title>
+        <media type="image" src="figures/gnote-addin-table-of-contents.png" mime="image/png">
+        </media>
+    </figure>
+</section>
+
+
+<section id="navigating"><title>Naršymas ilguose struktūrizuotuose rašteliuose</title>
+
+<p>Ilgus raštelius gali būti sunku naršyti. Tuomet yra įprasta juos struktūrizuoti pažymint skiltis ir poskiltis antraštėmis.</p>
+
+<p>Šis įskiepis leidžia lengvai naršyti ilgus struktūrizuotus raštelius. Nustačius antraštes raštelyje, raštelio veiksmų meniu bus matomas turinys. Tuomet galėsite peršokti tiesiai prie antraštės.</p>
+
+</section>
+
+
+<section id="setheadings"><title>Raštelių struktūrizavimas antraštėmis</title>
+
+<p>Antraštė yra tiesiog visa teksto eilutė su specialiu formatavimu:</p>
+<list>
+  <item><p>Pirmojo lygio antraštės skiltims yra formatuotos <gui>pusjuodžiu+milžinišku</gui> šriftu.</p></item>
+  <item><p>Antrojo lygio antraštės poskiltims yra formatuotos <gui>pusjuodžiu+dideliu</gui> šriftu.</p></item>
+</list>
+
+
+<p>Antraštei suformatuoti atlikite vieną iš šių veiksmų:</p>
+
+<list>
+  <item>
+    <p>Naudokite <gui>veiksmų</gui> meniu <gui>turinys</gui> komandas <gui>Antraštė 1</gui> bei <gui>Antraštė 2</gui>.</p>
+  </item>
+
+  <item>
+    <p>Naudokite klavišų kombinacijas <keyseq><key>Vald</key><key>1</key></keyseq> ir <keyseq><key>Vald</key><key>2</key></keyseq> pirmo ir antro lygio antraštėms.</p>
+ </item>
+</list>
+
+<note><p>Šios komandos pritaiko formatavimą visai eilutei. Nebūtina ją pažymėti, pakanka, kad žymiklis būtų eilutėje.</p><p>Taip pat, žymikliui esant tuščioje eilutėje, galite suaktyvinti antraštės komandą ir tuomet įvesti antraštės pavadinimą.</p></note>
+
+<p>Netgi galite naudoti įprastines formatavimo komandas iš <gui>teksto</gui> meniu: <gui>pusjuodis</gui>, <gui>didelis</gui> ir <gui>milžiniškas</gui> bei jų atitinkamus klaviatūros trumpinius. Pavyzdžiui, jei jūsų eilutė jau yra suformatuota <gui>didelis</gui>, tuomet jums tereikia ją taip pat padaryti <gui>pusjuodę</gui>, kad ji taptų pirmo lygio antrašte. Daugiau apie teksto stilius rasite <link xref="editing-notes"/>.</p>
+
+</section>
+
+
+<section id="showtable"><title>Turinio parodymas</title>
+
+<p>Turinį galite pasiekti šiais būdais:</p>
+<list>
+<item><p><gui>Veiksmų</gui> meniu pasirinkite <gui>turinys</gui>.</p></item>
+<item><p><guiseq><gui>kontekstiniame meniu</gui><gui>turinys</gui></guiseq> (dešinysis paspaudimas raštelio lange).</p></item>
+<item><p><gui>Iššokančiame meniu</gui>, pasiekiamame klaviatūros trumpiniu <keyseq><key>Vald</key><key>Alt</key><key>1</key></keyseq>.</p></item>
+<p>Tuomet galite judėti naudodami rodyklių klavišus ir pereiti prie pasirinktos antraštės klavišu <key>enter</key>. Arba galite pele paspausti antraštę ir pereiti prie jos.</p>
+</list>
+
+</section>
+
+
+<section id="troubleshooting"><title>Problemų sprendimai</title>
+<terms>
+  <item><title><em style="strong">Viena antraštė nematoma turinyje</em></title><p>Antraštės eilutėje gali būti kokių nors nespausdinamų simbolių, kurie nėra suformatuoti kaip antraštė. Įsitikinkite, kad <em>visa</em> eilutė yra suformatuota kaip antraštė. Žr. <link xref="#setheadings"/>.</p>
+  </item>
+  <item><title><em style="strong">Turinyje yra tuščia eilutė</em></title><p>Tuščia eilutė, galbūt turinti tarpų, yra suformatuota kaip antraštė. Peršokite į tą eilutę ir ištrinkite sritį.</p>
+  </item>
+
+  <item><title/><p>
+  </p>
+  </item>
+
+</terms>
+
+</section>
+
+</page>

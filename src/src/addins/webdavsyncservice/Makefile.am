@@ -1,7 +1,16 @@
 
 include $(builddir)/../addins.mk
 
-addinsdir = $(ADDINSDIR)
-addins_LTLIBRARIES = webdavsyncservice.la
+@INTLTOOL_DESKTOP_RULE@
 
-webdavsyncservice_la_SOURCES = webdavsyncserviceaddin.hpp webdavsyncserviceaddin.cpp
+desktop_in_files = webdavsyncservice.desktop.in
+desktop_files    = $(desktop_in_files:.desktop.in=.desktop)
+
+addinsdir = $(ADDINSDIR)
+addins_LTLIBRARIES = libwebdavsyncservice.la
+addins_DATA = $(desktop_files)
+
+libwebdavsyncservice_la_SOURCES = webdavsyncserviceaddin.hpp webdavsyncserviceaddin.cpp
+
+EXTRA_DIST = $(desktop_in_files)
+DISTCLEANFILES = $(desktop_files)

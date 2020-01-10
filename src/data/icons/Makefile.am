@@ -29,8 +29,10 @@ private_icons = \
 	hicolor_actions_scalable_notebook-new.svg \
 	hicolor_places_16x16_notebook.png \
 	hicolor_places_16x16_note.png \
+	hicolor_places_22x22_active-notes.png \
 	hicolor_places_22x22_notebook.png \
 	hicolor_places_22x22_note.png \
+	hicolor_places_22x22_special-notes.png \
 	hicolor_places_24x24_notebook.png \
 	hicolor_places_24x24_note.png \
 	hicolor_status_16x16_pin-active.png \
@@ -49,8 +51,10 @@ noinst_DATA = \
 	hicolor_actions_22x22_note-new.svg \
 	hicolor_places_16x16_notebook.svg \
 	hicolor_places_16x16_note.xcf.bz2 \
+	hicolor_places_22x22_active-notes.svg \
 	hicolor_places_22x22_notebook.svg \
 	hicolor_places_22x22_note.svg \
+	hicolor_places_22x22_special-notes.svg \
 	$(NULL)
 
 EXTRA_DIST = \

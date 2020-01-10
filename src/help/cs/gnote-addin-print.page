@@ -11,12 +11,16 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011, 2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
   
   <title>Tisk</title>
-    <p>Tlačítko <gui>Nástroje</gui> je prezentováno ikonou <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Když je tento doplněk nainstalován, nachází se v nabídce <gui>Nástroje</gui> volba <gui>Tisk</gui>.</p>
-    <p>Pokud volbu <gui>Tisk</gui> vyberete, objeví se standardní dialogové okno <gui>Tisk</gui> a poznámku můžete vytisknout.</p>
+    <p>Když je nainstalován zásuvný modul <app>Tisk</app>, objeví se v nabídce <gui>Činnosti</gui>, příkaz <gui>Tisk</gui>. Tento příkaz otevře standardní dialogové okno <gui>Tisk</gui>, pomocí kterého můžete poznámku vytisknout.</p>
 
 </page>

@@ -4,29 +4,46 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <desc>同步便笺</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
       <years>2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
   <title>同步</title>
   <section id="description">
-    <title>About synchronization</title>
-    <p><app>Gnote</app> allows you to synchronize notes accross multiple machines, so that you could use it on multiple devices and work with the same notes on all of them.</p>
-    <p>In order to use synchronization, you have to configure it first in <app>Gnote</app> configuration dialog.</p>
-    <p>Notes are synchronized to one location, common to all <app>Gnote</app> installations. This location stores the history of your notes. When synchronizing, each <app>Gnote</app> instance uploads new and updated notes to this location, downloads new and updated notes on other installations. The synchronization location also contains information on deleted notes: when synchronizing, <app>Gnote</app> publishes all deleted notes and deletes the ones, that are published as such. This way multiple <app>Gnote</app> installations can keep the same set of notes.</p>
+    <title>关于同步</title>
+    <p><app>Gnote</app> lets you synchronize notes across multiple machines, so that you can use it on multiple devices and work with the same notes on all of them.</p>
+    <p>In order to use synchronization, you have to configure it first in the <app>Gnote</app> configuration dialog.</p>
+    <p>Notes are synchronized to one location, common to all <app>Gnote</app> installations. This location stores the history of your notes. When synchronizing, each <app>Gnote</app> instance uploads new and updated notes to this location, and downloads new and updated notes from other installations. The synchronization location also contains information on deleted notes: when synchronizing, <app>Gnote</app> publishes all deleted notes and deletes the ones that have been published as such. This way multiple <app>Gnote</app> installations can keep the same set of notes.</p>
   </section>
   <section id="configuration" style="2column">
-    <title>Configure synchronization</title>
+    <title>配置同步</title>
   </section>
   <section id="usage">
-    <title>Synchronize</title>
-    <p>To synchronize, select <gui>Synchronize Notes</gui> from application menu. This item is only available, if synchronization is configured.</p>
-    <p>After selected the <gui>Synchronize Notes</gui> menu item, a progress dialog will be displayed, which will let you know, when synchronization is complete. Also, all notes will be disabled for editing while synchronization is in progress.</p>
+    <title>同步</title>
+    <p>To synchronize, select <gui>Synchronize Notes</gui> from the application menu. This item is only available if synchronization has been configured.</p>
+    <p>After you select the <gui>Synchronize Notes</gui> menu item, a progress dialog will be displayed, which will let you know when synchronization is complete. Also, all notes will be disabled for editing while synchronization is in progress.</p>
     <figure>
-      <title>Synchronization progress</title>
+      <title>同步进度</title>
       <media type="image" src="figures/gnote-sync-progress.png" mime="image/png"/>
     </figure>
   </section>

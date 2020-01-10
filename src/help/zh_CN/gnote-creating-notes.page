@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="index#managing-notes"/>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <desc>创建便笺</desc>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -13,17 +13,34 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
   <title>创建便笺</title>
 
-  <p>In <app>Gnote</app>, you can create new notes using one of the following methods:</p>
+  <p>In <app>Gnote</app>, you can create new notes in any of these ways:</p>
   <list>
-    <item><p>Click on application menu and select <gui>New Note</gui>.</p></item>
-    <item><p>In <app>Gnote</app> window click the toolbar item <gui>New</gui>.</p></item>
-    <item><p>When in search mode, right click in notes list and select <gui>New Note</gui>. This one will create note in currently selected notebook.</p></item>
-    <item><p>If <gui>Status Icon</gui> is enabled, click on it and select <gui>New Note</gui>.</p></item>
-    <item><p>Use keyboard shortcut <keyseq><key>Ctrl</key><key>N</key></keyseq>.</p></item>
+    <item><p>Select <gui>New Note</gui> in the application menu.</p></item>
+    <item><p>In the <app>Gnote</app> window, click the toolbar item <gui>New</gui>.</p></item>
+    <item><p>In the main window, right click in the note list and select <gui>New</gui>. This will create a note in the currently selected notebook.</p></item>
+    <item><p>If the status icon is enabled, click on it and select <gui>New Note</gui>.</p></item>
+    <item><p>使用快捷键 <keyseq><key>Ctrl</key><key>N</key></keyseq>。</p></item>
   </list>
 
 </page>

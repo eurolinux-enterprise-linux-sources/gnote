@@ -1,23 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-bugzillalink" xml:lang="zh-CN">
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gnote-addin-bugzillalink" xml:lang="zh-CN">
 
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
     <link type="topic" xref="addins-preferences"/>
-    <desc>Insert Bugzilla Links</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>插入 Bugzilla 链接</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Bugzilla Links Add-in</title>
-  <p>Allows you to drag a Bugzilla URL directly into a <app>Gnote</app> note. The bug number is inserted as a link with a little bug icon next to it.</p>
-  <p>In the preferences, you can add special icons for certain hosts.</p>
+  <title>Bugzilla 链接附加组件</title>
+  <p>This plugin lets you drag a Bugzilla URL directly into a <app>Gnote</app> note. The bug number is inserted as a link with a little bug icon next to it.</p>
+  <p>在首选项中，您可以为特定主机添加特殊图标。</p>
 
 </page>

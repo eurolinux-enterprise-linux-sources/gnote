@@ -1,6 +1,7 @@
 /*
  * gnote
  *
+ * Copyright (C) 2014 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a
@@ -65,12 +66,9 @@ namespace sharp {
   std::string string_trim(const std::string & source);
   std::string string_trim(const std::string & source, const char * set_of_char);
 
-  bool string_contains(const std::string & source, const std::string &);
   int string_index_of(const std::string & source, const std::string & with);
   int string_index_of(const std::string & source, const std::string & with, int);
   int string_last_index_of(const std::string & source, const std::string & with);
-
-  Glib::ustring string_to_lower(const Glib::ustring & source);
 }
 
 

@@ -11,21 +11,26 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011, 2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Doplněk Podtržené</title>
-  <p>Pokud je nainstalován doplněk <gui>Podtržené</gui>, bude nabídka <gui>Nástroje</gui> obsahovat volbu <gui>Podtržené</gui>.</p>
+  <p>Pokud je nainstalován zásuvný modul <gui>Podtržené</gui>, bude nabídka <gui>Nástroje</gui> obsahovat volbu <gui>Podtržené</gui>.</p>
   <p>Pro podtržení vybraného textu použijte některý následující postup:</p>
   <list>
     <item><p>Klikněte na <gui>Text</gui> a <gui>Podtržené</gui>.</p></item>
-    <item><p>Zmáčkněte kombinaci kláves <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+    <item><p>Zmáčkněte <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
   </list>
   <p>Pro zrušení podtržení vyberte podtržený text a použijte některý následující postup:</p>
   <list>
     <item><p>Klikněte na <gui>Text</gui> a <gui>Podtržené</gui>.</p></item>
-    <item><p>Zmáčkněte kombinaci kláves <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+    <item><p>Zmáčkněte <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
   </list>
 
 </page>

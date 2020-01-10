@@ -3,25 +3,42 @@
 
   <info>
     <link type="guide" xref="notes-preferences#advanced"/>
-    <desc>Settings for Gnote add-ins</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>Settings for Gnote plugins</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013,2014</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Add-in Preferences</title>
-    <p>You can activate or deactivate add-ins in this tab. To do this, select an add-in and click the <gui>Enable</gui> button. The button will be disabled and the <gui>Disable</gui> button will be enabled, which can now be used to disable add-in.</p>
-    <p>Some add-ins have preferences. They can be accessed by selecting add-in and pressing the <gui>Preferences</gui> button.</p>
-    <figure><title><app>Gnote</app> Addin Preferences</title>
-    <desc><app>Gnote</app> Add-ins window</desc>
+  <title>附加组件首选项</title>
+    <p>You can activate or deactivate plugins in this tab. To do this, select a plugin and click the <gui>Enable</gui> button. Use the <gui>Disable</gui> button to disable a plugin.</p>
+    <p>Some plugins have preferences, which you can access by selecting a plugin and pressing the <gui>Preferences</gui> button.</p>
+    <figure><title><app>Gnote</app> 附加组件首选项</title>
+    <desc><app>Gnote</app> 附加组件窗口</desc>
     <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">
-      <p><gui>Add-ins</gui> window.</p>
+      <p><gui>附加组件</gui> 窗口。</p>
     </media>
     </figure>
 

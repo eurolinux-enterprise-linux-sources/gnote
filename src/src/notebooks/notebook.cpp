@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2013 Aurimas Cernius
+ * Copyright (C) 2010-2014 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,7 +24,6 @@
 #include <glibmm/i18n.h>
 
 #include "sharp/string.hpp"
-#include "iconmanager.hpp"
 #include "notemanager.hpp"
 #include "notebooks/notebook.hpp"
 #include "notebooks/notebookmanager.hpp"
@@ -35,6 +34,26 @@ namespace notebooks {
 
 
   const char * Notebook::NOTEBOOK_TAG_PREFIX = "notebook:";
+  Tag::Ptr Notebook::s_template_tag;
+
+  Tag::Ptr Notebook::template_tag()
+  {
+    if(s_template_tag == NULL) {
+      s_template_tag = ITagManager::obj().get_or_create_system_tag(
+        ITagManager::TEMPLATE_NOTE_SYSTEM_TAG);
+    }
+
+    return s_template_tag;
+  }
+
+  bool Notebook::is_template_note(const Note::Ptr & note)
+  {
+    Tag::Ptr tag = template_tag();
+    if(tag == NULL) {
+      return false;
+    }
+    return note->contains_tag(tag);
+  }
 
   /// <summary>
   /// Construct a new Notebook with a given name
@@ -77,10 +96,10 @@ namespace notebooks {
 
   void Notebook::set_name(const std::string & value)
   {
-    std::string trimmedName = value;
+    Glib::ustring trimmedName = sharp::string_trim(value);
     if(!trimmedName.empty()) {
       m_name = trimmedName;
-      m_normalized_name = sharp::string_to_lower(trimmedName);
+      m_normalized_name = trimmedName.lowercase();
 
       // The templateNoteTite should show the name of the
       // notebook.  For example, if the name of the notebooks
@@ -108,16 +127,16 @@ namespace notebooks {
   Note::Ptr Notebook::find_template_note() const
   {
     Note::Ptr note;
-    Tag::Ptr template_tag = ITagManager::obj().get_system_tag(ITagManager::TEMPLATE_NOTE_SYSTEM_TAG);
+    Tag::Ptr templ_tag = template_tag();
     Tag::Ptr notebook_tag = ITagManager::obj().get_system_tag(NOTEBOOK_TAG_PREFIX + get_name());
-    if(!template_tag || !notebook_tag) {
+    if(!templ_tag || !notebook_tag) {
       return note;
     }
-    std::list<Note*> notes;
-    template_tag->get_notes(notes);
-    for (std::list<Note*>::iterator iter = notes.begin(); iter != notes.end(); ++iter) {
-      if ((*iter)->contains_tag (notebook_tag)) {
-        note = (*iter)->shared_from_this();
+    std::list<NoteBase*> notes;
+    templ_tag->get_notes(notes);
+    FOREACH(NoteBase *n, notes) {
+      if(n->contains_tag(notebook_tag)) {
+        note = static_pointer_cast<Note>(n->shared_from_this());
         break;
       }
     }
@@ -127,24 +146,24 @@ namespace notebooks {
 
   Note::Ptr Notebook::get_template_note() const
   {
-    Note::Ptr note = find_template_note();
+    NoteBase::Ptr note = find_template_note();
 
     if (!note) {
       std::string title = m_default_template_note_title;
       if(m_note_manager.find(title)) {
-        std::list<Note*> tag_notes;
+        std::list<NoteBase*> tag_notes;
         m_tag->get_notes(tag_notes);
-        title = m_note_manager.get_unique_name (title, tag_notes.size());
+        title = m_note_manager.get_unique_name(title);
       }
       note = m_note_manager.create(title, NoteManager::get_note_template_content (title));
           
       // Select the initial text
-      NoteBuffer::Ptr buffer = note->get_buffer();
+      NoteBuffer::Ptr buffer = static_pointer_cast<Note>(note)->get_buffer();
       buffer->select_note_body();
 
       // Flag this as a template note
-      Tag::Ptr template_tag = ITagManager::obj().get_or_create_system_tag(ITagManager::TEMPLATE_NOTE_SYSTEM_TAG);
-      note->add_tag (template_tag);
+      Tag::Ptr templ_tag = template_tag();
+      note->add_tag(templ_tag);
 
       // Add on the notebook system tag so Tomboy
       // will persist the tag/notebook across sessions
@@ -155,21 +174,21 @@ namespace notebooks {
       note->queue_save (CONTENT_CHANGED);
     }
 
-    return note;
+    return static_pointer_cast<Note>(note);
   }
 
   Note::Ptr Notebook::create_notebook_note()
   {
-    std::string temp_title;
+    Glib::ustring temp_title;
     Note::Ptr note_template = get_template_note();
 
-    temp_title = m_note_manager.get_unique_name(_("New Note"), m_note_manager.get_notes().size());
-    Note::Ptr note = m_note_manager.create_note_from_template(temp_title, note_template);
+    temp_title = m_note_manager.get_unique_name(_("New Note"));
+    NoteBase::Ptr note = m_note_manager.create_note_from_template(temp_title, note_template);
 
     // Add the notebook tag
     note->add_tag(m_tag);
 
-    return note;
+    return static_pointer_cast<Note>(note);
   }
 
   /// <summary>
@@ -181,9 +200,13 @@ namespace notebooks {
   /// <returns>
   /// A <see cref="System.Boolean"/>
   /// </returns>
-  bool Notebook::contains_note(const Note::Ptr & note)
+  bool Notebook::contains_note(const Note::Ptr & note, bool include_system)
   {
-    return note->contains_tag (m_tag);
+    bool contains = note->contains_tag(m_tag);
+    if(!contains || include_system) {
+      return contains;
+    }
+    return !is_template_note(note);
   }
 
   bool Notebook::add_note(const Note::Ptr & note)
@@ -192,151 +215,9 @@ namespace notebooks {
     return true;
   }
 
-  Glib::RefPtr<Gdk::Pixbuf> Notebook::get_icon()
-  {
-    return IconManager::obj().get_icon(IconManager::NOTEBOOK, 22);
-  }
-
   std::string Notebook::normalize(const std::string & s)
   {
-    return sharp::string_to_lower(sharp::string_trim(s));
-  }
-
-  Tag::Ptr SpecialNotebook::get_tag() const
-  {
-    return Tag::Ptr();
-  }
-
-  Note::Ptr SpecialNotebook::get_template_note() const
-  {
-    return m_note_manager.get_or_create_template_note();
-  }
-
-
-  AllNotesNotebook::AllNotesNotebook(NoteManager & manager)
-    : SpecialNotebook(manager, _("All Notes"))
-  {
-  }
-
-
-  std::string AllNotesNotebook::get_normalized_name() const
-  {
-    return "___NotebookManager___AllNotes__Notebook___";
-  }
-
-
-  bool AllNotesNotebook::contains_note(const Note::Ptr &)
-  {
-    return true;
-  }
-
-
-  bool AllNotesNotebook::add_note(const Note::Ptr &)
-  {
-    return false;
-  }
-
-  Glib::RefPtr<Gdk::Pixbuf> AllNotesNotebook::get_icon()
-  {
-    return IconManager::obj().get_icon(IconManager::FILTER_NOTE_ALL, 22);
-  }
-
-
-  UnfiledNotesNotebook::UnfiledNotesNotebook(NoteManager & manager)
-    : SpecialNotebook(manager, _("Unfiled Notes"))
-  {
-  }
-
-  std::string UnfiledNotesNotebook::get_normalized_name() const
-  {
-    return "___NotebookManager___UnfiledNotes__Notebook___";
-  }
-
-
-  bool UnfiledNotesNotebook::contains_note(const Note::Ptr & note)
-  {
-    return !notebooks::NotebookManager::obj().get_notebook_from_note(note);
-  }
-
-
-  bool UnfiledNotesNotebook::add_note(const Note::Ptr & note)
-  {
-    NotebookManager::obj().move_note_to_notebook(note, Notebook::Ptr());
-    return true;
-  }
-
-  Glib::RefPtr<Gdk::Pixbuf> UnfiledNotesNotebook::get_icon()
-  {
-    return IconManager::obj().get_icon(IconManager::FILTER_NOTE_UNFILED, 22);
-  }
-
-
-  PinnedNotesNotebook::PinnedNotesNotebook(NoteManager & manager)
-    : SpecialNotebook(manager, _("Pinned Notes"))
-  {
-  }
-
-  std::string PinnedNotesNotebook::get_normalized_name() const
-  {
-    return "___NotebookManager___PinnedNotes__Notebook___";
-  }
-
-
-  bool PinnedNotesNotebook::contains_note(const Note::Ptr & note)
-  {
-    return note->is_pinned();
-  }
-
-  bool PinnedNotesNotebook::add_note(const Note::Ptr & note)
-  {
-    note->set_pinned(true);
-    return true;
-  }
-
-  Glib::RefPtr<Gdk::Pixbuf> PinnedNotesNotebook::get_icon()
-  {
-    return IconManager::obj().get_icon(IconManager::PIN_DOWN, 22);
-  }
-
-
-  ActiveNotesNotebook::ActiveNotesNotebook(NoteManager & manager)
-    : SpecialNotebook(manager, _("Active Notes"))
-  {
-    manager.signal_note_deleted
-      .connect(sigc::mem_fun(*this, &ActiveNotesNotebook::on_note_deleted));
-  }
-
-  std::string ActiveNotesNotebook::get_normalized_name() const
-  {
-    return "___NotebookManager___ActiveNotes__Notebook___";
-  }
-
-  bool ActiveNotesNotebook::contains_note(const Note::Ptr & note)
-  {
-    return m_notes.find(note) != m_notes.end();
-  }
-
-  bool ActiveNotesNotebook::add_note(const Note::Ptr & note)
-  {
-    if(m_notes.insert(note).second) {
-      signal_size_changed();
-    }
-
-    return true;
-  }
-
-  Glib::RefPtr<Gdk::Pixbuf> ActiveNotesNotebook::get_icon()
-  {
-    return IconManager::obj().get_icon(IconManager::NOTE, 22);
-  }
-
-  void ActiveNotesNotebook::on_note_deleted(const Note::Ptr & note)
-  {
-    std::set<Note::Ptr>::iterator iter = m_notes.find(note);
-    if(iter != m_notes.end()) {
-      m_notes.erase(iter);
-      signal_size_changed();
-    }
+    return Glib::ustring(sharp::string_trim(s)).lowercase();
   }
 
 }

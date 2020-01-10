@@ -3,21 +3,38 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Rename note title</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>重命名便笺</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Replace title</title>
-    <p>The Tools button is represented by the <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>  icon. When this add-in is installed, the option <gui>Replace title</gui> is present in <gui>Tools</gui> menu.</p>
-    <p>When the <gui>Replace title</gui> option is selected, the note title will be replaced by currently selected text in any application.</p>
-    <p>Alternatively, you can use <keyseq><key>Ctrl</key><key>R</key></keyseq> shortcut.</p>
+  <title>替代标题</title>
+    <p>When the <app>Replace title</app> plugin is installed, the command <gui>Replace title</gui> is present in the <gui>Actions</gui> menu.</p>
+    <p><gui>替换标题</gui>命令将用(在任何应用中)选中的文本替代现有便笺标题。</p>
+    <p>或者，您可以使用 <keyseq><key>Ctrl</key><key>R</key></keyseq> 快捷键。</p>
 
 </page>

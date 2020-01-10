@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Печать заметок</desc>
+    <desc>Print notes</desc>
     <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
     <credit type="author">
       <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
@@ -11,12 +11,16 @@
     </credit>
     <credit type="editor">
       <name>Ауримас Церниус (Aurimas Cernius)</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
   
   <title>Печать</title>
-    <p>Кнопка инструментов изображена в виде значка <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. При наличии дополнения для печати в меню <gui>Инструменты</gui> появится пункт <gui>Печать</gui>.</p>
-    <p>После выбора пункта <gui>Печать</gui> откроется диалоговое окно печати и заметка, которая будет напечатана.</p>
+    <p>When the <app>Print</app> plugin is installed, the <gui>Print</gui> command is present in the <gui>Actions</gui> menu. This command opens a standard <gui>Print</gui> dialog which lets you print a note.</p>
 
 </page>

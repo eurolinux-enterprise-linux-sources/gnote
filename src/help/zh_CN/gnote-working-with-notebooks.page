@@ -4,8 +4,8 @@
 
   <info>
     <link type="guide" xref="index#organizing-notes"/>
-    <desc>Organizing your notes</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>组织您的便笺</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
@@ -14,94 +14,110 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Working With Notebooks</title>
-    <p>Notebooks allow you to group related notes together. You can add a note to a notebook in the main window or directly inside of a Note.</p>
+  <title>便笺本操作</title>
+    <p>便笺本允许您把相关的便笺分组到一起。您可以在主窗口中或在便笺编辑视图下直接将便笺添加到便笺本。</p>
 
     <section id="creating-notebooks"><title>创建便笺本</title>
-      <p>You can create new notebooks using one of the following methods</p>
+      <p>To create a new notebook:</p>
       <steps>
         <item>
-          <p>Click on application menu and select <gui>New Notebook</gui>.</p>
+          <p>点击应用程序菜单然后选择<gui>新建便笺本</gui>。</p>
         </item>
         <item>
-          <p>为新便笺本输入名称</p>
+          <p>为新便笺本输入名称。</p>
         </item>
       </steps>
-      <p>To create a new notebook context menu</p>
+      <p>Alternatively:</p>
       <steps>
         <item>
-          <p>In search mode, right click in the left hand box and choose <gui>New Notebook</gui>.</p>
+          <p>In the note overview, right click in the left hand pane and choose <gui>New...</gui>.</p>
         </item>
         <item>
-          <p>为新便笺本输入名称</p>
+          <p>为新便笺本输入名称。</p>
         </item>
       </steps>
       <figure>
-        <title>New Notebook from context menu</title>
+        <title>从环境菜单新建便笺本</title>
         <media type="image" src="figures/add-notebook-search.png" mime="image/png" style="right">
-        <p>New Notebook</p>
+        <p>新建便笺本</p>
       </media>
       </figure>  
     </section>
 
-    <section id="adding-notes-to-a-notebook"><title>添加便笺到便笺本</title>
-      <p>To add notes to a notebook, you can add a note from the main window or directly within a note.</p>
-      <p>To move an existing note from the main window use one of the following:</p>
+    <section id="adding-notes-to-a-notebook"><title>将便笺添加到便笺本</title>
+      <p>You can add a note to a notebook from the main window or directly within a note.</p>
+      <p>To add a note to a notebook from the main window, do one of the following:</p>
       <list>
-        <item><p>Drag the note(s) onto a notebook on the left using mouse.</p></item>
-        <item><p>Right click on a notebook and select <gui>New Note</gui> from context menu. A new note will be created and added to notebook.</p></item>
+        <item><p>使用鼠标将便笺拖到左侧的便笺本。</p></item>
+        <item><p>Click on a notebook, right-click in notes list and select <gui>New</gui> from the context menu. A new note will be created and added to the notebook.</p></item>
       </list>
-      <p>As you type a note, you can add the note directly to an existing notebook using the <gui>Notebook</gui> button. The Notebook button is represented by the <media type="image" src="figures/notebook-icon.png" mime="image/png" style="right"/> icon.</p>
+      <p>As you type a note, you can add the note directly to an existing notebook using the <guiseq><gui>Actions</gui><gui>Notebook</gui></guiseq> menu.</p>
       <figure>
-        <title>添加便笺到便笺本</title>
-        <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>Add to Notebook.</p></media>
+        <title>将便笺添加到便笺本</title>
+        <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>添加到便笺本。</p></media>
       </figure>
-      <p>To remove note from notebook, use one of the following:</p>
+      <p>您可以使用如下方法从便笺本中移除便笺：</p>
       <list>
-        <item><p>Move note to <gui>Unfiled notes</gui> notebook in main window.</p></item>
-        <item><p>Select the <gui>No Notebook</gui> option from menu, presented when you press the <gui>Notebook</gui> button in opened note.</p></item>
+        <item><p>在主窗口中将便笺移动到<gui>未分类便笺</gui>。</p></item>
+        <item><p>Select the <gui>No Notebook</gui> option from the menu which appears when you press the <guiseq><gui>Actions</gui><gui>Notebook</gui></guiseq> in an open note.</p></item>
       </list>
     </section>
 
-    <section id="creating-notebook-templates"><title>创建记事本模板</title>
-      <p>After you create a notebook, you can create a template for each new note that you create in that notebook.</p>
+    <section id="creating-notebook-templates"><title>创建模板</title>
+      <p>在您创建便笺本之后，可以为便笺本中的每个新建便笺创建一个模板。</p>
       <steps>
-        <item><p>In main window right click on a Notebook that you have created and choose <gui>Open Template Note</gui>.</p>
+        <item><p>In the main window, right click on a notebook and choose <gui>Open Template Note</gui>.</p>
         </item>
-        <item><p>This will open a new note that will be used as the template. Any text typed in this note will appear in all notes created in this Notebook.</p></item>
+        <item><p>这将打开一个用作模板的新便笺。任何输入到此便笺的文本将出现在在该便笺本创建的便笺里。</p></item>
       </steps>
       <figure>
-        <title>Creating Notebook Template</title>
-        <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Note Template.</p></media>
+        <title>创建模板</title>
+        <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>便笺模板。</p></media>
       </figure>
-      <p>For more, see <link xref="gnote-template-notes"/>.</p>
+      <p>更多内容可查看<link xref="gnote-template-notes"/>。</p>
     </section>
 
-  <section id="deleting-a-notebook"><title>删除记事本</title>
-    <p>Deleting a notebook will not delete any of the notes which are currently inside the notebook. After deleting a notebook, the notes will not be associated with any notebook and can be seen by highlighting <gui>Unfiled Notes</gui> in the main window.</p>
-    <p>可以通过如下的两种方法之一删除已经创建的便笺本：</p>
-    <p>To delete a notebook, go to search mode in main window and do one of the following:</p>
+  <section id="deleting-a-notebook"><title>删除便笺本</title>
+    <p>删除便笺本并不会删除便笺本里的任何便笺。删除便笺本之后，其中的便笺不会与任何便笺本关联。它们将在主窗口的 <gui>未分类便笺</gui> 中显示。</p>
+    <p>要删除便笺本，转到主窗口并：</p>
     <list>
-      <item><p>Right click on a notebook and choose <gui>Delete Notebook</gui>.</p></item>
-      <item><p>Remove all notes from notebook. Notebook will be automatically removed on <app>Gnote</app> restart.</p></item>
+      <item><p>右键点击便笺本并选择<gui>删除便笺本</gui>。</p></item>
+      <item><p>Remove all notes from a notebook. The notebook will be automatically removed the next time <app>Gnote</app> restarts.</p></item>
     </list>
     <figure>
-      <title>Deleting notes from main window</title>
+      <title>从主窗口删除便笺</title>
         <media type="image" src="figures/delete-notebook.png" mime="image/png" style="right">
-          <p>Delete Notebook.</p>
+          <p>删除便笺本。</p>
         </media>
     </figure>
   </section>
 
-  <section id="special-notebooks"><title>Special Notebooks</title>
+  <section id="special-notebooks"><title>特殊便笺本</title>
     <p><app>Gnote</app> has several special notebooks:</p>
     <list>
-      <item><p><gui>Active Notes</gui> - contains notes, that were opened in current <app>Gnote</app> session.</p></item>
-      <item><p><gui>All Notes</gui> - contains all notes, except templates.</p></item>
-      <item><p><gui>Pinned Notes</gui> - used to mark notes as important.</p></item>
-      <item><p><gui>Unfilled Notes</gui> - contains all notes that are not placed in a user created notebook.</p></item>
+      <item><p><gui>Active</gui>: notes that have been opened in the current <app>Gnote</app> session</p></item>
+      <item><p><gui>All</gui>: all notes except templates</p></item>
+      <item><p><gui>Important</gui>: notes marked as important</p></item>
+      <item><p><gui>Unfiled</gui>: all notes that are not in a user-created notebook</p></item>
     </list>
   </section>
 

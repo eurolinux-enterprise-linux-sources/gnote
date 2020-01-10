@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Eksportuoti raštelius į HTML formatą</desc>
+    <desc>Eksportuoti raštelius į HTML</desc>
     <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,14 +11,18 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Eksportuoti į HTML</title>
-    <p>Įrankių mygtuką vaizduoja piktograma <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Kai šis priedas yra įdiegtas, meniu <gui>Įrankiai</gui> turi punktą <gui>Eksportuoti į HTML</gui>.</p>
-    <p>Galite sukurti HTML (Hypertext Markup Language - hiperteksto žymėjimo kalba) dokumentą iš vieno ar daugiau raštelių pasirinkdami šį punktą.</p>
-    <p>Pasirinkę šį punktą pamatysite dialogą, leidžiantį pasirinkti, kur išsaugosite HTML failą. Įveskite paskirties failo pavadinimą ir spauskite <gui>Išsaugoti</gui> failo išsaugojimui arba <gui>Atsisakyti</gui> veiksmo nutraukimui.</p>
+    <p>Kai įskiepis <app>Eksportuoti į HTML</app> yra įdiegtas, <gui>veiksmų</gui> meniu turi komandą <gui>eksportuoti į HTML</gui>.</p>
+    <p>Norėdami sukurti HTML dokumentą iš raštelio, pasirinkite šį punktą. Pamatysite dialogą, leidžiantį pasirinkti, kur išsaugosite HTML failą. Įveskite paskirties failo pavadinimą ir spauskite <gui>Įrašyti</gui> failo išsaugojimui arba <gui>Atsisakyti</gui> veiksmo nutraukimui.</p>
     <p>Jei norite eksportuoti raštelius, į kuriuos esamame raštelyje yra saitai, pažymėkite langelį <gui>Eksportuoti  susietus raštelius</gui>.</p>
 
 </page>

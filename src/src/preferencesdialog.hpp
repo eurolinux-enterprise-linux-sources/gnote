@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2013 Aurimas Cernius
+ * Copyright (C) 2011-2013,2015-2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,6 +32,7 @@
 #include <gtkmm/liststore.h>
 #include <gtkmm/combobox.h>
 #include <gtkmm/comboboxtext.h>
+#include <gtkmm/radiobutton.h>
 #include <gtkmm/spinbutton.h>
 
 #include "sharp/addinstreemodel.hpp"
@@ -49,12 +50,12 @@ public:
   
 
   Gtk::Widget *make_editing_pane();
-  Gtk::Widget *make_hotkeys_pane();
+  Gtk::Widget *make_links_pane();
   Gtk::Widget *make_sync_pane();
   Gtk::Widget *make_addins_pane();
 
 private:
-  Gtk::Label *make_tip_label(std::string label_text);
+  void set_widget_tooltip(Gtk::Widget & widget, std::string label_text);
   Gtk::Button *make_font_button();
   Gtk::Label *make_label (const std::string & label_text/*, params object[] args*/);
   Gtk::CheckButton *make_check_button (const std::string & label_text);
@@ -74,7 +75,8 @@ private:
   void on_preferences_setting_changed(const Glib::ustring & key);
   void on_rename_behavior_changed();
 
-  sharp::DynamicModule * get_selected_addin();
+  std::string get_selected_addin();
+  void set_module_for_selected_addin(sharp::DynamicModule * module);
   void on_addin_tree_selection_changed();
   void update_addin_buttons();
   void load_addins();
@@ -111,7 +113,7 @@ private:
   std::map<std::string, Gtk::TreeIter> m_sync_addin_iters;
   Gtk::ComboBox *m_sync_addin_combo;
   sync::SyncServiceAddin *m_selected_sync_addin;
-  Gtk::VBox   *m_sync_addin_prefs_container;
+  Gtk::Grid   *m_sync_addin_prefs_container;
   Gtk::Widget *m_sync_addin_prefs_widget;
   Gtk::Button *m_reset_sync_addin_button;
   Gtk::Button *m_save_sync_addin_button;

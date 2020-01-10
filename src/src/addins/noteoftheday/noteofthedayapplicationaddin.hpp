@@ -23,6 +23,7 @@
 
 #include <sigc++/sigc++.h>
 
+#include "base/macros.hpp"
 #include "sharp/dynamicmodule.hpp"
 #include "applicationaddin.hpp"
 
@@ -39,12 +40,6 @@ class NoteOfTheDayModule
 {
 public:
   NoteOfTheDayModule();
-  virtual const char * id() const;
-  virtual const char * name() const;
-  virtual const char * description() const;
-  virtual const char * authors() const;
-  virtual int          category() const;
-  virtual const char * version() const;
 };
 
 class NoteOfTheDayApplicationAddin
@@ -59,9 +54,9 @@ public:
     }
 
   virtual ~NoteOfTheDayApplicationAddin();
-  virtual void initialize();
-  virtual void shutdown();
-  virtual bool initialized();
+  virtual void initialize() override;
+  virtual void shutdown() override;
+  virtual bool initialized() override;
 
 private:
 

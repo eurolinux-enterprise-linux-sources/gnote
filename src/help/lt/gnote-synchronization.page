@@ -9,6 +9,11 @@
       <name>Aurimas Cernius</name>
       <years>2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Sinchronizacija</title>
@@ -23,7 +28,7 @@
   </section>
   <section id="usage">
     <title>Sinchronizuokite</title>
-    <p>To synchronize, select <gui>Synchronize Notes</gui> from application menu. This item is only available, if synchronization is configured.</p>
+    <p>Norėdami sinchronizuoti pasirinkite <gui>Sinchronizuoti raštelius</gui> iš programos meniu. Šis punktas prieinamas tik jei sinchronizacija yra sukonfigūruota.</p>
     <p>Pasirinkus meniu punktą <gui>Sinchronizuoti raštelius</gui> bus parodytas eigos dialogas, kuris jums praneš, kada sinchronizacija bus baigta. Taip pat negalėsite redaguoti raštelių, kol vyksta sinchronizacija.</p>
     <figure>
       <title>Sinchronizacijos eiga</title>

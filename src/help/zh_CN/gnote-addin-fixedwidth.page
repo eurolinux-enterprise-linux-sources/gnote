@@ -3,20 +3,36 @@
 
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
-    <desc>Use a Fixed Width Font</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>使用等宽字体</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Fixed Width Add-in</title>
-    <p>The fixed width style allows text to use a fixed width font. To change existing text, first select the text you want to modify. Then select the <gui>Fixed Width</gui> option from the <gui>Text</gui> menu. You can also select the <gui>Fixed Width</gui> option from the Text before you start typing to have the text you type be in a fixed width style.</p>
-    <p>The Fixed Width option is a feature provided by the Fixed Width Add-in.</p>
+  <title>等宽附加组件</title>
+    <p>The <app>Fixed Width</app> plugin allows text to use a fixed width font. To change existing text, first select the text you want to modify. Then select <gui>Fixed Width</gui> from the <gui>Text</gui> menu. You can also select <gui>Fixed Width</gui> from the menu before you start typing.</p>
 
 </page>

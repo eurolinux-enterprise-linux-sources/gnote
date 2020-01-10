@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011 Aurimas Cernius
+ * Copyright (C) 2011-2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -33,6 +33,7 @@
 #include <gtkmm/texttag.h>
 #include <gtkmm/widget.h>
 
+#include "base/macros.hpp"
 #include "notetag.hpp"
 
 namespace sharp {
@@ -61,6 +62,11 @@ public:
     }
   ~NoteBuffer();
 
+  Note & note() const
+    {
+      return m_note;
+    }
+
   // Signal that text has been inserted, and any active tags have
   // been applied to the text.  This allows undo to pull any
   // active tags from the inserted text.
@@ -75,7 +81,9 @@ public:
   void on_tag_applied(const Glib::RefPtr<Gtk::TextTag> &,
                       const Gtk::TextIter &,const Gtk::TextIter &);
   bool is_active_tag(const std::string & );
+  bool is_active_tag(const Glib::RefPtr<Gtk::TextTag> & tag);
   bool is_bulleted_list_active();
+  bool is_bulleted_list_active(Gtk::TextIter iter);
   bool can_make_bulleted_list();
   bool add_tab();
   bool remove_tab();
@@ -114,9 +122,9 @@ protected:
   NoteBuffer(const NoteTagTable::Ptr &, Note &);
 
   virtual void on_apply_tag(const Glib::RefPtr<Gtk::TextTag> & tag,
-                       const Gtk::TextIter &,  const Gtk::TextIter &);
+                       const Gtk::TextIter &,  const Gtk::TextIter &) override;
   virtual void on_remove_tag(const Glib::RefPtr<Gtk::TextTag> & tag,
-                       const Gtk::TextIter &,  const Gtk::TextIter &);
+                       const Gtk::TextIter &,  const Gtk::TextIter &) override;
 private:
   void text_insert_event(const Gtk::TextIter & pos, const Glib::ustring & text, int);
   void range_deleted_event(const Gtk::TextIter &,const Gtk::TextIter &);
@@ -126,6 +134,8 @@ private:
   void widget_swap (const NoteTag::Ptr & tag, const Gtk::TextIter & start,
                     const Gtk::TextIter & end_iter, bool adding);
   void change_cursor_depth(bool increase);
+  typedef void (NoteBuffer::*DepthAction)(Gtk::TextIter & iter);
+  bool handle_tab(DepthAction depth_action);
 
   UndoManager           *m_undomanager;
   static const gunichar s_indent_bullets[];

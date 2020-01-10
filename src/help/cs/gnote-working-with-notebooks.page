@@ -14,13 +14,18 @@
       <name>Aurimas Cernius</name>
       <years>2011 – 2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Práce se sešity</title>
-    <p>Sešity vám umožňují seskupovat poznámky, které patří k sobě. Poznámku můžete přidat do sešitu v hlavním okně nebo přímo v okně s poznámkou.</p>
+    <p>Sešity vám umožňují seskupovat poznámky, které patří k sobě. Poznámku můžete přidat do sešitu v hlavním okně nebo přímo v rámci poznámky.</p>
 
     <section id="creating-notebooks"><title>Vytváření sešitů</title>
-      <p>Nový sešit můžete vytvořit následujícími postupy:</p>
+      <p>Abyste vytvořili nový sešit:</p>
       <steps>
         <item>
           <p>Klikněte na nabídku aplikace a zvolte <gui>Nový sešit</gui>.</p>
@@ -29,10 +34,10 @@
           <p>Zadejte název pro nový sešit.</p>
         </item>
       </steps>
-      <p>Vytvoření nového sešitu v kontextové nabídce</p>
+      <p>Jiný způsob:</p>
       <steps>
         <item>
-          <p>V režimu hledání klikněte pravým tlačítkem myši do levé části a zvolte <gui>Nový sešit</gui>.</p>
+          <p>V přehledu poznámek klikněte pravým tlačítkem myši do levého panelu a zvolte <gui>Nový…</gui></p>
         </item>
         <item>
           <p>Zadejte název pro nový sešit.</p>
@@ -47,42 +52,41 @@
     </section>
 
     <section id="adding-notes-to-a-notebook"><title>Přidávání poznámek do sešitu</title>
-      <p>Pokud chcete do sešitu přidat poznámky, můžete to udělat v hlavním okně nebo přímo v poznámce.</p>
-      <p>Pro přesun existující poznámky v hlavním okně použijte následující postup:</p>
+      <p>Poznámku můžete do sešitu přidat z hlavního okna nebo to udělat přímo v rámci poznámky.</p>
+      <p>Pro přidání poznámky z hlavního okna do sešitu použijte následující postup:</p>
       <list>
-        <item><p>Pomocí myši přetáhněte poznámku, případně několik poznámek, do sešitu na levé straně.</p></item>
-        <item><p>Klikněte pravým tlačítkem na sešit a v kontextové nabídce zvolte <gui>Nová poznámka</gui>. Nová poznámka se vytvoří a přidá do sešitu.</p></item>
+        <item><p>Pomocí myši přetáhněte poznámku, případně několik poznámek, na sešit na levé straně.</p></item>
+        <item><p>Klikněte pravým tlačítkem na sešit a v kontextové nabídce zvolte <gui>Nová</gui>. Nová poznámka se vytvoří a přidá do sešitu.</p></item>
       </list>
-      <p>Když poznámku píšete, můžete ji přímo přidat do existujícího sešitu pomocí tlačítka <gui>Sešit</gui>. Tlačítko Sešit je prezentováno ikonou <media type="image" src="figures/notebook-icon.png" mime="image/png" style="right"/>.</p>
+      <p>Když poznámku píšete, můžete ji přímo přidat do existujícího sešitu pomocí nabídky <guiseq><gui>Činnosti</gui><gui>Sešit</gui></guiseq></p>
       <figure>
         <title>Přidávání poznámek do sešitu</title>
         <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>Přidávání poznámek do sešitu.</p></media>
       </figure>
       <p>Poznámku můžete ze sešitu odebrat jedním z těchto postupů:</p>
       <list>
-        <item><p>Přesunout poznámku do sešitu <gui>Nezařazené poznámky</gui> v hlavním okně.</p></item>
-        <item><p>V otevřené poznámce vyberte volbu <gui>Žádný sešit</gui> v nabídce, která se objeví po zmáčknutí tlačítka <gui>Sešit</gui>.</p></item>
+        <item><p>Přesunout poznámku do <gui>Nezařazené poznámky</gui> v hlavním okně.</p></item>
+        <item><p>Vyberte volbu <gui>Žádný sešit</gui> v nabídce, která se objeví po zmáčknutí <guiseq><gui>Činnosti</gui><gui>Sešit</gui></guiseq> v otevřené poznámce.</p></item>
       </list>
     </section>
 
-    <section id="creating-notebook-templates"><title>Vytváření šablon sešitů</title>
-      <p>Když máte vytvořený sešit, můžete si také vytvořit šablonu pro nové poznámky, které budete v tomto konkrétním sešitě vytvářet.</p>
+    <section id="creating-notebook-templates"><title>Vytváření šablon</title>
+      <p>Když máte vytvořený sešit, můžete si také vytvořit šablonu pro nové poznámky, které budete v budoucnu v tomto sešitě vytvářet.</p>
       <steps>
-        <item><p>V hlavním okně klikněte pravým tlačítkem na sešit, který máte vytvořený a zvolte <gui>Otevřít šablonu</gui>.</p>
+        <item><p>V hlavním okně klikněte pravým tlačítkem na sešit a zvolte <gui>Otevřít šablonu</gui>.</p>
         </item>
-        <item><p>Tím se otevře nová poznámka, která se bude používat jako šablona. Jakýkoliv text zapsaný do této poznámky se objeví ve všech poznámkách nově vytvořených v tomto sešitu.</p></item>
+        <item><p>Tím se otevře nová šablona poznámky. Jakýkoliv text zapsaný do této poznámky se objeví ve všech poznámkách nově vytvořených v tomto sešitu.</p></item>
       </steps>
       <figure>
-        <title>Vytváření šablon sešitu</title>
+        <title>Vytváření šablon</title>
         <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Šablona poznámky.</p></media>
       </figure>
       <p>Další informace najdete v kapitole <link xref="gnote-template-notes"/>.</p>
     </section>
 
   <section id="deleting-a-notebook"><title>Odstranění sešitu</title>
-    <p>Odstraněním sešitu nesmažete poznámky, které v něm jsou zrovna zařazené. Po odstranění sešitu můžete k poznámkám, které nebudou zařazené do žádného sešitu, přistupovat výběrem <gui>Nezařazené poznámky</gui> v hlavním okně.</p>
-    <p>Sešity můžete mazat těmito dvěma způsoby:</p>
-    <p>Když chcete odstranit sešit, přejděte do režimu hledání v hlavním okně a proveďte něco z následujícího:</p>
+    <p>Odstraněním sešitu nesmažete poznámky, které v něm jsou zrovna zařazené. Po odstranění sešitu nebudou tyto poznámky patřit do žádného sešitu a objeví se v <gui>Nezařazené poznámky</gui> v hlavním okně.</p>
+    <p>Když chcete odstranit sešit, přejděte do hlavního okna a proveďte něco z následujícího:</p>
     <list>
       <item><p>Klikněte na sešit a zvolte <gui>Odstranit sešit</gui>.</p></item>
       <item><p>Smažte v sešitu všechny poznámky. Po restartu aplikace <app>Gnote</app> bude tento sešit automaticky odstraněn.</p></item>
@@ -98,10 +102,10 @@
   <section id="special-notebooks"><title>Speciální sešity</title>
     <p><app>Gnote</app> má několik speciálních sešitů:</p>
     <list>
-      <item><p><gui>Aktivní poznámky</gui> – obsahuje poznámky, které byly otevřeny v aktuálním sezení <app>Gnote</app>.</p></item>
-      <item><p><gui>Všechny poznámky</gui> – obsahuje všechny poznámky, vyjma šablon.</p></item>
-      <item><p><gui>Připíchnuté poznámky</gui> – použito k označení důležitých poznámek.</p></item>
-      <item><p><gui>Nezařazené poznámky</gui> – obsahuje všechny poznámky, které nejsou umístěny v uživatelských sešitech.</p></item>
+      <item><p><gui>Aktivní</gui>: poznámky, které byly otevřeny v aktuálním sezení <app>Gnote</app>.</p></item>
+      <item><p><gui>Všechny</gui>: všechny poznámky, vyjma šablon</p></item>
+      <item><p><gui>Důležité</gui>: poznámky označené jako důležité</p></item>
+      <item><p><gui>Nezařazené</gui>: všechny poznámky, které nejsou umístěny v uživatelských sešitech</p></item>
     </list>
   </section>
 

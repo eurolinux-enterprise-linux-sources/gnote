@@ -4,41 +4,58 @@
 
   <info>
     <link type="guide" xref="notes-preferences#advanced"/>
-    <desc>Using Template Notes</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>使用模板便笺</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Template Notes</title>
+  <title>模板便笺</title>
   <section id="usage">
-    <title>Template Note Usage</title>
-    <p>Template notes are used to define the content for newly created notes. Templates are just like regular notes with some additional features.</p>
-    <p>You can define a single template note for <app>Gnote</app> and one for each notebook you have. These templates define the content of every new note you create:</p>
+    <title>模板便笺用法</title>
+    <p>模板便笺用来定义新建便笺的内容。模板就是增加了一些附加功能的普通便笺。</p>
+    <p>您可以为每个便笺定义一个主模板便笺。这些模板定义了每个新建便笺的内容：</p>
     <list>
-      <item><p>Every new note you create in <app>Gnote</app>, but not in any of notebooks, will have have a content of main application template. If template is not created, the default content is used.</p></item>
-      <item><p>Every new note created in a notebook will have a content of template note, if it is present for that notebook. If template note for a notebook is not defined, the default note content will be used.</p></item>
+      <item><p>在<app>Gnote</app>里的每个新建便笺，但不在任何一个便笺本的，都会包括主模板的内容。如果没有创建主模板，将会使用默认内容。</p></item>
+      <item><p>便笺本里每个新建便笺都会包括模板便笺的内容。如果便笺本的模板便笺没有定义，将会使用默认便笺内容。</p></item>
     </list>
-    <p>To create or modify template note:</p>
+    <p>新建或修改模板便笺：</p>
     <list>
-      <item><title>Main template note</title><p>Open <app>Gnote</app> preferences and in <gui>General</gui> tab press the <gui>Open Template Note</gui> button.</p></item>
-      <item><title>Notebook template note</title><p>Right click on notebook in main window and select <gui>Open Template Note</gui>.</p></item>
+      <item><title>主模板便笺</title><p>打开 <app>Gnote</app> 首选项，在 <gui>常规</gui> 标签下点击<gui>打开模板便笺</gui>。</p></item>
+      <item><title>便笺本模板便笺</title><p>在主窗口中右键点击某个便笺本，选择<gui>打开模板便笺</gui>。</p></item>
     </list>
   </section>
   <section id="features">
-    <title>Template Note Features</title>
-    <p>Template note is like an ordinary note except that it is not shown in a note list and has a template bar at the top.</p>
-    <figure><title>Template note</title>
-      <media type="image" src="figures/gnote-template-note.png" mime="image/png" style="right"/><desc>Template note window</desc>
+    <title>模板便笺特点</title>
+    <p>模板便笺除了不在便笺本列表中显示、窗口顶部有模板栏外，与普通便笺类似。</p>
+    <figure><title>模板便笺</title>
+      <media type="image" src="figures/gnote-template-note.png" mime="image/png" style="right"/><desc>模板便笺窗口</desc>
     </figure>
-    <p>Template bar has the following features:</p>
+    <p>模板栏有如下功能：</p>
     <list>
-      <item><title>Convert to regular note</title><p>Press this button to turn the template into a regular note, visible in the list of notes. This action is similar to deleting template note.</p></item>
-      <item><title>Save Size</title><p>If you check this box, the size of newly created note will be identical to that of template note. When this checkbox is not checked, the window of new note is of default size.</p></item>
-      <item><title>Save Selection</title><p>If this box is checked, new notes will not only have the content of template note, but also the initial selection. Use this option if you want certain part of content in the new note to be initialy selected.</p></item>
-      <item><title>Save Title</title><p>This checkbox allows to base the title of new note on a title of template note. With this box checked, new note will have a title of template note with a unique number appended. Otherwise the default title will be used.</p></item>
+      <item><title>转为普通便笺</title><p>点击该按钮，把模板便笺转为普通便笺，这样在便笺列表中就可以看到它了。该动作与删除模板便笺类似。</p></item>
+      <item><title>保存大小</title><p>如果您选中该选项，新建便笺窗口大小就与模板便笺大小一致。如没有选中该选项，则新建便笺窗口大小为默认尺寸。</p></item>
+      <item><title>保存选择</title><p>如果选中此项，新建便笺不仅包括模板便笺的内容，也会包括选择的内容。如果您想在新建便笺中包括特定内容，请使用该选项。</p></item>
+      <item><title>保存标题</title><p>该选择项允许新建便笺使用基于模板便笺的标题。选中该选项后，新建便笺标题将由模板便笺标题加一个单独的数字后缀组成。否则，新建便笺使用默认标题。</p></item>
     </list>
   </section>
 

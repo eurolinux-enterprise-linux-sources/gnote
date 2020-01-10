@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010,2012 Aurimas Cernius
+ * Copyright (C) 2010,2012-2013,2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,7 +28,6 @@
 
 #include <vector>
 
-#include <gtkmm/menuitem.h>
 #include <pangomm/layout.h>
 
 #include "sharp/dynamicmodule.hpp"
@@ -42,12 +41,6 @@ class PrintNotesModule
 {
 public:
   PrintNotesModule();
-  virtual const char * id() const;
-  virtual const char * name() const;
-  virtual const char * description() const;
-  virtual const char * authors() const;
-  virtual int          category() const;
-  virtual const char * version() const;
 };
 
 
@@ -88,9 +81,10 @@ public:
     {
       return new PrintNotesNoteAddin;
     }
-  virtual void initialize();
-  virtual void shutdown();
-  virtual void on_note_opened();
+  virtual void initialize() override;
+  virtual void shutdown() override;
+  virtual void on_note_opened() override;
+  virtual std::map<int, Gtk::Widget*> get_actions_popover_widgets() const override;
 
   static int cm_to_pixel(double cm, double dpi)
 		{
@@ -120,11 +114,8 @@ private:
   void on_draw_page(const Glib::RefPtr<Gtk::PrintContext>&, guint);
   void on_end_print(const Glib::RefPtr<Gtk::PrintContext>&);
 /////
-  void print_button_clicked();
-  void on_note_foregrounded();
-  void on_note_backgrounded();
+  void print_button_clicked(const Glib::VariantBase&);
 
-  Gtk::ImageMenuItem * m_item;
   int                  m_margin_top;
   int                  m_margin_left;
   int                  m_margin_right;

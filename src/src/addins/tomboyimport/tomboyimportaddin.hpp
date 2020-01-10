@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010 Aurimas Cernius
+ * Copyright (C) 2010,2013 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,6 +25,7 @@
 
 #include <string>
 
+#include "base/macros.hpp"
 #include "sharp/dynamicmodule.hpp"
 #include "importaddin.hpp"
 
@@ -37,12 +38,6 @@ class TomboyImportModule
 {
 public:
   TomboyImportModule();
-  virtual const char * id() const;
-  virtual const char * name() const;
-  virtual const char * description() const;
-  virtual const char * authors() const;
-  virtual int          category() const;
-  virtual const char * version() const;
 };
 
 
@@ -57,10 +52,10 @@ public:
     {
       return new TomboyImportAddin;
     }
-  virtual void initialize();
-  virtual void shutdown();
-  virtual bool want_to_run(gnote::NoteManager & manager);
-  virtual bool first_run(gnote::NoteManager & manager);
+  virtual void initialize() override;
+  virtual void shutdown() override;
+  virtual bool want_to_run(gnote::NoteManager & manager) override;
+  virtual bool first_run(gnote::NoteManager & manager) override;
 
 private:
 

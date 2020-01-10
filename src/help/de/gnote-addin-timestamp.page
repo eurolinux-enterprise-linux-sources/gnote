@@ -12,13 +12,47 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Zeitstempel-einfügen-Add-In</title>
-    <p>The Tools button is represented by the <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"> </media> icon. When you click the Tools icon on the toolbar present on your note, a menu will appear.</p>
-    <p>Wenn das <gui>Zeitstempel einfügen</gui>-Add-In installiert ist, stellt das Menü <gui>Werkzeuge</gui> einen Eintrag namens <gui>Zeitstempel einfügen</gui> zur Verfügung.</p>
-    <p>Klicken Sie auf diese Option, um die aktuelle Zeit und das Datum einzufügen.</p>
+  <title>Zeitstempel-einfügen-Erweiterung</title>
+    
+    <p>Wenn die <gui>Zeitstempel einfügen</gui>-Erweiterung installiert ist, stellt das Menü <gui>Werkzeuge</gui> einen Eintrag namens <gui>Zeitstempel einfügen</gui> zur Verfügung. Verwenden Sie diesen Befehl, um die aktuelle Uhrzeit und das aktuelle Datum einzufügen.</p>
 
 </page>

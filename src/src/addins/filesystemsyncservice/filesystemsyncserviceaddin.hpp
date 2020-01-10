@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012 Aurimas Cernius
+ * Copyright (C) 2012-2013 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,6 +23,7 @@
 
 #include <gtkmm/filechooserbutton.h>
 
+#include "base/macros.hpp"
 #include "sharp/dynamicmodule.hpp"
 #include "synchronization/syncserviceaddin.hpp"
 
@@ -35,12 +36,6 @@ class FileSystemSyncServiceModule
 {
 public:
   FileSystemSyncServiceModule();
-  virtual const char * id() const;
-  virtual const char * name() const;
-  virtual const char * description() const;
-  virtual const char * authors() const;
-  virtual int          category() const;
-  virtual const char * version() const;
 };
 
 
@@ -57,19 +52,19 @@ public:
     }
   FileSystemSyncServiceAddin();
 
-  virtual void initialize();
-  virtual void shutdown();
+  virtual void initialize() override;
+  virtual void shutdown() override;
 
-  virtual gnote::sync::SyncServer::Ptr create_sync_server();
-  virtual void post_sync_cleanup();
-  virtual Gtk::Widget *create_preferences_control(EventHandler requiredPrefChanged);
-  virtual bool save_configuration();
-  virtual void reset_configuration();
-  virtual bool is_configured();
-  virtual std::string name();
-  virtual std::string id();
-  virtual bool is_supported();
-  virtual bool initialized();
+  virtual gnote::sync::SyncServer::Ptr create_sync_server() override;
+  virtual void post_sync_cleanup() override;
+  virtual Gtk::Widget *create_preferences_control(EventHandler requiredPrefChanged) override;
+  virtual bool save_configuration() override;
+  virtual void reset_configuration() override;
+  virtual bool is_configured() override;
+  virtual std::string name() override;
+  virtual std::string id() override;
+  virtual bool is_supported() override;
+  virtual bool initialized() override;
 private:
   bool get_config_settings(std::string & syncPath);
 

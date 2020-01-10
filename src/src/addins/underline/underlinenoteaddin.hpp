@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010 Aurimas Cernius
+ * Copyright (C) 2010,2013,2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  * Original C# file
  * (C) 2009 Mark Wakim <markwakim@gmail.com>
@@ -29,6 +29,7 @@
 
 #include <gtkmm/texttag.h>
 
+#include "base/macros.hpp"
 #include "sharp/dynamicmodule.hpp"
 #include "noteaddin.hpp"
 
@@ -39,12 +40,6 @@ namespace underline {
   {
   public:
     UnderlineModule();
-    virtual const char * id() const;
-    virtual const char * name() const;
-    virtual const char * description() const;
-    virtual const char * authors() const;
-    virtual int          category() const;
-    virtual const char * version() const;
   };
 
 
@@ -58,11 +53,19 @@ namespace underline {
       { 
         return new UnderlineNoteAddin();
       }
-    virtual void initialize ();
-    virtual void shutdown ();
-    virtual void on_note_opened ();
+    virtual void initialize() override;
+    virtual void shutdown() override;
+    virtual void on_note_opened() override;
   private:
+    void on_note_foregrounded();
+    void on_note_backgrounded();
+    void on_underline_clicked(const Glib::VariantBase & state);
+    void on_underline_pressed();
+    void menu_shown();
+    void set_accels(const gnote::utils::GlobalKeybinder & keybinder);
+
     Glib::RefPtr<Gtk::TextTag> m_tag;
+    sigc::connection           m_on_underline_clicked_cid;
   };
 
 

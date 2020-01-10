@@ -11,12 +11,16 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011, 2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Doplněk Pevná šířka</title>
-    <p>Styl pevná šířka nastavuje u textu písmo s pevnou šířku. Abyste ho mohli nastavit, musíte nejdříve vybrat text, u které ho to chcete provést. Potom použijte volbu <gui>Pevná šířka</gui> v nabídce <gui>Text</gui>. Můžete také vybrat volbu <gui>Pevná šířka</gui> v nabídce <gui>Text</gui> dříve, než začnete psát a psaný text potom bude mít písmo pevné šířky.</p>
-    <p>Pevná šířka je funkce, kterou poskytuje doplněk Pevná šířka.</p>
+    <p>Zásuvný modul <app>Pevná šířka</app> umožňuje použít u textu písmo s pevnou šířku. Abyste ho mohli nastavit, musíte nejdříve vybrat text, u kterého to chcete provést. Potom použijte volbu <gui>Pevná šířka</gui> v nabídce <gui>Text</gui>. Můžete také vybrat volbu <gui>Pevná šířka</gui> v nabídce dříve, než začnete psát.</p>
 
 </page>

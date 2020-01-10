@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addins-preferences" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="notes-preferences#advanced"/>
+    <desc>Gnote bővítmények beállításai</desc>
+    <license><p>GNU Free Documentation License (GFDL), 1.1 verzió</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011,2013,2014</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  </info>
+
+  <title>Bővítménybeállítások</title>
+    <p>Ezen a lapon be- vagy kikapcsolhatja a bővítményeket. Ehhez válasszon egy bővítményt, és nyomja meg az <gui>Engedélyezés</gui> vagy a <gui>Tiltás</gui> gombot.</p>
+    <p>Néhány bővítménynek vannak beállításai, amelyeket a bővítményt kijelölésével és a <gui>Beállítások</gui> gomb megnyomásával érhet el.</p>
+    <figure><title><app>Gnote</app> bővítménybeállítások</title>
+    <desc><app>Gnote</app> bővítmények ablak</desc>
+    <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">
+      <p><gui>Bővítmények</gui> ablak.</p>
+    </media>
+    </figure>
+
+</page>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="links" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#organizing-notes"/>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <desc>της σύνδεσης με άλλες σημειώσεις</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Σύνδεσμοι</title>
+    <p>Το κουμπί <gui>Σύνδεσμος</gui> δημιουργεί έναν σύνδεσμο με μια νέα σημείωση μέσα από την ήδη υπάρχουσα. Για παράδειγμα, αν η σημείωσή σας περιέχει τη φράση “Τελικές εξετάσεις”, μπορείτε να την επιλέξετε και να πατήσετε το πλήκτρο <gui>Σύνδεσμος</gui> για να δημιουργήσετε μια νέα σημείωση που λέγεται “Τελικές εξετάσεις”. Το επιλεγμένο κείμενο θα γίνει ένας επιλέξιμος σύνδεσμος σε αυτήν τη νέα σημείωση.</p>
+<note style="advanced">
+    <p>Αλλάζοντας τον τίτλο μιας σημείωσης θα ενημερωθούν και οι παρόντες σύνδεσμοι σε άλλες σημειώσεις. Με αυτόν τον τρόπο αποφεύγεται η δημιουργία σπασμένων συνδέσμων όταν μετονομάζεται μια σημείωση.</p></note>
+
+  <section><title>Πρόσθετο αντίστροφων συνδέσμων</title>
+    <p>Αν το πρόσθετο <app>Αντίστροφοι σύνδεσμοι</app> είναι εγκατεστημένο, το μενού <gui>Ενέργειες</gui> θα περιέχει ένα στοιχείο <gui>Ποιο συνδέει εδώ;</gui>, που παρέχει έναν κατάλογο υπομενού όλων των σημειώσεων που περιέχουν έναν σύνδεσμο με την τρέχουσα σημείωση.</p>
+  </section>
+
+</page>

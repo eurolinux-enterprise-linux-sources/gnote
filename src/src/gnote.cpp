@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2013 Aurimas Cernius
+ * Copyright (C) 2010-2016 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -35,6 +35,8 @@
 #include <glibmm/optionentry.h>
 #include <gtkmm/main.h>
 #include <gtkmm/aboutdialog.h>
+#include <gtkmm/builder.h>
+#include <gtkmm/shortcutswindow.h>
 
 #include "gnote.hpp"
 #include "actionmanager.hpp"
@@ -49,7 +51,6 @@
 #include "remotecontrolproxy.hpp"
 #include "utils.hpp"
 #include "tagmanager.hpp"
-#include "xkeybinder.hpp"
 #include "dbus/remotecontrol.hpp"
 #include "dbus/remotecontrolclient.hpp"
 #include "sharp/streamreader.hpp"
@@ -63,17 +64,18 @@ namespace gnote {
   Gnote::Gnote()
     : Gtk::Application("org.gnome.Gnote", Gio::APPLICATION_HANDLES_COMMAND_LINE)
     , m_manager(NULL)
-    , m_keybinder(NULL)
     , m_is_background(false)
+    , m_is_shell_search(false)
     , m_prefsdlg(NULL)
   {
   }
 
   Gnote::~Gnote()
   {
-    delete m_prefsdlg;
+    if (m_prefsdlg) {
+      delete m_prefsdlg;
+    }
     delete m_manager;
-    delete m_keybinder;
   }
 
 
@@ -113,32 +115,22 @@ namespace gnote {
     Gtk::Application::on_command_line(command_line);
     int argc = 0;
     char **argv = command_line->get_arguments(argc);
-    cmd_line.parse(argc, argv);
+    GnoteCommandLine passed_cmd_line;
+    GnoteCommandLine &cmdline = m_manager ? passed_cmd_line : cmd_line;
+    cmdline.parse(argc, argv);
     if(!m_manager) {
       common_init();
-      Glib::RefPtr<Gio::Settings> settings = Preferences::obj()
-        .get_schema_settings(Preferences::SCHEMA_GNOTE);
-      settings->signal_changed()
-        .connect(sigc::mem_fun(*this, &Gnote::on_setting_changed));
       register_object();
     }
-    else if(cmd_line.needs_execute()) {
-      cmd_line.execute();
+    else if(cmdline.needs_execute()) {
+      cmdline.execute();
     }
-    else {
+    else if(!cmdline.background() && !cmdline.shell_search()) {
       new_main_window().present();
     }
 
+    g_strfreev(argv);
     return 0;
-  }
-
-
-  void Gnote::on_window_removed(Gtk::Window *window)
-  {
-    // Do not remove last window if background or status icon mode
-    if(windowed() || get_windows().size() > 1) {
-      Gtk::Application::on_window_removed(window);
-    }
   }
 
 
@@ -151,21 +143,16 @@ namespace gnote {
     new Preferences;
     m_manager = new NoteManager(note_path);
     new notebooks::NotebookManager(default_note_manager());
-    m_keybinder = new XKeybinder();
-    (new ActionManager)->load_interface();
+    new ActionManager;
     sync::SyncManager::init(default_note_manager());
 
-    setup_global_actions();
     m_manager->get_addin_manager().initialize_application_addins();
   }
 
 
   void Gnote::end_main(bool bus_acquired, bool name_acquired)
   {
-    IActionManager & am(IActionManager::obj());
-    if((m_is_background = cmd_line.background())) {
-      am["QuitGNoteAction"]->set_visible(false);
-    }
+    m_is_shell_search = cmd_line.shell_search();
     if(cmd_line.needs_execute()) {
       cmd_line.execute();
     }
@@ -177,35 +164,35 @@ namespace gnote {
       else {
         // If Gnote is already running, open the search window
         // so the user gets some sort of feedback when they
-        // attempt to run Gnote again.
-        Glib::RefPtr<RemoteControlClient> remote;
-        try {
-          remote = RemoteControlProxy::get_instance();
-          DBG_ASSERT(remote, "remote is NULL, something is wrong");
-          if(remote) {
-            remote->DisplaySearch();
+        // attempt to run Gnote again, except when --background is passed
+        if(!m_is_background) {
+          Glib::RefPtr<RemoteControlClient> remote;
+          try {
+            remote = RemoteControlProxy::get_instance();
+            DBG_ASSERT(remote, "remote is NULL, something is wrong");
+            if(remote) {
+              remote->DisplaySearch();
+            }
+          } 
+          catch (...)
+          {
           }
-        } 
-        catch (...)
-        {
         }
 
-        ERR_OUT ("Gnote is already running.  Exiting...");
+        ERR_OUT(_("Gnote is already running.  Exiting..."));
         ::exit(-1);
       }
     }
 
     make_app_actions();
     make_app_menu();
-    Glib::RefPtr<Gio::Settings> settings = Preferences::obj()
-      .get_schema_settings(Preferences::SCHEMA_GNOTE);
-    if(settings->get_boolean(Preferences::USE_STATUS_ICON)) {
-      DBG_OUT("starting tray icon");
-      start_tray_icon();
-    }
-    else if(m_is_background) {
-      // Create Search All Notes window as we need it present for application to run
-      new_main_window();
+    if(is_background()) {
+      // do not exit when all windows are closed
+      hold();
+      if(m_is_shell_search) {
+        set_inactivity_timeout(30000);
+        release();
+      }
     }
     else {
       get_main_window().present();
@@ -229,32 +216,6 @@ namespace gnote {
     return note_path;
   }
 
-  bool Gnote::show_tray_icon_timeout()
-  {
-    // Setting to false and back to true is required to make it work on some tray implementations
-    m_tray_icon->set_visible(false);
-    m_tray_icon->set_visible(true);
-    return false;
-  }
-
-  void Gnote::start_tray_icon()
-  {
-    // Create Search All Notes window as we need it present for application to run
-    get_main_window();
-
-    if(!m_tray_icon) {
-      // Create the tray icon and run the main loop
-      m_tray_icon = Glib::RefPtr<TrayIcon>(new TrayIcon(keybinder(), default_note_manager()));
-      m_tray = m_tray_icon->tray();
-    }
-
-    // Tome make status icon visible on some implementations, it should be made visible
-    // after some timeout.
-    Glib::RefPtr<Glib::TimeoutSource> timeout = Glib::TimeoutSource::create(100);
-    timeout->connect(sigc::mem_fun(*this, &Gnote::show_tray_icon_timeout));
-    timeout->attach();
-  }
-
 
   void Gnote::register_remote_control(NoteManager & manager, RemoteControlProxy::slot_name_acquire_finish on_finish)
   {
@@ -270,46 +231,15 @@ namespace gnote {
   }
 
 
-  void Gnote::on_setting_changed(const Glib::ustring & key)
-  {
-    if(key != Preferences::USE_STATUS_ICON) {
-      return;
-    }
-
-    bool use_status_icon = Preferences::obj()
-      .get_schema_settings(Preferences::SCHEMA_GNOTE)->get_boolean(key);
-    if(use_status_icon) {
-      start_tray_icon();
-    }
-    else {
-      if(m_tray_icon) {
-        m_tray_icon->set_visible(false);
-      }
-      ActionManager::obj()["ShowSearchAllNotesAction"]->activate();
-    }
-  }
-
-
-  void Gnote::setup_global_actions()
-  {
-    IActionManager & am(IActionManager::obj());
-    am["QuitGNoteAction"]->signal_activate()
-      .connect(sigc::mem_fun(*this, &Gnote::quit));
-    am["ShowPreferencesAction"]->signal_activate().connect(
-      boost::bind(sigc::mem_fun(*this, &Gnote::on_show_preferences_action), Glib::VariantBase()));
-    am["ShowHelpAction"]->signal_activate()
-      .connect(boost::bind(sigc::mem_fun(*this, &Gnote::on_show_help_action), Glib::VariantBase()));
-    am["ShowAboutAction"]->signal_activate()
-      .connect(boost::bind(sigc::mem_fun(*this, &Gnote::on_show_about_action), Glib::VariantBase()));
-    am["TrayNewNoteAction"]->signal_activate()
-      .connect(boost::bind(sigc::mem_fun(*this, &Gnote::on_new_note_app_action), Glib::VariantBase()));
-    am["ShowSearchAllNotesAction"]->signal_activate()
-      .connect(sigc::mem_fun(*this, &Gnote::open_search_all));
-  }
-
   void Gnote::on_quit_gnote_action(const Glib::VariantBase&)
   {
-    quit();
+    std::vector<Gtk::Window*> windows = Gtk::Window::list_toplevels();
+    FOREACH(Gtk::Window *window, windows) {
+      window->close();
+    }
+    if(is_background()) {
+      release();
+    }
   }
 
   void Gnote::on_preferences_response(int /*res*/)
@@ -332,12 +262,20 @@ namespace gnote {
   void Gnote::on_show_help_action(const Glib::VariantBase&)
   {
     GdkScreen *cscreen = NULL;
-    if(m_tray_icon) {
-      Gdk::Rectangle area;
-      GtkOrientation orientation;
-      gtk_status_icon_get_geometry(m_tray_icon->gobj(), &cscreen, area.gobj(), &orientation);
-    }
     utils::show_help("gnote", "", cscreen, NULL);
+  }
+
+  void Gnote::on_show_help_shortcust_action(const Glib::VariantBase&)
+  {
+    Glib::RefPtr<Gtk::Builder> builder = Gtk::Builder::create_from_file(DATADIR"/gnote/shortcuts-gnote.ui");
+    Gtk::ShortcutsWindow *win = nullptr;
+    builder->get_widget("shortcuts-gnote", win);
+    if(win == nullptr) {
+      ERR_OUT(_("Failed to get shortcuts window!"));
+      return;
+    }
+
+    win->show();
   }
 
   void Gnote::on_show_about_action(const Glib::VariantBase&)
@@ -362,7 +300,7 @@ namespace gnote {
     about.set_program_name("Gnote");
     about.set_version(VERSION);
     about.set_logo(IconManager::obj().get_icon(IconManager::GNOTE, 48));
-    about.set_copyright(_("Copyright \xc2\xa9 2010-2013 Aurimas Cernius\n"
+    about.set_copyright(_("Copyright \xc2\xa9 2010-2016 Aurimas Cernius\n"
                           "Copyright \xc2\xa9 2009-2011 Debarshi Ray\n"
                           "Copyright \xc2\xa9 2009 Hubert Figuiere\n"
                           "Copyright \xc2\xa9 2004-2009 the Tomboy original authors."));
@@ -393,7 +331,7 @@ namespace gnote {
   MainWindow & Gnote::new_main_window()
   {
     NoteRecentChanges *win = new NoteRecentChanges(default_note_manager());
-    win->signal_hide().connect(sigc::mem_fun(*this, &Gnote::on_main_window_closed));
+    win->signal_hide().connect(boost::bind(sigc::mem_fun(*this, &Gnote::on_main_window_closed), win));
     add_window(*win);
     return *win;
   }
@@ -416,12 +354,9 @@ namespace gnote {
     return new_main_window();
   }
 
-  void Gnote::on_main_window_closed()
+  void Gnote::on_main_window_closed(Gtk::Window *win)
   {
-    // if background mode, we need to have a window, to prevent quit
-    if(m_is_background && !Gtk::Window::list_toplevels().size()) {
-      new_main_window();
-    }
+    delete win;
   }
 
   MainWindow & Gnote::get_window_for_note()
@@ -445,11 +380,46 @@ namespace gnote {
     return new_main_window();
   }
 
-  void Gnote::open_search_all()
+  MainWindow & Gnote::open_search_all()
   {
-    MainWindow & main_window = get_main_window();
-    main_window.present_search();
-    main_window.present();
+    // if active window is search, just show it
+    MainWindow *rc = get_active_window();
+    if(rc) {
+      if(rc->is_search()) {
+        return *rc;
+      }
+    }
+
+    // present already open search window, if there is one
+    std::vector<Gtk::Window*> windows = Gtk::Window::list_toplevels();
+    int main_windows = 0;
+    for(std::vector<Gtk::Window*>::iterator iter = windows.begin();
+        iter != windows.end(); ++iter) {
+      auto win = dynamic_cast<MainWindow*>(*iter);
+      if(win) {
+        ++main_windows;
+        if(win->is_search()) {
+          return *win;
+        }
+        else if(rc == NULL) {
+          rc = win;
+        }
+      }
+    }
+
+    // if notes are opened in new window by default, then open new window for search
+    // otherwise switch the only window to search
+    // if there is more than one window open, open new for search, since we can't decide which one to switch
+    bool new_window = Preferences::obj()
+      .get_schema_settings(Preferences::SCHEMA_GNOTE)->get_boolean(Preferences::OPEN_NOTES_IN_NEW_WINDOW);
+    if(main_windows > 1 || new_window) {
+      MainWindow & main_window = new_main_window();
+      main_window.present_search();
+      return main_window;
+    }
+
+    rc->present_search();
+    return *rc;
   }
 
   void Gnote::open_note_sync_window(const Glib::VariantBase&)
@@ -479,6 +449,7 @@ namespace gnote {
       sigc::mem_fun(*this, &Gnote::on_show_preferences_action));
     am.get_app_action("sync-notes")->signal_activate().connect(sigc::mem_fun(*this, &Gnote::open_note_sync_window));
     am.get_app_action("help-contents")->signal_activate().connect(sigc::mem_fun(*this, &Gnote::on_show_help_action));
+    am.get_app_action("help-shortcuts")->signal_activate().connect(sigc::mem_fun(*this, &Gnote::on_show_help_shortcust_action));
     am.get_app_action("about")->signal_activate().connect(sigc::mem_fun(*this, &Gnote::on_show_about_action));
     am.get_app_action("quit")->signal_activate().connect(sigc::mem_fun(*this, &Gnote::on_quit_gnote_action));
 
@@ -530,9 +501,7 @@ namespace gnote {
 
   void Gnote::open_note(const Note::Ptr & note)
   {
-    MainWindow & main_window = get_window_for_note();
-    main_window.present_note(note);
-    main_window.present();
+    MainWindow::present_in(get_window_for_note(), note);
   }
 
 
@@ -546,6 +515,7 @@ namespace gnote {
     : m_context(g_option_context_new("Foobar"))
     , m_use_panel(false)
     , m_background(false)
+    , m_shell_search(false)
     , m_note_path(NULL)
     , m_do_search(false)
     , m_show_version(false)
@@ -554,9 +524,10 @@ namespace gnote {
     , m_open_start_here(false)
     , m_highlight_search(NULL)
   {
-    static const GOptionEntry entries[] =
+    const GOptionEntry entries[] =
       {
         { "background", 0, G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_NONE, &m_background, _("Run Gnote in background."), NULL },
+        { "shell-search", 0, G_OPTION_FLAG_HIDDEN, G_OPTION_ARG_NONE, &m_shell_search, _("Run Gnote as GNOME Shell search provider."), NULL },
         { "note-path", 0, 0, G_OPTION_ARG_STRING, &m_note_path, _("Specify the path of the directory containing the notes."), _("path") },
         { "search", 0, G_OPTION_FLAG_OPTIONAL_ARG, G_OPTION_ARG_CALLBACK, (void*)GnoteCommandLine::parse_func, _("Open the search all notes window with the search text."), _("text") },
         { "version", 0, 0, G_OPTION_ARG_NONE, &m_show_version, _("Print version information."), NULL },
@@ -644,7 +615,7 @@ namespace gnote {
       //gnote already running, execute via D-Bus and exit this instance
       Glib::RefPtr<RemoteControlClient> remote = RemoteControlProxy::get_instance();
       if(!remote) {
-        ERR_OUT("Could not connect to remote instance.");
+        ERR_OUT(_("Could not connect to remote instance."));
       }
       else {
         execute(remote);
@@ -760,6 +731,7 @@ namespace gnote {
 
   void GnoteCommandLine::print_version()
   {
+    // TRANSLATORS: %1%: boost format placeholder for the version string.
     Glib::ustring version = str(boost::format(_("Version %1%"))
                                 % VERSION);
     std::cerr << version << std::endl;

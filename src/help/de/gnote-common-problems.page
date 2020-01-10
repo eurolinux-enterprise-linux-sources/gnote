@@ -11,19 +11,53 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011-2012</years>
+      <years>2011-2014</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Häufige Probleme in Gnote</title>
     <list>
-      <item><title>Arbeitet <app>Gnote</app> mit <app>Tomboy</app> zusammen?</title><p>Sie können <app>Tomboy</app>-Notizen importieren. Hierfür muss ein Add-In aktiviert werden.</p>
+      <item><title>Arbeitet <app>Gnote</app> mit <app>Tomboy</app> zusammen?</title><p>Sie können <app>Tomboy</app>-Notizen importieren. Hierfür muss eine Erweiterung aktiviert werden.</p>
       </item>
-      <item><title>Ich kann das Statussymbol von Gnote nicht finden</title>
-        <p>Sie können das Statussymbol von <app>Gnote</app> folgendermaßen im <app>Terminal</app> aktivieren: <cmd>gsettings set org.gnome.gnote use-status-icon true</cmd> .</p></item>
       <item><title>Wie lässt sich <app>Gnote</app> automatisch starten, sobald ich angemeldet bin?</title>
         <p>Um Gnote bei der Anmeldung an GNOME automatisch zu starten, rufen Sie <app>gnome-session-properties</app> auf.</p>
       </item>
+      <item><title>Ich fühle mich nicht wohl mit dem neuen Einzelfenstermodus</title><p>Sie können <app>Gnote</app> dazu bewegen, sich wie früher zu verhalten. Wählen Sie <gui>Notizen immer in neuem Fenster öffnen</gui> in den Einstellungen.</p></item>
     </list>
 
 </page>

@@ -7,12 +7,17 @@
     <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
-      <years>2012</years>
+      <years>2012 – 2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
   
   <title>Sledování složky s poznámkami</title>
-    <p>Tento doplněk umožňuje pracovat s poznámkami přes souborový systém, i když je aplikace <app>Gnote</app> spuštěná. Když je doplněk zapnutý, sleduje změny v souborech a když nějakou změnu zjistí, soubor znovu načte. Díky tomu se externí změny v poznámkách automaticky promítnou i v aplikaci <app>Gnote</app>.</p>
-    <p><app>Gnote</app> uchovává poznámky ve složce <file>~/.local/share/gnote</file>. S tímto zapnutým doplňkem můžete provádět akce na úrovni souborového systému v této složce. Například synchronizovat obsah s jiným umístěním, i když aplikace <app>Gnote</app> zrovna běží.</p>
+    <p>Tento zásuvný modul umožňuje pracovat s poznámkami přes souborový systém, i když je aplikace <app>Gnote</app> spuštěná. Když je doplněk zapnutý, sleduje změny v souborech a pokud nějakou změnu zjistí, soubor znovu načte. Díky tomu se externí změny v poznámkách automaticky promítnou i v aplikaci <app>Gnote</app>.</p>
+    <p><app>Gnote</app> uchovává poznámky ve složce <file>~/.local/share/gnote</file>. S tímto zapnutým zásuvným modulem můžete provádět akce na úrovni souborového systému v této složce. Například synchronizovat obsah s jiným umístěním, i když aplikace <app>Gnote</app> zrovna běží.</p>
 
 </page>

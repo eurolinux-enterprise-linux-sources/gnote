@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-special-notes" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Podívejte se na speciální poznámky</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2013</years>
+    </credit>
+  </info>
+  
+  <title>Speciální poznámky</title>
+    <p>Když je nainstalován zásuvný modul <app>Speciální poznámky</app>, objeví se v seznamu sešitů speciální sešit <gui>Speciální poznámky</gui>. Tento sešit obsahuje poznámky, které jinak nejsou viditelné, jako třeba šablonové poznámky. Poslouží tak jako snadný způsob přístupu ke všech vašim šablonám.</p>
+
+</page>

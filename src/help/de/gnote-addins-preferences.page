@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="notes-preferences#advanced"/>
-    <desc>Einstellungen für Gnote-Add-Ins</desc>
+    <desc>Einstellungen für Gnote-Erweiterungen</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,17 +11,52 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013,2014</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Add-In-Einstellungen</title>
-    <p>Sie können in diesem Reiter Add-Ins aktivieren oder deaktivieren. Wählen Sie hierzu ein Add-In aus und klicken Sie auf den Knopf <gui>Aktivieren</gui>. Die Knopfbeschriftung ändert sich in <gui>Deaktivieren</gui>, so dass Sie den Knopf nun zum Deaktivieren eines Add-Ins verwenden können.</p>
-    <p>Einige Add-Ins haben Einstellmöglichkeiten. Wählen Sie das Add-In aus und klicken Sie auf den <gui>Einstellungen</gui>-Knopf.</p>
-    <figure><title>Add-in-Einstellungen für <app>Gnote</app></title>
-    <desc>Add-In-Fenster von <app>Gnote</app></desc>
+  <title>Einstellungen der Erweiterung</title>
+    <p>Sie können in diesem Reiter Erweiterungen aktivieren oder deaktivieren. Wählen Sie dazu eine Erweiterung aus und klicken Sie auf den Knopf <gui>Aktivieren</gui>. Klicken Sie auf <gui>Deaktivieren</gui> zum Deaktivieren einer Erweiterung.</p>
+    <p>Einige Erweiterungen haben Einstellmöglichkeiten. Wählen Sie für die Einstellungen die Erweiterung aus und klicken Sie auf den <gui>Einstellungen</gui>-Knopf.</p>
+    <figure><title>Erweiterungseinstellungen für <app>Gnote</app></title>
+    <desc>Erweiterungsfenster von <app>Gnote</app></desc>
     <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">
-      <p>Add-in-Fenster von <app>Gnote</app></p>
+      <p><gui>Erweiterungsfenster</gui>.</p>
     </media>
     </figure>
 

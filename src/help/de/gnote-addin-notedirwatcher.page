@@ -3,16 +3,51 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Watch for note changes on file system</desc>
+    <desc>Das Dateisystem auf Notizänderungen überwachen</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
-      <years>2012</years>
+      <years>2012-2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
   
-  <title>Note Directory Watcher</title>
-    <p>This addin allows you to work with notes on a file system while <app>Gnote</app> is running. When enabled, this addin monitors note files for changes and reloads them, once any change is detected. This way external change to a note file is automatically reflected in <app>Gnote</app>.</p>
-    <p><app>Gnote</app> stores notes into <file>~/.local/share/gnote</file> folder. With this addin enabled, you can perform actions at file system level on this directory, such as synchronizing contents with some other location, while <app>Gnote</app> is running.</p>
+  <title>Notizordner-Überwachung</title>
+    <p>Diese Erweiterung ermöglicht es mit Notizen auf einem Dateisystem zu arbeiten, während <app>Gnote</app> läuft. Wenn es aktiviert ist, überwacht es Notizdateien auf Änderungen und lädt sie gegebenenfalls neu, sobald eine Änderung erkannt wurde. Auf diese Weise werden externe Änderungen an einer Notizdatei automatisch in <app>Gnote</app> übernommen.</p>
+    <p><app>Gnote</app> speichert Notizen im Ordner <file>~/.local/share/gnote</file>. Wenn diese Erweiterung aktiv ist, können Sie in diesem Ordner auf Dateisystemebene arbeiten, wie z.B. Inhaltsabgleich mit einem anderen Ort, während <app>Gnote</app> läuft.</p>
 
 </page>

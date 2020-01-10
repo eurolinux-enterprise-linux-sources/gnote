@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="searching-notes" xml:lang="sv">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>Searching notes</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  </info>
+
+  <title>Exploring Notes</title>
+
+  <p>The main <app>Gnote</app> window shows an overview of all your notes. By default the window will display notes in the order in which they were last modified. Click the <gui>Note</gui> or <gui>Last Changed</gui> column headings to change the sort order. Click a column heading a second time to toggle between ascending and descending order.</p>
+  <p>You can find specific notes by clicking search button and entering text in the search field that appears. The note list will automatically update to include only the notes which have matching text. If notes list has focus, you can simply type search text there, search will be automatically activated.</p>
+  <p>To open a note, do any of the following:</p>
+  <list>
+    <item><p>Dubbelklicka på en anteckning.</p></item>
+    <item><p>Right-click in the list of notes and select <gui>Open</gui> from the context menu. This will open all selected notes, each in its own window.</p></item>
+    <item><p>Right-click in the list of notes and select <gui>Open in New Window</gui> from the context menu. This will open each selected note in a new window, leaving the original window as is.</p></item>
+    <item><p>Select one or more notes in a list and press <keyseq><key>Ctrl</key><key>O</key></keyseq>.</p></item>
+    <item><p>If the status icon is enabled, click it and select a note from the menu that appears. This menu is limited to a certain number of notes and includes pinned and recently updated notes.</p></item>
+  </list>
+
+</page>

@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2013 Aurimas Cernius
+ * Copyright (C) 2011-2014 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,6 +28,7 @@
 #include "notebooks/notebook.hpp"
 #include "notebooks/notebookmanager.hpp"
 #include "notebooks/notebookstreeview.hpp"
+#include "notebooks/specialnotebooks.hpp"
 #include "notemanager.hpp"
 
 namespace gnote {
@@ -73,7 +74,7 @@ namespace gnote {
       
       Notebook::Ptr destNotebook;
       iter->get_value(0, destNotebook);
-      if (std::tr1::dynamic_pointer_cast<AllNotesNotebook>(destNotebook)) {
+      if(dynamic_pointer_cast<AllNotesNotebook>(destNotebook)) {
         context->drag_finish (false, false, time_);
         return;
       }
@@ -81,13 +82,13 @@ namespace gnote {
       for(utils::UriList::const_iterator uri_iter = uriList.begin();
           uri_iter != uriList.end(); ++uri_iter) {
         const sharp::Uri & uri(*uri_iter);
-        Note::Ptr note = m_note_manager.find_by_uri (uri.to_string ());
+        NoteBase::Ptr note = m_note_manager.find_by_uri(uri.to_string());
         if (!note)
           continue;
 
         DBG_OUT ("Dropped into notebook: %s", note->get_title().c_str());
 
-        destNotebook->add_note(note);
+        destNotebook->add_note(static_pointer_cast<Note>(note));
       }
 
       context->drag_finish (true, false, time_);
@@ -111,7 +112,7 @@ namespace gnote {
       
       Notebook::Ptr destNotebook;
       iter->get_value(0, destNotebook);
-      if (std::tr1::dynamic_pointer_cast<AllNotesNotebook>(destNotebook)) {
+      if(dynamic_pointer_cast<AllNotesNotebook>(destNotebook)) {
         gtk_tree_view_set_drag_dest_row (gobj(), NULL, GTK_TREE_VIEW_DROP_INTO_OR_AFTER);
         return true;
       }

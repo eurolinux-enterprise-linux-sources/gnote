@@ -11,12 +11,16 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
   
   <title>Spausdinti</title>
-    <p>Įrankių mygtuką vaizduoja piktograma <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Kai šis priedas yra įdiegtas, meniu <gui>Įrankiai</gui> turės punktą <gui>Spausdinti</gui>.</p>
-    <p>Pasirinkus punktą <gui>Spausdinti</gui> bus atvertas standartinis spausdinimo dialogas ir raštelis galės būti atspausdintas.</p>
+    <p>Kai yra įdiegtas įskiepis <app>Spausdinimo palaikymas</app>, <gui>veiksmų</gui> meniu turės komandą <gui>Spausdinti</gui>. Ši komanda atvers standartinį <gui>spausdinimo dialogą</gui>, kuris jums leis atspausdinti raštelį.</p>
 
 </page>

@@ -4,21 +4,37 @@
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
     <link type="topic" xref="addins-preferences"/>
-    <desc>Insert Current Time</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>插入当前时间</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Insert Timestamp Add-in</title>
-    <p>The Tools button is represented by the <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"> </media> icon. When you click the Tools icon on the toolbar present on your note, a menu will appear.</p>
-    <p>When the <gui>Insert Timestamp</gui> add-in is installed, the Tools menu will have a <gui>Insert Timestamp</gui> option available.</p>
-    <p>Click on this option to insert current date and time.</p>
+  <title>插入时间戳扩展</title>
+    
+    <p>When the <gui>Insert Timestamp</gui> plugin is installed, the <gui>Actions</gui> menu will include a <gui>Insert Timestamp</gui> command. Select this command to insert the current date and time.</p>
 
 </page>

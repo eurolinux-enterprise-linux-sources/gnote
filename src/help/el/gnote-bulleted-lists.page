@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="bulleted-lists" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Χρήση λιστών με τελείες</desc>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+<title>Λίστες με κουκκίδες</title>
+
+<section id="begin-a-bulleted-list"><title>Δημιουργία λίστας με κουκκίδες</title>
+<p>Μπορείτε να αρχίσετε μια λίστα με κουκκίδες με οποιονδήποτε από τους παρακάτω τρόπους:</p>
+<list>
+<item><p>Επιλέξτε <gui>Κουκκίδες</gui> από το μενού <gui>Κείμενο</gui>.</p></item>
+<item><p>Ξεκινήστε μια γραμμή με το χαρακτήρα απλής παύλα <key>-</key> ακολουθούμενο από ένα κενό. Έπειτα πληκτρολογήστε κάποιο κείμενο και πατήστε το πλήκτρο <key>Εισαγωγή</key>.</p></item>
+<item><p>Πατήστε το συνδυασμό πλήκτρων <keyseq><key>Alt</key><key>Δεξιό βέλος</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="end-a-bulleted-list"><title>Ολοκλήρωση λίστας με κουκκίδες</title>
+<p>Μπορείτε να τελειώσετε μια λίστα με κουκκίδες κάνοντας ένα από τα παρακάτω:</p>
+<list>
+<item><p>Επιλέξτε <gui>Κουκκίδες</gui> από το μενού <gui>Κείμενο</gui>.</p></item>
+<item><p>Πατήστε <key>Enter</key> σε μια κενή γραμμή με κουκκίδες.</p></item>
+<item><p>Επιλέξτε <gui>Μείωση εσοχής</gui> από το μενού κειμένου διαδοχικά μέχρι η τρέχουσα γραμμή να μην είναι πια μέρος της λίστας με τις κουκκίδες.</p></item>
+<item><p>Πατώντας επανειλημμένα το <keyseq><key>Shift</key><key>Tab</key></keyseq> μέχρι η τρέχουσα γραμμή να μην είναι πια μέρος της λίστας με τις κουκκίδες.</p></item>
+<item><p>Πατώντας επανειλημμένα το <keyseq><key>Alt</key><key>αριστερό βέλος</key></keyseq> μέχρι η τρέχουσα γραμμή να μην είναι πια μέρος της λίστας με τις κουκκίδες.</p></item>
+</list>
+
+</section>
+<section id="increase-indentation">
+<title>Αύξηση εσοχής</title>
+<p>Για να αυξήσετε την εσοχή γραμμής σε μια λίστα με κουκκίδες με το ποντίκι:</p>
+<list><item><p>Επιλέξτε <gui>Αύξηση εσοχής</gui> από το μενού κειμένου.</p></item></list>
+<p>Για να αυξήσετε την εσοχή γραμμής σε μια λίστα με κουκκίδες με το πληκτρολόγιο:</p>
+<list>
+<item><p>Πατήστε το πλήκτρο <key>Tab</key>.</p></item>
+<item><p>Πατήστε το συνδυασμό πλήκτρων <keyseq><key>Alt</key><key>Δεξιό βέλος</key></keyseq>.</p></item>
+</list>
+</section>
+
+<section id="decrease-indentation">
+<title>Μείωση εσοχής</title>
+<p>Για να μειώσετε την εσοχή γραμμής σε μια λίστα με κουκκίδες με το ποντίκι:</p>
+<list><item><p>Επιλέξτε <gui>Μείωση εσοχής</gui> από το μενού κειμένου.</p></item></list>
+<p>Για να μειώσετε την εσοχή γραμμής σε μια λίστα με κουκκίδες με το πληκτρολόγιο:</p>
+<list>
+<item><p>Πατήστε τον συνδυασμό πλήκτρων <keyseq><key>Shift</key><key>Tab</key></keyseq>.</p></item>
+<item><p>Πατήστε τον συνδυασμό πλήκτρων <keyseq><key>Alt</key><key>αριστερό βέλος</key></keyseq>.</p></item>
+</list>
+</section>
+
+</page>

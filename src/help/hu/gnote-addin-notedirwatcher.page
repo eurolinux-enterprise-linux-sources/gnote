@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-notedirwatcher" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Jegyzetek változásainak figyelése a fájlrendszeren</desc>
+    <license><p>GNU Free Documentation License (GFDL), 1.1 verzió</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2012-2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  </info>
+  
+  <title>Jegyzetkönyvtár-figyelő</title>
+    <p>Ez a bővítmény lehetővé teszi a fájlrendszeren lévő jegyzetekkel való munkát miközben a <app>Gnote</app> fut. Ha engedélyezve van, ez a bővítmény figyeli a jegyzetfájlok változásait és újratölti azokat amikor változást észlel. Így a jegyzetfájlok külső módosításai automatikusan tükröződnek a <app>Gnote-ban</app>.</p>
+    <p>A <app>Gnote</app> a jegyzeteket a <file>~/.local/share/gnote</file> könyvtárban tárolja. Ha ez a bővítmény engedélyezve van, akkor a fájlrendszer szintjén hajthat végre műveleteket ezen a könyvtáron, például jegyzetfájlok szinkronizálását egy másik hellyel, miközben a <app>Gnote</app> fut.</p>
+
+</page>

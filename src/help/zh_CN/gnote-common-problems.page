@@ -3,27 +3,43 @@
 
   <info>
     <link type="guide" xref="index#common-problems"/>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
-    <desc>Frequently Asked Questions</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
+    <desc>常见问题</desc>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011-2012</years>
+      <years>2011-2014</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Gnote Common Issues</title>
+  <title>Gnote 常见问题</title>
     <list>
-      <item><title>Does <app>Gnote</app> work with <app>Tomboy</app>?</title><p>You can import <app>Tomboy</app> Notes. An add-in has to be activated.</p>
+      <item><title><app>Gnote</app> 是否与 <app>Tomboy</app> 兼容？</title><p>You can import <app>Tomboy</app> Notes. A plugin has to be activated.</p>
       </item>
-      <item><title>I can not find the Gnote status icon</title>
-        <p>You can activate the <app>Gnote</app> status icon using a command from <app>terminal</app>: <cmd>gsettings set org.gnome.gnote use-status-icon true</cmd>.</p></item>
-      <item><title>How to automatically start <app>Gnote</app> when I log in?</title>
-        <p>To start Gnote automatically when you log into GNOME, run <app>gnome-session-properties</app></p>
+      <item><title>当我登录系统时如何自动启用 <app>Gnote</app> ？</title>
+        <p>当您登录到 GNOME 后运行 <app>gnome-session-properties</app> 即可自动启用 Gnote。</p>
       </item>
+      <item><title>I'm not comfortable with new single-window interface</title><p>You can make <app>Gnote</app> behave the old way by selecting <gui>Always open notes in new window</gui> in Preferences dialog.</p></item>
     </list>
 
 </page>

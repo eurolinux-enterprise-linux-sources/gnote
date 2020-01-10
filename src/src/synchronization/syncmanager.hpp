@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2013 Aurimas Cernius
+ * Copyright (C) 2012-2014 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,6 +27,7 @@
 #include <glibmm/main.h>
 #include <glibmm/thread.h>
 
+#include "base/macros.hpp"
 #include "isyncmanager.hpp"
 
 
@@ -39,37 +40,43 @@ namespace sync {
     : public ISyncManager
   {
   public:
-    SyncManager(NoteManager &);
-    static void init(NoteManager &);
-    virtual void reset_client();
-    virtual void perform_synchronization(const std::tr1::shared_ptr<SyncUI> & sync_ui);
+    SyncManager(NoteManagerBase &);
+    static void init(NoteManagerBase &);
+    virtual void reset_client() override;
+    virtual void perform_synchronization(const SyncUI::Ptr & sync_ui) override;
     void synchronization_thread();
-    virtual void resolve_conflict(SyncTitleConflictResolution resolution);
-    virtual bool synchronized_note_xml_matches(const std::string & noteXml1, const std::string & noteXml2);
-    virtual SyncState state() const
+    virtual void resolve_conflict(SyncTitleConflictResolution resolution) override;
+    virtual bool synchronized_note_xml_matches(const std::string & noteXml1, const std::string & noteXml2) override;
+    virtual SyncState state() const override
       {
         return m_state;
       }
+  protected:
+    virtual void initialize_sync_service_addins(NoteManagerBase &);
+    virtual void connect_system_signals();
+    virtual SyncServiceAddin *get_sync_service_addin(const std::string & sync_service_id);
+    virtual SyncServiceAddin *get_configured_sync_service();
+
+    SyncClient::Ptr m_client;
+    SyncUI::Ptr m_sync_ui;
   private:
     static SyncManager & _obj()
       {
         return static_cast<SyncManager&>(obj());
       }
-    void _init(NoteManager &);
-    void handle_note_saved_or_deleted(const Note::Ptr & note);
-    void handle_note_buffer_changed(const Note::Ptr & note);
+    void _init(NoteManagerBase &);
+    void handle_note_saved_or_deleted(const NoteBase::Ptr & note);
+    void handle_note_buffer_changed(const NoteBase::Ptr & note);
     void preferences_setting_changed(const Glib::ustring & key);
     void update_sync_action();
     void background_sync_checker();
     void set_state(SyncState new_state);
-    SyncServiceAddin *get_configured_sync_service();
-    SyncServiceAddin *get_sync_service_addin(const std::string & sync_service_id);
     void create_note_in_main_thread(const NoteUpdate & noteUpdate);
     void update_note_in_main_thread(const Note::Ptr & existingNote, const NoteUpdate & noteUpdate);
     void delete_note_in_main_thread(const Note::Ptr & existingNote);
-    void update_local_note(const Note::Ptr & localNote, const NoteUpdate & serverNote, NoteSyncType syncType);
-    Note::Ptr find_note_by_uuid(const std::string & uuid);
-    NoteManager & note_mgr();
+    void update_local_note(const NoteBase::Ptr & localNote, const NoteUpdate & serverNote, NoteSyncType syncType);
+    NoteBase::Ptr find_note_by_uuid(const std::string & uuid);
+    NoteManagerBase & note_mgr();
     void get_synchronized_xml_bits(const std::string & noteXml, std::string & title, std::string & tags, std::string & content);
     void delete_notes(const SyncServer::Ptr & server);
     void create_note(const NoteUpdate & noteUpdate);
@@ -77,9 +84,7 @@ namespace sync {
     void delete_note(const Note::Ptr & existingNote);
     static void note_save(const Note::Ptr & note);
 
-    NoteManager & m_note_manager;
-    SyncUI::Ptr m_sync_ui;
-    SyncClient::Ptr m_client;
+    NoteManagerBase & m_note_manager;
     SyncState m_state;
     Glib::Thread *m_sync_thread;
     SyncTitleConflictResolution m_conflict_resolution;

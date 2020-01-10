@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012 Aurimas Cernius
+ * Copyright (C) 2012,2014 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a
@@ -102,11 +102,6 @@ namespace sharp {
     return boost::trim_copy_if(source, boost::is_any_of(set_of_char));
   }
 
-  bool string_contains(const std::string & source, const std::string &search)
-  {
-    return string_index_of(source, search) != -1;
-  }
-
   int string_last_index_of(const std::string & source, const std::string & search)
   {
     if(search.empty()) {
@@ -154,12 +149,6 @@ namespace sharp {
       return -1;
     }
     return iter.begin() - source2.begin() + start_at;
-  }
-
-
-  Glib::ustring string_to_lower(const Glib::ustring & source)
-  {
-    return source.lowercase();
   }
 
 }

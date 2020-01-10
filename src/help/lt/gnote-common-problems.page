@@ -11,19 +11,23 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011-2012</years>
+      <years>2011-2014</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Dažnos Gnote problemos</title>
     <list>
-      <item><title>Ar <app>Gnote</app> veikia su <app>Tomboy</app>?</title><p>Jūs galite importuoti <app>Tomboy</app> raštelius. Tam reikia įjungti priedą.</p>
+      <item><title>Ar <app>Gnote</app> veikia su <app>Tomboy</app>?</title><p>Jūs galite importuoti <app>Tomboy</app> raštelius. Tam reikia įjungti įskiepį.</p>
       </item>
-      <item><title>Negaliu rasti Gnote būsenos piktogramos</title>
-        <p><app>Gnote</app> būsenos piktogramą galite įjungti įvykdę komandą <app>terminale</app>: <cmd>gsettings set org.gnome.gnote use-status-icon true</cmd>.</p></item>
       <item><title>Kaip prisijungus automatiškai paleisti <app>Gnote</app>?</title>
-        <p>Automatiniam Gnote paleidimui prisijungus prie GNOME, paleiskite <app>gnome-session-properties</app></p>
+        <p>Automatiniam Gnote paleidimui prisijungus prie GNOME, paleiskite <app>gnome-session-properties</app>.</p>
       </item>
+      <item><title>Man nepatogi nauja vieno lango sąsaja</title><p>Galite įjungti seną <app>Gnote</app> veikimą nustatymų dialoge pažymėję <gui>Visada atverti raštelius naujame lange</gui>.</p></item>
     </list>
 
 </page>

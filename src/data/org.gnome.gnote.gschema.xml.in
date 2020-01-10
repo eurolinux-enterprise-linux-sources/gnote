@@ -5,6 +5,16 @@
       <_summary>Enable spellchecking</_summary>
       <_description>If true, misspellings will be underlined in red, and correct spelling suggestions shown in the right-click menu.</_description>
     </key>
+    <key name="enable-auto-links" type="b">
+      <default>true</default>
+      <_summary>Automatically create links when typing</_summary>
+      <_description>Enable this option to automatically create a link, when text matches note title.</_description>
+    </key>
+    <key name="enable-url-links" type="b">
+      <default>true</default>
+      <_summary>Create links for URLs in notes</_summary>
+      <_description>Enable this option to create links for URLs in notes.</_description>
+    </key>
     <key name="enable-wikiwords" type="b">
       <default>false</default>
       <_summary>Enable WikiWord highlighting</_summary>
@@ -65,20 +75,15 @@
       <_summary>Saved width of Search window</_summary>
       <_description>Determines pixel width of Search window; stored on Gnote exit.</_description>
     </key>
-    <key name="search-window-x-pos" type="i">
-      <default>0</default>
-      <_summary>Saved horizontal position of Search window</_summary>
-      <_description>Determines X coordinate of Search window; stored on Gnote exit.</_description>
-    </key>
-    <key name="search-window-y-pos" type="i">
-      <default>0</default>
-      <_summary>Saved vertical position of Search window</_summary>
-      <_description>Determines Y coordinate of Search window; stored on Gnote exit.</_description>
-    </key>
     <key name="search-window-splitter-pos" type="i">
       <default>150</default>
       <_summary>Saved splitter position of Search window splitter.</_summary>
       <_description>Determines Search window splitter position in pixels; stored on Gnote exit.</_description>
+    </key>
+    <key name="search-sorting" type="s">
+      <default>'change:asc'</default>
+      <_summary>Saved sorting of the Search window.</_summary>
+      <_description>Determines Search window initial sorting.</_description>
     </key>
     <key name="sync-fuse-mount-timeout-ms" type="i">
       <default>10000</default>
@@ -118,38 +123,54 @@
     <key name="use-status-icon" type="b">
       <default>false</default>
       <_summary>Use status icon, when started as an application</_summary>
-      <_description>Has affect only when started as an application. When set to TRUE, shows a status icon. If set to FALSE, Search All Notes window is used as main application window, closing which makes application to exit.</_description>
+      <_description>Deprecated, has no effect.</_description>
+    </key>
+    <key name="open-notes-in-new-window" type="b">
+      <default>false</default>
+      <_summary>Open notes in new window</_summary>
+      <_description>Open notes in new window instead of replacing active content of the same window</_description>
+    </key>
+    <key name="autosize-note-window" type="b">
+      <default>true</default>
+      <_summary>Save note window size and autosize note window to it</_summary>
+      <_description>Saves note window size and automatically resizes main window to this size, when note is opened.</_description>
+    </key>
+    <key name="use-client-side-decorations" type="s">
+      <default>'gnome'</default>
+      <_summary>Use client side window decorations</_summary>
+      <_description>Should Gnote draw its window titlebar, or leave that to window manager. Possible values are 'enabled' to draw them, 'disabled' to leave them to window manager, or a comma separated list of desktop environments, where Gnote should draw decorations itself. Requires application restart.</_description>
     </key>
     <child name="global-keybindings" schema="org.gnome.gnote.global-keybindings" />
     <child name="export-html" schema="org.gnome.gnote.export-html" />
     <child name="sync" schema="org.gnome.gnote.sync" />
     <child name="insert-timestamp" schema="org.gnome.gnote.insert-timestamp" />
+    <child name="note-directory-watcher" schema="org.gnome.gnote.note-directory-watcher" />
   </schema>
   <schema id="org.gnome.gnote.global-keybindings" path="/org/gnome/gnote/global-keybindings/">
     <key name="show-note-menu" type="s">
       <default>'&lt;Alt&gt;F12'</default>
       <_summary>Show applet menu</_summary>
-      <_description>The global keybinding for showing the Gnote applet's menu. The format looks like "&lt;Control&gt;a" or "&lt;Shift&gt;&lt;Alt&gt;F1". The parser is fairly liberal and allows lower or upper case, and also abbreviations such as "&lt;Ctl&gt;" and "&lt;Ctrl&gt;". If you set the option to the special string "disabled", then there will be no keybinding for this action.</_description>
+      <_description>Deprecated, has no effect.</_description>
     </key>
     <key name="open-start-here" type="s">
       <default>'&lt;Alt&gt;F11'</default>
       <_summary>Open Start Here</_summary>
-      <_description>The global keybinding for opening the "Start Here" note. The format looks like "&lt;Control&gt;a" or "&lt;Shift&gt;&lt;Alt&gt;F1". The parser is fairly liberal and allows lower or upper case, and also abbreviations such as "&lt;Ctl&gt;" and "&lt;Ctrl&gt;". If you set the option to the special string "disabled", then there will be no keybinding for this action.</_description>
+      <_description>Deprecated, has no effect.</_description>
     </key>
     <key name="create-new-note" type="s">
       <default>'disabled'</default>
       <_summary>Create a new Note</_summary>
-      <_description>The global keybinding for creating and displaying a new Note. The format looks like "&lt;Control&gt;a" or "&lt;Shift&gt;&lt;Alt&gt;F1". The parser is fairly liberal and allows lower or upper case, and also abbreviations such as "&lt;Ctl&gt;" and "&lt;Ctrl&gt;". If you set the option to the special string "disabled", then there will be no keybinding for this action.</_description>
+      <_description>Deprecated, has no effect.</_description>
     </key>
     <key name="open-search" type="s">
       <default>'disabled'</default>
       <_summary>Open Search Dialog</_summary>
-      <_description>The global keybinding for opening the Note Search dialog. The format looks like "&lt;Control&gt;a" or "&lt;Shift&gt;&lt;Alt&gt;F1". The parser is fairly liberal and allows lower or upper case, and also abbreviations such as "&lt;Ctl&gt;" and "&lt;Ctrl&gt;". If you set the option to the special string "disabled", then there will be no keybinding for this action.</_description>
+      <_description>Deprecated, has no effect.</_description>
     </key>
     <key name="open-recent-changes" type="s">
       <default>'disabled'</default>
       <_summary>Open Recent Changes</_summary>
-      <_description>The global keybinding for opening the Recent Changes dialog. The format looks like "&lt;Control&gt;a" or "&lt;Shift&gt;&lt;Alt&gt;F1". The parser is fairly liberal and allows lower or upper case, and also abbreviations such as "&lt;Ctl&gt;" and "&lt;Ctrl&gt;". If you set the option to the special string "disabled", then there will be no keybinding for this action.</_description>
+      <_description>Deprecated, has no effect.</_description>
     </key>
   </schema>
   <schema id="org.gnome.gnote.export-html" path="/org/gnome/gnote/export-html/">
@@ -173,7 +194,7 @@
     <key name="sync-guid" type="s">
       <default>''</default>
       <_summary>Synchronization Client ID</_summary>
-      <_description>Unique identifier for this Gnote client, used when communicating with a sychronization server.</_description>
+      <_description>Unique identifier for this Gnote client, used when communicating with a synchronization server.</_description>
     </key>
     <key name="sync-local-path" type="s">
       <default>''</default>
@@ -219,6 +240,13 @@
       <default>'%c'</default>
       <_summary>Timestamp format</_summary>
       <_description>The date format that is used for the timestamp. It follows the format of strftime(3).</_description>
+    </key>
+  </schema>
+  <schema id="org.gnome.gnote.note-directory-watcher" path="/org/gnome/gnote/note-directory-watcher/">
+    <key name="check-interval" type="i">
+      <default>5</default>
+      <_summary>Time between checks</_summary>
+      <_description>Time interval between note directory checks (in seconds). Min value is 5.</_description>
     </key>
   </schema>
 </schemalist>

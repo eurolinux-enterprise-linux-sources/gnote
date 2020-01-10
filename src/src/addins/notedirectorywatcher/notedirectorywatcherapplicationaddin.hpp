@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012 Aurimas Cernius
+ * Copyright (C) 2012-2014 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +25,9 @@
 
 #include <glibmm/threads.h>
 #include <giomm/filemonitor.h>
+#include <giomm/settings.h>
 
+#include "base/macros.hpp"
 #include "applicationaddin.hpp"
 #include "note.hpp"
 #include "sharp/dynamicmodule.hpp"
@@ -38,12 +40,6 @@ class NoteDirectoryWatcherModule
 {
 public:
   NoteDirectoryWatcherModule();
-  virtual const char * id() const;
-  virtual const char * name() const;
-  virtual const char * description() const;
-  virtual const char * authors() const;
-  virtual int          category() const;
-  virtual const char * version() const;
 };
 
 
@@ -65,27 +61,33 @@ public:
     {
       return new NoteDirectoryWatcherApplicationAddin;
     }
-  virtual void initialize();
-  virtual void shutdown();
-  virtual bool initialized();
+  virtual void initialize() override;
+  virtual void shutdown() override;
+  virtual bool initialized() override;
 private:
   static std::string get_id(const std::string & path);
   static std::string make_uri(const std::string & note_id);
 
   NoteDirectoryWatcherApplicationAddin();
-  void handle_note_saved(const gnote::Note::Ptr &);
+  void handle_note_saved(const gnote::NoteBase::Ptr &);
   void handle_file_system_change_event(const Glib::RefPtr<Gio::File> & file,
                                        const Glib::RefPtr<Gio::File> & other_file,
                                        Gio::FileMonitorEvent event_type);
   bool handle_timeout();
   void delete_note(const std::string & note_id);
   void add_or_update_note(const std::string & note_id);
+  void on_settings_changed(const Glib::ustring & key);
+  void sanitize_check_interval(const Glib::RefPtr<Gio::Settings> & settings);
 
   Glib::RefPtr<Gio::FileMonitor> m_file_system_watcher;
 
   std::map<std::string, NoteFileChangeRecord> m_file_change_records;
   std::map<std::string, sharp::DateTime> m_note_save_times;
+  sigc::connection m_signal_note_saved_cid;
+  sigc::connection m_signal_changed_cid;
+  sigc::connection m_signal_settings_changed_cid;
   bool m_initialized;
+  int m_check_interval;
   Glib::Threads::Mutex m_lock;
 };
 

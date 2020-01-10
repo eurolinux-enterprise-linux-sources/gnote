@@ -14,17 +14,22 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Gnote įvadas</title>
     <p><app>Gnote</app> yra darbalaukio užrašų programa GNOME aplinkai. Ji yra paprasta naudoti, leidžia dėstyti mintis bei informaciją, su kuria dirbate kiekvieną dieną. Gnote turi keletą labai naudingų redagavimo savybių, padedančių tvarkyti raštelius, pavyzdžiui</p>
     <list>
-      <item><p>Ieškomo teksto paryškinimas</p></item>
-      <item><p>Integruotas rašybos tikrinimas</p></item>
-      <item><p>Automatinis susiejimas su interneto ir el. pašto adresais</p></item>
-      <item><p>Atšaukimo/pakartojimo palaikymas</p></item>
-      <item><p>Šriftų stilius ir dydis</p></item>
-      <item><p>Punktų sąrašai</p></item>
+      <item><p>ieškomo teksto paryškinimas</p></item>
+      <item><p>integruotas rašybos tikrinimas</p></item>
+      <item><p>automatinis susiejimas su interneto ir el. pašto adresais</p></item>
+      <item><p>atšaukimas/pakartojimas</p></item>
+      <item><p>šriftų stilius ir dydis</p></item>
+      <item><p>punktų sąrašai</p></item>
     </list>
     <figure>
       <title><app>Gnote</app> pagrindinis langas</title>

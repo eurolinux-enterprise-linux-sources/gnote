@@ -3,29 +3,46 @@
 
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
-    <desc>Underline Text</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>文本下划线</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Underline Text Add-In</title>
-  <p>When the <gui>Underline</gui> add-in is installed, the <gui>Text</gui> menu will have a <gui>Underline</gui> option available.</p>
-  <p>To underline the selected text, use one of the following:</p>
+  <title>文本下划线扩展</title>
+  <p>When the <gui>Underline</gui> plugin is installed, the <gui>Text</gui> menu will have a <gui>Underline</gui> option available.</p>
+  <p>要对选中的文本添加下划线，可使用下面方法：</p>
   <list>
-    <item><p>Click on <gui>Text</gui> and select <gui>Underline</gui>.</p></item>
-    <item><p>Press the key combination <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+    <item><p>点击<gui>文本</gui>，选择<gui>下划线</gui>。</p></item>
+    <item><p>按 <keyseq><key>Ctrl</key><key>U</key></keyseq>。</p></item>
   </list>
-  <p>To remove underline, select the underlined text and use one of the following:</p>
+  <p>如果要移除下划线，选中下划线文本，然后通过下面方法：</p>
   <list>
-    <item><p>Click on <gui>Text</gui> and select <gui>Underline</gui>.</p></item>
-    <item><p>Press the key combination <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+    <item><p>点击<gui>文本</gui>，选择<gui>下划线</gui>。</p></item>
+    <item><p>按 <keyseq><key>Ctrl</key><key>U</key></keyseq>。</p></item>
   </list>
 
 </page>

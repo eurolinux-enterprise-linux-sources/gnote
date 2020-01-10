@@ -13,12 +13,17 @@
       <name>Aurimas Cernius</name>
       <years>2011</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
 <title>Punktų sąrašai</title>
 
 <section id="begin-a-bulleted-list"><title>Pradėti punktų sąrašą</title>
-<p>Punktų sąrašą galite pradėti šiais būdais</p>
+<p>Punktų sąrašą galite pradėti šiais būdais:</p>
 <list>
 <item><p>Pasirinkite <gui>Punktai</gui> iš meniu <gui>Tekstas</gui>.</p></item>
 <item><p>Pradėkite eilutę vienu brūkšneliu <key>-</key> ir tarpu, parašykite tekstą ir paspauskite <key>Enter</key>.</p></item>
@@ -27,7 +32,7 @@
 </section>
 
 <section id="end-a-bulleted-list"><title>Baigti punktų sąrašą</title>
-<p>Užbaikite punktų sąrašą šiais būdais</p>
+<p>Užbaikite punktų sąrašą šiais būdais:</p>
 <list>
 <item><p>Pasirinkite <gui>Punktai</gui> iš meniu <gui>Tekstas</gui>.</p></item>
 <item><p>Paspauskite <key>Enter</key> tuščioje punkto eilutėje.</p></item>
@@ -39,9 +44,9 @@
 </section>
 <section id="increase-indentation">
 <title>Padidinti įtrauką</title>
-<p>Įtraukai punktų sąraše padidinti pele</p>
+<p>Įtraukai punktų sąraše padidinti pele:</p>
 <list><item><p>Pasirinkite <gui>Padidinti įtrauką</gui> iš teksto meniu.</p></item></list>
-<p>Įtraukai punktų sąraše padidinti klaviatūra</p>
+<p>Įtraukai punktų sąraše padidinti klaviatūra:</p>
 <list>
 <item><p>Spauskite <key>Tab</key> klavišą.</p></item>
 <item><p>Paspauskite klavišų kombinaciją <keyseq><key>Alt</key><key>Dešinėn</key></keyseq>.</p></item>
@@ -50,7 +55,7 @@
 
 <section id="decrease-indentation">
 <title>Sumažinti įtrauką</title>
-<p>Įtraukai punktų sąraše sumažinti pele</p>
+<p>Įtraukai punktų sąraše sumažinti pele:</p>
 <list><item><p>Pasirinkite <gui>Sumažinti įtrauką</gui> iš teksto meniu.</p></item></list>
 <p>Įtraukai punktų sąraše sumažinti klaviatūra:</p>
 <list>

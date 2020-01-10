@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010 Aurimas Cernius
+ * Copyright (C) 2010,2013,2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  * Original C# file
  * (C) 2006 Ryan Lortie <desrt@desrt.ca>
@@ -33,6 +33,7 @@
 
 #include <gtkmm/texttag.h>
 
+#include "base/macros.hpp"
 #include "sharp/dynamicmodule.hpp"
 #include "noteaddin.hpp"
 
@@ -43,12 +44,6 @@ namespace fixedwidth {
   {
   public:
     FixedWidthModule();
-    virtual const char * id() const;
-    virtual const char * name() const;
-    virtual const char * description() const;
-    virtual const char * authors() const;
-    virtual int          category() const;
-    virtual const char * version() const;
   };
 
 
@@ -62,11 +57,19 @@ namespace fixedwidth {
       { 
         return new FixedWidthNoteAddin();
       }
-    virtual void initialize ();
-    virtual void shutdown ();
-    virtual void on_note_opened ();
+    virtual void initialize() override;
+    virtual void shutdown() override;
+    virtual void on_note_opened() override;
   private:
+    void menu_shown();
+    void on_note_foregrounded();
+    void on_note_backgrounded();
+    void on_menu_item_state_changed(const Glib::VariantBase & state);
+    void set_accels(const gnote::utils::GlobalKeybinder & keybinder);
+    void on_accel();
+
     Glib::RefPtr<Gtk::TextTag> m_tag;
+    sigc::connection           m_menu_item_cid;
   };
 
 

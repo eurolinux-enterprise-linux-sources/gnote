@@ -12,7 +12,12 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011-2012</years>
+      <years>2011-2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
@@ -20,14 +25,15 @@
   <section id="editing">
     <title>Gnote nustatymai</title>
     <p><app>Gnote</app> nustatymams pakeisti, programos meniu pasirinkite punktą <gui>Nustatymai</gui>.</p>
-    <p>Yra trys nustatymų kategorijos: <gui>Esmė</gui>, <gui>Spartieji klavišai</gui> ir <gui>Priedai</gui>. Žemiau aprašyti kiekvienos kortelės nustatymai.</p>
-    <p>Esmės kortelė leis keisti nustatymus, susijusius su programos elgsena ir raštelių redagavimu. Šioje kortelėje yra keli žymimieji langeliai, kurie gali būti įjungti arba išjungti.</p>
+    <p>Yra trys nustatymų kategorijos: <gui>Esmė</gui>, <gui>Spartieji klavišai</gui> ir <gui>Priedai</gui>.</p>
+    <p><gui>Esmės</gui> kortelė leis keisti nustatymus, susijusius su programos elgsena ir raštelių redagavimu. Šioje kortelėje yra keli žymimieji langeliai:</p>
     <list>
-      <item><title>Naudoti būsenos piktogramą</title><p>Pažymėkite šį langelį, kad <app>Gnote</app> būsenos piktograma būtų rodoma vykdymo metu. Šioje veiksenoje <app>Gnote</app> tęs darbą net po visų langų uždarymo. Neseniai naudoti rašteliai ir kiti langai gali būti atverti naudojant meniu, pasirodantį paspaudus kairį arba dešinį klavišą virš būsenos piktogramos.</p></item>
+      <item><title>Naudoti būsenos piktogramą</title><p>Pažymėkite šį langelį, kad <app>Gnote</app> būsenos piktograma būtų rodoma vykdymo metu. Šioje veiksenoje <app>Gnote</app> tęs darbą net po visų langų uždarymo. Paspaudus būsenos piktogramą bus rodomas meniu, kuris leis greitai pasiekti neseniai naudotus raštelius ir kitus langus.</p></item>
+      <item><title>Visada atverti raštelius naujame lange</title><p>Pažymėjus užuot pakeitus esamo lango turinį raštelis bus atvertas naujame lange.</p></item>
       <item><title>Rašybos tikrinimas rašant</title><p>Pažymėkite šį langelį, kad klaidingai parašyti žodžiai būtų pabraukti raudonai ir kontekstiniame meniu būtų pateikti pasiūlymai.</p><p>Rašybos tikrinimas prieinamas tik jei jūsų distribucijoje yra įdiegtas GtkSpell paketas.</p></item>
       <item><title>Paryškinti VikiŽodžius</title><p>Pažymėkite šį langelį, kad ŠitaipAtrodančiomsFrazėms būtų sukurti saitai. Paspaudus ant saito bus sukurtas naujas raštelis su atitinkamu pavadinimu.</p></item>
       <item><title>Įjungti automatinį sąrašų formatą</title><p>Pažymėkite šį langelį, jei norite sukurti punktų sąrašą pradėdami eilutes brūkšneliu <key>-</key>. Daugiau rasite <link xref="bulleted-lists"/>.</p></item>
-      <item><title>Naudoti pasirinktinį šriftą</title><p>Pažymėkite šį langelį, jei norite rašteliams nustatyti pasirinktinį šriftą. Jei ši parinktis išjungta, bus naudojamas numatytasis sistemos šriftas.</p></item>
+      <item><title>Naudoti pasirinktinį šriftą</title><p>Pažymėkite šį langelį, jei norite rašteliams nustatyti pasirinktinį šriftą.</p></item>
     </list>
     <figure><title>Langas <gui>Nustatymai</gui></title>
       <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Gnote nustatymų keitimas</desc>
@@ -49,11 +55,11 @@
         <title>Sudėtingesni sinchronizacijos nustatymai</title>
         <media type="image" src="figures/gnote-syncprefs-advanced.png" mime="image/png"/>
       </figure>
-      <p>Šis dialogas leidžia pasirinkti, ką daryti, kai kyla konfliktas. Taip atsitinka, kai raštelis yra pakeičiamas prieš sinchronizuojant ir jis taip pat buvo pakeistas kitame įrenginyje (ir sinchronizuotas į sinchronizacijos saugyklą). Galite pasirinkti vieną iš šių parinkčių:</p>
+      <p>Šis dialogas leidžia pasirinkti, ką daryti, kai kyla konfliktas. Taip atsitinka, kai raštelis yra pakeičiamas prieš sinchronizuojant ir jis taip pat buvo pakeistas kitame įrenginyje. Galite pasirinkti vieną iš šių parinkčių:</p>
       <list>
-        <item><title>Pervadinti esamą raštelį pridedant „(Senas)“ prie jo pavadinimo ir parsiųsti tą patį raštelį iš saugyklos</title></item>
-        <item><title>Pakeisti esamą raštelį raštelių iš saugyklos, prarandant visus pakeitimus</title></item>
-        <item><title>Gauti pasirinkimą atskirai kiekvienam konfliktuojančiam rašteliui</title></item>
+        <item><p>Pervadinti esamą raštelį pridedant „(Senas)“ prie jo pavadinimo ir parsiųsti tą patį raštelį iš saugyklos</p></item>
+        <item><p>Pakeisti esamą raštelį raštelių iš saugyklos, prarandant visus pakeitimus</p></item>
+        <item><p>Gauti pasirinkimą atskirai kiekvienam konfliktuojančiam rašteliui</p></item>
       </list>
     </section>
   </section>

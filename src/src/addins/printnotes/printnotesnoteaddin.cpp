@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2012 Aurimas Cernius
+ * Copyright (C) 2010-2013,2015-2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,10 +26,10 @@
 #include <glibmm/miscutils.h>
 #include <gtkmm/image.h>
 #include <gtkmm/printoperation.h>
-#include <gtkmm/stock.h>
 
 #include "sharp/datetime.hpp"
 #include "debug.hpp"
+#include "iactionmanager.hpp"
 #include "notetag.hpp"
 #include "notewindow.hpp"
 #include "printnotesnoteaddin.hpp"
@@ -40,30 +40,6 @@ namespace printnotes {
   PrintNotesModule::PrintNotesModule()
   {
     ADD_INTERFACE_IMPL(PrintNotesNoteAddin);
-  }
-  const char * PrintNotesModule::id() const
-  {
-    return "PrintNotesAddin";
-  }
-  const char * PrintNotesModule::name() const
-  {
-    return _("Printing Support");
-  }
-  const char * PrintNotesModule::description() const
-  {
-    return _("Allows you to print a note.");
-  }
-  const char * PrintNotesModule::authors() const
-  {
-    return _("Hubert Figuiere and the Tomboy Project");
-  }
-  int PrintNotesModule::category() const
-  {
-    return gnote::ADDIN_CATEGORY_DESKTOP_INTEGRATION;
-  }
-  const char * PrintNotesModule::version() const
-  {
-    return "0.4";
   }
 
   void PrintNotesNoteAddin::initialize()
@@ -78,37 +54,21 @@ namespace printnotes {
 
   void PrintNotesNoteAddin::on_note_opened()
   {
-    m_item = manage(new Gtk::ImageMenuItem (_("Print")));
-    m_item->set_image(*manage(new Gtk::Image (Gtk::Stock::PRINT,
-                                             Gtk::ICON_SIZE_MENU)));
-    m_item->signal_activate().connect(
+    register_main_window_action_callback("printnotes-print",
       sigc::mem_fun(*this, &PrintNotesNoteAddin::print_button_clicked));
-    gnote::NoteWindow *note_window = get_window();
-    note_window->signal_foregrounded.connect(
-      sigc::mem_fun(*this, &PrintNotesNoteAddin::on_note_foregrounded));
-    note_window->signal_backgrounded.connect(
-      sigc::mem_fun(*this, &PrintNotesNoteAddin::on_note_backgrounded));
-    m_item->show ();
-    add_plugin_menu_item (m_item);
   }
 
 
-  void PrintNotesNoteAddin::on_note_foregrounded()
+  std::map<int, Gtk::Widget*> PrintNotesNoteAddin::get_actions_popover_widgets() const
   {
-    m_item->add_accelerator("activate", get_window()->get_accel_group(),
-                            GDK_KEY_P, Gdk::CONTROL_MASK,
-                            Gtk::ACCEL_VISIBLE);
+    auto widgets = NoteAddin::get_actions_popover_widgets();
+    auto button = gnote::utils::create_popover_button("win.printnotes-print", _("Print"));
+    gnote::utils::add_item_to_ordered_map(widgets, gnote::PRINT_ORDER, button);
+    return widgets;
   }
 
 
-  void PrintNotesNoteAddin::on_note_backgrounded()
-  {
-    m_item->remove_accelerator(get_window()->get_accel_group(),
-                               GDK_KEY_P, Gdk::CONTROL_MASK);
-  }
-
-
-  void PrintNotesNoteAddin::print_button_clicked()
+  void PrintNotesNoteAddin::print_button_clicked(const Glib::VariantBase&)
   {
     try {
       m_print_op = Gtk::PrintOperation::create();
@@ -174,7 +134,7 @@ namespace printnotes {
       position = limit;
     }
 
-    Glib::RefPtr<Gdk::Screen> screen = get_note()->get_window()->get_screen();
+    Glib::RefPtr<Gdk::Screen> screen = get_window()->get_screen();
     double screen_dpiX = screen->get_width_mm() * 254 / screen->get_width();
 
     for(Glib::SListHandle<Glib::RefPtr<Gtk::TextTag> >::const_iterator iter = tags.begin();
@@ -294,7 +254,7 @@ namespace printnotes {
     }
 
     gnote::DepthNoteTag::Ptr depth = get_buffer()->find_depth_tag(p_start);
-    if(depth != 0) {
+    if(depth) {
         indentation += ((int) (dpiX / 3)) * depth->get_depth();
     }
     layout->set_width(pango_units_from_double((int)context->get_width() -

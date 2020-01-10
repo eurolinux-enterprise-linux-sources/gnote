@@ -13,14 +13,49 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Notizen löschen</title>
-  <p>Sie können eine Notiz auf folgende Arten löschen:</p>
+  <p>Sie können eine Notiz auf zwei Arten löschen:</p>
   <list>
-    <item><p>Right click in the list of notes and select <gui>Delete</gui>. This will delete all selected notes.</p></item>
+    <item><p>Klicken Sie mit der rechten Maustaste in die Notizliste und wählen Sie <gui>Löschen</gui>. Dadurch werden alle gewählten Notizen gelöscht.</p></item>
     <item><p>Wenn eine Notiz geöffnet ist, klicken Sie auf den <gui>Löschen</gui>-Knopf in der Werkzeugleiste.</p></item>
   </list>
-  <p>In jedem Fall wird ein Dialog geöffnet, in welchem Sie gefragt werden, ob Sie die Notiz und deren Inhalt dauerhaft löschen möchten. Klicken Sie auf den Knopf <gui>Löschen</gui>, um die Notiz dauerhaft zu verwerfen, oder <gui>Abbrechen</gui>, um den Vorgang abzubrechen. Verknüpfungen auf diese Notiz bleiben weiterhin bestehen, aber ein Klicken darauf bewirkt, dass die Notiz dann neu angelegt wird.</p>
+  <p>In beiden Fällen wird ein Dialog geöffnet, in welchem Sie gefragt werden, ob Sie die Notiz und deren Inhalt dauerhaft löschen möchten. Klicken Sie auf den Knopf <gui>Löschen</gui>, um die Notiz dauerhaft zu verwerfen, oder <gui>Abbrechen</gui>, um den Vorgang abzubrechen. Verknüpfungen in anderen Notizen auf diese Notiz bleiben weiterhin bestehen, aber ein Klicken darauf bewirkt, dass die Notiz dann neu angelegt wird.</p>
 
 </page>

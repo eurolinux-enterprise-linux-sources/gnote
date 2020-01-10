@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011 Aurimas Cernius
+ * Copyright (C) 2011,2013-2014 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,9 @@
 #include <gtkmm/texttag.h>
 #include <gtkmm/texttagtable.h>
 
+#include "base/macros.hpp"
 #include "contrast.hpp"
+#include "tag.hpp"
 #include "sharp/exception.hpp"
 
 namespace sharp {
@@ -50,12 +52,6 @@ enum TagSaveType {
   CONTENT
 };
 
-enum ChangeType {
-  NO_CHANGE,
-  CONTENT_CHANGED,
-  OTHER_DATA_CHANGED
-};
-
 
 
 class NoteTag
@@ -64,7 +60,7 @@ class NoteTag
 public:
   typedef Glib::RefPtr<NoteTag> Ptr;
   typedef Glib::RefPtr<const NoteTag> ConstPtr;
-  typedef sigc::signal<bool, const NoteTag::Ptr &, const NoteEditor &,
+  typedef sigc::signal<bool, const NoteEditor &,
                        const Gtk::TextIter &, const Gtk::TextIter &> TagActivatedHandler;
 
   enum TagFlags {
@@ -148,7 +144,7 @@ public:
     { 
       return m_signal_activate;
     }
-  sigc::signal<void,const Glib::RefPtr<Gtk::TextTag>&,bool> & signal_changed()
+  sigc::signal<void,const Gtk::TextTag&,bool> & signal_changed()
     { 
       return m_signal_changed;
     }
@@ -169,7 +165,7 @@ protected:
 
   friend class NoteTagTable;
 
-  virtual bool on_event(const Glib::RefPtr<Glib::Object> &, GdkEvent *, const Gtk::TextIter & );
+  virtual bool on_event(const Glib::RefPtr<Glib::Object> &, GdkEvent *, const Gtk::TextIter & ) override;
   virtual bool on_activate(const NoteEditor & , const Gtk::TextIter &, const Gtk::TextIter &);
 private:
   Gdk::Color get_background() const;
@@ -182,7 +178,7 @@ private:
   int                 m_flags;
   TagActivatedHandler m_signal_activate;
   ContrastPaletteColor m_palette_foreground;
-  sigc::signal<void,const Glib::RefPtr<Gtk::TextTag>&,bool> m_signal_changed;
+  sigc::signal<void,const Gtk::TextTag&,bool> m_signal_changed;
   TagSaveType         m_save_type;
 };
 
@@ -203,8 +199,8 @@ public:
     {
       return m_attributes;
     }
-  virtual void write(sharp::XmlWriter &, bool) const;
-  virtual void read(sharp::XmlReader &, bool);
+  virtual void write(sharp::XmlWriter &, bool) const override;
+  virtual void read(sharp::XmlReader &, bool) override;
   /// <summary>
   /// Derived classes should override this if they desire
   /// to be notified when a tag attribute is read in.
@@ -213,7 +209,7 @@ public:
   /// A <see cref="System.String"/> that is the name of the
   /// newly read attribute.
   /// </param>
-  virtual void on_attribute_read(const std::string &) 
+  virtual void on_attribute_read(const std::string &)
     {
     }
 
@@ -238,7 +234,7 @@ public:
     {
       return Pango::DIRECTION_LTR;
     }
-  virtual void write(sharp::XmlWriter &, bool) const;
+  virtual void write(sharp::XmlWriter &, bool) const override;
 private:
   int            m_depth;
   Pango::Direction m_direction;
@@ -325,8 +321,8 @@ protected:
       _init_common_tags();
     }
 
-  virtual void on_tag_added(const Glib::RefPtr<Gtk::TextTag> &);
-  virtual void on_tag_removed(const Glib::RefPtr<Gtk::TextTag> &);
+  virtual void on_tag_added(const Glib::RefPtr<Gtk::TextTag> &) override;
+  virtual void on_tag_removed(const Glib::RefPtr<Gtk::TextTag> &) override;
 //  virtual void on_notetag_changed(Glib::RefPtr<Gtk::TextTag>& tag, bool size_changed);
 
 private:

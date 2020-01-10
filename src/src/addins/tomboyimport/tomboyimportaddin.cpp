@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2011 Aurimas Cernius
+ * Copyright (C) 2010-2011,2013-2014 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,6 @@
 
 
 
-#include <glibmm/i18n.h>
 #include <glibmm/miscutils.h>
 
 #include "sharp/directory.hpp"
@@ -38,30 +37,6 @@ namespace tomboyimport {
 TomboyImportModule::TomboyImportModule()
 {
   ADD_INTERFACE_IMPL(TomboyImportAddin);
-}
-const char * TomboyImportModule::id() const
-{
-  return "TomboyImportAddin";
-}
-const char * TomboyImportModule::name() const
-{
-  return _("Tomboy Importer");
-}
-const char * TomboyImportModule::description() const
-{
-  return _("Import your notes from Tomboy.");
-}
-const char * TomboyImportModule::authors() const
-{
-  return _("Hubert Figuiere");
-}
-int TomboyImportModule::category() const
-{
-  return gnote::ADDIN_CATEGORY_TOOLS;
-}
-const char * TomboyImportModule::version() const
-{
-  return "0.1";
 }
 
 
@@ -101,11 +76,11 @@ bool TomboyImportAddin::first_run(gnote::NoteManager & manager)
 
     for(std::list<std::string>::const_iterator iter = files.begin();
         iter != files.end(); ++iter) {
-      const std::string & file_path(*iter);
+      const Glib::ustring & file_path(*iter);
 
       to_import++;
 
-      Note::Ptr note = manager.import_note(file_path);
+      gnote::NoteBase::Ptr note = manager.import_note(file_path);
 
       if(note) {
         DBG_OUT("success");

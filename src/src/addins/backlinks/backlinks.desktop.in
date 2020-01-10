@@ -1,0 +1,14 @@
+[AddinInfo]
+Id=BacklinksAddin
+_Name=Backlinks
+_Description=See which notes link to the one you're currently viewing.
+_Authors=Hubert Figuiere and Tomboy Project
+Category=Tools
+Version=0.4
+DefaultEnabled=true
+Module=libbacklinks
+LibgnoteRelease=3.22
+LibgnoteVersionInfo=1:0:1
+[Actions]
+actions_string=backlinks-open-note
+non_modifying_actions=backlinks-open-note

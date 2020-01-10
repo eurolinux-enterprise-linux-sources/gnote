@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      "Table of Contents" is a Note add-in for Gnote.
+      It lists a note's table of contents in a menu.
+
+      Copyright (c)  2013  Luc Pionchon <pionchon.luc@gmail.com>
+
+      Permission is granted to copy, distribute and/or modify this document
+      under the terms of the GNU Free Documentation License, Version 1.1
+      or any later version published by the Free Software Foundation;
+      with no Invariant Sections, with no Front-Cover Texts, and with no
+      Back-Cover Texts.
+      FIXME: does the statement have to show in the rendered document?
+
+      A copy of the license is included in the section entitled "GNU
+      Free Documentation License".
+      FIXME: is this true? Is there a (GNOME? Yelp?) common GFDL topic?
+-->
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-tableofcontents" xml:lang="es">
+
+  <info>
+    <revision status="candidate" pkgversion="gnote-addin-tableofcontents-version-1.0.0"/>
+    <!-- Status:
+      stub        contains little to no real content
+      incomplete  outline of all information, but lacking content
+      draft       all content available, but unpolished
+      review      ready to be reviewed by editors
+      candidate   reviewed and awaiting a final approval
+      final       approved and ready for publication or distribution
+      outdated    was once complete or nearly complete, but needs to be revised to reflect changes
+
+      Other possible attributes:
+      version=""        revision version
+      docversion=""     enclosing document
+      date="2011-03-08" revision date
+    -->
+    <license href="http://www.gnu.org/licenses/fdl-1.1.html"><p>Este <em>tema de ayuda</em> está licenciado bajo la <link href="http://www.gnu.org/licenses/fdl-1.1.html">Licencia de Documentación Libre GNU, versión 1.1</link> (GFDL). Significa que es libre de copiar, distribuir y o modificar este documento, bajo las mismas condiciones.</p>
+    </license>
+
+    <credit type="author copyright">
+      <name>Luc Pionchon</name><email>pionchon.luc@gmail.com</email><years>2013</years></credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <email>aurisc4@gmail.com</email>
+      <years>2013,2014</years>
+    </credit>
+    <!-- Credit type: (can have several types)
+      author        somebody responsible for writing content
+      editor        somebody who has provided reviews or editorial corrections
+      copyright     a person or entity which holds copyright on the work
+      maintainer    the person or entity currently responsible for the work
+      collaborator  somebody who has provided extensive rough information
+      translator    somebody who has translated the work into another language
+      publisher     a person or entity who distributes formatted copies
+
+      <credit> can have a URL, for example for a publisher, using FOAF namespace:
+        <page xmlns="http://xmlns.com/foaf/0.1/">http://flossmanuals.net/</page>
+    -->
+
+    <link type="guide" xref="index#advanced"/>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <link type="topic" xref="addins-preferences"/>
+    <link type="topic" xref="searching-notes"/>
+    <desc>Navegar por las notas grandes estructuradas</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2013</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Nicolás Satragno</mal:name>
+      <mal:email>nsatragno@gnome.org</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jorge González</mal:name>
+      <mal:email>jorgegonz@svn.gnome.org</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Añadir una tabla de contenidos.</title>
+
+<desc><em>Navegar por las notas grandes estructuradas</em></desc>
+
+<note><p>Esto es un complemento para <app>Gnotes</app>. Cuando se instala, se añade una entrada a la <gui>Tabla de contenidos</gui> en el menú <gui>Acciones</gui>. Consulte la <link xref="addins-preferences"/> para saber como se activa un complemento.</p></note>
+
+
+<section id="nutshell"><title>En una palabra</title>
+
+<list type="numbered">
+  <item>
+    <p>Una cabecera es una línea completa de texto, formateada en <gui>Negrita enorme</gui> o <gui>Negrita grande</gui>.</p>
+  </item>
+  <item>
+    <p>Configure una cabecera usando la combinación de teclas <keyseq><key>Ctrl</key><key>1</key></keyseq> o <keyseq><key>Ctrl</key><key>2</key></keyseq>.</p>
+  </item>
+  <item>
+    <p>Abra la tabla de contenidos con la combinación de teclas <keyseq><key>Ctrl</key><key>Alt</key><key>1</key></keyseq>, y salta a cualquier cabecera.</p>
+  </item>
+</list>
+
+</section>
+
+<section id="screenshot"><title>Captura de pantalla</title>
+    <figure>
+      <title>Una nota estructurada con su tabla de contenidos</title>
+        <media type="image" src="figures/gnote-addin-table-of-contents.png" mime="image/png">
+        </media>
+    </figure>
+</section>
+
+
+<section id="navigating"><title>Navegar por las notas grandes</title>
+
+<p>Cuando se escribe una nota larga, navegar por ella puede ser complicado. Entonces lo normal es estructurar la nota por secciones y subsecciones mediante las cabeceras.</p>
+
+<p>Este complemento hace fácil la navegación a lo largo de las notas largas y estructuradas. Una vez que ha configurado las cabeceras en su nota, la tabla de contenidos de la nota se mostrará en el menú acciones. Entonces puede saltar directamente desde el menú a cualquier cabecera.</p>
+
+</section>
+
+
+<section id="setheadings"><title>Estructurar sus notas con las cabeceras</title>
+
+<p>Una cabecera es simplemente una línea completa con un formato de texto específico:</p>
+<list>
+  <item><p>Las cabeceras de nivel 1, por secciones, son líneas formateadas con una tipografía <gui>Negrita y enorme</gui>.</p></item>
+  <item><p>Las cabeceras de nivel 2, para subsecciones, son líneas formateadas con una tipografía <gui>Negrita y grande</gui>.</p></item>
+</list>
+
+
+<p>Para formatear un línea de cabecera, haga lo siguiente:</p>
+
+<list>
+  <item>
+    <p>Use las opciones <gui>Cabecera nivel 1</gui> y <gui>Cabecera nivel 2</gui> en el menú <guiseq><gui>Acciones</gui><gui>Tabla de contenidos</gui></guiseq>.</p>
+  </item>
+
+  <item>
+    <p>Use la combinación de teclas <keyseq><key>Ctrl</key><key>1</key></keyseq>  y <keyseq><key>Ctrl</key><key>2</key></keyseq> para cabeceras de nivel 1 y 2 respectivamente.</p>
+ </item>
+</list>
+
+<note><p>Esas opciones dan formato a la línea completa. No necesita seleccionarlo primero. Es suficiente con poner el cursor sobre la línea.</p><p>Alternativamente, con el cursor en una línea nueva, active el comando de la cabecera e introduzca el título de la cabecera.</p></note>
+
+<p>De hecho, incluso puede utilizar los comandos de formato habituales desde el menú <gui>Texto</gui> :<gui>Negrita</gui>, <gui>Grande</gui> y <gui>Enorme</gui>, y sus combinaciones de teclas correspondientes. Si, por ejemplo, su línea de cabecera está todavía formateada como <gui>Enorme</gui>, entonces sólo tiene que hacer también <gui>Negrita</gui> para convertirlo en un encabezado de nivel 1. Consulte la <link xref="editing-notes"/> para conocer cómo configurar el estilo de texto.</p>
+
+</section>
+
+
+<section id="showtable"><title>Mostrar los contenidos de la tabla.</title>
+
+<p>Puede acceder a la tabla de contenidos, como sigue:</p>
+<list>
+<item><p>En el menú <guiseq><gui>Acciones</gui><gui>Tabla de contenidos</gui></guiseq>.</p></item>
+<item><p>En el <guiseq><gui>menú contextual</gui><gui>Tabla de contenidos</gui></guiseq> (pulse con el botón derecho del ratón en la ventana de la nota).</p></item>
+<item><p>En un <gui>menú emergente</gui>, con la combinación de teclas <keyseq><key>Ctrl</key><key>Alt</key><key>1</key></keyseq>.</p></item>
+<p>Puede navegar arriba y abajo con las teclas de dirección y saltar a la cabecera seleccionada con la tecla <key>Intro</key>. O sólo pulsando con el ratón en la cabecera para saltar a ella.</p>
+</list>
+
+</section>
+
+
+<section id="troubleshooting"><title>Resolución de problemas</title>
+<terms>
+  <item><title><em style="strong">Una cabecera no se muestra en la tabla de contenidos</em></title><p>Podría haber algunos caracteres en la linea de cabecera, como espacios en blanco, que no se formatean como una cabecera. Asegúrese que <em>toda la línea</em> se formateará como una cabecera. Consulte la <link xref="#setheaders"/>.</p>
+  </item>
+  <item><title><em style="strong">Hay una línea vacía en la tabla de contenidos</em></title><p>una línea vacía, posiblemente con espacios en blanco, se formatea como una cabecera. Salte a esta línea, y elimine el espacio.</p>
+  </item>
+
+  <item><title/><p>
+  </p>
+  </item>
+
+</terms>
+
+</section>
+
+</page>

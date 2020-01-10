@@ -11,21 +11,56 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011-2012</years>
+      <years>2011-2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Überblick über Ihre Notizen</title>
 
-  <p>The main window of <app>Gnote</app> shows an overview of all your notes. By default in search mode window will display the notes in the order that they were last modified. Click the <gui>Note</gui> or <gui>Last Changed</gui> column headings to change the sort order. Click the column heading a second time to toggle between ascending and descending order.</p>
-  <p>You can find specific notes by entering text into the search field at the top of the window. The list of notes will be automatically updated to list only the notes which have matching text.</p>
-  <p>To open a note, do one of the following:</p>
+  <p>Das Hauptfenster von <app>Gnote</app> zeigt eine Übersicht aller Ihrer Notizen an. Standardmäßig zeigt der Dialog die Notizen in der Reihenfolge an, in der sie zuletzt geändert worden sind. Klicken Sie auf die Spaltenüberschriften <gui>Notiz</gui> oder <gui>Zuletzt geändert</gui>, um die Sortierreihenfolge zu ändern. Durch ein zweites Klicken auf die Spaltenüberschrift kann zwischen einer aufsteigenden oder absteigenden Sortierreihenfolge gewechselt werden.</p>
+  <p>Sie können bestimmte Notizen finden, indem Sie im Suchfeld einen Text eingeben. Die Liste der Notizen wird automatisch aktualisiert und zeigt nur die Notizen an, die dem Text entsprechen. Wenn die Notizliste fokussiert ist, können Sie einfach dort den Suchtext eintippen. Die Suche startet dann automatisch.</p>
+  <p>Um eine Notiz zu öffnen, führen Sie eine der folgenden Aktionen aus:</p>
   <list>
     <item><p>Führen Sie einen Doppelklick auf der Notiz durch.</p></item>
-    <item><p>Right-click in the list of notes and select <gui>Open</gui> from the context menu that appears. This will open all selected notes each on it's own window.</p></item>
-    <item><p>Right-click in the list of notes and select <gui>Open in New Window</gui> from the context menu. This will open all selected notes each on a new window leaving original window as is.</p></item>
-    <item><p>Select one or more notes in a list and then press the key combination <keyseq><key>Ctrl</key><key>O</key></keyseq>.</p></item>
-    <item><p>If <gui>Status Icon</gui> is enabled, click on it and select note from menu. This menu is limited to certain amount of notes and is filled in by pinned and recently updated notes.</p></item>
+    <item><p>Führen Sie einen Klick mit der rechten Maustaste in die Liste der Notizen aus und wählen Sie den Menüpunkt <gui>Öffnen</gui> aus dem Kontextmenü aus, das erscheint. Daraufhin werden alle gewählten Notizen jeweils in einem eigenen Fenster geöffnet.</p></item>
+    <item><p>Führen Sie einen Klick mit der rechten Maustaste in die Liste der Notizen aus und wählen Sie den Menüpunkt <gui>In neuem Fenster öffnen</gui> aus dem Kontextmenü. Daraufhin werden alle gewählten Notizen jeweils in einem eigenen neuen Fenster geöffnet. Das ursprüngliche Fenster bleibt unberührt.</p></item>
+    <item><p>Wählen Sie eine oder mehrere Notizen in einer Liste und drücken Sie anschließend <keyseq><key>Strg</key><key>O</key></keyseq>.</p></item>
+    <item><p>Wenn das Statussymbol aktiviert ist, klicken Sie darauf und wählen Sie eine Notiz im erscheinenden Menü. Dieses Menü enthält nur eine begrenzte Anzahl Notizen und enthält angeheftete und zuletzt bearbeitete Notizen.</p></item>
   </list>
 
 </page>

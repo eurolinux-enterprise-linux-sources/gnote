@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-read-only" xml:lang="cs">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Omezte poznámky jen ke čtení</desc>
+    <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2013</years>
+    </credit>
+  </info>
+  
+  <title>Jen ke čtení</title>
+    <p>Když je nainstalován zásuvný modul <app>Jen ke čtení</app>, objeví se v nabídce <gui>Činnosti</gui> položka <gui>Jen ke čtení</gui> pro otevření poznámky. Když je tato položka zaškrtnutá, je poznámka označena jen ke čtení. Dokud zaškrtnutí nezrušíte, nelze v poznámce provádět žádné změny. Takto můžete snadno zabránit nechtěným změnám v poznámkách.</p>
+
+</page>

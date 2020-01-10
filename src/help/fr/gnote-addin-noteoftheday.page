@@ -3,7 +3,7 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <link type="topic" xref="addins-preferences"/>
-    <desc>Note modèle</desc>
+    <desc>A "Today" note</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,13 +11,18 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Note du jour</title>
-  <p>Ce greffon génère automatiquement une note « Aujourd'hui » pour consigner quotidiennement des idées. La date du jour sert de base au titre de la note. Par exemple, le titre de la note « Aujourd'hui » créé le 28 février 2007 est : « Aujourd'hui : mercredi 28 février 2007 ».</p>
-  <p>Si vous ne modifiez pas une note « Aujourd'hui », le greffon Note du jour la supprime automatiquement.</p>
-  <p>Pour personnaliser le contenu par défaut de la note « Aujourd'hui », créez une nouvelle note, et renommez-la « Aujourd'hui : modèle ». Remplacez-en le contenu par ce que vous voulez. Lorsque de nouvelles notes « Aujourd'hui » sont créées, elles sont sur le modèle du contenu de la note « Aujourd'hui : modèle ».</p>
+  <p>This plugin automatically creates a "Today" note for jotting daily thoughts down.  As an example, a "Today" note created on February 28, 2013 would be called "Today: Thursday, February 28 2013".</p>
+  <p>If you leave a "Today" note unmodified, the plugin will automatically delete the note.</p>
+  <p>To customize the content of the default "Today" note, create a new note and change the title of the note to "Today: Template". Change the content of the template note to whatever you like. New "Today" notes will then use the content of your "Today: Template" note.</p>
 
 </page>

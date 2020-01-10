@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2013 Aurimas Cernius
+ * Copyright (C) 2011-2013,2015-2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,6 +28,7 @@
 #include <gdkmm/pixbuf.h>
 #include <gtkmm/applicationwindow.h>
 #include <gtkmm/dialog.h>
+#include <gtkmm/grid.h>
 #include <gtkmm/image.h>
 #include <gtkmm/menu.h>
 #include <gtkmm/messagedialog.h>
@@ -37,9 +38,9 @@
 #include <gtkmm/toggletoolbutton.h>
 #include <gtkmm/toolbar.h>
 
+#include "base/macros.hpp"
 #include "sharp/exception.hpp"
 #include "sharp/uri.hpp"
-#include "libtomboy/tomboyutil.h"
 
 namespace sharp {
   class DateTime;
@@ -57,9 +58,34 @@ namespace gnote {
                                      const std::string & url, 
                                      const std::string & error);
     std::string get_pretty_print_date(const sharp::DateTime &, bool show_time);
+    std::string get_pretty_print_date(const sharp::DateTime &, bool show_time, bool use_12h);
 
     void main_context_invoke(const sigc::slot<void> & slot);
     void main_context_call(const sigc::slot<void> & slot);
+
+    Gtk::Widget * create_popover_button(const Glib::ustring & action, const Glib::ustring & label);
+    Gtk::Widget * create_popover_submenu_button(const Glib::ustring & submenu, const Glib::ustring & label);
+    Gtk::Grid * create_popover_submenu(const Glib::ustring & name);
+    void set_common_popover_widget_props(Gtk::Widget & widget);
+    Gtk::Grid *create_popover_inner_grid(int *top = NULL);
+
+    void add_item_to_ordered_map(std::map<int, Gtk::Widget*> & dest, int order, Gtk::Widget *item);
+    void merge_ordered_maps(std::map<int, Gtk::Widget*> & dest, const std::map<int, Gtk::Widget*> & adds);
+
+    class PopoverSubmenu
+    {
+    public:
+      PopoverSubmenu(const Glib::ustring & name)
+        : m_name(name)
+      {}
+
+      const Glib::ustring & name() const
+        {
+          return m_name;
+        }
+    private:
+      const Glib::ustring m_name;
+    };
 
     class GlobalKeybinder
     {
@@ -73,7 +99,11 @@ namespace gnote {
 
       void add_accelerator(const sigc::slot<void> & , guint, Gdk::ModifierType, 
                            Gtk::AccelFlags);
-      
+      void enabled(bool enable);
+      bool enabled() const
+        {
+          return m_fake_menu.get_sensitive();
+        }
     private:
       Glib::RefPtr<Gtk::AccelGroup> m_accel_group;
       Gtk::Menu m_fake_menu;
@@ -85,8 +115,8 @@ namespace gnote {
     {
     public:
       HIGMessageDialog(Gtk::Window *, GtkDialogFlags flags, Gtk::MessageType msg_type, 
-                       Gtk::ButtonsType btn_type, const Glib::ustring & header,
-                       const Glib::ustring & msg);
+                       Gtk::ButtonsType btn_type, const Glib::ustring & header = Glib::ustring(),
+                       const Glib::ustring & msg = Glib::ustring());
       void add_button(const Gtk::BuiltinStockID& stock_id, 
                        Gtk::ResponseType response, bool is_default);
       void add_button(const Glib::RefPtr<Gdk::Pixbuf> & pixbuf, 
@@ -100,7 +130,7 @@ namespace gnote {
       void set_extra_widget(Gtk::Widget *);
     private:
       Glib::RefPtr<Gtk::AccelGroup> m_accel_group;
-      Gtk::VBox *m_extra_widget_vbox;
+      Gtk::Grid *m_extra_widget_vbox;
       Gtk::Widget *m_extra_widget;
       Gtk::Image *m_image;
 
@@ -207,95 +237,52 @@ namespace gnote {
       guint m_timeout_id;
     };
 
-    class ForcedPresentWindow 
-      : public Gtk::ApplicationWindow
-    {
-    public:
-      ForcedPresentWindow(const Glib::ustring & title)
-        : Gtk::ApplicationWindow()
-        {
-          Gtk::ApplicationWindow::set_title(title);
-        }
-
-      void present()
-        {
-          ::tomboy_window_present_hardcore(GTK_WINDOW(gobj()));
-        }
-    };
-
     class ToolMenuButton
       : public Gtk::ToggleToolButton
     {
     public:
+      ToolMenuButton(Gtk::Widget & widget, Gtk::Menu *menu);
       ToolMenuButton(Gtk::Toolbar& toolbar, 
                      const Gtk::BuiltinStockID& stock_image, 
                      const Glib::ustring & label, Gtk::Menu * menu);
       ToolMenuButton(Gtk::Image& image, 
                      const Glib::ustring & label, Gtk::Menu * menu);
-      virtual bool on_button_press_event(GdkEventButton *);
-      virtual void on_clicked();
-      virtual bool on_mnemonic_activate(bool group_cycling);
+      virtual bool on_button_press_event(GdkEventButton *) override;
+      virtual void on_clicked() override;
+      virtual bool on_mnemonic_activate(bool group_cycling) override;
 
     private:
+      void _common_init();
       void _common_init(Gtk::Image& image, const Glib::ustring & l);
       // managed by gtkmm
       Gtk::Menu *m_menu;
       void release_button();        
     };
 
-    class EmbeddableWidget;
-    class EmbeddableWidgetHost
+    class CheckAction
+      : public Gtk::Action
     {
     public:
-      virtual void embed_widget(EmbeddableWidget &) = 0;
-      virtual void unembed_widget(EmbeddableWidget &) = 0;
-      virtual void foreground_embedded(EmbeddableWidget &) = 0;
-      virtual void background_embedded(EmbeddableWidget &) = 0;
-      virtual bool running() = 0;
-    };
-
-    class EmbeddableWidget
-    {
-    public:
-      EmbeddableWidget() : m_host(NULL) {}
-      virtual std::string get_name() const = 0;
-      virtual void embed(EmbeddableWidgetHost *h)
+      typedef Glib::RefPtr<CheckAction> Ptr;
+      static Ptr create(const Glib::ustring & name)
         {
-          //remove from previous host, if any
-          if(m_host) {
-            m_host->unembed_widget(*this);
-          }
-          m_host = h;
-          signal_embedded();
+          return Ptr(new CheckAction(name));
         }
-      virtual void unembed()
+      void checked(bool check)
         {
-          m_host = NULL;
-          signal_unembedded();
+          m_checked = check;
         }
-      virtual void foreground()
+      bool checked() const
         {
-          signal_foregrounded();
+          return m_checked;
         }
-      virtual void background()
-        {
-          signal_backgrounded();
-        }
-      EmbeddableWidgetHost *host() const
-        {
-          return m_host;
-        }
-
-      sigc::signal<void, const std::string &> signal_name_changed;
-      sigc::signal<void> signal_embedded;
-      sigc::signal<void> signal_unembedded;
-      sigc::signal<void> signal_foregrounded;
-      sigc::signal<void> signal_backgrounded;
+    protected:
+      CheckAction(const Glib::ustring & name);
+      virtual Gtk::Widget *create_menu_item_vfunc() override;
+      virtual void on_activate() override;
     private:
-      EmbeddableWidgetHost *m_host;
+      bool m_checked;
     };
-
-
   }
 }
 

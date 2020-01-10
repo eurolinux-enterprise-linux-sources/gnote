@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010 Aurimas Cernius
+ * Copyright (C) 2010,2013,2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,11 +23,7 @@
 
 #include <list>
 
-#include <gtkmm/imagemenuitem.h>
-#include <gtkmm/menu.h>
-
 #include "sharp/dynamicmodule.hpp"
-#include "note.hpp"
 #include "noteaddin.hpp"
 
 namespace backlinks {
@@ -37,12 +33,6 @@ class BacklinksModule
 {
 public:
   BacklinksModule();
-  virtual const char * id() const;
-  virtual const char * name() const;
-  virtual const char * description() const;
-  virtual const char * authors() const;
-  virtual int          category() const;
-  virtual const char * version() const;
 };
 
 DECLARE_MODULE(BacklinksModule);
@@ -59,18 +49,15 @@ public:
     }
   BacklinksNoteAddin();
 
-  virtual void initialize ();
-  virtual void shutdown ();
-  virtual void on_note_opened ();
+  virtual void initialize() override;
+  virtual void shutdown() override;
+  virtual void on_note_opened() override;
+  virtual std::map<int, Gtk::Widget*> get_actions_popover_widgets() const override;
 private:
-  void on_menu_item_activated();
-  void on_menu_hidden();
-  void update_menu();
-  void get_backlink_menu_items(std::list<BacklinkMenuItem*> & items);
+  void on_open_note(const Glib::VariantBase & param);
+  void update_menu(Gtk::Grid *menu) const;
+  void get_backlink_menu_items(std::list<Gtk::Widget*> & items) const;
   bool check_note_has_match(const gnote::Note::Ptr &, const std::string &);
-  Gtk::ImageMenuItem *m_menu_item;
-  Gtk::Menu          *m_menu;
-  bool                m_submenu_built;
 };
 
 }

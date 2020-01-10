@@ -21,10 +21,7 @@
 
 
 
-#include <boost/lexical_cast.hpp>
-
 #include <glib.h>
-#include <glibmm/i18n.h>
 
 
 #include "sharp/directory.hpp"
@@ -48,30 +45,6 @@ namespace bugzilla {
     ADD_INTERFACE_IMPL(BugzillaNoteAddin);
     ADD_INTERFACE_IMPL(BugzillaPreferencesFactory);
     enabled(false);
-  }
-  const char * BugzillaModule::id() const
-  {
-    return "BugzillaAddin";
-  }
-  const char * BugzillaModule::name() const
-  {
-    return _("Bugzilla Links");
-  }
-  const char * BugzillaModule::description() const
-  {
-    return _("Allows you to drag a Bugzilla URL from your browser directly into a Gnote note.  The bug number is inserted as a link with a little bug icon next to it.");
-  }
-  const char * BugzillaModule::authors() const
-  {
-    return _("Hubert Figuiere and the Tomboy Project");
-  }
-  int BugzillaModule::category() const
-  {
-    return gnote::ADDIN_CATEGORY_DESKTOP_INTEGRATION;
-  }
-  const char * BugzillaModule::version() const
-  {
-    return "0.1";
   }
 
 
@@ -166,7 +139,7 @@ namespace bugzilla {
 
     if(re->match(uriString, match_info) && match_info.get_match_count() >= 3) {
       try {
-        int bugId = boost::lexical_cast<int>(match_info.fetch(2));
+        int bugId = STRING_TO_INT(match_info.fetch(2));
 
         if (insert_bug (x, y, uriString, bugId)) {
           context->drag_finish(true, false, time);
@@ -198,7 +171,7 @@ namespace bugzilla {
       get_window()->editor()->get_iter_at_location(cursor, x, y);
       buffer->place_cursor (cursor);
 
-      std::string string_id = boost::lexical_cast<std::string>(id);
+      std::string string_id = TO_STRING(id);
       buffer->undoer().add_undo_action (new InsertBugAction (cursor, 
                                                              string_id, 
                                                              link_tag));

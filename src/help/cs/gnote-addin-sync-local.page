@@ -4,11 +4,16 @@
   <info>
     <link type="guide" xref="notes-preferences#sync-addins"/>
     <link type="guide" xref="synchronization#configuration"/>
-    <desc>Synchronizace místní složky</desc>
+    <desc>Synchronizace do místní složky</desc>
     <license><p>GNU Free Documentation License (GFDL), verze 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
       <years>2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 

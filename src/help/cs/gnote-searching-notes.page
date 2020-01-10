@@ -11,21 +11,26 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011 – 2012</years>
+      <years>2011 – 2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Vyhledávání poznámek</title>
 
-  <p>Hlavní okno <app>Gnote</app> zobrazuje přehled všech vašich poznámek. Standardně v režimu hledání okno zobrazuje poznámky v pořadí, v jaké byly naposledy změněny. Kliknutím na záhlaví sloupce <gui>Poznámka</gui> nebo <gui>Naposledy změněna</gui> změníte řazení. Když na stejné záhlaví kliknete podruhé, přepnete ze vzestupného řazení na sestupné.</p>
-  <p>Konkrétní poznámku můžete najít zadáním textu do pole hledat v horní části okna. Seznam s poznámkami se bude automaticky přizpůsobovat, aby obsahoval jen poznámky odpovídající zadanému textu.</p>
+  <p>Hlavní okno <app>Gnote</app> zobrazuje přehled všech vašich poznámek. Standardně okno zobrazuje poznámky v pořadí, v jakém byly naposledy změněny. Kliknutím na záhlaví sloupce <gui>Poznámka</gui> nebo <gui>Naposledy změněna</gui> změníte řazení. Když na stejné záhlaví kliknete podruhé, přepnete ze vzestupného řazení na sestupné.</p>
+  <p>Konkrétní poznámku můžete najít kliknutím na vyhledávací tlačítko a zadáním textu do vyhledávacího pole, které se objeví. Seznam s poznámkami se bude automaticky přizpůsobovat, aby obsahoval jen poznámky odpovídající zadanému textu. Pokud je seznam poznámek zaměřený, stačí jen začít psát a hledání se aktivuje automaticky.</p>
   <p>Poznámku můžete otevřít následovně:</p>
   <list>
     <item><p>Dvojitě klikněte na poznámku.</p></item>
     <item><p>Klikněte na seznam poznámek pravým tlačítkem a v kontextové nabídce, která se objeví, zvolte <gui>Otevřít</gui>. Tím se otevřou všechny vybrané poznámky, každá ve svém vlastním okně.</p></item>
     <item><p>Klikněte pravým tlačítkem na seznam poznámek a v kontextové nabídce zvolte <gui>Otevřít v novém okně</gui>. Tím se otevřou všechny vybrané poznámky, každá v novém okně a původní okno zůstane, jak je.</p></item>
-    <item><p>Vyberte jednu nebo více poznámek v seznamu a zmáčkněte kombinaci kláves <keyseq><key>Ctrl</key><key>O</key></keyseq>.</p></item>
-    <item><p>Když je zapnutá <gui>Stavová ikona</gui>, klikněte na ni a v nabídce vyberte poznámku. Tato nabídka je omezena jen na určitý počet poznámek a je vyplněna připíchnutými a naposledy upravenými poznámkami.</p></item>
+    <item><p>Vyberte jednu nebo více poznámek v seznamu a zmáčkněte <keyseq><key>Ctrl</key><key>O</key></keyseq>.</p></item>
+    <item><p>Když je zapnutá stavová ikona, klikněte na ni a v nabídce vyberte poznámku. Tato nabídka je omezena jen na určitý počet poznámek a je vyplněna připíchnutými a naposledy upravenými poznámkami.</p></item>
   </list>
 
 </page>

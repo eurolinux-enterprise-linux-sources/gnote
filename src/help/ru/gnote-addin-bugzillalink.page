@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-bugzillalink" xml:lang="ru">
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="gnote-addin-bugzillalink" xml:lang="ru">
 
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
     <link type="topic" xref="addins-preferences"/>
-    <desc>Ссылка на Bugzilla</desc>
+    <desc>Insert Bugzilla links</desc>
     <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
     <credit type="author">
       <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
@@ -12,12 +12,17 @@
     </credit>
     <credit type="editor">
       <name>Ауримас Церниус (Aurimas Cernius)</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Ссылка на Bugzilla</title>
-  <p>Позволяет перетаскивать в заметку <app>Gnote</app> URL-адрес Bugzilla. Номер ошибки будет вставлен в виде ссылки и помечен небольшим значком.</p>
+  <p>This plugin lets you drag a Bugzilla URL directly into a <app>Gnote</app> note. The bug number is inserted as a link with a little bug icon next to it.</p>
   <p>В параметрах можно добавить значки для определённых узлов.</p>
 
 </page>

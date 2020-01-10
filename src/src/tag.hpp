@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2013 Aurimas Cernius
+ * Copyright (C) 2013-2014 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,30 +25,38 @@
 #define __TAG_HPP_
 
 #include <list>
+#include <map>
 #include <string>
-#include <tr1/memory>
+
+#include "base/macros.hpp"
 
 namespace gnote {
 
-  class Note;
+  enum ChangeType {
+    NO_CHANGE,
+    CONTENT_CHANGED,
+    OTHER_DATA_CHANGED
+  };
+
+
+  class NoteBase;
 
   class Tag 
   {
   public:
-    typedef std::tr1::shared_ptr<Tag> Ptr;
+    typedef shared_ptr<Tag> Ptr;
     static const char * SYSTEM_TAG_PREFIX;
 
     Tag(const std::string & name);
-    ~Tag();
 
     // <summary>
     // Associates the specified note with this tag.
     // </summary>
-    void add_note(Note & );
+    void add_note(NoteBase & );
     // <summary>
     // Unassociates the specified note with this tag.
     // </summary>
-    void remove_note(const Note & );
+    void remove_note(const NoteBase & );
     // <summary>
     // The name of the tag.  This is what the user types in as the tag and
     // what's used to show the tag to the user. This includes any 'system:' prefixes
@@ -83,7 +91,7 @@ namespace gnote {
     // Returns a list of all the notes that this tag is associated with.
     // These pointer are not meant to be freed. They are OWNED.
     // </summary>
-    void get_notes(std::list<Note *> &) const;
+    void get_notes(std::list<NoteBase*> &) const;
     // <summary>
     // Returns the number of notes this is currently tagging.
     // </summary>
@@ -91,7 +99,6 @@ namespace gnote {
 /////
 
   private:
-    class NoteMap;
     std::string m_name;
     std::string m_normalized_name;
     bool        m_issystem;
@@ -100,7 +107,8 @@ namespace gnote {
     // Used to track which notes are currently tagged by this tag.  The
     // dictionary key is the Note.Uri.
     // </summary>
-    NoteMap *   m_notes;
+    typedef std::map<std::string, NoteBase*> NoteMap;
+    NoteMap m_notes;
   };
 
 

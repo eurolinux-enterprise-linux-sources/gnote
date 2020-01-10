@@ -4,11 +4,16 @@
 
   <info>
     <link type="guide" xref="notes-preferences#advanced"/>
-    <desc>Uporaba sporočilc predlog</desc>
+    <desc>Using template notes</desc>
     <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
@@ -16,29 +21,29 @@
   <section id="usage">
     <title>Uporaba predlog sporočilca</title>
     <p>Predloge sporočilc se uporabljajo za določitev vsebine novo ustvarjenih sporočilc. Predloge so kot običajna sporočilca z nekaj dodatnimi zmožnostmi.</p>
-    <p>Določite lahko predlogo posameznega sporočilca za <app>Gnote</app> in za vsako beležko. Te predloge določijo vsebino vsakega novega ustvarjenega sporočilca:</p>
+    <p>You can define a single main template note and one for each notebook you have. These templates define the content of every new note you create:</p>
     <list>
-      <item><p>Vsako novo sporočilce, ki ga ustvarite v <app>Gnote</app> a ne v beležkah, bo imeli vsebino glavne predloge programa. Če predloga ni ustvarjena, bo uporabljena privzeta vsebina.</p></item>
-      <item><p>Vsako sporočilce ustvarjeno v novi beležki bo imelo vsebino sporočilca predloge, če je prisotno za to beležko. Če sporočilce predloge za beležko ni določeno, bo uporabljena privzeta vsebina sporočilca.</p></item>
+      <item><p>Every new note you create in <app>Gnote</app>, but not in any notebook, will have the content of the main template. If you have not created a main template, the default content will be used.</p></item>
+      <item><p>Every new note created in a notebook will have the content of that notebook's template note, if any. If no template note for a notebook is defined, the default note content will be used.</p></item>
     </list>
-    <p>Za ustvarjanje ali spreminjanje sporočilca predloge:</p>
+    <p>To create or modify a template note:</p>
     <list>
-      <item><title>Glavna predloga sporočilca</title><p>Odprite možnosti <app>Gnote</app> in v zavihku <gui>Splošno</gui> pritisnite gumb <gui>Odpri sporočilce predloge</gui>.</p></item>
-      <item><title>Predloga sporočilc za to beležko</title><p>Right click on notebook in main window and select <gui>Open Template Note</gui>.</p></item>
+      <item><title>Glavna predloga sporočilca</title><p>Open <app>Gnote</app>'s preferences and in the <gui>General</gui> tab press the <gui>Open Template Note</gui> button.</p></item>
+      <item><title>Predloga sporočilc za to beležko</title><p>Right click on a notebook in the main window and select <gui>Open Template Note</gui>.</p></item>
     </list>
   </section>
   <section id="features">
     <title>Zmožnosti predloge sporočilc</title>
-    <p>Sporočilce predloge je kot običajno sporočilce, vendar ni prikazano na seznamu sporočilca in ima na vrhu vrstico predlog.</p>
+    <p>A template note is like an ordinary note except that it is not shown in note lists and has a template bar at the top.</p>
     <figure><title>Predloga sporočilca</title>
       <media type="image" src="figures/gnote-template-note.png" mime="image/png" style="right"/><desc>Okno predloge sporočilca</desc>
     </figure>
-    <p>Vrstica predlog ima naslednje zmožnosti:</p>
+    <p>The template bar has the following features:</p>
     <list>
-      <item><title>Pretvori v običajno sporočilce</title><p>Pritisnite ta gumb za pretvorbo sporočilca predloge v običajno sporočilce, ki je vidno na seznamu sporočilc. To dejanje je podobno izbrisu sporočilca predloge.</p></item>
-      <item><title>Shrani velikost</title><p>Če to polje izberete, bo velikost novo ustvarjenega sporočilca enaka kot velikost sporočilca predloge. Če to izbirno polje ni izbrano, je okno novega sporočilca privzete velikosti.</p></item>
-      <item><title>Shrani izbor</title><p>Če je to polje izbrano, nova sporočilca ne bodo imele le vsebine sporočilca predloge ampak tudi začetno izbiro. Uporabite to možnost, če želite da je določen del vsebine v novem sporočilcu izbran ob začetku.</p></item>
-      <item><title>Shrani naslov</title><p>To izbirno polje omogoča osnovo naslova novega sporočilca na naslovu sporočilca predloge. Ko je to polje izbrano, bo imelo novo sporočilce imelo naslov sporočilca predloge s pripeto edinstveno številko. V nasprotnem primeru bo uporabljen privzeti naslov.</p></item>
+      <item><title>Pretvori v običajno sporočilce</title><p>Press this button to turn the template into a regular note, visible in the list of notes. This action is similar to deleting a template note.</p></item>
+      <item><title>Shrani velikost</title><p>If you check this box, the size of a newly created note will be identical to that of the template note. When this checkbox is not checked, new notes' windows will have the default size.</p></item>
+      <item><title>Shrani izbor</title><p>If this box is checked, new notes will have not only the content of the template note, but also its selection. Use this option if you want a certain part of the content in the new note to be initially selected.</p></item>
+      <item><title>Shrani naslov</title><p>This checkbox lets you base the title of new notes on a template note's title. With this box checked, a new note will have the template note's title with a unique number appended. Otherwise the default title will be used.</p></item>
     </list>
   </section>
 

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      "Table of Contents" is a Note add-in for Gnote.
+      It lists a note's table of contents in a menu.
+
+      Copyright (c)  2013  Luc Pionchon <pionchon.luc@gmail.com>
+
+      Permission is granted to copy, distribute and/or modify this document
+      under the terms of the GNU Free Documentation License, Version 1.1
+      or any later version published by the Free Software Foundation;
+      with no Invariant Sections, with no Front-Cover Texts, and with no
+      Back-Cover Texts.
+      FIXME: does the statement have to show in the rendered document?
+
+      A copy of the license is included in the section entitled "GNU
+      Free Documentation License".
+      FIXME: is this true? Is there a (GNOME? Yelp?) common GFDL topic?
+-->
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-tableofcontents" xml:lang="de">
+
+  <info>
+    <revision status="candidate" pkgversion="gnote-addin-tableofcontents-version-1.0.0"/>
+    <!-- Status:
+      stub        contains little to no real content
+      incomplete  outline of all information, but lacking content
+      draft       all content available, but unpolished
+      review      ready to be reviewed by editors
+      candidate   reviewed and awaiting a final approval
+      final       approved and ready for publication or distribution
+      outdated    was once complete or nearly complete, but needs to be revised to reflect changes
+
+      Other possible attributes:
+      version=""        revision version
+      docversion=""     enclosing document
+      date="2011-03-08" revision date
+    -->
+    <license href="http://www.gnu.org/licenses/fdl-1.1.html"><p>﻿Das <em>Hilfethema</em> wird unter der Lizenz <link href="http://www.gnu.org/licenses/fdl-1.1.html"> GNU-Lizenz für freie Dokumentation, Version 1.1 </link> (GFDL) verbreitet. Es bedeutet, dass es Ihnen frei steht, das Werk unter bestimmten Bedingungen zu kopieren, zu verbreiten und / oder zu modifizieren.</p>
+    </license>
+
+    <credit type="author copyright">
+      <name>Luc Pionchon</name><email>pionchon.luc@gmail.com</email><years>2013</years></credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <email>aurisc4@gmail.com</email>
+      <years>2013,2014</years>
+    </credit>
+    <!-- Credit type: (can have several types)
+      author        somebody responsible for writing content
+      editor        somebody who has provided reviews or editorial corrections
+      copyright     a person or entity which holds copyright on the work
+      maintainer    the person or entity currently responsible for the work
+      collaborator  somebody who has provided extensive rough information
+      translator    somebody who has translated the work into another language
+      publisher     a person or entity who distributes formatted copies
+
+      <credit> can have a URL, for example for a publisher, using FOAF namespace:
+        <page xmlns="http://xmlns.com/foaf/0.1/">http://flossmanuals.net/</page>
+    -->
+
+    <link type="guide" xref="index#advanced"/>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <link type="topic" xref="addins-preferences"/>
+    <link type="topic" xref="searching-notes"/>
+    <desc>So navigieren Sie lange, strukturierte Notizen</desc>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
+  </info>
+
+
+<title>Inhaltsverzeichnis hinzufügen</title>
+
+<desc><em>Navigieren langer, strukturierter Notizen</em></desc>
+
+<note><p>Das ist eine Erweiterung zu <app>Gnotes</app>. Wenn diese Erweiterung installiert ist, wird die <gui>Inhalt</gui>-Option im <gui>Aktionen</gui>-Menü angezeigt. Lesen Sie <link xref="addins-preferences"/>, um zu erfahren, wie Sie eine Erweiterung aktivieren.</p></note>
+
+
+<section id="nutshell"><title>Kurz und bündig</title>
+
+<list type="numbered">
+  <item>
+    <p>Eine Überschrift ist eine komplette Zeile Text, formatiert mit <gui>dick+riesig</gui> oder <gui>dick+groß</gui>.</p>
+  </item>
+  <item>
+    <p>Legen Sie Überschriften mit <keyseq><key>Strg</key><key>1</key></keyseq> oder <keyseq><key>Strg</key><key>2</key></keyseq> fest.</p>
+  </item>
+  <item>
+    <p>Öffnen Sie das Inhaltsverzeichnis mit <keyseq><key>Strg</key><key>Alt</key><key>1</key></keyseq> und springen Sie direkt zu einer beliebigen Überschrift.</p>
+  </item>
+</list>
+
+</section>
+
+<section id="screenshot"><title>Bildschirmfoto</title>
+    <figure>
+      <title>Eine strukturierte Notiz mit Inhaltsverzeichhnis</title>
+        <media type="image" src="figures/gnote-addin-table-of-contents.png" mime="image/png">
+        </media>
+    </figure>
+</section>
+
+
+<section id="navigating"><title>Durch lange Notizen navigieren</title>
+
+<p>Eine lange Notiz könnte schwer zu navigieren sein. Dann ist es natürlich, die Notiz durch Abschnitte mit Überschriften zu strukturieren.</p>
+
+<p>Diese Erweiterung erleichtert es Ihnen durch lange, strukturierte Notizen zu navigieren. Sobald Sie Überschriften in Ihrer Notiz gesetzt haben, wird der Inhalt der Notiz im Aktionen-Menü angezeigt. Dann können Sie direkt aus dem Menü zu einer beliebigen Überschrift springen.</p>
+
+</section>
+
+
+<section id="setheadings"><title>Ihre Notizen mit Hilfe von Überschriften strukturieren</title>
+
+<p>Eine Überschrift ist einfach eine komplette Zeile mit bestimmter Textformatierung:</p>
+<list>
+  <item><p>Überschrift 1 für Abschnitte sind mit einer <gui>dicken+riesigen</gui> Schrift formatiert.</p></item>
+  <item><p>Überschrift 2 für Unterabschnitte sind mit einer <gui>dicken+großen</gui> Schrift formatiert.</p></item>
+</list>
+
+
+<p>So formatieren Sie eine Überschrift:</p>
+
+<list>
+  <item>
+    <p>Verwenden Sie die Befehle <gui>Überschrift 1</gui> und <gui>Überschrift 2</gui> im Menü <guiseq><gui>Aktionen</gui><gui>Inhaltsverzeichnis</gui></guiseq>.</p>
+  </item>
+
+  <item>
+    <p>Verwenden Sie die Tastenkombinationen <keyseq><key>Strg</key><key>1</key></keyseq> und <keyseq><key>Strg</key><key>2</key></keyseq> für Überschriften der Stufe 1 und 2.</p>
+ </item>
+</list>
+
+<note><p>Diese Befehle wenden die Formatierung auf die komplette Zeile an. Sie müssen die Zeile nicht zuvor auswählen. Es reicht, wenn sich die Eingabemarke in dieser Zeile befindet.</p><p>Alternativ können Sie die Eingabemarke auf einer neuen Zeile platzieren, die Überschrift aktivieren und einen neuen Überschriftentitel angeben.</p></note>
+
+<p>Sie können sogar normale Formatierungsbefehle aus dem <gui>Text</gui>-Menü verwenden: <gui>Fett</gui>, <gui>Groß</gui> und <gui>Riesig</gui>, sowie die entsprechenden Tastenkürzel. Wenn Ihre Zeile zum Beispiel bereits als <gui>Riesig</gui> formatiert ist, dann reicht es aus, sie auch <gui>Fett</gui> zu markieren, um sie in Überschrift 1 zu verwandeln. Lesen Sie <link xref="editing-notes"/>, um mehr über das Setzen von Textformatierungen zu erfahren.</p>
+
+</section>
+
+
+<section id="showtable"><title>Das Inhaltsverzeichnis anzeigen</title>
+
+<p>So können Sie den Inhalt anzeigen:</p>
+<list>
+<item><p>Wählen Sie im Menü <guiseq><gui>Aktionen</gui><gui>Inhaltsverzeichnis</gui></guiseq> aus.</p></item>
+<item><p>In <guiseq><gui>Kontextmenü</gui><gui>Inhalt</gui></guiseq> (Rechtsklick im Notizfenster).</p></item>
+<item><p>In einem <gui>Einblendmenü</gui>, aufgerufen durch das Tastenkürzel <keyseq><key>Strg</key><key>Alt</key><key>1</key></keyseq>.</p></item>
+<p>Dann können Sie mit den Pfeiltasten auf und ab navigieren und zur gewählten Überschrift mit der <key>Eingabe</key>-Taste springen. Oder Sie klicken mit der Maus auf die gewünschte Überschrift.</p>
+</list>
+
+</section>
+
+
+<section id="troubleshooting"><title>Fehlersuche</title>
+<terms>
+  <item><title><em style="strong">Eine Überschrift wird im Inhalt nicht angezeigt</em></title><p>Eventuell gibt es einige Zeichen, zum Beispiel Leerzeichen, in der Zeile, die nicht als Überschrift formatiert sind. Stellen Sie sicher, dass die <em>komplette Zeile</em> als Überschrift formatiert ist. Lesen Sie <link xref="#setheadings"/> für weitere Informationen.</p>
+  </item>
+  <item><title><em style="strong">Es ist eine leere Zeile im Inhalt</em></title><p>Eine leere Zeile, möglicherweise mit Leerzeichen, ist als Überschrift formatiert. Springen Sie zu dieser Zeile und löschen Sie den Bereich.</p>
+  </item>
+
+  <item><title/><p>
+  </p>
+  </item>
+
+</terms>
+
+</section>
+
+</page>

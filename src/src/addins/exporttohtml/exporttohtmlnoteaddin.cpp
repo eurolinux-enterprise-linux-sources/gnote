@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2013 Aurimas Cernius
+ * Copyright (C) 2010-2013,2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -26,7 +26,6 @@
 #include <libxslt/extensions.h>
 
 #include <glibmm/i18n.h>
-#include <gtkmm/stock.h>
 
 #include "sharp/exception.hpp"
 #include "sharp/files.hpp"
@@ -35,6 +34,7 @@
 #include "sharp/uri.hpp"
 #include "sharp/xsltargumentlist.hpp"
 #include "debug.hpp"
+#include "iactionmanager.hpp"
 #include "preferences.hpp"
 #include "notewindow.hpp"
 #include "utils.hpp"
@@ -55,30 +55,6 @@ ExportToHtmlModule::ExportToHtmlModule()
 {
   ADD_INTERFACE_IMPL(ExportToHtmlNoteAddin);
 }
-const char * ExportToHtmlModule::id() const
-{
-  return "ExportToHtmlAddin";
-}
-const char * ExportToHtmlModule::name() const
-{
-  return _("Export to HTML");
-}
-const char * ExportToHtmlModule::description() const
-{
-  return _("Exports individual notes to HTML.");
-}
-const char * ExportToHtmlModule::authors() const
-{
-  return _("Hubert Figuiere and the Tomboy Project");
-}
-int ExportToHtmlModule::category() const
-{
-  return gnote::ADDIN_CATEGORY_TOOLS;
-}
-const char * ExportToHtmlModule::version() const
-{
-  return "0.1";
-}
 
 sharp::XslTransform *ExportToHtmlNoteAddin::s_xsl = NULL;
 
@@ -96,16 +72,21 @@ void ExportToHtmlNoteAddin::shutdown()
 
 void ExportToHtmlNoteAddin::on_note_opened()
 {
-	Gtk::ImageMenuItem *item =  manage(new Gtk::ImageMenuItem (_("Export to HTML")));
-  item->set_image(*manage(new Gtk::Image (Gtk::Stock::SAVE, Gtk::ICON_SIZE_MENU)));
-  item->signal_activate().connect(
+  register_main_window_action_callback("exporttohtml-export",
     sigc::mem_fun(*this, &ExportToHtmlNoteAddin::export_button_clicked));
-  item->show ();
-  add_plugin_menu_item (item);
 }
 
 
-void ExportToHtmlNoteAddin::export_button_clicked()
+std::map<int, Gtk::Widget*> ExportToHtmlNoteAddin::get_actions_popover_widgets() const
+{
+  auto widgets = NoteAddin::get_actions_popover_widgets();
+  auto button = gnote::utils::create_popover_button("win.exporttohtml-export", _("Export to HTML"));
+  gnote::utils::add_item_to_ordered_map(widgets, gnote::EXPORT_TO_HTML_ORDER, button);
+  return widgets;
+}
+
+
+void ExportToHtmlNoteAddin::export_button_clicked(const Glib::VariantBase&)
 {
   ExportToHtmlDialog dialog(get_note()->get_title() + ".html");
   int response = dialog.run();
@@ -138,9 +119,10 @@ void ExportToHtmlNoteAddin::export_button_clicked()
       gnote::utils::open_url("file://" + output_uri.get_absolute_uri());
     } 
     catch (const Glib::Exception & ex) {
-      ERR_OUT ("Could not open exported note in a web browser: %s",
+      ERR_OUT(_("Could not open exported note in a web browser: %s"),
                ex.what().c_str());
 
+      // TRANSLATORS: %1%: boost format placeholder for the path
       std::string detail = str(boost::format(
                                  _("Your note was exported to \"%1%\"."))
                                % output_path);
@@ -165,7 +147,7 @@ void ExportToHtmlNoteAddin::export_button_clicked()
   } 
 #endif
   catch (const sharp::Exception & e) {
-    ERR_OUT("Could not export: %s", e.what());
+    ERR_OUT(_("Could not export: %s"), e.what());
 
     error_message = e.what();
   } 
@@ -173,7 +155,7 @@ void ExportToHtmlNoteAddin::export_button_clicked()
 
   if (!error_message.empty())
   {
-    ERR_OUT("Could not export: %s", error_message.c_str());
+    ERR_OUT(_("Could not export: %s"), error_message.c_str());
 
     std::string msg = str(boost::format(
                             _("Could not save the file \"%s\"")) 

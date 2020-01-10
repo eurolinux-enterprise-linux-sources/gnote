@@ -3,7 +3,7 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <link type="topic" xref="addins-preferences"/>
-    <desc>Шаблонная заметка</desc>
+    <desc>A "Today" note</desc>
     <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
     <credit type="author">
       <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
@@ -11,13 +11,18 @@
     </credit>
     <credit type="editor">
       <name>Ауримас Церниус (Aurimas Cernius)</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Заметка дня</title>
-  <p>Это дополнение автоматически создаёт заметку дня. В качестве заголовка используется текущая дата. Например, такая заметка, созданная 28 февраля 2007 года будет иметь заголовок «Сегодня:Четверг, Февраль 28 2007».</p>
-  <p>Если вы не измените заметку дня, дополнение автоматически удалит эту заметку.</p>
-  <p>Чтобы изменить заметку дня по умолчанию, создайте новую заметку, измените её заголовок на «Сегодня: Шаблон». Введите любое содержимое заметки. При создании новых заметок дня заметки будут использовать созданный вами шаблон «Сегодня: Шаблон».</p>
+  <p>This plugin automatically creates a "Today" note for jotting daily thoughts down.  As an example, a "Today" note created on February 28, 2013 would be called "Today: Thursday, February 28 2013".</p>
+  <p>If you leave a "Today" note unmodified, the plugin will automatically delete the note.</p>
+  <p>To customize the content of the default "Today" note, create a new note and change the title of the note to "Today: Template". Change the content of the template note to whatever you like. New "Today" notes will then use the content of your "Today: Template" note.</p>
 
 </page>

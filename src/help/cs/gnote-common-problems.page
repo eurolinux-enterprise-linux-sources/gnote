@@ -11,19 +11,23 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011 – 2012</years>
+      <years>2011 – 2014</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Známé problémy s Gnote</title>
     <list>
-      <item><title>Spolupracuje <app>Gnote</app> s poznámkami <app>Tomboy</app>?</title><p>Poznámky <app>Tomboy</app> můžete importovat. K tomu musí být aktivován příslušný doplněk.</p>
+      <item><title>Spolupracuje <app>Gnote</app> s poznámkami <app>Tomboy</app>?</title><p>Poznámky <app>Tomboy</app> můžete importovat. K tomu musí být aktivován příslušný zásuvný modul.</p>
       </item>
-      <item><title>Nemohu najít stavovou ikonu Gnote</title>
-        <p>Stavovou ikonu <app>Gnote</app> můžete aktivovat v <app>terminálu</app> pomocí příkazu: <cmd>gsettings set org.gnome.gnote use-status-icon true</cmd>.</p></item>
       <item><title>Jak automaticky spouštět <app>Gnote</app> při přihlášení?</title>
         <p>Pokud chcete poznámky Gnote spouštět automaticky při přihlášení do GNOME, použijte <app>gnome-session-properties</app>.</p>
       </item>
+      <item><title>Nejsem spokojen s novým jednookenním rozhraním</title><p><app>Gnote</app> můžete přimět, aby se choval starám způsobem, tak, že v dialogovém okně předvoleb zaškrtnete <gui>Poznámku vždy otevřít v novém okně</gui>.</p></item>
     </list>
 
 </page>

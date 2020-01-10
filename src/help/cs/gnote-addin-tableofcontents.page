@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      "Table of Contents" is a Note add-in for Gnote.
+      It lists a note's table of contents in a menu.
+
+      Copyright (c)  2013  Luc Pionchon <pionchon.luc@gmail.com>
+
+      Permission is granted to copy, distribute and/or modify this document
+      under the terms of the GNU Free Documentation License, Version 1.1
+      or any later version published by the Free Software Foundation;
+      with no Invariant Sections, with no Front-Cover Texts, and with no
+      Back-Cover Texts.
+      FIXME: does the statement have to show in the rendered document?
+
+      A copy of the license is included in the section entitled "GNU
+      Free Documentation License".
+      FIXME: is this true? Is there a (GNOME? Yelp?) common GFDL topic?
+-->
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-tableofcontents" xml:lang="cs">
+
+  <info>
+    <revision status="candidate" pkgversion="gnote-addin-tableofcontents-version-1.0.0"/>
+    <!-- Status:
+      stub        contains little to no real content
+      incomplete  outline of all information, but lacking content
+      draft       all content available, but unpolished
+      review      ready to be reviewed by editors
+      candidate   reviewed and awaiting a final approval
+      final       approved and ready for publication or distribution
+      outdated    was once complete or nearly complete, but needs to be revised to reflect changes
+
+      Other possible attributes:
+      version=""        revision version
+      docversion=""     enclosing document
+      date="2011-03-08" revision date
+    -->
+    <license href="http://www.gnu.org/licenses/fdl-1.1.html"><p>Toto <em>téma nápovědy</em> je licencováno pod <link href="http://www.gnu.org/licenses/fdl-1.1.html">GNU Free Documentation License, Version 1.1</link> (GFDL). To znamená, že můžete tento dokument za určitých podmínek svobodně kopírovat, šířit a/nebo upravovat.</p>
+    </license>
+
+    <credit type="author copyright">
+      <name>Luc Pionchon</name><email>pionchon.luc@gmail.com</email><years>2013</years></credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <email>aurisc4@gmail.com</email>
+      <years>2013, 2014</years>
+    </credit>
+    <!-- Credit type: (can have several types)
+      author        somebody responsible for writing content
+      editor        somebody who has provided reviews or editorial corrections
+      copyright     a person or entity which holds copyright on the work
+      maintainer    the person or entity currently responsible for the work
+      collaborator  somebody who has provided extensive rough information
+      translator    somebody who has translated the work into another language
+      publisher     a person or entity who distributes formatted copies
+
+      <credit> can have a URL, for example for a publisher, using FOAF namespace:
+        <page xmlns="http://xmlns.com/foaf/0.1/">http://flossmanuals.net/</page>
+    -->
+
+    <link type="guide" xref="index#advanced"/>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <link type="topic" xref="addins-preferences"/>
+    <link type="topic" xref="searching-notes"/>
+    <desc>Pohyb v dlouhých strukturovaných poznámkách</desc>
+  </info>
+
+
+<title>Přidání obsahu</title>
+
+<desc><em>Pohyb v dlouhých strukturovaných poznámkách</em></desc>
+
+<note><p>Jedná se o zásuvný modul do aplikace <app>Gnote</app>. Když je nainstalován, objeví se v nabídce <gui>Nástroje</gui> položka <gui>Obsah</gui>. Viz <link xref="addins-preferences"/> pro vysvětlení, jak aktivovat zásuvný modul.</p></note>
+
+
+<section id="nutshell"><title>Ve zkratce</title>
+
+<list type="numbered">
+  <item>
+    <p>Nadpis je celý řádek textu formátovaného jako <gui>tučné+obrovské</gui> nebo <gui>tučné+velké</gui></p>
+  </item>
+  <item>
+    <p>Nastavte nadpis pomocí <keyseq><key>Ctrl</key><key>1</key></keyseq> nebo <keyseq><key>Ctrl</key><key>2</key></keyseq></p>
+  </item>
+  <item>
+    <p>Otevřete obsah pomocí <keyseq><key>Ctrl</key><key>Alt</key><key>1</key></keyseq> a přeskočte na libovolný nadpis.</p>
+  </item>
+</list>
+
+</section>
+
+<section id="screenshot"><title>Snímek obrazovky</title>
+    <figure>
+      <title>Strukturovaná poznámka se svým obsahem</title>
+        <media type="image" src="figures/gnote-addin-table-of-contents.png" mime="image/png">
+        </media>
+    </figure>
+</section>
+
+
+<section id="navigating"><title>Pohyb v dlouhé poznámce</title>
+
+<p>V dlouhých poznámkách může být náročné se pohybovat. Je přirozené takovou poznámku strukturovat označením oddílů a pododdílů pomocí nadpisů.</p>
+
+<p>Tento zásuvný modul usnadňuje pohyb v dlouhých strukturovaných poznámkách. Jakmile si ve své poznámce nastavíte nadpisy, zobrazí se vám v nabídce činností obsah poznámky. Díky němu můžete z nabídky skočit přímo na libovolný nadpis.</p>
+
+</section>
+
+
+<section id="setheadings"><title>Strukturování vašich poznámek pomocí nadpisů</title>
+
+<p>Nadpis je jednoduše řečeno celý řádek se specifickým formátováním textu:</p>
+<list>
+  <item><p>Nadpisy úrovně 1, pro oddíly, jsou řádky formátované písmem <gui>tučné+obrovské</gui></p></item>
+  <item><p>Nadpisy úrovně 2, pro pododdíly, jsou řádky formátované písmem <gui>tučné+velké</gui></p></item>
+</list>
+
+
+<p>Formátovat řádek nadpisu můžete těmito způsoby:</p>
+
+<list>
+  <item>
+    <p>Použijte příkazy <gui>Nadpis úrovně 1</gui> a <gui>Nadpis úrovně 2</gui> v nabídce <guiseq><gui>Činnosti</gui><gui>Obsah</gui></guiseq>.</p>
+  </item>
+
+  <item>
+    <p>Použijte klávesové zkratky <keyseq><key>Ctrl</key><key>1</key></keyseq> a <keyseq><key>Ctrl</key><key>2</key></keyseq> pro nadpisy úrovně 1 a 2.</p>
+ </item>
+</list>
+
+<note><p>Tento příkaz použije formát na úplně celý řádek. Nemusíte jej dopředu označovat, stačí když se na řádku nachází kurzor.</p><p>Případně s kurzorem na novém řádku aktivujte příkaz pro nadpis a pak zadejte text nadpisu.</p></note>
+
+<p>Ve skutečnosti můžete použít i normální příkazy pro formátování z nabídky <gui>Text</gui>: <gui>Tučné</gui>, <gui>Velké</gui> a <gui>Obrovské</gui> a jejich případné klávesové zkratky. Například, když je váš řádek již formátován písmem <gui>Obrovské</gui>, stačí když jej uděláte ještě <gui>Tučný</gui> a bude z něj nadpis úrovně 1. Viz <link xref="editing-notes"/> pro vysvětlení jak nastavit styl textu.</p>
+
+</section>
+
+
+<section id="showtable"><title>Zobrazení obsahu</title>
+
+<p>K obsahu se můžete dostat těmito způsoby:</p>
+<list>
+<item><p>Přes nabídku <guiseq><gui>Činnosti</gui><gui>Obsah</gui></guiseq></p></item>
+<item><p>Přes <guiseq><gui>kontextovou nabídku</gui><gui>Obsah</gui></guiseq> (kliknout pravým tlačítkem na okno poznámky)</p></item>
+<item><p>Přes <gui>rozbalovací nabídku</gui>, pomocí klávesové zkratky <keyseq><key>Ctrl</key><key>Alt</key><key>1</key></keyseq></p></item>
+<p>Po té se můžete pohybovat pomocí klávesových šipek nahoru a dolů a klávesou <key>Enter</key> skočit na vybraný nadpis. Nebo stačí na nadpis, na který chcete skočit, kliknout myší.</p>
+</list>
+
+</section>
+
+
+<section id="troubleshooting"><title>Řešení problémů</title>
+<terms>
+  <item><title><em style="strong">Některý z nadpisů se nezobrazuje v obsahu</em></title><p>Možná jsou v řádku s nadpisem nějaké znaky, obvykle bílé znaky, které nejsou naformátované jako nadpis. Ujistěte se, že je <em>celý řádek</em> formátován jako nadpis. Viz <link xref="#setheadings"/>.</p>
+  </item>
+  <item><title><em style="strong">V obsahu se nachází prázdný řádek</em></title><p>Prázdný řádek, pravděpodobně s bílými znaky, je formátován jako nadpis. Přejděte na dotyčný řádek a oblast smažte.</p>
+  </item>
+
+  <item><title/><p>
+  </p>
+  </item>
+
+</terms>
+
+</section>
+
+</page>

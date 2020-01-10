@@ -1,0 +1,11 @@
+[AddinInfo]
+Id=WebDavSyncServiceAddin
+_Name=WebDAV Sync Service Plugin
+_Description=Synchronize Gnote Notes to a WebDAV URL.
+_Authors=Aurimas Černius and the Tomboy Project
+Category=Synchronization
+Version=0.2
+DefaultEnabled=true
+Module=libwebdavsyncservice
+LibgnoteRelease=3.22
+LibgnoteVersionInfo=1:0:1

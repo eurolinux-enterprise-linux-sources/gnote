@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2012 Aurimas Cernius
+ * Copyright (C) 2011-2013,2016 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -21,8 +21,6 @@
 #ifndef _REPLACETITLE_ADDIN_HPP_
 #define _REPLACETITLE_ADDIN_HPP_
 
-#include <gtkmm/imagemenuitem.h>
-
 #include "sharp/dynamicmodule.hpp"
 #include "note.hpp"
 #include "noteaddin.hpp"
@@ -34,12 +32,6 @@ class ReplaceTitleModule
 {
 public:
   ReplaceTitleModule();
-  virtual const char * id() const;
-  virtual const char * name() const;
-  virtual const char * description() const;
-  virtual const char * authors() const;
-  virtual int          category() const;
-  virtual const char * version() const;
 };
   
 DECLARE_MODULE(ReplaceTitleModule);
@@ -52,15 +44,12 @@ public:
   {
     return new ReplaceTitleNoteAddin;
   }
-  virtual void initialize();
-  virtual void shutdown();
-  virtual void on_note_opened();
+  virtual void initialize() override;
+  virtual void shutdown() override;
+  virtual void on_note_opened() override;
+  virtual std::map<int, Gtk::Widget*> get_actions_popover_widgets() const override;
 private:
-  void replacetitle_button_clicked();
-  void on_note_foregrounded();
-  void on_note_backgrounded();
-
-  Gtk::ImageMenuItem *m_menu_item;
+  void replacetitle_button_clicked(const Glib::VariantBase&);
 };
 
 

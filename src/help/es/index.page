@@ -15,15 +15,15 @@
     </credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Nicolás Satragno</mal:name>
-      <mal:email>nsatragno@gnome.org</mal:email>
-      <mal:years>2012</mal:years>
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2013</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Daniel Mustieles</mal:name>
-      <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010, 2012</mal:years>
+      <mal:name>Nicolás Satragno</mal:name>
+      <mal:email>nsatragno@gnome.org</mal:email>
+      <mal:years>2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -33,7 +33,7 @@
     </mal:credit>
   </info>
 
-  <title>Ayuda de Gnote</title>
+  <title><media type="image" src="figures/logo32.png"/> Ayuda de Gnote </title>
 
     <section id="introduction">
     <title>Introducción</title>

@@ -4,7 +4,7 @@
 
   <info>
     <link type="guide" xref="index#customizing"/>
-    <desc>Paramétrer Gnote</desc>
+    <desc>Gnote settings</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -12,7 +12,12 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011-2012</years>
+      <years>2011-2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
@@ -20,14 +25,15 @@
   <section id="editing">
     <title>Préférences générales</title>
     <p>To set preferences for <app>Gnote</app>, select <gui>Preferences</gui> from the application menu.</p>
-    <p>Il y a trois catégories de préférences, <gui>Général</gui> , <gui>Raccourcis clavier</gui> et <gui>Greffons</gui>. Les préférences de chaque onglet sont décrites ci-dessous.</p>
-    <p>L'onglet Général permet de définir les préférences pour le comportement de l'application et l'édition des notes. Il y a quelques cases à cocher ou décocher dans cet onglet.</p>
+    <p>There are three categories of preferences, <gui>General</gui>, <gui>Hotkeys</gui> and <gui>Add-Ins</gui>.</p>
+    <p>The <gui>General</gui> tab lets you set preferences related to application behaviour and editing notes. There are a few checkboxes on this tab:</p>
     <list>
-      <item><title>Utiliser l'icône de statut</title><p>Cochez cette case si vous voulez que l'icône de statut de <app>Gnote</app> soit visible quand il est actif. Dans ce mode, l'icône <app>Gnote</app> reste visible même quand toutes ses fenêtres sont fermées. Pour ouvrir les dernières notes et autres fenêtres utilisées, faites un clic droit sur l'icône de statut et choisissez-les dans le menu.</p></item>
-      <item><title>Vérification orthographique lors de la frappe</title><p>Cochez cette case pour souligner les fautes d'orthographe en rouge et obtenir une suggestion de correction par un clic-droit de souris.</p><p>La vérification orthographique automatique nécessite l'installation du paquet GtkSpell dans votre distribution.</p></item>
-      <item><title>Surligner les mots Wiki</title><p>Cochez cette case pour créer des liens vers des mots CommeCeluiCi. Un clic sur ce lien crée une nouvelle note dont le titre correspond au texte du lien.</p></item>
-      <item><title>Activer les listes à puces automatiques</title><p>Cochez cette case si vous voulez créer une liste à puces en commençant les lignes avec un tiret <key>-</key>. Consultez la section sur <link xref="bulleted-lists"/>.</p></item>
-      <item><title>Utiliser une police personnalisée</title><p>Cochez cette option pour définir une police de caractères personnalisée. Si cette case n'est pas cochée, la police système par défaut sera utilisée.</p></item>
+      <item><title>Use status icon</title><p> Enable this checkbox to show the <app>Gnote</app> status icon when running. In this mode <app>Gnote</app> will remain present even after all its windows are closed. When you click the status icon, a menu appears that gives you quick access to recently used notes and other windows.</p></item>
+      <item><title>Always open notes in new window</title><p>When checked, instead of replacing current window content, note is opened in the new window.</p></item>
+      <item><title>Spellcheck while typing</title><p> Enable this checkbox to underline misspellings in red and provide suggestions in the right click context menu.</p><p>La vérification orthographique automatique nécessite l'installation du paquet GtkSpell dans votre distribution.</p></item>
+      <item><title>Surligner les mots Wiki</title><p> Enable this checkbox to create links for phrases ThatLookLikeThis. Clicking on a link will create a new note with a title corresponding to the link text.</p></item>
+      <item><title>Activer les listes à puces automatiques</title><p>When this preference is enabled, you can create bulleted lists by starting lines with a dash character <key>-</key>. Read more about <link xref="bulleted-lists"/>.</p></item>
+      <item><title>Use custom font</title><p> Enable this checkbox to set a custom font to be used in your notes.</p></item>
     </list>
     <figure><title>Fenêtre des <gui>Préférences</gui></title>
       <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Préférences d'édition de Gnote</desc>
@@ -44,16 +50,16 @@
     </section>
     <section id="sync-advanced">
       <title>Avancé</title>
-      <p>Clicking <gui>Advanced</gui> button in <gui>Synchronization</gui> tab of <gui>Preferences</gui> dialog brings another dialog for setting up conflict resolution.</p>
+      <p>The <gui>Advanced</gui> button in the <gui>Synchronization</gui> tab of the <gui>Preferences</gui> dialog brings up another dialog for setting up conflict resolution.</p>
       <figure>
         <title>Advanced Synchronization Settings</title>
         <media type="image" src="figures/gnote-syncprefs-advanced.png" mime="image/png"/>
       </figure>
-      <p>This dialog lets you choose what to do, when a conflict occurrs. A conflict happends, when the note is modified before synchronizing and it has been also modified on other device (and synchronized to synchronization storage). You can select one of these options:</p>
+      <p>This dialog lets you choose what to do when a conflict occurs. A conflict happens when a note has been modified both on the local machine and on another device. You can select one of these options:</p>
       <list>
-        <item><title>Rename existing note by appending "(old)" to it's title and download the one from storage</title></item>
-        <item><title>Replace existing note by the one from storage, losing all modifications</title></item>
-        <item><title>Get the choice for each conflicting note individually</title></item>
+        <item><p>Rename the existing note by appending "(old)" to its title and downloading the one from storage</p></item>
+        <item><p>Replace the existing note by the one from storage, losing all modifications</p></item>
+        <item><p>Ask about each conflicting note individually</p></item>
       </list>
     </section>
   </section>

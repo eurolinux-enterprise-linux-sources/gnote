@@ -13,35 +13,40 @@
       <name>Ауримас Церниус (Aurimas Cernius)</name>
       <years>2011</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
 <title>Маркированные списки</title>
 
 <section id="begin-a-bulleted-list"><title>Начало маркированного списка</title>
-<p>Маркированный список можно начать одним из следующих способов</p>
+<p>You may begin a bulleted list in any of the following ways:</p>
 <list>
 <item><p>Выберите в меню <gui>Текст</gui> пункт <gui>Маркированный список</gui></p></item>
-<item><p>Начните строку с символа <key>-</key>, затем нажмите пробел, введите какой-нибудь текст и нажмите <key>Enter</key>.</p></item>
+<item><p>Begin a line with a single dash character <key>-</key> followed by a space.  Then type some text and press <key>Enter</key>.</p></item>
 <item><p>Используйте комбинацию клавиш <keyseq><key>Alt</key><key>Right</key></keyseq>.</p></item>
 </list>
 </section>
 
 <section id="end-a-bulleted-list"><title>Завершение маркированного списка</title>
-<p>Маркированный список можно завершить одним из следующих способов</p>
+<p>You can end a bulleted list by doing one of the following:</p>
 <list>
 <item><p>Выберите в меню <gui>Текст</gui> пункт <gui>Маркированный список</gui></p></item>
 <item><p>Нажмите <key>Enter</key> на пустом элементе маркированного списка. </p></item>
 <item><p>Выберите в меню <gui>Уменьшить отступ</gui>, повторяйте процедуру до тех пор, пока текущая строка перестанет быть элементом маркированного списка.</p></item>
-<item><p>Используйте комбинацию клавиш <keyseq><key>Shift</key><key>Tab</key></keyseq>, повторяйте процедуру до тех пор, пока текущая строка перестанет быть элементом маркированного списка.</p></item>
-<item><p>Используйте комбинацию клавиш <keyseq><key>Alt</key><key>Left</key></keyseq>, повторяйте процедуру до тех пор, пока текущая строка перестанет быть элементом маркированного списка.</p></item>
+<item><p>Press <keyseq><key>Shift</key><key>Tab</key></keyseq> repeatedly until the current line is no longer part of the bulleted list.</p></item>
+<item><p>Press <keyseq><key>Alt</key><key>Left</key></keyseq> repeatedly until the current line is no longer part of the bulleted list.</p></item>
 </list>
 
 </section>
 <section id="increase-indentation">
 <title>Увеличение отступа</title>
-<p>Чтобы увеличить отступ в маркированном списке с помощью мыши</p>
+<p>To increase the line indentation in a bulleted list with the mouse:</p>
 <list><item><p>Выберите в меню <gui>Увеличить отступ</gui>.</p></item></list>
-<p>Чтобы увеличить отступ в маркированном списке с помощью клавиатуры</p>
+<p>To increase the line indentation in a bulleted list with the keyboard:</p>
 <list>
 <item><p>Нажмите клавишу <key>Tab</key>.</p></item>
 <item><p>Используйте комбинацию клавиш <keyseq><key>Alt</key><key>Right</key></keyseq>.</p></item>
@@ -50,7 +55,7 @@
 
 <section id="decrease-indentation">
 <title>Уменьшение отступа</title>
-<p>Чтобы уменьшить отступ в маркированном списке с помощью мыши</p>
+<p>To decrease the line indentation in a bulleted list with the mouse:</p>
 <list><item><p>Выберите в меню <gui>Уменьшить отступ</gui>.</p></item></list>
 <p>Чтобы уменьшить отступ в маркированном списке с помощью клавиатуры</p>
 <list>

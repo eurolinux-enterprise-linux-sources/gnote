@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2012 Aurimas Cernius
+ * Copyright (C) 2011-2015 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -44,6 +44,8 @@ namespace gnote {
     static const char *SCHEMA_DESKTOP_GNOME_INTERFACE;
 
     static const char *ENABLE_SPELLCHECKING;
+    static const char *ENABLE_AUTO_LINKS;
+    static const char *ENABLE_URL_LINKS;
     static const char *ENABLE_WIKIWORDS;
     static const char *ENABLE_CUSTOM_FONT;
     static const char *ENABLE_KEYBINDINGS;
@@ -58,13 +60,15 @@ namespace gnote {
 
     static const char *NOTE_RENAME_BEHAVIOR;
     static const char *USE_STATUS_ICON;
+    static const char *OPEN_NOTES_IN_NEW_WINDOW;
+    static const char *AUTOSIZE_NOTE_WINDOW;
 
     static const char *MAIN_WINDOW_MAXIMIZED;
-    static const char *SEARCH_WINDOW_X_POS;
-    static const char *SEARCH_WINDOW_Y_POS;
     static const char *SEARCH_WINDOW_WIDTH;
     static const char *SEARCH_WINDOW_HEIGHT;
     static const char *SEARCH_WINDOW_SPLITTER_POS;
+    static const char *SEARCH_SORTING;
+    static const char *USE_CLIENT_SIDE_DECORATIONS;
 
     static const char *KEYBINDING_SHOW_NOTE_MENU;
     static const char *KEYBINDING_OPEN_START_HERE;
@@ -83,6 +87,7 @@ namespace gnote {
     static const char *SYNC_FUSE_WDFS_URL;
     static const char *SYNC_FUSE_WDFS_USERNAME;
 
+    static const char *DESKTOP_GNOME_CLOCK_FORMAT;
     static const char *DESKTOP_GNOME_FONT;
     static const char *DESKTOP_GNOME_KEY_THEME;
 

@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="notes-preferences#advanced"/>
-    <desc>Параметры модулей Gnote</desc>
+    <desc>Settings for Gnote plugins</desc>
     <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
     <credit type="author">
       <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
@@ -11,13 +11,18 @@
     </credit>
     <credit type="editor">
       <name>Ауримас Церниус (Aurimas Cernius)</name>
-      <years>2011</years>
+      <years>2011,2013,2014</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Параметры модулей</title>
-    <p>На этой вкладке можно включать и выключать модули. Чтобы включить или выключить модуль, нажмите кнопку <gui>Включить</gui>. Кнопка станет неактивной, вместо неё станет активной кнопкой <gui>Отключить</gui>.</p>
-    <p>Некоторые дополнения имеют дополнительные настройки. К ним можно получить доступ, выбрав дополнение и нажав кнопку <gui>Параметры</gui>.</p>
+    <p>You can activate or deactivate plugins in this tab. To do this, select a plugin and click the <gui>Enable</gui> button. Use the <gui>Disable</gui> button to disable a plugin.</p>
+    <p>Some plugins have preferences, which you can access by selecting a plugin and pressing the <gui>Preferences</gui> button.</p>
     <figure><title>Параметры модулей <app>Gnote</app></title>
     <desc>Окно модулей <app>Gnote</app></desc>
     <media type="image" src="figures/gnote-preferences-add-ins.png" mime="image/png" style="right">

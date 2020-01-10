@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="index" xml:lang="sv">
+
+  <info>
+    <license>
+	<p xml:lang="en_GB">GNU Free Documentation License (GFDL), Version 1.1</p>
+    </license>
+    <credit type="author">
+      <name xml:lang="en_GB">Pierre-Yves Luyten</name>
+      <years xml:lang="en_GB">2011</years>
+    </credit>
+    <credit type="editor">
+      <name xml:lang="en_GB">Aurimas Cernius</name>
+      <years xml:lang="en_GB">2011</years>
+    </credit>
+  </info>
+
+  <title xml:lang="en_GB"><media type="image" src="figures/logo32.png"/> Gnote Help</title>
+
+    <section id="introduction">
+    <title>Introduktion</title>
+    </section>
+
+    <section id="managing-notes" style="2column">
+    <title xml:lang="en_GB">Managing Notes</title>
+    </section>
+
+    <section id="organizing-notes" style="2column">
+    <title xml:lang="en_GB">Organizing Notes</title>
+    </section>
+
+    <section id="advanced" style="2column">
+    <title xml:lang="en_GB">Advanced</title>
+    </section>
+
+    <section id="customizing" style="2column">
+    <title xml:lang="en_GB">Customizing</title>
+    </section>
+
+    <section id="common-problems" style="2column">
+    <title xml:lang="en_GB">Common Problems</title>
+    </section>
+
+</page>

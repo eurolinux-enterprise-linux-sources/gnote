@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Imprimer des notes</desc>
+    <desc>Print notes</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,12 +11,16 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
   
   <title>Impression</title>
-    <p>Le bouton <gui>Outils</gui> est matérialisé par l'icône <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Lorsque ce greffon est activé, l'option <gui>Imprimer</gui> est présente dans le menu <gui>Outils</gui>.</p>
-    <p>Lorsque l'option <gui>Imprimer</gui> est sélectionnée, une boîte de dialogue standard <gui>Imprimer</gui> s'affiche et une note peut être imprimée.</p>
+    <p>When the <app>Print</app> plugin is installed, the <gui>Print</gui> command is present in the <gui>Actions</gui> menu. This command opens a standard <gui>Print</gui> dialog which lets you print a note.</p>
 
 </page>

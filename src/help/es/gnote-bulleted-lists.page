@@ -13,17 +13,22 @@
       <name>Aurimas Cernius</name>
       <years>2011</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2013</mal:years>
+    </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Nicolás Satragno</mal:name>
       <mal:email>nsatragno@gnome.org</mal:email>
       <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Daniel Mustieles</mal:name>
-      <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -57,9 +62,9 @@
 </section>
 <section id="increase-indentation">
 <title>Aumentar sangría</title>
-<p>Aumentar la sangría en una lista de topos con el ratón</p>
+<p>Aumentar la sangría en una lista de topos con el ratón:</p>
 <list><item><p>Seleccione <gui>Aumentar sangría</gui> del menú «Texto».</p></item></list>
-<p>Aumentar la sangría en una lista de topos usando el teclado</p>
+<p>Aumentar la sangría en una lista de topos usando el teclado:</p>
 <list>
 <item><p>Pulse la tecla <key>Tab</key>.</p></item>
 <item><p>Presione la combinación de teclas <keyseq><key>Alt</key><key>Derecha</key></keyseq>.</p></item>
@@ -68,7 +73,7 @@
 
 <section id="decrease-indentation">
 <title>Disminuir sangría</title>
-<p>Disminuir la sangría en una lista de topos usando el ratón</p>
+<p>Disminuir la sangría en una lista de topos usando el ratón:</p>
 <list><item><p>Seleccione <gui>Disminuir sangría</gui> del menú «Texto».</p></item></list>
 <p>Disminuir la sangría en una lista de topos usando el ratón</p>
 <list>

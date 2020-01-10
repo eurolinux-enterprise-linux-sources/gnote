@@ -13,17 +13,22 @@
       <name>Aurimas Cernius</name>
       <years>2011 – 2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Vytváření poznámek</title>
 
   <p>V aplikaci <app>Gnote</app> můžete nové poznámky vytvářet následujícími způsoby:</p>
   <list>
-    <item><p>Klikněte na nabídku aplikace a zvolte <gui>Nová poznámka</gui>.</p></item>
+    <item><p>Zvolte <gui>Nová poznámka</gui> v nabídce aplikace.</p></item>
     <item><p>V okně <app>Gnote</app> klikněte na liště nástrojů na položku <gui>Nová</gui>.</p></item>
-    <item><p>V režimu hledání klikněte pravým tlačítkem v seznamu sešitů a zvolte <gui>Nová poznámka</gui>. Ta se vytvoří v právě vybraném sešitě.</p></item>
-    <item><p>Když je zapnutá <gui>Stavová ikona</gui>, klikněte na ni a vyberte <gui>Nová poznámka</gui>.</p></item>
-    <item><p>Zmáčkněte klávesovou zkratku <keyseq><key>Ctrl</key><key>N</key></keyseq>.</p></item>
+    <item><p>V hlavním okně klikněte pravým tlačítkem v seznamu sešitů a zvolte <gui>Nová </gui>. Tím se vytvoří nová poznámka v právě vybraném sešitě.</p></item>
+    <item><p>Když je zapnutá stavová ikona, klikněte na ni a vyberte <gui>Nová poznámka</gui>.</p></item>
+    <item><p>Použijte klávesovou zkratku <keyseq><key>Ctrl</key><key>N</key></keyseq>.</p></item>
   </list>
 
 </page>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="introduction" xml:lang="el">
+
+
+  <info>
+    <link type="guide" xref="index#introduction"/>
+    <desc>Εισαγωγή στο <app>Gnote</app></desc>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Εισαγωγή στο Gnote</title>
+    <p>Το <app>Gnote</app> είναι μια εφαρμογή λήψης σημειώσεων επιφάνειας εργασίας για το GNOME. Είναι απλό και εύκολο στη χρήση και σας επιτρέπει να οργανώνετε τις ιδέες και τις πληροφορίες τις οποίες μεταχειρίζεστε καθημερινά. Το Gnote έχει μερικά πολύ χρήσιμα χαρακτηριστικά επεξεργασίας που σας βοηθούν να προσαρμόζετε τις σημειώσεις σας, συμπεριλαμβανομένων:</p>
+    <list>
+      <item><p>της επισήμανσης κειμένου αναζήτησης</p></item>
+      <item><p>του ενσωματωμένου ορθογραφικού έλεγχου</p></item>
+      <item><p>της αυτόματης σύνδεσης ιστού και διευθύνσεων ηλεκτρονικού ταχυδρομείου</p></item>
+      <item><p>της αναίρεσης/ακύρωση αναίρεσης</p></item>
+      <item><p>της μορφοποίησης γραμματοσειράς και προσαρμογή μεγέθους</p></item>
+      <item><p>των λιστών με κουκκίδες</p></item>
+    </list>
+    <figure>
+      <title>του κυρίως παραθύρου του <app>Gnote</app></title>
+        <desc>του κυρίως παραθύρου του <app>Gnote</app></desc>
+        <media type="image" src="figures/gnote-search-all-notes.png" mime="image/png" style="right">
+        <p>του κυρίως παραθύρου του <app>Gnote</app>.</p>
+        </media>
+    </figure>
+
+</page>

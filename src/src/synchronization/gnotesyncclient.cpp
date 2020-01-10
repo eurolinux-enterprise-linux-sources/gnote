@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2013 Aurimas Cernius
+ * Copyright (C) 2012-2014 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
 #define _SYNCHRONIZATION_GNOTESYNCCLIENT_HPP_
 
 
-#include <boost/lexical_cast.hpp>
+#include <glibmm/i18n.h>
 
 #include "debug.hpp"
 #include "ignote.hpp"
@@ -38,12 +38,23 @@ namespace sync {
 
   const char * GnoteSyncClient::LOCAL_MANIFEST_FILE_NAME = "manifest.xml";
 
-  GnoteSyncClient::GnoteSyncClient(NoteManager & manager)
+  SyncClient::Ptr GnoteSyncClient::create(NoteManagerBase & manager)
+  {
+    GnoteSyncClient *ptr = new GnoteSyncClient;
+    ptr->init(manager);
+    return SyncClient::Ptr(ptr);
+  }
+
+  GnoteSyncClient::GnoteSyncClient()
+  {
+  }
+
+
+  void GnoteSyncClient::init(NoteManagerBase & manager)
   {
     m_local_manifest_file_path = Glib::build_filename(IGnote::conf_dir(), LOCAL_MANIFEST_FILE_NAME);
-    // TODO: Why doesn't OnChanged ever get fired?!
     Glib::RefPtr<Gio::File> manifest = Gio::File::create_for_path(m_local_manifest_file_path);
-    if(manifest != 0) {
+    if(manifest) {
       m_file_watcher = manifest->monitor_file();
       m_file_watcher->signal_changed()
         .connect(sigc::mem_fun(*this, &GnoteSyncClient::on_changed));
@@ -56,7 +67,7 @@ namespace sync {
   }
 
 
-  void GnoteSyncClient::note_deleted_handler(const Note::Ptr & deletedNote)
+  void GnoteSyncClient::note_deleted_handler(const NoteBase::Ptr & deletedNote)
   {
     m_deleted_notes[deletedNote->id()] = deletedNote->get_title();
     m_file_revisions.erase(deletedNote->id());
@@ -85,7 +96,7 @@ namespace sync {
     }
     int revision = -1;
     try {
-      revision = boost::lexical_cast<int>(rev);
+      revision = STRING_TO_INT(rev);
     }
     catch(...) {}
     if(guid != "") {
@@ -150,16 +161,18 @@ namespace sync {
 	    m_last_sync_date = sharp::DateTime::from_iso8601(value);
 	  }
 	  catch(...) {
-	    ERR_OUT("Unparsable last-sync-date element in %s", manifest_path.c_str());
+            /* TRANSLATORS: %s is file */
+	    ERR_OUT(_("Unparsable last-sync-date element in %s"), manifest_path.c_str());
 	  }
 	}
 	else if(reader.get_name() == "last-sync-rev") {
 	  std::string value = reader.read_string();
 	  try {
-	    m_last_sync_rev = boost::lexical_cast<int>(value);
+	    m_last_sync_rev = STRING_TO_INT(value);
 	  }
 	  catch(...) {
-	    ERR_OUT("Unparsable last-sync-rev element in %s", manifest_path.c_str());
+            /* TRANSLATORS: %s is file */
+	    ERR_OUT(_("Unparsable last-sync-rev element in %s"), manifest_path.c_str());
 	  }
 	}
 	else if(reader.get_name() == "server-id") {
@@ -189,7 +202,7 @@ namespace sync {
       xml.write_end_element();
 
       xml.write_start_element("", "last-sync-rev", "");
-      xml.write_string(boost::lexical_cast<std::string>(m_last_sync_rev));
+      xml.write_string(TO_STRING(m_last_sync_rev));
       xml.write_end_element();
 
       xml.write_start_element("", "server-id", "");
@@ -202,7 +215,7 @@ namespace sync {
           noteGuid != m_file_revisions.end(); ++noteGuid) {
 	xml.write_start_element("", "note", "");
 	xml.write_attribute_string("", "guid", "", noteGuid->first);
-	xml.write_attribute_string("", "latest-revision", "", boost::lexical_cast<std::string>(noteGuid->second));
+	xml.write_attribute_string("", "latest-revision", "", TO_STRING(noteGuid->second));
 	xml.write_end_element();
       }
 
@@ -246,7 +259,7 @@ namespace sync {
   }
 
 
-  int GnoteSyncClient::get_revision(const Note::Ptr & note)
+  int GnoteSyncClient::get_revision(const NoteBase::Ptr & note)
   {
     std::string note_guid = note->id();
     std::map<std::string, int>::const_iterator iter = m_file_revisions.find(note_guid);
@@ -259,7 +272,7 @@ namespace sync {
   }
 
 
-  void GnoteSyncClient::set_revision(const Note::Ptr & note, int revision)
+  void GnoteSyncClient::set_revision(const NoteBase::Ptr & note, int revision)
   {
     m_file_revisions[note->id()] = revision;
     // TODO: Should we write on each of these or no?

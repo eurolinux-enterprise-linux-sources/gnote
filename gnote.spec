@@ -1,12 +1,11 @@
 Name:           gnote
-Version:        3.8.1
-Release:        4%{?dist}
+Version:        3.22.1
+Release:        1%{?dist}
 Summary:        Note-taking application
-Group:          User Interface/Desktops
+
 License:        GPLv3+
-URL:            http://live.gnome.org/Gnote
-Source0:        http://ftp.gnome.org/pub/GNOME/sources/gnote/3.8/%{name}-%{version}.tar.xz
-Patch0:         gnote-3.8.1-EL7.3_translations.patch
+URL:            https://wiki.gnome.org/Apps/Gnote
+Source0:        https://download.gnome.org/sources/gnote/3.22/%{name}-%{version}.tar.xz
 
 BuildRequires:  boost-devel
 BuildRequires:  desktop-file-utils
@@ -21,7 +20,6 @@ BuildRequires:  libxml2-devel
 BuildRequires:  libxslt-devel
 BuildRequires:  pcre-devel
 
-
 %description
 Gnote is a desktop note-taking application which is simple and easy to use.
 It lets you organize your notes intelligently by allowing you to easily link
@@ -30,20 +28,20 @@ and consumes fewer resources.
 
 %prep
 %setup -q
-%patch0 -p1 -b .translations
 
 %build
 %configure --disable-static --with-gnu-ld
 V=1 make %{?_smp_mflags}
 
 %install
-make install DESTDIR=%{buildroot}
-
-desktop-file-validate %{buildroot}%{_datadir}/applications/gnote.desktop
+%make_install
 
 find %{buildroot} -type f -name "*.la" -delete
 
 %find_lang %{name} --with-gnome
+
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/gnote.desktop
 
 %post
 /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
@@ -62,19 +60,29 @@ fi
 /usr/bin/gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
 
 %files -f %{name}.lang
-%doc COPYING README TODO NEWS AUTHORS
+%license COPYING
+%doc README TODO NEWS AUTHORS
 %{_bindir}/gnote
 %{_mandir}/man1/gnote.1.gz
 %{_datadir}/applications/gnote.desktop
 %{_datadir}/gnote/
 %{_datadir}/icons/hicolor/*/apps/gnote.png
 %{_datadir}/icons/hicolor/scalable/apps/gnote.svg
-%{_prefix}/%{_lib}/gnote/
-%{_prefix}/%{_lib}/libgnote*
+%exclude %{_libdir}/libgnote.so
+%{_libdir}/gnote/
+%{_libdir}/libgnote*
 %{_datadir}/dbus-1/services/org.gnome.Gnote.service
 %{_datadir}/glib-2.0/schemas/org.gnome.gnote.gschema.xml
+%dir %{_datadir}/gnome-shell/
+%dir %{_datadir}/gnome-shell/search-providers/
+%{_datadir}/gnome-shell/search-providers/gnote-search-provider.ini
+%{_datadir}/appdata/%{name}.appdata.xml
 
 %changelog
+* Tue Mar  7 2017 Matthias Clasen <mclasen@redhat.com> - 3.22.1-1
+- Rebase to 3.22.1
+  Resolves: rhbz#1386971
+
 * Fri Jul 01 2016 Kalev Lember <klember@redhat.com> - 3.8.1-4
 - Update translations
 - Resolves: #1030355

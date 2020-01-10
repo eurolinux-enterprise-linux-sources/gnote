@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2013 Aurimas Cernius
+ * Copyright (C) 2010-2016 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  * Copyright (C) 2009 Hubert Figuiere
  *
@@ -26,6 +26,7 @@
 #include <boost/bind.hpp>
 #include <glibmm/i18n.h>
 #include <gtkmm/alignment.h>
+#include <gtkmm/headerbar.h>
 #include <gtkmm/image.h>
 #include <gtkmm/separatormenuitem.h>
 #include <gtkmm/stock.h>
@@ -33,34 +34,34 @@
 #include "debug.hpp"
 #include "iactionmanager.hpp"
 #include "ignote.hpp"
-#include "iconmanager.hpp"
 #include "note.hpp"
 #include "notemanager.hpp"
 #include "notewindow.hpp"
 #include "recentchanges.hpp"
 #include "sharp/string.hpp"
 
-
 namespace gnote {
 
   NoteRecentChanges::NoteRecentChanges(NoteManager& m)
-    : MainWindow(_("Notes"))
+    : MainWindow(_("Gnote"))
     , m_note_manager(m)
     , m_search_notes_widget(m)
-    , m_content_vbox(false, 0)
+    , m_search_box(0.5, 0.5, 0.0, 1.0)
     , m_mapped(false)
     , m_entry_changed_timeout(NULL)
-    , m_window_menu_search(NULL)
-    , m_window_menu_note(NULL)
+    , m_window_menu_embedded(NULL)
     , m_window_menu_default(NULL)
+    , m_keybinder(get_accel_group())
   {
+    Glib::RefPtr<Gio::Settings> settings = Preferences::obj().get_schema_settings(Preferences::SCHEMA_GNOTE);
+    m_open_notes_in_new_window = settings->get_boolean(Preferences::OPEN_NOTES_IN_NEW_WINDOW);
+    m_close_note_on_escape = settings->get_boolean(Preferences::ENABLE_CLOSE_NOTE_ON_ESCAPE);
     set_default_size(450,400);
     set_resizable(true);
-    set_hide_titlebar_when_maximized(true);
-    if(Preferences::obj().get_schema_settings(Preferences::SCHEMA_GNOTE)->get_boolean(
-         Preferences::MAIN_WINDOW_MAXIMIZED)) {
+    if(settings->get_boolean(Preferences::MAIN_WINDOW_MAXIMIZED)) {
       maximize();
     }
+    settings->signal_changed().connect(sigc::mem_fun(*this, &NoteRecentChanges::on_settings_changed));
 
     set_has_resize_grip(true);
 
@@ -68,10 +69,23 @@ namespace gnote {
       .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_open_note));
     m_search_notes_widget.signal_open_note_new_window
       .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_open_note_new_window));
+    m_search_notes_widget.notes_widget().signal_key_press_event()
+      .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_notes_widget_key_press));
 
-    Gtk::Box *toolbar = make_toolbar();
-    m_content_vbox.pack_start(*toolbar, false, false, 0);
-    m_content_vbox.pack_start(m_embed_box, true, true, 0);
+    make_header_bar();
+    make_search_box();
+    m_content_vbox.set_orientation(Gtk::ORIENTATION_VERTICAL);
+    int content_y_attach = 0;
+    if(use_client_side_decorations()) {
+      set_titlebar(*static_cast<Gtk::HeaderBar*>(m_header_bar));
+    }
+    else {
+      m_content_vbox.attach(*m_header_bar, 0, content_y_attach++, 1, 1);
+    }
+    m_content_vbox.attach(m_search_box, 0, content_y_attach++, 1, 1);
+    m_content_vbox.attach(m_embed_box, 0, content_y_attach++, 1, 1);
+    m_embed_box.set_hexpand(true);
+    m_embed_box.set_vexpand(true);
     m_embed_box.show();
     m_content_vbox.show ();
 
@@ -80,16 +94,36 @@ namespace gnote {
     signal_key_press_event()
       .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_key_pressed));
     IGnote::obj().signal_quit
-      .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_close_window));// to save size/pos
+      .connect(sigc::mem_fun(*this, &NoteRecentChanges::close_window));// to save size/pos
+    m_keybinder.add_accelerator(sigc::mem_fun(*this, &NoteRecentChanges::close_window),
+                                GDK_KEY_W, Gdk::CONTROL_MASK, (Gtk::AccelFlags)0);
+    m_keybinder.add_accelerator(sigc::mem_fun(*this, &NoteRecentChanges::close_window),
+                                GDK_KEY_Q, Gdk::CONTROL_MASK, (Gtk::AccelFlags)0);
+
+    std::map<Glib::ustring, const Glib::VariantType*> actions = IActionManager::obj().get_main_window_actions();
+    for(std::map<Glib::ustring, const Glib::VariantType*>::iterator iter = actions.begin();
+        iter != actions.end(); ++iter) {
+      MainWindowAction::Ptr action;
+      if(iter->second == NULL) {
+        add_action(action = MainWindowAction::create(iter->first));
+      }
+      else if(iter->second == &Glib::Variant<bool>::variant_type()) {
+        add_action(action = MainWindowAction::create(iter->first, false));
+      }
+      else if(iter->second == &Glib::Variant<gint32>::variant_type()) {
+        add_action(action = MainWindowAction::create(iter->first, 0));
+      }
+      else if(iter->second == &Glib::Variant<Glib::ustring>::variant_type()) {
+        add_action(action = MainWindowAction::create(iter->first, Glib::ustring("")));
+      }
+      if(action) {
+        action->is_modifying(IActionManager::obj().is_modifying_main_window_action(iter->first));
+      }
+    }
+    find_action("close-window")->signal_activate()
+      .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_close_window));
 
     embed_widget(m_search_notes_widget);
-
-    IActionManager::obj().signal_main_window_search_actions_changed
-      .connect(boost::bind(sigc::mem_fun(*this, &NoteRecentChanges::on_main_window_actions_changed),
-                           &m_window_menu_search));
-    IActionManager::obj().signal_main_window_note_actions_changed
-      .connect(boost::bind(sigc::mem_fun(*this, &NoteRecentChanges::on_main_window_actions_changed),
-                           &m_window_menu_note));
   }
 
 
@@ -101,63 +135,184 @@ namespace gnote {
     if(m_entry_changed_timeout) {
       delete m_entry_changed_timeout;
     }
-    if(m_window_menu_search) {
-      delete m_window_menu_search;
-    }
-    if(m_window_menu_note) {
-      delete m_window_menu_note;
-    }
-    if(m_window_menu_default) {
-      delete m_window_menu_default;
-    }
   }
 
-  Gtk::Box *NoteRecentChanges::make_toolbar()
+  void NoteRecentChanges::make_header_bar()
   {
-    Gtk::Box *toolbar = manage(new Gtk::Box(Gtk::ORIENTATION_HORIZONTAL));
-    toolbar->set_border_width(5);
+    Gtk::Grid *left_box = manage(new Gtk::Grid);
+    left_box->get_style_context()->add_class(GTK_STYLE_CLASS_RAISED);
+    left_box->set_orientation(Gtk::ORIENTATION_HORIZONTAL);
+    left_box->set_valign(Gtk::ALIGN_CENTER);
     m_all_notes_button = manage(new Gtk::Button);
-    m_all_notes_button->set_image(*manage(new Gtk::Image(Gtk::Stock::FIND, Gtk::ICON_SIZE_BUTTON)));
-    m_all_notes_button->set_always_show_image(true);
-    m_all_notes_button->set_label(_("All Notes"));
-    m_all_notes_button->signal_clicked().connect(sigc::mem_fun(*this, &NoteRecentChanges::present_search));
+    Gtk::Image *image = manage(new Gtk::Image);
+    image->property_icon_name() = "go-previous-symbolic";
+    image->property_icon_size() = GTK_ICON_SIZE_MENU;
+    m_all_notes_button->set_image(*image);
+    m_all_notes_button->set_tooltip_text(_("All Notes"));
+    m_all_notes_button->signal_clicked().connect(sigc::mem_fun(*this, &NoteRecentChanges::on_all_notes_button_clicked));
+    m_all_notes_button->add_accelerator("activate", get_accel_group(), GDK_KEY_comma, Gdk::CONTROL_MASK, (Gtk::AccelFlags) 0);
     m_all_notes_button->show_all();
-    toolbar->pack_start(*m_all_notes_button, false, false);
+    left_box->attach(*m_all_notes_button, 0, 0, 1, 1);
 
-    Gtk::Button *button = manage(new Gtk::Button);
-    button->set_image(*manage(new Gtk::Image(IconManager::obj().get_icon(IconManager::NOTE_NEW, 24))));
-    button->set_always_show_image(true);
-    button->set_label(_("New"));
-    button->signal_clicked().connect(sigc::mem_fun(m_search_notes_widget, &SearchNotesWidget::new_note));
-    button->show_all();
-    toolbar->pack_start(*button, false, false);
+    m_new_note_button = manage(new Gtk::Button);
+    m_new_note_button->set_label(_("New"));
+    m_new_note_button->add_accelerator("activate", get_accel_group(), GDK_KEY_N, Gdk::CONTROL_MASK, (Gtk::AccelFlags) 0);
+    m_new_note_button->signal_clicked().connect(sigc::mem_fun(m_search_notes_widget, &SearchNotesWidget::new_note));
+    m_new_note_button->show_all();
+    left_box->attach(*m_new_note_button, 1, 0, 1, 1);
+    left_box->show();
 
+    m_embedded_toolbar.set_margin_left(6);
+    m_embedded_toolbar.set(Gtk::ALIGN_START, Gtk::ALIGN_CENTER, 0, 0);
+    m_embedded_toolbar.show();
+
+    Gtk::Grid *right_box = manage(new Gtk::Grid);
+    right_box->set_orientation(Gtk::ORIENTATION_HORIZONTAL);
+    right_box->set_column_spacing(5);
+    right_box->set_valign(Gtk::ALIGN_CENTER);
+    image = manage(new Gtk::Image);
+    image->property_icon_name() = "edit-find-symbolic";
+    image->property_icon_size() = GTK_ICON_SIZE_MENU;
+    m_search_button.set_image(*image);
+    m_search_button.signal_toggled().connect(sigc::mem_fun(*this, &NoteRecentChanges::on_search_button_toggled));
+    m_search_button.add_accelerator("activate", get_accel_group(), GDK_KEY_F, Gdk::CONTROL_MASK, (Gtk::AccelFlags) 0);
+    m_search_button.set_tooltip_text(_("Search"));
+    m_search_button.show_all();
+    right_box->attach(m_search_button, 0, 0, 1, 1);
+
+    m_window_actions_button = manage(new Gtk::Button);
+    image = manage(new Gtk::Image);
+    image->property_icon_name() = "emblem-system-symbolic";
+    image->property_icon_size() = GTK_ICON_SIZE_MENU;
+    m_window_actions_button->set_image(*image);
+    m_window_actions_button->signal_clicked().connect(
+      sigc::mem_fun(*this, &NoteRecentChanges::on_show_window_menu));
+    m_window_actions_button->add_accelerator(
+      "activate", get_accel_group(), GDK_KEY_F10, (Gdk::ModifierType) 0, (Gtk::AccelFlags) 0);
+    m_window_actions_button->show_all();
+    right_box->attach(*m_window_actions_button, 1, 0, 1, 1);
+    right_box->show();
+
+    if(use_client_side_decorations()) {
+      Gtk::HeaderBar *header_bar = manage(new Gtk::HeaderBar);
+      header_bar->set_show_close_button(true);
+      header_bar->pack_start(*left_box);
+      header_bar->pack_end(*right_box);
+      header_bar->pack_end(m_embedded_toolbar);
+      m_header_bar = header_bar;
+    }
+    else {
+      Gtk::Grid *header_bar = manage(new Gtk::Grid);
+      header_bar->set_margin_left(5);
+      header_bar->set_margin_right(5);
+      header_bar->set_margin_top(5);
+      header_bar->set_margin_bottom(5);
+      header_bar->attach(*left_box, 0, 0, 1, 1);
+      left_box->set_hexpand(true);
+      header_bar->attach(m_embedded_toolbar, 2, 0, 1, 1);
+      header_bar->attach(*right_box, 3, 0, 1, 1);
+      m_header_bar = header_bar;
+    }
+
+    m_header_bar->show();
+  }
+
+  void NoteRecentChanges::make_search_box()
+  {
     m_search_entry.set_activates_default(false);
     m_search_entry.set_size_request(300);
+    m_search_entry.signal_key_press_event()
+      .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_entry_key_pressed), false);
     m_search_entry.signal_changed()
       .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_entry_changed));
     m_search_entry.signal_activate()
       .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_entry_activated));
-    Gtk::Alignment *alignment = manage(new Gtk::Alignment(Gtk::ALIGN_CENTER, Gtk::ALIGN_CENTER, 0));
-    alignment->add(m_search_entry);
-    alignment->show_all();
-    toolbar->pack_start(*alignment, true, true);
+    m_search_entry.show();
 
-    button = manage(new Gtk::Button);
-    button->set_image(*manage(new Gtk::Image(IconManager::obj().get_icon("emblem-system-symbolic", 24))));
-    button->set_always_show_image(true);
-    button->signal_clicked().connect(
-      boost::bind(sigc::mem_fun(*this, &NoteRecentChanges::on_show_window_menu), button));
-    button->show_all();
-    toolbar->pack_end(*button, false, false);
+    Gtk::Grid *grid = manage(new Gtk::Grid);
+    grid->set_margin_left(5);
+    grid->set_margin_right(5);
+    grid->set_hexpand(false);
+    grid->attach(m_search_entry, 0, 0, 1, 1);
 
-    toolbar->show();
-    return toolbar;
+    m_find_next_prev_box.set_margin_left(5);
+
+    Gtk::Button *find_next_button = manage(new Gtk::Button(_("Find _Next"), true));
+    find_next_button->set_image(*manage(new Gtk::Image(Gtk::Stock::GO_FORWARD, Gtk::ICON_SIZE_MENU)));
+    find_next_button->set_always_show_image(true);
+    find_next_button->signal_clicked()
+      .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_find_next_button_clicked));
+    find_next_button->add_accelerator("activate", get_accel_group(), GDK_KEY_Return, (Gdk::ModifierType)0, (Gtk::AccelFlags) 0);
+    find_next_button->show();
+    m_find_next_prev_box.attach(*find_next_button, 0, 0, 1, 1);
+
+    Gtk::Button *find_prev_button = manage(new Gtk::Button(_("Find _Previous"), true));
+    find_prev_button->set_image(*manage(new Gtk::Image(Gtk::Stock::GO_BACK, Gtk::ICON_SIZE_MENU)));
+    find_prev_button->set_always_show_image(true);
+    find_prev_button->signal_clicked()
+      .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_find_prev_button_clicked));
+    find_prev_button->add_accelerator("activate", get_accel_group(), GDK_KEY_Return, Gdk::SHIFT_MASK, (Gtk::AccelFlags) 0);
+    find_prev_button->show();
+    m_find_next_prev_box.attach(*find_prev_button, 1, 0, 1, 1);
+
+    grid->attach(m_find_next_prev_box, 1, 0, 1, 1);
+    grid->show();
+
+    m_search_box.add(*grid);
+    m_search_box.set_hexpand(true);
+  }
+
+  void NoteRecentChanges::on_search_button_toggled()
+  {
+    if(m_search_button.get_active()) {
+      show_search_bar();
+    }
+    else {
+      m_search_box.hide();
+      SearchableItem *searchable_widget = dynamic_cast<SearchableItem*>(currently_embedded());
+      if(searchable_widget) {
+        searchable_widget->perform_search("");
+      }
+    }
+  }
+
+  void NoteRecentChanges::on_find_next_button_clicked()
+  {
+    SearchableItem *searchable_widget = dynamic_cast<SearchableItem*>(currently_embedded());
+    if(searchable_widget) {
+      searchable_widget->goto_next_result();
+    }
+  }
+
+  void NoteRecentChanges::on_find_prev_button_clicked()
+  {
+    SearchableItem *searchable_widget = dynamic_cast<SearchableItem*>(currently_embedded());
+    if(searchable_widget) {
+      searchable_widget->goto_previous_result();
+    }
+  }
+
+  void NoteRecentChanges::show_search_bar(bool focus)
+  {
+    if(m_search_box.get_visible()) {
+      return;
+    }
+    m_search_box.show();
+    if(focus) {
+      m_search_entry.grab_focus();
+    }
+    Glib::ustring text = m_search_entry.get_text();
+    if(text != "") {
+      SearchableItem *searchable_widget = dynamic_cast<SearchableItem*>(currently_embedded());
+      if(searchable_widget) {
+        searchable_widget->perform_search(text);
+      }
+    }
   }
 
   void NoteRecentChanges::present_search()
   {
-    utils::EmbeddableWidget *current = currently_embedded();
+    EmbeddableWidget *current = currently_embedded();
     if(&m_search_notes_widget == dynamic_cast<SearchNotesWidget*>(current)) {
       return;
     }
@@ -169,7 +324,7 @@ namespace gnote {
 
   void NoteRecentChanges::present_note(const Note::Ptr & note)
   {
-    embed_widget(*note->get_window());
+    embed_widget(*note->create_window());
   }
 
 
@@ -181,21 +336,26 @@ namespace gnote {
       search_wgt->new_note();
     }
     else {
-      present_note(m_note_manager.create());
+      present_note(static_pointer_cast<Note>(m_note_manager.create()));
     }
   }
 
 
   void NoteRecentChanges::on_open_note(const Note::Ptr & note)
   {
-    present_note(note);
+    if(m_open_notes_in_new_window) {
+      on_open_note_new_window(note);
+    }
+    else {
+      if(!present_active(note)) {
+        present_note(note);
+      }
+    }
   }
 
   void NoteRecentChanges::on_open_note_new_window(const Note::Ptr & note)
   {
-    MainWindow & window = IGnote::obj().new_main_window();
-    window.present();
-    window.present_note(note);
+    present_in_new_window(note, m_close_note_on_escape);
   }
 
   void NoteRecentChanges::on_delete_note()
@@ -205,15 +365,19 @@ namespace gnote {
 
 
 
-  void NoteRecentChanges::on_close_window()
+  void NoteRecentChanges::close_window()
   {
-    Preferences::obj().get_schema_settings(Preferences::SCHEMA_GNOTE)->set_boolean(
-        Preferences::MAIN_WINDOW_MAXIMIZED,
-        get_window()->get_state() & Gdk::WINDOW_STATE_MAXIMIZED);
+    Glib::RefPtr<Gdk::Window> win = get_window();
+    // background window (for tray to work) might not have GDK window
+    if(win) {
+      Preferences::obj().get_schema_settings(Preferences::SCHEMA_GNOTE)->set_boolean(
+          Preferences::MAIN_WINDOW_MAXIMIZED,
+          win->get_state() & Gdk::WINDOW_STATE_MAXIMIZED);
+    }
     std::vector<Gtk::Widget*> current = m_embed_box.get_children();
     for(std::vector<Gtk::Widget*>::iterator iter = current.begin();
         iter != current.end(); ++iter) {
-      utils::EmbeddableWidget *widget = dynamic_cast<utils::EmbeddableWidget*>(*iter);
+      EmbeddableWidget *widget = dynamic_cast<EmbeddableWidget*>(*iter);
       if(widget) {
         background_embedded(*widget);
       }
@@ -223,9 +387,21 @@ namespace gnote {
   }
 
 
+  bool NoteRecentChanges::is_search()
+  {
+    return &m_search_notes_widget == currently_embedded();
+  }
+
+
+  void NoteRecentChanges::on_close_window(const Glib::VariantBase&)
+  {
+    close_window();
+  }
+
+
   bool NoteRecentChanges::on_delete(GdkEventAny *)
   {
-    on_close_window();
+    close_window();
     return true;
   }
 
@@ -233,12 +409,16 @@ namespace gnote {
   {
     switch (ev->keyval) {
     case GDK_KEY_Escape:
-      // Allow Escape to close the window
-      if(&m_search_notes_widget == dynamic_cast<SearchNotesWidget*>(currently_embedded())) {
-        on_close_window();
+      if(m_search_button.get_active()) {
+        m_search_entry.set_text("");
+        m_search_button.set_active(false);
       }
-      else {
-        utils::EmbeddableWidget *current_item = currently_embedded();
+      // Allow Escape to close the window
+      else if(close_on_escape()) {
+        close_window();
+      }
+      else if(m_close_note_on_escape) {
+        EmbeddableWidget *current_item = currently_embedded();
         if(current_item) {
           background_embedded(*current_item);
         }
@@ -260,14 +440,21 @@ namespace gnote {
     // Select "All Notes" in the notebooks list
     m_search_notes_widget.select_all_notes_notebook();
 
+    EmbeddableWidget *widget = NULL;
     if(m_embed_box.get_children().size() == 0 && m_embedded_widgets.size() > 0) {
-      foreground_embedded(**m_embedded_widgets.rbegin());
+      widget = *m_embedded_widgets.rbegin();
+      foreground_embedded(*widget);
     }
-    std::vector<Gtk::Widget*> embedded = m_embed_box.get_children();
-    if(embedded.size() == 1 && embedded.front() == &m_search_notes_widget) {
-      m_search_entry.grab_focus();
-    }
+
     MainWindow::on_show();
+
+    if(widget) {
+      int x = 0, y = 0;
+      widget->hint_position(x, y);
+      if(x && y) {
+        move(x, y);
+      }
+    }
   }
 
   void NoteRecentChanges::set_search_text(const std::string & value)
@@ -275,23 +462,29 @@ namespace gnote {
     m_search_entry.set_text(value);
   }
 
-  void NoteRecentChanges::embed_widget(utils::EmbeddableWidget & widget)
+  void NoteRecentChanges::embed_widget(EmbeddableWidget & widget)
   {
     if(std::find(m_embedded_widgets.begin(), m_embedded_widgets.end(), &widget) == m_embedded_widgets.end()) {
       widget.embed(this);
       m_embedded_widgets.push_back(&widget);
     }
-    utils::EmbeddableWidget *current = currently_embedded();
-    if(current && current != &widget) {
+    EmbeddableWidget *current = currently_embedded();
+    if(current == &widget) {
+      return;
+    }
+    if(current) {
       background_embedded(*current);
     }
-    foreground_embedded(widget);
+
+   if(get_visible()) {
+      foreground_embedded(widget);
+    }
   }
 
-  void NoteRecentChanges::unembed_widget(utils::EmbeddableWidget & widget)
+  void NoteRecentChanges::unembed_widget(EmbeddableWidget & widget)
   {
     bool show_other = false;
-    std::list<utils::EmbeddableWidget*>::iterator iter = std::find(
+    std::list<EmbeddableWidget*>::iterator iter = std::find(
       m_embedded_widgets.begin(), m_embedded_widgets.end(), &widget);
     if(iter != m_embedded_widgets.end()) {
       if(is_foreground(**iter)) {
@@ -306,51 +499,89 @@ namespace gnote {
 	foreground_embedded(**m_embedded_widgets.rbegin());
       }
       else if(get_visible()) {
-        on_close_window();
+        close_window();
       }
     }
   }
 
-  void NoteRecentChanges::foreground_embedded(utils::EmbeddableWidget & widget)
+  void NoteRecentChanges::foreground_embedded(EmbeddableWidget & widget)
   {
     try {
       if(currently_embedded() == &widget) {
         return;
       }
       Gtk::Widget &wid = dynamic_cast<Gtk::Widget&>(widget);
-      m_embed_box.pack_start(wid, true, true, 0);
-      widget.foreground();
+      m_embed_box.add(wid);
       wid.show();
+      widget.foreground();
+
+      bool maximized = Preferences::obj().get_schema_settings(Preferences::SCHEMA_GNOTE)->get_boolean(
+        Preferences::MAIN_WINDOW_MAXIMIZED);
+      if(get_realized()) {
+        //if window is showing, use actual state
+        maximized = get_window()->get_state() & Gdk::WINDOW_STATE_MAXIMIZED;
+      }
+      int width = 0, height = 0;
+      widget.hint_size(width, height);
+      if(width && height) {
+        set_default_size(width, height);
+        if(!maximized && get_visible()) {
+          resize(width, height);
+        }
+      }
+      widget.size_internals();
+ 
       update_toolbar(widget);
-      on_embedded_name_changed(widget.get_name());
-      m_current_embedded_name_slot = widget.signal_name_changed
-        .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_embedded_name_changed));
+      if(&widget == &m_search_notes_widget) {
+        set_title(_("Gnote"));
+      }
+      else {
+        set_title(widget.get_name());
+        m_current_embedded_name_slot = widget.signal_name_changed
+          .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_embedded_name_changed));
+      }
+    }
+    catch(std::bad_cast&) {
+    }
+
+    try {
+      HasActions &has_actions = dynamic_cast<HasActions&>(widget);
+      if(m_window_menu_embedded) {
+        m_window_menu_embedded = NULL;
+      }
+      m_signal_popover_widgets_changed_cid = has_actions.signal_popover_widgets_changed
+        .connect(sigc::mem_fun(*this, &NoteRecentChanges::on_popover_widgets_changed));
     }
     catch(std::bad_cast&) {
     }
   }
 
-  void NoteRecentChanges::background_embedded(utils::EmbeddableWidget & widget)
+  void NoteRecentChanges::background_embedded(EmbeddableWidget & widget)
   {
     try {
       if(currently_embedded() != &widget) {
         return;
       }
-      m_current_embedded_name_slot.disconnect();
       Gtk::Widget &wid = dynamic_cast<Gtk::Widget&>(widget);
       widget.background();
       m_embed_box.remove(wid);
+      m_signal_popover_widgets_changed_cid.disconnect();
+      m_current_embedded_name_slot.disconnect();
+
+      if(m_window_menu_embedded) {
+        m_window_menu_embedded = NULL;
+      }
     }
     catch(std::bad_cast&) {
     }
+
+    m_embedded_toolbar.remove();
   }
 
-  bool NoteRecentChanges::is_foreground(utils::EmbeddableWidget & widget)
+  bool NoteRecentChanges::contains(EmbeddableWidget & widget)
   {
-    std::vector<Gtk::Widget*> current = m_embed_box.get_children();
-    for(std::vector<Gtk::Widget*>::iterator iter = current.begin();
-        iter != current.end(); ++iter) {
-      if(dynamic_cast<utils::EmbeddableWidget*>(*iter) == &widget) {
+    FOREACH(EmbeddableWidget *wgt, m_embedded_widgets) {
+      if(dynamic_cast<EmbeddableWidget*>(wgt) == &widget) {
         return true;
       }
     }
@@ -358,10 +589,45 @@ namespace gnote {
     return false;
   }
 
-  utils::EmbeddableWidget *NoteRecentChanges::currently_embedded()
+  bool NoteRecentChanges::is_foreground(EmbeddableWidget & widget)
+  {
+    FOREACH(Gtk::Widget *wgt, m_embed_box.get_children()) {
+      if(dynamic_cast<EmbeddableWidget*>(wgt) == &widget) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  void NoteRecentChanges::add_action(const MainWindowAction::Ptr & action)
+  {
+    m_actions[action->get_name()] = action;
+    MainWindow::add_action(action);
+  }
+
+  MainWindowAction::Ptr NoteRecentChanges::find_action(const Glib::ustring & name)
+  {
+    std::map<Glib::ustring, MainWindowAction::Ptr>::iterator iter = m_actions.find(name);
+    if(iter != m_actions.end()) {
+      return iter->second;
+    }
+    return MainWindowAction::Ptr();
+  }
+
+  void NoteRecentChanges::enabled(bool is_enabled)
+  {
+    for(auto & iter : m_actions) {
+      if(iter.second->is_modifying()) {
+        iter.second->set_enabled(is_enabled);
+      }
+    }
+  }
+
+  EmbeddableWidget *NoteRecentChanges::currently_embedded()
   {
     std::vector<Gtk::Widget*> children = m_embed_box.get_children();
-    return children.size() ? dynamic_cast<utils::EmbeddableWidget*>(children[0]) : NULL;
+    return children.size() ? dynamic_cast<EmbeddableWidget*>(children[0]) : NULL;
   }
 
   bool NoteRecentChanges::on_map_event(GdkEventAny *evt)
@@ -371,18 +637,22 @@ namespace gnote {
     return res;
   }
 
-  void NoteRecentChanges::on_embedded_name_changed(const std::string & name)
+  bool NoteRecentChanges::on_entry_key_pressed(GdkEventKey *event)
   {
-    std::string title;
-    if(name != "") {
-      title = "[" + name + "] - ";
+    switch(event->keyval) {
+    case GDK_KEY_Escape:
+      m_search_entry.set_text("");
+      m_search_button.set_active(false);
     }
-    title += _("Notes");
-    set_title(title);
+
+    return false;
   }
 
   void NoteRecentChanges::on_entry_changed()
   {
+    if(!m_search_box.get_visible()) {
+      return;
+    }
     if(m_entry_changed_timeout == NULL) {
       m_entry_changed_timeout = new utils::InterruptableTimeout();
       m_entry_changed_timeout->signal_timeout
@@ -391,7 +661,10 @@ namespace gnote {
 
     std::string search_text = get_search_text();
     if(search_text.empty()) {
-      m_search_notes_widget.perform_search(search_text);
+      SearchableItem *searchable_widget = dynamic_cast<SearchableItem*>(currently_embedded());
+      if(searchable_widget) {
+        searchable_widget->perform_search(search_text);
+      }
     }
     else {
       m_entry_changed_timeout->reset(500);
@@ -409,12 +682,18 @@ namespace gnote {
 
   void NoteRecentChanges::entry_changed_timeout()
   {
+    if(!m_search_box.get_visible()) {
+      return;
+    }
     std::string search_text = get_search_text();
     if(search_text.empty()) {
       return;
     }
 
-    m_search_notes_widget.perform_search(search_text);
+    SearchableItem *searchable_widget = dynamic_cast<SearchableItem*>(currently_embedded());
+    if(searchable_widget) {
+      searchable_widget->perform_search(search_text);
+    }
   }
 
   std::string NoteRecentChanges::get_search_text()
@@ -424,71 +703,164 @@ namespace gnote {
     return text;
   }
 
-  void NoteRecentChanges::update_toolbar(utils::EmbeddableWidget & widget)
+  void NoteRecentChanges::update_toolbar(EmbeddableWidget & widget)
   {
     bool search = dynamic_cast<SearchNotesWidget*>(&widget) == &m_search_notes_widget;
-    m_all_notes_button->set_sensitive(!search);
-    m_search_entry.set_visible(search);
+    m_all_notes_button->set_visible(!search);
+    m_new_note_button->set_visible(search);
+
+    try {
+      SearchableItem & searchable_item = dynamic_cast<SearchableItem&>(widget);
+      m_search_button.show();
+      if(searchable_item.supports_goto_result()) {
+        m_find_next_prev_box.show();
+      }
+      else {
+        m_find_next_prev_box.hide();
+      }
+      searchable_item.perform_search(m_search_button.get_active() ? m_search_entry.get_text() : "");
+    }
+    catch(std::bad_cast &) {
+      m_search_button.set_active(false);
+      m_search_button.hide();
+    }
+
+    try {
+      HasEmbeddableToolbar & toolbar_provider = dynamic_cast<HasEmbeddableToolbar&>(widget);
+      Gtk::Widget *tool_item = toolbar_provider.embeddable_toolbar();
+      if(tool_item) {
+        m_embedded_toolbar.add(*tool_item);
+      }
+    }
+    catch(std::bad_cast &) {
+    }
   }
 
-  void NoteRecentChanges::on_show_window_menu(Gtk::Button *button)
+  void NoteRecentChanges::on_all_notes_button_clicked()
   {
-    std::vector<Gtk::MenuItem*> items;
-    if(dynamic_cast<SearchNotesWidget*>(currently_embedded()) == &m_search_notes_widget) {
-      if(!m_window_menu_search) {
-        m_window_menu_search = make_window_menu(button,
-            make_menu_items(items, IActionManager::obj().get_main_window_search_actions()));
+    close_on_escape(false);  // intentional switch to search, user probably want to work more with this window
+    present_search();
+  }
+
+  void NoteRecentChanges::on_show_window_menu()
+  {
+    HasActions *embed_with_actions = dynamic_cast<HasActions*>(currently_embedded());
+    if(embed_with_actions) {
+      if(m_window_menu_embedded == NULL) {
+        m_window_menu_embedded = make_window_menu(m_window_actions_button, embed_with_actions->get_popover_widgets());
       }
-      utils::popup_menu(*m_window_menu_search, NULL);
-    }
-    else if(dynamic_cast<NoteWindow*>(currently_embedded())) {
-      if(!m_window_menu_note) {
-        m_window_menu_note = make_window_menu(button,
-            make_menu_items(items, IActionManager::obj().get_main_window_note_actions()));
-      }
-      utils::popup_menu(*m_window_menu_note, NULL);
+      m_window_menu_embedded->show_all();
     }
     else {
-      if(!m_window_menu_default) {
-        m_window_menu_default = make_window_menu(button, items);
+      if(m_window_menu_default == NULL) {
+        m_window_menu_default = make_window_menu(m_window_actions_button, std::vector<Gtk::Widget*>());
       }
-      utils::popup_menu(*m_window_menu_default, NULL);
+      m_window_menu_default->show_all();
     }
   }
 
-  Gtk::Menu *NoteRecentChanges::make_window_menu(Gtk::Button *button, const std::vector<Gtk::MenuItem*> & items)
+  Gtk::PopoverMenu *NoteRecentChanges::make_window_menu(Gtk::Button *button, const std::vector<Gtk::Widget*> & items)
   {
-    Gtk::Menu *menu = new Gtk::Menu;
-    for(std::vector<Gtk::MenuItem*>::const_iterator iter = items.begin(); iter != items.end(); ++iter) {
-      menu->append(**iter);
+    std::map<Glib::ustring, Gtk::Widget*> submenus;
+    Gtk::PopoverMenu *menu = manage(new Gtk::PopoverMenu);
+    Gtk::Grid *main_grid = manage(new Gtk::Grid);
+    int main_top = 0;
+    int top = 0;
+    Gtk::Grid *grid = manage(utils::create_popover_inner_grid(&top));
+    FOREACH(Gtk::Widget *item, items) {
+      if(item) {
+        utils::PopoverSubmenu *submenu = dynamic_cast<utils::PopoverSubmenu*>(item);
+        if(submenu) {
+          submenus[submenu->name()] = item;
+        }
+        else {
+          grid->attach(*manage(item), 0, top++, 1, 1);
+        }
+      }
+      else {
+        main_grid->attach(*grid, 0, main_top++, 1, 1);
+        grid = manage(utils::create_popover_inner_grid(&top));
+      }
     }
-    if(items.size()) {
-      menu->append(*manage(new Gtk::SeparatorMenuItem));
+
+    if(top > 0) {
+      main_grid->attach(*grid, 0, main_top++, 1, 1);
+      grid = manage(utils::create_popover_inner_grid(&top));
     }
-    Gtk::MenuItem *item = manage(new Gtk::MenuItem(_("_Close"), true));
-    item->signal_activate().connect(sigc::mem_fun(*this, &NoteRecentChanges::on_close_window));
-    menu->append(*item);
-    menu->property_attach_widget() = button;
-    menu->show_all();
+
+    Gtk::Widget *close_item = manage(utils::create_popover_button("win.close-window", _("_Close")));
+    close_item->add_accelerator("activate", get_accel_group(), GDK_KEY_W, Gdk::CONTROL_MASK, Gtk::ACCEL_VISIBLE);
+    close_item->add_accelerator("activate", get_accel_group(), GDK_KEY_Q, Gdk::CONTROL_MASK, Gtk::ACCEL_VISIBLE);
+    grid->attach(*close_item, 0, top++, 1, 1);
+
+    main_grid->attach(*grid, 0, main_top++, 1, 1);
+    menu->add(*main_grid);
+    for(auto & submenu : submenus) {
+      menu->add(*submenu.second);
+      menu->child_property_submenu(*submenu.second) = submenu.first;
+    }
+    menu->set_relative_to(*button);
+    menu->set_modal(true);
+    menu->set_position(Gtk::POS_BOTTOM);
     return menu;
   }
 
-  std::vector<Gtk::MenuItem*> & NoteRecentChanges::make_menu_items(std::vector<Gtk::MenuItem*> & items,
-    const std::vector<Glib::RefPtr<Gtk::Action> > & actions)
+  void NoteRecentChanges::on_embedded_name_changed(const std::string & name)
   {
-    for(std::vector<Glib::RefPtr<Gtk::Action> >::const_iterator iter = actions.begin(); iter != actions.end(); ++iter) {
-      Gtk::MenuItem *item = manage(new Gtk::MenuItem);
-      item->set_related_action(*iter);
-      items.push_back(item);
-    }
-    return items;
+    set_title(name);
   }
 
-  void NoteRecentChanges::on_main_window_actions_changed(Gtk::Menu **menu)
+  void NoteRecentChanges::on_popover_widgets_changed()
   {
-    if(*menu) {
-      delete *menu;
-      *menu = NULL;
+    if(m_window_menu_embedded) {
+      m_window_menu_embedded = NULL;
+    }
+  }
+
+  void NoteRecentChanges::on_settings_changed(const Glib::ustring & key)
+  {
+    if(key == Preferences::OPEN_NOTES_IN_NEW_WINDOW) {
+      m_open_notes_in_new_window = Preferences::obj().get_schema_settings(
+        Preferences::SCHEMA_GNOTE)->get_boolean(Preferences::OPEN_NOTES_IN_NEW_WINDOW);
+    }
+    else if(key == Preferences::ENABLE_CLOSE_NOTE_ON_ESCAPE) {
+      m_close_note_on_escape = Preferences::obj().get_schema_settings(
+        Preferences::SCHEMA_GNOTE)->get_boolean(Preferences::ENABLE_CLOSE_NOTE_ON_ESCAPE);
+    }
+  }
+
+  bool NoteRecentChanges::on_notes_widget_key_press(GdkEventKey *evt)
+  {
+    switch(evt->keyval) {
+    case GDK_KEY_Escape:
+    case GDK_KEY_Delete:
+    case GDK_KEY_Tab:
+      return false;
+    case GDK_KEY_BackSpace:
+      if(m_search_button.get_active()) {
+        Glib::ustring s = m_search_entry.get_text();
+        if(s.size()) {
+          m_search_entry.set_text(s.substr(0, s.size() - 1));
+        }
+      }
+      return false;
+    default:
+      {
+        guint32 character = gdk_keyval_to_unicode(evt->keyval);
+        if(character) {  // ignore special keys
+          if(!m_search_button.get_active()) {
+            // first show search box, then activate button
+            // because we do not want the box to get selected
+            show_search_bar(false);
+            m_search_button.activate();
+          }
+          Glib::ustring s;
+          s += character;
+          g_signal_emit_by_name(m_search_entry.gobj(), "insert-at-cursor", s.c_str());
+          return true;
+        }
+        return false;
+      }
     }
   }
 

@@ -1,0 +1,13 @@
+[AddinInfo]
+Id=FixedWidthAddin
+_Name=Fixed Width
+_Description=Adds fixed-width font style.
+_Authors=Hubert Figuiere and the Tomboy Project
+Category=Formatting
+Version=0.4
+DefaultEnabled=true
+Module=libfixedwidth
+LibgnoteRelease=3.22
+LibgnoteVersionInfo=1:0:1
+[Actions]
+actions_bool=fixedwidth-enable

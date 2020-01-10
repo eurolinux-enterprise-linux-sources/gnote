@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
-    <desc>Uporabi pisavo sistema s stalno širino</desc>
+    <desc>Use a fixed-width font</desc>
     <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,12 +11,16 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Vstavek Stalna širina</title>
-    <p>Slog stalne širine omogoča uporabo pisave s stalno širino. Za spremembo obstoječega besedila najprej izberite besedilo, ki ga želite spremeniti. Nato izberite možnost <gui>Stalna širina</gui> iz menija <gui>Besedilo</gui>. Možnost <gui>Stalna širina</gui> lahko iz menija <gui>Besedilo</gui> izberete tudi pred začetkom vnašanja besedila.</p>
-    <p>Možnost Stalna širina zagotavlja vstavek Stalna širina.</p>
+    <p>The <app>Fixed Width</app> plugin allows text to use a fixed width font. To change existing text, first select the text you want to modify. Then select <gui>Fixed Width</gui> from the <gui>Text</gui> menu. You can also select <gui>Fixed Width</gui> from the menu before you start typing.</p>
 
 </page>

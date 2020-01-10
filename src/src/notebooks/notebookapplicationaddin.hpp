@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012 Aurimas Cernius
+ * Copyright (C) 2012-2015 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,11 +23,7 @@
 #ifndef __NOTEBOOK_APPLICATION_ADDIN_HPP__
 #define __NOTEBOOK_APPLICATION_ADDIN_HPP__
 
-#include <list>
-
-#include <gdkmm/pixbuf.h>
-#include <gtkmm/actiongroup.h>
-
+#include "base/macros.hpp"
 #include "applicationaddin.hpp"
 #include "note.hpp"
 
@@ -40,29 +36,20 @@ namespace gnote {
     {
     public:
       static ApplicationAddin * create();
-      virtual void initialize ();
-      virtual void shutdown ();
-      virtual bool initialized ();
+      virtual void initialize() override;
+      virtual void shutdown() override;
+      virtual bool initialized() override;
 
     protected:
       NotebookApplicationAddin();
     private:
-      void on_tray_notebook_menu_shown();
-      void on_tray_notebook_menu_hidden();
-      void add_menu_items(Gtk::Menu *, std::list<Gtk::MenuItem*> & menu_items);
-      void remove_menu_items(Gtk::Menu *, std::list<Gtk::MenuItem*> & menu_items);
-      void on_new_notebook_menu_item();
-      void on_tag_added(const Note&, const Tag::Ptr&);
-      void on_tag_removed(const Note::Ptr&, const std::string&);
-      void on_note_added(const Note::Ptr &);
-      void on_note_deleted(const Note::Ptr &);
+      void on_tag_added(const NoteBase&, const Tag::Ptr&);
+      void on_tag_removed(const NoteBase::Ptr&, const std::string&);
+      void on_note_added(const NoteBase::Ptr &);
+      void on_note_deleted(const NoteBase::Ptr &);
       void on_new_notebook_action(const Glib::VariantBase&);
 
       bool m_initialized;
-      guint m_notebookUi;
-      Glib::RefPtr<Gtk::ActionGroup> m_actionGroup;
-      Gtk::Menu                     *m_trayNotebookMenu;
-      std::list<Gtk::MenuItem*>      m_trayNotebookMenuItems;
     };
 
 

@@ -3,30 +3,65 @@
 
   <info>
     <link type="guide" xref="index#advanced"/>
-    <desc>Synchronize Notes</desc>
+    <desc>Notizen abgleichen</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
       <years>2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Synchronization</title>
+  <title>Abgleich</title>
   <section id="description">
-    <title>About synchronization</title>
-    <p><app>Gnote</app> allows you to synchronize notes accross multiple machines, so that you could use it on multiple devices and work with the same notes on all of them.</p>
-    <p>In order to use synchronization, you have to configure it first in <app>Gnote</app> configuration dialog.</p>
-    <p>Notes are synchronized to one location, common to all <app>Gnote</app> installations. This location stores the history of your notes. When synchronizing, each <app>Gnote</app> instance uploads new and updated notes to this location, downloads new and updated notes on other installations. The synchronization location also contains information on deleted notes: when synchronizing, <app>Gnote</app> publishes all deleted notes and deletes the ones, that are published as such. This way multiple <app>Gnote</app> installations can keep the same set of notes.</p>
+    <title>Zum Abgleich</title>
+    <p><app>Gnote</app> ermöglicht es, Notizen auf mehreren Rechnern abzugleichen, damit Sie auf mehreren Geräten mit den selben Notizen arbeiten können.</p>
+    <p>Um das Abgleichen zu verwenden, müssen Sie es zuerst im Einstellungsdialog von <app>Gnote</app> einrichten.</p>
+    <p>Notizen werden mit einem Ort abgeglichen, der für alle Installationen von <app>Gnote</app> gleich ist. Dieser Ort speichert die Chronik Ihrer Notizen. Beim Abgleich lädt jede Instanz von <app>Gnote</app> neue und aktualisierte Notizen zu diesem Ort hoch und lädt neue und aktualisierte Notizen von anderen Installationen herunter. Der Abgleich-Ort enthält auch Informationen über gelöschte Notizen: Beim Abgleichen veröffentlicht <app>Gnote</app> alle gelöschten Notizen und löscht diejenigen, welche als ebensolche veröffentlicht sind. Auf diese Weise können mehrere <app>Gnote</app>-Installationen die selben Notizen halten.</p>
   </section>
   <section id="configuration" style="2column">
-    <title>Configure synchronization</title>
+    <title>Den Abgleich einrichten</title>
   </section>
   <section id="usage">
-    <title>Synchronize</title>
-    <p>To synchronize, select <gui>Synchronize Notes</gui> from application menu. This item is only available, if synchronization is configured.</p>
-    <p>After selected the <gui>Synchronize Notes</gui> menu item, a progress dialog will be displayed, which will let you know, when synchronization is complete. Also, all notes will be disabled for editing while synchronization is in progress.</p>
+    <title>Abgleichen</title>
+    <p>Zum Abgleichen wählen Sie <gui>Notizen abgleichen</gui> im Anwendungsmenü. Dieser Eintrag ist nur verfügbar, wenn ein Abgleichen eingerichtet ist.</p>
+    <p>Nach Auswahl des Menüpunkts <gui>Notizen abgleichen</gui> wird ein Fortschrittsdialog angezeigt, der Auskunft über den Vorgang gibt. Zusätzlich werden alle Notizen während des Abgleichs vor Bearbeitung geschützt.</p>
     <figure>
-      <title>Synchronization progress</title>
+      <title>Fortschritt des Abgleichs</title>
       <media type="image" src="figures/gnote-sync-progress.png" mime="image/png"/>
     </figure>
   </section>

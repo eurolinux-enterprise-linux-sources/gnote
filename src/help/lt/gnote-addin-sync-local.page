@@ -10,15 +10,20 @@
       <name>Aurimas Cernius</name>
       <years>2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Vietinio aplanko sinchronizacija</title>
   <p>Šio tipo sinchronizacija leidžia nustatyti vietinį aplanką kaip sinchronizacijos saugyklą.</p>
-  <p>Šio tipo sinchronizacijai nustatyti, pasirikite „Vietinis aplankas“ iškrentančiame meniu <gui>Tarnyba</gui> ir tuomet pasirinkite pageidaujamą aplanką lauke <gui>Aplanko kelias</gui>.</p>
+  <p>Šio tipo sinchronizacijai nustatyti, pasirinkite <gui>Vietinis aplankas</gui> iškrentančiame meniu <gui>Tarnyba</gui> ir tuomet pasirinkite pageidaujamą aplanką lauke <gui>Aplanko kelias</gui>.</p>
   <figure>
     <title>Vietinio aplanko sinchronizacijos nustatymas</title>
     <media type="image" src="figures/gnote-syncprefs-local.png" mime="image/png"/>
   </figure>
-  <p>Pasirinkę pageidaujamą aplanką spauskite mygtuką <gui>Išsaugoti</gui>. Naudokite mygtuką <gui>Išvalyti</gui> sinchronizacijai išjungti.</p>
+  <p>Pasirinkę pageidaujamą aplanką spauskite mygtuką <gui>Įrašyti</gui>. Naudokite mygtuką <gui>Išvalyti</gui> sinchronizacijai išjungti.</p>
 
 </page>

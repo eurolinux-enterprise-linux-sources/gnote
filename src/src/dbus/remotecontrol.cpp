@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2013 Aurimas Cernius
+ * Copyright (C) 2011-2014,2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -17,6 +17,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+#include <glibmm/i18n.h>
 
 #include "config.h"
 
@@ -56,7 +58,7 @@ namespace gnote {
 
   bool RemoteControl::AddTagToNote(const std::string& uri, const std::string& tag_name)
   {
-    Note::Ptr note = m_manager.find_by_uri (uri);
+    NoteBase::Ptr note = m_manager.find_by_uri(uri);
     if (!note) {
       return false;
     }
@@ -68,9 +70,7 @@ namespace gnote {
 
   std::string RemoteControl::CreateNamedNote(const std::string& linked_title)
   {
-    Note::Ptr note;
-
-    note = m_manager.find (linked_title);
+    NoteBase::Ptr note = m_manager.find(linked_title);
     if (note)
       return "";
 
@@ -79,7 +79,7 @@ namespace gnote {
       return note->uri();
     } 
     catch (const std::exception & e) {
-      ERR_OUT("create throw: %s", e.what());
+      ERR_OUT(_("Exception thrown when creating note: %s"), e.what());
     }
     return "";
   }
@@ -87,7 +87,7 @@ namespace gnote {
   std::string RemoteControl::CreateNote()
   {
     try {
-      Note::Ptr note = m_manager.create ();
+      NoteBase::Ptr note = m_manager.create ();
       return note->uri();
     } 
     catch(...)
@@ -98,9 +98,7 @@ namespace gnote {
 
   bool RemoteControl::DeleteNote(const std::string& uri)
   {
-    Note::Ptr note;
-
-    note = m_manager.find_by_uri (uri);
+    NoteBase::Ptr note = m_manager.find_by_uri(uri);
     if (!note) {
       return false;
     }
@@ -112,9 +110,7 @@ namespace gnote {
 
   bool RemoteControl::DisplayNote(const std::string& uri)
   {
-    Note::Ptr note;
-
-    note = m_manager.find_by_uri (uri);
+    NoteBase::Ptr note = m_manager.find_by_uri(uri);
     if (!note) {
       return false;
     }
@@ -126,20 +122,14 @@ namespace gnote {
 
   bool RemoteControl::DisplayNoteWithSearch(const std::string& uri, const std::string& search)
   {
-    Note::Ptr note;
-
-    note = m_manager.find_by_uri (uri);
+    NoteBase::Ptr note = m_manager.find_by_uri(uri);
     if (!note) {
       return false;
     }
 
-    present_note(note);
-
-    // Pop open the find-bar
-    NoteFindBar & findbar = note->get_window()->get_find_bar();
-    findbar.show_all ();
-    findbar.property_visible() = true;
-    findbar.set_search_text(search);
+    MainWindow & window(present_note(note));
+    window.set_search_text(search);
+    window.show_search_bar();
 
     return true;
   }
@@ -147,7 +137,7 @@ namespace gnote {
 
   void RemoteControl::DisplaySearch()
   {
-    IGnote::obj().open_search_all();
+    IGnote::obj().open_search_all().present();
   }
 
 
@@ -156,19 +146,20 @@ namespace gnote {
     MainWindow & recent_changes = IGnote::obj().get_main_window();
     recent_changes.set_search_text(search_text);
     recent_changes.present();
+    recent_changes.show_search_bar();
   }
 
 
   std::string RemoteControl::FindNote(const std::string& linked_title)
   {
-    Note::Ptr note = m_manager.find (linked_title);
+    NoteBase::Ptr note = m_manager.find(linked_title);
     return (!note) ? "" : note->uri();
   }
 
 
   std::string RemoteControl::FindStartHereNote()
   {
-    Note::Ptr note = m_manager.find_by_uri (m_manager.start_note_uri());
+    NoteBase::Ptr note = m_manager.find_by_uri(m_manager.start_note_uri());
     return (!note) ? "" : note->uri();
   }
 
@@ -180,11 +171,10 @@ namespace gnote {
       return std::vector< std::string >();
 
     std::vector< std::string > tagged_note_uris;
-    std::list<Note *> notes;
+    std::list<NoteBase*> notes;
     tag->get_notes(notes);
-    for (std::list<Note *>::const_iterator iter = notes.begin();
-         iter != notes.end(); ++iter) {
-      tagged_note_uris.push_back((*iter)->uri());
+    FOREACH(NoteBase *iter, notes) {
+      tagged_note_uris.push_back(iter->uri());
     }
     return tagged_note_uris;
   }
@@ -192,8 +182,7 @@ namespace gnote {
 
   int32_t RemoteControl::GetNoteChangeDate(const std::string& uri)
   {
-    Note::Ptr note;
-    note = m_manager.find_by_uri (uri);
+    NoteBase::Ptr note = m_manager.find_by_uri(uri);
     if (!note)
       return -1;
     return note->metadata_change_date().sec();
@@ -202,8 +191,7 @@ namespace gnote {
 
   std::string RemoteControl::GetNoteCompleteXml(const std::string& uri)
   {
-    Note::Ptr note;
-    note = m_manager.find_by_uri (uri);
+    NoteBase::Ptr note = m_manager.find_by_uri(uri);
     if (!note)
       return "";
     return note->get_complete_note_xml();
@@ -213,18 +201,16 @@ namespace gnote {
 
   std::string RemoteControl::GetNoteContents(const std::string& uri)
   {
-    Note::Ptr note;
-    note = m_manager.find_by_uri (uri);
+    NoteBase::Ptr note = m_manager.find_by_uri(uri);
     if (!note)
       return "";
-    return note->text_content();
+    return static_pointer_cast<Note>(note)->text_content();
   }
 
 
   std::string RemoteControl::GetNoteContentsXml(const std::string& uri)
   {
-    Note::Ptr note;
-    note = m_manager.find_by_uri (uri);
+    NoteBase::Ptr note = m_manager.find_by_uri(uri);
     if (!note)
       return "";
     return note->xml_content();
@@ -233,8 +219,7 @@ namespace gnote {
 
   int32_t RemoteControl::GetNoteCreateDate(const std::string& uri)
   {
-    Note::Ptr note;
-    note = m_manager.find_by_uri (uri);
+    NoteBase::Ptr note = m_manager.find_by_uri(uri);
     if (!note)
       return -1;
     return note->create_date().sec();
@@ -243,8 +228,7 @@ namespace gnote {
 
   std::string RemoteControl::GetNoteTitle(const std::string& uri)
   {
-    Note::Ptr note;
-    note = m_manager.find_by_uri (uri);
+    NoteBase::Ptr note = m_manager.find_by_uri(uri);
     if (!note)
       return "";
     return note->get_title();
@@ -253,8 +237,7 @@ namespace gnote {
 
   std::vector< std::string > RemoteControl::GetTagsForNote(const std::string& uri)
   {
-    Note::Ptr note;
-    note = m_manager.find_by_uri (uri);
+    NoteBase::Ptr note = m_manager.find_by_uri(uri);
     if (!note)
       return std::vector< std::string >();
 
@@ -271,12 +254,18 @@ namespace gnote {
 
 bool RemoteControl::HideNote(const std::string& uri)
 {
-  Note::Ptr note;
-  note = m_manager.find_by_uri (uri);
+  NoteBase::Ptr note = m_manager.find_by_uri(uri);
   if (!note)
     return false;
 
-  note->get_window()->hide();
+  NoteWindow *window = static_pointer_cast<Note>(note)->get_window();
+  if(window == NULL) {
+    return true;
+  }
+  MainWindow *win = MainWindow::get_owning(*window);
+  if(win) {
+    win->unembed_widget(*window);
+  }
   return true;
 }
 
@@ -284,9 +273,8 @@ bool RemoteControl::HideNote(const std::string& uri)
 std::vector< std::string > RemoteControl::ListAllNotes()
 {
   std::vector< std::string > uris;
-  for(Note::List::const_iterator iter = m_manager.get_notes().begin();
-      iter != m_manager.get_notes().end(); ++iter) {
-    uris.push_back((*iter)->uri());
+  FOREACH(const NoteBase::Ptr & iter, m_manager.get_notes()) {
+    uris.push_back(iter->uri());
   }
   return uris;
 }
@@ -294,15 +282,15 @@ std::vector< std::string > RemoteControl::ListAllNotes()
 
 bool RemoteControl::NoteExists(const std::string& uri)
 {
-  Note::Ptr note = m_manager.find_by_uri (uri);
-  return note;
+  NoteBase::Ptr note = m_manager.find_by_uri(uri);
+  return note != NULL;
 }
 
 
 bool RemoteControl::RemoveTagFromNote(const std::string& uri, 
                                       const std::string& tag_name)
 {
-  Note::Ptr note = m_manager.find_by_uri (uri);
+  NoteBase::Ptr note = m_manager.find_by_uri(uri);
   if (!note)
     return false;
   Tag::Ptr tag = ITagManager::obj().get_tag(tag_name);
@@ -337,8 +325,7 @@ std::vector< std::string > RemoteControl::SearchNotes(const std::string& query,
 bool RemoteControl::SetNoteCompleteXml(const std::string& uri, 
                                        const std::string& xml_contents)
 {
-  Note::Ptr note;
-  note = m_manager.find_by_uri(uri);
+  NoteBase::Ptr note = m_manager.find_by_uri(uri);
   if(!note) {
     return false;
   }
@@ -351,13 +338,12 @@ bool RemoteControl::SetNoteCompleteXml(const std::string& uri,
 bool RemoteControl::SetNoteContents(const std::string& uri, 
                                     const std::string& text_contents)
 {
-  Note::Ptr note;
-  note = m_manager.find_by_uri(uri);
+  NoteBase::Ptr note = m_manager.find_by_uri(uri);
   if(!note) {
     return false;
   }
 
-  note->set_text_content(text_contents);
+  static_pointer_cast<Note>(note)->set_text_content(text_contents);
   return true;
 }
 
@@ -365,8 +351,7 @@ bool RemoteControl::SetNoteContents(const std::string& uri,
 bool RemoteControl::SetNoteContentsXml(const std::string& uri, 
                                        const std::string& xml_contents)
 {
-  Note::Ptr note;
-  note = m_manager.find_by_uri(uri);
+  NoteBase::Ptr note = m_manager.find_by_uri(uri);
   if(!note) {
     return false;
   }
@@ -382,7 +367,7 @@ std::string RemoteControl::Version()
 
 
 
-void RemoteControl::on_note_added(const Note::Ptr & note)
+void RemoteControl::on_note_added(const NoteBase::Ptr & note)
 {
   if(note) {
     NoteAdded(note->uri());
@@ -390,7 +375,7 @@ void RemoteControl::on_note_added(const Note::Ptr & note)
 }
 
 
-void RemoteControl::on_note_deleted(const Note::Ptr & note)
+void RemoteControl::on_note_deleted(const NoteBase::Ptr & note)
 {
   if(note) {
     NoteDeleted(note->uri(), note->get_title());
@@ -398,7 +383,7 @@ void RemoteControl::on_note_deleted(const Note::Ptr & note)
 }
 
 
-void RemoteControl::on_note_saved(const Note::Ptr & note)
+void RemoteControl::on_note_saved(const NoteBase::Ptr & note)
 {
   if(note) {
     NoteSaved(note->uri());
@@ -406,11 +391,11 @@ void RemoteControl::on_note_saved(const Note::Ptr & note)
 }
 
 
-void RemoteControl::present_note(const Note::Ptr & note)
+MainWindow & RemoteControl::present_note(const NoteBase::Ptr & note)
 {
-    MainWindow & window = IGnote::obj().get_window_for_note();
-    window.present_note(note);
-    window.present();
+  MainWindow & window = IGnote::obj().get_window_for_note();
+  MainWindow::present_in(window, static_pointer_cast<Note>(note));
+  return window;
 }
 
 

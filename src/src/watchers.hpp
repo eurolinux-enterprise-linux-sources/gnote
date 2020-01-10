@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2013 Aurimas Cernius
+ * Copyright (C) 2010-2015 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -38,6 +38,7 @@ extern "C" {
 #include <gtkmm/textiter.h>
 #include <gtkmm/texttag.h>
 
+#include "base/macros.hpp"
 #include "noteaddin.hpp"
 #include "triehit.hpp"
 #include "utils.hpp"
@@ -54,9 +55,9 @@ namespace gnote {
   public:
     static NoteAddin * create();
     ~NoteRenameWatcher();
-    virtual void initialize ();
-    virtual void shutdown ();
-    virtual void on_note_opened ();
+    virtual void initialize() override;
+    virtual void shutdown() override;
+    virtual void on_note_opened() override;
 
   protected:
     NoteRenameWatcher()
@@ -72,11 +73,11 @@ namespace gnote {
     void on_delete_range(const Gtk::TextIter &,const Gtk::TextIter &);
     void update();
     void changed();
-    bool on_window_closed(GdkEventAny *);
     std::string get_unique_untitled();
-    bool update_note_title();
-    void show_name_clash_error(const std::string &);
+    bool update_note_title(bool only_warn);
+    void show_name_clash_error(const std::string &, bool);
     void on_dialog_response(int);
+    void on_window_backgrounded();
 
     bool                       m_editing_title;
     Glib::RefPtr<Gtk::TextTag> m_title_tag;
@@ -89,25 +90,40 @@ namespace gnote {
   {
   public:
     static NoteAddin * create();    
-    virtual void initialize ();
-    virtual void shutdown ();
-    virtual void on_note_opened ();
+    virtual void initialize() override;
+    virtual void shutdown() override;
+    virtual void on_note_opened() override;
+    virtual std::map<int, Gtk::Widget*> get_actions_popover_widgets() const override;
 
     static bool gtk_spell_available()
       { return true; }
   protected:
     NoteSpellChecker()
       : m_obj_ptr(NULL)
+      , m_enabled(false)
       {}
   private:
+    static const char *LANG_PREFIX;
+    static const char *LANG_DISABLED;
+    static void language_changed(GtkSpellChecker*, gchar *lang, NoteSpellChecker *checker);
     void attach();
+    void attach_checker();
     void detach();
+    void detach_checker();
     void on_enable_spellcheck_changed(const Glib::ustring & key);
     void tag_applied(const Glib::RefPtr<const Gtk::TextTag> &,
                      const Gtk::TextIter &, const Gtk::TextIter &);
+    void on_language_changed(const gchar *lang);
+    Tag::Ptr get_language_tag();
+    std::string get_language();
+    void on_note_window_foregrounded();
+    void on_note_window_backgrounded();
+    void on_spell_check_enable_action(const Glib::VariantBase & state);
 
     GtkSpellChecker *m_obj_ptr;
     sigc::connection  m_tag_applied_cid;
+    sigc::connection m_enable_cid;
+    bool m_enabled;
   };
 #else
   class NoteSpellChecker 
@@ -115,10 +131,10 @@ namespace gnote {
   {
   public:
     static NoteAddin * create();    
-    virtual void initialize ();
-    virtual void shutdown ()
+    virtual void initialize() override;
+    virtual void shutdown() override
       {}
-    virtual void on_note_opened ()
+    virtual void on_note_opened() override
       {}
 
     static bool gtk_spell_available()
@@ -132,15 +148,15 @@ namespace gnote {
   {
   public:
     static NoteAddin * create();    
-    virtual void initialize ();
-    virtual void shutdown ();
-    virtual void on_note_opened ();
+    virtual void initialize() override;
+    virtual void shutdown() override;
+    virtual void on_note_opened() override;
 
   protected:
     NoteUrlWatcher();
   private:
     std::string get_url(const Gtk::TextIter & start, const Gtk::TextIter & end);
-    bool on_url_tag_activated(const NoteTag::Ptr &, const NoteEditor &,
+    bool on_url_tag_activated(const NoteEditor &,
                               const Gtk::TextIter &, const Gtk::TextIter &);
     void apply_url_to_block (Gtk::TextIter start, Gtk::TextIter end);
     void on_apply_tag(const Glib::RefPtr<Gtk::TextBuffer::Tag> & tag,
@@ -166,17 +182,17 @@ namespace gnote {
   {
   public:
     static NoteAddin * create();    
-    virtual void initialize ();
-    virtual void shutdown ();
-    virtual void on_note_opened ();
+    virtual void initialize() override;
+    virtual void shutdown() override;
+    virtual void on_note_opened() override;
 
   private:
-    bool contains_text(const std::string & text);
-    void on_note_added(const Note::Ptr &);
-    void on_note_deleted(const Note::Ptr &);
-    void on_note_renamed(const Note::Ptr&, const std::string&);
-    void do_highlight(const TrieHit<Note::WeakPtr> & , const Gtk::TextIter &,const Gtk::TextIter &);
-    void highlight_note_in_block (const Note::Ptr &, const Gtk::TextIter &,
+    bool contains_text(const Glib::ustring & text);
+    void on_note_added(const NoteBase::Ptr &);
+    void on_note_deleted(const NoteBase::Ptr &);
+    void on_note_renamed(const NoteBase::Ptr&, const Glib::ustring&);
+    void do_highlight(const TrieHit<NoteBase::WeakPtr> & , const Gtk::TextIter &,const Gtk::TextIter &);
+    void highlight_note_in_block (const NoteBase::Ptr &, const Gtk::TextIter &,
                                   const Gtk::TextIter &);
     void highlight_in_block(const Gtk::TextIter &,const Gtk::TextIter &);
     void unhighlight_in_block(const Gtk::TextIter &,const Gtk::TextIter &);
@@ -184,12 +200,13 @@ namespace gnote {
     void on_insert_text(const Gtk::TextIter &, const Glib::ustring &, int);
     void on_apply_tag(const Glib::RefPtr<Gtk::TextBuffer::Tag> & tag,
                       const Gtk::TextIter & start, const Gtk::TextIter &end);
+    void remove_link_tag(const Glib::RefPtr<Gtk::TextTag> & tag,
+                         const Gtk::TextIter & start, const Gtk::TextIter & end);
 
     bool open_or_create_link(const NoteEditor &, const Gtk::TextIter &,const Gtk::TextIter &);
-    bool on_link_tag_activated(const NoteTag::Ptr &, const NoteEditor &,
+    bool on_link_tag_activated(const NoteEditor &,
                                const Gtk::TextIter &, const Gtk::TextIter &);
 
-    NoteTag::Ptr m_url_tag;
     NoteTag::Ptr m_link_tag;
     NoteTag::Ptr m_broken_link_tag;
 
@@ -205,9 +222,9 @@ namespace gnote {
   {
   public:
     static NoteAddin * create();    
-    virtual void initialize ();
-    virtual void shutdown ();
-    virtual void on_note_opened ();
+    virtual void initialize() override;
+    virtual void shutdown() override;
+    virtual void on_note_opened() override;
 
   protected:
     NoteWikiWatcher()
@@ -215,7 +232,6 @@ namespace gnote {
       {
       }
   private:
-    void on_enable_wikiwords_changed(const Glib::ustring & key);
     void apply_wikiword_to_block (Gtk::TextIter start, Gtk::TextIter end);
     void on_delete_range(const Gtk::TextIter &,const Gtk::TextIter &);
     void on_insert_text(const Gtk::TextIter &, const Glib::ustring &, int);
@@ -224,8 +240,6 @@ namespace gnote {
     static const char * WIKIWORD_REGEX;
     Glib::RefPtr<Gtk::TextTag>   m_broken_link_tag;
     Glib::RefPtr<Glib::Regex>    m_regex;
-    sigc::connection    m_on_insert_text_cid;
-    sigc::connection    m_on_delete_range_cid;
   };
 
 
@@ -234,9 +248,9 @@ namespace gnote {
   {
   public:
     static NoteAddin * create();    
-    virtual void initialize ();
-    virtual void shutdown ();
-    virtual void on_note_opened ();
+    virtual void initialize() override;
+    virtual void shutdown() override;
+    virtual void on_note_opened() override;
 
   protected:
     MouseHandWatcher()
@@ -262,14 +276,14 @@ namespace gnote {
   {
   public:
     static NoteAddin * create();
-    virtual void initialize ();
-    virtual void shutdown ();
-    virtual void on_note_opened ();
+    virtual void initialize() override;
+    virtual void shutdown() override;
+    virtual void on_note_opened() override;
 
   private:
-    void on_tag_added(const Note&, const Tag::Ptr&);
-    void on_tag_removing(const Note&, const Tag &);
-    void on_tag_removed(const Note::Ptr&, const std::string&);
+    void on_tag_added(const NoteBase&, const Tag::Ptr&);
+    void on_tag_removing(const NoteBase&, const Tag &);
+    void on_tag_removed(const NoteBase::Ptr&, const std::string&);
 
     sigc::connection m_on_tag_added_cid;
     sigc::connection m_on_tag_removing_cid;

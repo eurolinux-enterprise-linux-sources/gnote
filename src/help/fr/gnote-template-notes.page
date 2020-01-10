@@ -4,11 +4,16 @@
 
   <info>
     <link type="guide" xref="notes-preferences#advanced"/>
-    <desc>Utiliser des notes modèles</desc>
+    <desc>Using template notes</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
@@ -16,29 +21,29 @@
   <section id="usage">
     <title>Utilisation d'une note modèle</title>
     <p>Les notes modèles servent à définir le contenu des notes nouvellement créées. Les modèles ressemblent aux notes normales avec quelques fonctions supplémentaires.</p>
-    <p>Vous pouvez définir une note modèle unique pour <app>Gnote</app> et une autre pour chacun de vos blocs-notes. Ces modèles définissent le contenu de chaque note nouvellement créée :</p>
+    <p>You can define a single main template note and one for each notebook you have. These templates define the content of every new note you create:</p>
     <list>
-      <item><p>Chaque nouvelle note créée dans <app>Gnote</app>, mais ne se trouvant pas dans un bloc-notes, contiendra le contenu du modèle principal de l'application. Si vous ne créez pas de modèle, le contenu par défaut est utilisé.</p></item>
-      <item><p>Chaque nouvelle note créée dans un bloc-notes contiendra le contenu de la note modèle, si celle-ci existe pour ce bloc-notes. Si vous ne définissez pas de note modèle pour ce bloc-notes, le contenu par défaut est utilisé.</p></item>
+      <item><p>Every new note you create in <app>Gnote</app>, but not in any notebook, will have the content of the main template. If you have not created a main template, the default content will be used.</p></item>
+      <item><p>Every new note created in a notebook will have the content of that notebook's template note, if any. If no template note for a notebook is defined, the default note content will be used.</p></item>
     </list>
-    <p>Pour créer ou modifier une note modèle :</p>
+    <p>To create or modify a template note:</p>
     <list>
-      <item><title>Note modèle principale</title><p>Ouvrez les préférences de <app>Gnote</app> et dans l'onglet <gui>Édition</gui> cliquez sur <gui>Ouvrir un modèle de note</gui>.</p></item>
-      <item><title>Note modèle de bloc-notes</title><p>Right click on notebook in main window and select <gui>Open Template Note</gui>.</p></item>
+      <item><title>Note modèle principale</title><p>Open <app>Gnote</app>'s preferences and in the <gui>General</gui> tab press the <gui>Open Template Note</gui> button.</p></item>
+      <item><title>Note modèle de bloc-notes</title><p>Right click on a notebook in the main window and select <gui>Open Template Note</gui>.</p></item>
     </list>
   </section>
   <section id="features">
     <title>Fonctions d'une note modèle</title>
-    <p>Une note modèle est identique à une note ordinaire, sauf qu'elle ne s'affiche pas dans une liste de notes et possède une barre de modèle en haut.</p>
+    <p>A template note is like an ordinary note except that it is not shown in note lists and has a template bar at the top.</p>
     <figure><title>Note modèle</title>
       <media type="image" src="figures/gnote-template-note.png" mime="image/png" style="right"/><desc>La fenêtre d'une note modèle</desc>
     </figure>
-    <p>La barre de modèle inclut les fonctions suivantes :</p>
+    <p>The template bar has the following features:</p>
     <list>
-      <item><title>Convertir en note normale</title><p>Cliquez sur ce bouton pour convertir la note modèle en une note standard qui s'affichera dans la liste des notes. Cette action est équivalente à la suppression de la note modèle.</p></item>
-      <item><title>Enregistrer la taille</title><p>Cochez cette case pour que la taille de toute nouvelle note créée soit identique à celle du modèle. Si vous ne cochez pas cette case, la taille de la fenêtre d'une nouvelle note sera celle par défaut.</p></item>
-      <item><title>Enregistrer la sélection</title><p>Cochez cette case pour que toute nouvelle note contienne aussi la sélection initiale en plus du contenu du modèle. Utilisez cette option si vous souhaitez que certaines parties du contenu de la nouvelle note soient sélectionnées dès la création.</p></item>
-      <item><title>Enregistrer le titre</title><p>Cochez cette case pour que le titre d'une nouvelle note se base sur celui du modèle. Le titre de la nouvelle note est alors celui de la note modèle, complété par un numéro unique. Si vous ne cochez pas cette case, le titre par défaut sera utilisé.</p></item>
+      <item><title>Convertir en note normale</title><p>Press this button to turn the template into a regular note, visible in the list of notes. This action is similar to deleting a template note.</p></item>
+      <item><title>Enregistrer la taille</title><p>If you check this box, the size of a newly created note will be identical to that of the template note. When this checkbox is not checked, new notes' windows will have the default size.</p></item>
+      <item><title>Enregistrer la sélection</title><p>If this box is checked, new notes will have not only the content of the template note, but also its selection. Use this option if you want a certain part of the content in the new note to be initially selected.</p></item>
+      <item><title>Enregistrer le titre</title><p>This checkbox lets you base the title of new notes on a template note's title. With this box checked, a new note will have the template note's title with a unique number appended. Otherwise the default title will be used.</p></item>
     </list>
   </section>
 

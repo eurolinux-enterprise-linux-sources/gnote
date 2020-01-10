@@ -14,25 +14,30 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Darbas su užrašinėmis</title>
     <p>Užrašinės leidžia kartu sugrupuoti susijusius raštelius. Naują užrašinę galite pridėti pagrindiniame lange arba tiesiogiai raštelyje.</p>
 
     <section id="creating-notebooks"><title>Raštelių kūrimas</title>
-      <p>Naujus raštelius galite sukurti šiais būdais</p>
+      <p>Norėdami sukurti naują užrašinę:</p>
       <steps>
         <item>
-          <p>Spauskite programos meniu ir pasirinkite <gui>Ištrinti užrašinę</gui>.</p>
+          <p>Spauskite programos meniu ir pasirinkite <gui>Nauja užrašinė</gui>.</p>
         </item>
         <item>
           <p>Įveskite naujos užrašinės pavadinimą.</p>
         </item>
       </steps>
-      <p>Norėdami sukurti naują užrašinę iš kontekstinio meniu</p>
+      <p>Arba:</p>
       <steps>
         <item>
-          <p>Paieškos veiksenoje kairiajame polangyje spauskite dešinį klavišą ir pasirinkite <gui>Nauja užrašinė</gui>.</p>
+          <p>Raštelių apžvalgoje kairiajame polangyje spauskite dešinį klavišą ir pasirinkite <gui>Nauja...</gui>.</p>
         </item>
         <item>
           <p>Įveskite naujos užrašinės pavadinimą.</p>
@@ -48,29 +53,29 @@
 
     <section id="adding-notes-to-a-notebook"><title>Raštelių pridėjimas į užrašinę</title>
       <p>Jei norite pridėti raštelius į užrašinę, tai galite padaryti pagrindiniame lange arba tiesiogiai raštelyje.</p>
-      <p>Norėdami perkelti esamą raštelį pagrindiniame lange, atlikite šiuos veiksmus:</p>
+      <p>Norėdami perkelti esamą raštelį pagrindiniame lange, atlikite vieną iš šių veiksmų:</p>
       <list>
         <item><p>Pele tempkite ratelį(-ius) į užrašinę kairėje.</p></item>
-        <item><p>Spauskite dešinį klavišą ant užrašinės ir kontekstiniame meniu pasirinkite <gui>Naujas raštelis</gui>. Bus sukurtas naujas raštelis ir pridėtas į užrašinę.</p></item>
+        <item><p>Spauskite ant užrašinės, tuomet spauskite dešinį klavišą raštelių sąraše ir kontekstiniame meniu pasirinkite <gui>Naujas</gui>. Bus sukurtas naujas raštelis ir pridėtas į užrašinę.</p></item>
       </list>
-      <p>Rašydami raštelį galite pridėti jį į esamą užrašinę naudodami mygtuką <gui>Užrašinė</gui>. Ši mygtuką žymi piktograma <media type="image" src="figures/notebook-icon.png" mime="image/png" style="right"/>.</p>
+      <p>Rašydami raštelį galite pridėti jį į esamą užrašinę naudodami meniu punktą <guiseq><gui>Veiksmai</gui><gui>Užrašinė</gui></guiseq>.</p>
       <figure>
         <title>Raštelių pridėjimas į užrašinę</title>
         <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>Pridėti į užrašinę.</p></media>
       </figure>
-      <p>Norėdami pašalinti raštelį iš užrašinės, atlikite šiuos veiksmus:</p>
+      <p>Norėdami pašalinti raštelį iš užrašinės, atlikite vieną iš šių veiksmų:</p>
       <list>
         <item><p>Perkelkite raštelį į užrašinę <gui>Neįkelti rašteliai</gui> pagrindiniame lange.</p></item>
-        <item><p>Pasirinkite meniu punktą <gui>Jokios užrašinės</gui>, kuri matoma atvertame raštelyje paspaudus mygtuką <gui>Užrašinė</gui>.</p></item>
+        <item><p>Pasirinkite meniu punktą <gui>Jokios užrašinės</gui>, kuri matoma paspaudus <guiseq><gui>Veiksmai</gui><gui>Užrašinė</gui></guiseq>.</p></item>
       </list>
     </section>
 
-    <section id="creating-notebook-templates"><title>Raštelių šablonų kūrimas</title>
+    <section id="creating-notebook-templates"><title>Užrašinės šablono sukūrimas</title>
       <p>Sukūrę užrašinę galite sukurti šabloną kiekvienam rašteliui, kurį sukursite toje užrašinėje.</p>
       <steps>
         <item><p>Pagrindiniame lange spauskite dešinį klavišą ant užrašinės ir pasirinkite <gui>Atverti šablono raštelį</gui>.</p>
         </item>
-        <item><p>Bus atvertas raštelis, kuri bus naudojamas kaip šablonas. Bet koks šame raštelyje įrašytas tekstas bus įvestas visuose šioje užrašinėje sukuriamuose rašteliuose.</p></item>
+        <item><p>Bus atvertas naujas šablono raštelis. Bet koks šame raštelyje įrašytas tekstas bus įvestas visuose šioje užrašinėje sukuriamuose rašteliuose.</p></item>
       </steps>
       <figure>
         <title>Užrašinės šablono sukūrimas</title>
@@ -81,11 +86,10 @@
 
   <section id="deleting-a-notebook"><title>Užrašinės ištrynimas</title>
     <p>Užrašinės ištrynimas neištrins jokių joje esančių raštelių. Ištrynus užrašinę rašteliai nebus susieti su jokia užrašine ir bus matomi pagrindiniame lange pasirinkus <gui>Neįkelti rašteliai</gui>.</p>
-    <p>Užrašinę galite ištrinti dviem būdais:</p>
-    <p>Norėdami ištrinti užrašinę, eikite į paieškos veikseną pagrindiniame lange ir atlikite šiuos veiksmus:</p>
+    <p>Norėdami ištrinti užrašinę, eikite į paieškos veikseną pagrindiniame lange ir atlikite vieną iš šių veiksmų:</p>
     <list>
       <item><p>Spauskite dešinį klavišą ant užrašinės ir pasirinkite <gui>Ištrinti užrašinę</gui>.</p></item>
-      <item><p>Pašalinkite visus raštelius iš užrašinės. Pati užrašinė bus automatiškai pašalinti iš naujo paleidus <app>Gnote</app>.</p></item>
+      <item><p>Pašalinkite visus raštelius iš užrašinės. Pati užrašinė bus automatiškai pašalinta iš naujo paleidus <app>Gnote</app>.</p></item>
     </list>
     <figure>
       <title>Raštelių ištrynimas pagrindiniame lange</title>
@@ -98,10 +102,10 @@
   <section id="special-notebooks"><title>Specialiosios užrašinės</title>
     <p><app>Gnote</app> turi kelias specialias užrašines:</p>
     <list>
-      <item><p><gui>Aktyvūs rašteliai</gui> - turi šiame <app>Gnote</app> seanse atvertus raštelius.</p></item>
-      <item><p><gui>Visi rašteliai</gui> - turi visus raštelius, išskyrus šablonus.</p></item>
-      <item><p><gui>Prisegti rašteliai</gui> - naudojamas rašteliams pažymėti svarbiais.</p></item>
-      <item><p><gui>Neįkelti rašteliai</gui> - turi raštelius, kurie nėra patalpinti jokioje naudotojo užrašinėje.</p></item>
+      <item><p><gui>Aktyvūs</gui> - turi šiame <app>Gnote</app> seanse atvertus raštelius.</p></item>
+      <item><p><gui>Visi</gui> - turi visus raštelius, išskyrus šablonus.</p></item>
+      <item><p><gui>Svarbūs</gui> - naudojamas rašteliams pažymėti svarbiais.</p></item>
+      <item><p><gui>Neįkelti</gui> - turi raštelius, kurie nėra patalpinti jokioje naudotojo užrašinėje.</p></item>
     </list>
   </section>
 

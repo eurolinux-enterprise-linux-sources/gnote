@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="deleting-notes" xml:lang="el">
+
+  <info>
+    <link type="guide" xref="index#managing-notes"/>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <desc>Διαγραφή σημειώσεων</desc>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Διαγραφή σημειώσεων</title>
+  <p>Μπορείτε να διαγράψετε μια σημείωση με έναν από τους παρακάτω δύο τρόπους:</p>
+  <list>
+    <item><p>Κάντε δεξί κλικ στον κατάλογο σημειώσεων και επιλέξτε <gui>Διαγραφή</gui>. Αυτό θα διαγράψει όλες τις επιλεγμένες σημειώσεις.</p></item>
+    <item><p>Όταν μια σημείωση είναι ανοικτή, πατήστε το κουμπί <gui>Διαγραφή</gui> στην εργαλειοθήκη.</p></item>
+  </list>
+  <p>Και στις δυο περιπτώσεις θα αναδυθεί ένα πλαίσιο διαλόγου που θα σας ζητήσει αν θέλετε να διαγράψετε μόνιμα τη σημείωση και τα περιεχόμενά της. Πατήστε το κουμπί <gui>Διαγραφή</gui> για να απορρίψετε τη σημείωση μόνιμα, ή <gui>Άκυρο</gui> για να το ματαιώσετε. Οι σύνδεσμοι στην διαγραμμένη σημείωση από άλλες σημειώσεις θα υπάρχουν ακόμα, αλλά θα αναδημιουργήσουν τη σημείωση με την ενεργοποίηση.</p>
+
+</page>

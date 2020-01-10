@@ -3,7 +3,7 @@
   <info>
     <link type="guide" xref="index#advanced"/>
     <link type="topic" xref="addins-preferences"/>
-    <desc>Notizvorlagen</desc>
+    <desc>Eine »Heute«-Notiz</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,13 +11,48 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
   <title>Notiz des Tages</title>
-  <p>Dieses Add-In erzeugt automatisch eine »Heute«-Notiz, um tägliche Gedanken festzuhalten. Das aktuelle Datum dient als Basis für den Titel dieser Notiz. Beispielsweise ist der Titel einer »Heute«-Notiz, die am 31. Juli 2011 angelegt wurde, »Heute: Sonntag, 31. Juli 2011«.</p>
-  <p>Wenn Sie die »Heute«-Notiz unverändert lassen, wird das Notiz-des-Tages-Add-In die Notiz automatisch löschen.</p>
+  <p>Diese Erweiterung erzeugt automatisch eine »Heute«-Notiz, um tägliche Gedanken festzuhalten. Das aktuelle Datum dient als Basis für den Titel dieser Notiz. Beispielsweise ist der Titel einer »Heute«-Notiz, die am 28. Februar 2013 angelegt wurde, »Heute: Donnerstag, 28. Februar 2013«.</p>
+  <p>Wenn Sie die »Heute«-Notiz unverändert lassen, wird die Erweiterung die Notiz automatisch löschen.</p>
   <p>Um den Inhalt der standardmäßigen »Heute«-Notiz anzupassen, erzeugen Sie eine neue Notiz und ändern Sie den Titel in »Heute: Vorlage«. Passen Sie den Inhalt der Vorlage so an, wie Sie es wünschen. Wenn eine neue »Heute«-Notiz angelegt wird, wird der Inhalt der Notiz »Heute: Vorlage« verwendet.</p>
 
 </page>

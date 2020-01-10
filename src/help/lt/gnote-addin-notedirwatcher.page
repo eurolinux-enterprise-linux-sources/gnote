@@ -7,12 +7,17 @@
     <license><p>GNU laisva dokumentacijos licencija (GFDL), versija 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
-      <years>2012</years>
+      <years>2012-2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
   
   <title>Raštelių katalogo stebyklė</title>
-    <p>Šis priedas leidžia dirbti su rašteliais failų sistemoje kol <app>Gnote</app> veikia. Kai įjungtas, šis priedas stebi raštelių failų pasikeitimus ir juos iš naujo įkelia, kai tik aptinkamas pasikeitimas. Tokiu būtų išoriniai raštelio failo pasikeitimai automatiškai atsispindi <app>Gnote</app>.</p>
-    <p><app>Gnote</app> saugo raštelius aplanke <file>~/.local/share/gnote</file>. Kai šis priedas yra įjungtas, jūs galite šiame kataloge atlikti veiksmus failų sistemos lygyje, pvz sinchronizuoti juos į kitą vietą, kol <app>Gnote</app> veikia.</p>
+    <p>Šis įskiepis leidžia dirbti su rašteliais failų sistemoje kol <app>Gnote</app> veikia. Kai įjungtas, šis įskiepis stebi raštelių failų pasikeitimus ir juos iš naujo įkelia, kai tik aptinkamas pasikeitimas. Tokiu būtų išoriniai raštelio failo pasikeitimai automatiškai atsispindi <app>Gnote</app>.</p>
+    <p><app>Gnote</app> saugo raštelius aplanke <file>~/.local/share/gnote</file>. Kai šis įskiepis yra įjungtas, jūs galite šiame aplanke atlikti veiksmus failų sistemos lygyje, pvz. sinchronizuoti juos į kitą vietą, kol <app>Gnote</app> veikia.</p>
 
 </page>

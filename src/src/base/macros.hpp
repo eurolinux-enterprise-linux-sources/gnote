@@ -1,6 +1,7 @@
 /*
  * gnote
  *
+ * Copyright (C) 2013,2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a
@@ -28,6 +29,12 @@
 #ifndef __BASE_MACROS_
 #define __BASE_MACROS_
 
+#if __cplusplus < 201103L
+  #error "C++11 support is required"
+#else
+  #include <memory>
+  #include <string>
+#endif
 
 #if __GNUC__
 #define _PRINTF_FORMAT(f,a) \
@@ -35,5 +42,15 @@
 #else
 #define _PRINTF_FORMAT(f,a)
 #endif
+
+#define FOREACH(var, container) for(var : container)
+#define TO_STRING(x) std::to_string(x)
+#define STRING_TO_INT(x) std::stoi(x)
+
+using std::shared_ptr;
+using std::weak_ptr;
+using std::enable_shared_from_this;
+using std::dynamic_pointer_cast;
+using std::static_pointer_cast;
 
 #endif

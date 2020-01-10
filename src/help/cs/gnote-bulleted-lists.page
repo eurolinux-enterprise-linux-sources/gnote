@@ -13,27 +13,32 @@
       <name>Aurimas Cernius</name>
       <years>2011</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
 <title>Vytváření seznamů s odrážkami</title>
 
 <section id="begin-a-bulleted-list"><title>Započetí seznamu s odrážkami</title>
-<p>Seznam s odrážkami můžete začít vytvářet následujícími způsoby:</p>
+<p>Seznam s odrážkami můžete začít vytvářet těmito způsoby:</p>
 <list>
 <item><p>Zvolte <gui>Odrážky</gui> v nabídce <gui>Text</gui>.</p></item>
-<item><p>Začněte řádek jednou pomlčkou <key>-</key>, bezprostředně za ní pokračujte vlastním textem a nakonec stiskněte <key>Enter</key>.</p></item>
+<item><p>Začněte řádek jednou pomlčkou <key>-</key> následovanou mezerou. Pak napiště nějaký text a nakonec zmáčkněte <key>Enter</key>.</p></item>
 <item><p>Zmáčkněte kombinaci kláves <keyseq><key>Alt</key><key>Right</key></keyseq>.</p></item>
 </list>
 </section>
 
 <section id="end-a-bulleted-list"><title>Ukončení seznamu s odrážkami</title>
-<p>Ukončit vytváření seznamu s odrážkami můžete následujícími způsoby:</p>
+<p>Ukončit vytváření seznamu s odrážkami můžete následovně:</p>
 <list>
 <item><p>Zvolte <gui>Odrážky</gui> v nabídce <gui>Text</gui>.</p></item>
-<item><p>Zmáčkněte <keycap>Enter</keycap> na prázdném řádku seznamu s odrážkami.</p></item>
+<item><p>Zmáčkněte <key>Enter</key> na prázdném řádku seznamu s odrážkami.</p></item>
 <item><p>Volte <gui>Zmenšit odsazení</gui> z nabídky <guibutton>Text</guibutton> tak dlouho, dokud aktuální řádek nepřestane být součástí seznamu s odrážkami.</p></item>
-<item><p>Použijte kombinaci kláves <keyseq><key>Shift</key><key>Tab</key></keyseq> tolikrát, až aktuální řádek přestane být součástí seznamu s odrážkami.</p></item>
-<item><p>Použijte kombinaci kláves <keyseq><key>Alt</key><key>Left</key></keyseq> tolikrát, až aktuální řádek přestane být součástí seznamu s odrážkami.</p></item>
+<item><p>Zmáčkněte <keyseq><key>Shift</key><key>Tab</key></keyseq> tolikrát, až aktuální řádek přestane být součástí seznamu s odrážkami.</p></item>
+<item><p>Zmáčkněte <keyseq><key>Alt</key><key>Left</key></keyseq> tolikrát, až aktuální řádek přestane být součástí seznamu s odrážkami.</p></item>
 </list>
 
 </section>

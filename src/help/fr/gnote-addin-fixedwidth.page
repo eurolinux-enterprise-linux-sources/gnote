@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
-    <desc>Utiliser une police à chasse fixe</desc>
+    <desc>Use a fixed-width font</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,12 +11,16 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Greffon Chasse fixe</title>
-    <p>L'option chasse fixe utilise une police dans laquelle tous les caractères ont le même espacement. Pour écrire du texte avec une police à chasse fixe, sélectionnez-le et faites <gui>Chasse fixe</gui> dans le menu <gui>Texte</gui>. L'option <gui>Chasse fixe</gui> peut aussi être définie avant la saisie du texte ; elle sera alors appliquée à tout texte saisi par la suite.</p>
-    <p>L'option Chasse fixe est une fonctionnalité apportée par le greffon Chasse fixe.</p>
+    <p>The <app>Fixed Width</app> plugin allows text to use a fixed width font. To change existing text, first select the text you want to modify. Then select <gui>Fixed Width</gui> from the <gui>Text</gui> menu. You can also select <gui>Fixed Width</gui> from the menu before you start typing.</p>
 
 </page>

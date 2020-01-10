@@ -4,24 +4,29 @@
   <info>
     <link type="guide" xref="index#organizing-notes"/>
     <license><p>GNU Free Documentation License (GFDL), različica 1.1</p></license>
-    <desc>Povezave z drugimi sporočilci</desc>
+    <desc>Linking to other notes</desc>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Povezave</title>
-    <p>Gumb <gui>Poveži</gui> vam omogoča ustvarjanje povezave do novega sporočilca iz trenutnega sporočilca. Če vaše sporočilce na primer vsebuje frazo “KončniIzpit“, lahko to besedilo izberete z miško in kliknete na gumb <gui>Poveži</gui> za ustvaritev novega sporočilca z naslovom “KončniIzpit“. V trenutnem sporočilcu bo ustvarjena povezava, ki bo ob kliku odprla novo sporočilce “KončniIzpit“.</p>
+    <p>The <gui>Link</gui> button creates a link to a new note from within the current note. For example, if your note contains the phrase “FinalExam”, you can select this text and click the <gui>Link</gui> button to create a new note called “FinalExam”. The selected text will become a clickable link to this new note.</p>
 <note style="advanced">
-    <p>Spreminjanje naslova sporočilca bo posodobilo povezave, ki so prisotne v drugih sporočilcih. To prepreči pojavljanje zlomljenih povezav ob preimenovanju sporočilca.</p></note>
+    <p>Changing a note's title will update links present in other notes. This prevents broken links from occurring when a note is renamed.</p></note>
 
   <section><title>Vstavek povratnih povezav</title>
-    <p>The Tools button is represented by the <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"> </media> icon. When backlinks add-in is installed, the <gui>Tools</gui> menu will contain an item <gui>What links here?</gui>, which provides a sub-menu with all notes, containing link to current note.</p>
+    <p>When the <app>Backlinks</app> plugin is installed, the <gui>Actions</gui> menu will contain an item <gui>What links here?</gui>, which provides a sub-menu listing all notes containing a link to the current note.</p>
   </section>
 
 </page>

@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2013 Aurimas Cernius
+ * Copyright (C) 2012-2014 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,6 +20,7 @@
 
 #include <giomm/file.h>
 
+#include "base/macros.hpp"
 #include "isyncmanager.hpp"
 
 
@@ -31,37 +32,42 @@ namespace sync {
     : public SyncClient
   {
   public:
-    GnoteSyncClient(NoteManager &);
+    static SyncClient::Ptr create(NoteManagerBase &);
 
-    virtual sharp::DateTime last_sync_date()
+    virtual sharp::DateTime last_sync_date() override
       {
         return m_last_sync_date;
       }
-    virtual void last_sync_date(const sharp::DateTime &);
-    virtual int last_synchronized_revision()
+    virtual void last_sync_date(const sharp::DateTime &) override;
+    virtual int last_synchronized_revision() override
       {
         return m_last_sync_rev;
       }
-    virtual void last_synchronized_revision(int);
-    virtual int get_revision(const Note::Ptr & note);
-    virtual void set_revision(const Note::Ptr & note, int revision);
-    virtual std::map<std::string, std::string> deleted_note_titles()
+    virtual void last_synchronized_revision(int) override;
+    virtual int get_revision(const NoteBase::Ptr & note) override;
+    virtual void set_revision(const NoteBase::Ptr & note, int revision) override;
+    virtual std::map<std::string, std::string> deleted_note_titles() override
       {
         return m_deleted_notes;
       }
-    virtual void reset();
-    virtual std::string associated_server_id()
+    virtual void reset() override;
+    virtual std::string associated_server_id() override
       {
         return m_server_id;
       }
-    virtual void associated_server_id(const std::string &);
+    virtual void associated_server_id(const std::string &) override;
+  protected:
+    GnoteSyncClient();
+    void init(NoteManagerBase &);
+    void parse(const std::string & manifest_path);
+
+    std::string m_local_manifest_file_path;
   private:
     static const char *LOCAL_MANIFEST_FILE_NAME;
 
-    void note_deleted_handler(const Note::Ptr &);
+    void note_deleted_handler(const NoteBase::Ptr &);
     void on_changed(const Glib::RefPtr<Gio::File>&, const Glib::RefPtr<Gio::File>&,
                     Gio::FileMonitorEvent);
-    void parse(const std::string & manifest_path);
     void write(const std::string & manifest_path);
     void read_updated_note_atts(sharp::XmlReader & reader);
     void read_deleted_note_atts(sharp::XmlReader & reader);
@@ -71,7 +77,6 @@ namespace sync {
     sharp::DateTime m_last_sync_date;
     int m_last_sync_rev;
     std::string m_server_id;
-    std::string m_local_manifest_file_path;
     std::map<std::string, int> m_file_revisions;
     std::map<std::string, std::string> m_deleted_notes;
   };

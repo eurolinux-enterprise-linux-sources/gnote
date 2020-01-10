@@ -13,6 +13,11 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Raštelių trynimas</title>
@@ -21,6 +26,6 @@
     <item><p>Spauskite dešinį klavišą raštelių sąraše ir pasirinkite <gui>Trinti</gui>. Šis būdas ištrins visus pažymėtus raštelius.</p></item>
     <item><p>Atvertame ratelyje spauskite mygtuką <gui>Ištrinti</gui> įrankių juostoje.</p></item>
   </list>
-  <p>Visais atvejais iššoks dialogas, klausiantis ar tikrai norite negrįžtamai ištrinti raštelius ir jų turinį. Spauskite <gui>Ištrinti</gui> rašteliui negrįžtamai pašalinti arba <gui>Atsisakyti</gui> procesui nutraukti. Saitai į raštelių išliks kituose rašteliuose, bet atkurs raštelį juos aktyvavus.</p>
+  <p>Abiem atvejais iššoks dialogas, klausiantis ar tikrai norite negrįžtamai ištrinti raštelius ir jų turinį. Spauskite <gui>Ištrinti</gui> rašteliui negrįžtamai pašalinti arba <gui>Atsisakyti</gui> procesui nutraukti. Saitai į raštelių išliks kituose rašteliuose, bet atkurs raštelį juos aktyvavus.</p>
 
 </page>

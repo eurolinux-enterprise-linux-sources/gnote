@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="index" xml:lang="hu">
+
+  <info>
+    <license>
+	<p>GNU Free Documentation License (GFDL), 1.1 verzió</p>
+    </license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
+    </credit>
+  </info>
+
+  <title><media type="image" src="figures/logo32.png"/>Gnote súgó</title>
+
+    <section id="introduction">
+    <title>Bevezetés</title>
+    </section>
+
+    <section id="managing-notes" style="2column">
+    <title>Jegyzetek kezelése</title>
+    </section>
+
+    <section id="organizing-notes" style="2column">
+    <title>Jegyzetek rendszerezése</title>
+    </section>
+
+    <section id="advanced" style="2column">
+    <title>Speciális</title>
+    </section>
+
+    <section id="customizing" style="2column">
+    <title>Testreszabás</title>
+    </section>
+
+    <section id="common-problems" style="2column">
+    <title>Gyakori problémák</title>
+    </section>
+
+</page>

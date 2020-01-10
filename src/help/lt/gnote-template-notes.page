@@ -10,15 +10,20 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Raštelių šablonai</title>
   <section id="usage">
     <title>Šablono naudojimas</title>
     <p>Raštelių šablonai naudojami naujai sukuriamų raštelių turiniui apibrėžti. Šablonai yra paprasti rašteliai su papildomomis galimybėmis.</p>
-    <p>Galite apibrėžti vieną raštelio šabloną visai <app>Gnote</app> programai ir po vieną kiekvienai užrašinei. Šie šablonai apibrėžia kiekvieną sukuriamą naują raštelį:</p>
+    <p>Galite apibrėžti vieną pagrindinį raštelio šabloną ir po vieną kiekvienai užrašinei. Šie šablonai apibrėžia kiekvieną sukuriamą naują raštelį:</p>
     <list>
-      <item><p>Kiekviena naujas <app>Gnote</app> sukuriamas raštelis, kuris nėra užrašinėje, turės pagrindinio programos šablono turinį. Jei šablonas nesukururtas, bus naudojamas numatytasis turinys.</p></item>
+      <item><p>Kiekviena naujas <app>Gnote</app> sukuriamas raštelis, kuris nėra užrašinėje, turės pagrindinio programos šablono turinį. Jei šablonas nesukurtas, bus naudojamas numatytasis turinys.</p></item>
       <item><p>Kiekvienas naujas užrašinėje sukurtas raštelis turės šablono raštelio turinį, jei užrašinei yra sukurtas šablonas. Jei šablonas užrašinei neapibrėžtas, bus naudojamas numatytasis turinys.</p></item>
     </list>
     <p>Šablonui sukurti ar pakeisti:</p>
@@ -35,7 +40,7 @@
     </figure>
     <p>Šablono juosta suteikia šias galimybes:</p>
     <list>
-      <item><title>Paversti įprastiniu rašteliu</title><p>Paspauskite šį mygtuką, jei norite paversti šabloną įprastiniu raštenius. Šis veiksmas yra panašus į šablono ištrynimą.</p></item>
+      <item><title>Paversti įprastiniu rašteliu</title><p>Paspauskite šį mygtuką, jei norite paversti šabloną įprastiniu rašteliu. Šis veiksmas yra panašus į šablono ištrynimą.</p></item>
       <item><title>Įrašyti dydį</title><p>Jei pažymėsite šį langelį, naujai sukurto raštelio dydis bus toks pat kaip šablono. Kai šis langelis nepažymėtas, naujo raštelio langas bus numatyto dydžio.</p></item>
       <item><title>Įrašyti pažymėjimą</title><p>Jei šis langelis pažymėjimas, nauji rašteliai ne tik turės šablono turinį, bet ir pradinį žymėjimą. Naudokite šį nustatymą, jei norite, kad tam tikra naujo raštelio turinio dalis būtų pažymėta jį sukūrus.</p></item>
       <item><title>Įrašyti pavadinimą</title><p>Šis langelis leidžia naujo raštelio pavadinimą padaryti panašų į šablono. Kai šis langelis pažymėtas, nauji rašteliai turės šablono pavadinimą su unikaliu numeriu pabaigoje. Jei langelis nepažymėtas, bus naudojamas numatytasis pavadinimas.</p></item>

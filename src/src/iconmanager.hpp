@@ -22,6 +22,7 @@
 
 #include <gdkmm/pixbuf.h>
 #include <glibmm/refptr.h>
+#include <gtkmm/iconinfo.h>
 
 #include "base/singleton.hpp"
 
@@ -44,8 +45,11 @@ public:
   static const char *PIN_ACTIVE;
   static const char *PIN_DOWN;
   static const char *PIN_UP;
+  static const char *ACTIVE_NOTES;
+  static const char *SPECIAL_NOTES;
 
   Glib::RefPtr<Gdk::Pixbuf> get_icon(const std::string &, int);
+  Gtk::IconInfo lookup_icon(const std::string &, int);
 private:
   typedef std::pair<std::string, int> IconDef;
   typedef std::map<IconDef, Glib::RefPtr<Gdk::Pixbuf> > IconMap;

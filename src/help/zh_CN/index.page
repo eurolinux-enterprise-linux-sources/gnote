@@ -3,42 +3,54 @@
 
   <info>
     <license>
-	<p xml:lang="en_GB">GNU Free Documentation License (GFDL), Version 1.1</p>
+	<p>GNU 自由文档许可证(GFDL)，版本 1.1</p>
     </license>
     <credit type="author">
-      <name xml:lang="en_GB">Pierre-Yves Luyten</name>
-      <years xml:lang="en_GB">2011</years>
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
     </credit>
     <credit type="editor">
-      <name xml:lang="en_GB">Aurimas Cernius</name>
-      <years xml:lang="en_GB">2011</years>
+      <name>Aurimas Cernius</name>
+      <years>2011</years>
     </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title xml:lang="en_GB">Gnote Help</title>
+  <title xml:lang="en_GB"><media type="image" src="figures/logo32.png"/> Gnote Help</title>
 
     <section id="introduction">
-    <title>导言</title>
+    <title>简介</title>
     </section>
 
     <section id="managing-notes" style="2column">
-    <title xml:lang="en_GB">Managing Notes</title>
+    <title>管理便笺</title>
     </section>
 
     <section id="organizing-notes" style="2column">
-    <title xml:lang="en_GB">Organizing Notes</title>
+    <title>组织便笺</title>
     </section>
 
     <section id="advanced" style="2column">
-    <title xml:lang="en_GB">Advanced</title>
+    <title>高级功能</title>
     </section>
 
     <section id="customizing" style="2column">
-    <title xml:lang="en_GB">Customizing</title>
+    <title>自定义</title>
     </section>
 
     <section id="common-problems" style="2column">
-    <title xml:lang="en_GB">Common Problems</title>
+    <title>常见问题</title>
     </section>
 
 </page>

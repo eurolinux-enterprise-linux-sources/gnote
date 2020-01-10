@@ -13,6 +13,41 @@
       <name>Aurimas Cernius</name>
       <years>2011</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
 <title>Aufzählungslisten</title>
@@ -21,7 +56,7 @@
 <p>Sie können eine Aufzählungsliste auf folgende Arten beginnen:</p>
 <list>
 <item><p>Wählen Sie <gui>Aufzählungspunkte</gui> aus dem Menü <gui>Text</gui>.</p></item>
-<item><p>Beginnen Sie eine Zeile mit einem einfachen Bindestrich (-), geben Sie einen Text direkt nach dem Bindestrich ein und drücken Sie die <key>Eingabetaste</key>.</p></item>
+<item><p>Beginnen Sie eine Zeile mit einem einfachen Bindestrich <key>-</key> gefolgt von einem Leerzeichen. Geben Sie anschließend einen Text ein und drücken Sie die <key>Eingabetaste</key>.</p></item>
 <item><p>Drücken Sie die Tastenkombination <keyseq><key>Alt</key><key>Pfeiltaste rechts</key></keyseq>.</p></item>
 </list>
 </section>
@@ -32,16 +67,16 @@
 <item><p>Wählen Sie <gui>Aufzählungspunkte</gui> aus dem Menü <gui>Text</gui>.</p></item>
 <item><p>Drücken Sie die <key>Eingabetaste</key> in einer leeren Aufzählungszeile.</p></item>
 <item><p>Wählen Sie den Menüpunkt <gui>Einzug verringern</gui> aus dem Menü <gui>Text</gui> aufeinander folgend, bis die aktuelle Zeile nicht mehr Teil der Aufzählungsliste ist.</p></item>
-<item><p>Using the key combination <keyseq><key>Shift</key><key>Tab</key></keyseq> in succession until the current line is no longer part of the bulleted list.</p></item>
-<item><p>Verwenden Sie die Tastenkombination <keyseq><key>Umschalttaste</key><key>Tabulator</key></keyseq> aufeinander folgend, bis die aktuelle Zeile nicht mehr Teil der Aufzählungsliste ist.</p></item>
+<item><p>Verwenden Sie die Tastenkombination <keyseq><key>Umschalttaste</key><key>Tabulatortaste</key></keyseq> so oft, bis die aktuelle Zeile nicht mehr Teil der Aufzählungsliste ist.</p></item>
+<item><p>Drücken Sie <keyseq><key>Alt</key><key>←</key></keyseq> so oft bis die aktuelle Zeile nicht mehr Teil der Aufzählungsliste ist.</p></item>
 </list>
 
 </section>
 <section id="increase-indentation">
 <title>Einzug erhöhen</title>
-<p>Um den Zeileneinzug in einer Aufzählungsliste mit der Maus zu erhöhen,</p>
+<p>So erhöhen Sie den Zeileneinzug in einer Aufzählungsliste mit der Maus:</p>
 <list><item><p>Wählen Sie <gui>Einzug erhöhen</gui> im <gui>Textmenü</gui> aus.</p></item></list>
-<p>Um den Zeileneinzug in einer Aufzählungsliste mit der Tastatur zu erhöhen,</p>
+<p>So erhöhen Sie den Zeileneinzug in einer Aufzählungsliste mit der Tastatur:</p>
 <list>
 <item><p>Drücken Sie die Taste <key>Tabulator</key>.</p></item>
 <item><p>Drücken Sie die Tastenkombination <keyseq><key>Alt</key><key>Pfeiltaste rechts</key></keyseq>.</p></item>
@@ -50,7 +85,7 @@
 
 <section id="decrease-indentation">
 <title>Einzug verringern</title>
-<p>Um den Zeileneinzug in einer Aufzählungsliste mit der Maus zu verringern,</p>
+<p>So verringern Sie den Zeileneinzug in einer Aufzählungsliste mit der Maus:</p>
 <list><item><p>wählen Sie den Menüpunkt <gui>Einzug verringern</gui> aus dem Menü <gui>Text</gui>.</p></item></list>
 <p>Um den Zeileneinzug in einer Aufzählungsliste mit der Tastatur zu verringern,</p>
 <list>

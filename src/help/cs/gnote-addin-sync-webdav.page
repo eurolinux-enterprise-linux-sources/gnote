@@ -10,15 +10,20 @@
       <name>Aurimas Cernius</name>
       <years>2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
   </info>
 
   <title>Synchronizace WebDAV</title>
-  <p>Tento typ synchronizace umožňuje nastavit WebDAV jako synchronizační úložiště.</p>
+  <p>Tento typ synchronizace vám umožní použít WebDAV jako synchronizační úložiště.</p>
   <p>Pro nastavení tohoto typu synchronizace:</p>
-  <list>
-    <item><title>vyberte „WebDAV“ v rozbalovacím seznamu <gui>Služba</gui></title></item>
-    <item><title>zadejte adresu URL k vašemu sdílení</title></item>
-    <item><title>zadejte uživatelské jméno a heslo</title></item>
+  <list type="numbered">
+    <item><p>vyberte „WebDAV“ v rozbalovacím seznamu <gui>Služba</gui></p></item>
+    <item><p>zadejte adresu URL k vašemu sdílení</p></item>
+    <item><p>zadejte své uživatelské jméno a heslo</p></item>
   </list>
   <figure>
     <title>Nastavení synchronizace místní složky</title>

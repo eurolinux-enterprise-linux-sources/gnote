@@ -10,17 +10,22 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2013</mal:years>
+    </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Nicolás Satragno</mal:name>
       <mal:email>nsatragno@gnome.org</mal:email>
       <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Daniel Mustieles</mal:name>
-      <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -34,7 +39,7 @@
   <section id="usage">
     <title>Uso de las plantillas de notas</title>
     <p>Las plantillas de notas se usan para definir el contenido de las notas nuevas creadas. Las plantillas son como notas normales con algunas características adicionales.</p>
-    <p>Puede definir una plantilla de nota para <app>Gnote</app> y otra para cuaderno de notas que tenga. Estas plantillas definen el contenido de cada nota que cree:</p>
+    <p>Puede definir una plantilla de nota y otra para cada cuaderno de notas que tenga. Estas plantillas definen el contenido de cada nota nueva que cree:</p>
     <list>
       <item><p>Cada nota nueva que cree en <app>Gnote</app>, pero no en un cuaderno de notas, tendrá el contenido de la plantilla principal. Si la plantilla no está creada, se usa el contenido predeterminado.</p></item>
       <item><p>Cada nota nueva que creada en un cuaderno de notas, tendrá el contenido de la plantilla de nota, si existe para ese cuaderno de notas. Si la plantilla de nota para el cuaderno de notas no está creada, se usa el contenido predeterminado de la nota.</p></item>
@@ -42,7 +47,7 @@
     <p>Para crear o modificar una plantilla de nota:</p>
     <list>
       <item><title>Plantilla de nota principal</title><p>Abra las preferencias de <app>Gnote</app> y, en la pestaña <gui>General</gui>, pulse el botón <gui>Abrir plantilla de nota</gui>.</p></item>
-      <item><title>Plantillas de nota de cuaderno de notas</title><p>Pulse con el botón derecho en la ventana principal y elija <gui>Abrir plantilla de nota</gui>.</p></item>
+      <item><title>Plantillas de nota de cuaderno de notas</title><p>Pulse con el botón derecho sobre un cuaderno de notas en la ventana principal y elija <gui>Abrir plantilla de nota</gui>.</p></item>
     </list>
   </section>
   <section id="features">
@@ -53,10 +58,10 @@
     </figure>
     <p>La barra de la plantilla tiene las siguientes características:</p>
     <list>
-      <item><title>Convertir a una nota normal</title><p>Pulse este botón para convertir la plantilla en una nota normal, visble en la lista de notas. Esta acción es similar a la de eliminar la plantilla de nota.</p></item>
+      <item><title>Convertir a una nota normal</title><p>Pulse este botón para convertir la plantilla en una nota normal, visible en la lista de notas. Esta acción es similar a la de eliminar una plantilla de nota.</p></item>
       <item><title>Guardar tamaño</title><p>Si marca esta casilla, el tamaño de la nota nueva creada será el mismo que el de la plantilla de nota. Si esta casilla no está activada, la ventana de la nota nueva tiene el tamaño predeterminado.</p></item>
-      <item><title>Guardar selección</title><p>si esta casilla está marcadaa, las notas nuevas no sólo tendrán el contenido de la plantilla de nota, sino que también tendrán la selección inicial. Use esta opción si quiere asegurarse de que se seleccione inicialmente parte del contenido de la nota nueva.</p></item>
-      <item><title>Guardar título</title><p>Esta casilla permite basar el título de la nota nueva en el título de la nota de la plantilla. Si esta casilla está marcada, la noeta nueva tendrá el título de la plantilla de nota con un número único añadido. Si no, se usará el título predeterminado.</p></item>
+      <item><title>Guardar selección</title><p>Si esta casilla está marcada, las notas nuevas no sólo tendrán el contenido de la plantilla de nota, sino que también tendrán la selección inicial. Use esta opción si quiere asegurarse de que se seleccione inicialmente parte del contenido de la nota nueva.</p></item>
+      <item><title>Guardar título</title><p>Esta casilla permite basar el título de la nota nueva en el título de la nota de la plantilla. Si esta casilla está marcada, la nota nueva tendrá el título de la plantilla de nota con un número único añadido. Si no, se usará el título predeterminado.</p></item>
     </list>
   </section>
 

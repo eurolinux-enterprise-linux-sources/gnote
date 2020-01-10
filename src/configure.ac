@@ -1,11 +1,10 @@
-AC_INIT(gnote, 3.8.1)
+AC_INIT(gnote, 3.22.1)
 AC_PREREQ(2.59)
 AC_CONFIG_SRCDIR(README)
-AM_INIT_AUTOMAKE([1.11 foreign dist-bzip2])
+AM_INIT_AUTOMAKE([1.11 foreign subdir-objects dist-xz no-dist-gzip tar-ustar])
 AM_SILENT_RULES([yes])
 AM_MAINTAINER_MODE
 
-GNOME_COMMON_INIT
 YELP_HELP_INIT
 
 AC_CONFIG_HEADER(config.h)
@@ -17,16 +16,18 @@ GNOTE_VERSION="$PACKAGE_VERSION"
 AC_SUBST(GNOTE_VERSION)
 LIBGNOTE_RELEASE=${PACKAGE_VERSION%.*}
 AC_SUBST(LIBGNOTE_RELEASE)
-LIBGNOTE_VERSION_INFO=0:1:0
+AC_DEFINE_UNQUOTED([LIBGNOTE_RELEASE], ["$LIBGNOTE_RELEASE"], [libgnote release.])
+LIBGNOTE_VERSION_INFO=1:0:1
 AC_SUBST(LIBGNOTE_VERSION_INFO)
+AC_DEFINE_UNQUOTED([LIBGNOTE_VERSION_INFO], ["$LIBGNOTE_VERSION_INFO"], [libgnote release.])
 
 
 dnl all the library version.
 dnl if one is harcoded elsewhere, it is a bug
 
-GTK_VERSION=3.6
-LIBGLIBMM_VERSION=2.28
-LIBGTKMM_VERSION=3.6
+GTK_VERSION=3.20
+LIBGLIBMM_VERSION=2.32
+LIBGTKMM_VERSION=3.18
 GTKSPELL_VERSION=3.0.0
 BOOST_VERSION=1.34
 LIBSECRET_VERSION=0.8
@@ -61,20 +62,16 @@ LT_INIT([disable-static])
 
 AC_LANG_CPLUSPLUS
 AC_LANG_COMPILER_REQUIRE
+AX_CXX_COMPILE_STDCXX_11([], [mandatory])
+
 AC_CHECK_PROG(HAVE_DESKTOP_FILE_VALIDATE, [desktop-file-validate], [yes], [no])
 if test $HAVE_DESKTOP_FILE_VALIDATE == "no"; then
   AC_MSG_ERROR([desktop-file-validate not found])
 fi
 
-PKG_CHECK_MODULES(LIBGLIBMM, [glibmm-2.4])
+PKG_CHECK_MODULES(LIBGLIBMM, [glibmm-2.4 >= $LIBGLIBMM_VERSION])
 PKG_CHECK_MODULES(GTK, [gtk+-3.0 >= $GTK_VERSION])
-PKG_CHECK_MODULES(X, [x11])
 PKG_CHECK_MODULES(LIBGTKMM, [gtkmm-3.0 >= $LIBGTKMM_VERSION])
-# Check for glib 2.32 or higher, which have certain incompatibilities with older ones
-PKG_CHECK_EXISTS(glib-2.0 >= 2.32,
-  [
-    AC_DEFINE(HAVE_GLIB_2_32, 1, [Define to 1 if glib version is at least 2.32])
-  ])
 PKG_CHECK_MODULES(LIBXML, [libxml-2.0])
 PKG_CHECK_MODULES(LIBXSLT, [libxslt])
 PKG_CHECK_MODULES(UUID, [uuid])
@@ -93,14 +90,8 @@ PKG_CHECK_MODULES(LIBSECRET, [libsecret-1 >= $LIBSECRET_VERSION])
 
 BOOST_REQUIRE([$BOOST_VERSION])
 BOOST_BIND
-BOOST_CONVERSION
 BOOST_FORMAT
 BOOST_TEST([s])
-AC_CHECK_HEADER(tr1/memory,,[
-	CXXFLAGS="$CXXFLAGS -I/usr/include/boost/tr1";
-	AC_MSG_NOTICE([using boost tr1 implementation.])
-])
-
 
 AC_LANG_PUSH(C++)
 if test "$GCC" = "yes"; then
@@ -157,24 +148,51 @@ Makefile
 data/Makefile
 data/gnote.desktop.in
 data/icons/Makefile
-libtomboy/Makefile
+data/appdata/Makefile
+data/ui/Makefile
 src/Makefile
 src/addins/Makefile
 src/addins/addins.mk
 src/addins/backlinks/Makefile
+src/addins/backlinks/backlinks.desktop.in
 src/addins/bugzilla/Makefile
+src/addins/bugzilla/bugzilla.desktop.in
+src/addins/exporttogtg/Makefile
+src/addins/exporttogtg/exporttogtg.desktop.in
 src/addins/exporttohtml/Makefile
+src/addins/exporttohtml/exporttohtml.desktop.in
 src/addins/filesystemsyncservice/Makefile
+src/addins/filesystemsyncservice/filesystemsyncservice.desktop.in
 src/addins/fixedwidth/Makefile
+src/addins/fixedwidth/fixedwidth.desktop.in
 src/addins/inserttimestamp/Makefile
+src/addins/inserttimestamp/inserttimestamp.desktop.in
 src/addins/notedirectorywatcher/Makefile
+src/addins/notedirectorywatcher/notedirectorywatcher.desktop.in
 src/addins/noteoftheday/Makefile
+src/addins/noteoftheday/noteoftheday.desktop.in
 src/addins/printnotes/Makefile
+src/addins/printnotes/printnotes.desktop.in
+src/addins/readonly/Makefile
+src/addins/readonly/readonly.desktop.in
 src/addins/replacetitle/Makefile
+src/addins/replacetitle/replacetitle.desktop.in
+src/addins/specialnotes/Makefile
+src/addins/specialnotes/specialnotes.desktop.in
+src/addins/statistics/Makefile
+src/addins/statistics/statistics.desktop.in
 src/addins/stickynoteimport/Makefile
+src/addins/stickynoteimport/stickynoteimport.desktop.in
+src/addins/tableofcontents/Makefile
+src/addins/tableofcontents/tableofcontents.desktop.in
+src/addins/todo/Makefile
+src/addins/todo/todo.desktop.in
 src/addins/tomboyimport/Makefile
+src/addins/tomboyimport/tomboyimport.desktop.in
 src/addins/underline/Makefile
+src/addins/underline/underline.desktop.in
 src/addins/webdavsyncservice/Makefile
+src/addins/webdavsyncservice/webdavsyncservice.desktop.in
 src/dbus/Makefile
 po/Makefile.in
 po/Makefile

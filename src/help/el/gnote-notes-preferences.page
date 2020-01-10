@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" xmlns:e="http://projectmallard.org/experimental/" type="guide" id="notes-preferences" xml:lang="el">
+
+
+  <info>
+    <link type="guide" xref="index#customizing"/>
+    <desc>Ρυθμίσεις Gnote</desc>
+    <license><p>Άδεια ελεύθερης τεκμηρίωσης GNU (GFDL), έκδοση 1.1</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011-2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Ελληνική μεταφραστική ομάδα GNOME</mal:name>
+      <mal:email>team@gnome.gr</mal:email>
+      <mal:years>2008-2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Θάνος Τρυφωνίδης</mal:name>
+      <mal:email>tomtryf@gnome.org</mal:email>
+      <mal:years>2016</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Δημήτρης Σπίγγος</mal:name>
+      <mal:email>dmtrs32@gmail.com</mal:email>
+      <mal:years>2014</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Νίκος Παράσχου</mal:name>
+      <mal:email>niparasc@gmail.com</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Κώστας Παπαδήμας</mal:name>
+      <mal:email>pkst@gmx.net</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name> Φώτης Τσάμης</mal:name>
+      <mal:email>ftsamis@gmail.com</mal:email>
+      <mal:years>2009</mal:years>
+    </mal:credit>
+  </info>
+
+  <title>Προτιμήσεις Gnote</title>
+  <section id="editing">
+    <title>Γενικές προτιμήσεις</title>
+    <p>Για να ορίσετε προτιμήσεις για το <app>Gnote</app>, επιλέξτε <gui>Προτιμήσεις</gui> από το μενού εφαρμογών.</p>
+    <p>Υπάρχουν τρεις κατηγορίες προτιμήσεων, <gui>Γενικά</gui>, <gui>Θερμά πλήκτρα</gui> και <gui>Πρόσθετα</gui>.</p>
+    <p>Η καρτέλα <gui>Γενικά</gui> σας επιτρέπει να ρυθμίσετε προτιμήσεις σχετικές με την συμπεριφορά της εφαρμογής και με την επεξεργασία σημειώσεων. Υπάρχουν λίγα πλαίσια ελέγχου σε αυτήν την ετικέτα:</p>
+    <list>
+      <item><title>Χρήση εικονιδίου κατάστασης</title><p>Ενεργοποιήστε αυτό το πλαίσιο ελέγχου για να εμφανίσετε το εικονίδιο κατάστασης του <app>Gnote</app> όταν εκτελείται. Σε αυτή τη λειτουργία το <app>Gnote</app> θα παραμείνει παρόν ακόμα και μετά το κλείσιμο όλων των παραθύρων του. Όταν πατάτε στο εικονίδιο κατάστασης, εμφανίζεται ένα μενού που σας δίνει γρήγορη πρόσβαση σε πρόσφατα χρησιμοποιημένες σημειώσεις και άλλα παράθυρα.</p></item>
+      <item><title>Να ανοίγονται πάντα οι σημειώσεις σε νέο παράθυρο</title><p>Αν σημειωθεί, αντί για αντικατάσταση του τρέχοντος περιεχομένου του παραθύρου, η σημείωση ανοίγεται στο νέο παράθυρο.</p></item>
+      <item><title>Έλεγχος ορθογραφίας κατά την πληκτρολόγηση</title><p>Ενεργοποιήστε αυτό το πλαίσιο ελέγχου για να υπογραμμίζονται τα ορθογραφικά λάθη με κόκκινο και να παρέχονται προτάσεις ορθογραφίας κάνοντας δεξί κλικ στο μενού περιεχομένων.</p><p>Η επιλογή ορθογραφικού ελέγχου είναι διαθέσιμη μόνο αν έχετε εγκατεστημένο το πακέτο GtkSpell της διανομής σας.</p></item>
+      <item><title>Επισήμανση των Βικιλέξεων</title><p>Ενεργοποιήστε αυτό το πλαίσιο ελέγχου για να δημιουργήσετε συνδέσμους με φράσεις οι οποίες ΜοιάζουνΚάπωςΈτσι. Πατώντας σε έναν σύνδεσμο θα δημιουργήσετε μία νέα σημείωση με έναν τίτλο που αντιστοιχεί στο κείμενο του συνδέσμου.</p></item>
+      <item><title>Ενεργοποίηση των λιστών με αυτόματες κουκκίδες</title><p>Αν αυτή η προτίμηση είναι ενεργή, μπορείτε να δημιουργήσετε λίστες με κουκκίδες ξεκινώντας γραμμές με έναν χαρακτήρα παύλας <key>-</key>. Διαβάστε περισσότερα στο <link xref="bulleted-lists"/>.</p></item>
+      <item><title>Χρήση προσαρμοσμένης γραμματοσειράς</title><p>Ενεργοποιήστε αυτό το πλαίσιο ελέγχου για να ορίσετε μια προσαρμοσμένη γραμματοσειρά που θα χρησιμοποιηθεί στις σημειώσεις σας.</p></item>
+    </list>
+    <figure><title>Παράθυρο <gui>Προτιμήσεις</gui></title>
+      <media type="image" src="figures/gnote-preferences-editing.png" mime="image/png" style="right"/><desc>Επεξεργασία προτιμήσεων Gnote</desc>
+    </figure>
+  </section>
+
+  <section id="advanced" style="2column">
+    <title>Προχωρημένες ρυθμίσεις</title>
+  </section>
+  <section id="sync">
+    <title>Ρυθμίσεις συγχρονισμού</title>
+    <section id="sync-addins" style="2column">
+      <title>Υπηρεσίες συγχρονισμού</title>
+    </section>
+    <section id="sync-advanced">
+      <title>Προχωρημένα</title>
+      <p>Το κουμπί <gui>προχωρημένα</gui> στην καρτέλα <gui>συγχρονισμός</gui> του διαλόγου <gui>Προτιμήσεις</gui> εμφανίζει έναν άλλο διάλογο για ρύθμιση της ανάλυσης διένεξης.</p>
+      <figure>
+        <title>Προχωρημένες ρυθμίσεις συγχρονισμού</title>
+        <media type="image" src="figures/gnote-syncprefs-advanced.png" mime="image/png"/>
+      </figure>
+      <p>Αυτός ο διάλογος σας επιτρέπει να επιλέξετε τι να κάνετε όταν συμβαίνει μια διένεξη. Μια διένεξη συμβαίνει όταν μια σημείωση έχει τροποποιηθεί και στην τοπική μηχανή και σε μια άλλη συσκευή. Μπορείτε να επιλέξετε μια από αυτές τις επιλογές:</p>
+      <list>
+        <item><p>Μετονομάστε την υφιστάμενη σημείωση προσαρτώντας "(παλιά)" στον τίτλο της και μεταφορτώστε τη σημείωση από την αποθήκη</p></item>
+        <item><p>Αντικαταστήστε την υπάρχουσα σημείωση από αυτήν της αποθήκης, χάνοντας όλες τις τροποποιήσεις</p></item>
+        <item><p>Ρωτήστε για κάθε συγκρουόμενη σημείωση ξεχωριστά</p></item>
+      </list>
+    </section>
+  </section>
+
+</page>

@@ -4,11 +4,16 @@
 
   <info>
     <link type="guide" xref="notes-preferences#advanced"/>
-    <desc>Использование шаблонных заметок</desc>
+    <desc>Using template notes</desc>
     <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
     <credit type="author">
       <name>Ауримас Церниус (Aurimas Cernius)</name>
       <years>2011-2012</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
@@ -16,29 +21,29 @@
   <section id="usage">
     <title>Использование шаблонов</title>
     <p>Шаблонные заметки используются для установки содержимого новых создаваемых заметок. Шаблоны — это такие же заметки, но с некоторыми дополнительными возможностями.</p>
-    <p>Вы можете создать одну шаблонную заметку для <app>Gnote</app> и по одной шаблонной заметке для каждого блокнота. Эти шаблоны задают содержимое новых создаваемых заметок:</p>
+    <p>You can define a single main template note and one for each notebook you have. These templates define the content of every new note you create:</p>
     <list>
-      <item><p>Каждая новая заметка, создаваемая в <app>Gnote</app> (вне блокнотов), будет содержать данные главного шаблона. Если шаблон не существует, будет использоваться содержимое по умолчанию.</p></item>
-      <item><p>Каждая новая заметка, создаваемая в блокноте, будет содержать данные шаблона для блокнота. Если шаблон для блокнота не существует, будет использоваться содержимое по умолчанию.</p></item>
+      <item><p>Every new note you create in <app>Gnote</app>, but not in any notebook, will have the content of the main template. If you have not created a main template, the default content will be used.</p></item>
+      <item><p>Every new note created in a notebook will have the content of that notebook's template note, if any. If no template note for a notebook is defined, the default note content will be used.</p></item>
     </list>
-    <p>Чтобы создать или изменить шаблонную заметку:</p>
+    <p>To create or modify a template note:</p>
     <list>
-      <item><title>Главный шаблон</title><p>Откройте параметры <app>Gnote</app> и на вкладке <gui>Общие</gui> нажмите кнопку <gui>Открыть шаблон</gui>.</p></item>
-      <item><title>Шаблон для блокнота</title><p>Right click on notebook in main window and select <gui>Open Template Note</gui>.</p></item>
+      <item><title>Главный шаблон</title><p>Open <app>Gnote</app>'s preferences and in the <gui>General</gui> tab press the <gui>Open Template Note</gui> button.</p></item>
+      <item><title>Шаблон для блокнота</title><p>Right click on a notebook in the main window and select <gui>Open Template Note</gui>.</p></item>
     </list>
   </section>
   <section id="features">
     <title>Возможности шаблона</title>
-    <p>Шаблон — это обычная заметка, только она не показывается в списке заметок и у неё есть панель в верхней части.</p>
+    <p>A template note is like an ordinary note except that it is not shown in note lists and has a template bar at the top.</p>
     <figure><title>Шаблон</title>
       <media type="image" src="figures/gnote-template-note.png" mime="image/png" style="right"/><desc>Окно шаблона</desc>
     </figure>
-    <p>Панель шаблона предоставляет следующие возможности:</p>
+    <p>The template bar has the following features:</p>
     <list>
-      <item><title>Преобразовать в обычную заметку</title><p>Нажмите эту кнопку, чтобы преобразовать шаблон в обычную заметку, которая появится в списке заметок. Это действие похоже на удаление шаблона.</p></item>
-      <item><title>Сохранить размер</title><p>Если включить этот параметр, то размер новых создаваемых заметок будет идентичен размеру шаблона. Если этот параметр выключен, окно новой заметки будет иметь размер по умолчанию.</p></item>
-      <item><title>Сохранить выделение</title><p>Если включить этот параметр, в новых заметках будет показано не только содержимое шаблона, но и первоначальное выделение.</p></item>
-      <item><title>Сохранить заголовок</title><p>Этот параметр позволяет использовать заголовок шаблона в качестве основы для заголовков новых заметок. Если этот параметр включён, заголовок новый заметки будет включать в себя заголовок шаблона и уникальный номер. В противном случае будет использоваться заголовок по умолчанию.</p></item>
+      <item><title>Преобразовать в обычную заметку</title><p>Press this button to turn the template into a regular note, visible in the list of notes. This action is similar to deleting a template note.</p></item>
+      <item><title>Сохранить размер</title><p>If you check this box, the size of a newly created note will be identical to that of the template note. When this checkbox is not checked, new notes' windows will have the default size.</p></item>
+      <item><title>Сохранить выделение</title><p>If this box is checked, new notes will have not only the content of the template note, but also its selection. Use this option if you want a certain part of the content in the new note to be initially selected.</p></item>
+      <item><title>Сохранить заголовок</title><p>This checkbox lets you base the title of new notes on a template note's title. With this box checked, a new note will have the template note's title with a unique number appended. Otherwise the default title will be used.</p></item>
     </list>
   </section>
 

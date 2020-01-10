@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011 Aurimas Cernius
+ * Copyright (C) 2011,2013-2014 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -19,8 +19,6 @@
  */
 
 
-
-#include <boost/lexical_cast.hpp>
 
 #include <gtk/gtk.h>
 #include <gtkmm/image.h>
@@ -130,7 +128,7 @@ namespace gnote {
   void NoteTag::get_extents(const Gtk::TextIter & iter, Gtk::TextIter & start,
                             Gtk::TextIter & end)
   {
-    Glib::RefPtr<Gtk::TextTag> this_ref(this);
+    Glib::RefPtr<Gtk::TextTag> this_ref = NoteTagTable::instance()->lookup(property_name());
     start = iter;
     if (!start.begins_tag (this_ref)) {
       start.backward_to_tag_toggle (this_ref);
@@ -209,14 +207,7 @@ namespace gnote {
       }
 
       get_extents (iter, start, end);
-      bool success = on_activate (*(editor.operator->()), start, end);
-
-      // Hide note if link is activated with middle mouse button
-      if (success && (button_ev->button == 2)) {
-        Glib::RefPtr<Gtk::Widget> widget = Glib::RefPtr<Gtk::Widget>::cast_static(sender);
-        widget->get_toplevel()->hide ();
-      }
-
+      on_activate (*(editor.operator->()), start, end);
       return false;
     }
     case GDK_KEY_PRESS:
@@ -255,7 +246,7 @@ namespace gnote {
       }
     }
 #endif
-    retval = m_signal_activate(NoteTag::Ptr(this), editor, start, end);
+    retval = m_signal_activate(editor, start, end);
 
     return retval;
   }
@@ -290,7 +281,7 @@ namespace gnote {
     m_widget = value;
 
     try {
-      m_signal_changed(Glib::RefPtr<Gtk::TextTag>(this), false);
+      m_signal_changed(*this, false);
     } catch (sharp::Exception & e) {
       DBG_OUT("Exception calling TagChanged from NoteTag.set_Widget: %s", e.what());
     }
@@ -350,8 +341,8 @@ namespace gnote {
   }
   
   DepthNoteTag::DepthNoteTag(int depth, Pango::Direction direction)
-    : NoteTag("depth:" + boost::lexical_cast<std::string>(depth) 
-              + ":" + boost::lexical_cast<std::string>((int)direction))
+    : NoteTag("depth:" + TO_STRING(depth) 
+              + ":" + TO_STRING((int)direction))
     , m_depth(depth)
     , m_direction(direction)
   {
@@ -417,7 +408,6 @@ namespace gnote {
     add (tag);
 
     tag = NoteTag::create("note-title", 0);
-    tag->property_underline() = Pango::UNDERLINE_SINGLE;
     tag->set_palette_foreground(CONTRAST_COLOR_BLUE);
     tag->property_scale() = Pango::SCALE_XX_LARGE;
     // FiXME: Hack around extra rewrite on open
@@ -533,7 +523,7 @@ namespace gnote {
 
   bool NoteTagTable::tag_has_depth(const Glib::RefPtr<Gtk::TextBuffer::Tag> & tag)
   {
-    return DepthNoteTag::Ptr::cast_dynamic(tag);
+    return (bool)DepthNoteTag::Ptr::cast_dynamic(tag);
   }
 
 
@@ -574,8 +564,7 @@ namespace gnote {
 
   DepthNoteTag::Ptr NoteTagTable::get_depth_tag(int depth, Pango::Direction direction)
   {
-    std::string name = "depth:" + boost::lexical_cast<std::string>(depth) 
-      + ":" + boost::lexical_cast<std::string>((int)direction);
+    std::string name = "depth:" + TO_STRING(depth) + ":" + TO_STRING((int)direction);
 
     DepthNoteTag::Ptr tag = DepthNoteTag::Ptr::cast_dynamic(lookup(name));
 

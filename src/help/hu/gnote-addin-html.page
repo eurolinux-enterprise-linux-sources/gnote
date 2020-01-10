@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-html" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Jegyzetek exportálása HTML-be</desc>
+    <license><p>GNU Free Documentation License (GFDL), 1.1 verzió</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  </info>
+
+  <title>Exportálás HTML-be</title>
+    <p>Ha az <app>Exportálás HTML-be</app> bővítmény telepítve van, akkor a <gui>Műveletek</gui> menüben megjelenik a <gui>Jegyzet exportálása HTML-be</gui> menüpont.</p>
+    <p>Válassza ezt a parancsot HTML-dokumentum létrehozásához egy vagy több jegyzetből. Megjelenik egy ablak, amelyben kiválaszthatja, hová szeretné menteni a HTML-fájlt. Adja meg a cél fájl nevét, és nyomja meg a <gui>Mentés</gui> gombot a fájl mentéséhez, vagy a <gui>Mégse</gui> gombot a megszakításhoz.</p>
+    <p>Az aktuális jegyzet által hivatkozott jegyzetek exportálásához jelölje be a <gui>Hivatkozott jegyzetek exportálása</gui> négyzetet.</p>
+
+</page>

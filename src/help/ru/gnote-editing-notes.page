@@ -4,21 +4,26 @@
   <info>
     <link type="guide" xref="index#managing-notes"/>
     <license><p>GNU Free Documentation License (GFDL), версия 1.1</p></license>
-    <desc>Изменение содержимого заметок</desc>
+    <desc xml:lang="en_GB">Editing note contents</desc>
     <credit type="author">
       <name>Пьер-Ювес Лейтен (Pierre-Yves Luyten)</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Ауримас Церниус (Aurimas Cernius)</name>
-      <years xml:lang="en_GB">2011-2012</years>
+      <years xml:lang="en_GB">2011-2013</years>
+    </credit>
+    <credit type="editor">
+      <name xml:lang="en_GB">Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years xml:lang="en_GB">2013</years>
     </credit>
   </info>
 
   <title>Редактирование заметок</title>
 
-    <p xml:lang="en_GB">Notes are opened in the same window by replacing search with note content.</p>
-    <p xml:lang="en_GB">At the top of the note there are two toolbars. The above one has items for going back to search mode and for creating new note. The lower one contains several buttons and text. Directly below this toolbar is the content area of the note.</p>
+    <p xml:lang="en_GB">When you open a note, <app>Gnote</app> will replace the note overview with the note's contents.</p>
+    <p xml:lang="en_GB">Toolbar at the top of the window will now contain note specific items in it. Bellow toolbar is the note's content area.</p>
     <figure>
       <title xml:lang="en_GB"><app>Gnote</app> window displaying note</title>
       <desc xml:lang="en_GB"><app>Gnote</app> Note</desc>
@@ -27,40 +32,39 @@
       </media>
     </figure>
 
-    <p>Чтобы приступить к редактированию заметки, щёлкните по области содержимого заметки левой кнопкой мыши и используйте клавиатуру для добавления, изменения и удаления содержимого. В первой строке находится заголовок заметки. По умолчанию заголовок имеет следующую форму: «New Note N». Чтобы изменить заголовок, щёлкните левой кнопкой мыши по первой строке и измените заголовок с помощью клавиатуры. По умолчанию, при создании новой заметки фокус ввода передаётся области содержимого, таким образом вы сразу же можете приступить к редактированию заметки, не нажимая левую кнопку мыши на области содержимого.</p>
-    <p>С помощью кнопки <gui>Текст</gui> может форматировать текст заметки. По нажатию на кнопку <gui>Текст</gui> появляется меню с несколькими параметрами. Каждый пункт меню дополнен поясняющим фрагментом текста.</p>
+    <p xml:lang="en_GB">To edit the note, click in the content area and type. The first line is considered the title of the note. By default this is populated with the text "New Note (number)". To change the title, click on the first line and use the keyboard to change the title.</p>
+    <p xml:lang="en_GB">Use the <gui>Text</gui> button to format text within your notes. This button displays a menu with several commands:</p>
 
     <list>
       <item><title>Отменить</title>
-        <p>Действие «Отменить» доступно через этот пункт меню. Это действие позволяет отменить предыдущие изменения, сделанные в заметке в течение текущего сеанса. Чтобы отменить последнее изменение, используйте стандартную комбинацию клавиш <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
+        <p xml:lang="en_GB">The <gui>Undo</gui> command reverts changes made to your note during the current session. To undo using the keyboard, press <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
       </item>
       <item><title>Вернуть</title>
-        <p>Действие «Вернуть» используется для возвращения изменения, отменённого с помощью действия «Отменить». Чтобы вернуть последнее изменение, используйте стандартную комбинацию клавиш <keyseq><key>Shift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
+        <p xml:lang="en_GB">The <gui>Redo</gui> command puts back changes that were removed using the <gui>Undo</gui> feature. To redo your last change using the keyboard, press <keyseq><key>Shift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
       </item>
       <item><title>Полужирный текст</title>
-        <p>Чтобы сделать текст заметки полужирным, выделите текст, затем выберите в меню <gui>Текст</gui> параметр «Полужирный». Также можно воспользоваться комбинацией клавиш <keyseq><key>Ctrl</key><key>B</key></keyseq>, предварительно выделив нужный фрагмент текста.</p>
+        <p xml:lang="en_GB">To make text bold, select it and then select the <gui>Bold</gui> command from the <gui>Text</gui> menu or press <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
       </item>
       <item><title>Наклонный текст</title>
-        <p>Чтобы сделать текст заметки наклонным, выделите текст, затем выберите в меню <gui>Текст</gui> параметр «Наклонный». Также можно воспользоваться комбинацией клавиш <keyseq><key>Ctrl</key><key>I</key></keyseq>, предварительно выделив нужный фрагмент текста.</p>
+        <p xml:lang="en_GB">To make text italic, select it and then select the <gui>Italic </gui> command from the <gui>Text</gui> menu, or press <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
      </item>
      <item><title>Зачёркнутый текст</title>
-       <p>Чтобы сделать текст заметки зачёркнутым, выделите текст, затем выберите в меню <gui>Текст</gui> параметр «Зачёркнуты». Также можно воспользоваться комбинацией клавиш <keyseq><key>Ctrl</key><key>S</key></keyseq>, предварительно выделив нужный фрагмент текста.</p>
+       <p xml:lang="en_GB">The strikeout style will put a line through the selected text. To add a strikeout, select text and then select the <gui>Strikeout</gui> command from the <gui>Text</gui> menu or press <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
      </item>
      <item><title>Выделенный текст</title>
-       <p>Чтобы сделать цветное выделение текста, выделите текст, затем выберите в меню <gui>Текст</gui> параметр «Выделенный». Также можно воспользоваться комбинацией клавиш <keyseq><key>Ctrl</key><key>H</key></keyseq>, предварительно выделив нужный фрагмент текста.</p>
+       <p xml:lang="en_GB">The highlight style will put a different background around the selected text. To add a highlight, select text and then select the <gui>Highlight</gui> command from the <gui>Text</gui> menu or press <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
      </item>
      <item><title>Размер шрифта</title>
-       <p>В меню можно выбрать четыре различных размера шрифта: маленький, нормальный, большой, огромный. Каждый из этих пунктов записан шрифтом того размера, который будет применён к тексту. Чтобы изменить размер шрифта, выделите текст и выберите в меню один из указанных размеров (<gui>Маленький</gui>, <gui>Нормальный</gui>, <gui>Большой</gui>, <gui>Огромный</gui>).</p>
+       <p xml:lang="en_GB">There are actually four options in this part of the menu: Small, Normal, Large, and Huge. Each option represents a font size to use for the selected text. To modify the font size, select text and then select <gui>Small</gui>, <gui>Normal</gui>, <gui>Large</gui>, or <gui>Huge</gui>.</p>
      </item>
      <item><title>Маркированный список</title>
-       <p>Выберите в меню <gui>Текст</gui> параметр «Маркированный список», чтобы начать или закончить маркированный список. Вы также можете использовать параметры <gui>Увеличить отступ</gui> и <gui>Уменьшить отступ</gui>.</p>
-       <p>Переместите курсор на строку маркированного списка и выберите параметр <gui>Увеличить отступ</gui>, чтобы сдвинуть строку вправо, или <gui>Уменьшить отступ</gui>, чтобы сдвинуть строку влево.</p>
-       <p>Подробнее о маркированных списках см. <link xref="bulleted-lists"/>.</p>
-     </item>
-     <item><title>Поиск в заметке</title>
-       <p>Используйте поиск по заметке, чтобы найти интересующий вас текст. При использовании этого пункта в нижней части заметки откроется небольшая панель поиска. Чтобы открыть панель поиска с помощью клавиатуры, используется стандартная комбинация клавиш <keyseq><key>Ctrl</key><key>F</key></keyseq>. Введите текст для поиска. После ввода текста найденные совпадения будут выделены цветом. Нажмите <gui>Следующее</gui>, чтобы переместить курсор к следующему найденному совпадению; чтобы перейти к предыдущему совпадению нажмите <gui>Предыдущее</gui>. Чтобы закрыть панель поиска, нажмите кнопку в виде крестика слева или нажмите клавишу <key>Escape</key>.</p>
+       <p xml:lang="en_GB">Select the <gui>Bullets</gui> command from the Text menu to begin or end a bulleted list. If the cursor is inside a bulleted list, the <gui>Increase Indent</gui> and <gui>Decrease Indent</gui> options will be enabled.</p>
+       <p xml:lang="en_GB">With the cursor on a bulleted list line, select the <gui>Increase Indent</gui> command to shift the current line to the right or the <gui>Decrease Indent</gui> command to shift to the left.</p>
+       <p xml:lang="en_GB">For more information on bullets, see <link xref="bulleted-lists"/>.</p>
      </item>
    </list>
+   <p xml:lang="en_GB">The toolbar at the top of note has search button. Use it to search for text within the current note. A small find bar will appear above the note. To open the find bar using the keyboard, press <keyseq><key>Ctrl</key><key>F</key></keyseq>. Enter the text to find and press <key>Enter</key>. Matches will be highlighted. Click <gui>Next</gui> to highlight the next match and place the cursor there. Click <gui>Previous</gui> to move to the previous match.
+To close the find bar, click the search button again or press the <key>Escape</key> key.</p>
 
    <section id="note-content" style="2column">
      <title>Содержимое заметок с дополнительным оформлением</title>

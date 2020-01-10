@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2013 Aurimas Cernius
+ * Copyright (C) 2011-2014 Aurimas Cernius
  * Copyright (C) 2009 Debarshi Ray
  *
  * This program is free software: you can redistribute it and/or modify
@@ -31,21 +31,22 @@
 namespace noteoftheday {
 
 NoteOfTheDayPreferences::NoteOfTheDayPreferences(gnote::NoteManager & manager)
-  : Gtk::VBox(false, 12)
-  , m_open_template_button(_("_Open Today: Template"), true)
+  : m_open_template_button(_("_Open Today: Template"), true)
   , m_label(_("Change the <span weight=\"bold\">Today: Template</span> "
               "note to customize the text that new Today notes have."))
   , m_note_manager(manager)
 {
+  set_row_spacing(12);
   m_label.set_line_wrap(true);
   m_label.set_use_markup(true);
-  pack_start(m_label, true, true, 0);
+  m_label.set_vexpand(true);
+  attach(m_label, 0, 0, 1, 1);
 
   m_open_template_button.set_use_underline(true);
   m_open_template_button.signal_clicked().connect(
       sigc::mem_fun(*this,
                     &NoteOfTheDayPreferences::open_template_button_clicked));
-  pack_start(m_open_template_button, false, false, 0);
+  attach(m_open_template_button, 0, 1, 1, 1);
 
   show_all();
 }
@@ -56,7 +57,7 @@ NoteOfTheDayPreferences::~NoteOfTheDayPreferences()
 
 void NoteOfTheDayPreferences::open_template_button_clicked() const
 {
-  gnote::Note::Ptr template_note = m_note_manager.find(NoteOfTheDay::s_template_title);
+  gnote::NoteBase::Ptr template_note = m_note_manager.find(NoteOfTheDay::s_template_title);
 
   if (0 == template_note) {
     try {
@@ -67,14 +68,15 @@ void NoteOfTheDayPreferences::open_template_button_clicked() const
       template_note->queue_save(gnote::CONTENT_CHANGED);
     }
     catch (const sharp::Exception & e) {
-      ERR_OUT("NoteOfTheDay could not create %s: %s",
+      /* TRANSLATORS: first %s is template note title, second is error */
+      ERR_OUT(_("NoteOfTheDay could not create %s: %s"),
               NoteOfTheDay::s_template_title.c_str(),
               e.what());
     }
   }
 
   if(0 != template_note) {
-    gnote::IGnote::obj().open_note(template_note);
+    gnote::IGnote::obj().open_note(static_pointer_cast<gnote::Note>(template_note));
   }
 }
 

@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010-2012 Aurimas Cernius
+ * Copyright (C) 2010-2016 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -21,10 +21,11 @@
 
 
 #include <algorithm>
-#include <tr1/array>
 
+#include <glibmm/i18n.h>
 #include <glibmm/main.h>
 
+#include "config.h"
 #include "debug.hpp"
 #include "notebuffer.hpp"
 #include "notetag.hpp"
@@ -34,6 +35,14 @@
 
 #include "sharp/xmlreader.hpp"
 #include "sharp/xmlwriter.hpp"
+
+#if HAVE_CXX11
+  #include <array>
+  using std::array;
+#else
+  #include <tr1/array>
+  using std::tr1::array;
+#endif
 
 namespace gnote {
 
@@ -57,10 +66,10 @@ namespace gnote {
   }
   
 
-  NoteBuffer::NoteBuffer(const NoteTagTable::Ptr & tags, Note & note)
+  NoteBuffer::NoteBuffer(const NoteTagTable::Ptr & tags, Note & note_)
     : Gtk::TextBuffer(tags)
     , m_undomanager(NULL)
-    , m_note(note)
+    , m_note(note_)
   {
     m_undomanager = new UndoManager(this);
     signal_insert().connect(sigc::mem_fun(*this, &NoteBuffer::text_insert_event));
@@ -91,7 +100,7 @@ namespace gnote {
       if (find_depth_tag(select_start))
         select_start.set_line_offset(2);
 
-      if (select_start.begins_tag(tag) || select_start.has_tag(tag)) {
+      if(is_active_tag(tag)) {
         remove_tag(tag, select_start, select_end);
       }
       else {
@@ -210,6 +219,12 @@ namespace gnote {
   bool NoteBuffer::is_active_tag(const std::string & tag_name)
   {
     Glib::RefPtr<Gtk::TextTag> tag = get_tag_table()->lookup(tag_name);
+    return is_active_tag(tag);
+  }
+
+
+  bool NoteBuffer::is_active_tag(const Glib::RefPtr<Gtk::TextTag> & tag)
+  {
     Gtk::TextIter iter, select_end;
 
     if (get_selection_bounds (iter, select_end)) {
@@ -218,7 +233,18 @@ namespace gnote {
       if (find_depth_tag(iter)) {
         iter.forward_chars(2);
       }
-      return iter.begins_tag(tag) || iter.has_tag(tag);
+      if(iter.begins_tag(tag) || iter.has_tag(tag)) {
+        // consider tag active only if it applies to the entire selection
+        if (iter.forward_to_tag_toggle(tag)) {
+          return select_end <= iter;
+        }
+        else {
+          // probably reached the end of note
+          return true;
+        }
+      }
+
+      return false;
     } 
     else {
       return (find(m_active_tags.begin(), m_active_tags.end(), tag) != m_active_tags.end());
@@ -230,11 +256,16 @@ namespace gnote {
   {
     Glib::RefPtr<Gtk::TextMark> insert_mark = get_insert();
     Gtk::TextIter iter = get_iter_at_mark(insert_mark);
+    return is_bulleted_list_active(iter);
+  }
+
+  bool NoteBuffer::is_bulleted_list_active(Gtk::TextIter iter)
+  {
     iter.set_line_offset(0);
 
     Glib::RefPtr<Gtk::TextTag> depth = find_depth_tag(iter);
 
-    return depth;
+    return (bool)depth;
   }
 
 
@@ -305,13 +336,11 @@ namespace gnote {
   void NoteBuffer::range_deleted_event(const Gtk::TextIter & start,const Gtk::TextIter & end_iter)
   {
     //
-    std::tr1::array<Gtk::TextIter, 2> iters;
+    array<Gtk::TextIter, 2> iters;
     iters[0] = start;
     iters[1] = end_iter;
 
-    for(std::tr1::array<Gtk::TextIter, 2>::iterator iter2 = iters.begin();
-        iter2 != iters.end(); ++iter2) {
-      Gtk::TextIter & iter(*iter2);
+    FOREACH(Gtk::TextIter iter, iters) {
       Gtk::TextIter line_start = iter;
       line_start.set_line_offset(0);
 
@@ -369,11 +398,13 @@ namespace gnote {
       // previous line.
     } 
     else if (prev_depth) {
-      iter.forward_char();
+      if(!iter.ends_line()) {
+        iter.forward_to_line_end();
+      }
 
       // See if the line was left contentless and remove the bullet
       // if so.
-      if (iter.ends_line() || insert_iter.get_line_offset() < 3 ) {
+      if(iter.get_line_offset() < 3) {
         Gtk::TextIter start = get_iter_at_line(iter.get_line());
         Gtk::TextIter end_iter = start;
         end_iter.forward_to_line_end();
@@ -489,42 +520,48 @@ namespace gnote {
     return false;
   }
 
-  // Returns true if the depth of the line was increased 
-  bool NoteBuffer::add_tab()
+  bool NoteBuffer::handle_tab(DepthAction depth_action)
   {
-    Glib::RefPtr<Gtk::TextMark> insert_mark = get_insert();
-    Gtk::TextIter iter = get_iter_at_mark(insert_mark);
-    iter.set_line_offset(0);
-
-    DepthNoteTag::Ptr depth = find_depth_tag(iter);
-
-    // If the cursor is at a line with a depth and a tab has been
-    // inserted then we increase the indent depth of that line.
-    if (depth) {
-      increase_depth(iter);
+    // if we have something selected, then tab increases ident for selected lines
+    Gtk::TextIter start, end;
+    if(get_selection_bounds(start, end)) {
+      start.set_line_offset(0);
+      for(int end_line = end.get_line(); start.get_line() <= end_line;) {
+        (*this.*depth_action)(start);
+        if(!start.forward_line()) {
+          break;
+        }
+      }
       return true;
     }
+    else {
+      Glib::RefPtr<Gtk::TextMark> insert_mark = get_insert();
+      Gtk::TextIter iter = get_iter_at_mark(insert_mark);
+      iter.set_line_offset(0);
+
+      DepthNoteTag::Ptr depth = find_depth_tag(iter);
+
+      // If the cursor is at a line with a depth and a tab has been
+      // inserted then we increase the indent depth of that line.
+      if (depth) {
+        (*this.*depth_action)(iter);
+        return true;
+      }
+    }
     return false;
+  }
+
+  // Returns true if the depth of the line was increased
+  bool NoteBuffer::add_tab()
+  {
+    return handle_tab(&NoteBuffer::increase_depth);
   }
 
 
   // Returns true if the depth of the line was decreased
   bool NoteBuffer::remove_tab()
   {
-    Glib::RefPtr<Gtk::TextMark> insert_mark = get_insert();
-    Gtk::TextIter iter = get_iter_at_mark(insert_mark);
-    iter.set_line_offset(0);
-
-    DepthNoteTag::Ptr depth = find_depth_tag(iter);
-
-    // If the cursor is at a line with depth and a tab has been
-    // inserted, then we decrease the depth of that line.
-    if (depth) {
-      decrease_depth(iter);
-      return true;
-    }
-
-    return false;
+    return handle_tab(&NoteBuffer::decrease_depth);
   }
 
 
@@ -548,7 +585,7 @@ namespace gnote {
     else if (start.ends_line() && start.get_line() < get_line_count()) {
       Gtk::TextIter next = get_iter_at_line (start.get_line() + 1);
       end_iter = start;
-      if(is_bulleted_list_active()) {
+      if(is_bulleted_list_active() || is_bulleted_list_active(next)) {
         end_iter.forward_chars(3);
       }
       else {
@@ -1321,7 +1358,7 @@ namespace gnote {
       if (iter.get_line() < buffer->get_line_count() - 1) {
         Gtk::TextIter next_line = buffer->get_iter_at_line(iter.get_line()+1);
         next_line_has_depth =
-          NoteBuffer::Ptr::cast_static(buffer)->find_depth_tag (next_line);
+          (bool)NoteBuffer::Ptr::cast_static(buffer)->find_depth_tag (next_line);
       }
 
       bool at_empty_line = iter.ends_line () && iter.starts_line ();
@@ -1473,6 +1510,12 @@ namespace gnote {
           } 
           else if (xml.get_name() == "list") {
             curr_depth++;
+            // If we are inside a <list-item> mark off
+            // that we have encountered some content
+            if (!list_stack.empty()) {
+              list_stack.pop_front();
+              list_stack.push_front(true);
+            }
             break;
           } 
           else if (xml.get_name() == "list-item") {
@@ -1488,7 +1531,7 @@ namespace gnote {
               list_stack.push_front (false);
             } 
             else {
-              ERR_OUT("</list> tag mismatch");
+              ERR_OUT(_("</list> tag mismatch"));
             }
           } 
           else {
@@ -1499,7 +1542,9 @@ namespace gnote {
             NoteTag::Ptr::cast_dynamic(tag_start.tag)->read (xml, true);
           }
 
-          tag_stack.push (tag_start);
+          if(!xml.is_empty_element()) {
+            tag_stack.push (tag_start);
+          }
           break;
         case XML_READER_TYPE_TEXT:
         case XML_READER_TYPE_WHITESPACE:
@@ -1547,11 +1592,14 @@ namespace gnote {
             DepthNoteTag::Ptr depth_tag = DepthNoteTag::Ptr::cast_dynamic(tag_start.tag);
 
             if (depth_tag && list_stack.front ()) {
-              NoteBuffer::Ptr::cast_dynamic(buffer)->insert_bullet (apply_start,
-                                                                    depth_tag->get_depth(),
-                                                                    depth_tag->get_direction());
-              buffer->remove_all_tags (apply_start, apply_start);
-              offset += 2;
+              NoteBuffer::Ptr note_buffer = NoteBuffer::Ptr::cast_dynamic(buffer);
+              // Do not insert bullet if it's already there
+              // this happens when using double identation in bullet list
+              if(!note_buffer->find_depth_tag(apply_start)) {
+                note_buffer->insert_bullet (apply_start, depth_tag->get_depth(), depth_tag->get_direction());
+                buffer->remove_all_tags (apply_start, apply_start);
+                offset += 2;
+              }
               list_stack.pop_front();
             } 
             else if (!depth_tag) {
@@ -1567,7 +1615,7 @@ namespace gnote {
       }
     }
     catch(const std::exception & e) {
-      ERR_OUT("Exception, %s", e.what());
+      ERR_OUT(_("Exception: %s"), e.what());
     }
   }
 

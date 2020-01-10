@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-fixedwidth" xml:lang="hu">
+
+  <info>
+    <link type="guide" xref="editing-notes#note-content"/>
+    <desc>Rögzített szélességű betűkészlet használata</desc>
+    <license><p>GNU Free Documentation License (GFDL), 1.1 verzió</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  </info>
+
+  <title>Rögzített szélesség kiegészítő</title>
+    <p>A <app>Rögzített szélesség</app> bővítmény lehetővé teszi a szöveghez rögzített szélességű betűkészlet használatát. A meglévő szöveg módosításához jelölje ki a módosítani kívánt szöveget. Ezután válassza ki a <gui>Szöveg</gui> menü <gui>Rögzített szélességű</gui> pontját. A menüből a gépelés megkezdése előtt is kiválasztható a <gui>Rögzített szélességű</gui> pont.</p>
+
+</page>

@@ -11,17 +11,22 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011, 2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Odkazy</title>
-    <p>Tlačítko <gui>Odkaz</gui> vám umožňuje vytvořit odkaz ze současné poznámky na novou poznámku. Například, když poznámka obsahuje frázi „Závěrečná zkouška“, můžete tento text pomocí myši vybrat a kliknout na tlačítko <gui>Odkaz</gui>, čímž se vytvoří nová poznámka s názvem „Závěrečná zkouška“. Zároveň se v současné poznámce vytvoří odkaz, který po kliknutí otevírá novou poznámku „Závěrečná zkouška“.</p>
+    <p>Tlačítko <gui>Odkaz</gui> vytváří odkaz ze současné poznámky na novou poznámku. Například, když poznámka obsahuje frázi „Závěrečná zkouška“, můžete tento text pomocí myši vybrat a kliknout na tlačítko <gui>Odkaz</gui>, čímž se vytvoří nová poznámka s názvem „Závěrečná zkouška“. Vybraný text se stane klikatelným odkazem na novou poznámku.</p>
 <note style="advanced">
     <p>Pokud změníte název poznámky, automaticky se aktualizují všechny odkazy na ni. To zajistí, že nevzniknou neplatné odkazy při přejmenovávání poznámek.</p></note>
 
   <section><title>Doplněk Zpětné odkazy</title>
-    <p>Tlačítko Nástroje je prezentováno ikonou <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"/>. Pokud je nainstalován doplněk Zpětné odkazy, bude nabídka <gui>Nástroje</gui> obsahovat položku <gui>Co sem odkazuje?</gui>, která poskytne podnabídku se všemi poznámkami, které obsahují odkaz na aktuální poznámku.</p>
+    <p>Pokud je nainstalován zásuvný modul <app>Zpětné odkazy</app>, bude nabídka <gui>Činnosti</gui> obsahovat položku <gui>Co sem odkazuje?</gui>, která poskytne podnabídku se všemi poznámkami, které obsahují odkaz na aktuální poznámku.</p>
   </section>
 
 </page>

@@ -3,7 +3,7 @@
 
   <info>
     <link type="guide" xref="editing-notes#note-content"/>
-    <desc>Souligner du texte</desc>
+    <desc>Underline text</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
@@ -11,21 +11,26 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Greffon soulignement de texte</title>
-  <p>Lorsque le greffon <gui>Souligner</gui> est activé, le menu <gui>Texte</gui> vous propose l'option <gui>Souligner</gui>.</p>
+  <p>When the <gui>Underline</gui> plugin is installed, the <gui>Text</gui> menu will have a <gui>Underline</gui> option available.</p>
   <p>Les méthodes suivantes permettent de souligner le texte sélectionné :</p>
   <list>
     <item><p>Cliquez sur <gui>Texte</gui> et sélectionnez <gui>Souligner</gui>.</p></item>
-    <item><p>Utilisez la combinaison de touches <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+    <item><p>Press <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
   </list>
   <p>Pour supprimer le soulignement, sélectionnez le texte souligné et utilisez une des méthodes suivantes :</p>
   <list>
     <item><p>Cliquez sur <gui>Texte</gui> et sélectionnez <gui>Souligner</gui>.</p></item>
-    <item><p>Utilisez la combinaison de touches <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
+    <item><p>Press <keyseq><key>Ctrl</key><key>U</key></keyseq>.</p></item>
   </list>
 
 </page>

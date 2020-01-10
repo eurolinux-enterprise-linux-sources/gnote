@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-noteoftheday" xml:lang="hu">
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <link type="topic" xref="addins-preferences"/>
+    <desc>Egy „Ma” jegyzet</desc>
+    <license><p>GNU Free Documentation License (GFDL), 1.1 verzió</p></license>
+    <credit type="author">
+      <name>Pierre-Yves Luyten</name>
+      <years>2011</years>
+    </credit>
+    <credit type="editor">
+      <name>Aurimas Cernius</name>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  </info>
+
+  <title>A nap jegyzete</title>
+  <p>Ez a bővítmény automatikusan létrehoz egy „Ma” jegyzetet a napi gondolatok felírására. Például egy 2014. október 14-én létrehozott „Ma” jegyzet neve „Ma: 2014. október 14., kedd” lesz.</p>
+  <p>Ha egy „Ma” jegyzetet változatlanul hagy, akkor a bővítmény automatikusan törölni fogja azt.</p>
+  <p>Az alapértelmezett „Ma” jegyzet tartalmának módosításához hozzon létre egy új jegyzetet, és módosítsa a címét „Ma: Sablon”-ra. Módosítsa a sablon jegyzet tartalmát igényei szerint. Az új „Ma” jegyzetek ezután a „Ma: Sablon” jegyzet tartalmát fogják használni.</p>
+
+</page>

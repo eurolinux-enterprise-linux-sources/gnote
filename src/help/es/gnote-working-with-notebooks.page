@@ -14,17 +14,22 @@
       <name>Aurimas Cernius</name>
       <years>2011-2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2013</mal:years>
+    </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Nicolás Satragno</mal:name>
       <mal:email>nsatragno@gnome.org</mal:email>
       <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Daniel Mustieles</mal:name>
-      <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -38,7 +43,7 @@
     <p>Los cuadernos de notas le permiten agrupar notas relacionadas. Puede añadir una nota a un cuaderno de notas en la ventana principal o directamente dentro de una nota.</p>
 
     <section id="creating-notebooks"><title>Crear cuadernos de notas</title>
-      <p>Puede crear nuevos cuadernos de notas usando uno de los siguientes métodos:</p>
+      <p>Para crear un cuaderno de nota haga:</p>
       <steps>
         <item>
           <p>Pulse sobre el menú de aplicación y seleccione <gui>Nuevo cuaderno de notas</gui>.</p>
@@ -47,10 +52,10 @@
           <p>Introduzca un nombre para el cuaderno de notas nuevo.</p>
         </item>
       </steps>
-      <p>Menú contextual para crear una nota nueva</p>
+      <p>Alternativamente:</p>
       <steps>
         <item>
-          <p>En el modo de búsqueda, pulse el botón derecho del ratón sobre la caja de la izquierda y elija <gui>Cuaderno de notas nuevo</gui>.</p>
+          <p>En la vista general de la nota, pulse el botón derecho del ratón sobre la caja de la izquierda y elija <gui>Nuevo...</gui>.</p>
         </item>
         <item>
           <p>Introduzca un nombre para el cuaderno de notas nuevo.</p>
@@ -66,32 +71,32 @@
 
     <section id="adding-notes-to-a-notebook"><title>Añadir notas a un cuaderno de notas</title>
       <p>Puede añadir notas a un cuaderno de notas, desde la ventana principal o directamente dentro de una nota.</p>
-      <p>Para mover una nota existente desde la ventana principal, use uno de los siguientes métodos:</p>
+      <p>Para añadir una nota al cuaderno de notas desde la ventana principal, use uno de los siguientes métodos:</p>
       <list>
         <item><p>Usando su ratón, arrastre las notas dentro de un cuaderno de notas a la izquierda.</p></item>
-        <item><p>Pulse el botón derecho del ratón sobre un cuaderno de notas y seleccione <gui>Nota nueva</gui> del menú contextual. Se creará una nota nueva y se añadirá al cuaderno de notas.</p></item>
+        <item><p>Pulse el botón derecho del ratón sobre uno de los cuadernos de notas de la lista y seleccione <gui>Nueva</gui> del menú contextual. Se creará una nota nueva y se añadirá al cuaderno de notas.</p></item>
       </list>
-      <p>Según escribe una nota, puede añadir directamente la nota a un cuaderno de notas existente usando el botón <gui>Cuaderno de notas</gui>. El botón Cuaderno de notas está representado por el icono <media type="image" src="figures/notebook-icon.png" mime="image/png" style="right"/>.</p>
+      <p>Según escribe una nota, puede añadir directamente la nota a un cuaderno de notas existente usando el menú <guiseq><gui>Acciones</gui><gui>Cuaderno de notas</gui></guiseq>.</p>
       <figure>
         <title>Añadir notas a un cuaderno de notas</title>
         <media type="image" src="figures/add-to-notebook.png" mime="image/png" style="right"><p>Añadir a un cuaderno de notas.</p></media>
       </figure>
       <p>Para quitar una nota de un cuaderno de notas use uno de los siguientes métodos:</p>
       <list>
-        <item><p>Mueva la nota al cuaderno de notas <gui>Notas sin archivar</gui> en la ventana principal.</p></item>
-        <item><p>Seleccione la opción <gui>Sin cuaderno de notas</gui> del menú que se muestra cuando se presiona el botón <gui>Cuaderno de notas</gui> en una nota abierta.</p></item>
+        <item><p>Mueva la nota a <gui>Notas sin archivar</gui> en la ventana principal.</p></item>
+        <item><p>Seleccione la opción <gui>Sin cuaderno de notas</gui> del menú que se muestra cuando se presiona el botón <guiseq><gui>Acciones</gui><gui>Cuaderno de notas</gui></guiseq> en una nota abierta.</p></item>
       </list>
     </section>
 
-    <section id="creating-notebook-templates"><title>Crear plantillas en los cuadernos de notas</title>
+    <section id="creating-notebook-templates"><title>Crear una plantilla</title>
       <p>Después de crear un cuaderno de notas, se puede crear una plantilla para cada nota nueva que cree en ese cuaderno de notas.</p>
       <steps>
-        <item><p>En la ventana principal, pulse el botón derecho del ratón sobre un cuaderno de notas creado y elija <gui>Abrir la plantilla de nota</gui>.</p>
+        <item><p>En la ventana principal, pulse el botón derecho del ratón sobre un cuaderno de notas y elija <gui>Abrir la plantilla de nota</gui>.</p>
         </item>
         <item><p>Esto abrirá una nota nueva que se usará como plantilla. Cualquier texto escrito en esta nota aparecerá en todas las notas creadas dentro de este cuaderno de notas.</p></item>
       </steps>
       <figure>
-        <title>Crear plantillas en los cuadernos de notas</title>
+        <title>Crear una plantilla</title>
         <media type="image" src="figures/note-template.png" mime="image/png" style="right"><p>Plantilla de notas.</p></media>
       </figure>
       <p>Para obtener más información, consulte <link xref="gnote-template-notes"/>.</p>
@@ -99,11 +104,10 @@
 
   <section id="deleting-a-notebook"><title>Eliminar un cuaderno de notas</title>
     <p>Al eliminar un cuaderno de notas no se eliminará ninguna de las notas que actualmente estén dentro de ese cuaderno de notas. Después de eliminar un cuaderno de notas, las notas no se asociarán con ningún cuaderno de notas y se podrán ver resaltando <gui>Notas sin archivar</gui> en la ventana principal.</p>
-    <p>Puede eliminar un cuaderno de notas que haya creado de dos formas distintas:</p>
-    <p>Para eliminar un cuaderno de notas, entre en el modo de búsqueda en la ventana principal y realice una de las siguientes acciones:</p>
+    <p>Para eliminar un cuaderno de notas, entre en la ventana principal y realice una de las siguientes acciones:</p>
     <list>
       <item><p>Pulse con el botón derecho sobre un cuaderno de notas y elija <gui>Eliminar cuaderno de notas</gui>.</p></item>
-      <item><p>Eliminar todas las notas del cuaderno de notas. Se eliminarán automáticamente cuando <app>Gnote</app> se reinicie.</p></item>
+      <item><p>Eliminar todas las notas del cuaderno de notas. Se eliminará el cuaderno de notas automáticamente cuando <app>Gnote</app> se reinicie.</p></item>
     </list>
     <figure>
       <title>Eliminar notas desde la ventana principal</title>
@@ -116,10 +120,10 @@
   <section id="special-notebooks"><title>Cuadernos de notas especiales</title>
     <p><app>Gnote</app> tiene varios cuadernos de notas especiales:</p>
     <list>
-      <item><p><gui>Notas activas</gui>: contiene las notas, que se han abierto en esta sesión de <app>Gnote</app>.</p></item>
-      <item><p><gui>Todas las notas</gui>: contiene todas las notas, excepto las plantillas.</p></item>
-      <item><p><gui>Notas pinchadas</gui>: se utilizan para marcar las notas como importantes.</p></item>
-      <item><p><gui>Notas sin rellenar</gui>: contiene todas las notas que no se han colocado en un cuaderno de notas creado por el usuario.</p></item>
+      <item><p><gui>Activas</gui>: contiene las notas, que se han abierto en esta sesión de <app>Gnote</app></p></item>
+      <item><p><gui>Todas</gui>: contiene todas las notas, excepto las plantillas</p></item>
+      <item><p><gui>Importante</gui>: se utilizan para marcar las notas como importantes</p></item>
+      <item><p><gui>Notas sin rellenar</gui>: contiene todas las notas que no se han colocado en un cuaderno de notas creado por el usuario</p></item>
     </list>
   </section>
 

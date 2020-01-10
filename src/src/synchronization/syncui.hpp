@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2013 Aurimas Cernius
+ * Copyright (C) 2012-2014 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,8 +24,8 @@
 
 #include <list>
 #include <string>
-#include <tr1/memory>
 
+#include "base/macros.hpp"
 #include "syncutils.hpp"
 
 
@@ -33,18 +33,17 @@ namespace gnote {
 namespace sync {
 
   class SyncUI
-    : public std::tr1::enable_shared_from_this<SyncUI>
+    : public enable_shared_from_this<SyncUI>
   {
   public:
-    typedef std::tr1::shared_ptr<SyncUI> Ptr;
+    typedef shared_ptr<SyncUI> Ptr;
     typedef sigc::slot<void> SlotConnecting;
     typedef sigc::slot<void> SlotIdle;
 
     virtual void sync_state_changed(SyncState state) = 0;
     void note_synchronized_th(const std::string & noteTitle, NoteSyncType type);
     virtual void note_synchronized(const std::string & noteTitle, NoteSyncType type) = 0;
-    virtual void note_conflict_detected(NoteManager & manager,
-                                        const Note::Ptr & localConflictNote,
+    virtual void note_conflict_detected(const Note::Ptr & localConflictNote,
                                         NoteUpdate remoteNote,
                                         const std::list<std::string> & noteUpdateTitles) = 0;
     virtual void present_ui() = 0;
@@ -53,6 +52,10 @@ namespace sync {
     void signal_connecting_emit();
     sigc::connection signal_idle_connect(const SlotIdle & slot);
     void signal_idle_emit();
+  protected:
+    explicit SyncUI(NoteManagerBase & manager);
+
+    NoteManagerBase & m_manager;
   private:
     void signal_connecting_emit_()
       {

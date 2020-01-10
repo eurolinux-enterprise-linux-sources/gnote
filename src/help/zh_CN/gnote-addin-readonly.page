@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<page xmlns="http://projectmallard.org/1.0/" type="topic" id="addin-read-only" xml:lang="zh-CN">
+
+  <info>
+    <link type="guide" xref="index#advanced"/>
+    <desc>Make notes read-only</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
+    <credit type="author">
+      <name>Aurimas Cernius</name>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  </info>
+  
+  <title>Read Only</title>
+    <p>When the <app>ReadOnly</app> plugin is installed, the <gui>Read Only</gui> item is present in the <gui>Actions</gui> menu for open note. When this item is checked, note is marked as read-only. This does not allow to change note until the menu item is unchecked. Use this to prevent notes from accidental modification.</p>
+
+</page>

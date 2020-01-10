@@ -11,14 +11,19 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011-2012</years>
+      <years>2011-2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Raštelių redagavimas</title>
 
-    <p>Rašteliai yra atveriami tame pačiame lange pakeičiant paiešką raštelio turiniu.</p>
-    <p>Raštelio viršuje yra dvi įrankinės. Viršutinė turi elementus grįžimui atgal į paieškos veikseną bei naujo raštelio sukūrimui. Apatinė turi keletą mygtukų ir teksto. Tiesiai po šia užrašine yra raštelio turinio vieta.</p>
+    <p>Kai atversite raštelį, <app>Gnote</app> pakeis raštelių apžvalgą raštelio turiniu.</p>
+    <p>Įrankinė lango viršuje dabar turės raštelio punktus. Žemiau bus raštelio turinio vieta.</p>
     <figure>
       <title><app>Gnote</app> langas, rodantis raštelį</title>
       <desc><app>Gnote</app> raštelis</desc>
@@ -27,40 +32,38 @@
       </media>
     </figure>
 
-    <p>Raštelis gali būti redaguojamas turinio vietoje naudojant klaviatūrą. Pirma eilutė yra laikoma raštelio pavadinimu. Numatytai jis yra užpildomas tekstu „Naujas raštelis N“. Pavadinimas gali būti pakeistas paspaudžiant turinio vietoje ant pavadinimo ir pakeičiant pavadinimą klaviatūra. Numatytai sukūrus naują raštelį turinio vieta yra padaroma aktyvia, kad galėtumėte nedelsiant pradėti rašyti raštelį ir nereikėtų turinio vietoje spausti pele.</p>
-    <p>Teksto formatavimas rašteliuose gali būti atliktas naudojant mygtuką <gui>Tekstas</gui>. Šis mygtukas pateiks meniu su nemažai punktų pasirinkimui. Žemiau paaiškintas kiekvienas meniu elementas.</p>
+    <p>Rašteliui redaguoti spauskite turinio vietoje ir rašykite. Pirmoji eilutė laikoma raštelio pavadinimu. Numatytai tai yra „Naujas raštelis (numeris)“. Pavadinimui pakeisti paspauskite ant pirmosios eilutės ir naudokite klaviatūrą pavadinimui pakeisti.</p>
+    <p>Naudokite mygtuką <gui>tekstas</gui> teksto formativimui rašteliuose. Šis mygtukas rodo meniu su keliomis komandomis:</p>
 
     <list>
       <item><title>Atšaukti</title>
-        <p>Atšaukimo palaikymas <app>Gnote</app> vykdomas per šį meniu punktą. Atšaukimo funkcija leidžia atšaukti ankstesnius pakeitimus raštelyje, atliktus dabartinėje sesijoje. Paskutiniam pakeitimui atšaukti klaviatūra, naudokite standartinę klavišų kombinaciją <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
+        <p><gui>Atšaukimo</gui> komanda panaikina raštelio pakeitimu esamame seanse. Atšaukimui klaviatūra naudokite klavišų kombinaciją <keyseq><key>Vald</key><key>Z</key></keyseq>.</p>
       </item>
       <item><title>Pakartoti</title>
-        <p>Pakartojimo funkcija skirta pakartoti pakeitimus, kurie buvo pašalinti naudojant atšaukimo funkciją. Paskutiniam pakeitimui pakartoti klaviatūra naudokite standartinę klavišų kombinaciją <keyseq><key>Shift</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
+        <p><gui>Pakartojimo</gui> komanda grąžina pakeitimus, kurie buvo pašalinti naudojant <gui>atšaukimo</gui> funkciją. Paskutiniam pakeitimui pakartoti klaviatūra naudokite klavišų kombinaciją <keyseq><key>Lyg2</key><key>Vald</key><key>Z</key></keyseq>.</p>
       </item>
       <item><title>Pusjuodis</title>
-        <p>Norėdami padaryti raštelio tekstą pusjuodį, pirmiausia pažymėkite keistiną tekstą. Tuomet pusjuodžio parinktį iš meniu <gui>Tekstas</gui>. Taip pat galite pažymėję tekstą naudoti klavišų kombinaciją <keyseq><key>Ctrl</key><key>B</key></keyseq>.</p>
+        <p>Norėdami padaryti tekstą pusjuodį pažymėkite jį iš meniu <gui>Tekstas</gui> pasirinkite <gui>Pusjuodis</gui> arba paspauskite <keyseq><key>Vald</key><key>B</key></keyseq>.</p>
       </item>
       <item><title>Kursyvas</title>
-        <p>Norėdami raštelio tekstą padaryti kursyvu, pirmiausia pažymėkite tekstą, kurį norite pakeisti. Tuomet pasirinkite kursyvo parinktį iš teksto meniu. Taip pat galite pažymėję tekstą naudoti klavišų kombinaciją <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
+        <p>Norėdami padaryti tekstą kursyvu pažymėkite jį iš meniu <gui>Tekstas</gui> pasirinkite <gui>Kursyvas</gui> arba paspauskite <keyseq><key>Vald</key><key>I</key></keyseq>.</p>
      </item>
      <item><title>Perbrauktas</title>
-       <p>Perbraukimo stilius linija perbrauks pažymėtą tekstą. Perbraukimui pridėti, pažymėkite tekstą ir pasirinkite punktą <gui>Perbrauktas</gui> ir meniu <gui>Tekstas</gui>. Taip pat galite pažymėję tekstą naudoti klavišų kombinaciją <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
+       <p>Perbraukimo stilius linija perbrauks pažymėtą tekstą. Perbraukimui pridėti, pažymėkite tekstą ir pasirinkite punktą <gui>Perbrauktas</gui> ir meniu <gui>Tekstas</gui> arba paspauskite <keyseq><key>Vald</key><key>S</key></keyseq>.</p>
      </item>
      <item><title>Paryškintas</title>
-       <p>Paryškintas stilius aplink tekstą nustato skirtingą foną. Paryškinimui pridėti pažymėkite tekstą ir pasirinkite punktą <gui>Paryškintas</gui> iš meniu <gui>Tekstas</gui>. Taip pat galite pažymėję tekstą naudoti klavišų kombinaciją <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
+       <p>Paryškintas stilius aplink tekstą nustato skirtingą foną. Paryškinimui pridėti pažymėkite tekstą ir pasirinkite punktą <gui>Paryškintas</gui> iš meniu <gui>Tekstas</gui> arba paspauskite <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
      </item>
      <item><title>Šrifto dydis</title>
-       <p>Yra šioje meniu dalyje keturi punktai: mažas, normalus, didelis ir milžiniškas. Kiekvieną jų yra konkretus šrifto dydis pažymėtam tekstui raštelyje. Šrifto dydžiui pakeisti pasirinkite iš teksto meniu punktą <gui>Mažas</gui>, <gui>Normalus</gui>, <gui>Didelis</gui> arba <gui>Milžiniškas</gui>.</p>
+       <p>Yra šioje meniu dalyje keturi punktai: mažas, normalus, didelis ir milžiniškas. Kiekvieną jų yra konkretus šrifto dydis pažymėtam tekstui raštelyje. Šrifto dydžiui pakeisti pažymėkite jį ir pasirinkite iš teksto meniu punktą <gui>Mažas</gui>, <gui>Normalus</gui>, <gui>Didelis</gui> arba <gui>Milžiniškas</gui>.</p>
      </item>
      <item><title>Punktai</title>
-       <p>Pasirinkite punktų elementą iš teksto meniu punktų sąrašui pradėti. Jei žymeklis yra  punktų sąraše, elementai <gui>Padidinti įtrauką</gui> ir <gui>Sumažinti įtrauką</gui> bus leidžiami.</p>
-       <p>Kai žymeklis yra punktų sąraše, pasirinkite elementą <gui>Padidinti įtrauką</gui> esamai eilutei paslinkti į dešinę arba <gui>Sumažinti įtrauką</gui> paslinkimui į kairę.</p>
+       <p>Pasirinkite elementą <gui>Punktai</gui> iš teksto meniu punktų sąrašui pradėti. Jei žymiklis yra  punktų sąraše, elementai <gui>Padidinti įtrauką</gui> ir <gui>Sumažinti įtrauką</gui> bus leidžiami.</p>
+       <p>Kai žymiklis yra punktų sąraše, pasirinkite elementą <gui>Padidinti įtrauką</gui> esamai eilutei paslinkti į dešinę arba <gui>Sumažinti įtrauką</gui> paslinkimui į kairę.</p>
        <p>Daugiau apie punktų sąrašus skaitykite <link xref="bulleted-lists"/>.</p>
      </item>
-     <item><title>Rasti šiame raštelyje</title>
-       <p>Naudokite šį punktą teksto paieškai esamame raštelyje. Maža paieškos juosta bus atverta raštelio apačioje. Paieškos juostai atverti klaviatūra naudokite standartinę klavišų kombinaciją <keyseq><key>Ctrl</key><key>F</key></keyseq>. Įveskite paieškos tekstą. Po teksto įvedimo atitikmenys bus paryškinti. Spauskite <gui>Kitas</gui> tolesniam atitikmeniui paryškinti ir žymekliui padėti šalia. Spauskite <gui>Ankstesnis</gui> perėjimui prie ankstesnio atitikmens. Paieškos juostai užverti spauskite X (užvėrimo mygtuką) kairėje arba paspauskite klavišą <key>Escape</key>.</p>
-     </item>
    </list>
+   <p>Įrankinė lango viršuje turi paieškos mygtuką. Naudokite jį paieškai dabartiniame raštelyje. Maža paieškos juosta bus atverta virš raštelio. Paieškos juostai atverti klaviatūra naudokite klavišų kombinaciją <keyseq><key>Vald</key><key>F</key></keyseq>. Įveskite paieškos tekstą ir spauskite <key>Enter</key>, atitikmenys bus paryškinti. Spauskite <gui>Kitas</gui> tolesniam atitikmeniui paryškinti. Spauskite <gui>Ankstesnis</gui> perėjimui prie ankstesnio atitikmens. Paieškos juostai užverti spauskite paspauskite klavišą <key>Escape</key> arba paieškos mygtuką dar kartą.</p>
 
    <section id="note-content" style="2column">
      <title>Raiškusis raštelio turinys</title>

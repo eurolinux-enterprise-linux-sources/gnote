@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011 Aurimas Cernius
+ * Copyright (C) 2011,2013-2014 Aurimas Cernius
  * Copyright (C) 2010 Debarshi Ray
  *
  * This program is free software: you can redistribute it and/or modify
@@ -23,11 +23,14 @@
 
 #include <map>
 #include <string>
-#include <tr1/memory>
 
 #include <glibmm.h>
-#include <gtkmm.h>
+#include <gtkmm/grid.h>
+#include <gtkmm/liststore.h>
+#include <gtkmm/radiobutton.h>
+#include <gtkmm/treeview.h>
 
+#include "base/macros.hpp"
 #include "note.hpp"
 
 namespace gnote {
@@ -53,7 +56,7 @@ public:
   const Gtk::TreeModelColumn<std::string> & get_column_title() const;
   gint get_column_title_num() const;
 
-  const Gtk::TreeModelColumn<Note::Ptr> & get_column_note() const;
+  const Gtk::TreeModelColumn<NoteBase::Ptr> & get_column_note() const;
   gint get_column_note_num() const;
 
 private:
@@ -67,7 +70,7 @@ private:
 
   Gtk::TreeModelColumn<bool> m_column_selected;
   Gtk::TreeModelColumn<std::string> m_column_title;
-  Gtk::TreeModelColumn<Note::Ptr> m_column_note;
+  Gtk::TreeModelColumn<NoteBase::Ptr> m_column_note;
 };
 
 class NoteRenameDialog
@@ -75,11 +78,11 @@ class NoteRenameDialog
 {
 public:
 
-  typedef std::tr1::shared_ptr<std::map<Note::Ptr, bool> > MapPtr;
+  typedef shared_ptr<std::map<NoteBase::Ptr, bool> > MapPtr;
 
-  NoteRenameDialog(const Note::List & notes,
+  NoteRenameDialog(const NoteBase::List & notes,
                    const std::string & old_title,
-                   const Note::Ptr & renamed_note);
+                   const NoteBase::Ptr & renamed_note);
   MapPtr get_notes() const;
   NoteRenameBehavior get_selected_behavior() const;
 
@@ -109,7 +112,7 @@ private:
   Gtk::RadioButton m_always_show_dlg_radio;
   Gtk::RadioButton m_always_rename_radio;
   Gtk::RadioButton m_never_rename_radio;
-  Gtk::VBox m_notes_box;
+  Gtk::Grid m_notes_box;
 };
 
 }

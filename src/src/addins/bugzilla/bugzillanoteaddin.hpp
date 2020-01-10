@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2010 Aurimas Cernius
+ * Copyright (C) 2010,2013 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -25,6 +25,7 @@
 #define _BUGZILLA_NOTE_ADDIN_HPP__
 
 
+#include "base/macros.hpp"
 #include "sharp/dynamicmodule.hpp"
 #include "noteaddin.hpp"
 
@@ -36,12 +37,6 @@ class BugzillaModule
 {
 public:
   BugzillaModule();
-  virtual const char * id() const;
-  virtual const char * name() const;
-  virtual const char * description() const;
-  virtual const char * authors() const;
-  virtual int category() const;
-  virtual const char * version() const;
 };
 
 class BugzillaNoteAddin
@@ -53,9 +48,9 @@ public:
       return new BugzillaNoteAddin;
     }
   static std::string images_dir();
-  virtual void initialize();
-  virtual void shutdown();
-  virtual void on_note_opened();
+  virtual void initialize() override;
+  virtual void shutdown() override;
+  virtual void on_note_opened() override;
 private:
   BugzillaNoteAddin();
   void migrate_images(const std::string & old_images_dir);

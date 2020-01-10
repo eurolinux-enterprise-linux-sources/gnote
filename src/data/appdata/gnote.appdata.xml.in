@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2013 Aurimas Cernius <aurisc4@gmail.com> -->
+<application>
+ <id type="desktop">gnote.desktop</id>
+ <licence>CC0</licence>
+ <name>Gnote</name>
+ <summary>A simple note-taking application</summary>
+ <description>
+  <_p>
+   Gnote is a simple note-taking application for GNOME desktop environment. It allows you to capture your ideas, link them together using WikiWiki-style links, group together in notebooks and some extra features for everyday use.
+  </_p>
+  <_p>Gnote also supports synchronization to make it possible to use on multiple devices.</_p>
+ </description>
+ <screenshots>
+  <screenshot type="default" width="624" height="351">https://wiki.gnome.org/Apps/Gnote?action=AttachFile&amp;do=get&amp;target=gnote_main_window.png</screenshot>
+ </screenshots>
+ <url type="homepage">https://wiki.gnome.org/Gnote</url>
+ <updatecontact>aurisc4_at_gmail.com</updatecontact>
+</application>
+

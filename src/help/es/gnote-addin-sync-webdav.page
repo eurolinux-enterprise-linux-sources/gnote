@@ -10,17 +10,22 @@
       <name>Aurimas Cernius</name>
       <years>2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2013</mal:years>
+    </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Nicolás Satragno</mal:name>
       <mal:email>nsatragno@gnome.org</mal:email>
       <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Daniel Mustieles</mal:name>
-      <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -31,12 +36,12 @@
   </info>
 
   <title>Sincronización de WebDAV</title>
-  <p>Éste tipo de sincronización permite configurar WebDAV como almacén de sincronización.</p>
+  <p>Éste tipo de sincronización permite usar un servidor WebDAV como almacén de sincronización.</p>
   <p>Configurar este tipo de sincronización:</p>
-  <list>
-    <item><title>seleccione «WebDAV» en el desplegable <gui>Servicio</gui></title></item>
-    <item><title>introduzca el URL a su compartición</title></item>
-    <item><title>introduzca usuario y contraseña</title></item>
+  <list type="numbered">
+    <item><p>seleccione «WebDAV» en el desplegable <gui>Servicio</gui></p></item>
+    <item><p>introduzca el URL a su compartición</p></item>
+    <item><p>introduzca usuario y contraseña</p></item>
   </list>
   <figure>
     <title>Configuración de la carpeta local de la sincronización</title>

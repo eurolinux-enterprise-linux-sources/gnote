@@ -20,7 +20,6 @@
 #include <fstream>
 
 #include <boost/format.hpp>
-#include <boost/lexical_cast.hpp>
 #include <glibmm/i18n.h>
 #include <sigc++/signal.h>
 
@@ -134,7 +133,7 @@ bool FuseSyncServiceAddin::save_configuration()
 
       // Get unique new file name
       while(sharp::file_exists(testPath)) {
-        testPath = testPathBase + boost::lexical_cast<std::string>(++count);
+        testPath = testPathBase + TO_STRING(++count);
       }
 
       // Test ability to create and write
@@ -244,7 +243,7 @@ bool FuseSyncServiceAddin::mount_fuse(bool useStoredValues)
   else if(p.exit_code() != 0) {
     unmount_timeout(); // TODO: This is awfully ugly
     DBG_OUT("Error calling %s", m_fuse_mount_exe_path.c_str());
-    throw GnoteSyncException(_("An error ocurred while connecting to the specified server"));
+    throw GnoteSyncException(_("An error occurred while connecting to the specified server"));
     //TODO: provide stderr output of child
   }
 

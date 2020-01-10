@@ -4,24 +4,29 @@
   <info>
     <link type="guide" xref="index#organizing-notes"/>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
-    <desc>Créer des liens entre les notes</desc>
+    <desc>Linking to other notes</desc>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Liens</title>
-    <p>Le bouton <gui>Lier</gui> sert à lier une nouvelle note à la note actuelle. Par exemple, si celle-ci contient le terme « Examen Final », en sélectionnant ce texte et en cliquant sur <gui>Lier</gui> une nouvelle note intitulée « Examen Final » est créée. Un lien sera introduit dans la note actuelle : en cliquant dessus, vous ouvrez la nouvelle note « Examen Final ».</p>
+    <p>The <gui>Link</gui> button creates a link to a new note from within the current note. For example, if your note contains the phrase “FinalExam”, you can select this text and click the <gui>Link</gui> button to create a new note called “FinalExam”. The selected text will become a clickable link to this new note.</p>
 <note style="advanced">
-    <p>Le fait de modifier le titre d'une note met à jour les liens présents dans d'autres notes, ce qui évite la présence de liens morts lors du renommage d'une note.</p></note>
+    <p>Changing a note's title will update links present in other notes. This prevents broken links from occurring when a note is renamed.</p></note>
 
   <section><title>Greffons rétroliens</title>
-    <p>The Tools button is represented by the <media type="image" src="figures/gnote-tools.png" mime="image/png" style="right"> </media> icon. When backlinks add-in is installed, the <gui>Tools</gui> menu will contain an item <gui>What links here?</gui>, which provides a sub-menu with all notes, containing link to current note.</p>
+    <p>When the <app>Backlinks</app> plugin is installed, the <gui>Actions</gui> menu will contain an item <gui>What links here?</gui>, which provides a sub-menu listing all notes containing a link to the current note.</p>
   </section>
 
 </page>

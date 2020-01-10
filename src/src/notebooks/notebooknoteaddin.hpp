@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2011-2012 Aurimas Cernius
+ * Copyright (C) 2011-2015 Aurimas Cernius
  * Copyright (C) 2009 Hubert Figuiere
  *
  * This program is free software: you can redistribute it and/or modify
@@ -24,14 +24,10 @@
 #ifndef __NOTEBOOKS_NOTEBOOK_NOTE_ADDIN_HPP__
 #define __NOTEBOOKS_NOTEBOOK_NOTE_ADDIN_HPP__
 
-#include <gtkmm/menu.h>
-#include <gtkmm/menutoolbutton.h>
+#include <gtkmm/modelbutton.h>
 
+#include "base/macros.hpp"
 #include "noteaddin.hpp"
-#include "notebooks/notebook.hpp"
-#include "notebooks/notebookmenuitem.hpp"
-#include "note.hpp"
-#include "utils.hpp"
 
 namespace gnote {
 namespace notebooks {
@@ -42,34 +38,25 @@ namespace notebooks {
   public:
     static NoteAddin * create();
     static Tag::Ptr get_template_tag();
-    virtual void initialize ();
-    virtual void shutdown ();
-    virtual void on_note_opened ();
+    virtual void initialize() override;
+    virtual void shutdown() override;
+    virtual void on_note_opened() override;
+    virtual std::map<int, Gtk::Widget*> get_actions_popover_widgets() const override;
 
   protected:
     NotebookNoteAddin();
 
   private:
-    void initialize_tool_button();
-    void on_note_tag_added(const Note &, const Tag::Ptr &);
-    void on_note_tag_removed(const Note::Ptr &, const std::string &);
-    void update_button_sensitivity(bool);
-    void on_menu_shown();
-    void on_note_added_to_notebook(const Note &, const Notebook::Ptr &);
-    void on_note_removed_from_notebook(const Note &, const Notebook::Ptr &);
-    void on_new_notebook_menu_item();
-    void update_notebook_button_label();
-    void update_notebook_button_label(const Notebook::Ptr &);
-    void update_menu();
-    void get_notebook_menu_items(std::list<NotebookMenuItem*> &);
-    gnote::utils::ToolMenuButton  *m_toolButton;
-    Gtk::Menu                *m_menu;
-    std::list<Gtk::MenuItem *> m_menu_items;
-    Gtk::RadioButtonGroup     m_radio_group;
-    sigc::connection          m_show_menu_cid;
-    sigc::connection          m_note_added_cid;
-    sigc::connection          m_note_removed_cid;
+    void on_note_window_foregrounded();
+    void on_note_window_backgrounded();
+    void on_new_notebook_menu_item(const Glib::VariantBase&) const;
+    void on_move_to_notebook(const Glib::VariantBase &);
+    void on_notebooks_changed();
+    void get_notebook_menu_items(std::list<Gtk::ModelButton*> &) const;
+    void update_menu(Gtk::Grid *) const;
 
+    sigc::connection          m_new_notebook_cid;
+    sigc::connection          m_move_to_notebook_cid;
     static Tag::Ptr           s_templateTag;
   };
 

@@ -4,26 +4,61 @@
   <info>
     <link type="guide" xref="notes-preferences#sync-addins"/>
     <link type="guide" xref="synchronization#configuration"/>
-    <desc>Synchronize to WebDAV share</desc>
+    <desc>Mit WebDAV-Freigabe abgleichen</desc>
     <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
       <years>2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
-  <title>WebDAV Synchronization</title>
-  <p>This type of synchronization allows you to set WebDAV as synchronization storage.</p>
-  <p>To configure this type of synchronization:</p>
-  <list>
-    <item><title>select "WebDAV" in <gui>Service</gui> drop-down</title></item>
-    <item><title>enter the URL to your share</title></item>
-    <item><title>enter username and password</title></item>
+  <title>Abgleich mit WebDAV-Freigabe</title>
+  <p>Diese Abgleichsart ermöglicht es, WebDAV als Abgleichsspeicher zu verwenden</p>
+  <p>So richten Sie diese Abgleichsart ein:</p>
+  <list type="numbered">
+    <item><p>wählen Sie »WebDAV« in der Auswahlliste <gui>Dienst</gui></p></item>
+    <item><p>Geben Sie die Adresse Ihrer Freigabe ein</p></item>
+    <item><p>Geben Sie Benutzername und Passwort ein</p></item>
   </list>
   <figure>
-    <title>Local Folder Synchronization configuration</title>
+    <title>Konfiguration des Abgleichs mit lokalem Ordner</title>
     <media type="image" src="figures/gnote-syncprefs-webdav.png" mime="image/png"/>
   </figure>
-  <p>After selecting the desired folder click the <gui>Save</gui> button. Use the <gui>Clear</gui> button to turn synchronization off.</p>
+  <p>Nach der Wahl des gewünschten Ordners klicken Sie auf den Knopf <gui>Speichern</gui>. Verwenden Sie den Knopf <gui>Löschen</gui>, um den Abgleich auszuschalten.</p>
 
 </page>

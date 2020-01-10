@@ -11,21 +11,26 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
+    </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
     </credit>
   </info>
 
   <title>Priedas „Pabrauktas“</title>
-  <p>Kai priedas <gui>Pabrauktas</gui> yra įdiegtas, meniu <gui>Tekstas</gui> turi punktą <gui>Pabrauktas</gui>.</p>
+  <p>Kai įskiepis <gui>Pabrauktas</gui> yra įdiegtas, meniu <gui>Tekstas</gui> turi punktą <gui>Pabrauktas</gui>.</p>
   <p>Pažymėtam tekstui pabraukti, atlikite vieną iš šių veiksmų:</p>
   <list>
     <item><p>Spauskite <gui>Tekstas</gui> ir pasirinkite <gui>Pabrauktas</gui>.</p></item>
-    <item><p>Paspauskite klavišų kombinaciją <keyseq><key>Vald</key><key>U</key></keyseq>.</p></item>
+    <item><p>Paspauskite <keyseq><key>Vald</key><key>U</key></keyseq>.</p></item>
   </list>
   <p>Pabraukimui pašalinti atlikite vieną iš šių veiksmų:</p>
   <list>
     <item><p>Spauskite <gui>Tekstas</gui> ir pasirinkite <gui>Pabrauktas</gui>.</p></item>
-    <item><p>Paspauskite klavišų kombinaciją <keyseq><key>Vald</key><key>U</key></keyseq>.</p></item>
+    <item><p>Paspauskite <keyseq><key>Vald</key><key>U</key></keyseq>.</p></item>
   </list>
 
 </page>

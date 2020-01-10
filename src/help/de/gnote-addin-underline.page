@@ -11,21 +11,56 @@
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011</years>
+      <years>2011,2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Jochen Skulj</mal:name>
+      <mal:email>jochen@jochenskulj.de</mal:email>
+      <mal:years>2008</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Christian Kirbach</mal:name>
+      <mal:email>Christian.Kirbach@gmail.com</mal:email>
+      <mal:years>2009, 2013, 2014, 2015</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Mario Blättermann</mal:name>
+      <mal:email>mario.blaettermann@gmail.com</mal:email>
+      <mal:years>2009, 2011, 2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Winzen</mal:name>
+      <mal:email>d@winzen4.de</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Benjamin Steinwender</mal:name>
+      <mal:email>b@stbe.at</mal:email>
+      <mal:years>2015</mal:years>
+    </mal:credit>
   </info>
 
-  <title>Text-unterstreichen-Add-In</title>
-  <p>Wenn das <gui>Unterstreichen</gui>-Add-In installiert ist, stellt das Menü <gui>Text</gui> einen Menüpunkt <gui>Unterstreichen</gui> zur Verfügung.</p>
+  <title>Text-unterstreichen-Erweiterung</title>
+  <p>Wenn die <gui>Unterstreichen</gui>-Erweiterung installiert ist, stellt das Menü <gui>Text</gui> einen Menüpunkt <gui>Unterstreichen</gui> zur Verfügung.</p>
   <p>Unterstreichen Sie ausgewählten Text durch eine der folgenden Aktionen:</p>
   <list>
     <item><p>Klicken Sie auf <gui>Text</gui> und wählen Sie <gui>Unterstreichen</gui>.</p></item>
-    <item><p>Drücken Sie die Tastenkombination <keyseq><key>Umschalttaste</key><key>Tabulatortaste</key></keyseq>.</p></item>
+    <item><p>Drücken Sie <keyseq><key>Strg</key><key>U</key></keyseq>.</p></item>
   </list>
   <p>Um die Unterstreichung zu entfernen, wählen Sie den unterstrichenen Text aus und führen Sie eine der folgenden Aktionen aus:</p>
   <list>
     <item><p>Klicken Sie auf <gui>Text</gui> und wählen Sie <gui>Unterstreichen</gui>.</p></item>
-    <item><p>Drücken Sie die Tastenkombination <keyseq><key>Umschalttaste</key><key>Tabulatortaste</key></keyseq>.</p></item>
+    <item><p>Drücken Sie <keyseq><key>Strg</key><key>U</key></keyseq>.</p></item>
   </list>
 
 </page>

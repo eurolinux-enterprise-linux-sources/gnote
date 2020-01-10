@@ -36,11 +36,11 @@ namespace gnote {
   namespace notebooks {
 
     CreateNotebookDialog::CreateNotebookDialog(Gtk::Window *parent, GtkDialogFlags f)
-      : utils::HIGMessageDialog(parent, f, Gtk::MESSAGE_INFO, Gtk::BUTTONS_NONE,
-                                _("Create a new notebook"),
-                                _("Type the name of the notebook you'd like to create."))
+      : utils::HIGMessageDialog(parent, f, Gtk::MESSAGE_OTHER, Gtk::BUTTONS_NONE)
     {
+      set_title(_("Create Notebook"));
       Gtk::Table *table = manage(new Gtk::Table (2, 2, false));
+      table->set_col_spacings(6);
       
       Gtk::Label *label = manage(new Gtk::Label (_("N_otebook name:"), true));
       label->property_xalign() = 0;

@@ -4,21 +4,38 @@
   <info>
     <link type="guide" xref="notes-preferences#sync-addins"/>
     <link type="guide" xref="synchronization#configuration"/>
-    <desc>Synchronize to WebDAV share</desc>
-    <license><p>GNU Free Documentation License (GFDL), Version 1.1</p></license>
+    <desc>Synchronize to a WebDAV share</desc>
+    <license><p>GNU 自由文档许可证(GFDL)，版本 1.1</p></license>
     <credit type="author">
       <name>Aurimas Cernius</name>
       <years>2012</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>YunQiang Su</mal:name>
+      <mal:email>wzssyqa@gmail.com</mal:email>
+      <mal:years>2009-2010</mal:years>
+    </mal:credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>tuhaihe</mal:name>
+      <mal:email>1132321739qq@gmail.com</mal:email>
+      <mal:years>2012</mal:years>
+    </mal:credit>
   </info>
 
-  <title>WebDAV Synchronization</title>
-  <p>This type of synchronization allows you to set WebDAV as synchronization storage.</p>
+  <title>WebDAV 同步</title>
+  <p>This type of synchronization lets you use a WebDAV server as synchronization storage.</p>
   <p>To configure this type of synchronization:</p>
-  <list>
-    <item><title>select "WebDAV" in <gui>Service</gui> drop-down</title></item>
-    <item><title>enter the URL to your share</title></item>
-    <item><title>enter username and password</title></item>
+  <list type="numbered">
+    <item><p>select "WebDAV" in the <gui>Service</gui> drop-down</p></item>
+    <item><p>enter the URL to your share</p></item>
+    <item><p>enter your username and password</p></item>
   </list>
   <figure>
     <title>Local Folder Synchronization configuration</title>

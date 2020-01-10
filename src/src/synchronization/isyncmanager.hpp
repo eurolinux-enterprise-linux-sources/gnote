@@ -1,7 +1,7 @@
 /*
  * gnote
  *
- * Copyright (C) 2012-2013 Aurimas Cernius
+ * Copyright (C) 2012-2014 Aurimas Cernius
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,8 +23,8 @@
 
 #include <list>
 #include <string>
-#include <tr1/memory>
 
+#include "base/macros.hpp"
 #include "note.hpp"
 #include "syncui.hpp"
 #include "syncutils.hpp"
@@ -48,7 +48,7 @@ public:
 class SyncClient
 {
 public:
-  typedef std::tr1::shared_ptr<SyncClient> Ptr;
+  typedef shared_ptr<SyncClient> Ptr;
 
   virtual ~SyncClient();
 
@@ -56,8 +56,8 @@ public:
   virtual void last_synchronized_revision(int) = 0;
   virtual sharp::DateTime last_sync_date() = 0;
   virtual void last_sync_date(const sharp::DateTime &) = 0;
-  virtual int get_revision(const Note::Ptr & note) = 0;
-  virtual void set_revision(const Note::Ptr & note, int revision) = 0;
+  virtual int get_revision(const NoteBase::Ptr & note) = 0;
+  virtual void set_revision(const NoteBase::Ptr & note, int revision) = 0;
   virtual std::map<std::string, std::string> deleted_note_titles() = 0;
   virtual void reset() = 0;
   virtual std::string associated_server_id() = 0;
@@ -71,7 +71,7 @@ public:
   virtual ~ISyncManager();
 
   virtual void reset_client() = 0;
-  virtual void perform_synchronization(const std::tr1::shared_ptr<SyncUI> & sync_ui) = 0;
+  virtual void perform_synchronization(const SyncUI::Ptr & sync_ui) = 0;
   virtual void resolve_conflict(SyncTitleConflictResolution resolution) = 0;
   virtual bool synchronized_note_xml_matches(const std::string & noteXml1, const std::string & noteXml2) = 0;
   virtual SyncState state() const = 0;
@@ -80,7 +80,7 @@ public:
 class SyncServer
 {
 public:
-  typedef std::tr1::shared_ptr<SyncServer> Ptr;
+  typedef shared_ptr<SyncServer> Ptr;
 
   virtual ~SyncServer();
 

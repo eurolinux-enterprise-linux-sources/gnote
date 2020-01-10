@@ -4,26 +4,31 @@
   <info>
     <link type="guide" xref="index#managing-notes"/>
     <license><p>Licencia libre de documentación de GNU (GFDL), Versión 1.1</p></license>
-    <desc>Contenido sobre edición de notas</desc>
+    <desc>Editar el contenido de la nota</desc>
     <credit type="author">
       <name>Pierre-Yves Luyten</name>
       <years>2011</years>
     </credit>
     <credit type="editor">
       <name>Aurimas Cernius</name>
-      <years>2011-2012</years>
+      <years>2011-2013</years>
     </credit>
+    <credit type="editor">
+      <name>Adam Dingle</name>
+      <email>adam@yorba.org</email>
+      <years>2013</years>
+    </credit>
+  
+    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
+      <mal:name>Daniel Mustieles</mal:name>
+      <mal:email>daniel.mustieles@gmail.com</mal:email>
+      <mal:years>2010, 2013</mal:years>
+    </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
       <mal:name>Nicolás Satragno</mal:name>
       <mal:email>nsatragno@gnome.org</mal:email>
       <mal:years>2012</mal:years>
-    </mal:credit>
-  
-    <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
-      <mal:name>Daniel Mustieles</mal:name>
-      <mal:email>daniel.mustieles@gmail.com</mal:email>
-      <mal:years>2010, 2012</mal:years>
     </mal:credit>
   
     <mal:credit xmlns:mal="http://projectmallard.org/1.0/" type="translator copyright">
@@ -35,8 +40,8 @@
 
   <title>Editar las notas</title>
 
-    <p>Las notas se abre en la misma ventana mediante la sustitución de búsqueda con el contenido de la nota.</p>
-    <p>En la parte superior de las notas, hay dos barras de herramientas. La barra de herramientas que está más arriba, contiene iconos para volver hacia atrás en modo de búsqueda y para crear una nota nueva. La de debajo contiene varios botones y textos. Justo debajo de esta barra de herramientas está el área de contenidos de la nota.</p>
+    <p>Cuando abra una nota, <app>Gnote</app> reemplazará la vista previa de la nota con los contenidos de la nota.</p>
+    <p>La barra de herramientas en la parte superior de la ventana, ahora contiene información específica sobre la nota. Debajo de la barra de herramientas, está el área de contenidos de la nota.</p>
     <figure>
       <title>Ventana de <app>Gnote</app> que muestra las notas</title>
       <desc>Nota de <app>Gnote</app></desc>
@@ -45,40 +50,38 @@
       </media>
     </figure>
 
-    <p>La nota se puede editar al pulsar en el área de contenidos y usando el teclado para añadir y eliminar contenidos. La primera línea es el título de la nota. De forma predeterminada, esta línea se rellena con el texto «Nota nueva N». El título se puede cambiar pulsando en la primera línea del área de contenido y usando el teclado. De forma predeterminada, el foco está en el área de contenido tras la creación de una nota nueva, por lo que se puede comenzar la edición de ésta inmediatamente sin necesidad de pulsar en el área de contenidos con el ratón.</p>
-    <p>Se puede dar formato al texto dentro de sus notas mediante el botón <guibutton>Texto</guibutton>. El botón <guibutton>Texto</guibutton> desplegará un menú emergente con múltiples opciones que puede elegir. A continuación se explica cada elemento del menú.</p>
+    <p>Para editar la nota, pulse en el área de contenidos y escriba. La primera línea se considera el título de la nota. De manera predeterminada, se rellena con el texto «Nueva nota (número)». Para cambiar el título, pulse sobre la primera línea y escriba sobre ella.</p>
+    <p>Use el botón <gui>Texto</gui> para dar formato al texto dentro de sus notas. Este botón muestra un menú con varias opciones:</p>
 
     <list>
       <item><title>Deshacer</title>
-        <p>El soporte para «Deshacer» está disponible en Gnote a través de este elemento del menú. La función deshacer le permite revertir cambios hechos previamente en su nota durante la sesión actual. Para deshacer el último cambio usando el teclado, utilice el atajo de teclado predeterminado <keycombo><keycap>Ctrl</keycap><keycap>Z</keycap></keycombo>.</p>
+        <p>El comando para <gui>Deshacer</gui> deshace los cambios realizados en su nota durante la sesión actual. Para deshacer el último cambio usando el teclado, utilice la combinación de teclas <keyseq><key>Ctrl</key><key>Z</key></keyseq>.</p>
       </item>
       <item><title>Rehacer</title>
-        <p>La función «Rehacer» se utiliza para restablecer los cambios que se eliminaron por medio de la característica «Deshacer». Para rehacer el último cambio deshecho usando el teclado, utilice el atajo de teclado predeterminado <keyseq><key>Máyus</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
+        <p>La función <gui>Rehacer</gui> se utiliza para restablecer los cambios que se eliminaron por medio de la característica <gui>Deshacer</gui>. Para rehacer el último cambio usando el teclado, utilice la combinación de teclas <keyseq><key>Mayús</key><key>Ctrl</key><key>Z</key></keyseq>.</p>
       </item>
       <item><title>Negrita</title>
-        <p>Para poner un texto de su nota en negrita, primero seleccione el texto que quiere modificar. Luego seleccione la opción <menuchoice><guimenuitem>Negrita</guimenuitem></menuchoice> del menú <guibutton>Texto</guibutton>. Además puede usar el atajo de teclado <keycombo><keycap>Ctrl</keycap><keycap>B</keycap></keycombo> después de haber seleccionado el texto.</p>
+        <p>Para poner un texto en negrita, seleccione lo que quiere modificar y luego seleccione la opción <gui>Negrita</gui> del menú <gui>Texto</gui> o utilice la combinación de teclas <keyseq><key>Ctrl</key><key>B</key></keyseq> de su teclado.</p>
       </item>
       <item><title>Cursiva</title>
-        <p>Para poner un texto en su nota en cursiva, primero seleccione el texto que quiere modificar. Luego seleccione la opción <menuchoice><guimenuitem>Cursiva</guimenuitem></menuchoice> del menú <guibutton>Texto</guibutton>. Además puede usar el atajo de teclado <keycombo><keycap>Ctrl</keycap><keycap>I</keycap></keycombo> después de haber seleccionado el texto.</p>
+        <p>Para poner un texto en cursiva, seleccione el texto que quiere modificar y luego seleccione la opción <gui>Cursiva </gui> del menú <gui>Texto</gui> o utilice su teclado con la combinación de teclas <keyseq><key>Ctrl</key><key>I</key></keyseq>.</p>
      </item>
      <item><title>Tachado</title>
-       <p>El estilo tachado pondrá una línea a través del texto seleccionado. Para tachar un texto, seleccione el texto a modificar y luego seleccione la opción <menuchoice><guimenuitem>Tachado</guimenuitem></menuchoice> del menú <guibutton>Texto</guibutton>. Además puede utilizar el atajo de teclado <keycombo><keycap>Ctrl</keycap><keycap>S</keycap></keycombo> después de haber seleccionado el texto.</p>
+       <p>El estilo tachado pondrá una línea a través del texto seleccionado. Para tachar un texto, seleccione el texto a modificar y luego seleccione la opción <gui>Tachado</gui> del menú <gui>Texto</gui> o utilizando la combinación de teclas <keyseq><key>Ctrl</key><key>S</key></keyseq>.</p>
      </item>
      <item><title>Resaltado</title>
-       <p>El estilo resaltado pondrá un fondo amarillo alrededor del texto seleccionado. Para añadir resaltado, seleccione el texto y luego seleccione la opción <menuchoice><guimenuitem>Resaltado</guimenuitem></menuchoice>del menú <guibutton>Texto</guibutton>. Además puede utilizar el atajo de teclado <keycombo><keycap>Ctrl</keycap><keycap>H</keycap></keycombo> después de haber seleccionado el texto.</p>
+       <p>El estilo resaltado pondrá un fondo diferente alrededor del texto seleccionado. Para añadir resaltado, seleccione el texto y luego seleccione la opción <gui>Resaltado</gui> del menú <gui>Texto</gui> o utilice la combinación de teclas <keyseq><key>Ctrl</key><key>H</key></keyseq>.</p>
      </item>
      <item><title>Tamaño de la tipografía</title>
-       <p>Actualmente existen cuatro opciones en esta parte del menú: «Pequeña», «Normal», «Grande» y «Enorme». Cada una de estas opciones representa un tamaño de tipografía que utilizar con el texto seleccionado en la nota. Para modificar el tamaño de la tipografía, seleccione el texto y luego seleccione una de las opciones <gui>Pequeña</gui>, <gui>Normal</gui>, <gui>Grande</gui>, <gui>Enorme</gui> del menú <guibutton>Texto</guibutton>.</p>
+       <p>Actualmente existen cuatro opciones en esta parte del menú: «Pequeña», «Normal», «Grande» y «Enorme». Cada una de estas opciones representa un tamaño de tipografía que utilizar con el texto seleccionado en la nota. Para modificar el tamaño de la tipografía, seleccione el texto y luego seleccione una de las opciones <gui>Pequeña</gui>, <gui>Normal</gui>, <gui>Grande</gui>, <gui>Enorme</gui>.</p>
      </item>
      <item><title>Topos</title>
-       <p>Seleccione la opción «Topos» del menú «Texto» para comenzar o finalizar una lista de topos. Si el cursor está dentro de una lista de topos, se activarán las opciones <gui>Aumentar sangría</gui> y <gui>Disminuir sangría</gui>.</p>
+       <p>Seleccione la opción <gui>Topos</gui> del menú «Texto» para comenzar o finalizar una lista de topos. Si el cursor está dentro de una lista de topos, se activarán las opciones <gui>Aumentar sangría</gui> y <gui>Disminuir sangría</gui>.</p>
        <p>Con el cursor en una línea de una lista de topos, seleccione la opción <gui>Aumentar sangría</gui> para desplazar la línea actual hacia la derecha o la opción <gui>Disminuir sangría</gui> para desplazar la línea actual hacia la izquierda.</p>
-       <p>Para obtener más información sobre los topos, consulte la <xref linkend="bullets"/>.</p>
-     </item>
-     <item><title>Buscar en esta nota</title>
-       <p>Use esto para buscar un texto dentro de la nota actual. Se mostrará una barra de búsqueda pequeña en la parte inferior de la nota. Para abrir la barra de búsqueda usando el teclado, utilice el atajo de teclado estándar <keyseq><key>Ctrl</key><key>F</key></keyseq>. Introduzca el texto que se buscará. Después de escribir un texto, las coincidencias se resaltarán. Pulse <gui>Siguiente</gui> para resaltar la coincidencia siguiente y posicionar el cursor en ese lugar. Pulse <gui>Anterior</gui> para moverse a la coincidencia anterior. Para cerrar la barra de búsqueda, pulse X (botón «Cerrar») en el extremo izquierdo o pulse la tecla <key>Esc</key>.</p>
+       <p>Para obtener más información sobre los topos, consulte la <link xref="bulleted-lists"/>.</p>
      </item>
    </list>
+   <p>La barra de herramientas en la parte superior de la nota, tiene un botón de búsqueda. Use esto para buscar un texto dentro de la nota actual. Se mostrará una barra de búsqueda pequeña en la parte inferior de la nota. Para abrir la barra de búsqueda usando el teclado, utilice la combinación de teclas <keyseq><key>Ctrl</key><key>F</key></keyseq>. Introduzca el texto a buscar y pulse la tecla <key>Intro</key>. Después de escribir un texto, las coincidencias se resaltarán. Pulse <gui>Siguiente</gui> para resaltar la coincidencia siguiente y posicionar el cursor en ese lugar. Pulse <gui>Anterior</gui> para moverse a la coincidencia anterior. Para cerrar la barra de búsqueda, pulse el botón de búsqueda de nuevo, o pulse la tecla <key>Esc</key>.</p>
 
    <section id="note-content" style="2column">
      <title>Nota de contenido enriquecido</title>
